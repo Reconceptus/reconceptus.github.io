@@ -1,0 +1,15 @@
+{
+  "name": "GrecoBooking",
+  "description": "bower package",
+  "authors": ["enenkoff"],
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "jquery": "latest"
+  },
+  "preen": {
+    "jquery": [
+      "dist/*.js"
+    ]
+  }
+}

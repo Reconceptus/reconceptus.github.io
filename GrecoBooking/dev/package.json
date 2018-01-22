@@ -1,7 +1,7 @@
 {
-  "name": "Spryker-compiler",
+  "name": "GrecoBooking",
   "version": "1.0.0",
-  "description": "compiling and optimizing markup",
+  "description": "gulp package",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^3.1.0",
+    "gulp-stylefmt": "^1.1.0",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifyjs": "^0.6.2"
