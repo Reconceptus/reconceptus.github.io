@@ -1,9 +1,10 @@
-@import "normalize";
+@import "base/normalize";
 /*---libs---*/
-//@import "../css/libs/owl.carousel.min";
+@import "../css/libs/owl.carousel.min";
+@import "../css/libs/animate.min";
 /*---styles---*/
-@import "general";
-@import "main";
-@import "header";
-@import "home";
-@import "elements";
+@import "abstracts/general";
+@import "base/typography";
+@import "layout/layout";
+@import "components/components";
+@import "pages/all-pages";

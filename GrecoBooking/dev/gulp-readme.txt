@@ -1,6 +1,8 @@
 /*--- instructions ---*/
 
 npm install
+npm install stylefmt
+npm install css-mqpacker
 
 /*--- one-use commands ---*/
 gulp svgstore       compile svg sprite (after in sprite.svg reformat code)
