@@ -17,17 +17,4 @@
 @mixin breakpoints($from,$to){
   @media screen and (min-width:$from+'px') and (max-width:$to+'px'){@content;}
 }
-@mixin factor($prop,$px){
-  @include media(hover,1600){  #{$prop}:$px#{'px'};  }
-  @include breakpoints(1280, 1599) {  #{$prop}: 0.9375*$px#{'px'};  }
-  @include breakpoints(960, 1279) {  #{$prop}: 0.875*$px#{'px'};  }
-  @include breakpoints(640, 959) {  #{$prop}: 0.8125*$px#{'px'};  }
-  @include media(screen, 639) {  #{$prop}: 0.75*$px#{'px'};  }
-}
-@mixin sizes($prop,$px_1,$px_2,$px_3,$px_4,$px_5){
-  @include media(hover,1600){  #{$prop}:$px_1#{'px'};  }
-  @include breakpoints(1280, 1599) {   #{$prop}:$px_2#{'px'};  }
-  @include breakpoints(960, 1279) {   #{$prop}:$px_3#{'px'};  }
-  @include breakpoints(640, 959) {   #{$prop}:$px_4#{'px'};  }
-  @include media(screen, 639) {   #{$prop}:$px_5#{'px'};  }
-}
+
