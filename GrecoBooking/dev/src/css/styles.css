@@ -246,24 +246,6 @@ textarea {
 
 /*---libs---*/
 /*---styles---*/
-/*
-._guide {
-  @include sizes(padding-top,160,140,120,100,80);
-  @include sizes(padding-bottom,128,112,96,80,64);
-  @include sizes(margin-top,96,84,72,60,48);
-  @include sizes(margin-bottom,96,84,72,60,48);
-  @include sizes(padding-left,80,75,70,65,60);
-  @include sizes(padding-right,64,60,56,52,48);
-  @include sizes(margin-left,48,45,42,39,36);
-  @include sizes(margin-right,40,38,35,33,30);
-
-  @include sizes(font-size,80,70,60,50,40)
-  @include sizes(font-size,64,56,48,40,32)
-  @include sizes(font-size,48,42,36,30,24)
-  @include sizes(font-size,32,30,28,26,24)
-  @include sizes(font-size,24,23,21,20,18)
-  @include sizes(font-size,20,19,18,16,15)
-}*/
 button.btn span, button.btn i,
 .btn span,
 .btn i {
