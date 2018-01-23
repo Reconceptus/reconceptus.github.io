@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
     uglify = require('gulp-uglify'),
     newer = require('gulp-newer'),
+    sourcemaps = require('gulp-sourcemaps'),
     browserSync = require('browser-sync');
 
 var postcss = require('gulp-postcss'),
@@ -129,6 +130,7 @@ gulp.task('optimize:styles', function () {
                 title  : "Sass ошибка!"
             } ) )
         )
+        .pipe(sourcemaps.init())
         .pipe(
             postcss([
                 autoprefix({
@@ -139,6 +141,7 @@ gulp.task('optimize:styles', function () {
         .pipe(autoprefixer({
             browsers: ['last 10 versions']
         }))
+
         .pipe( gulp.dest( 'src/css' ) )
         .pipe( notify( 'Готово!' ) )
         .on('finish',function () {
@@ -149,6 +152,7 @@ gulp.task('optimize:styles', function () {
                         stylefmt(configFmt)
                     ])
                 )
+                .pipe(sourcemaps.write())
                 .pipe(gulp.dest('build/assets/css'))
                 .pipe(cssmin())
                 .pipe(rename({suffix: '.min'}))
