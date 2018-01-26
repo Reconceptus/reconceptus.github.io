@@ -19,7 +19,10 @@
 .content {
   margin: 0 auto;
   box-sizing: border-box;
-
+  padding: 0 40px;
+  &_md {
+    max-width: 1280px;
+  }
 }
 button.btn,
 .btn {

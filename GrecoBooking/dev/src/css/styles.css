@@ -248,9 +248,16 @@ textarea {
 /*---styles---*/
 button.btn span, button.btn i,
 .btn span,
-.btn i {
+.btn i, .header .nav ul a span {
   display: inline-block;
   vertical-align: middle;
+}
+
+.intro-figure figure, .offers .item a figure {
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
 }
 
 .layout:after {
@@ -283,6 +290,11 @@ button.btn span, button.btn i,
   margin: 0 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 0 40px;
+}
+
+.content_md {
+  max-width: 1280px;
 }
 
 button.btn,
@@ -336,6 +348,396 @@ button.btn,
 }
 
 @font-face {
-  font-family: replica_reg;
-  src: url("../fonts/ReplicaProTT.ttf"), url("../fonts/ReplicaProTT.woff"), url("../fonts/ReplicaProTT.eot");
+  font-family: Futuris;
+  src: url("../fonts/Futuris-Bold.ttf"), url("../fonts/Futuris-Bold.woff"), url("../fonts/Futuris-Bold.eot");
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(48, 52, 63, 0.7);
+  color: #fff;
+  padding: 9px 0;
+}
+
+.header--wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .logo {
+  width: 335px;
+}
+
+.header .logo a {
+  display: block;
+  width: 250px;
+}
+
+.header .logo a img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.header .elements {
+  width: 335px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .elements .search .search-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.header .elements .search .search-icon svg {
+  fill: #fff;
+}
+
+.header .elements .language {
+  width: 25px;
+  height: 20px;
+  position: relative;
+}
+
+.header .elements .language ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.header .elements .language ul li {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+}
+
+.header .elements .language ul li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.header .elements .language ul li:not(.current) {
+  display: none;
+}
+
+.header .elements .language ul a {
+  display: block;
+  line-height: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.header .nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.header .nav ul li {
+  margin: 0 20px;
+}
+
+.header .nav ul a {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.header .nav ul a .cnt {
+  height: 24px;
+  min-width: 24px;
+  line-height: 24px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  font-size: 14px;
+  background-color: #f9690e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 3px;
+  margin-left: 8px;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 300;
+  color: #30343f;
+  font-family: 'Roboto', sans-serif;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#main {
+  position: relative;
+}
+
+.btn {
+  font-family: Futuris, sans-serif;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  text-transform: uppercase;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.btn_bord {
+  border-color: #fff;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+
+/*-------------------------------------------------------------------*/
+/******************          intro box          **********************/
+/*-------------------------------------------------------------------*/
+.intro {
+  min-height: 100vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 240px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro-figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.intro-figure figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-figure:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50%;
+  background: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 52, 63, 0)), to(#30343f));
+  background: -webkit-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+  background: -o-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+  background: linear-gradient(to bottom, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+}
+
+.intro-values {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+}
+
+.intro-values ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.intro-values ul li {
+  width: 33.3333%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-right: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+  color: #fff;
+}
+
+.intro-values ul li i {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-right: 20px;
+}
+
+.intro-values ul li .text {
+  padding-top: 5px;
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  font-family: Futuris, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.intro--main {
+  position: relative;
+  width: 100%;
+}
+
+.intro--main .fast-request {
+  height: 80px;
+  background-color: #fff;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          offers box          **********************/
+/*--------------------------------------------------------------------*/
+.offers {
+  padding: 40px 0;
+}
+
+.offers--wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          -webkit-flex-flow: row wrap;
+              -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 -10px;
+}
+
+.offers .item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
+  height: 450px;
+}
+
+.offers .item:first-child {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.offers .item:not(:first-child) {
+  width: 50%;
+}
+
+.offers .item a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 65px;
+}
+
+.offers .item a figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: -webkit-transform 0.65s;
+  -webkit-transition: -webkit-transform 0.65s;
+  -o-transition: transform 0.65s;
+  transition: transform 0.65s;
+  transition: transform 0.65s, -webkit-transform 0.65s;
+  will-change: transform;
+}
+
+.offers .item a .title {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 30px;
+  max-width: 30vw;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.offers .item a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 52, 63, 0.5);
+  z-index: 1;
+  -webkit-transition: background-color 0.35s;
+  -o-transition: background-color 0.35s;
+  transition: background-color 0.35s;
+}
+
+@media screen and (min-width: 1025px) {
+  .offers .item a:hover figure {
+    -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+        transform: scale(1.05);
+  }
+  .offers .item a:hover:before {
+    background-color: rgba(249, 105, 14, 0.5);
+  }
 }
