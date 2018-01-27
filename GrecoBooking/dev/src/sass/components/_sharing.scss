@@ -1,0 +1,23 @@
+.sharing {
+  padding: 20px 0;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    li {
+      margin: 0 18px;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    color: $border;
+    font-size: 18px;
+    i {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      color: $bg;
+    }
+  }
+}

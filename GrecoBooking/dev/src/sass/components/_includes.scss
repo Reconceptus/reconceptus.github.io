@@ -1,0 +1,44 @@
+.includes {
+  display: flex;
+  align-items: center;
+  & > span {
+    display: flex;
+    align-items: center;
+    span {flex-shrink: 500;}
+    .grid & {
+      font-size: 15px;
+      &:not(:last-child){
+        margin-right: 30px;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .bed {
+    i {
+      .grid & {
+        width: 26px;
+        height: 21px;
+      }
+    }
+
+  }
+  .bath {
+    i {
+      .grid & {
+        width: 32px;
+        height: 28px;
+      }
+    }
+  }
+  .sea {
+    i {
+      .grid & {
+        width: 28px;
+        height: 29px;
+      }
+    }
+  }
+}

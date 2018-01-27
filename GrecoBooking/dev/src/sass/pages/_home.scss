@@ -152,3 +152,166 @@
     }
   }
 }
+
+/*--------------------------------------------------------------------*/
+/*****************          qualities box          ********************/
+/*--------------------------------------------------------------------*/
+
+.qualities {
+  margin-bottom: 40px;
+  &--main {
+    background: $pink_dark;
+    background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
+    background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
+    background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+    padding: 30px 0 40px;
+  }
+  ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    li {
+      width: 33.3333%;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 17px;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+    .num {
+      font-family: Futuris, sans-serif;
+      color: #fff;
+      text-shadow: 0 0 30px rgba($btn,0.5);
+      line-height: 1.2;
+      font-size: 115px;
+      margin-bottom: 5px;
+    }
+    .title {
+      font-family: Futuris, sans-serif;
+      color: $text;
+      text-transform: uppercase;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  }
+
+}
+
+/*----------------------------------------------------------------------*/
+/*****************          best offers box          ********************/
+/*----------------------------------------------------------------------*/
+
+.best-offers {
+  margin-bottom: 40px;
+  .grid-list {
+    margin-bottom: 40px;
+  }
+}
+
+
+/*---------------------------------------------------------------*/
+/*****************          blog box          ********************/
+/*---------------------------------------------------------------*/
+
+.blog-section {
+  margin-bottom: 40px;
+}
+
+
+/*------------------------------------------------------------------*/
+/*****************          banners box          ********************/
+/*------------------------------------------------------------------*/
+
+.banners {
+  margin-bottom: 40px;
+  &-box {
+    margin: 0 -10px;
+    display: flex;
+    align-items: stretch;
+  }
+  .ban {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    .banner-item {
+      width: 100%;
+      padding-top: 50%;
+      position: relative;
+      figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          display: block;
+          height: 100%;
+        }
+      }
+    }
+    .info {
+      background-color: $pink;
+      display: flex;
+      height: 100%;
+      position: relative;
+      align-items: center;
+      overflow: hidden;
+      justify-content: center;
+      &:before {
+        content: "";
+        right: 0;
+        top: 0;
+        width: 200%;
+        height: 80%;
+        background: $pink_dark;
+        background: -moz-linear-gradient(top, $pink_dark 0%, $pink 100%);
+        background: -webkit-linear-gradient(top, $pink_dark 0%,$pink 100%);
+        background: linear-gradient(to bottom, $pink_dark 0%,$pink 100%);
+        position: absolute;
+        transform-origin: top right;
+        transform: rotate(-26.57deg);
+      }
+      &-text {
+        text-align: center;
+        position: relative;
+        font-size: 37px;
+        box-sizing: border-box;
+        padding: 30px;
+        max-width: 600px;
+        line-height: 1.2;
+        .title {
+          color: $border;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-family: Futuris, sans-serif;
+          margin-bottom: 30px;
+        }
+        .btns_center {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+}
+
+
+/*------------------------------------------------------------------*/
+/*****************          request box          ********************/
+/*------------------------------------------------------------------*/
+
+.home-request {
+  &--wrap {
+    padding-top: 80px;
+  }
+  &--main {
+    position: relative;
+    @extend %cover;
+    .form-request {
+      position: relative;
+      transform: translateY(-80px);
+    }
+  }
+}

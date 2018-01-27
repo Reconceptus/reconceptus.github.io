@@ -1,4 +1,4 @@
-.layout:after {content: ""; display: block; clear: both;}
+.clearfix:after {content: ""; display: block; clear: both;}
 .tableBox {
   position: absolute;
   width: 100%;
@@ -22,19 +22,6 @@
   padding: 0 40px;
   &_md {
     max-width: 1280px;
-  }
-}
-button.btn,
-.btn {
-  box-sizing: border-box;
-  font-family: 'replica_reg', sans-serif;
-  color: $white;
-  border-radius: 0;
-  text-align: center;
-  border: none;
-  display: inline-block;
-  span, i {
-    @extend %valign;
   }
 }
 

@@ -1,0 +1,49 @@
+.btn {
+  font-family: Futuris, sans-serif;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1.4;
+  display: inline-block;
+  span, i {
+    @extend %valign;
+  }
+  &_bord {
+    border-color: $white;
+    color: $white;
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+  &_subm {
+    border-color: $btn_hover;
+    background-color: $btn_hover;
+    color: $white;
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+}
+
+.more {
+  display: inline-block;
+  font-weight: 400;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $btn;
+  color: $btn;
+  font-size: 15px;
+  padding: 8px 24px;
+  min-width: 200px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.btns {
+  &_center {
+    text-align: center;
+  }
+}
+
