@@ -29,6 +29,13 @@
       white-space: nowrap;
       padding: 0 25px;
       font-size: 15px;
+      color: $white;
+      &:hover {
+        @include media(hover,1025){
+          background-color: $btn_hover;
+          border-color: $btn_hover;
+        }
+      }
     }
   }
 }

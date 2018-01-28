@@ -13,11 +13,21 @@
     align-items: center;
     color: $border;
     font-size: 18px;
+    transition: all 0.3s;
     i {
       width: 40px;
       height: 40px;
       margin-right: 10px;
       color: $bg;
+      transition: all 0.3s;
+    }
+    &:hover {
+      @include media(hover,1025){
+        color: $text;
+        i {
+          color: $border;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,141 @@
+.footer {
+  background-color: $text;
+  &--main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0;
+  }
+  &--bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid $border;
+    color: $border;
+    font-weight: 400;
+    font-size: 14px;
+    a {
+      @extend %valign;
+      color: inherit;
+      margin-left: 65px;
+      transition: all 0.3s;
+      &:hover {
+        @include media(hover,1025){
+          color: $btn;
+        }
+      }
+    }
+  }
+  .contacts {
+    width: 350px;
+    .logo {
+      display: block;
+      width: 180px;
+      margin-bottom: 15px;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        &:not(:last-child){margin-bottom: 11px;}
+      }
+      i {
+        color: $border;
+        margin-right: 10px;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        &.ico-tel {
+          padding: 3px;
+        }
+      }
+      span,a {
+        font-size: 14px;
+        font-weight: 400;
+        color: $white;
+      }
+      a {
+        transition: all 0.3s;
+        &:hover {
+          @include media(hover,1025){
+            color: $btn;
+          }
+        }
+      }
+    }
+  }
+  .subscription {
+    max-width: 600px;
+    text-align: center;
+    color: $white;
+    .title {
+      text-transform: uppercase;
+      font-family: Futuris, sans-serif;
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+    .text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+    &-form {
+      .field {
+        width: 100%;
+        display: flex;
+        font-size: 14px;
+        input {
+          width: 100%;
+          flex-shrink: 500;
+          border-radius: 4px 0 0 4px;
+          background-color: $white;
+          border: 1px solid transparent;
+          box-sizing: border-box;
+          padding: 10px 20px;
+        }
+        button {
+          color: $white;
+          border: none;
+          border-radius: 0 4px 4px 0;
+          background-color: $border;
+          font-weight: 400;
+          padding: 10px 65px;
+          transition: all 0.3s;
+          &:hover {
+            @include media(hover,1025){
+              background-color: $btn_hover;
+            }
+          }
+        }
+      }
+    }
+  }
+  .menu {
+    width: 350px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    font-size: 15px;
+    ul {
+      li {
+        &:not(:last-child){margin-bottom: 10px;}
+      }
+      a {
+        transition: all 0.3s;
+        color: $white;
+        text-transform: uppercase;
+        &:hover {
+          @include media(hover,1025){
+            color: $btn;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,8 +29,12 @@
           display: block;
           margin-right: 10px;
         }
-        input {
+        .input {
           flex-shrink: 500;
+          display: block;
+          width: 100%;
+        }
+        input {
           display: block;
           width: 100%;
         }

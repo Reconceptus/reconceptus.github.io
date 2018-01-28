@@ -19,7 +19,7 @@
     <div class="content">
         <div class="header--wrap">
             <div class="logo">
-                <a href="/"><img src="assets/svg/logo-white.svg" alt="GrecoBooking"></a>
+                <a href="index.html"><img src="assets/svg/logo-white.svg" alt="GrecoBooking"></a>
             </div>
             <nav class="nav">
                 <ul>
@@ -31,9 +31,18 @@
                     <li><a href="#" class=""><span>Contact us</span></a></li>
                 </ul>
             </nav>
+
             <div class="elements">
                 <div class="search">
-                    <span class="search-icon"><svg> <use xlink:href="assets/svg/sprite.svg#ico_search"></use> </svg></span>
+                    <div class="form" id="searchForm">
+                        <form action="#">
+                            <div class="field">
+                                <input id="searchInput" type="text" placeholder="Search">
+                            </div>
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+                    <label id="search_btn" for="searchInput" class="search-icon"><svg> <use xlink:href="assets/svg/sprite.svg#ico_search"></use> </svg></label>
                 </div>
                 <div class="language">
                     <ul>
@@ -447,63 +456,63 @@
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="arrivalDate">*Дата заезда</label>
-                                                <input id="arrivalDate" type="text" >
+                                                <div class="input"><input id="arrivalDate" type="text" ></div>
                                             </div>
                                             <div class="field">
                                                 <label for="departureDate">*Дата отъезда</label>
-                                                <input type="text" id="departureDate">
+                                                <div class="input"><input type="text" id="departureDate"></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="adults">*Взрослые</label>
-                                                <input id="adults" type="text" >
+                                                <div class="input"><input id="adults" type="text" ></div>
                                             </div>
                                             <div class="field">
                                                 <label for="childUntil12">*Дети до 12 лет</label>
-                                                <input type="text" id="childUntil12">
+                                                <div class="input"><input type="text" id="childUntil12"></div>
                                             </div>
                                             <div class="field">
                                                 <label for="babies">*Дети от 0 до 2 лет</label>
-                                                <input type="text" id="babies">
+                                                <div class="input"><input type="text" id="babies"></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="way">*Направление</label>
-                                                <input id="way" type="text" >
+                                                <div class="input"><input id="way" type="text" ></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="budget">*Бюджет в неделю, евро</label>
-                                                <input id="budget" type="text" >
+                                                <div class="input"><input id="budget" type="text" ></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="name">*Ваше имя</label>
-                                                <input id="name" type="text" >
+                                                <div class="input"><input id="name" type="text" ></div>
                                             </div>
                                             <div class="field">
                                                 <label for="telephone">*Телефон</label>
-                                                <input type="text" id="telephone">
+                                                <div class="input"><input type="text" id="telephone"></div>
                                             </div>
                                             <div class="field">
                                                 <label for="mail">*E-mail</label>
-                                                <input type="text" id="mail">
+                                                <div class="input"><input type="text" id="mail"></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="wishes">Напишите пожелания</label>
-                                                <input id="wishes" type="text" >
+                                                <div class="input"><input id="wishes" type="text" ></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="source">Откуда вы о нас узнали</label>
-                                                <input id="source" type="text" >
+                                                <div class="input"><input id="source" type="text" ></div>
                                             </div>
                                         </div>
                                         <p class="asterisk">*Обязательные поля</p>
@@ -548,7 +557,60 @@
         </div>
     </div>
 
-    
+    <footer class="footer">
+        <div class="content">
+            <div class="footer--main">
+                <div class="contacts">
+                    <a href="index.html" class="logo"><img src="assets/svg/logo-green.svg" alt="GrecoBooking"></a>
+                    <ul>
+                        <li>
+                            <i class="ico-tel"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
+                            <a href="tel:+38090500500">+38 (090) 500-500</a>
+                        </li>
+                        <li>
+                            <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
+                            <a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
+                        </li>
+                        <li>
+                            <i class="ico-adr"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-address"></use> </svg></i>
+                            <span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
+                        </li>
+                        <li>
+                            <i class="ico-mes"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
+                            <span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subscription">
+                    <h5 class="title">Подписка</h5>
+                    <div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail</div>
+                    <div class="subscription-form">
+                        <form action="#">
+                            <div class="field">
+                                <input type="text" placeholder="Ваш e-mail">
+                                <button type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">разместить виллу</a></li>
+                        <li><a href="#">условия польования</a></li>
+                        <li><a href="#">вакансии</a></li>
+                        <li><a href="#">вход</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer--bottom">
+                <div class="copyright">Grecobooking 2017</div>
+                <div class="support">
+                    <a href="#">RASE CMS</a>
+                    <a href="http://reconcept.ru">ReConcept</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!--mobile-->
 

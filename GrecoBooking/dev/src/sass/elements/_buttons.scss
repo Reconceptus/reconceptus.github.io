@@ -7,6 +7,7 @@
   font-weight: normal;
   line-height: 1.4;
   display: inline-block;
+  transition: all 0.3s;
   span, i {
     @extend %valign;
   }
@@ -15,13 +16,25 @@
     color: $white;
     padding: 10px 30px;
     font-size: 14px;
+    &:hover {
+      @include media(hover,1025){
+        background-color: $white;
+        color: $head;
+      }
+    }
   }
   &_subm {
-    border-color: $btn_hover;
-    background-color: $btn_hover;
+    border-color: $btn;
+    background-color: $btn;
     color: $white;
     padding: 10px 15px;
     font-size: 15px;
+    &:hover {
+      @include media(hover,1025){
+        background-color: $btn_hover;
+        border-color: $btn_hover;
+      }
+    }
   }
 }
 
@@ -39,6 +52,14 @@
   text-align: center;
   box-sizing: border-box;
   line-height: 1.4;
+  transition: all 0.3s;
+  &:hover {
+    @include media(hover,1025){
+      background-color: $btn_hover;
+      border-color: $btn_hover;
+      color: $white;
+    }
+  }
 }
 
 .btns {
