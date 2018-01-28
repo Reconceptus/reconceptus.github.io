@@ -1,0 +1,42 @@
+.paging {
+  &_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-list {
+    border: 1px solid $bg;
+    border-radius: 4px;
+    display: flex;
+    margin-right: 10px;
+    color: $border;
+    font-size: 17px;
+    .page-one {
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      color: inherit;
+      transition: all 0.3s;
+      &:not(:last-child){
+        border-right: 1px solid $bg;
+      }
+      &.current {color: $btn;}
+      &.prev,
+      &.next {
+        color: $bg;
+        padding: 8px;
+      }
+      &:hover {
+        @include media(hover,1025){
+          background-color: $bg;
+          color: $white;
+          &.current {color: $btn;}
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+.fast-request {
+  height: 80px;
+  background-color: $white;
+  box-shadow: 0 10px 40px 0 rgba($head,0.8);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  &--wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    min-width: 120px;
+  }
+  .fieldgroup {
+    width: 100%;
+    flex-shrink: 500;
+    margin-right: 20px;
+    display: flex;
+
+  }
+  .field {
+    width: 100%;
+  }
+}

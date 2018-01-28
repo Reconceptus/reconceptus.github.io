@@ -7,6 +7,7 @@
   font-weight: normal;
   line-height: 1.4;
   display: inline-block;
+  text-align: center;
   transition: all 0.3s;
   span, i {
     @extend %valign;
