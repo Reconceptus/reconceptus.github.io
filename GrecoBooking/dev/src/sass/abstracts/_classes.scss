@@ -32,8 +32,37 @@
   &--head {
     padding-top: 60px;
     &.villa--head {background-color: $border;}
+    &.favorite--head {
+      background: $pink_dark;
+      background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
+      background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
+      background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+    }
     header {
       padding: 40px 0;
+      position: relative;
+      .send {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        transition: all 0.3s;
+        .ico-fly {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+        }
+        &:hover {
+          @include media(hover,1025){
+            color: $btn_hover;
+          }
+        }
+      }
+
     }
 
   }
