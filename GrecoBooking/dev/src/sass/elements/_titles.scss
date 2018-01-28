@@ -7,6 +7,12 @@
     text-align: center;
     line-height: 1.6;
     .light-style & {color: $white;}
+    .villa--head &,
+    .blog-box &,
+    .simple-page--bg & {
+      font-size: 50px;
+      padding: 20px;
+    }
   }
   &_submain {
     font-family: 'Playfair Display', serif;

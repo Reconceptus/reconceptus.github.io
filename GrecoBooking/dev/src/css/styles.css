@@ -244,7 +244,7 @@ textarea {
   vertical-align: middle;
 }
 
-.grid figure, .blog-box .article figure, .villas .villa-img figure, .intro-figure figure, .offers .item a figure, .home-request--main {
+.intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .offers .item a figure, .home-request--main {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -288,6 +288,10 @@ textarea {
   max-width: 1280px;
 }
 
+.content_sm {
+  max-width: 780px;
+}
+
 .simple-page--head {
   padding-top: 60px;
 }
@@ -300,13 +304,49 @@ textarea {
   padding: 40px 0;
 }
 
-.simple-page--head .half-request {
-  height: 40px;
-  margin-bottom: 40px;
+.simple-page--bg {
+  padding-top: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 680px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.simple-page--bg .content {
+  position: relative;
 }
 
 .simple-page--main {
   padding-top: 40px;
+}
+
+.half-request:not(.double) {
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.half-request.double {
+  height: 80px;
+  margin-bottom: 80px;
+  background-color: #657482;
+}
+
+.half-request.double .fast-request {
+  -webkit-transform: translateY(40px);
+          -ms-transform: translateY(40px);
+      transform: translateY(40px);
 }
 
 @font-face {
@@ -955,6 +995,13 @@ svg {
   color: #fff;
 }
 
+.villa--head .headline_main,
+.blog-box .headline_main,
+.simple-page--bg .headline_main {
+  font-size: 50px;
+  padding: 20px;
+}
+
 .headline_submain {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -1038,6 +1085,45 @@ svg {
   }
 }
 
+.intro-figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.intro-figure figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-figure:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.intro .intro-figure:after {
+  height: 50%;
+  background: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 52, 63, 0)), to(#30343f));
+  background: -webkit-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+  background: -o-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+  background: linear-gradient(to bottom, rgba(48, 52, 63, 0) 0%, #30343f 100%);
+}
+
+.simple-page--bg .intro-figure:after {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .grid--main {
   position: absolute;
   top: 0;
@@ -1063,6 +1149,9 @@ svg {
           -webkit-flex-direction: column;
               -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
 }
 
 .grid figure {
@@ -1101,10 +1190,17 @@ svg {
 }
 
 .grid-list > li {
-  width: 33.3333%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1px;
+}
+
+.best-offers .grid-list > li {
+  width: 33.3333%;
+}
+
+.short-offers .grid-list > li {
+  width: 20%;
 }
 
 .grid-list a {
@@ -1122,11 +1218,18 @@ svg {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(48, 52, 63, 0.5);
   z-index: 1;
   -webkit-transition: background-color 0.35s;
   -o-transition: background-color 0.35s;
   transition: background-color 0.35s;
+}
+
+.best-offers .grid-list a:before {
+  background-color: rgba(48, 52, 63, 0.5);
+}
+
+.short-offers .grid-list a:before {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 1025px) {
@@ -1146,6 +1249,11 @@ svg {
   font-family: Futuris, sans-serif;
   font-size: 30px;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.short-offers .grid-list .title {
+  line-height: 1;
 }
 
 .grid-list .price {
@@ -1232,14 +1340,6 @@ svg {
 .villa-item .includes .sea i {
   width: 28px;
   height: 29px;
-}
-
-.blog-box {
-  background-color: #f0f1f3;
-}
-
-.blog-box--wrap {
-  padding-bottom: 20px;
 }
 
 .blog-box .layout {
@@ -1394,63 +1494,6 @@ svg {
   }
 }
 
-.blog-box .paging_center,
-.blog-box .btns_center {
-  margin: 20px 0;
-}
-
-.blog-box .tags {
-  margin-bottom: 15px;
-}
-
-.blog-box .tags ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          -webkit-flex-flow: row wrap;
-              -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-          -webkit-align-items: center;
-              -ms-flex-align: center;
-          align-items: center;
-  margin: 0 -5px;
-}
-
-.blog-box .tags ul li {
-  margin: 5px;
-}
-
-.blog-box .tags ul a {
-  display: block;
-  border: 1px solid #b2b9c1;
-  color: #657482;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  padding: 3px 10px;
-  white-space: nowrap;
-}
-
-.blog-box .tags ul a.active {
-  background-color: #b2b9c1;
-  color: #fff;
-}
-
-@media screen and (min-width: 1025px) {
-  .blog-box .tags ul a:hover {
-    background-color: #b2b9c1;
-    color: #fff;
-  }
-}
-
-.villas--wrap {
-  padding-bottom: 20px;
-}
-
 .villas-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1468,7 +1511,7 @@ svg {
   margin: 0 -10px;
 }
 
-.villas .villa-item {
+.villa-item {
   width: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1476,23 +1519,23 @@ svg {
   margin-bottom: 40px;
 }
 
-.villas .villa-item .includes {
+.villa-item .includes {
   color: #30343f;
   padding: 0 15px;
   font-size: 15px;
   font-weight: 400;
 }
 
-.villas .villa-item .includes i {
+.villa-item .includes i {
   color: #b2b9c1;
   margin-right: 10px;
 }
 
-.villas .villa-item .includes > span {
+.villa-item .includes > span {
   margin-right: 40px;
 }
 
-.villas .villa-img {
+.villa-img {
   width: 100%;
   height: 290px;
   position: relative;
@@ -1501,19 +1544,19 @@ svg {
   transition: all 0.3s;
 }
 
-.villas .villa-img figure {
+.villa-img figure {
   width: 100%;
   height: 100%;
 }
 
-.villas .villa-img .hashes {
+.villa-img .hashes {
   position: absolute;
   top: 20px;
   left: 0;
   max-width: 80%;
 }
 
-.villas .villa-img .hashes li {
+.villa-img .hashes li {
   color: #fff;
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
@@ -1528,7 +1571,7 @@ svg {
   height: 28px;
 }
 
-.villas .villa-img .hashes li:after {
+.villa-img .hashes li:after {
   content: "";
   position: absolute;
   left: 100%;
@@ -1540,7 +1583,7 @@ svg {
   border-width: 14px 6px;
 }
 
-.villas .villa-img .link {
+.villa-img .link {
   position: absolute;
   top: 0;
   left: 0;
@@ -1549,7 +1592,7 @@ svg {
   z-index: 1;
 }
 
-.villas .villa-img .like {
+.villa-img .like {
   position: absolute;
   z-index: 2;
   top: 7px;
@@ -1563,19 +1606,19 @@ svg {
 }
 
 @media screen and (min-width: 1025px) {
-  .villas .villa-img .like:hover {
+  .villa-img .like:hover {
     color: #fff;
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .villas .villa-img:hover {
+  .villa-img:hover {
     -webkit-box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
             box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
   }
 }
 
-.villas .villa-main {
+.villa-main {
   padding: 15px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1591,7 +1634,7 @@ svg {
           justify-content: space-between;
 }
 
-.villas .villa-main .title {
+.villa-main .title {
   text-transform: uppercase;
   color: #30343f;
   font-size: 24px;
@@ -1599,7 +1642,7 @@ svg {
   line-height: 1;
 }
 
-.villas .villa-main .title a {
+.villa-main .title a {
   color: inherit;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -1607,19 +1650,19 @@ svg {
 }
 
 @media screen and (min-width: 1025px) {
-  .villas .villa-main .title a:hover {
+  .villa-main .title a:hover {
     color: #f9690e;
   }
 }
 
-.villas .villa-main .place {
+.villa-main .place {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
   font-size: 14px;
 }
 
-.villas .villa-main .price {
+.villa-main .price {
   margin-left: 20px;
   color: #30343f;
   font-size: 24px;
@@ -1627,12 +1670,8 @@ svg {
   line-height: 1;
 }
 
-.villas .villa-main .price strong {
+.villa-main .price strong {
   font-weight: bold;
-}
-
-.villas .paging_center {
-  margin: 20px 0;
 }
 
 .single-request {
@@ -1914,37 +1953,6 @@ svg {
           -webkit-align-items: center;
               -ms-flex-align: center;
           align-items: center;
-}
-
-.intro-figure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.intro-figure figure {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.intro-figure:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 50%;
-  background: transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 52, 63, 0)), to(#30343f));
-  background: -webkit-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
-  background: -o-linear-gradient(top, rgba(48, 52, 63, 0) 0%, #30343f 100%);
-  background: linear-gradient(to bottom, rgba(48, 52, 63, 0) 0%, #30343f 100%);
 }
 
 .intro-values {
@@ -2309,4 +2317,92 @@ svg {
   -webkit-transform: translateY(-80px);
           -ms-transform: translateY(-80px);
       transform: translateY(-80px);
+}
+
+.blog-box {
+  background-color: #f0f1f3;
+}
+
+.blog-box--wrap {
+  padding-bottom: 20px;
+}
+
+.blog-box .paging_center,
+.blog-box .btns_center {
+  margin: 20px 0;
+}
+
+.blog-box .tags {
+  margin-bottom: 15px;
+}
+
+.blog-box .tags ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          -webkit-flex-flow: row wrap;
+              -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  margin: 0 -5px;
+}
+
+.blog-box .tags ul li {
+  margin: 5px;
+}
+
+.blog-box .tags ul a {
+  display: block;
+  border: 1px solid #b2b9c1;
+  color: #657482;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.blog-box .tags ul a.active {
+  background-color: #b2b9c1;
+  color: #fff;
+}
+
+@media screen and (min-width: 1025px) {
+  .blog-box .tags ul a:hover {
+    background-color: #b2b9c1;
+    color: #fff;
+  }
+}
+
+.villas--wrap {
+  padding-bottom: 20px;
+}
+
+.villas .paging_center {
+  margin: 20px 0;
+}
+
+.location-text {
+  padding: 20px 0;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.location-text blockquote {
+  color: #f9690e;
+  padding-left: 80px;
+  border-left: 1px solid #f9690e;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.7;
+  margin-bottom: 60px;
 }

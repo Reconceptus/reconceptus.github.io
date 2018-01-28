@@ -1,0 +1,42 @@
+.blog {
+  &-box {
+    background-color: $light-bg;
+    &--wrap {
+      padding-bottom: 20px;
+    }
+    .paging_center,
+    .btns_center {
+      margin: 20px 0;
+    }
+    .tags {
+      margin-bottom: 15px;
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        margin: 0 -5px;
+        li {
+          margin: 5px;
+        }
+        a {
+          display: block;
+          border: 1px solid $bg;
+          color: $border;
+          transition: all 0.3s;
+          padding: 3px 10px;
+          white-space: nowrap;
+          &.active {
+            background-color: $bg;
+            color: $white;
+          }
+          &:hover {
+            @include media(hover,1025){
+              background-color: $bg;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -23,6 +23,9 @@
   &_md {
     max-width: 1280px;
   }
+  &_sm {
+    max-width: 780px;
+  }
 }
 
 .simple-page {
@@ -32,12 +35,36 @@
     header {
       padding: 40px 0;
     }
-    .half-request {
-      height: 40px;
-      margin-bottom: 40px;
+
+  }
+  &--bg {
+    padding-top: 60px;
+    box-sizing: border-box;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .content {
+      position: relative;
     }
   }
   &--main {
     padding-top: 40px;
+  }
+}
+
+.half-request {
+  &:not(.double) {
+    height: 40px;
+    margin-bottom: 40px;
+  }
+  &.double {
+    height: 80px;
+    margin-bottom: 80px;
+    background-color: $border;
+    .fast-request {
+      transform: translateY(40px);
+    }
   }
 }
