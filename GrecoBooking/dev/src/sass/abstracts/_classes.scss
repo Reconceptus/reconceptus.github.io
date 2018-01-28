@@ -77,6 +77,14 @@
     .content {
       position: relative;
     }
+    .article-data {
+      margin-top: 40px;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      time {margin-right: 40px;}
+    }
   }
   &--main {
     padding-top: 40px;

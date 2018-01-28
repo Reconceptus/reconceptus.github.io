@@ -387,6 +387,27 @@ textarea {
   position: relative;
 }
 
+.simple-page--bg .article-data {
+  margin-top: 40px;
+  color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.simple-page--bg .article-data time {
+  margin-right: 40px;
+}
+
 .simple-page--main {
   padding-top: 40px;
 }
@@ -983,6 +1004,7 @@ svg {
 .simple-page--bg .headline_main {
   font-size: 50px;
   padding: 20px;
+  line-height: 1.2;
 }
 
 .headline_submain {
@@ -1369,6 +1391,34 @@ svg {
   align-self: center;
 }
 
+.blog-box .layout_lg .article .title {
+  margin-bottom: 30px;
+}
+
+.blog-box .layout_sm li {
+  margin-top: 20px;
+  width: 20%;
+}
+
+.blog-box .layout_sm .article {
+  height: 100%;
+}
+
+.blog-box .layout_sm .article figure {
+  width: 100%;
+  padding-top: 66.76%;
+  height: 0;
+}
+
+.blog-box .layout_sm .article .head {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
 .blog-box .article {
   background-color: #FFF;
   border-bottom: 1px solid #B2B9C1;
@@ -1394,7 +1444,6 @@ svg {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
   line-height: 1.2;
-  margin-bottom: 30px;
   font-size: 16px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -2304,6 +2353,49 @@ svg {
   margin-bottom: 60px;
 }
 
+.location-text blockquote:not(:first-child) {
+  margin-top: 60px;
+}
+
+.location-text h2 {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 39px;
+  color: #30343F;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.location-text h3 {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 29px;
+  color: #30343F;
+  line-height: 1.2;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.location-text img {
+  margin: 40px 0;
+  display: block;
+  width: 1200px;
+  height: auto;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  max-width: 1200px;
+}
+
+.location-text a {
+  color: #F9690E;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
 @media screen and (min-width: 1025px) {
   .simple-page--head header .send:hover {
     color: #EE6309;
@@ -2435,5 +2527,9 @@ svg {
   .blog-box .tags ul a:hover {
     background-color: #B2B9C1;
     color: #FFF;
+  }
+
+  .location-text a:hover {
+    color: #EE6309;
   }
 }
