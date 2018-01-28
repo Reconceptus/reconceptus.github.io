@@ -1,12 +1,7 @@
 .blog {
   &-box {
     background-color: $light-bg;
-    &--head {
-      padding-top: 60px;
-      header {
-        padding: 40px 0;
-      }
-    }
+
     &--wrap {
       padding-bottom: 20px;
     }
@@ -121,7 +116,10 @@
           transition: all 0.3s;
           padding: 3px 10px;
           white-space: nowrap;
-          &.active,
+          &.active {
+            background-color: $bg;
+            color: $white;
+          }
           &:hover {
             @include media(hover,1025){
               background-color: $bg;

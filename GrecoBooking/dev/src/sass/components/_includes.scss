@@ -22,6 +22,10 @@
         width: 26px;
         height: 21px;
       }
+      .villa-item & {
+        width: 26px;
+        height: 21px;
+      }
     }
 
   }
@@ -31,11 +35,19 @@
         width: 32px;
         height: 28px;
       }
+      .villa-item & {
+        width: 32px;
+        height: 28px;
+      }
     }
   }
   .sea {
     i {
       .grid & {
+        width: 28px;
+        height: 29px;
+      }
+      .villa-item & {
         width: 28px;
         height: 29px;
       }

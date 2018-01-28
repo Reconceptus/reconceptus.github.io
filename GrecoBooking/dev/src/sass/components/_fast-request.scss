@@ -1,9 +1,10 @@
 .fast-request {
   height: 80px;
   background-color: $white;
-  box-shadow: 0 10px 40px 0 rgba($head,0.8);
+  box-shadow: 0 5px 40px 0 rgba($border,0.6);
   box-sizing: border-box;
   padding: 10px 20px;
+  position: relative;
   &--wrap {
     display: flex;
     justify-content: space-between;
