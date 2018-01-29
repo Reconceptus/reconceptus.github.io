@@ -13,5 +13,5 @@ yarn-error.log
 Будет удалено .env.example
 Будет удалено .gitattributes
 Будет удалено .gitignore
-Будет удалено .vscode/
+.vscode/
 
