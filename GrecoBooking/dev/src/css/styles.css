@@ -288,6 +288,10 @@ textarea {
   max-width: 1280px;
 }
 
+.content_mx {
+  max-width: 980px;
+}
+
 .content_sm {
   max-width: 780px;
 }
@@ -1057,6 +1061,7 @@ svg {
 
 .light-style .headline_main {
   color: #fff;
+  text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
 .villa--head .headline_main,
@@ -2546,4 +2551,9 @@ svg {
   .location-text a:hover {
     color: #ee6309;
   }
+}
+
+.workers-box {
+  background-color: #f0f1f3;
+  padding: 40px 0;
 }

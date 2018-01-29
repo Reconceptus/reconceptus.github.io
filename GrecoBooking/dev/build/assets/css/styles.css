@@ -310,6 +310,10 @@ textarea {
   max-width: 1280px;
 }
 
+.content_mx {
+  max-width: 980px;
+}
+
 .content_sm {
   max-width: 780px;
 }
@@ -997,6 +1001,7 @@ svg {
 
 .light-style .headline_main {
   color: #FFF;
+  text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
 .villa--head .headline_main,
@@ -2394,6 +2399,11 @@ svg {
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.workers-box {
+  background-color: #F0F1F3;
+  padding: 40px 0;
 }
 
 @media screen and (min-width: 1025px) {

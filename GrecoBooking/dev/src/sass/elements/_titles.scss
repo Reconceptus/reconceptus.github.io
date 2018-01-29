@@ -6,7 +6,10 @@
     color: $text;
     text-align: center;
     line-height: 1.6;
-    .light-style & {color: $white;}
+    .light-style & {
+      color: $white;
+      text-shadow: 0 3px 5px RGBA(0,0,0,.4);
+    }
     .villa--head &,
     .blog-box &,
     .simple-page--bg & {
