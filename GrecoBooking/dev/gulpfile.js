@@ -44,6 +44,13 @@ gulp.task('imagemin', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+/* media */
+
+gulp.task('media', function(){
+    gulp.src(['src/media/*.*'])
+        .pipe(gulp.dest('build/assets/media'))
+});
+
 
 /* builders */
 
