@@ -11,6 +11,9 @@
     "jquery": [
       "dist/*.js"
     ],
+    "jquery-ui": [
+      "ui/**/*.js"
+    ],
     "select2": [
       "dist/js/*.js",
       "dist/css/*.css"

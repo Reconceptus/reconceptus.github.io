@@ -36,12 +36,31 @@ $(document).ready(function () {
         })
     }
 
+    function datePicker() {
+
+        var dates = $("#arrivalDate, #departureDate").datepicker({
+            // appendTo: ".search-field",
+            defaultDate: "+1w",
+            changeMonth: true,
+            numberOfMonths: 2,
+            onSelect: function(selectedDate){
+                var option = this.id == "from" ? "minDate" : "maxDate",
+                    instance = $( this ).data( "datepicker" ),
+                    date = $.datepicker.parseDate(
+                        instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
+                        selectedDate, instance.settings);
+                dates.not(this).datepicker("option", option, date);
+            }
+        });
+    }
+
     /* --------------------------------- document load --------------------------------- */
 
     showSearch();
     documentClick();
 
     if($('select').length > 0){select2({});}
+    if($('[data-picker-full]').length > 0){datePicker({});}
 
     /* --------------------------------- document resize --------------------------------- */
 
