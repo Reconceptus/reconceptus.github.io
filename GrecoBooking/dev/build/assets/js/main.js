@@ -37,14 +37,30 @@ $(document).ready(function () {
     }
 
     function datePicker() {
-
+        var dateToday = new Date();
         var dates = $("#arrivalDate, #departureDate").datepicker({
-            // appendTo: ".search-field",
-            defaultDate: "+1w",
-            changeMonth: true,
+            changeMonth:true,
+            changeYear:true,
             numberOfMonths: 2,
+            minDate: dateToday,
+            beforeShow:function () {
+                var picker = $('#picker'),
+                    pickerOffset = picker.offset().top,
+                    scrollTop = $(window).scrollTop(),
+                    needScroll = pickerOffset-350;
+
+                if(scrollTop > needScroll){
+                    picker.addClass('down');
+                }
+                else {picker.addClass('up');}
+                picker.addClass('show');
+                $('#picker .calendar').prepend($('#ui-datepicker-div'));
+            },
+            onClose: function () {
+                $('#picker').removeClass('show up down');
+            },
             onSelect: function(selectedDate){
-                var option = this.id == "from" ? "minDate" : "maxDate",
+                var option = this.id == "arrivalDate" ? "minDate" : "maxDate",
                     instance = $( this ).data( "datepicker" ),
                     date = $.datepicker.parseDate(
                         instance.settings.dateFormat || $.datepicker._defaults.dateFormat,

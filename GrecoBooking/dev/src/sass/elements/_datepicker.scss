@@ -1,0 +1,196 @@
+@import "../vendors/jquery-ui-datepicker";
+
+#picker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  .calendar > .ui-datepicker {
+    width: 720px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+  &.show {
+    .calendar {
+      display: block;
+    }
+  }
+}
+
+.calendar {
+
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 3;
+  background-color: $white;
+  box-shadow: 0 5px 20px 0 rgba($head,0.4);
+  border: 1px solid $bg;
+  display: none;
+  .up & {
+    bottom: 100%;
+  }
+  .down & {
+    top: 100%;
+  }
+  .annotation {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    border-top: 1px solid $bg;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: $text;
+    span {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      font-size: 17px;
+      font-weight: 300;
+      &.closed {
+        text-align: right;
+        color: $bg;
+      }
+    }
+  }
+  .ui-datepicker {
+    color: $text;
+    z-index: 1;
+    position: relative;
+    td {
+      text-align: center;
+      border: 1px solid $white;
+      padding: 0;
+      font-weight: 300;
+      font-size: 18px;
+      width: 40px;
+      a, span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        color: inherit;
+      }
+      &.ui-datepicker-unselectable {
+        color: $bg;
+        cursor: default;
+      }
+    }
+    th {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 1px solid $white;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: $light-bg;
+        text-transform: lowercase;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+
+    .ui-datepicker-next,
+    .ui-datepicker-prev {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      bottom: 0;
+      top: auto;
+      cursor: pointer;
+      span {
+        display: none;
+      }
+      &:before {
+        content: "";
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 10px;
+        height: 20px;
+        background-position: 0 0;
+        background-size: 100% auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+    .ui-datepicker-prev {
+      left: -4px;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2010%2018%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20d%3D%22m10%200l-9%209%209%209%22/%3E%3C/svg%3E');
+      }
+    }
+    .ui-datepicker-next {
+      right: -4px;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2021%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20d%3D%22M1%201%2011%2011%201%2021%22/%3E%3C/svg%3E');
+      }
+    }
+    .ui-datepicker-title {
+      height: 40px;
+      font-size: 17px;
+      color: $text;
+      margin: 0;
+      select {
+        box-sizing: border-box;
+        border: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        width: auto;
+        padding: 0 20px 0 5px;
+        margin: 0 5px;
+        display: inline-block;
+        vertical-align: middle;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%225%22%20height%3D%224%22%20viewBox%3D%220%200%20500%20336%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23657482%22%20d%3D%22M0%200%20250%20336%20500%200z%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-size: 8px auto;
+        background-position: 90% center;
+      }
+    }
+    &-calendar {
+      .ui-state-hover {
+        background-color: $btn;
+        color: $white;
+      }
+    }
+    &-header {
+      width: 280px;
+      margin: auto;
+      box-sizing: border-box;
+      padding: 0 40px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    &-group {
+      padding-top: 5px;
+    }
+    &-group-first {
+      box-sizing: border-box;
+      border-right: 1px solid $bg;
+    }
+    &-multi {
+      position: relative;
+      padding: 0 0 40px;
+      .ui-datepicker-group table {
+        width: 280px;
+      }
+    }
+  }
+
+}
+

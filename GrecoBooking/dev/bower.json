@@ -12,11 +12,11 @@
       "dist/*.js"
     ],
     "jquery-ui": [
-      "ui/**/*.js"
+      "ui/widgets/datepicker.js",
+      "ui/i18n/datepicker-ru.js"
     ],
     "select2": [
-      "dist/js/*.js",
-      "dist/css/*.css"
+      "dist/js/*.js"
     ]
   }
 }
