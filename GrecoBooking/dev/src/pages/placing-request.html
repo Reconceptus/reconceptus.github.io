@@ -1,67 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta content="width=device-width" name="viewport">
-    <meta name="author" content="enenkoff@mail.ru">
-    <title>Grecobooking</title>
-    <link rel="icon" href="favicon.ico" sizes="32x32">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-    <link href="assets/css/styles.min.css" rel="stylesheet">
-    <link href="assets/css/common.css" rel="stylesheet">
+<include src="../templates/head.html" title="Grecobooking"></include>
 
-
-</head>
-<body>
-<div id="wrapper">
-
-<header id="header" class="header">
-    <div class="content">
-        <div class="header--wrap">
-            <div class="logo">
-                <a href="index.html"><img src="assets/svg/logo-white.svg" alt="GrecoBooking"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="villas.html" class=""><span>Villas+</span></a></li>
-                    <li><a href="favorite.html" class=""><span>Favorites</span><span class="cnt">12</span></a></li>
-                    <li><a href="location.html" class=""><span>Locations+</span></a></li>
-                    <li><a href="blog.html" class=""><span>Blog+</span></a></li>
-                    <li><a href="about.html" class=""><span>About us</span></a></li>
-                    <li><a href="#" class=""><span>Contact us</span></a></li>
-                </ul>
-            </nav>
-
-            <div class="elements">
-                <div class="search">
-                    <div class="form" id="searchForm">
-                        <form action="#">
-                            <div class="field">
-                                <input id="searchInput" type="text" placeholder="Search">
-                            </div>
-                            <button type="submit"></button>
-                        </form>
-                    </div>
-                    <label id="search_btn" for="searchInput" class="search-icon"><svg> <use xlink:href="assets/svg/sprite.svg#ico_search"></use> </svg></label>
-                </div>
-                <div class="language">
-                    <ul>
-                        <li class="current"><a href="#">EN</a></li>
-                        <li><a href="#">RU</a></li>
-                    </ul>
-                </div>
-                <div class="request">
-                    <a href="selection-request.html" class="btn btn_bord">selection request</a>
-                </div>
-                <!--<span id="burger" class="burger">-->
-                <!--<span></span>-->
-            <!--</span>-->
-            </div>
-        </div>
-
-    </div>
-</header>
-
+<include src="../templates/header.html"></include>
 
 
     <div id="main">
@@ -189,73 +128,12 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="content">
-            <div class="footer--main">
-                <div class="contacts">
-                    <a href="index.html" class="logo"><img src="assets/svg/logo-green.svg" alt="GrecoBooking"></a>
-                    <ul>
-                        <li>
-                            <i class="ico-tel"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
-                            <a href="tel:+38090500500">+38 (090) 500-500</a>
-                        </li>
-                        <li>
-                            <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
-                            <a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
-                        </li>
-                        <li>
-                            <i class="ico-adr"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-address"></use> </svg></i>
-                            <span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
-                        </li>
-                        <li>
-                            <i class="ico-mes"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
-                            <span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="subscription">
-                    <h3 class="title">Подписка</h3>
-                    <div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail</div>
-                    <div class="subscription-form">
-                        <form action="#">
-                            <div class="field">
-                                <input type="text" placeholder="Ваш e-mail">
-                                <button type="submit">Отправить</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#" class="active">разместить виллу</a></li>
-                        <li><a href="#" class="">условия пользования</a></li>
-                        <li><a href="vacancies.html" class="">вакансии</a></li>
-                        <li><a href="#">вход</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer--bottom">
-                <div class="copyright">Grecobooking 2017</div>
-                <div class="support">
-                    <a href="#">RASE CMS</a>
-                    <a href="http://reconcept.ru">ReConcept</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <include src="../templates/footer.html" vil="active"></include>
 
     <!--mobile-->
 
 
-</div>
-<script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>
-
-<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>
-<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>
-<script type="text/javascript" src="assets/js/libs.min.js"></script>
-<script type="text/javascript" src="assets/js/main.min.js"></script>
-
+<include src="../templates/scripts.html"></include>
 
 </body>
 </html>

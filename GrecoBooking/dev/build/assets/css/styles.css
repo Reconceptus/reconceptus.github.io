@@ -261,6 +261,7 @@ textarea {
   vertical-align: middle;
 }
 
+.simple-page--head.placing--request,
 .intro-figure figure,
 .grid figure,
 .blog-box .article figure,
@@ -333,6 +334,26 @@ textarea {
   background: -webkit-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
   background: -o-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
   background: linear-gradient(to right, #FDE4DB 0%, #F9BBA5 100%);
+}
+
+.simple-page--head.placing--request {
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.simple-page--head.placing--request > * {
+  position: relative;
+  z-index: 1;
+}
+
+.simple-page--head.placing--request:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background-color: RGBA(0, 0, 0, 0.5);
 }
 
 .simple-page--head header {
@@ -1009,6 +1030,7 @@ svg {
   text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
+.placing--request .headline_main,
 .villa--head .headline_main,
 .blog-box .headline_main,
 .simple-page--bg .headline_main {
@@ -4314,6 +4336,12 @@ svg {
 
 .selection-request header {
   margin-bottom: 40px;
+}
+
+.vacancy-box .placing-form {
+  margin-top: -120px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 @media screen and (min-width: 1025px) {

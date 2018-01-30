@@ -41,6 +41,24 @@
       background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
       background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
     }
+    &.placing--request {
+      padding-bottom: 80px;
+      position: relative;
+      @extend %cover;
+      & > * {
+        position: relative;
+        z-index: 1;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        background-color: rgba($black,0.5);
+      }
+    }
     header {
       padding: 40px 0;
       position: relative;
