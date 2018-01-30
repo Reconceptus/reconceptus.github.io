@@ -355,7 +355,7 @@ textarea {
   padding-top: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 680px;
+  min-height: 680px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3249,9 +3249,34 @@ svg {
   border-top: 1px solid #b2b9c1;
 }
 
+.form-request .form-box .fieldset.pickerfields {
+  position: relative;
+}
+
+.form-request .form-box .fieldset.pickerfields:after {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%20169%20169%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m95%2031c-4-3-4-9%200-12%203-3%208-3%2012%200l59%2060c4%203%204%208%200%2012l-59%2059c-4%204-9%204-12%200-4-3-4-8%200-12l45-45h-132c-4%200-8-4-8-8%200-5%204-9%208-9h132l-45-45%22%20fill%3D%22%23f9690e%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 18px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-position: center center;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+}
+
 .form-request .form-box .fieldset.pickerfields > .field {
   position: relative;
   z-index: 2;
+}
+
+.form-request .form-box .fieldset.pickerfields > .field:first-child {
+  margin-right: 60px;
 }
 
 .form-request .form-box .field {
@@ -4440,4 +4465,12 @@ svg {
   .vacancy-quotes .text .contacts a:hover {
     color: #f9690e;
   }
+}
+
+.selection-request {
+  padding: 40px 0 100px;
+}
+
+.selection-request header {
+  margin-bottom: 40px;
 }

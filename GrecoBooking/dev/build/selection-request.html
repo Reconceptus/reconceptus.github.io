@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width" name="viewport">
+    <meta name="author" content="enenkoff@mail.ru">
+    <title>Grecobooking</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div id="wrapper">
+
+<header id="header" class="header">
+    <div class="content">
+        <div class="header--wrap">
+            <div class="logo">
+                <a href="index.html"><img src="assets/svg/logo-white.svg" alt="GrecoBooking"></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="villas.html" class=""><span>Villas+</span></a></li>
+                    <li><a href="favorite.html" class=""><span>Favorites</span><span class="cnt">12</span></a></li>
+                    <li><a href="location.html" class=""><span>Locations+</span></a></li>
+                    <li><a href="blog.html" class=""><span>Blog+</span></a></li>
+                    <li><a href="about.html" class=""><span>About us</span></a></li>
+                    <li><a href="#" class=""><span>Contact us</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="elements">
+                <div class="search">
+                    <div class="form" id="searchForm">
+                        <form action="#">
+                            <div class="field">
+                                <input id="searchInput" type="text" placeholder="Search">
+                            </div>
+                            <button type="submit"></button>
+                        </form>
+                    </div>
+                    <label id="search_btn" for="searchInput" class="search-icon"><svg> <use xlink:href="assets/svg/sprite.svg#ico_search"></use> </svg></label>
+                </div>
+                <div class="language">
+                    <ul>
+                        <li class="current"><a href="#">EN</a></li>
+                        <li><a href="#">RU</a></li>
+                    </ul>
+                </div>
+                <div class="request">
+                    <a href="selection-request.html" class="btn btn_bord">selection request</a>
+                </div>
+                <!--<span id="burger" class="burger">-->
+                <!--<span></span>-->
+            <!--</span>-->
+            </div>
+        </div>
+
+    </div>
+</header>
+
+
+
+    <div id="main">
+        <section class="simple-page--bg">
+            <div class="intro-figure">
+                <figure style="background-image: url('assets/images/bg/Navagio-beach-featured.jpg')"></figure>
+            </div>
+            <div class="selection-request">
+                <div class="content">
+                    <header class="light-style">
+                        <h3 class="headline_main">SELECTION REQUEST</h3>
+                    </header>
+                    <div class="form-request">
+                        <div class="form">
+                            <form action="#">
+                                <div class="form-box">
+                                    <div class="fieldset pickerfields">
+                                        <div class="field">
+                                            <label for="arrivalDate">*Дата заезда</label>
+                                            <div class="input"><input id="arrivalDate" type="text" data-picker-full></div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="departureDate">*Дата отъезда</label>
+                                            <div class="input"><input type="text" id="departureDate" data-picker-full></div>
+                                        </div>
+                                        <div id="picker">
+                                            <div class="calendar">
+                                                <div class="annotation">
+                                                    <span class="closed">Занято</span>
+                                                    <span class="opened">Свободно</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="adults">*Взрослые</label>
+                                            <div class="select">
+                                                <select name="adults" id="adults">
+                                                    <option value=""></option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="childUntil12">*Дети до 12 лет</label>
+                                            <div class="select">
+                                                <select name="childUntil12" id="childUntil12">
+                                                    <option value=""></option>
+                                                    <option value="Нет">Нет</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="babies">*Дети от 0 до 2 лет</label>
+                                            <div class="select">
+                                                <select name="babies" id="babies">
+                                                    <option value=""></option>
+                                                    <option value="Нет">Нет</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="way">*Направление</label>
+                                            <div class="select">
+                                                <select name="way" id="way">
+                                                    <option value=""></option>
+                                                    <option value="Все направления">Все направления</option>
+                                                    <option value="Афинское побережье">Афинское побережье</option>
+                                                    <option value="Закинтос">Закинтос</option>
+                                                    <option value="Крит">Крит</option>
+                                                    <option value="Материковая Греция">Материковая Греция</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="budget">*Бюджет в неделю, евро</label>
+                                            <div class="input"><input id="budget" type="text" ></div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="name">*Ваше имя</label>
+                                            <div class="input"><input id="name" type="text" ></div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="telephone">*Телефон</label>
+                                            <div class="input"><input type="text" id="telephone"></div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="mail">*E-mail</label>
+                                            <div class="input"><input type="text" id="mail"></div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="wishes">Напишите пожелания</label>
+                                            <div class="input"><input id="wishes" type="text" ></div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldset">
+                                        <div class="field">
+                                            <label for="source">Откуда вы о нас узнали</label>
+                                            <div class="input"><input id="source" type="text" ></div>
+                                        </div>
+                                    </div>
+                                    <p class="asterisk">*Обязательные поля</p>
+                                    <button class="btn btn_subm" type="submit">Отправить запрос</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <div class="sharing">
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fb"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-fb"></use> </svg></i>
+                            <span>2356</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="gp"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-google"></use> </svg></i>
+                            <span>355</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tw"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-tw"></use> </svg></i>
+                            <span>45</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="vk"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-vk"></use> </svg></i>
+                            <span>233</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content">
+            <div class="footer--main">
+                <div class="contacts">
+                    <a href="index.html" class="logo"><img src="assets/svg/logo-green.svg" alt="GrecoBooking"></a>
+                    <ul>
+                        <li>
+                            <i class="ico-tel"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
+                            <a href="tel:+38090500500">+38 (090) 500-500</a>
+                        </li>
+                        <li>
+                            <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
+                            <a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
+                        </li>
+                        <li>
+                            <i class="ico-adr"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-address"></use> </svg></i>
+                            <span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
+                        </li>
+                        <li>
+                            <i class="ico-mes"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
+                            <span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="subscription">
+                    <h3 class="title">Подписка</h3>
+                    <div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail</div>
+                    <div class="subscription-form">
+                        <form action="#">
+                            <div class="field">
+                                <input type="text" placeholder="Ваш e-mail">
+                                <button type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#" class="">разместить виллу</a></li>
+                        <li><a href="#" class="">условия пользования</a></li>
+                        <li><a href="vacancies.html" class="">вакансии</a></li>
+                        <li><a href="#">вход</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer--bottom">
+                <div class="copyright">Grecobooking 2017</div>
+                <div class="support">
+                    <a href="#">RASE CMS</a>
+                    <a href="http://reconcept.ru">ReConcept</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--mobile-->
+
+
+</div>
+<script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>
+
+<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>
+<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+<script type="text/javascript" src="assets/js/libs.min.js"></script>
+<script type="text/javascript" src="assets/js/main.min.js"></script>
+
+
+</body>
+</html>
