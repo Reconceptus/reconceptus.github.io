@@ -10,6 +10,10 @@
   "preen": {
     "jquery": [
       "dist/*.js"
+    ],
+    "select2": [
+      "dist/js/*.js",
+      "dist/css/*.css"
     ]
   }
 }

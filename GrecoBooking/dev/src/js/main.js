@@ -25,13 +25,23 @@ $(document).ready(function () {
                 }
             }
         })
+    }
 
+    function select2() {
+        $('select').each(function () {
+            $(this).select2({
+                dropdownCssClass: 'custom-select',
+                minimumResultsForSearch: Infinity
+            });
+        })
     }
 
     /* --------------------------------- document load --------------------------------- */
 
     showSearch();
     documentClick();
+
+    if($('select').length > 0){select2({});}
 
     /* --------------------------------- document resize --------------------------------- */
 

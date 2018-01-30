@@ -1738,7 +1738,6 @@ svg {
 }
 
 .form-request .form-box .fieldset {
-  padding: 8px 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1772,8 +1771,10 @@ svg {
   white-space: nowrap;
   display: block;
   margin-right: 10px;
+  padding: 8px 0;
 }
 
+.form-request .form-box .field .select,
 .form-request .form-box .field .input {
   -webkit-flex-shrink: 500;
   -ms-flex-negative: 500;
@@ -1785,6 +1786,13 @@ svg {
 .form-request .form-box .field input {
   display: block;
   width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 40px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .form-request .form-box .asterisk {
@@ -1795,6 +1803,71 @@ svg {
   text-align: center;
   width: 100%;
   padding: 20px 15px;
+}
+
+.select *:focus {
+  outline: none;
+}
+
+.select .select2-hidden-accessible {
+  position: absolute;
+  opacity: 0;
+}
+
+.select .select2-container {
+  min-width: 100%;
+}
+
+.select .select2-container--default .select2-selection--single {
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.select .select2-container--default .select2-selection--single .select2-selection__arrow {
+  display: none;
+}
+
+.select .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 1.4;
+  color: #30343F;
+}
+
+.select2-container--open .select2-dropdown--below.custom-select {
+  border-color: #B2B9C1;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border-top-style: solid;
+  border-top-width: 1px;
+  -webkit-box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
+  box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
+}
+
+.select2-container--default .custom-select .select2-results__option--highlighted[aria-selected] {
+  padding: 0;
+  background-color: #FDE4DB;
+  color: #30343F;
+}
+
+.custom-select .select2-dropdown {
+  border-color: #B2B9C1;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+.custom-select .select2-results__option {
+  text-align: center;
+  padding: 0 10px;
+  line-height: 30px;
 }
 
 .fast-request {

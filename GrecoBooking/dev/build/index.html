@@ -81,7 +81,16 @@
                                 <div class="fieldgroup">
                                     <div class="field">
                                         <label for="f_way">location</label>
-                                        <div class="input"><input id="f_way" type="text" ></div>
+                                        <div class="select">
+                                            <select name="f_way" id="f_way">
+                                                <option value=""></option>
+                                                <option value="Все направления">Все направления</option>
+                                                <option value="Афинское побережье">Афинское побережье</option>
+                                                <option value="Закинтос">Закинтос</option>
+                                                <option value="Крит">Крит</option>
+                                                <option value="Материковая Греция">Материковая Греция</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="field">
                                         <label for="check_in">check-in</label>
@@ -93,7 +102,15 @@
                                     </div>
                                     <div class="field">
                                         <label for="rooms">rooms</label>
-                                        <div class="input"><input id="rooms" type="text" ></div>
+                                        <div class="select">
+                                            <select name="rooms" id="rooms">
+                                                <option value=""></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="field">
                                         <div class="check">
@@ -497,21 +514,56 @@
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="adults">*Взрослые</label>
-                                                <div class="input"><input id="adults" type="text" ></div>
+                                                <div class="select">
+                                                    <select name="adults" id="adults">
+                                                        <option value=""></option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="field">
                                                 <label for="childUntil12">*Дети до 12 лет</label>
-                                                <div class="input"><input type="text" id="childUntil12"></div>
+                                                <div class="select">
+                                                    <select name="childUntil12" id="childUntil12">
+                                                        <option value=""></option>
+                                                        <option value="Нет">Нет</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="field">
                                                 <label for="babies">*Дети от 0 до 2 лет</label>
-                                                <div class="input"><input type="text" id="babies"></div>
+                                                <div class="select">
+                                                    <select name="babies" id="babies">
+                                                        <option value=""></option>
+                                                        <option value="Нет">Нет</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="way">*Направление</label>
-                                                <div class="input"><input id="way" type="text" ></div>
+                                                <div class="select">
+                                                    <select name="way" id="way">
+                                                        <option value=""></option>
+                                                        <option value="Все направления">Все направления</option>
+                                                        <option value="Афинское побережье">Афинское побережье</option>
+                                                        <option value="Закинтос">Закинтос</option>
+                                                        <option value="Крит">Крит</option>
+                                                        <option value="Материковая Греция">Материковая Греция</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
@@ -647,7 +699,9 @@
 
 
 </div>
+<link href="assets/js/bower/select2/dist/css/select2.min.css" rel="stylesheet">
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>
 <script type="text/javascript" src="assets/js/libs.min.js"></script>
 <script type="text/javascript" src="assets/js/main.min.js"></script>
 
