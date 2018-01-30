@@ -90,6 +90,7 @@ gulp.task('browser-sync',function () {
     browserSync({
         server: 'build',
         host: 'localhost',
+        browser: 'chrome',
         port: 3377,
         notify: false
     })

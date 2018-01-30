@@ -1,0 +1,71 @@
+.text-box {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  blockquote {
+    color: $btn;
+    padding-left: 80px;
+    border-left: 1px solid $btn;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+    &:not(:first-child){
+      margin-top: 60px;
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    font-size: 39px;
+    color: $text;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    font-size: 29px;
+    color: $text;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    &:not(:first-child){margin-top: 25px;}
+  }
+  img {
+    margin: 40px 0;
+    display: block;
+    width: 1200px;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1200px;
+  }
+  a {
+    color: $btn;
+    transition: all 0.2s;
+    &:hover {
+      @include media(hover,1025){
+        color: $btn_hover;
+      }
+    }
+  }
+  ul {
+    li {
+      padding-left: 40px;
+      position: relative;
+      &:before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        background-color: $text;
+        border-radius: 50%;
+        left: 0;
+        top: 10px;
+        position: absolute;
+      }
+    }
+  }
+}
