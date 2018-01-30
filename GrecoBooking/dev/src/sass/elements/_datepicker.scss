@@ -1,5 +1,6 @@
 @import "../vendors/jquery-ui-datepicker";
 
+#fastpicker,
 #picker {
   position: absolute;
   left: 0;
@@ -179,13 +180,19 @@
     &-group {
       padding-top: 5px;
     }
-    &-group-first {
-      box-sizing: border-box;
-      border-right: 1px solid $bg;
-    }
     &-multi {
       position: relative;
       padding: 0 0 40px;
+      &:before {
+        content: "";
+        top: 0;
+        bottom: 40px;
+        left: 50%;
+        width: 1px;
+        background-color: $bg;
+        position: absolute;
+        margin: auto;
+      }
       .ui-datepicker-group table {
         width: 280px;
       }

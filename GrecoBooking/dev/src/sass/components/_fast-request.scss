@@ -3,7 +3,7 @@
   background-color: $white;
   box-shadow: 0 5px 40px 0 rgba($border,0.6);
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10px 20px 10px 0;
   position: relative;
   &--wrap {
     display: flex;
@@ -20,11 +20,103 @@
   .fieldgroup {
     width: 100%;
     flex-shrink: 500;
-    margin-right: 20px;
     display: flex;
-
+    align-items: center;
   }
   .field {
-    width: 100%;
+    width: 20%;
+    position: relative;
+    font-size: 15px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 5px;
+    height: 55px;
+    &:not(:last-child){
+      border-right: 1px solid $bg;
+    }
+    label {
+      font-size: 15px;
+      line-height: 15px;
+      display: block;
+      color: $border;
+      font-weight: 400;
+    }
+  }
+  .input,
+  .select {
+    font-size: 20px;
+  }
+  .input {
+    display: flex;
+    align-items: center;
+    input {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      height: 40px;
+    }
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+    label {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      padding-left: 30px;
+      cursor: pointer;
+      span {
+        position: relative;
+        display: block;
+        user-select: none;
+        &:before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          border: 1px solid $bg;
+          position: absolute;
+          right: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto 14px auto 0;
+        }
+      }
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      z-index: -1;
+      visibility: hidden;
+      &:checked ~ {
+        span {
+          &:after {
+            content: "";
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2211%22%20viewBox%3D%220%200%201600%201119%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23f9690e%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%22233%22%20d%3D%22m116%20609l394%20393%20974-885%22/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 100% auto;
+            right: 100%;
+            top: 0;
+            bottom: 1px;
+            margin: auto 16px auto 0;
+          }
+        }
+      }
+    }
+
   }
 }

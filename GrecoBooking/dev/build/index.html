@@ -79,6 +79,14 @@
                         <form action="#">
                             <div class="fast-request--wrap">
                                 <div class="fieldgroup">
+                                    <div id="fastpicker">
+                                        <div class="calendar">
+                                            <div class="annotation">
+                                                <span class="closed">Занято</span>
+                                                <span class="opened">Свободно</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="field">
                                         <label for="f_way">location</label>
                                         <div class="select">
@@ -94,11 +102,11 @@
                                     </div>
                                     <div class="field">
                                         <label for="check_in">check-in</label>
-                                        <div class="input"><input id="check_in" type="text" ></div>
+                                        <div class="input"><input id="check_in" type="text" data-picker-fast></div>
                                     </div>
                                     <div class="field">
                                         <label for="check_out">check-out</label>
-                                        <div class="input"><input type="text" id="check_out"></div>
+                                        <div class="input"><input type="text" id="check_out" data-picker-fast></div>
                                     </div>
                                     <div class="field">
                                         <label for="rooms">rooms</label>
