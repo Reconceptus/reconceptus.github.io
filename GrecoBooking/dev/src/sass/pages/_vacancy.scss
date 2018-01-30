@@ -1,0 +1,198 @@
+.vacancy {
+  &-box {
+    background-color: $light-bg;
+    padding: 40px 0;
+
+  }
+  &-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 0 -10px;
+    margin-bottom: 40px;
+    li {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: flex;
+      color: $border;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      min-height: 80px;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 10px 20px;
+      border-bottom: 1px solid $bg;
+      transition: all 0.3s;
+      &:hover {
+        @include media(hover,1025){
+          box-shadow: 0 3px 10px 0 rgba($head,0.3);
+        }
+      }
+    }
+    .title {
+      text-transform: uppercase;
+      font-family: Futuris, sans-serif;
+      font-size: 16px;
+      color: $btn;
+      width: 45%;
+      flex-shrink: 500;
+    }
+    .price {font-weight: 400;}
+    .place {
+      display: flex;
+      font-weight: 400;
+      align-items: center;
+      margin-left: 20px;
+      i {
+        width: 21px;
+        height: 21px;
+        margin-right: 5px;
+      }
+    }
+    .arrow {
+      width: 10px;
+      height: 20px;
+      margin-left: 20px;
+    }
+  }
+  &-advances {
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      li {
+        width: 35%;
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+        box-sizing: border-box;
+        &:not(:last-child){
+          padding-right: 40px;
+        }
+      }
+      i {
+        width: 30px;
+        height: 30px;
+        margin-right: 20px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text {
+        flex-shrink: 500;
+        line-height: 1.6;
+        .title {
+          text-transform: uppercase;
+          font-family: Futuris, sans-serif;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &-terms {
+    ul {
+      display: flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      margin: 0 -20px;
+      flex-flow: row wrap;
+      li {
+        width: 33.3333%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        margin: 20px 0;
+      }
+      i {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+        display: block;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text {
+        flex-shrink: 500;
+        line-height: 1.6;
+        .title {
+          text-transform: uppercase;
+          font-family: Futuris, sans-serif;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &-quotes {
+    display: flex;
+    min-height: 600px;
+    align-items: stretch;
+    figure {
+      width: 50%;
+      @extend %cover;
+    }
+    .text {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 50px 8% 50px 50px;
+      align-self: center;
+      blockquote {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+      }
+      .contacts {
+
+        ul {
+          display: flex;
+          align-items: center;
+        }
+        li {
+          display: flex;
+          align-items: center;
+          &:not(:last-child){margin-right: 20px;}
+        }
+        i {
+          color: $border;
+          margin-right: 10px;
+          box-sizing: border-box;
+          width: 20px;
+          height: 20px;
+          &.ico-tel {
+            padding: 3px;
+          }
+        }
+        span,a {
+          font-size: 16px;
+          font-weight: 400;
+          color: $text;
+        }
+        a {
+          transition: all 0.3s;
+          &:hover {
+            @include media(hover,1025){
+              color: $btn;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -244,7 +244,7 @@ textarea {
   vertical-align: middle;
 }
 
-.intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .offers .item a figure, .home-request--main {
+.intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .offers .item a figure, .home-request--main, .vacancy-quotes figure {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -964,6 +964,10 @@ svg {
   transition: all 0.3s;
   color: #fff;
   text-transform: uppercase;
+}
+
+.footer .menu ul a.active {
+  color: #f9690e;
 }
 
 @media screen and (min-width: 1025px) {
@@ -4077,4 +4081,328 @@ svg {
   font-size: 16px;
   color: #30343f;
   margin-bottom: 10px;
+}
+
+.vacancy-box {
+  background-color: #f0f1f3;
+  padding: 40px 0;
+}
+
+.vacancy-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+          -webkit-align-items: stretch;
+              -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          -webkit-flex-flow: row wrap;
+              -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 -10px;
+  margin-bottom: 40px;
+}
+
+.vacancy-list li {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.vacancy-list a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #657482;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  min-height: 80px;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 20px;
+  border-bottom: 1px solid #b2b9c1;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .vacancy-list a:hover {
+    -webkit-box-shadow: 0 3px 10px 0 rgba(74, 84, 96, 0.3);
+            box-shadow: 0 3px 10px 0 rgba(74, 84, 96, 0.3);
+  }
+}
+
+.vacancy-list .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #f9690e;
+  width: 45%;
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+}
+
+.vacancy-list .price {
+  font-weight: 400;
+}
+
+.vacancy-list .place {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 400;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  margin-left: 20px;
+}
+
+.vacancy-list .place i {
+  width: 21px;
+  height: 21px;
+  margin-right: 5px;
+}
+
+.vacancy-list .arrow {
+  width: 10px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.vacancy-advances {
+  margin-bottom: 20px;
+}
+
+.vacancy-advances ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.vacancy-advances ul li {
+  width: 35%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.vacancy-advances ul li:not(:last-child) {
+  padding-right: 40px;
+}
+
+.vacancy-advances ul i {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.vacancy-advances ul i img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vacancy-advances ul .text {
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  line-height: 1.6;
+}
+
+.vacancy-advances ul .text .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.vacancy-terms ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 -20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          -webkit-flex-flow: row wrap;
+              -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.vacancy-terms ul li {
+  width: 33.3333%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px;
+  margin: 20px 0;
+}
+
+.vacancy-terms ul i {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.vacancy-terms ul i img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vacancy-terms ul .text {
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  line-height: 1.6;
+}
+
+.vacancy-terms ul .text .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.vacancy-quotes {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 600px;
+  -webkit-box-align: stretch;
+          -webkit-align-items: stretch;
+              -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.vacancy-quotes figure {
+  width: 50%;
+}
+
+.vacancy-quotes .text {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px 8% 50px 50px;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+
+.vacancy-quotes .text blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.vacancy-quotes .text .contacts ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+}
+
+.vacancy-quotes .text .contacts li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+}
+
+.vacancy-quotes .text .contacts li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.vacancy-quotes .text .contacts i {
+  color: #657482;
+  margin-right: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+
+.vacancy-quotes .text .contacts i.ico-tel {
+  padding: 3px;
+}
+
+.vacancy-quotes .text .contacts span, .vacancy-quotes .text .contacts a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #30343f;
+}
+
+.vacancy-quotes .text .contacts a {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .vacancy-quotes .text .contacts a:hover {
+    color: #f9690e;
+  }
 }

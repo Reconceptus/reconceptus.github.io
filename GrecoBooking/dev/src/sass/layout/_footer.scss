@@ -133,6 +133,7 @@
         transition: all 0.3s;
         color: $white;
         text-transform: uppercase;
+        &.active {color: $btn;}
         &:hover {
           @include media(hover,1025){
             color: $btn;
