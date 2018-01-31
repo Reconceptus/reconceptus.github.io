@@ -1,0 +1,138 @@
+.map-container {
+  min-height: 900px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.map-box {
+  position: absolute;
+  top: 0;
+  left: 63%;
+  width: 3000px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.contact-form {
+  position: absolute;
+  z-index: 2;
+  background-color: $white;
+  margin-top: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50%;
+  width: 590px;
+  box-shadow: 0 0 25px 0 rgba($border,0.1);
+  .contacts {
+    padding: 20px 25px 25px;
+    .title {
+      text-transform: uppercase;
+      font-family: Futuris, sans-serif;
+      font-size: 16px;
+      color: $text;
+      margin-bottom: 20px;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        &:not(:last-child){margin-bottom: 11px;}
+      }
+      i {
+        color: $border;
+        margin-right: 10px;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        &.ico-tel {
+          padding: 3px;
+        }
+      }
+      span,a {
+        font-size: 16px;
+        color: $text;
+      }
+      a {
+        transition: all 0.3s;
+        &:hover {
+          @include media(hover,1025){
+            color: $btn;
+          }
+        }
+      }
+    }
+  }
+  &-box {
+    font-size: 15px;
+
+    background: $pink_dark;
+    background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
+    background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
+    background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+    .fields {
+      padding: 10px 40px;
+    }
+    .btn-box {
+      button {
+        display: flex;
+        height: 60px;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        outline: none;
+        align-items: center;
+        justify-content: center;
+        background-color: $btn;
+        color: $white;
+        transition: all 0.3s;
+        i {
+          width: 35px;
+          height: 35px;
+        }
+        &:hover {
+          @include media(hover,1025){
+            background-color: $btn_hover;
+          }
+        }
+      }
+    }
+    .fieldset {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .field {
+      width: 100%;
+      position: relative;
+      font-weight: 400;
+      &:not(:last-child){
+        margin-right: 10px;
+      }
+      .input {
+        flex-shrink: 500;
+        display: block;
+        width: 100%;
+        border-top: 1px solid $pink_dark;
+      }
+      textarea,
+      input {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 40px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0 10px;
+        resize: none;
+      }
+      input {line-height: 40px;}
+      textarea {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+  }
+}

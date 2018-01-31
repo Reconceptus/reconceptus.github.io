@@ -5,6 +5,7 @@
   box-sizing: border-box;
   padding: 10px 20px 10px 0;
   position: relative;
+  z-index: 1;
   &--wrap {
     display: flex;
     justify-content: space-between;

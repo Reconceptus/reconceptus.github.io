@@ -762,6 +762,7 @@ svg {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-top: auto;
 }
 
 #wrapper {
@@ -789,7 +790,6 @@ svg {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-top: auto;
 }
 
 .footer--main {
@@ -3364,6 +3364,7 @@ svg {
           box-sizing: border-box;
   padding: 10px 20px 10px 0;
   position: relative;
+  z-index: 1;
 }
 
 .fast-request--wrap {
@@ -4500,4 +4501,200 @@ svg {
   margin-top: -120px;
   margin-bottom: 40px;
   position: relative;
+}
+
+.map-container {
+  min-height: 900px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.map-box {
+  position: absolute;
+  top: 0;
+  left: 63%;
+  width: 3000px;
+  height: 100%;
+  -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+}
+
+.contact-form {
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  margin-top: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  right: 50%;
+  width: 590px;
+  -webkit-box-shadow: 0 0 25px 0 rgba(101, 116, 130, 0.1);
+          box-shadow: 0 0 25px 0 rgba(101, 116, 130, 0.1);
+}
+
+.contact-form .contacts {
+  padding: 20px 25px 25px;
+}
+
+.contact-form .contacts .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #30343f;
+  margin-bottom: 20px;
+}
+
+.contact-form .contacts ul li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-form .contacts ul li:not(:last-child) {
+  margin-bottom: 11px;
+}
+
+.contact-form .contacts ul i {
+  color: #657482;
+  margin-right: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-form .contacts ul i.ico-tel {
+  padding: 3px;
+}
+
+.contact-form .contacts ul span, .contact-form .contacts ul a {
+  font-size: 16px;
+  color: #30343f;
+}
+
+.contact-form .contacts ul a {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .contact-form .contacts ul a:hover {
+    color: #f9690e;
+  }
+}
+
+.contact-form-box {
+  font-size: 15px;
+  background: #f9bba5;
+  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
+  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
+}
+
+.contact-form-box .fields {
+  padding: 10px 40px;
+}
+
+.contact-form-box .btn-box button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  border: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  outline: none;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f9690e;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contact-form-box .btn-box button i {
+  width: 35px;
+  height: 35px;
+}
+
+@media screen and (min-width: 1025px) {
+  .contact-form-box .btn-box button:hover {
+    background-color: #ee6309;
+  }
+}
+
+.contact-form-box .fieldset {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-form-box .field {
+  width: 100%;
+  position: relative;
+  font-weight: 400;
+}
+
+.contact-form-box .field:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contact-form-box .field .input {
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  display: block;
+  width: 100%;
+  border-top: 1px solid #f9bba5;
+}
+
+.contact-form-box .field textarea,
+.contact-form-box .field input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 40px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 0 10px;
+  resize: none;
+}
+
+.contact-form-box .field input {
+  line-height: 40px;
+}
+
+.contact-form-box .field textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
