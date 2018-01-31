@@ -649,6 +649,8 @@ class Base
 		if(isset($args['meta_c']))
 			$args['meta'] = $args['meta_c'];
 
+		$args['segment1'] = $segment1;
+
 		return view($url, $args);
 	}
 
@@ -794,6 +796,19 @@ class Base
 				$t = current(json_decode($t, true));
 
 			return $t;
+	}
+
+	public static function langSt($t)
+	{
+		$arr = json_decode($t, true);
+
+		if(is_array($arr))
+			if(json_decode($t, true)[\App::getLocale()] ?? false)
+				$t = json_decode($t, true)[\App::getLocale()];
+			else
+				$t = current(json_decode($t, true));
+
+		return $t;
 	}
 
 	/**
