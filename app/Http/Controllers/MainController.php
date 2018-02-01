@@ -43,6 +43,18 @@ class MainController extends Controller
 	}
 
 	/**
+	 * Request for accommodation.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function request_for_accommodation()
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.request_for_accommodation", $data);
+	}
+
+	/**
 	 * Favorite.
 	 *
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -52,5 +64,73 @@ class MainController extends Controller
 		$data = [];
 
 		return $this->base->view_s("site.main.favorite", $data);
+	}
+
+	/**
+	 * Villas.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function villas()
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.villas", $data);
+	}
+
+	/**
+	 * Blog.
+	 *
+	 * @param null $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function blog($id = null)
+	{
+		$data = [];
+
+		if($id)
+			return $this->base->view_s("site.main.blog_id", $data);
+		else
+			return $this->base->view_s("site.main.blog", $data);
+	}
+
+	/**
+	 * About Us.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function about_us()
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.about_us", $data);
+	}
+
+	/**
+	 * Contact Us.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function contact_us()
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.contact_us", $data);
+	}
+
+	/**
+	 * Vacancies.
+	 *
+	 * @param null $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function vacancies($id = null)
+	{
+		$data = [];
+
+		if($id)
+			return $this->base->view_s("site.main.vacancies_id", $data);
+		else
+			return $this->base->view_s("site.main.vacancies", $data);
 	}
 }

@@ -56,9 +56,9 @@
 			</div>
 			<div class="menu">
 				<ul>
-					<li><a href="#" class="">разместить виллу</a></li>
+					<li><a href="/request-for-accommodation" class="">разместить виллу</a></li>
 					<li><a href="#" class="">условия пользования</a></li>
-					<li><a href="vacancies.html" class="">вакансии</a></li>
+					<li><a href="/vacancies" class="">вакансии</a></li>
 					<li><a href="#">вход</a></li>
 				</ul>
 			</div>
