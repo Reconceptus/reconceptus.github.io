@@ -73,24 +73,36 @@
       height: 100%;
       z-index: 1;
     }
-    .like {
-      position: absolute;
-      z-index: 2;
+
+    &:hover {
+      @include media(hover,1025){
+        box-shadow: 0 5px 20px 0 rgba($head,0.5);
+      }
+    }
+  }
+  &-like {
+    position: absolute;
+    z-index: 2;
+    color: rgba($white,0.7);
+    transition: all 0.3s;
+    .villa-img & {
       top: 7px;
       right: 8px;
       width: 44px;
       height: 44px;
-      color: rgba($white,0.7);
-      transition: all 0.3s;
-      &:hover {
-        @include media(hover,1025){
-          color: $white;
-        }
-      }
+    }
+    .intro-figure & {
+      top: 80px;
+      right: 80px;
+      width: 85px;
+      height: 85px;
+    }
+    &.active {
+      color: $white;
     }
     &:hover {
       @include media(hover,1025){
-        box-shadow: 0 5px 20px 0 rgba($head,0.5);
+        color: $white;
       }
     }
   }

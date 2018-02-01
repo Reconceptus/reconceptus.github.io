@@ -8,12 +8,20 @@ $(document).ready(function () {
 
     /* ----------------------------------- functions ----------------------------------- */
 
+    /*
+    ============= show/hide search field
+    */
+
     function showSearch() {
         btn.click(function () {
             search.addClass('active');
             nav.addClass('hidden');
         })
     }
+
+    /*
+     ============= document click events
+    */
 
     function documentClick() {
         $(document).click(function(e){
@@ -27,6 +35,10 @@ $(document).ready(function () {
         })
     }
 
+    /*
+     ============= custom select init
+    */
+
     function select2() {
         $('select').each(function () {
             $(this).select2({
@@ -35,6 +47,10 @@ $(document).ready(function () {
             });
         })
     }
+
+    /*
+     ============= datepickers
+    */
 
     function datePickerFullRequest() {
         var dateToday = new Date();
@@ -104,14 +120,31 @@ $(document).ready(function () {
         });
     }
 
+    /*
+     ============= carousel for villa
+    */
+
+    function villaCarousel() {
+
+        $('.villa-carousel').owlCarousel({
+            loop:false,
+            nav:true,
+            navText:['',''],
+            dots: false,
+            items:1
+        })
+
+    }
+
     /* --------------------------------- document load --------------------------------- */
 
     showSearch();
     documentClick();
 
-    if($('select').length > 0){select2({});}
-    if($('[data-picker-full]').length > 0){datePickerFullRequest({});}
-    if($('[data-picker-fast]').length > 0){datePickerFastRequest({});}
+    if($('select').length > 0){select2();}
+    if($('[data-picker-full]').length > 0){datePickerFullRequest();}
+    if($('[data-picker-fast]').length > 0){datePickerFastRequest();}
+    if($('.villa-carousel').length > 0){villaCarousel();}
 
     /* --------------------------------- document resize --------------------------------- */
 

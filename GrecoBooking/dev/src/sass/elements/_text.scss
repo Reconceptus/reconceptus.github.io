@@ -2,6 +2,7 @@
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 35px;
+  .center {text-align: center;}
   blockquote {
     color: $btn;
     padding-left: 80px;
@@ -36,12 +37,12 @@
   img {
     margin: 40px 0;
     display: block;
-    width: 1200px;
+    width: 100%;
     height: auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1200px;
+    max-width: 100%;
   }
   a {
     color: $btn;
@@ -53,6 +54,15 @@
     }
   }
   ul {
+    &.column {
+      columns: 2 auto;
+      column-gap: 80px;
+      li {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
     li {
       padding-left: 40px;
       position: relative;
@@ -66,6 +76,37 @@
         top: 10px;
         position: absolute;
       }
+    }
+  }
+  cite {
+    margin: 60px auto;
+    text-align: center;
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: $btn;
+    font-size: 29px;
+    line-height: 1.4;
+    max-width: 420px;
+    padding: 15px 0 0;
+    .key {
+      margin: 0 auto;
+      display: block;
+      width: 95px;
+      height: 40px;
+    }
+    .infinity {
+      margin: 20px auto 0;
+      display: block;
+      width: 72px;
+      height: 23px;
+    }
+  }
+  &.location-text {
+    img {
+      width: 1200px;
+      max-width: 1200px;
     }
   }
 }

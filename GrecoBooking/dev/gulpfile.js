@@ -182,3 +182,9 @@ gulp.task('watch', ['optimize:styles', 'includer:html', 'rigger:js', 'browser-sy
     gulp.watch('src/js/**/*.js', ['optimize:js']);
     gulp.watch('src/images/**/*.+(jpg|jpeg|png|gif)', ['optimize:js']);
 });
+
+/* dafault task */
+
+gulp.task('default',function () {
+    gulp.run('watch');
+});

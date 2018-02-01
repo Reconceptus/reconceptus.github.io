@@ -15,6 +15,9 @@
       "ui/widgets/datepicker.js",
       "ui/i18n/datepicker-ru.js"
     ],
+    "owl.carousel": [
+      "dist/*.js"
+    ],
     "select2": [
       "dist/js/*.js"
     ]
