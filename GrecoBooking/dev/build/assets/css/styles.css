@@ -4288,6 +4288,14 @@ svg {
   width: 300px;
 }
 
+.experts {
+  margin-top: 100px;
+}
+
+.experts-box {
+  background-color: #F0F1F3;
+}
+
 .location-text {
   padding: 20px 0;
 }
@@ -4328,7 +4336,7 @@ svg {
   justify-content: space-between;
 }
 
-.worker-img {
+.workers .worker-img {
   width: 360px;
   height: 360px;
   display: block;
@@ -4336,8 +4344,8 @@ svg {
   margin-right: 60px;
 }
 
-.worker-img:after,
-.worker-img:before {
+.workers .worker-img:after,
+.workers .worker-img:before {
   content: "";
   width: 300px;
   height: 300px;
@@ -4354,12 +4362,43 @@ svg {
   transition: all 0.45s;
 }
 
-.worker-img:after {
+.workers .worker-img:after {
   background-color: #FFF;
   opacity: 0;
 }
 
-.worker-img:before {
+.workers .worker-img:before {
+  background: #F9BBA5;
+  background: -webkit-gradient(linear, left top, right top, from(#FDE4DB), to(#F9BBA5));
+  background: -webkit-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
+  background: -o-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
+  background: linear-gradient(to right, #FDE4DB 0%, #F9BBA5 100%);
+}
+
+.experts .worker-img {
+  text-align: center;
+  margin-right: 120px;
+  margin-bottom: 10px;
+}
+
+.experts .worker-img figure {
+  width: 300px;
+  height: 300px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  margin-top: -80px;
+  margin-bottom: 20px;
+}
+
+.experts .worker-img figure:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: #F9BBA5;
   background: -webkit-gradient(linear, left top, right top, from(#FDE4DB), to(#F9BBA5));
   background: -webkit-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
@@ -4388,7 +4427,21 @@ svg {
   padding: 40px 0;
 }
 
-.worker-descr .name {
+.experts .worker-descr .quote {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 21px;
+  margin-bottom: 24px;
+}
+
+.experts .worker-descr .position {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  color: #657482;
+}
+
+.worker .name {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
   font-size: 16px;

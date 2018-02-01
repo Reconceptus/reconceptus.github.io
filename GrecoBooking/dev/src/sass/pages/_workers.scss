@@ -21,35 +21,65 @@
   align-items: center;
   justify-content: space-between;
   &-img {
-    width: 360px;
-    height: 360px;
-    display: block;
-    position: relative;
-    margin-right: 60px;
-    &:after,
-    &:before {
-      content: "";
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      position: absolute;
-      transition: all 0.45s;
+
+    .workers & {
+      width: 360px;
+      height: 360px;
+      display: block;
+      position: relative;
+      margin-right: 60px;
+      &:after,
+      &:before {
+        content: "";
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+        transition: all 0.45s;
+      }
+      &:after {
+        background-color: $white;
+        opacity: 0;
+      }
+      &:before {
+        background: $pink_dark;
+        background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
+        background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
+        background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+      }
     }
-    &:after {
-      background-color: $white;
-      opacity: 0;
+    .experts & {
+      text-align: center;
+      margin-right: 120px;
+      margin-bottom: 10px;
+      figure {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        margin-top: -80px;
+        margin-bottom: 20px;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: $pink_dark;
+          background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
+          background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
+          background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+        }
+      }
     }
-    &:before {
-      background: $pink_dark;
-      background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
-      background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
-      background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
-    }
+
     img {
       position: absolute;
       left: 0;
@@ -72,12 +102,26 @@
     flex-shrink: 500;
     line-height: 1.7;
     padding: 40px 0;
-    .name {
-      text-transform: uppercase;
-      font-family: Futuris, sans-serif;
-      font-size: 16px;
-      color: $text;
-      margin-bottom: 10px;
+    .experts & {
+      .quote {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 21px;
+        margin-bottom: 24px;
+      }
+      .position {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        color: $border;
+      }
     }
+  }
+  .name {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    font-size: 16px;
+    color: $text;
+    margin-bottom: 10px;
   }
 }
