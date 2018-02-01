@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
+use App\Classes\DynamicModel;
 use App\Modules\Admin\Classes\Base;
 use Illuminate\Http\Request;
 
@@ -13,9 +13,15 @@ class MainController extends Controller
 	 */
 	protected $base;
 
+	/**
+	 * @var DynamicModel
+	 */
+	private $dynamic;
+
 	public function __construct(Request $request)
 	{
 		$this->base    = new Base($request);
+		$this->dynamic = new DynamicModel();
 	}
 
 	/**
@@ -86,7 +92,7 @@ class MainController extends Controller
 	 */
 	public function blog($id = null)
 	{
-		$data = [];
+		$data['tags'] = $this->dynamic->t('tags')->limit(100)->get()->toArray();
 
 		if($id)
 			return $this->base->view_s("site.main.blog_id", $data);

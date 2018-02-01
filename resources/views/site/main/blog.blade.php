@@ -5,7 +5,7 @@
 		<section class="simple-page--head">
 			<div class="content">
 				<header>
-					<h1 class="headline_main">Blog</h1>
+					<h1 class="headline_main">@lang('main.blog')</h1>
 				</header>
 			</div>
 		</section>
@@ -13,17 +13,15 @@
 			<div class="blog-box--wrap">
 				<div class="tags">
 					<ul>
-						<li><a href="#">Все статьи</a></li>
-						<li><a href="#">Места</a></li>
-						<li><a href="#">Пляж</a></li>
-						<li><a href="#">Рестораны</a></li>
-						<li><a href="#">Культура</a></li>
-						<li><a href="#">Кулинария</a></li>
-						<li><a href="#">Места</a></li>
-						<li><a href="#">Пляж</a></li>
-						<li><a href="#">Рестораны</a></li>
-						<li><a href="#">Культура</a></li>
-						<li><a href="#">Кулинария</a></li>
+						<li><a href="/blog">@lang('main.all_articles')</a></li>
+
+						@foreach($tags as $tag)
+							<li>
+								<a href="?tag={{ strtolower($langSt($tag['name'], 'en')) }}">
+									{{ $langSt($tag['name']) }}
+								</a>
+							</li>
+						@endforeach
 					</ul>
 				</div>
 				<ul class="layout layout_lg">

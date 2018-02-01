@@ -9,7 +9,7 @@
 		<div class="selection-request">
 			<div class="content">
 				<header class="light-style">
-					<h3 class="headline_main">SELECTION REQUEST</h3>
+					<h3 class="headline_main">@lang('main.selection_request')</h3>
 				</header>
 				<div class="form-request">
 					<div class="form">

@@ -618,9 +618,9 @@ class Base
 
 		if(!empty($args['data'])) {
 			if($this->is_json($args['data'][0]['title'])) {
-				$args['meta']['title']       = json_decode($args['data'][0]['title'], true)[\App::getLocale()] ?? '';
-				$args['meta']['description'] = json_decode($args['data'][0]['description'], true)[\App::getLocale()] ?? '';
-				$args['meta']['keywords']    = json_decode($args['data'][0]['keywords'], true)[\App::getLocale()] ?? '';
+				$args['meta']['title']       = $this->lang($args['data'][0]['title']);
+				$args['meta']['description'] = $this->lang($args['data'][0]['description']);
+				$args['meta']['keywords']    = $this->lang($args['data'][0]['keywords']);
 			} else {
 				$args['meta']['title']       = $args['data'][0]['title'];
 				$args['meta']['description'] = $args['data'][0]['description'];
@@ -649,7 +649,9 @@ class Base
 		if(isset($args['meta_c']))
 			$args['meta'] = $args['meta_c'];
 
+		$args['lang']     = \App::getLocale();
 		$args['segment1'] = $segment1;
+		$args['langSt']   = function($t, $l = '') { return $this->lang($t, $l); };
 
 		return view($url, $args);
 	}
@@ -782,33 +784,22 @@ class Base
 
 	/**
 	 * Get string to current lang
-	 * @param $t
+	 * @param        $t
+	 * @param string $lang
 	 * @return mixed
 	 */
-	public function lang($t)
+	public function lang($t, $lang = '')
 	{
-		$arr = json_decode($t, true);
+		$arr  = json_decode($t, true);
+		$lang = $lang ?? \App::getLocale();
 
 		if(is_array($arr))
-			if(json_decode($t, true)[\App::getLocale()] ?? false)
-				$t = json_decode($t, true)[\App::getLocale()];
+			if(json_decode($t, true)[$lang] ?? false)
+				$t = json_decode($t, true)[$lang];
 			else
 				$t = current(json_decode($t, true));
 
 			return $t;
-	}
-
-	public static function langSt($t)
-	{
-		$arr = json_decode($t, true);
-
-		if(is_array($arr))
-			if(json_decode($t, true)[\App::getLocale()] ?? false)
-				$t = json_decode($t, true)[\App::getLocale()];
-			else
-				$t = current(json_decode($t, true));
-
-		return $t;
 	}
 
 	/**

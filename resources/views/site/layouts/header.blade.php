@@ -30,7 +30,7 @@
 											href="/{{ $v['translation'] ?? $v['id'] }}"
 											class="@if(($v['translation'] ?? $v['id']) === $segment1) active @endif"
 										>
-											<span>{{ \App\Modules\Admin\Classes\Base::langSt($v['name']) }}</span>
+											<span>{{ $langSt($v['name']) }}</span>
 										</a>
 									</li>
 								@endforeach
@@ -44,7 +44,7 @@
 						<div class="form" id="searchForm">
 							<form action="#">
 								<div class="field">
-									<input id="searchInput" type="text" placeholder="Search">
+									<input id="searchInput" type="text" placeholder="@lang('main.search')">
 								</div>
 								<button type="submit"></button>
 							</form>
@@ -57,12 +57,12 @@
 					</div>
 					<div class="language">
 						<ul>
-							<li class="current"><a href="?setLang=en">EN</a></li>
-							<li><a href="?setLang=ru">RU</a></li>
+							<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en">EN</a></li>
+							<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
 						</ul>
 					</div>
 					<div class="request">
-						<a href="/selection-request" class="btn btn_bord">selection request</a>
+						<a href="/selection-request" class="btn btn_bord">@lang('main.selection_request')</a>
 					</div>
 					<!--<span id="burger" class="burger">-->
 					<!--<span></span>-->
