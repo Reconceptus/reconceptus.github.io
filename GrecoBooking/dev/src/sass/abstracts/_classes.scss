@@ -126,3 +126,19 @@
     }
   }
 }
+
+.invalid.field,
+.invalid {
+  .villa-request &,
+  .fast-request &,
+  .form-request & {
+    label {
+      color: rgba(255,128,125,1);
+    }
+  }
+  .contact-form &,
+  .friend-form &,
+  .subscription-form & {
+    input, textarea {background-color: rgba(255,128,125,1)}
+  }
+}

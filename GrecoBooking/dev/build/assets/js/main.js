@@ -45,6 +45,9 @@ $(document).ready(function () {
                 dropdownCssClass: 'custom-select',
                 minimumResultsForSearch: Infinity
             });
+            $(this).on('select2:select', function (e) {
+                $(this).closest('.field').removeClass('invalid')
+            })
         })
     }
 
@@ -53,8 +56,12 @@ $(document).ready(function () {
     */
 
     function datePickerFullRequest() {
-        var dateToday = new Date();
-        var dates = $("#arrivalDate, #departureDate").datepicker({
+
+        var dateToday = new Date(),
+            el01 = 'arrivalDate',
+            el02 = 'departureDate';
+
+        var dates = $('#'+el01+',#'+el02).datepicker({
             changeMonth:true,
             changeYear:true,
             numberOfMonths: 2,
@@ -84,20 +91,24 @@ $(document).ready(function () {
                 }
             },
             onSelect: function(selectedDate){
-                var option = this.id == "arrivalDate" ? "minDate" : "maxDate",
+                var option = this.id == el01 ? "minDate" : "maxDate",
                     instance = $( this ).data( "datepicker" ),
                     date = $.datepicker.parseDate(
                         instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
                         selectedDate, instance.settings);
                 dates.not(this).datepicker("option", option, date);
-
+                if($('#'+el01).val() != ''){$('#'+el01).closest('.field').removeClass('invalid')}
+                if($('#'+el02).val() != ''){$('#'+el02).closest('.field').removeClass('invalid')}
             }
         });
     }
 
     function datePickerFastRequest() {
-        var dateToday = new Date();
-        var dates = $("#check_in, #check_out").datepicker({
+        var dateToday = new Date(),
+            el01 = 'check_in',
+            el02 = 'check_out';
+
+        var dates = $('#'+el01+',#'+el02).datepicker({
             changeMonth:true,
             changeYear:true,
             numberOfMonths: 2,
@@ -119,14 +130,71 @@ $(document).ready(function () {
                 $('#fastpicker').removeClass('show up down');
             },
             onSelect: function(selectedDate){
-                var option = this.id == "check_in" ? "minDate" : "maxDate",
+                var option = this.id == el01 ? "minDate" : "maxDate",
                     instance = $( this ).data( "datepicker" ),
                     date = $.datepicker.parseDate(
                         instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
                         selectedDate, instance.settings);
                 dates.not(this).datepicker("option", option, date);
+                if($('#'+el01).val() != ''){$('#'+el01).closest('.field').removeClass('invalid')}
+                if($('#'+el02).val() != ''){$('#'+el02).closest('.field').removeClass('invalid')}
             }
         });
+    }
+
+    /*
+     ============= subscription form
+    */
+
+    function subscribeForm() {
+
+        $('.subscription-form form').validate({
+            onfocusout: false,
+            ignore: ".ignore",
+            rules: {
+                subscribe_mail: {required: true}
+            },
+            messages: {
+                subscribe_mail: {required: ""}
+            },
+            errorClass: 'invalid',
+            highlight: function(element, errorClass) {
+                $(element).closest('.field').addClass(errorClass)
+            },
+            unhighlight: function(element, errorClass) {
+                $(element).closest('.field').removeClass(errorClass)
+            },
+            errorPlacement: $.noop,
+            submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+                if (form.valid()){
+                    form.submit();
+                }
+//                return false;
+            }
+        })
+
+    }
+
+    /*
+     ============= add field in freind-form
+    */
+
+    function addFriendFormField() {
+        var $addBtn = $('#addFieldset'),
+            $container = $('.add-fieldset'),
+            currentFieldID = $addBtn.next('.fieldset').find('input').attr('id'),
+            cnt = 1;
+
+        $addBtn.click(function () {
+            var currentField = $addBtn.next('.fieldset'),
+                clonedField = currentField.clone();
+
+            clonedField.find('input').attr('id',currentFieldID+cnt);
+            cnt++;
+            currentField.find('input').val('');
+            currentField.after(clonedField);
+        })
     }
 
     /*
@@ -146,6 +214,26 @@ $(document).ready(function () {
     }
 
     /*
+     ============= modal box
+    */
+
+    $('.show-modal').click(function (e) {
+        e.preventDefault();
+        var currentData = $(this).attr('data-modal');
+        $('html').addClass('ovh');
+
+        $('.modal').find('[data-modal="'+currentData+'"]').addClass('active');
+        $('.modal').addClass('active');
+    })
+
+    $('.modal .close').click(function (e) {
+        e.preventDefault();
+        $('html').removeClass('ovh');
+        $('.modal').removeClass('active');
+        $('.modal').find('[data-modal]').removeClass('active');
+    });
+
+    /*
      ============= villa request inputs
     */
 
@@ -159,10 +247,10 @@ $(document).ready(function () {
         }
         $('.villa-request .input input').each(function(){
             effectInp($(this))
-        })
+        });
         $('.villa-request .input input').change(function(){
             effectInp($(this))
-        })
+        });
 
     }
 
@@ -259,11 +347,13 @@ $(document).ready(function () {
 
     showSearch();
     documentClick();
+    subscribeForm();
 
     if($('select').length > 0){select2();}
     if($('[data-picker-full]').length > 0){datePickerFullRequest();}
     if($('[data-picker-fast]').length > 0){datePickerFastRequest();}
     if($('.villa-carousel').length > 0){villaCarousel();}
+    if($('.add-fieldset').length > 0){addFriendFormField();}
     if($('.villa-nav').length > 0){villaNavigation();}
     if($('.villa-request').length > 0){showInput(); villaRequestPosition();}
 

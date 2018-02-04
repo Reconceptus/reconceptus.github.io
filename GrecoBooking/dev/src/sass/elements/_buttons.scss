@@ -9,6 +9,7 @@
   display: inline-block;
   text-align: center;
   transition: all 0.3s;
+  white-space: nowrap;
   span, i {
     @extend %valign;
   }

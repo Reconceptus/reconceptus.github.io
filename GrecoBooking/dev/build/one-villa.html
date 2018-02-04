@@ -81,9 +81,9 @@
                     <div class="content content_md">
                         <div class="short-info-data">
                             <div class="short-info-attributes">
-                                <div class="item" data-nav-part="about">
-                                    <h2 class="name">Vanesa</h2>
-                                    <div class="place">
+                                <div class="item">
+                                    <h2 class="name" data-nav-part="about">Vanesa</h2>
+                                    <div class="place" data-nav-part="mark">
                                         <i><svg> <use xlink:href="assets/svg/sprite.svg#ico_mark"></use> </svg></i>
                                         <span>Heraclion</span>
                                     </div>
@@ -198,11 +198,11 @@
                                         <div class="fieldset pickerfields">
                                             <div class="field">
                                                 <label for="arrivalDate">Check in</label>
-                                                <div class="input"><input id="arrivalDate" type="text" data-picker-full></div>
+                                                <div class="input"><input id="arrivalDate" name="arrivalDate" type="text" data-picker-full></div>
                                             </div>
                                             <div class="field">
                                                 <label for="departureDate">Check out</label>
-                                                <div class="input"><input type="text" id="departureDate" data-picker-full></div>
+                                                <div class="input"><input type="text" id="departureDate" name="departureDate" data-picker-full></div>
                                             </div>
                                             <div id="picker">
                                                 <div class="calendar">
@@ -243,13 +243,13 @@
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="mail">Your e-mail</label>
-                                                <div class="input"><input type="text" id="mail"></div>
+                                                <div class="input"><input type="text" name="mail" id="mail"></div>
                                             </div>
                                         </div>
                                         <div class="fieldset">
                                             <div class="field">
                                                 <label for="wishes">Ваши пожелания</label>
-                                                <div class="input"><input id="wishes" type="text" ></div>
+                                                <div class="input"><input id="wishes" name="wishes" type="text" ></div>
                                             </div>
                                         </div>
                                     </div>
@@ -262,7 +262,7 @@
                                             <a href="#" class="like">
                                                 <svg> <use xlink:href="assets/svg/sprite.svg#ico_action-like"></use> </svg>
                                             </a>
-                                            <a href="#" class="send">
+                                            <a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
                                                 <svg> <use xlink:href="assets/svg/sprite.svg#ico_action-write"></use> </svg>
                                             </a>
                                         </div>
@@ -329,7 +329,7 @@
                     </div>
                 </div>
             </section>
-            <div class="villa-map">
+            <div class="villa-map"  data-villa-part="mark">
                 <div class="content">
                     <div class="villa-map--wrap">
                         <div id="place" class="map-box"></div>
@@ -376,17 +376,16 @@
                     <div class="grid">
                         <ul class="grid-list">
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/1926149_72_z.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">Настоящая греческая кухня</h3>
                                         <div class="short">В пяти минутах ходьбы от виллы есть знаменитая кулинарная улочка Название с легендарныи семейными ресторанами, шумными барами и уютными кондитерскими, каждый найдет кухню по вкусу!</div>
                                     </div>
-
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/Sani-Beach-Hotel-Greece-summary.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">ПЛЯЖ ЭЛАФОНИСИ</h3>
@@ -396,7 +395,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/amanzoe-greece-swimmingpool-large.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">ЗАГОЛОВОК</h3>
@@ -406,7 +405,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/art_77_91218.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">ПЛЯЖ ЭЛАФОНИСИ</h3>
@@ -416,7 +415,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/eirini-luxury-villas-patmos.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">ЗАГОЛОВОК</h3>
@@ -426,7 +425,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="item">
                                     <figure style="background-image: url('assets/images/items/Mykonos-2_13.jpg')"></figure>
                                     <div class="grid--main">
                                         <h3 class="title">ЗАГОЛОВОК</h3>
@@ -445,7 +444,7 @@
                                 <i class="ico-like"><svg> <use xlink:href="assets/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
                                 <span>Добавить в избранное</span>
                             </a>
-                            <a href="#" class="more">Скачать презентацию виллы</a>
+                            <a href="#" target="_blank" class="more">Скачать презентацию виллы</a>
                         </div>
                     </div>
                 </div>
@@ -641,72 +640,210 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="content">
-            <div class="footer--main">
-                <div class="contacts">
-                    <a href="index.html" class="logo"><img src="assets/svg/logo-green.svg" alt="GrecoBooking"></a>
-                    <ul>
-                        <li>
-                            <i class="ico-tel"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
-                            <a href="tel:+38090500500">+38 (090) 500-500</a>
-                        </li>
-                        <li>
-                            <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
-                            <a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
-                        </li>
-                        <li>
-                            <i class="ico-adr"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-address"></use> </svg></i>
-                            <span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
-                        </li>
-                        <li>
-                            <i class="ico-mes"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
-                            <span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="subscription">
-                    <h3 class="title">Подписка</h3>
-                    <div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail</div>
-                    <div class="subscription-form">
-                        <form action="#">
-                            <div class="field">
-                                <input type="text" placeholder="Ваш e-mail">
-                                <button type="submit">Отправить</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#" class="">разместить виллу</a></li>
-                        <li><a href="#" class="">условия пользования</a></li>
-                        <li><a href="vacancies.html" class="">вакансии</a></li>
-                        <li><a href="#">вход</a></li>
-                    </ul>
+<footer class="footer">
+    <div class="content">
+        <div class="footer--main">
+            <div class="contacts">
+                <a href="index.html" class="logo"><img src="assets/svg/logo-green.svg" alt="GrecoBooking"></a>
+                <ul>
+                    <li>
+                        <i class="ico-tel"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
+                        <a href="tel:+38090500500">+38 (090) 500-500</a>
+                    </li>
+                    <li>
+                        <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
+                        <a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
+                    </li>
+                    <li>
+                        <i class="ico-adr"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-address"></use> </svg></i>
+                        <span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
+                    </li>
+                    <li>
+                        <i class="ico-mes"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
+                        <span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="subscription">
+                <h3 class="title">Подписка</h3>
+                <div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail</div>
+                <div class="subscription-form">
+                    <form action="#">
+                        <div class="field">
+                            <input type="text" name="subscribe_mail" placeholder="Ваш e-mail">
+                            <button type="submit">Отправить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="footer--bottom">
-                <div class="copyright">Grecobooking 2017</div>
-                <div class="support">
-                    <a href="#">RASE CMS</a>
-                    <a href="http://reconcept.ru">ReConcept</a>
+            <div class="menu">
+                <ul>
+                    <li><a href="placing-request.html" class="">разместить виллу</a></li>
+                    <li><a href="#" class="">условия пользования</a></li>
+                    <li><a href="vacancies.html" class="">вакансии</a></li>
+                    <li><a href="#">вход</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer--bottom">
+            <div class="copyright">Grecobooking 2017</div>
+            <div class="support">
+                <a href="#">RASE CMS</a>
+                <a href="http://reconcept.ru">ReConcept</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+<!--modals-->
+
+<div class="modal">
+    <div class="close"></div>
+    <div class="modal--main">
+        <div class="friend-form" data-modal="friend-form">
+            <span class="close"><svg> <use xlink:href="assets/svg/sprite.svg#ico_close"></use> </svg></span>
+            <div class="friend-form--wrap">
+                <figure style="background-image: url('assets/images/items/eirini-luxury-villas-patmos.jpg')"></figure>
+                <div class="friend-form--main">
+                    <h5 class="title">Отправить другу</h5>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="add-fieldset">
+                                <span class="add" id="addFieldset">+1</span>
+                                <div class="fieldset">
+                                    <div class="field">
+                                        <div class="input"><input id="friendMail" name="friendMail" type="text" placeholder="*Кому: Напишите email друга"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fieldset">
+                                <div class="field">
+                                    <div class="input"><input id="yourName" name="yourName" type="text" placeholder="От кого: Напишите ваше имя"></div>
+                                </div>
+                            </div>
+                            <div class="fieldset">
+                                <div class="field">
+                                    <div class="input">
+                                        <textarea id="message" name="message" rows="3" placeholder="Напишите сообщение"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fieldset">
+                                <div class="check">
+                                    <label>
+                                        <input type="checkbox">
+                                        <span>Копию письма мне</span>
+                                    </label>
+                                </div>
+                                <p class="asterisk">*Обязательные поля</p>
+                            </div>
+
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit">
+                                <i><svg> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_submit"></use> </svg></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <!--mobile-->
-
+    </div>
 
 </div>
+
+
+
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="assets/js/libs.min.js"></script>
 <script type="text/javascript" src="assets/js/main.min.js"></script>
+
+
+<!--validate-->
+
+<script>
+
+    $('.villa-request form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            arrivalDate: {required: true},
+            departureDate: {required: true},
+            guests: {required: true},
+            children: {required: true},
+            mail: {required: true},
+            wishes: {required: true}
+        },
+        messages: {
+            arrivalDate: {required: ""},
+            departureDate: {required: ""},
+            guests: {required: ""},
+            children: {required: ""},
+            mail: {required: ""},
+            wishes: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+    $('.friend-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            friendMail: {required: true},
+            yourName: {required: true},
+            message: {required: true}
+        },
+        messages: {
+            friendMail: {required: ""},
+            yourName: {required: ""},
+            message: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+            if($(element).closest('.add-fieldset')){
+                $(element).closest('.add-fieldset').addClass('disabled')
+            }
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+            if($(element).closest('.add-fieldset')){
+                $(element).closest('.add-fieldset').removeClass('disabled')
+            }
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+</script>
+
 
 
 </body>

@@ -86,9 +86,9 @@
                                         </div>
                                     </div>
                                     <div class="field">
-                                        <label for="f_way">location</label>
+                                        <label for="location">location</label>
                                         <div class="select">
-                                            <select name="f_way" id="f_way">
+                                            <select name="location" id="location">
                                                 <option value=""></option>
                                                 <option value="Все направления">Все направления</option>
                                                 <option value="Афинское побережье">Афинское побережье</option>
@@ -100,11 +100,11 @@
                                     </div>
                                     <div class="field">
                                         <label for="check_in">check-in</label>
-                                        <div class="input"><input id="check_in" type="text" data-picker-fast></div>
+                                        <div class="input"><input id="check_in" name="check_in" type="text" data-picker-fast></div>
                                     </div>
                                     <div class="field">
                                         <label for="check_out">check-out</label>
-                                        <div class="input"><input type="text" id="check_out" data-picker-fast></div>
+                                        <div class="input"><input type="text" name="check_out" id="check_out" data-picker-fast></div>
                                     </div>
                                     <div class="field">
                                         <label for="rooms">rooms</label>
@@ -332,7 +332,7 @@
                     <div class="subscription-form">
                         <form action="#">
                             <div class="field">
-                                <input type="text" placeholder="Ваш e-mail">
+                                <input type="text" name="subscribe_mail" placeholder="Ваш e-mail">
                                 <button type="submit">Отправить</button>
                             </div>
                         </form>
@@ -340,7 +340,7 @@
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="#" class="">разместить виллу</a></li>
+                        <li><a href="placing-request.html" class="">разместить виллу</a></li>
                         <li><a href="#" class="">условия пользования</a></li>
                         <li><a href="vacancies.html" class="">вакансии</a></li>
                         <li><a href="#">вход</a></li>
@@ -356,19 +356,61 @@
             </div>
         </div>
     </footer>
+    </div>
 
     <!--mobile-->
 
 
-</div>
+
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="assets/js/libs.min.js"></script>
 <script type="text/javascript" src="assets/js/main.min.js"></script>
 
+
+<!--validate-->
+
+
+<script>
+
+
+    $('.fast-request form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            location: {required: true},
+            check_in: {required: true},
+            check_out: {required: true},
+            rooms: {required: true}
+        },
+        messages: {
+            location: {required: ""},
+            check_in: {required: ""},
+            check_out: {required: ""},
+            rooms: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+</script>
 
 </body>
 </html>

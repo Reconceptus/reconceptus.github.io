@@ -73,53 +73,6 @@
       }
     }
   }
-  .subscription {
-    max-width: 600px;
-    text-align: center;
-    color: $white;
-    .title {
-      text-transform: uppercase;
-      font-family: Futuris, sans-serif;
-      margin-bottom: 15px;
-      font-size: 17px;
-    }
-    .text {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      margin-bottom: 30px;
-      font-size: 17px;
-    }
-    &-form {
-      .field {
-        width: 100%;
-        display: flex;
-        font-size: 14px;
-        input {
-          width: 100%;
-          flex-shrink: 500;
-          border-radius: 4px 0 0 4px;
-          background-color: $white;
-          border: 1px solid transparent;
-          box-sizing: border-box;
-          padding: 10px 20px;
-        }
-        button {
-          color: $white;
-          border: none;
-          border-radius: 0 4px 4px 0;
-          background-color: $border;
-          font-weight: 400;
-          padding: 10px 65px;
-          transition: all 0.3s;
-          &:hover {
-            @include media(hover,1025){
-              background-color: $btn_hover;
-            }
-          }
-        }
-      }
-    }
-  }
   .menu {
     width: 350px;
     box-sizing: border-box;
@@ -137,6 +90,54 @@
         &:hover {
           @include media(hover,1025){
             color: $btn;
+          }
+        }
+      }
+    }
+  }
+}
+
+.subscription {
+  max-width: 600px;
+  text-align: center;
+  color: $white;
+  .title {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+  .text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 17px;
+  }
+  &-form {
+    .field {
+      width: 100%;
+      display: flex;
+      font-size: 14px;
+      input {
+        width: 100%;
+        flex-shrink: 500;
+        border-radius: 4px 0 0 4px;
+        background-color: $white;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        padding: 10px 20px;
+      }
+      button {
+        color: $white;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        background-color: $border;
+        font-weight: 400;
+        padding: 10px 65px;
+        transition: all 0.3s;
+        &:hover {
+          @include media(hover,1025){
+            background-color: $btn_hover;
           }
         }
       }

@@ -18,6 +18,9 @@
     "owl.carousel": [
       "dist/*.js"
     ],
+    "jquery-validation": [
+      "dist/*.js"
+    ],
     "select2": [
       "dist/js/*.js"
     ]

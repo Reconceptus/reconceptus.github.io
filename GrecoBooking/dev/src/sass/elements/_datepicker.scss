@@ -40,12 +40,15 @@
   box-shadow: 0 5px 20px 0 rgba($head,0.4);
   border: 1px solid $bg;
   display: none;
-  .form-request &,
-  .fast-request & {
-    .up & {
+  .up & {
+    .form-request &,
+    .fast-request & {
       bottom: 100%;
     }
-    .down & {
+  }
+  .down & {
+    .form-request &,
+    .fast-request & {
       top: 100%;
     }
   }

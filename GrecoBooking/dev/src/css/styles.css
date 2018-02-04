@@ -244,7 +244,7 @@ textarea {
   vertical-align: middle;
 }
 
-.simple-page--head.placing--request, .intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .offers .item a figure, .home-request--main, .place-description figure, .vacancy-quotes figure {
+.simple-page--head.placing--request, .intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .friend-form figure, .offers .item a figure, .home-request--main, .place-description figure, .vacancy-quotes figure {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -435,6 +435,35 @@ textarea {
   -webkit-transform: translateY(40px);
           -ms-transform: translateY(40px);
       transform: translateY(40px);
+}
+
+.villa-request .invalid.field label,
+.fast-request .invalid.field label,
+.form-request .invalid.field label, .villa-request
+.invalid label,
+.fast-request
+.invalid label,
+.form-request
+.invalid label {
+  color: #ff807d;
+}
+
+.contact-form .invalid.field input, .contact-form .invalid.field textarea,
+.friend-form .invalid.field input,
+.friend-form .invalid.field textarea,
+.subscription-form .invalid.field input,
+.subscription-form .invalid.field textarea, .contact-form
+.invalid input, .contact-form
+.invalid textarea,
+.friend-form
+.invalid input,
+.friend-form
+.invalid textarea,
+.subscription-form
+.invalid input,
+.subscription-form
+.invalid textarea {
+  background-color: #ff807d;
 }
 
 @font-face {
@@ -682,6 +711,7 @@ textarea {
   color: #fff;
   font-weight: 500;
   height: 100%;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
@@ -714,6 +744,7 @@ textarea {
           box-sizing: border-box;
   padding: 0 3px;
   margin-left: 8px;
+  text-align: center;
 }
 
 .header .nav ul a.active:before {
@@ -741,6 +772,10 @@ textarea {
   bottom: 0;
   left: 350px;
   right: 350px;
+}
+
+html.ovh {
+  overflow: hidden;
 }
 
 body {
@@ -904,68 +939,6 @@ svg {
   }
 }
 
-.footer .subscription {
-  max-width: 600px;
-  text-align: center;
-  color: #fff;
-}
-
-.footer .subscription .title {
-  text-transform: uppercase;
-  font-family: Futuris, sans-serif;
-  margin-bottom: 15px;
-  font-size: 17px;
-}
-
-.footer .subscription .text {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  margin-bottom: 30px;
-  font-size: 17px;
-}
-
-.footer .subscription-form .field {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 14px;
-}
-
-.footer .subscription-form .field input {
-  width: 100%;
-  -webkit-flex-shrink: 500;
-      -ms-flex-negative: 500;
-          flex-shrink: 500;
-  -webkit-border-radius: 4px 0 0 4px;
-          border-radius: 4px 0 0 4px;
-  background-color: #fff;
-  border: 1px solid transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px 20px;
-}
-
-.footer .subscription-form .field button {
-  color: #fff;
-  border: none;
-  -webkit-border-radius: 0 4px 4px 0;
-          border-radius: 0 4px 4px 0;
-  background-color: #657482;
-  font-weight: 400;
-  padding: 10px 65px;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-@media screen and (min-width: 1025px) {
-  .footer .subscription-form .field button:hover {
-    background-color: #ee6309;
-  }
-}
-
 .footer .menu {
   width: 350px;
   -webkit-box-sizing: border-box;
@@ -996,6 +969,68 @@ svg {
   }
 }
 
+.subscription {
+  max-width: 600px;
+  text-align: center;
+  color: #fff;
+}
+
+.subscription .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+.subscription .text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.subscription-form .field {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+}
+
+.subscription-form .field input {
+  width: 100%;
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  -webkit-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 20px;
+}
+
+.subscription-form .field button {
+  color: #fff;
+  border: none;
+  -webkit-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+  background-color: #657482;
+  font-weight: 400;
+  padding: 10px 65px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .subscription-form .field button:hover {
+    background-color: #ee6309;
+  }
+}
+
 .btn {
   font-family: Futuris, sans-serif;
   -webkit-border-radius: 4px;
@@ -1010,6 +1045,7 @@ svg {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  white-space: nowrap;
 }
 
 .btn_bord {
@@ -2022,6 +2058,90 @@ svg {
   display: none;
 }
 
+.check {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.fast-request .check {
+  padding-bottom: 5px;
+}
+
+.check label {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.check label span {
+  position: relative;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.check label span:before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  margin: auto 14px auto 0;
+}
+
+.fast-request .check label span:before {
+  border: 1px solid #b2b9c1;
+  top: 0;
+}
+
+.friend-form .check label span:before {
+  border-top: 1px solid #f9bba5;
+  top: -1px;
+}
+
+.check input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.check input:checked ~ span:after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2211%22%20viewBox%3D%220%200%201600%201119%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23f9690e%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%22233%22%20d%3D%22m116%20609l394%20393%20974-885%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+  right: 100%;
+  top: 0;
+  bottom: 1px;
+  margin: auto 16px auto 0;
+}
+
 /*!
  * jQuery UI Datepicker 1.9.0
  * http://jqueryui.com
@@ -2308,13 +2428,13 @@ svg {
       transform: translateX(-20px);
 }
 
-.up .form-request .calendar, .up
-.fast-request .calendar {
+.form-request .up .calendar,
+.fast-request .up .calendar {
   bottom: 100%;
 }
 
-.down .form-request .calendar, .down
-.fast-request .calendar {
+.form-request .down .calendar,
+.fast-request .down .calendar {
   top: 100%;
 }
 
@@ -2657,6 +2777,61 @@ svg {
   max-width: 1200px;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+      transform: scale(1.2);
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+      transform: scale(1);
+}
+
+.modal > .close {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 52, 63, 0.5);
+  position: absolute;
+}
+
+.modal--main {
+  position: relative;
+  z-index: 1;
+}
+
+.modal [data-modal]:not(.active) {
+  display: none;
+}
+
 .grid--main {
   position: absolute;
   top: 0;
@@ -2736,7 +2911,7 @@ svg {
   width: 20%;
 }
 
-.grid-list a {
+.grid-list .item, .grid-list a {
   display: block;
   width: 100%;
   padding-top: 100%;
@@ -2744,7 +2919,7 @@ svg {
   overflow: hidden;
 }
 
-.grid-list a:before {
+.grid-list .item:before, .grid-list a:before {
   content: "";
   position: absolute;
   top: 0;
@@ -2757,21 +2932,21 @@ svg {
   transition: background-color 0.35s;
 }
 
-.best-offers .grid-list a:before {
+.best-offers .grid-list .item:before, .best-offers .grid-list a:before {
   background-color: rgba(48, 52, 63, 0.5);
 }
 
-.short-offers .grid-list a:before {
+.short-offers .grid-list .item:before, .short-offers .grid-list a:before {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (min-width: 1025px) {
-  .grid-list a:hover figure {
+  .grid-list .item:hover figure, .grid-list a:hover figure {
     -webkit-transform: scale(1.05);
             -ms-transform: scale(1.05);
         transform: scale(1.05);
   }
-  .grid-list a:hover:before {
+  .grid-list .item:hover:before, .grid-list a:hover:before {
     background-color: rgba(249, 105, 14, 0.5);
   }
 }
@@ -3468,7 +3643,7 @@ svg {
           box-sizing: border-box;
   padding: 10px 20px 10px 0;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .fast-request--wrap {
@@ -3571,78 +3746,6 @@ svg {
   height: 40px;
 }
 
-.fast-request .check {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-          -webkit-align-items: center;
-              -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-bottom: 5px;
-}
-
-.fast-request .check label {
-  position: relative;
-  display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding-left: 30px;
-  cursor: pointer;
-}
-
-.fast-request .check label span {
-  position: relative;
-  display: block;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.fast-request .check label span:before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border: 1px solid #b2b9c1;
-  position: absolute;
-  right: 100%;
-  top: 0;
-  bottom: 0;
-  margin: auto 14px auto 0;
-}
-
-.fast-request .check input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  z-index: -1;
-  visibility: hidden;
-}
-
-.fast-request .check input:checked ~ span:after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2211%22%20viewBox%3D%220%200%201600%201119%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23f9690e%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%22233%22%20d%3D%22m116%20609l394%20393%20974-885%22/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  -webkit-background-size: 100% auto;
-          background-size: 100% auto;
-  right: 100%;
-  top: 0;
-  bottom: 1px;
-  margin: auto 16px auto 0;
-}
-
 .sharing {
   padding: 20px 0;
 }
@@ -3699,6 +3802,200 @@ svg {
   .sharing a:hover i {
     color: #657482;
   }
+}
+
+.friend-form {
+  width: 800px;
+  -webkit-box-shadow: 0 5px 40px 0 rgba(48, 52, 63, 0.8);
+          box-shadow: 0 5px 40px 0 rgba(48, 52, 63, 0.8);
+}
+
+.friend-form .close {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #657482;
+  cursor: pointer;
+}
+
+.friend-form--wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+          -webkit-align-items: stretch;
+              -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.friend-form--main {
+  font-size: 15px;
+  width: 100%;
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  background: #f9bba5;
+  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
+  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
+}
+
+.friend-form figure {
+  width: 340px;
+}
+
+.friend-form .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #30343f;
+  padding: 20px 40px 10px;
+}
+
+.friend-form .fields {
+  padding: 10px 40px;
+}
+
+.friend-form .btn-box button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  border: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  outline: none;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f9690e;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.friend-form .btn-box button i {
+  width: 35px;
+  height: 35px;
+}
+
+@media screen and (min-width: 1025px) {
+  .friend-form .btn-box button:hover {
+    background-color: #ee6309;
+  }
+}
+
+.friend-form .add-fieldset {
+  position: relative;
+}
+
+.friend-form .add-fieldset.disabled .add {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.friend-form .add-fieldset .add {
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-left: 1px solid #b2b9c1;
+  z-index: 2;
+  color: #f9690e;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.friend-form .add-fieldset .add + .fieldset .field input {
+  padding-right: 50px;
+}
+
+.friend-form .fieldset {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+              -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.friend-form .field {
+  width: 100%;
+  position: relative;
+  font-weight: 400;
+}
+
+.friend-form .field:not(:last-child) {
+  margin-right: 10px;
+}
+
+.friend-form .field .input {
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+  display: block;
+  width: 100%;
+  border-top: 1px solid #f9bba5;
+}
+
+.friend-form .field textarea,
+.friend-form .field input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 40px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 0 10px;
+  resize: none;
+}
+
+.friend-form .field input {
+  line-height: 40px;
+}
+
+.friend-form .field textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /*-------------------------------------------------------------------*/

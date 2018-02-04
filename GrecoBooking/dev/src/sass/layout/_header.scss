@@ -168,6 +168,7 @@
         color: $white;
         font-weight: 500;
         height: 100%;
+        white-space: nowrap;
         text-transform: uppercase;
         span {@extend %valign;}
         &:before {
@@ -192,6 +193,7 @@
           box-sizing: border-box;
           padding: 0 3px;
           margin-left: 8px;
+          text-align: center;
         }
         &.active {
           &:before {

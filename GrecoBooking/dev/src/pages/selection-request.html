@@ -20,11 +20,11 @@
                                     <div class="fieldset pickerfields">
                                         <div class="field">
                                             <label for="arrivalDate">*Дата заезда</label>
-                                            <div class="input"><input id="arrivalDate" type="text" data-picker-full></div>
+                                            <div class="input"><input id="arrivalDate" name="arrivalDate" type="text" data-picker-full></div>
                                         </div>
                                         <div class="field">
                                             <label for="departureDate">*Дата отъезда</label>
-                                            <div class="input"><input type="text" id="departureDate" data-picker-full></div>
+                                            <div class="input"><input type="text" id="departureDate" name="departureDate" data-picker-full></div>
                                         </div>
                                         <div id="picker">
                                             <div class="calendar">
@@ -93,21 +93,21 @@
                                     <div class="fieldset">
                                         <div class="field">
                                             <label for="budget">*Бюджет в неделю, евро</label>
-                                            <div class="input"><input id="budget" type="text" ></div>
+                                            <div class="input"><input id="budget" name="budget" type="text" ></div>
                                         </div>
                                     </div>
                                     <div class="fieldset">
                                         <div class="field">
                                             <label for="name">*Ваше имя</label>
-                                            <div class="input"><input id="name" type="text" ></div>
+                                            <div class="input"><input id="name" name="name" type="text" ></div>
                                         </div>
                                         <div class="field">
                                             <label for="telephone">*Телефон</label>
-                                            <div class="input"><input type="text" id="telephone"></div>
+                                            <div class="input"><input type="text" name="telephone" id="telephone"></div>
                                         </div>
                                         <div class="field">
                                             <label for="mail">*E-mail</label>
-                                            <div class="input"><input type="text" id="mail"></div>
+                                            <div class="input"><input type="text" name="mail" id="mail"></div>
                                         </div>
                                     </div>
                                     <div class="fieldset">
@@ -172,6 +172,55 @@
 
 
 <include src="../templates/scripts.html"></include>
+
+<script>
+
+    $('.form-request form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            arrivalDate: {required: true},
+            departureDate: {required: true},
+            adults: {required: true},
+            childUntil12: {required: true},
+            babies: {required: true},
+            way: {required: true},
+            budget: {required: true},
+            name: {required: true},
+            telephone: {required: true},
+            mail: {required: true}
+        },
+        messages: {
+            arrivalDate: {required: ""},
+            departureDate: {required: ""},
+            adults: {required: ""},
+            childUntil12: {required: ""},
+            babies: {required: ""},
+            way: {required: ""},
+            budget: {required: ""},
+            name: {required: ""},
+            telephone: {required: ""},
+            mail: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+</script>
 
 </body>
 </html>
