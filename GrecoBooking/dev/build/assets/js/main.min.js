@@ -52,6 +52,14 @@ $(document).ready(function () {
     }
 
     /*
+     ============= scaling images
+    */
+
+    function scalingImage() {
+        $('.dynamic').addClass('scaling')
+    }
+
+    /*
      ============= datepickers
     */
 
@@ -353,6 +361,7 @@ $(document).ready(function () {
     if($('[data-picker-full]').length > 0){datePickerFullRequest();}
     if($('[data-picker-fast]').length > 0){datePickerFastRequest();}
     if($('.villa-carousel').length > 0){villaCarousel();}
+    if($('.dynamic').length > 0){scalingImage();}
     if($('.add-fieldset').length > 0){addFriendFormField();}
     if($('.villa-nav').length > 0){villaNavigation();}
     if($('.villa-request').length > 0){showInput(); villaRequestPosition();}

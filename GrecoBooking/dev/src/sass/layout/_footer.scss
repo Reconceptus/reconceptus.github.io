@@ -67,7 +67,7 @@
         transition: all 0.3s;
         &:hover {
           @include media(hover,1025){
-            color: $btn;
+            color: $border;
           }
         }
       }
@@ -86,10 +86,10 @@
         transition: all 0.3s;
         color: $white;
         text-transform: uppercase;
-        &.active {color: $btn;}
+        &.active {color: $border;}
         &:hover {
           @include media(hover,1025){
-            color: $btn;
+            color: $border;
           }
         }
       }

@@ -21,6 +21,13 @@
     height: 100%;
     @extend %cover;
   }
+  &.scaling {
+    figure {
+      transform: scale(1.1);
+      transition: transform 15s;
+      will-change: transform;
+    }
+  }
   &:not(.slider){
     &:after {
       content: "";
