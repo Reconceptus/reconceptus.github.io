@@ -185,6 +185,16 @@
 		"sql_column" : "information"
 	},
 	{
+		"name"       : "date",
+		"typeField"  : "input",
+		"classAttr"  : "date_start",
+		"nameText"   : "Дата публикации",
+		"nameAttr"   : "pl[date]",
+		"description": "Текстовое поле инпут \"date\"",
+		"idAttr"     : "inputStart",
+		"sql_column" : "date"
+	},
+	{
 		"name"       : "date_start",
 		"typeField"  : "input",
 		"classAttr"  : "date_start",
@@ -239,6 +249,21 @@
 		"translateKey": "statusViews",
 		"body"       : {
 			"text": "<option value=\"1\">Отображается</option><option value=\"0\">Не отображается</option>",
+			"type": "insert"
+		}
+	},
+	{
+		"name"       : "is_best",
+		"typeField"  : "select",
+		"classAttr"  : "select2",
+		"nameText"   : "Отображать в лучших",
+		"nameAttr"   : "pl[is_best]",
+		"description": "Текстовое поле селект \"Is best\" для назначения статуса отображения",
+		"idAttr"     : "selectIs_beste",
+		"sql_column" : "is_best",
+		"translateKey": "isBest",
+		"body"       : {
+			"text": "<option value=\"1\">Best</option><option value=\"0\">-</option>",
 			"type": "insert"
 		}
 	},

@@ -107,7 +107,7 @@
 	{
 		"id"              : "2",
 		"active"          : true,
-		"big_height"      : "1000",
+		"big_height"      : "1200",
 		"big_width"       : "800",
 		"class_module"    : "fa fa-file-text-o",
 		"column_index"    : [
@@ -119,7 +119,14 @@
 		"count_module"    : "20",
 		"show_count"      : true,
 		"filters"         : [],
-		"lang"            : [],
+		"lang"            : [
+			"name",
+			"text",
+			"title",
+			"author",
+			"keywords",
+			"description"
+		],
 		"link_module"     : "str",
 		"link_site_module": "/page/",
 		"menu_table_name" : "menu",
@@ -131,6 +138,7 @@
 			"active",
 			"cat",
 			"translation",
+			"date",
 			"order",
 			"html_top",
 			"html_bottom",
@@ -141,8 +149,8 @@
 			"album",
 			"tags"
 		],
-		"small_width"     : "445",
-		"small_height"    : "255",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "articles"

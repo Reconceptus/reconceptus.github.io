@@ -96,16 +96,20 @@
 			});
 		},
 
-		rowDelete: function rowDelete(id, t, n) {
+		rowDelete: function rowDelete(id, t, n, name) {
+			t = t.split('\'').length > 1 ? t : '\'' + t + '\'';
+			name = name || '';
+
 			$('#modalDel').modal('show');
-			$('.delbMod').attr('onclick','$.adm.rowDeleteOk('+ id +', '+ t +', \''+ n +'\')');
+			$('.delbMod').attr('onclick','$.adm.rowDeleteOk('+ id +', '+ t +', \''+ n +'\', \''+ name +'\')');
 
 			$(".modal-body-mess").html('Вы уверены?');
 			$(".modal-title-mess").html('Удалить');
 		},
 
-		rowDeleteOk: function rowDeleteOk(id, t, n) {
-			var dataString = 'id=' + id + '&table=' + t + '&name=' + n;
+		rowDeleteOk: function rowDeleteOk(id, t, n, name) {
+			var
+				dataString = 'id=' + id + '&table=' + t + '&name=' + n;
 
 			$.ajax({
 				cache: false,
@@ -117,8 +121,8 @@
 					if(data['result'] == 'ok') {
 						if(data['mess'] == '' || data['mess'] == 'ok') {
 							$('#modalDel').modal('hide');
-							$('.flt-'+id).parent('div').parent('td').parent('tr').remove();
-							$('.rowID-' + id).remove();
+							$('.flt' + name + '-'+id).parent('div').parent('td').parent('tr').remove();
+							$('.rowID' + name + '-' + id).remove();
 							$.adm.close_mt();
 						}
 					}

@@ -31,7 +31,44 @@ class MainController extends Controller
 	 */
 	public function main()
 	{
-		$data = [];
+		$whereBlog[]   = ['str.active', 1];
+		$whereBlog[]   = ['str.tags', '!=', '\'\''];
+		$whereVillas[] = ['villas.active', 1];
+
+		$data['blog'] = $this->dynamic->t('str')
+			->where($whereBlog)
+
+			->join('files', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('str.id', '=','files.id_album')
+					->where('files.name_table', '=', 'stralbum')
+					->where('files.main', '=', 1);
+			})
+
+			->select('str.*', 'files.file', 'files.crop')
+			->groupBy('str.id')
+			->orderBy('str.id', 'DESC')
+			->paginate(4);
+
+		$data['villas'] = $this->dynamic->t('villas')
+			->where($whereVillas)
+
+			->join('files', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('villas.id', '=','files.id_album')
+					->where('files.name_table', '=', 'villasalbum')
+					->where('files.main', '=', 1);
+			})
+
+			->select('villas.*', 'files.file', 'files.crop')
+			->groupBy('villas.id')
+			->orderBy('villas.id', 'DESC')
+			->orderBy('villas.is_best', 'ASC')
+			->paginate(6);
+
+		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
 
 		return $this->base->view_s("site.main.index", $data);
 	}
@@ -43,7 +80,7 @@ class MainController extends Controller
 	 */
 	public function selection_request()
 	{
-		$data = [];
+		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
 
 		return $this->base->view_s("site.main.selection_request", $data);
 	}
@@ -75,13 +112,45 @@ class MainController extends Controller
 	/**
 	 * Villas.
 	 *
+	 * @param null $id
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
-	public function villas()
+	public function villas($id = null)
 	{
-		$data = [];
+		$data      = [];
+		$where[]   = ['villas.active', 1];
+		$count_box = 4;
+		$group     = 'id';
 
-		return $this->base->view_s("site.main.villas", $data);
+		if($id)
+			return $this->base->view_s("site.main.villas_id", $data);
+		else {
+			$data['villas'] = $this->dynamic->t('villas')
+				->where($where)
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+				->groupBy('villas.id')
+				->orderBy('villas.' . $group, 'DESC')
+				->paginate($count_box);
+
+			$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
+
+			return $this->base->view_s("site.main.villas", $data);
+		}
 	}
 
 	/**
@@ -93,11 +162,34 @@ class MainController extends Controller
 	public function blog($id = null)
 	{
 		$data['tags'] = $this->dynamic->t('tags')->limit(100)->get()->toArray();
+		$where[]      = ['str.active', 1];
+		$where[]      = ['str.tags', '!=', '\'\''];
+		$count_box    = 4;
+		$group        = 'id';
 
 		if($id)
 			return $this->base->view_s("site.main.blog_id", $data);
-		else
+		else {
+			$data['blog'] = $this->dynamic->t('str')
+				->where($where)
+				//			->whereIn('blogs.id', $cart_id ?? [])
+				//			->where('blogs.text', 'like', '%' . trim($request['input_search'] ?? '') . '%')
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('str.id', '=','files.id_album')
+						->where('files.name_table', '=', 'stralbum')
+						->where('files.main', '=', 1);
+				})
+
+				->select('str.*', 'files.file', 'files.crop')
+				->groupBy('str.id')
+				->orderBy('str.' . $group, 'DESC')
+				->paginate($count_box);
+
 			return $this->base->view_s("site.main.blog", $data);
+		}
 	}
 
 	/**

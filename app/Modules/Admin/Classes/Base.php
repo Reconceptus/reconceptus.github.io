@@ -48,6 +48,42 @@ class Base
 		'12' => 'Декабрь',
 	];
 
+
+	/**
+	 * @var array
+	 */
+	protected $monthLang = [
+		'en' => [
+			'01' => 'January',
+			'02' => 'February',
+			'03' => 'March',
+			'04' => 'April',
+			'05' => 'May',
+			'06' => 'June',
+			'07' => 'July',
+			'08' => 'August',
+			'09' => 'September',
+			'10' => 'October',
+			'11' => 'November',
+			'12' => 'December',
+		],
+
+		'ru' => [
+			'01' => 'Января',
+			'02' => 'Февраля',
+			'03' => 'Марта',
+			'04' => 'Апреля',
+			'05' => 'Мая',
+			'06' => 'Июня',
+			'07' => 'Июля',
+			'08' => 'Августа',
+			'09' => 'Сентября',
+			'10' => 'Октября',
+			'11' => 'Ноября',
+			'12' => 'Декабря',
+		],
+	];
+
 	/**
 	 * @var mixed
 	 */
@@ -652,6 +688,7 @@ class Base
 		$args['lang']     = \App::getLocale();
 		$args['segment1'] = $segment1;
 		$args['langSt']   = function($t, $l = '') { return $this->lang($t, $l); };
+		$args['mount']    = function($m) { return $this->monthLang[\App::getLocale()][$m]; };
 
 		return view($url, $args);
 	}
@@ -791,13 +828,13 @@ class Base
 	public function lang($t, $lang = '')
 	{
 		$arr  = json_decode($t, true);
-		$lang = $lang ?? \App::getLocale();
+		$lang = empty($lang) ? \App::getLocale() : $lang;
 
 		if(is_array($arr))
 			if(json_decode($t, true)[$lang] ?? false)
 				$t = json_decode($t, true)[$lang];
 			else
-				$t = current(json_decode($t, true));
+				$t = current(json_decode($t, true)) ?? $t;
 
 			return $t;
 	}
