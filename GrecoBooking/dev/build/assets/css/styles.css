@@ -522,13 +522,8 @@ textarea {
   align-items: center;
 }
 
-.header .logo {
-  width: 335px;
-}
-
 .header .logo a {
   display: block;
-  width: 250px;
 }
 
 .header .logo a img {
@@ -538,7 +533,6 @@ textarea {
 }
 
 .header .elements {
-  width: 335px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -623,8 +617,6 @@ textarea {
 }
 
 .header .elements .search.active .form {
-  width: -webkit-calc(100vw - 700px);
-  width: calc(100vw - 700px);
   background-color: #30343F;
   pointer-events: auto;
   opacity: 1;
@@ -696,7 +688,6 @@ textarea {
 }
 
 .header .nav ul li {
-  margin: 0 20px;
   height: 60px;
   position: relative;
 }
@@ -710,7 +701,6 @@ textarea {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  font-size: 18px;
   color: #FFF;
   font-weight: 500;
   height: 100%;
@@ -765,8 +755,6 @@ textarea {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 350px;
-  right: 350px;
 }
 
 html.ovh {
@@ -6195,5 +6183,94 @@ svg {
 
   .contact-form-box .btn-box button:hover {
     background-color: #EE6309;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .header .logo {
+    width: 335px;
+  }
+
+  .header .logo a {
+    width: 250px;
+  }
+
+  .header .elements {
+    width: 335px;
+  }
+
+  .header .elements .search.active .form {
+    width: -webkit-calc(100vw - 700px);
+    width: calc(100vw - 700px);
+  }
+
+  .header .elements .language {
+    font-size: 16px;
+  }
+
+  .header .nav ul li {
+    margin: 0 20px;
+  }
+
+  .header .nav ul a {
+    font-size: 18px;
+  }
+
+  .header .search-form {
+    left: 350px;
+    right: 350px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .header .logo {
+    width: 265px;
+  }
+
+  .header .logo a {
+    width: 200px;
+  }
+
+  .header .elements {
+    width: 265px;
+  }
+
+  .header .elements .search.active .form {
+    width: -webkit-calc(100vw - 530px);
+    width: calc(100vw - 530px);
+  }
+
+  .header .elements .language {
+    font-size: 14px;
+  }
+
+  .header .elements .request .btn_bord {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header .nav ul li {
+    margin: 0 10px;
+  }
+
+  .header .nav ul a {
+    font-size: 14px;
+  }
+
+  .header .search-form {
+    left: 280px;
+    right: 280px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .header .elements .request {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header .elements .burger {
+    display: none;
   }
 }

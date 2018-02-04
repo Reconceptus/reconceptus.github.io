@@ -12,11 +12,13 @@
     align-items: center;
   }
   .logo {
-    width: 335px;
+    @include media(hover,1600){width: 335px;}
+    @include breakpoints(1200,1599){width: 265px;}
     a {
       display: block;
-      width: 250px;
 
+      @include media(hover,1600){width: 250px;}
+      @include breakpoints(1200,1599){width: 200px;}
       img {
         display: block;
         width: 100%;
@@ -25,7 +27,8 @@
     }
   }
   .elements {
-    width: 335px;
+    @include media(hover,1600){width: 335px;}
+    @include breakpoints(1200,1599){width: 265px;}
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -83,7 +86,8 @@
       }
       &.active {
         .form {
-          width: calc(100vw - 700px);
+          @include media(hover,1600){width: calc(100vw - 700px);}
+          @include breakpoints(1200,1599){width: calc(100vw - 530px);}
           background-color: $text;
           pointer-events: auto;
           opacity: 1;
@@ -94,6 +98,8 @@
       width: 25px;
       height: 20px;
       position: relative;
+      @include media(hover,1600){font-size: 16px;}
+      @include breakpoints(1200,1599){font-size: 14px;}
       ul {
         position: absolute;
         top: -2px;
@@ -149,6 +155,23 @@
         }
       }
     }
+    .request {
+      .btn_bord {
+        @include breakpoints(1200,1599){
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      @include media(screen,1199){
+        display: none;
+      }
+    }
+    .burger {
+      @include media(hover,1200){
+        display: none;
+      }
+
+    }
   }
   .nav {
     transition: all 0.35s;
@@ -156,15 +179,17 @@
       display: flex;
       align-items: flex-start;
       li {
-        margin: 0 20px;
         height: 60px;
         position: relative;
-
+        @include media(hover,1600){margin: 0 20px;}
+        @include breakpoints(1200,1599){margin: 0 10px;}
       }
       a {
         display: flex;
         align-items: center;
-        font-size: 18px;
+
+        @include media(hover,1600){font-size: 18px;}
+        @include breakpoints(1200,1599){font-size: 14px;}
         color: $white;
         font-weight: 500;
         height: 100%;
@@ -218,7 +243,13 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 350px;
-    right: 350px;
+    @include media(hover,1600){
+      left: 350px;
+      right: 350px;
+    }
+    @include breakpoints(1200,1599){
+      left: 280px;
+      right: 280px;
+    }
   }
 }
