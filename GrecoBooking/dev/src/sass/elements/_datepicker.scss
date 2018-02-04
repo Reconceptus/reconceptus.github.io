@@ -96,6 +96,7 @@
         height: 40px;
         padding: 0;
         color: inherit;
+
       }
       &.ui-datepicker-unselectable {
         color: $bg;
@@ -180,6 +181,10 @@
       }
     }
     &-calendar {
+      .ui-state-active {
+        background-color: $btn;
+        color: $white;
+      }
       .ui-state-hover {
         background-color: $btn;
         color: $white;

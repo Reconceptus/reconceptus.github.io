@@ -1092,6 +1092,7 @@ svg {
   text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
+.favorite--head .headline_main,
 .placing--request .headline_main,
 .villa--head .headline_main,
 .blog-box .headline_main,
@@ -2011,10 +2012,6 @@ svg {
   line-height: 1.4;
 }
 
-.custom-select .select2-results__option:first-child {
-  display: none;
-}
-
 .check {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2574,6 +2571,11 @@ svg {
   -webkit-background-size: 8px auto;
   background-size: 8px auto;
   background-position: 90% center;
+}
+
+.calendar .ui-datepicker-calendar .ui-state-active {
+  background-color: #F9690E;
+  color: #FFF;
 }
 
 .calendar .ui-datepicker-calendar .ui-state-hover {

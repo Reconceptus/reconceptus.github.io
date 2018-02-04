@@ -74,6 +74,7 @@ $(document).ready(function () {
             changeYear:true,
             numberOfMonths: 2,
             minDate: dateToday,
+
             beforeShow:function () {
                 var picker = $('#picker'),
                     pickerOffset = picker.offset().top,
@@ -109,6 +110,9 @@ $(document).ready(function () {
                 if($('#'+el02).val() != ''){$('#'+el02).closest('.field').removeClass('invalid')}
             }
         });
+
+        $('#'+el01).datepicker('setDate', 'today');
+        $('#'+el02).datepicker('setDate', '+1w');
     }
 
     function datePickerFastRequest() {
@@ -148,6 +152,9 @@ $(document).ready(function () {
                 if($('#'+el02).val() != ''){$('#'+el02).closest('.field').removeClass('invalid')}
             }
         });
+
+        $('#'+el01).datepicker('setDate', 'today');
+        $('#'+el02).datepicker('setDate', '+1w');
     }
 
     /*
