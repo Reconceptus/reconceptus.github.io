@@ -17,6 +17,9 @@
     height: 40px;
     display: flex;
     align-items: center;
+    .villa-request & {
+      height: 30px;
+    }
   }
   .select2-container--default .select2-selection--single .select2-selection__arrow {
     display: none;

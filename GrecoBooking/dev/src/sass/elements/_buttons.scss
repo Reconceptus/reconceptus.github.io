@@ -54,6 +54,17 @@
   box-sizing: border-box;
   line-height: 1.4;
   transition: all 0.3s;
+  span, i {
+    @extend %valign;
+  }
+  .ico-back {
+    width: 41px;
+    height: 14px;
+  }
+  .ico-like {
+    width: 20px;
+    height: 20px;
+  }
   &:hover {
     @include media(hover,1025){
       background-color: $btn_hover;
@@ -66,6 +77,9 @@
 .btns {
   &_center {
     text-align: center;
+    a {
+      margin: 0 4px;
+    }
   }
 }
 

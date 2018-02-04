@@ -78,31 +78,7 @@
       }
     }
   }
-  cite {
-    margin: 60px auto;
-    text-align: center;
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    color: $btn;
-    font-size: 29px;
-    line-height: 1.4;
-    max-width: 420px;
-    padding: 15px 0 0;
-    .key {
-      margin: 0 auto;
-      display: block;
-      width: 95px;
-      height: 40px;
-    }
-    .infinity {
-      margin: 20px auto 0;
-      display: block;
-      width: 72px;
-      height: 23px;
-    }
-  }
+
   &.location-text {
     img {
       width: 1200px;

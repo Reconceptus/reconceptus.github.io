@@ -256,7 +256,9 @@ textarea {
 .header .nav ul a span,
 .footer--bottom a,
 .btn span,
-.btn i {
+.btn i,
+.more span,
+.more i {
   display: inline-block;
   vertical-align: middle;
 }
@@ -268,6 +270,7 @@ textarea {
 .villa-img figure,
 .offers .item a figure,
 .home-request--main,
+.place-description figure,
 .vacancy-quotes figure {
   background-position: center center;
   background-repeat: no-repeat;
@@ -1012,8 +1015,22 @@ svg {
   transition: all 0.3s;
 }
 
+.more .ico-back {
+  width: 41px;
+  height: 14px;
+}
+
+.more .ico-like {
+  width: 20px;
+  height: 20px;
+}
+
 .btns_center {
   text-align: center;
+}
+
+.btns_center a {
+  margin: 0 4px;
 }
 
 .headline_main {
@@ -1023,6 +1040,10 @@ svg {
   color: #30343F;
   text-align: center;
   line-height: 1.6;
+}
+
+.sm .headline_main {
+  font-size: 30px;
 }
 
 .light-style .headline_main {
@@ -1889,6 +1910,10 @@ svg {
   align-items: center;
 }
 
+.villa-request .select .select2-container--default .select2-selection--single {
+  height: 30px;
+}
+
 .select .select2-container--default .select2-selection--single .select2-selection__arrow {
   display: none;
 }
@@ -2203,11 +2228,7 @@ svg {
 }
 
 .calendar {
-  left: 50%;
   position: absolute;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
   z-index: 3;
   background-color: #FFF;
   -webkit-box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
@@ -2216,12 +2237,35 @@ svg {
   display: none;
 }
 
-.up .calendar {
+.form-request .calendar,
+.fast-request .calendar {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.villa-request .calendar {
+  right: 100%;
+  -webkit-transform: translateX(-20px);
+  -ms-transform: translateX(-20px);
+  transform: translateX(-20px);
+}
+
+.up .form-request .calendar,
+.up
+.fast-request .calendar {
   bottom: 100%;
 }
 
-.down .calendar {
+.down .form-request .calendar,
+.down
+.fast-request .calendar {
   top: 100%;
+}
+
+.villa-request .calendar {
+  top: 0;
 }
 
 .calendar .annotation {
@@ -2549,34 +2593,6 @@ svg {
   position: absolute;
 }
 
-.text-box cite {
-  margin: 60px auto;
-  text-align: center;
-  display: block;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-weight: 400;
-  color: #F9690E;
-  font-size: 29px;
-  line-height: 1.4;
-  max-width: 420px;
-  padding: 15px 0 0;
-}
-
-.text-box cite .key {
-  margin: 0 auto;
-  display: block;
-  width: 95px;
-  height: 40px;
-}
-
-.text-box cite .infinity {
-  margin: 20px auto 0;
-  display: block;
-  width: 72px;
-  height: 23px;
-}
-
 .text-box.location-text img {
   width: 1200px;
   max-width: 1200px;
@@ -2703,6 +2719,15 @@ svg {
   line-height: 1;
 }
 
+.grid-list .short {
+  margin-top: 10px;
+  line-height: 1.6;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.2);
+  font-size: 17px;
+}
+
 .grid-list .price {
   display: inline-block;
   color: #30343F;
@@ -2747,14 +2772,17 @@ svg {
   flex-shrink: 500;
 }
 
+.short-info .includes > span,
 .grid .includes > span {
   font-size: 15px;
 }
 
+.short-info .includes > span:not(:last-child),
 .grid .includes > span:not(:last-child) {
   margin-right: 30px;
 }
 
+.short-info .includes > span i,
 .grid .includes > span i {
   margin-right: 10px;
 }
@@ -2769,6 +2797,11 @@ svg {
   height: 21px;
 }
 
+.short-info .includes .bed i {
+  width: 26px;
+  height: 21px;
+}
+
 .grid .includes .bath i {
   width: 32px;
   height: 28px;
@@ -2779,12 +2812,22 @@ svg {
   height: 28px;
 }
 
+.short-info .includes .bath i {
+  width: 32px;
+  height: 28px;
+}
+
 .grid .includes .sea i {
   width: 28px;
   height: 29px;
 }
 
 .villa-item .includes .sea i {
+  width: 28px;
+  height: 29px;
+}
+
+.short-info .includes .sea i {
   width: 28px;
   height: 29px;
 }
@@ -3770,11 +3813,11 @@ svg {
 /*----------------------------------------------------------------------*/
 /*****************          best offers box          ********************/
 /*----------------------------------------------------------------------*/
-.best-offers {
+.best-offers:not(:last-child) {
   margin-bottom: 40px;
 }
 
-.best-offers .grid-list {
+.best-offers .grid-list:not(:last-child) {
   margin-bottom: 40px;
 }
 
@@ -4194,6 +4237,9 @@ svg {
   width: 100%;
 }
 
+/*--------------------------------------------------------------------*/
+/******************          villas common          **********************/
+/*--------------------------------------------------------------------*/
 .villas--wrap {
   padding-bottom: 20px;
 }
@@ -4202,6 +4248,9 @@ svg {
   margin: 20px 0;
 }
 
+/*--------------------------------------------------------------------*/
+/******************          carousel          **********************/
+/*--------------------------------------------------------------------*/
 .villa-carousel {
   height: 100%;
 }
@@ -4264,6 +4313,238 @@ svg {
   background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2021%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22M1%201%2011%2011%201%2021%22/%3E%3C/svg%3E");
 }
 
+/*--------------------------------------------------------------------*/
+/******************          navigation          **********************/
+/*--------------------------------------------------------------------*/
+.villa-nav {
+  height: 120px;
+  margin-bottom: 45px;
+}
+
+.villa-nav .short-info {
+  background-color: #30343F;
+  width: 100%;
+  color: #FFF;
+}
+
+.villa-nav .short-info-data {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 120px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.villa-nav .short-info-attributes {
+  max-width: -webkit-calc(100% - 340px);
+  max-width: calc(100% - 340px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.villa-nav .short-info-attributes .item {
+  margin-right: 44px;
+  cursor: pointer;
+}
+
+.villa-nav .short-info-attributes .item .name {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.villa-nav .short-info-attributes .item .place {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 17px;
+  height: 32px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.villa-nav .short-info-attributes .item .place i {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.villa-nav .short-info-navigate {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.villa-nav .short-info-navigate .nav-icon {
+  position: relative;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #595D65;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 10px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.villa-nav .short-info-navigate .nav-icon i {
+  display: block;
+}
+
+.villa-nav .short-info-navigate .nav-icon i.ico-photo {
+  width: 20px;
+  height: 20px;
+}
+
+.villa-nav .short-info-navigate .nav-icon i.ico-plan {
+  width: 19px;
+  height: 18px;
+}
+
+.villa-nav .short-info-navigate .nav-icon i.ico-service {
+  width: 20px;
+  height: 20px;
+}
+
+.villa-nav .short-info-navigate .nav-icon i.ico-map {
+  width: 21px;
+  height: 21px;
+}
+
+.villa-nav .short-info-navigate .nav-icon .tooltip {
+  position: absolute;
+  background-color: #22242C;
+  font-size: 12px;
+  white-space: nowrap;
+  top: 100%;
+  left: 50%;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-top: 5px;
+  border: 1px solid #595D65;
+  padding: 2px 5px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.villa-nav .short-info-navigate .nav-icon .tooltip:after,
+.villa-nav .short-info-navigate .nav-icon .tooltip:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: none solid solid;
+  left: 50%;
+  bottom: 100%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.villa-nav .short-info-navigate .nav-icon .tooltip:before {
+  border-color: #595D65 transparent;
+  border-width: 4px 5px;
+}
+
+.villa-nav .short-info-navigate .nav-icon .tooltip:after {
+  border-color: #22242C transparent;
+  border-width: 3px 4px;
+}
+
+.villa-nav .short-info.fixed,
+.villa-nav .short-info.absolute {
+  left: 0;
+  z-index: 20;
+}
+
+.villa-nav .short-info.fixed .short-info-data,
+.villa-nav .short-info.absolute .short-info-data {
+  height: 60px;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .place,
+.villa-nav .short-info.absolute .short-info-attributes .place {
+  height: 0;
+}
+
+.villa-nav .short-info.fixed .short-info-navigate,
+.villa-nav .short-info.absolute .short-info-navigate {
+  opacity: 1;
+}
+
+.villa-nav .short-info.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.villa-nav .short-info.absolute {
+  position: absolute;
+  bottom: 0;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          custom layout          **********************/
+/*--------------------------------------------------------------------*/
 .villa-layout {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4288,12 +4569,446 @@ svg {
   width: 300px;
 }
 
+.villa-layout .cite {
+  margin: 60px auto;
+  text-align: center;
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #F9690E;
+  font-size: 29px;
+  line-height: 1.4;
+  max-width: 420px;
+}
+
+.villa-layout .cite .key {
+  margin: 0 auto;
+  display: block;
+  width: 95px;
+  height: 40px;
+}
+
+.villa-layout .cite .infinity {
+  margin: 20px auto 0;
+  display: block;
+  width: 72px;
+  height: 23px;
+}
+
+.villa-page--wrap {
+  position: relative;
+}
+
+.villa-part {
+  margin-bottom: 45px;
+}
+
+.villa-part header {
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          experts box          **********************/
+/*--------------------------------------------------------------------*/
 .experts {
   margin-top: 100px;
+  margin-bottom: 65px;
 }
 
 .experts-box {
   background-color: #F0F1F3;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          places box          **********************/
+/*--------------------------------------------------------------------*/
+.showplaces {
+  font-size: 17px;
+  line-height: 28px;
+  margin-bottom: 50px;
+}
+
+.showplaces-list {
+  -webkit-columns: 2 auto;
+  -moz-columns: 2 auto;
+  columns: 2 auto;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+}
+
+.showplaces-list dl {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.showplaces-list dt {
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.showplaces-list dt span {
+  background-color: #FFF;
+}
+
+.showplaces-list dd {
+  position: relative;
+  width: 50%;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.showplaces-list dd:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 20px;
+  width: 90%;
+  height: 1px;
+  margin-right: 5px;
+  border-bottom: 1px dashed #B2B9C1;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          map box          **********************/
+/*--------------------------------------------------------------------*/
+.villa-map {
+  margin-bottom: 20px;
+}
+
+.villa-map--wrap {
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.villa-map .map-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3000px;
+  height: 100%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.place-description {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  width: 300px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.place-description figure {
+  width: 100%;
+  height: 200px;
+}
+
+.place-description .text {
+  background-color: #30343F;
+  color: #FFF;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 15px;
+  padding: 15px 20px;
+  min-height: 220px;
+}
+
+.place-description .text .title {
+  font-family: Futuris, sans-serif;
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------------*/
+/******************          villa request          **********************/
+/*--------------------------------------------------------------------*/
+.villa-request {
+  width: 300px;
+  z-index: 55;
+  position: relative;
+  margin-top: -185px;
+  -webkit-transition: margin-top 0.4s;
+  -o-transition: margin-top 0.4s;
+  transition: margin-top 0.4s;
+}
+
+.fixed .villa-request {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: 300px;
+  margin-top: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.absolute .villa-request {
+  z-index: 1;
+  margin-top: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.villa-request .price {
+  background-color: #4A5460;
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.villa-request .price strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.villa-request-form {
+  background-color: #FFF;
+  -webkit-box-shadow: 0 0 20px 0 RGBA(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px 0 RGBA(0, 0, 0, 0.15);
+  padding: 0 20px;
+  position: relative;
+}
+
+.villa-request-form #showVillaForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.villa-request-form #showVillaForm:checked ~ * .fields-part {
+  display: block;
+}
+
+.villa-request-form #showVillaForm:checked ~ * .submit-part .submit-btn label {
+  display: none;
+}
+
+.villa-request-form .fields-part {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px 0 0;
+  display: none;
+}
+
+.villa-request-form .submit-part {
+  padding: 20px 0 15px;
+}
+
+.villa-request-form .submit-btn {
+  position: relative;
+}
+
+.villa-request-form .submit-btn .btn {
+  width: 100%;
+}
+
+.villa-request-form .submit-btn label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.villa-request-form .submit-btn label:hover + .btn {
+  background-color: #EE6309;
+}
+
+.villa-request-form .submit-actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 15px 0 0;
+}
+
+.villa-request-form .submit-actions .like {
+  color: #FFF;
+  width: 28px;
+  height: 28px;
+  margin: 0 5px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.villa-request-form .submit-actions .like.active {
+  color: #F9690E;
+}
+
+.villa-request-form .submit-actions .like.active svg {
+  stroke: #F9690E;
+}
+
+.villa-request-form .submit-actions .like svg {
+  stroke-width: 12px;
+  stroke: #657482;
+}
+
+.villa-request-form .submit-actions .send {
+  margin: 0 5px;
+  color: #657482;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.villa-request-form .fieldset {
+  border-bottom: 1px solid #B2B9C1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 5px 0;
+  min-height: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.villa-request-form .fieldset.pickerfields {
+  position: relative;
+}
+
+.villa-request-form .fieldset.pickerfields:after {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%20169%20169%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m95%2031c-4-3-4-9%200-12%203-3%208-3%2012%200l59%2060c4%203%204%208%200%2012l-59%2059c-4%204-9%204-12%200-4-3-4-8%200-12l45-45h-132c-4%200-8-4-8-8%200-5%204-9%208-9h132l-45-45%22%20fill%3D%22%23f9690e%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-position: center center;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+.villa-request-form .fieldset.pickerfields > .field {
+  position: relative;
+  z-index: 2;
+}
+
+.villa-request-form .fieldset.pickerfields > .field:first-child {
+  margin-right: 40px;
+}
+
+.villa-request-form .fieldset .field {
+  width: 100%;
+}
+
+.villa-request-form .fieldset .field-select {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.villa-request-form .fieldset .field-select label {
+  margin-right: 10px;
+}
+
+.villa-request-form .fieldset .field label {
+  display: block;
+  font-size: 15px;
+}
+
+.villa-request-form .fieldset .field .select,
+.villa-request-form .fieldset .field .input {
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.villa-request-form .fieldset .field .input.filled input {
+  height: auto;
+  opacity: 1;
+}
+
+.villa-request-form .fieldset .field input {
+  display: block;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+}
+
+.villa-request-form .fieldset .field input:focus {
+  height: auto;
+  opacity: 1;
 }
 
 .location-text {
@@ -4785,7 +5500,7 @@ svg {
   overflow: hidden;
 }
 
-.map-box {
+.map-container .map-box {
   position: absolute;
   top: 0;
   left: 63%;
@@ -5098,6 +5813,27 @@ svg {
   .blog-box .tags ul a:hover {
     background-color: #B2B9C1;
     color: #FFF;
+  }
+
+  .villa-nav .short-info-navigate .nav-icon:hover {
+    background-color: RGBA(0, 0, 0, 0.3);
+  }
+
+  .villa-nav .short-info-navigate .nav-icon:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .villa-request-form .submit-actions .like:hover {
+    color: #F9690E;
+  }
+
+  .villa-request-form .submit-actions .like:hover svg {
+    stroke: #F9690E;
+  }
+
+  .villa-request-form .submit-actions .send:hover {
+    color: #F9690E;
   }
 
   .worker-img:hover:after {

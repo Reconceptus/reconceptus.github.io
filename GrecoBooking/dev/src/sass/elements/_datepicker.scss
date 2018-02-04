@@ -22,19 +22,35 @@
 
 .calendar {
 
-  left: 50%;
+  .form-request &,
+  .fast-request & {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .villa-request & {
+    right: 100%;
+    transform: translateX(-20px);
+  }
+
   position: absolute;
-  transform: translateX(-50%);
+
   z-index: 3;
   background-color: $white;
   box-shadow: 0 5px 20px 0 rgba($head,0.4);
   border: 1px solid $bg;
   display: none;
-  .up & {
-    bottom: 100%;
+  .form-request &,
+  .fast-request & {
+    .up & {
+      bottom: 100%;
+    }
+    .down & {
+      top: 100%;
+    }
   }
-  .down & {
-    top: 100%;
+  .villa-request & {
+    top: 0;
   }
   .annotation {
     position: absolute;

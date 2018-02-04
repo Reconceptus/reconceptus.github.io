@@ -183,8 +183,14 @@ gulp.task('watch', ['optimize:styles', 'includer:html', 'rigger:js', 'browser-sy
     gulp.watch('src/images/**/*.+(jpg|jpeg|png|gif)', ['optimize:js']);
 });
 
-/* dafault task */
+/* dafault tasks */
 
 gulp.task('default',function () {
     gulp.run('watch');
+});
+gulp.task('svg',function () {
+    gulp.run('svgstore');
+});
+gulp.task('img',function () {
+    gulp.run('imagemin');
 });

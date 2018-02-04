@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     span {flex-shrink: 500;}
+    .short-info &,
     .grid & {
       font-size: 15px;
       &:not(:last-child){
@@ -14,6 +15,7 @@
         margin-right: 10px;
       }
     }
+
   }
 
   .bed {
@@ -23,6 +25,10 @@
         height: 21px;
       }
       .villa-item & {
+        width: 26px;
+        height: 21px;
+      }
+      .short-info & {
         width: 26px;
         height: 21px;
       }
@@ -39,6 +45,10 @@
         width: 32px;
         height: 28px;
       }
+      .short-info & {
+        width: 32px;
+        height: 28px;
+      }
     }
   }
   .sea {
@@ -48,6 +58,10 @@
         height: 29px;
       }
       .villa-item & {
+        width: 28px;
+        height: 29px;
+      }
+      .short-info & {
         width: 28px;
         height: 29px;
       }
