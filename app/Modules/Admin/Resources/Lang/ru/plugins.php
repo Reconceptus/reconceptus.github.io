@@ -15,4 +15,12 @@ return [
 	'what_is_next'       => 'Что есть рядом',
 	'album'              => 'Альбом',
 	'recommendedVillas'  => 'Рекомендованные виллы',
+	'convenience'        => 'Удобства',
+	'services'           => 'Услуги',
+	'distances_location' => 'Расстояния и расположение',
+	'distances'          => 'Расстояние',
+	'location'           => 'Расположение',
+	'bedroom'            => 'Спальни',
+	'bathrooms'          => 'Ванные комнаты',
+	'sea'                => 'Море',
 ];

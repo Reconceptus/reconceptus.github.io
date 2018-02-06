@@ -287,4 +287,30 @@ class PluginsController extends Controller
 			]
 		);
 	}
+
+	/**
+	 * Load view Distances.
+	 *
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+	 */
+	public function distances($field, $table_params = '', $params = [])
+	{
+		return Base::view(
+			"admin::plugins.distances",
+
+			[
+				'field'  => ModuleController::_body($field, ['class' => 'distances-cont']),
+				'plugin' => $field,
+				'id'     => $params['id'],
+				'lang'   => \App::getLocale(),
+			]
+		);
+	}
+
+	public function insertDistances($val){
+		return json_encode($val);
+	}
 }

@@ -11,7 +11,7 @@
 			<h4 class="panel-title">
 				<div style="padding: 10px 15px" role="button" data-toggle="collapse" data-parent="#accordion"
 						 href="#collapseOne{{ $name }}" aria-expanded="true" aria-controls="collapseOne{{ $name }}">
-					@lang('admin::plugins.' . ($plugin['translate_key'] ?? 'album'))
+					@lang('admin::plugins.' . ($plugin['translateKey'] ?? 'album'))
 				</div>
 			</h4>
 		</div>

@@ -127,7 +127,7 @@
 				</div>
 
 				<p class="asterisk">*@lang('main.required_fields')</p>
-				<button class="btn btn_subm" type="submit">@lang('main.Required fields')</button>
+				<button class="btn btn_subm" type="submit">@lang('main.send_request')</button>
 			</div>
 		</form>
 	</div>

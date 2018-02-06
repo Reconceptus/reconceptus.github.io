@@ -72,7 +72,7 @@
 										>
 											@foreach($v as $key => $val)
 												{!! $val['html_top'] !!}
-												{!! str_replace('--options--', '', $val['html']) !!}
+												{!! str_replace('-]-options-[-', '', str_replace('--options--', '', $val['html'])) !!}
 												{!! $val['html_bottom'] !!}
 											@endforeach
 										</div>
@@ -89,34 +89,8 @@
 												<div class="wrapper wrapper-content animated fadeIn">
 													@foreach($plugins_lang as $k => $v)
 														{!! $v['html_top'] !!}
-
-														@if($v['name'] == 'location_text')
-															{!! str_replace('--options--', '[' . strtolower($val['name']) . ']', $v['html']) !!}
-														@else
-															{!! str_replace('--options--', '[' . strtolower($val['name']) . ']', $v['html']) !!}
-														@endif
-
+														{!! str_replace('-]-options-[-', strtolower($val['name']), str_replace('--options--', '[' . strtolower($val['name']) . ']', $v['html'])) !!}
 														{!! $v['html_bottom'] !!}
-
-														@if($v['name'] == 'location_text')
-															<script>
-																$.ajax({
-																	type: "post",
-																	url: "/admin/modules/show_loader",
-																	data: {
-																		name_table: '{{ $table }}',
-																		id_album: '{{ $id }}',
-																		view: 'locationText',
-																		lang: '{{ $val['name'] }}'
-																	},
-																	cache: false,
-																	dataType: "html",
-																	success: function(data) {
-																		$('#location_text{{ $val['name'] }}').html(data);
-																	}
-																})
-															</script>
-														@endif
 													@endforeach
 												</div>
 											</div>
@@ -187,9 +161,10 @@
 
 											$('#select' + ucfirst(k)).val(text || 0).trigger("change");
 										} else {
-											if(v.typeField === 'functions')
-												$('#' + v.idAttr).attr('data-init-value', text ? text : 0);
-											else
+											if(v.typeField === 'functions') {
+												$('#' + v.idAttr + 'en').attr('data-init-value', text ? text : 0);
+												$('#' + v.idAttr + 'ru').attr('data-init-value', text ? text : 0);
+											} else
 												$('[name="pl[' + k + ']"]').val(_.unescape(text));
 										}
 									});
@@ -213,8 +188,24 @@
 		});
 
 		$(window).load(function() {
-			@foreach($js_init_function as $init)
-			{!! 'window.' . $init . '();'!!}
+			var name = '';
+				@foreach($js_init_function as $init)
+			name = '{{ $init }}';
+
+			if(window[name]) {
+				{!! 'window.' . $init . '();'!!}
+			}
+			@endforeach
+			@foreach($plugins_lang ?? [] as $plugins)
+			@if($plugins['typeField'] == 'functions')
+			@foreach($lang_array ?? [] as $lang)
+			name = '{{ $init }}';
+
+			if(window[name]) {
+				{!! 'window.' . $plugins['js_init_function'] . $lang['name'] . '();'!!}
+			}
+			@endforeach
+			@endif
 			@endforeach
 		});
 	</script>

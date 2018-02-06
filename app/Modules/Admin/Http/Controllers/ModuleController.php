@@ -366,6 +366,26 @@ class ModuleController extends Controller
 	}
 
 	/**
+	 * Функция рендера input.
+	 *
+	 * @param       $inp
+	 * @param array $param
+	 * @return string
+	 */
+	public static function _body($inp, $param = [])
+	{
+		return '<div class="form-group ' . ($param['class'] ?? '') . '">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+			' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '
+			</label>
+			
+			<input type="hidden" id="' . $inp['idAttr'] . '-]-options-[-" />
+			<div class="col-md-6 col-sm-6 col-xs-12">' . ($inp['body']['text'] ?? '') . '</div>
+			<br class="clear" />
+		</div>';
+	}
+
+	/**
 	 * функция рендера textarea
 	 * @param $inp
 	 * @return string

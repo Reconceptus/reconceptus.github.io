@@ -238,31 +238,31 @@
 		}
 	},
 	{
-		"name"       : "active",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Статус отображения",
-		"nameAttr"   : "pl[active]",
-		"description": "Текстовое поле селект \"Active\" для назначения статуса отображения",
-		"idAttr"     : "selectActive",
-		"sql_column" : "active",
+		"name"        : "active",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Статус отображения",
+		"nameAttr"    : "pl[active]",
+		"description" : "Текстовое поле селект \"Active\" для назначения статуса отображения",
+		"idAttr"      : "selectActive",
+		"sql_column"  : "active",
 		"translateKey": "statusViews",
-		"body"       : {
+		"body"        : {
 			"text": "<option value=\"1\">Отображается</option><option value=\"0\">Не отображается</option>",
 			"type": "insert"
 		}
 	},
 	{
-		"name"       : "is_best",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Отображать в лучших",
-		"nameAttr"   : "pl[is_best]",
-		"description": "Текстовое поле селект \"Is best\" для назначения статуса отображения",
-		"idAttr"     : "selectIs_beste",
-		"sql_column" : "is_best",
+		"name"        : "is_best",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Отображать в лучших",
+		"nameAttr"    : "pl[is_best]",
+		"description" : "Текстовое поле селект \"Is best\" для назначения статуса отображения",
+		"idAttr"      : "selectIs_beste",
+		"sql_column"  : "is_best",
 		"translateKey": "isBest",
-		"body"       : {
+		"body"        : {
 			"text": "<option value=\"1\">Best</option><option value=\"0\">-</option>",
 			"type": "insert"
 		}
@@ -299,8 +299,8 @@
 		"parent_table": "villas",
 		"translateKey": "recommendedVillas",
 		"body"        : {
-			"text": "<option value=\"0\">(Без категории)</option>{-option-}",
-			"type": "replace",
+			"text"    : "<option value=\"0\">(Без категории)</option>{-option-}",
+			"type"    : "replace",
 			"multiple": "multiple"
 		}
 	},
@@ -408,13 +408,13 @@
 		"sql_column" : "organization"
 	},
 	{
-		"name"       : "price_money",
-		"typeField"  : "input",
-		"nameText"   : "Цена(только число)",
-		"nameAttr"   : "pl[price_money]",
-		"description": "Текстовое поле инпут \"price-money (Цена(только число))\"",
-		"idAttr"     : "inputPrice_money",
-		"sql_column" : "price_money",
+		"name"        : "price_money",
+		"typeField"   : "input",
+		"nameText"    : "Цена(только число)",
+		"nameAttr"    : "pl[price_money]",
+		"description" : "Текстовое поле инпут \"price-money (Цена(только число))\"",
+		"idAttr"      : "inputPrice_money",
+		"sql_column"  : "price_money",
 		"translateKey": "price_money"
 	},
 	{
@@ -699,13 +699,13 @@
 		}
 	},
 	{
-		"name"       : "coordinates",
-		"typeField"  : "input",
-		"nameText"   : "Координаты",
-		"nameAttr"   : "pl[coordinates]",
-		"description": "Текстовое поле инпут \"Координаты(latitude|longitude)\"",
-		"idAttr"     : "inputCoordinates",
-		"sql_column" : "coordinates",
+		"name"        : "coordinates",
+		"typeField"   : "input",
+		"nameText"    : "Координаты",
+		"nameAttr"    : "pl[coordinates]",
+		"description" : "Текстовое поле инпут \"Координаты(latitude|longitude)\"",
+		"idAttr"      : "inputCoordinates",
+		"sql_column"  : "coordinates",
 		"translateKey": "coordinates"
 	},
 	{
@@ -992,20 +992,6 @@
 		}
 	},
 	{
-		"name"       : "type_meat",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Тип мяса",
-		"nameAttr"   : "pl[type_meat]",
-		"description": "Селект \"Тип мяса\" для выбора типа мяса",
-		"idAttr"     : "selectType_meat",
-		"sql_column" : "type_meat",
-		"body"       : {
-			"text": "<option value=\"0\">Любое</option><option value=\"1\">Говядина</option><option value=\"2\">Свинина</option><option value=\"3\">Баранина</option><option value=\"4\">Птица</option><option value=\"5\">Дичь</option>",
-			"type": "insert"
-		}
-	},
-	{
 		"name"       : "time_cooking",
 		"typeField"  : "input",
 		"nameText"   : "Время приготовления",
@@ -1091,25 +1077,105 @@
 		}
 	},
 	{
-		"name"            : "specialist_comment",
-		"typeField"       : "textarea",
-		"classAttr"       : "specialist_comment",
-		"nameText"        : "Комментарий специалиста",
-		"nameAttr"        : "pl[specialist_comment]",
-		"description"     : "Текстовое поле \"specialist_comment\"",
-		"idAttr"          : "inputSpecialist_comment",
-		"sql_column"      : "specialist_comment",
-		"showOnly"        : ["admin", "specialist"],
-		"translateKey"    : "specialist_comment"
+		"name"        : "specialist_comment",
+		"typeField"   : "textarea",
+		"classAttr"   : "specialist_comment",
+		"nameText"    : "Комментарий специалиста",
+		"nameAttr"    : "pl[specialist_comment]",
+		"description" : "Текстовое поле \"specialist_comment\"",
+		"idAttr"      : "inputSpecialist_comment",
+		"sql_column"  : "specialist_comment",
+		"showOnly"    : ["admin", "specialist"],
+		"translateKey": "specialist_comment"
 	},
 	{
-		"name"         : "what_is_next",
-		"typeField"    : "functions",
-		"nameText"     : "Изображение",
-		"nameAttr"     : "pl[what_is_next]",
-		"description"  : "Плагин \"what_is_next\" сделанный из album",
-		"idAttr"       : "inputWhat_is_next",
-		"sql_column"   : "what_is_next",
-		"translate_key": "what_is_next"
+		"name"        : "what_is_next",
+		"typeField"   : "functions",
+		"nameText"    : "Изображение",
+		"nameAttr"    : "pl[what_is_next]",
+		"description" : "Плагин \"what_is_next\" сделанный из album",
+		"idAttr"      : "inputWhat_is_next",
+		"sql_column"  : "what_is_next",
+		"translateKey": "what_is_next"
+	},
+	{
+		"name"            : "distances",
+		"typeField"       : "functions",
+		"functionsBefore" : "insertDistances",
+		"js_init_function": "distancesInit",
+		"nameText"        : "Удобства",
+		"nameAttr"        : "pl[distances]",
+		"description"     : "Плагин \"cistances\"",
+		"idAttr"          : "inputDistances",
+		"sql_column"      : "distances",
+		"translateKey"    : "distances_location",
+		"body"            : {
+			"text": "<button data-n=\"0\" type=\"button\" class=\"add-distances-]-options-[- btn btn-success btn-icon\"><i class=\"fa fa-plus\"></i></button><div id=\"distances-]-options-[-\" class=\"form-group\"></div>"
+		}
+	},
+	{
+		"name"        : "convenience",
+		"typeField"   : "textarea",
+		"nameText"    : "Удобства",
+		"nameAttr"    : "pl[convenience]",
+		"description" : "Плагин \"convenience\"",
+		"idAttr"      : "inputConvenience",
+		"sql_column"  : "convenience",
+		"translateKey": "convenience"
+	},
+	{
+		"name"        : "services",
+		"typeField"   : "textarea",
+		"nameText"    : "Услуги",
+		"nameAttr"    : "pl[services]",
+		"description" : "Плагин \"services\"",
+		"idAttr"      : "inputServices",
+		"sql_column"  : "services",
+		"translateKey": "services"
+	},
+	{
+		"name"       : "bedroom",
+		"typeField"  : "select",
+		"classAttr"  : "select2",
+		"nameText"   : "Спальни",
+		"nameAttr"   : "pl[bedroom]",
+		"description": "Селект \"Спальни\"",
+		"idAttr"     : "selectBedroom",
+		"sql_column" : "bedroom",
+		"translateKey": "bedroom",
+		"body"       : {
+			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
+			"type": "insert"
+		}
+	},
+	{
+		"name"       : "bathroom",
+		"typeField"  : "select",
+		"classAttr"  : "select2",
+		"nameText"   : "Ванные комнаты",
+		"nameAttr"   : "pl[bathroom]",
+		"description": "Селект \"Ванные комнаты\"",
+		"idAttr"     : "selectBathroom",
+		"sql_column" : "bathroom",
+		"translateKey": "bathrooms",
+		"body"       : {
+			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
+			"type": "insert"
+		}
+	},
+	{
+		"name"       : "sea",
+		"typeField"  : "select",
+		"classAttr"  : "select2",
+		"nameText"   : "Море",
+		"nameAttr"   : "pl[sea]",
+		"description": "Селект \"Море\"",
+		"idAttr"     : "selectSea",
+		"sql_column" : "sea",
+		"translateKey": "sea",
+		"body"       : {
+			"text": "<option value=\"0\"></option><option value=\"1\">With access to the beach</option><option value=\"2\">Up to 500 meters</option><option value=\"3\">500 to 1000 meters</option><option value=\"4\">More than 1000 meters</option>",
+			"type": "insert"
+		}
 	}
 ]

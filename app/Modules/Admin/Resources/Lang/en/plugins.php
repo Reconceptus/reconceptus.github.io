@@ -15,4 +15,12 @@ return [
 	'what_is_next'       => 'What is next',
 	'album'              => 'Album',
 	'recommendedVillas'  => 'Recommended Villas',
+	'convenience'        => 'Convenience',
+	'services'           => 'Services',
+	'distances_location' => 'Distances and Location',
+	'distances'          => 'Distances',
+	'location'           => 'Location',
+	'bedroom'            => 'Bedrooms',
+	'bathrooms'          => 'Bathrooms',
+	'sea'                => 'Sea',
 ];
