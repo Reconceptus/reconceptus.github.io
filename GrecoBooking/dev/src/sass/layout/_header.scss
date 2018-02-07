@@ -17,11 +17,15 @@
   .logo {
     @include media(hover,1600){width: 335px;}
     @include breakpoints(1200,1599){width: 265px;}
+
+
     a {
       display: block;
 
       @include media(hover,1600){width: 250px;}
-      @include breakpoints(1200,1599){width: 200px;}
+      @include breakpoints(1024,1599){width: 200px;}
+      @include media(screen,1023){width: 175px;}
+
       img {
         display: block;
         width: 100%;
@@ -49,6 +53,12 @@
         height: 20px;
         cursor: pointer;
         svg {fill: $white;}
+        @include media(screen,599){
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          margin: auto 0 auto -10px;
+        }
       }
       .form {
         position: absolute;
@@ -91,11 +101,24 @@
         .form {
           @include media(hover,1600){width: calc(100vw - 700px);}
           @include breakpoints(1200,1599){width: calc(100vw - 530px);}
-          @include media(screen,1199){width: calc(100vw - 700px);}
+          @include breakpoints(1024,1199){width: calc(100vw - 590px);}
+          @include breakpoints(600,1023){width: calc(100vw - 335px);}
           background-color: $text;
           pointer-events: auto;
           opacity: 1;
         }
+      }
+      @include media(screen,599){
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+        height: 60px;
+        transform: translateY(100%);
+        pointer-events: none;
+        transition: all 0.3s;
+        opacity: 0;
       }
     }
     .language {
@@ -106,6 +129,19 @@
       @include breakpoints(1200,1599){font-size: 14px;}
       @include media(screen,1199){
         margin-left: 20px;
+      }
+      @include media(screen,599){
+        position: fixed;
+        z-index: 50;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 60px;
+        border-left: 1px solid $border;
+        transform: translateY(100%);
+        pointer-events: none;
+        transition: all 0.3s;
+        opacity: 0;
       }
       ul {
         position: absolute;
@@ -170,8 +206,10 @@
         }
       }
       @include media(screen,1199){
-        //display: none;
         margin-left: 20px;
+      }
+      @include media(screen,1023){
+        display: none;
       }
     }
     .burger {
@@ -182,7 +220,12 @@
       width: 30px;
       height: 30px;
       position: relative;
-      margin-left: 30px;
+      @include media(hover,1024){
+        margin-left: 30px;
+      }
+      @include breakpoints(600,1023){
+        margin-left: 25px;
+      }
       .line1,
       .line2,
       .line3 {
@@ -240,87 +283,191 @@
   }
   .nav {
     transition: all 0.35s;
-    .main-navigate {
+    &-table {
       @include media(screen,1199){
-        display: flex;
         height: 100%;
         width: 100%;
-        align-items: center;
-        justify-content: center;
+        overflow: auto;
+        position: relative;
+      }
+    }
+    .main-navigate {
+      @include media(screen,1199){
+        display: table;
+        height: 100%;
+        width: 100%;
       }
     }
     ul {
-      display: flex;
-      align-items: flex-start;
+      @include media(hover,1200){
+        display: flex;
+        align-items: flex-start;
+      }
       @include media(screen,1199){
-        flex-direction: column;
-        align-items: center;
+        display: table-cell;
+        vertical-align: middle;
       }
       li {
-        height: 60px;
+
         position: relative;
-        @include media(hover,1600){margin: 0 20px;}
-        @include breakpoints(1200,1599){margin: 0 10px;}
-      }
-      a {
-        display: flex;
-        align-items: center;
-
-        @include media(hover,1600){font-size: 18px;}
-        @include breakpoints(1200,1599){font-size: 14px;}
-        color: $white;
-        font-weight: 500;
-        height: 100%;
-        white-space: nowrap;
-        text-transform: uppercase;
-        span {@extend %valign;}
-
-        .cnt {
-          height: 24px;
-          min-width: 24px;
-          line-height: 24px;
-          border-radius: 20px;
-          font-size: 14px;
-          background-color: $btn;
-          box-sizing: border-box;
-          padding: 0 3px;
-          margin-left: 8px;
-          text-align: center;
-          color: $white;
+        @include media(hover,1600){
+          margin: 0 20px;
+          height: 60px;
         }
-
-
-        @include media(hover,1200){
-          &:before {
-            content: "";
-            left: 0;
-            right: 0;
-            height: 5px;
-            top: 0;
-            position: absolute;
-            transition: all 0.3s;
-            margin: auto;
-            transform: translateY(-100%);
-            background-color: $btn;
+        @include breakpoints(1200,1599){
+          margin: 0 10px;
+          height: 60px;
+        }
+        @include media(screen,1199){
+          margin: 10px 0;
+          display: block;
+          text-align: center;
+        }
+        &.mobile {
+          @include media(hover,1024){display: none!important;}
+        }
+        &.has-submenu {
+          cursor: pointer;
+          .submenu {
+            @include media(hover,1200){
+              position: absolute;
+              top: 100%;
+              left: -10px;
+              transition: all 0.3s;
+              opacity: 0;
+              pointer-events: none;
+            }
+            @include media(screen,1199){
+              display: none;
+            }
           }
-          &.active,
-          &:hover {
+          &.show {
+            .submenu {
+              @include media(hover,1200){
+                opacity: 1;
+                pointer-events: auto;
+              }
+              @include media(screen,1199){
+                display: block;
+              }
+            }
+          }
+          ul {
+
+            @include media(hover,1200){
+              flex-direction: column;
+              background-color: $white;
+              box-shadow: 0 5px 20px 0 RGBA(74,84,96,.4);
+              border: 1px solid #B2B9C1;
+            }
+            @include media(screen,1199){
+              display: block;
+              background-color: rgba($black,0.1);
+              padding: 10px 0;
+              box-shadow: 0 0 10px 0 rgba($black,0.3) inset;
+            }
+            li {
+              height: auto;
+              margin: 0;
+            }
+            a {
+
+
+              font-size: 15px;
+              font-weight: 400;
+              &:before {
+                display: none;
+              }
+              &.active {
+                color: $btn;
+              }
+              &:hover {
+                @include media(hover,1025){
+                  color: $btn;
+                }
+              }
+              @include media(hover,1200){
+                display: block;
+                color: $text;
+                padding: 8px 15px;
+              }
+              @include media(screen,1199){
+                color: $white;
+              }
+
+            }
+          }
+
+        }
+        & > span,
+        & > a {
+
+          @include media(hover,1600){font-size: 18px;}
+          @include breakpoints(1200,1599){font-size: 14px;}
+          @include media(hover,1200){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          @include media(screen,1199){
+            padding: 8px 15px;
+            display: inline-block;
+          }
+          color: $white;
+          font-weight: 500;
+          height: 100%;
+          white-space: nowrap;
+          text-transform: uppercase;
+          span {@extend %valign;}
+
+          .cnt {
+            height: 24px;
+            min-width: 24px;
+            line-height: 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            background-color: $btn;
+            box-sizing: border-box;
+            padding: 0 3px;
+            margin-left: 8px;
+            text-align: center;
+            color: $white;
+          }
+
+
+          @include media(hover,1200){
             &:before {
-              transform: translateY(0);
+              content: "";
+              left: 0;
+              right: 0;
+              height: 5px;
+              top: 0;
+              position: absolute;
+              transition: all 0.3s;
+              margin: auto;
+              transform: translateY(-100%);
+              background-color: $btn;
+            }
+            &.active,
+            &:hover {
+              &:before {
+                transform: translateY(0);
+              }
+            }
+          }
+          @include breakpoints(1025,1199){
+            &:hover {
+              color: $btn;
+            }
+          }
+          @include media(screen,1199){
+            &.active {
+              color: $btn;
             }
           }
         }
-        @include breakpoints(1025,1199){
-          &:hover {
-            color: $btn;
-          }
-        }
-        @include media(screen,1199){
-          &.active {
-            color: $btn;
-          }
-        }
       }
+
     }
     &.hidden {
       opacity: 0;
@@ -340,6 +487,9 @@
       padding-top: 75px;
       padding-bottom: 15px;
       box-sizing: border-box;
+    }
+    @include media(screen,599){
+      padding-bottom: 75px;
     }
   }
   .search-form {
@@ -393,6 +543,24 @@
             }
           }
         }
+      }
+    }
+    @include media(screen,599){
+      &:before {
+        content: "";
+        bottom: 60px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: $border;
+        position: fixed;
+        z-index: 50;
+      }
+      .language,
+      .search {
+        transform: translateY(0);
+        pointer-events: auto;
+        opacity: 1;
       }
     }
   }

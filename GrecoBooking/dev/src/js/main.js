@@ -238,6 +238,53 @@ $(document).ready(function () {
         $('html').toggleClass('ovh');
     })
 
+    /*
+     ============= touch-mouse events
+    */
+
+    var $bodyTouch = $(document.body).touchOrMouse('init');
+
+    /*
+     ============= header submenu
+     */
+
+    function header_submenu() {
+        var container = $('.has-submenu');
+
+        container.each(function () {
+            var $thisContainer = $(this);
+            var $thislist = $thisContainer.find('.submenu');
+
+            $thisContainer
+                .click(myClickCallback)
+                .mouseenter(myMouseenterCallback)
+                .mouseleave(myMouseleaveCallback);
+
+            function myClickCallback(e) {
+                var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
+                if (touchOrMouse === 'touch') {
+                    $thisContainer.toggleClass('show');
+                }
+            }
+
+            function myMouseenterCallback(e) {
+                var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
+                if (touchOrMouse === 'mouse') {
+                    $thisContainer.addClass('show');
+                }
+            }
+
+            function myMouseleaveCallback(e) {
+                var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
+                if (touchOrMouse === 'mouse') {
+                    $thisContainer.removeClass('show');
+                }
+            }
+
+        });
+
+    }
+
 
     /*
      ============= modal box
@@ -374,6 +421,7 @@ $(document).ready(function () {
     showSearch();
     documentClick();
     subscribeForm();
+    header_submenu();
 
     if($('select').length > 0){select2();}
     if($('[data-picker-full]').length > 0){datePickerFullRequest();}

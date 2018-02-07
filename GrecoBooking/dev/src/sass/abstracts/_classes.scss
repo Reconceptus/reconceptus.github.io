@@ -19,7 +19,12 @@
 .content {
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 40px;
+  @include media(hover,1200){
+    padding: 0 40px;
+  }
+  @include media(screen,1199){
+    padding: 0 20px;
+  }
   &_md {
     max-width: 1280px;
   }

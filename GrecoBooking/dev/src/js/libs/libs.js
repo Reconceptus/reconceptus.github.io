@@ -4,4 +4,8 @@
 // svg-use
 //= svgxuse.min.js
 
+// touch-or-mouse
+//= touchOrMouse.min.js
+
+
 
