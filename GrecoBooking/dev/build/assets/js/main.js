@@ -229,6 +229,17 @@ $(document).ready(function () {
     }
 
     /*
+     ============= burger
+    */
+
+    $('#burger').click(function () {
+        $(this).toggleClass('active');
+        $('#header').toggleClass('show-menu');
+        $('html').toggleClass('ovh');
+    })
+
+
+    /*
      ============= modal box
     */
 

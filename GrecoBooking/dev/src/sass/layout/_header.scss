@@ -10,6 +10,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media(screen,1199){
+      height: 60px;
+    }
   }
   .logo {
     @include media(hover,1600){width: 335px;}
@@ -88,6 +91,7 @@
         .form {
           @include media(hover,1600){width: calc(100vw - 700px);}
           @include breakpoints(1200,1599){width: calc(100vw - 530px);}
+          @include media(screen,1199){width: calc(100vw - 700px);}
           background-color: $text;
           pointer-events: auto;
           opacity: 1;
@@ -100,6 +104,9 @@
       position: relative;
       @include media(hover,1600){font-size: 16px;}
       @include breakpoints(1200,1599){font-size: 14px;}
+      @include media(screen,1199){
+        margin-left: 20px;
+      }
       ul {
         position: absolute;
         top: -2px;
@@ -163,21 +170,92 @@
         }
       }
       @include media(screen,1199){
-        display: none;
+        //display: none;
+        margin-left: 20px;
       }
     }
     .burger {
       @include media(hover,1200){
         display: none;
       }
-
+      transition: transform 0s ease-in-out;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      margin-left: 30px;
+      .line1,
+      .line2,
+      .line3 {
+        position: absolute;
+        height: 2px;
+        background-color: $white;
+        width: 100%;
+        left: 0;
+      }
+      .line1 {
+        transition: transform .2s ease-in-out .3s, opacity 0s ease-in-out .4s;
+        top: 4px;
+      }
+      .line2 {
+        transition: transform .2s ease-in-out;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: $white;
+          transition: transform .2s ease-in-out;
+        }
+      }
+      .line3 {
+        transition: transform .2s ease-in-out .3s, opacity 0s ease-in-out .4s;
+        bottom: 4px;
+      }
+      &.active {
+        transition: transform .2s ease-in-out;
+        transform: rotate(90deg);
+        .line1 {
+          opacity: 0;
+          transform: translate3d(0, 8.5px, 0);
+          transition: transform .2s ease-in-out .2s, opacity 0s ease-in-out .4s;
+        }
+        .line2 {
+          transform: rotate(45deg);
+          transition: transform .2s ease-in-out .5s;
+          &:before {
+            transform: rotate(-90deg);
+            transition: transform .2s ease-in-out .5s;
+          }
+        }
+        .line3 {
+          opacity: 0;
+          transform: translate3d(0, -8.5px, 0);
+          transition: transform .2s ease-in-out .2s, opacity 0s ease-in-out .4s;
+        }
+      }
     }
   }
   .nav {
     transition: all 0.35s;
+    .main-navigate {
+      @include media(screen,1199){
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+    }
     ul {
       display: flex;
       align-items: flex-start;
+      @include media(screen,1199){
+        flex-direction: column;
+        align-items: center;
+      }
       li {
         height: 60px;
         position: relative;
@@ -196,18 +274,7 @@
         white-space: nowrap;
         text-transform: uppercase;
         span {@extend %valign;}
-        &:before {
-          content: "";
-          left: 0;
-          right: 0;
-          height: 5px;
-          top: 0;
-          position: absolute;
-          transition: all 0.3s;
-          margin: auto;
-          transform: translateY(-100%);
-          background-color: $btn;
-        }
+
         .cnt {
           height: 24px;
           min-width: 24px;
@@ -219,17 +286,38 @@
           padding: 0 3px;
           margin-left: 8px;
           text-align: center;
+          color: $white;
         }
-        &.active {
+
+
+        @include media(hover,1200){
           &:before {
-            transform: translateY(0);
+            content: "";
+            left: 0;
+            right: 0;
+            height: 5px;
+            top: 0;
+            position: absolute;
+            transition: all 0.3s;
+            margin: auto;
+            transform: translateY(-100%);
+            background-color: $btn;
           }
-        }
-        &:hover {
-          @include media(hover,1025){
+          &.active,
+          &:hover {
             &:before {
               transform: translateY(0);
             }
+          }
+        }
+        @include breakpoints(1025,1199){
+          &:hover {
+            color: $btn;
+          }
+        }
+        @include media(screen,1199){
+          &.active {
+            color: $btn;
           }
         }
       }
@@ -237,6 +325,21 @@
     &.hidden {
       opacity: 0;
       pointer-events: none;
+    }
+    @include media(screen,1199){
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $text;
+      opacity: 0;
+      transform: scale(1.2);
+      pointer-events: none;
+      transition: all 0.35s;
+      padding-top: 75px;
+      padding-bottom: 15px;
+      box-sizing: border-box;
     }
   }
   .search-form {
@@ -250,6 +353,47 @@
     @include breakpoints(1200,1599){
       left: 280px;
       right: 280px;
+    }
+  }
+  &.show-menu {
+    z-index: 50;
+    &:after {
+      content: "";
+      top: 60px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $border;
+      position: absolute;
+    }
+    @include media(screen,1199){
+      .logo {
+        position: relative;
+        z-index: 5;
+      }
+      .nav {
+        pointer-events: auto;
+        opacity: 1;
+        transform: scale(1);
+      }
+      .elements {
+        position: relative;
+        z-index: 5;
+        .search {
+          .form {
+            background-color: $white;
+            input {
+              color: $text;
+              font-weight: 500;
+            }
+          }
+          &.active {
+            .search-icon {
+              color: $text;
+            }
+          }
+        }
+      }
     }
   }
 }
