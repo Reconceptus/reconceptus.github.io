@@ -102,7 +102,7 @@ $(document).ready(function () {
                 if($('.villa-request').length > 0){
                     $('.villa-request .pickerfields .input').addClass('filled')
                 }
-                setTimeout(function (args) {$('#'+el01+',#'+el02).blur();},1000)
+                setTimeout(function (args) {$('#'+el01+',#'+el02).blur();},50)
             },
             onClose: function () {
                 basePicker.removeClass('show up down');
@@ -155,7 +155,7 @@ $(document).ready(function () {
                 picker.addClass('show');
                 picker.find('.calendar').prepend($('#ui-datepicker-div'));
 
-                setTimeout(function (args) {$('#'+el01+',#'+el02).blur();},1000)
+                setTimeout(function (args) {$('#'+el01+',#'+el02).blur();},50)
             },
             onClose: function () {
                 basePicker.removeClass('show up down');
