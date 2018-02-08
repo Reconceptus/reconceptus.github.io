@@ -182,7 +182,7 @@
           }
         }
       }
-      &:hover {
+      &.show {
         @include media(hover,1025){
           ul {
             background-color: $white;

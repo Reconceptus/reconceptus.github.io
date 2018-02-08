@@ -1,44 +1,87 @@
 .form-request {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0 40px;
   max-width: 940px;
+  @include media(hover,600){
+    padding: 0 40px;
+  }
+  @include media(screen,599){
+    padding: 0 20px;
+  }
   .form {
     background-color: $white;
-    padding: 50px 40px 40px;
+
     box-shadow: 0 10px 40px 0 rgba($head,0.8);
     color: $border;
-    font-size: 14px;
+
     font-weight: 400;
+    @include media(hover,1024){padding: 50px 40px 40px;}
+    @include media(screen,1023){padding: 40px 30px 30px;}
+    @include media(hover,768){
+      font-size: 14px;
+    }
+    @include breakpoints(600,767){
+      font-size: 13px;
+      padding: 30px;
+    }
+    @include media(screen,599){
+      padding: 20px;
+      font-size: 13px;
+    }
     &-box {
       .fieldset {
         position: relative;
         display: flex;
         width: 100%;
-        border-bottom: 1px solid $bg;
+
         &:first-of-type {border-top: 1px solid $bg;}
         &.pickerfields {
           position: relative;
-          &:after {
-            content: "";
-            position: absolute;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%20169%20169%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m95%2031c-4-3-4-9%200-12%203-3%208-3%2012%200l59%2060c4%203%204%208%200%2012l-59%2059c-4%204-9%204-12%200-4-3-4-8%200-12l45-45h-132c-4%200-8-4-8-8%200-5%204-9%208-9h132l-45-45%22%20fill%3D%22%23f9690e%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E');
-            background-repeat: no-repeat;
-            width: 20px;
-            height: 18px;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            background-position: center center;
-            background-size: 100% auto;
+          @include media(hover,600){
+            &:after {
+              content: "";
+              position: absolute;
+              background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%20169%20169%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m95%2031c-4-3-4-9%200-12%203-3%208-3%2012%200l59%2060c4%203%204%208%200%2012l-59%2059c-4%204-9%204-12%200-4-3-4-8%200-12l45-45h-132c-4%200-8-4-8-8%200-5%204-9%208-9h132l-45-45%22%20fill%3D%22%23f9690e%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E');
+              background-repeat: no-repeat;
+              width: 20px;
+              height: 18px;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              background-position: center center;
+              background-size: 100% auto;
+            }
           }
+
           & > .field {
             position: relative;
             z-index: 2;
-            &:first-child{margin-right: 60px}
+            @include media(hover,600){
+              &:first-child{margin-right: 60px}
+            }
+
           }
+        }
+        @include media(hover,768){
+          border-bottom: 1px solid $bg;
+        }
+        @include media(screen,767){
+          &.pickerfields{
+            border-bottom: 1px solid $bg;
+          }
+          &:not(.pickerfields){
+            flex-direction: column;
+            .field {
+              border-bottom: 1px solid $bg;
+            }
+          }
+
+        }
+        @include media(screen,599){
+          flex-direction: column;
+          .field:first-child{border-bottom: 1px solid $bg;}
         }
       }
       .field {
@@ -46,7 +89,10 @@
         position: relative;
         display: flex;
         align-items: center;
-        &:not(:last-child){margin-right: 20px}
+        &:not(:last-child){
+          @include media(hover,1024){margin-right: 20px;}
+          @include media(screen,1023){margin-right: 10px;}
+        }
         label {
           white-space: nowrap;
           display: block;

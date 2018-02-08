@@ -2,10 +2,20 @@
   &_main {
     text-transform: uppercase;
     font-family: Futuris, sans-serif;
-    font-size: 40px;
     color: $text;
     text-align: center;
     line-height: 1.6;
+    @include media(hover,768){
+      font-size: 40px;
+    }
+    @include breakpoints(600,767){
+      font-size: 30px;
+    }
+    @include media(screen,599){
+      font-size: 26px;
+      line-height: 1.3;
+    }
+
     .sm & {font-size: 30px;}
     .light-style & {
       color: $white;

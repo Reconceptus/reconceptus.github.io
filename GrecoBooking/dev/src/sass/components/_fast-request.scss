@@ -1,15 +1,27 @@
 .fast-request {
-  height: 80px;
+
   background-color: $white;
   box-shadow: 0 5px 40px 0 rgba($border,0.6);
   box-sizing: border-box;
-  padding: 10px 20px 10px 0;
+
   position: relative;
   z-index: 3;
+  @include media(hover,1024){
+    height: 80px;
+    padding: 10px 20px 10px 0;
+  }
+  @include media(screen,1023){
+    height: auto;
+    padding: 10px;
+  }
   &--wrap {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    @include media(screen,1023){
+      flex-direction: column;
+      flex-flow: row wrap;
+    }
   }
   button {
     display: flex;
@@ -18,24 +30,49 @@
     height: 60px;
     min-width: 120px;
     position: relative;
+    @include media(screen,1023){
+      width: 100%;
+      margin-top: 10px;
+    }
   }
   .fieldgroup {
     width: 100%;
     flex-shrink: 500;
     display: flex;
     align-items: center;
+    @include media(screen,1023){
+      flex-direction: column;
+      flex-flow: row wrap;
+      align-items: stretch;
+    }
   }
   .field {
-    width: 20%;
+
     position: relative;
     font-size: 15px;
     padding-right: 20px;
     box-sizing: border-box;
     padding-left: 20px;
-    padding-top: 5px;
-    height: 55px;
-    &:not(:last-child){
-      border-right: 1px solid $bg;
+
+    @include media(hover,1024){
+      width: 20%;
+      padding-top: 5px;
+      height: 55px;
+      &:not(:last-child){
+        border-right: 1px solid $bg;
+      }
+    }
+    @include media(screen,1023){
+      padding-bottom: 5px;
+      padding-top: 10px;
+      &.f-100 {width: 100%}
+      &.f-50 {width: 50%}
+      border-bottom: 1px solid $bg;
+    }
+    @include media(screen,599){
+      &.f-50 {width: 100%}
+      padding-left: 5px;
+      padding-right: 5px;
     }
     label {
       font-size: 15px;

@@ -63,20 +63,32 @@ $(document).ready(function () {
      ============= datepickers
     */
 
+    var month_num = 2;
+    if($('html').hasClass('mobile')){
+        month_num = 1;
+    }
+    else if($('html').hasClass('tablet') && $(window).width() < 767){
+        month_num = 1;
+    }
+
     function datePickerFullRequest() {
 
         var dateToday = new Date(),
             el01 = 'arrivalDate',
-            el02 = 'departureDate';
+            el02 = 'departureDate',
+            basePicker;
 
         var dates = $('#'+el01+',#'+el02).datepicker({
             changeMonth:true,
             changeYear:true,
-            numberOfMonths: 2,
+            numberOfMonths: month_num,
             minDate: dateToday,
 
             beforeShow:function () {
-                var picker = $('#picker'),
+
+                month_num > 1 ? basePicker = $('#picker') : basePicker = $('#mobile_picker')
+
+                var picker = basePicker,
                     pickerOffset = picker.offset().top,
                     scrollTop = $(window).scrollTop(),
                     needScroll = pickerOffset-350;
@@ -86,13 +98,13 @@ $(document).ready(function () {
                 }
                 else {picker.addClass('up');}
                 picker.addClass('show');
-                $('#picker .calendar').prepend($('#ui-datepicker-div'));
+                picker.find('.calendar').prepend($('#ui-datepicker-div'));
                 if($('.villa-request').length > 0){
                     $('.villa-request .pickerfields .input').addClass('filled')
                 }
             },
             onClose: function () {
-                $('#picker').removeClass('show up down');
+                basePicker.removeClass('show up down');
                 if($('.villa-request').length > 0){
                     if($("#arrivalDate").val() == '' && $("#departureDate").val() == ''){
                         $('.villa-request .pickerfields .input').removeClass('filled')
@@ -118,15 +130,19 @@ $(document).ready(function () {
     function datePickerFastRequest() {
         var dateToday = new Date(),
             el01 = 'check_in',
-            el02 = 'check_out';
+            el02 = 'check_out',
+            basePicker;
 
         var dates = $('#'+el01+',#'+el02).datepicker({
             changeMonth:true,
             changeYear:true,
-            numberOfMonths: 2,
+            numberOfMonths: month_num,
             minDate: dateToday,
             beforeShow:function () {
-                var picker = $('#fastpicker'),
+
+                month_num > 1 ? basePicker = $('#fastpicker') : basePicker = $('#mobile_fastpicker')
+
+                var picker = basePicker,
                     pickerOffset = picker.offset().top,
                     scrollTop = $(window).scrollTop(),
                     needScroll = pickerOffset-400;
@@ -136,10 +152,10 @@ $(document).ready(function () {
                 }
                 else {picker.addClass('up');}
                 picker.addClass('show');
-                $('#fastpicker .calendar').prepend($('#ui-datepicker-div'));
+                picker.find('.calendar').prepend($('#ui-datepicker-div'));
             },
             onClose: function () {
-                $('#fastpicker').removeClass('show up down');
+                basePicker.removeClass('show up down');
             },
             onSelect: function(selectedDate){
                 var option = this.id == el01 ? "minDate" : "maxDate",

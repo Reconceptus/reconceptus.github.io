@@ -12,7 +12,12 @@
     color: $white;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 20px;
+    @include media(hover,1600){
+      padding: 20px;
+    }
+    @include breakpoints(1200,1599){
+      padding: 10px;
+    }
   }
   figure {
     position: absolute;
@@ -33,7 +38,18 @@
     & > li {
       box-sizing: border-box;
       padding: 1px;
-      .best-offers & {width: 33.3333%;}
+      .best-offers & {
+
+        @include media(hover,1024){
+          width: 33.3333%;
+        }
+        @include breakpoints(600,1023){
+          width: 50%;
+        }
+        @include media(screen,599){
+          width: 100%;
+        }
+      }
       .short-offers & {width: 20%;}
     }
     .item, a {
@@ -67,10 +83,15 @@
       color: $white;
       text-transform: uppercase;
       font-family: Futuris, sans-serif;
-      font-size: 30px;
       text-shadow: 0 3px 5px rgba($black,0.2);
       text-align: center;
       .short-offers & {line-height: 1;}
+      @include media(hover,768){
+        font-size: 30px;
+      }
+      @include media(screen,767){
+        font-size: 26px;
+      }
     }
     .short {
       margin-top: 10px;
@@ -86,12 +107,24 @@
       color: $text;
       text-transform: uppercase;
       font-family: Futuris, sans-serif;
-      font-size: 30px;
+
       background-color: $white;
       strong {font-weight: bold;}
       padding: 0 5px;
-      margin-top: 30px;
-      margin-bottom: 40px;
+      @include media(hover,1200){
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+      @include media(screen,1199){
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      @include media(hover,768){
+        font-size: 30px;
+      }
+      @include media(screen,767){
+        font-size: 22px;
+      }
     }
   }
 }

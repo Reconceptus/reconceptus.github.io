@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 0;
+    @include media(hover,1024){
+
+    }
+    @include media(screen,1023){
+      flex-flow: row wrap;
+    }
   }
   &--bottom {
     display: flex;
@@ -31,7 +37,25 @@
     }
   }
   .contacts {
-    width: 350px;
+
+    box-sizing: border-box;
+
+    @include media(hover,1024){
+      width: 350px;
+      padding-right: 20px;
+    }
+    @include breakpoints(481,1023){
+      width: 50%;
+      padding-right: 20px;
+      order: 1;
+    }
+    @include media(screen,480){
+      width: 100%;
+      order: 1;
+      border-bottom: 1px solid #657482;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
     .logo {
       display: block;
       width: 180px;
@@ -74,10 +98,25 @@
     }
   }
   .menu {
-    width: 350px;
     box-sizing: border-box;
-    padding-left: 30px;
     font-size: 15px;
+    @include media(hover,1024){
+      width: 350px;
+      padding-left: 30px;
+    }
+    @include breakpoints(481,1023){
+      width: 50%;
+      padding-left: 20px;
+      order: 2;
+    }
+    @include media(screen,480){
+      width: 100%;
+      order: 2;
+      text-align: center;
+      border-bottom: 1px solid #657482;
+      padding-bottom: 30px;
+
+    }
     ul {
       li {
         &:not(:last-child){margin-bottom: 10px;}
@@ -101,6 +140,11 @@
   max-width: 600px;
   text-align: center;
   color: $white;
+
+  @include media(screen,1023){
+    order: 3;
+    margin: 40px auto 0;
+  }
   .title {
     text-transform: uppercase;
     font-family: Futuris, sans-serif;
@@ -133,12 +177,17 @@
         border-radius: 0 4px 4px 0;
         background-color: $border;
         font-weight: 400;
-        padding: 10px 65px;
         transition: all 0.3s;
         &:hover {
           @include media(hover,1025){
             background-color: $btn_hover;
           }
+        }
+        @include media(hover,1200){
+          padding: 10px 65px;
+        }
+        @include media(screen,1199){
+          padding: 10px 30px;
         }
       }
     }

@@ -8,10 +8,21 @@
   top: 0;
   bottom: 0;
   .calendar > .ui-datepicker {
-    width: 720px !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
+
+    @include media(hover,768){
+      width: 720px !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+    }
+    @include media(screen,767){
+      width: 360px !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%,-50%);
+      background-color: $white;
+      padding: 20px;
+    }
   }
   &.show {
     .calendar {
@@ -22,39 +33,49 @@
 
 .calendar {
 
-  .form-request &,
-  .fast-request & {
-    left: 50%;
-    transform: translateX(-50%);
+  @include media(hover,768){
+    .form-request &,
+    .fast-request & {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .villa-request & {
+      right: 100%;
+      transform: translateX(-20px);
+    }
+    position: absolute;
+    z-index: 3;
+    background-color: $white;
+    box-shadow: 0 5px 20px 0 rgba($head,0.4);
+    border: 1px solid $bg;
+    .up & {
+      .form-request &,
+      .fast-request & {
+        bottom: 100%;
+      }
+    }
+    .down & {
+      .form-request &,
+      .fast-request & {
+        top: 100%;
+      }
+    }
+    .villa-request & {
+      top: 0;
+    }
   }
+  //@include media(screen,767){
+  //  position: fixed;
+  //  z-index: 160;
+  //  left: 0;
+  //  top: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  background-color: rgba(0,0,0,0.5);
+  //}
 
-  .villa-request & {
-    right: 100%;
-    transform: translateX(-20px);
-  }
-
-  position: absolute;
-
-  z-index: 3;
-  background-color: $white;
-  box-shadow: 0 5px 20px 0 rgba($head,0.4);
-  border: 1px solid $bg;
   display: none;
-  .up & {
-    .form-request &,
-    .fast-request & {
-      bottom: 100%;
-    }
-  }
-  .down & {
-    .form-request &,
-    .fast-request & {
-      top: 100%;
-    }
-  }
-  .villa-request & {
-    top: 0;
-  }
+
   .annotation {
     position: absolute;
     bottom: 0;
@@ -88,6 +109,9 @@
       font-weight: 300;
       font-size: 18px;
       width: 40px;
+      @include media(screen,480){
+        width: 30px;
+      }
       a, span {
         display: flex;
         align-items: center;
@@ -96,7 +120,11 @@
         height: 40px;
         padding: 0;
         color: inherit;
-
+        @include media(screen,480){
+          width: 30px;
+          height: 30px;
+          font-size: 15px;
+        }
       }
       &.ui-datepicker-unselectable {
         color: $bg;
@@ -108,6 +136,10 @@
       height: 40px;
       padding: 0;
       border: 1px solid $white;
+      @include media(screen,480){
+        width: 30px;
+        height: 30px;
+      }
       span {
         display: flex;
         align-items: center;
@@ -118,6 +150,11 @@
         text-transform: lowercase;
         font-weight: 400;
         font-size: 16px;
+        @include media(screen,480){
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+        }
       }
     }
 
@@ -129,6 +166,10 @@
       bottom: 0;
       top: auto;
       cursor: pointer;
+      @include media(screen,480){
+        width: 30px;
+        height: 30px;
+      }
       span {
         display: none;
       }
@@ -164,6 +205,9 @@
       font-size: 17px;
       color: $text;
       margin: 0;
+      @include media(screen,480){
+        height: 33px;
+      }
       select {
         box-sizing: border-box;
         border: none;
@@ -200,6 +244,9 @@
       display: flex;
       align-items: center;
       flex-direction: column;
+      @include media(screen,480){
+        padding: 0 20px;
+      }
     }
     &-group {
       padding-top: 5px;
@@ -225,3 +272,37 @@
 
 }
 
+#mobile_fastpicker,
+#mobile_picker {
+  position: fixed;
+  z-index: 160;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .calendar {
+    display: block;
+    background-color: $white;
+    position: absolute;
+    z-index: 3;
+    box-shadow: 0 5px 20px 0 rgba($head,0.4);
+    border: 1px solid $bg;
+    padding: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .calendar > .ui-datepicker {
+    width: 280px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+}

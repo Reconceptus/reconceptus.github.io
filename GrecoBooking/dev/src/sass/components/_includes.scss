@@ -1,18 +1,37 @@
 .includes {
   display: flex;
   align-items: center;
+  @include media(screen,1199){
+    flex-direction: column;
+  }
   & > span {
     display: flex;
     align-items: center;
     span {flex-shrink: 500;}
     .short-info &,
     .grid & {
-      font-size: 15px;
-      &:not(:last-child){
-        margin-right: 30px;
+      @include media(hover,1600){
+        font-size: 15px;
+        &:not(:last-child){
+          margin-right: 30px;
+        }
+      }
+      @include breakpoints(1200,1599){
+        font-size: 13px;
+        &:not(:last-child){
+          margin-right: 10px;
+        }
+      }
+      @include media(screen,1199){
+        margin-bottom: 5px;
       }
       i {
-        margin-right: 10px;
+        @include media(hover,1600){
+          margin-right: 10px;
+        }
+        @include media(screen,1599){
+          margin-right: 7px;
+        }
       }
     }
 
@@ -21,8 +40,14 @@
   .bed {
     i {
       .grid & {
-        width: 26px;
-        height: 21px;
+        @include media(hover,1600){
+          width: 26px;
+          height: 21px;
+        }
+        @include media(screen,1599){
+          width: 20px;
+          height: 16px;
+        }
       }
       .villa-item & {
         width: 26px;
@@ -38,8 +63,14 @@
   .bath {
     i {
       .grid & {
-        width: 32px;
-        height: 28px;
+        @include media(hover,1600){
+          width: 32px;
+          height: 28px;
+        }
+        @include media(screen,1599){
+          width: 20px;
+          height: 18px;
+        }
       }
       .villa-item & {
         width: 32px;
@@ -54,8 +85,14 @@
   .sea {
     i {
       .grid & {
-        width: 28px;
-        height: 29px;
+        @include media(hover,1600){
+          width: 28px;
+          height: 29px;
+        }
+        @include media(screen,1599){
+          width: 20px;
+          height: 20px;
+        }
       }
       .villa-item & {
         width: 28px;
