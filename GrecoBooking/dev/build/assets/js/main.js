@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     var btn = $('#search_btn'),
         nav = $('.nav'),
+        lang = $('.language'),
         search = btn.closest('.search');
 
     /* ----------------------------------- functions ----------------------------------- */
@@ -14,8 +15,16 @@ $(document).ready(function () {
 
     function showSearch() {
         btn.click(function () {
-            search.addClass('active');
-            nav.addClass('hidden');
+
+            var w_width = $(window).width();
+            if(w_width >= 600){
+                search.addClass('active');
+                nav.addClass('hidden');
+            }
+            else {
+                search.addClass('active');
+            }
+
         })
     }
 
@@ -31,6 +40,10 @@ $(document).ready(function () {
                     search.removeClass('active');
                     nav.removeClass('hidden');
                 }
+            }
+
+            if(targ.parents('.language').length == 0){
+                lang.removeClass('show')
             }
         })
     }
