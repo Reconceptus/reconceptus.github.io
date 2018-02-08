@@ -12,11 +12,6 @@
       flex-shrink: 500;
       width: 100%;
       box-sizing: border-box;
-      background: $pink_dark;
-      background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
-      background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
-      background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
-
       line-height: 1.2;
       @include media(hover,768){
         font-size: 21px;

@@ -316,14 +316,6 @@ textarea {
   background-color: #657482;
 }
 
-.simple-page--head.favorite--head {
-  background: #f9bba5;
-  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
-  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
-}
-
 .simple-page--head.placing--request {
   padding-bottom: 80px;
   position: relative;
@@ -3664,6 +3656,58 @@ svg {
   display: none;
 }
 
+@-webkit-keyframes anim_bg {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  to {
+    -webkit-transform: translateX(-66.66%);
+            transform: translateX(-66.66%);
+  }
+}
+
+@keyframes anim_bg {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  to {
+    -webkit-transform: translateX(-66.66%);
+            transform: translateX(-66.66%);
+  }
+}
+
+.animate-bg {
+  position: relative;
+  overflow: hidden;
+  background: #fde4db;
+  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
+  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
+  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
+}
+
+.animate-bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300%;
+  height: 100%;
+  background: #f9bba5;
+  background: -webkit-gradient(linear, left top, right top, from(#fde4db), color-stop(33.3333%, #f9bba5), color-stop(66.6666%, #fde4db), to(#f9bba5));
+  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 33.3333%, #fde4db 66.6666%, #f9bba5 100%);
+  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 33.3333%, #fde4db 66.6666%, #f9bba5 100%);
+  background: linear-gradient(to right, #fde4db 0%, #f9bba5 33.3333%, #fde4db 66.6666%, #f9bba5 100%);
+  -webkit-animation: anim_bg 8s infinite linear;
+          animation: anim_bg 8s infinite linear;
+}
+
+.animate-bg > * {
+  position: relative;
+}
+
 .grid--main {
   position: absolute;
   top: 0;
@@ -4504,11 +4548,6 @@ svg {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #f9bba5;
-  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
-  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
   line-height: 1.2;
 }
 
@@ -5586,11 +5625,6 @@ svg {
 }
 
 .qualities--main {
-  background: #f9bba5;
-  background: -webkit-gradient(linear, left top, right top, from(#fde4db), to(#f9bba5));
-  background: -webkit-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: -o-linear-gradient(left, #fde4db 0%, #f9bba5 100%);
-  background: linear-gradient(to right, #fde4db 0%, #f9bba5 100%);
   padding: 30px 0 40px;
 }
 
@@ -5751,7 +5785,6 @@ svg {
 }
 
 .banners .ban .info {
-  background-color: #fde4db;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5767,28 +5800,6 @@ svg {
           -webkit-justify-content: center;
               -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media screen and (min-width: 1024px) {
-  .banners .ban .info:before {
-    content: "";
-    right: 0;
-    top: 0;
-    width: 200%;
-    height: 80%;
-    background: #f9bba5;
-    background: -webkit-gradient(linear, left top, left bottom, from(#f9bba5), to(#fde4db));
-    background: -webkit-linear-gradient(top, #f9bba5 0%, #fde4db 100%);
-    background: -o-linear-gradient(top, #f9bba5 0%, #fde4db 100%);
-    background: linear-gradient(to bottom, #f9bba5 0%, #fde4db 100%);
-    position: absolute;
-    -webkit-transform-origin: top right;
-            -ms-transform-origin: top right;
-        transform-origin: top right;
-    -webkit-transform: rotate(-26.57deg);
-            -ms-transform: rotate(-26.57deg);
-        transform: rotate(-26.57deg);
-  }
 }
 
 .banners .ban .info-text {

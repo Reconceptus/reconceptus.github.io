@@ -221,10 +221,7 @@
 .qualities {
   margin-bottom: 40px;
   &--main {
-    background: $pink_dark;
-    background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
-    background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
-    background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+
     padding: 30px 0 40px;
   }
   ul {
@@ -343,29 +340,29 @@
       }
     }
     .info {
-      background-color: $pink;
+      //background-color: $pink;
       display: flex;
       height: 100%;
       position: relative;
       align-items: center;
       overflow: hidden;
       justify-content: center;
-      @include media(hover,1024){
-        &:before {
-          content: "";
-          right: 0;
-          top: 0;
-          width: 200%;
-          height: 80%;
-          background: $pink_dark;
-          background: -moz-linear-gradient(top, $pink_dark 0%, $pink 100%);
-          background: -webkit-linear-gradient(top, $pink_dark 0%,$pink 100%);
-          background: linear-gradient(to bottom, $pink_dark 0%,$pink 100%);
-          position: absolute;
-          transform-origin: top right;
-          transform: rotate(-26.57deg);
-        }
-      }
+      //@include media(hover,1024){
+      //  &:before {
+      //    content: "";
+      //    right: 0;
+      //    top: 0;
+      //    width: 200%;
+      //    height: 80%;
+      //    background: $pink_dark;
+      //    background: -moz-linear-gradient(top, $pink_dark 0%, $pink 100%);
+      //    background: -webkit-linear-gradient(top, $pink_dark 0%,$pink 100%);
+      //    background: linear-gradient(to bottom, $pink_dark 0%,$pink 100%);
+      //    position: absolute;
+      //    transform-origin: top right;
+      //    transform: rotate(-26.57deg);
+      //  }
+      //}
 
       &-text {
         text-align: center;
