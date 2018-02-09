@@ -2,13 +2,12 @@
   display: flex;
   align-items: center;
   @include media(screen,1199){
-    flex-direction: column;
+    .grid & {flex-direction: column;}
   }
   & > span {
     display: flex;
     align-items: center;
     span {flex-shrink: 500;}
-    .short-info &,
     .grid & {
       @include media(hover,1600){
         font-size: 15px;
@@ -25,6 +24,36 @@
       @include media(screen,1199){
         margin-bottom: 5px;
       }
+
+      i {
+        @include media(hover,1600){
+          margin-right: 10px;
+        }
+        @include media(screen,1599){
+          margin-right: 7px;
+        }
+      }
+    }
+    .short-info & {
+      @include media(hover,1600){
+        font-size: 15px;
+        &:not(:last-child){
+          margin-right: 30px;
+        }
+      }
+      @include breakpoints(600,1599){
+        font-size: 13px;
+        &:not(:last-child){
+          margin-right: 10px;
+        }
+      }
+      @include media(screen,599){
+        font-size: 9px;
+        &:not(:last-child){
+          margin-right: 10px;
+        }
+      }
+
       i {
         @include media(hover,1600){
           margin-right: 10px;
@@ -50,12 +79,24 @@
         }
       }
       .villa-item & {
-        width: 26px;
-        height: 21px;
+        @include media(hover,1024){
+          width: 26px;
+          height: 21px;
+        }
+        @include media(screen,1023){
+          width: 20px;
+          height: 16px;
+        }
       }
       .short-info & {
-        width: 26px;
-        height: 21px;
+        @include media(hover,1200){
+          width: 26px;
+          height: 21px;
+        }
+        @include media(screen,1199){
+          width: 20px;
+          height: 16px;
+        }
       }
     }
 
@@ -73,12 +114,24 @@
         }
       }
       .villa-item & {
-        width: 32px;
-        height: 28px;
+        @include media(hover,1024){
+          width: 32px;
+          height: 28px;
+        }
+        @include media(screen,1023){
+          width: 20px;
+          height: 18px;
+        }
       }
       .short-info & {
-        width: 32px;
-        height: 28px;
+        @include media(hover,1200){
+          width: 32px;
+          height: 28px;
+        }
+        @include media(screen,1199){
+          width: 20px;
+          height: 18px;
+        }
       }
     }
   }
@@ -95,12 +148,24 @@
         }
       }
       .villa-item & {
-        width: 28px;
-        height: 29px;
+        @include media(hover,1024){
+          width: 28px;
+          height: 29px;
+        }
+        @include media(screen,1023){
+          width: 20px;
+          height: 20px;
+        }
       }
       .short-info & {
-        width: 28px;
-        height: 29px;
+        @include media(hover,1200){
+          width: 28px;
+          height: 29px;
+        }
+        @include media(screen,1199){
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }

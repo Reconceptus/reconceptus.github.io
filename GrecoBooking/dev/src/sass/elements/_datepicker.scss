@@ -40,8 +40,16 @@
       transform: translateX(-50%);
     }
     .villa-request & {
-      right: 100%;
-      transform: translateX(-20px);
+
+      @include media(hover,1024){
+        right: 100%;
+        transform: translateX(-20px);
+      }
+      @include media(screen,1023){
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
     position: absolute;
     z-index: 3;

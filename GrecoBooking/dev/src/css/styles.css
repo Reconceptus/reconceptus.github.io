@@ -316,6 +316,18 @@ textarea {
   background-color: #657482;
 }
 
+.simple-page--head.favorite--head {
+  position: relative;
+}
+
+.simple-page--head.favorite--head .animate-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .simple-page--head.placing--request {
   padding-bottom: 80px;
   position: relative;
@@ -379,7 +391,6 @@ textarea {
   padding-top: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-height: 680px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -393,6 +404,18 @@ textarea {
               -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .simple-page--bg {
+    min-height: 680px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .simple-page--bg {
+    min-height: 540px;
+  }
 }
 
 .simple-page--bg .content {
@@ -424,9 +447,17 @@ textarea {
   padding-top: 40px;
 }
 
-.half-request:not(.double) {
-  height: 40px;
-  margin-bottom: 40px;
+@media screen and (min-width: 1024px) {
+  .half-request:not(.double) {
+    height: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .half-request {
+    padding-bottom: 20px;
+  }
 }
 
 .half-request.double {
@@ -1376,7 +1407,7 @@ textarea {
 }
 
 .header.show-menu {
-  z-index: 50;
+  z-index: 70;
 }
 
 .header.show-menu:after {
@@ -1843,7 +1874,6 @@ svg {
   border-color: #f9690e;
   color: #f9690e;
   font-size: 15px;
-  padding: 8px 24px;
   min-width: 200px;
   text-align: center;
   -webkit-box-sizing: border-box;
@@ -1852,6 +1882,18 @@ svg {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media screen and (min-width: 980px) {
+  .more {
+    padding: 8px 24px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .more {
+    padding: 8px 12px;
+  }
 }
 
 .more .ico-back {
@@ -1877,7 +1919,7 @@ svg {
 }
 
 .btns_center a {
-  margin: 0 4px;
+  margin: 4px;
 }
 
 .headline_main {
@@ -1892,11 +1934,17 @@ svg {
   .headline_main {
     font-size: 40px;
   }
+  .sm .headline_main {
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
   .headline_main {
     font-size: 30px;
+  }
+  .sm .headline_main {
+    font-size: 28px;
   }
 }
 
@@ -1905,10 +1953,9 @@ svg {
     font-size: 26px;
     line-height: 1.3;
   }
-}
-
-.sm .headline_main {
-  font-size: 30px;
+  .sm .headline_main {
+    font-size: 22px;
+  }
 }
 
 .light-style .headline_main {
@@ -3222,12 +3269,28 @@ svg {
             -ms-transform: translateX(-50%);
         transform: translateX(-50%);
   }
+}
+
+@media screen and (min-width: 768px) and (min-width: 1024px) {
   .villa-request .calendar {
     right: 100%;
     -webkit-transform: translateX(-20px);
             -ms-transform: translateX(-20px);
         transform: translateX(-20px);
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .villa-request .calendar {
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
   .form-request .up .calendar,
   .fast-request .up .calendar {
     bottom: 100%;
@@ -3637,24 +3700,31 @@ svg {
   }
 }
 
-.text-box ul.column {
-  -webkit-columns: 2 auto;
-          -moz-columns: 2 auto;
-       columns: 2 auto;
-  -webkit-column-gap: 80px;
-          -moz-column-gap: 80px;
-       column-gap: 80px;
-}
-
-.text-box ul.column li {
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-       break-inside: avoid;
+@media screen and (min-width: 768px) {
+  .text-box ul.column {
+    -webkit-columns: 2 auto;
+            -moz-columns: 2 auto;
+         columns: 2 auto;
+    -webkit-column-gap: 80px;
+            -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+  .text-box ul.column li {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+         break-inside: avoid;
+  }
 }
 
 .text-box ul li {
   padding-left: 40px;
   position: relative;
+}
+
+@media screen and (max-width: 599px) {
+  .text-box ul li {
+    padding-left: 20px;
+  }
 }
 
 .text-box ul li:before {
@@ -3816,7 +3886,7 @@ svg {
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
+@media screen and (min-width: 320px) and (max-width: 1599px) {
   .grid--main {
     padding: 10px;
   }
@@ -3951,11 +4021,23 @@ svg {
 
 .grid-list .short {
   margin-top: 10px;
-  line-height: 1.6;
   text-align: center;
   color: #fff;
   text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  font-size: 17px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-list .short {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .grid-list .short {
+    font-size: 14px;
+    line-height: 1.4;
+  }
 }
 
 .grid-list .price {
@@ -4009,7 +4091,7 @@ svg {
 }
 
 @media screen and (max-width: 1199px) {
-  .includes {
+  .grid .includes {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             -webkit-flex-direction: column;
@@ -4036,44 +4118,76 @@ svg {
 }
 
 @media screen and (min-width: 1600px) {
-  .short-info .includes > span,
   .grid .includes > span {
     font-size: 15px;
   }
-  .short-info .includes > span:not(:last-child),
   .grid .includes > span:not(:last-child) {
     margin-right: 30px;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
-  .short-info .includes > span,
   .grid .includes > span {
     font-size: 13px;
   }
-  .short-info .includes > span:not(:last-child),
   .grid .includes > span:not(:last-child) {
     margin-right: 10px;
   }
 }
 
 @media screen and (max-width: 1199px) {
-  .short-info .includes > span,
   .grid .includes > span {
     margin-bottom: 5px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .short-info .includes > span i,
   .grid .includes > span i {
     margin-right: 10px;
   }
 }
 
 @media screen and (max-width: 1599px) {
-  .short-info .includes > span i,
   .grid .includes > span i {
+    margin-right: 7px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .short-info .includes > span {
+    font-size: 15px;
+  }
+  .short-info .includes > span:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1599px) {
+  .short-info .includes > span {
+    font-size: 13px;
+  }
+  .short-info .includes > span:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .short-info .includes > span {
+    font-size: 9px;
+  }
+  .short-info .includes > span:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .short-info .includes > span i {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  .short-info .includes > span i {
     margin-right: 7px;
   }
 }
@@ -4092,14 +4206,32 @@ svg {
   }
 }
 
-.villa-item .includes .bed i {
-  width: 26px;
-  height: 21px;
+@media screen and (min-width: 1024px) {
+  .villa-item .includes .bed i {
+    width: 26px;
+    height: 21px;
+  }
 }
 
-.short-info .includes .bed i {
-  width: 26px;
-  height: 21px;
+@media screen and (max-width: 1023px) {
+  .villa-item .includes .bed i {
+    width: 20px;
+    height: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .short-info .includes .bed i {
+    width: 26px;
+    height: 21px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .short-info .includes .bed i {
+    width: 20px;
+    height: 16px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -4116,14 +4248,32 @@ svg {
   }
 }
 
-.villa-item .includes .bath i {
-  width: 32px;
-  height: 28px;
+@media screen and (min-width: 1024px) {
+  .villa-item .includes .bath i {
+    width: 32px;
+    height: 28px;
+  }
 }
 
-.short-info .includes .bath i {
-  width: 32px;
-  height: 28px;
+@media screen and (max-width: 1023px) {
+  .villa-item .includes .bath i {
+    width: 20px;
+    height: 18px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .short-info .includes .bath i {
+    width: 32px;
+    height: 28px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .short-info .includes .bath i {
+    width: 20px;
+    height: 18px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
@@ -4140,14 +4290,32 @@ svg {
   }
 }
 
-.villa-item .includes .sea i {
-  width: 28px;
-  height: 29px;
+@media screen and (min-width: 1024px) {
+  .villa-item .includes .sea i {
+    width: 28px;
+    height: 29px;
+  }
 }
 
-.short-info .includes .sea i {
-  width: 28px;
-  height: 29px;
+@media screen and (max-width: 1023px) {
+  .villa-item .includes .sea i {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .short-info .includes .sea i {
+    width: 28px;
+    height: 29px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .short-info .includes .sea i {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .blog-box .layout {
@@ -4415,17 +4583,26 @@ svg {
 }
 
 .villa-item {
-  width: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 10px;
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .villa-item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .villa-item {
+    width: 100%;
+  }
+}
+
 .villa-item .includes {
   color: #30343f;
-  padding: 0 15px;
-  font-size: 15px;
   font-weight: 400;
 }
 
@@ -4434,17 +4611,68 @@ svg {
   margin-right: 10px;
 }
 
-.villa-item .includes > span {
-  margin-right: 40px;
+@media screen and (min-width: 1200px) {
+  .villa-item .includes > span {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .villa-item .includes {
+    -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-item .includes {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-item .includes {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .villa-item .includes > span {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .villa-item .includes {
+    display: block;
+  }
+  .villa-item .includes > span {
+    margin-top: 10px;
+  }
 }
 
 .villa-img {
   width: 100%;
-  height: 290px;
   position: relative;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-img {
+    height: 290px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-img {
+    height: 220px;
+  }
 }
 
 .villa-img figure {
@@ -4469,9 +4697,20 @@ svg {
   clear: both;
   padding: 0 12px 0 18px;
   line-height: 28px;
-  font-size: 16px;
   margin-bottom: 12px;
   height: 28px;
+}
+
+@media screen and (min-width: 481px) {
+  .villa-img .hashes li {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .villa-img .hashes li {
+    font-size: 11px;
+  }
 }
 
 .villa-img .hashes li:after {
@@ -4525,6 +4764,12 @@ svg {
   height: 85px;
 }
 
+@media screen and (max-width: 1199px) {
+  .intro-figure .villa-like {
+    right: 25px;
+  }
+}
+
 .villa-like.active {
   color: #fff;
 }
@@ -4536,7 +4781,6 @@ svg {
 }
 
 .villa-main {
-  padding: 15px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4549,6 +4793,18 @@ svg {
           -webkit-justify-content: space-between;
               -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-main {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-main {
+    padding: 10px;
+  }
 }
 
 .villa-main .title {
@@ -6307,9 +6563,18 @@ svg {
 /*--------------------------------------------------------------------*/
 /******************          navigation          **********************/
 /*--------------------------------------------------------------------*/
-.villa-nav {
-  height: 120px;
-  margin-bottom: 45px;
+@media screen and (min-width: 1024px) {
+  .villa-nav {
+    height: 120px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-nav {
+    height: 160px;
+    margin-bottom: 35px;
+  }
 }
 
 .villa-nav .short-info {
@@ -6337,9 +6602,52 @@ svg {
   transition: all 0.2s;
 }
 
+@media screen and (min-width: 1024px) {
+  .villa-nav .short-info-data .show-villa-form {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-nav .short-info-data .show-villa-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+            align-items: center;
+  }
+  .villa-nav .short-info-data .show-villa-form .price {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    font-size: 20px;
+    margin-right: 15px;
+    white-space: nowrap;
+  }
+  .villa-nav .short-info-data .show-villa-form .price strong {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .villa-nav .short-info-data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 10px 0;
+    height: 170px;
+  }
+}
+
 .villa-nav .short-info-attributes {
-  max-width: -webkit-calc(100% - 340px);
-  max-width: calc(100% - 340px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6348,18 +6656,58 @@ svg {
           -webkit-align-items: center;
               -ms-flex-align: center;
           align-items: center;
+  -webkit-flex-shrink: 500;
+      -ms-flex-negative: 500;
+          flex-shrink: 500;
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-nav .short-info-attributes {
+    max-width: -webkit-calc(100% - 340px);
+    max-width: calc(100% - 340px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .villa-nav .short-info-attributes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .villa-nav .short-info-attributes .item {
-  margin-right: 44px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .villa-nav .short-info-attributes .item {
+    margin-right: 44px;
+  }
 }
 
 .villa-nav .short-info-attributes .item .name {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
-  font-size: 50px;
   line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .villa-nav .short-info-attributes .item .name {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-nav .short-info-attributes .item .name {
+    font-size: 32px;
+  }
 }
 
 .villa-nav .short-info-attributes .item .place {
@@ -6388,6 +6736,18 @@ svg {
   margin-right: 5px;
 }
 
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .villa-nav .short-info-attributes .includes {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-nav .short-info-attributes .includes {
+    margin: 10px 0;
+  }
+}
+
 .villa-nav .short-info-navigate {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6401,6 +6761,12 @@ svg {
   -webkit-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-nav .short-info-navigate {
+    display: none;
+  }
 }
 
 .villa-nav .short-info-navigate .nav-icon {
@@ -6520,6 +6886,15 @@ svg {
   height: 60px;
 }
 
+@media screen and (max-width: 600px) {
+  .villa-nav .short-info.fixed .short-info-data, .villa-nav .short-info.absolute .short-info-data {
+    height: 85px;
+  }
+  .villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes, .villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
+    display: none;
+  }
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .place, .villa-nav .short-info.absolute .short-info-attributes .place {
   height: 0;
 }
@@ -6538,6 +6913,28 @@ svg {
   bottom: 0;
 }
 
+@media screen and (min-width: 1024px) {
+  .villa-nav .short-info .mobile-attributes {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .villa-nav .short-info .mobile-attributes {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-nav .short-info .mobile-attributes {
+    display: none;
+  }
+}
+
 /*--------------------------------------------------------------------*/
 /******************          custom layout          **********************/
 /*--------------------------------------------------------------------*/
@@ -6550,6 +6947,7 @@ svg {
           -webkit-align-items: stretch;
               -ms-flex-align: stretch;
           align-items: stretch;
+  position: relative;
 }
 
 .villa-layout--main {
@@ -6557,32 +6955,102 @@ svg {
       -ms-flex-negative: 500;
           flex-shrink: 500;
   width: 100%;
-  padding-right: 40px;
 }
 
-.villa-layout--side {
-  position: relative;
-  width: 300px;
+@media screen and (min-width: 1024px) {
+  .villa-layout--main {
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-layout--main {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .villa-layout--main {
+    padding: 10px 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-layout--side {
+    width: 300px;
+    position: relative;
+  }
+  .villa-layout--side .toggleVilla {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-layout--side {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 52, 63, 0.8);
+  }
+  .villa-layout--side .toggleVilla {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .villa-layout--side.active {
+    display: block;
+  }
 }
 
 .villa-layout .cite {
-  margin: 60px auto;
   text-align: center;
   display: block;
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
   color: #f9690e;
-  font-size: 29px;
   line-height: 1.4;
   max-width: 420px;
 }
 
+@media screen and (min-width: 600px) {
+  .villa-layout .cite {
+    font-size: 29px;
+    margin: 60px auto;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-layout .cite {
+    font-size: 18px;
+    margin: 35px 0;
+  }
+}
+
 .villa-layout .cite .key {
-  margin: 0 auto;
   display: block;
-  width: 95px;
-  height: 40px;
+}
+
+@media screen and (min-width: 600px) {
+  .villa-layout .cite .key {
+    width: 95px;
+    height: 40px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-layout .cite .key {
+    width: 68px;
+    height: 28px;
+    margin: 0 auto 15px;
+  }
 }
 
 .villa-layout .cite .infinity {
@@ -6608,8 +7076,13 @@ svg {
 /******************          experts box          **********************/
 /*--------------------------------------------------------------------*/
 .experts {
-  margin-top: 100px;
   margin-bottom: 65px;
+}
+
+@media screen and (min-width: 768px) {
+  .experts {
+    margin-top: 100px;
+  }
 }
 
 .experts-box {
@@ -6625,13 +7098,22 @@ svg {
   margin-bottom: 50px;
 }
 
-.showplaces-list {
-  -webkit-columns: 2 auto;
-          -moz-columns: 2 auto;
-       columns: 2 auto;
-  -webkit-column-gap: 40px;
-          -moz-column-gap: 40px;
-       column-gap: 40px;
+@media screen and (max-width: 599px) {
+  .showplaces {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .showplaces-list {
+    -webkit-columns: 2 auto;
+            -moz-columns: 2 auto;
+         columns: 2 auto;
+    -webkit-column-gap: 40px;
+            -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
 }
 
 .showplaces-list dl {
@@ -6681,6 +7163,12 @@ svg {
   border-bottom: 1px dashed #b2b9c1;
 }
 
+@media screen and (max-width: 599px) {
+  .showplaces-list dd:before {
+    top: 14px;
+  }
+}
+
 /*--------------------------------------------------------------------*/
 /******************          map box          **********************/
 /*--------------------------------------------------------------------*/
@@ -6694,25 +7182,49 @@ svg {
   position: relative;
 }
 
-.villa-map .map-box {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3000px;
-  height: 100%;
-  -webkit-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+@media screen and (min-width: 768px) {
+  .villa-map .map-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3000px;
+    height: 100%;
+    -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+  }
 }
 
-.place-description {
-  position: absolute;
-  left: 80px;
-  top: 50%;
-  width: 300px;
-  -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+@media screen and (max-width: 767px) {
+  .villa-map .map-box {
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .place-description {
+    left: 80px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .place-description {
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .place-description {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 300px;
+    -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+  }
 }
 
 .place-description figure {
@@ -6727,13 +7239,24 @@ svg {
           box-sizing: border-box;
   width: 100%;
   font-size: 15px;
-  padding: 15px 20px;
-  min-height: 220px;
 }
 
 .place-description .text .title {
   font-family: Futuris, sans-serif;
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .place-description .text {
+    min-height: 220px;
+    padding: 15px 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .place-description .text {
+    padding: 15px 20px 25px;
+  }
 }
 
 /*--------------------------------------------------------------------*/
@@ -6742,30 +7265,102 @@ svg {
 .villa-request {
   width: 300px;
   z-index: 55;
-  position: relative;
-  margin-top: -185px;
   -webkit-transition: margin-top 0.4s;
   -o-transition: margin-top 0.4s;
   transition: margin-top 0.4s;
 }
 
-.fixed .villa-request {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: 300px;
-  margin-top: 0;
-  -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+@media screen and (min-width: 1024px) {
+  .villa-request {
+    position: relative;
+    margin-top: -185px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-request {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fixed .villa-request {
+    left: 50%;
+    margin-left: 300px;
+    position: fixed;
+    top: 50%;
+    margin-top: 0;
+    -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1279px) {
+  .fixed .villa-request {
+    right: 40px;
+    position: fixed;
+    top: 50%;
+    margin-top: 0;
+    -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .fixed .villa-request {
+    right: 20px;
+    position: fixed;
+    top: 50%;
+    margin-top: 0;
+    -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+  }
 }
 
 .absolute .villa-request {
   z-index: 1;
   margin-top: 0;
   position: absolute;
-  left: 0;
   bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .absolute .villa-request {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .absolute .villa-request {
+    top: auto;
+  }
+}
+
+.villa-request .show-villa-form {
+  background-color: #f9690e;
+  color: #fff;
+  right: 100%;
+  position: absolute;
+  -webkit-transform-origin: right bottom;
+          -ms-transform-origin: right bottom;
+      transform-origin: right bottom;
+  -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-request .show-villa-form {
+    display: none;
+  }
 }
 
 .villa-request .price {
@@ -6828,7 +7423,12 @@ svg {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px 0 0;
-  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .villa-request-form .fields-part {
+    display: none;
+  }
 }
 
 .villa-request-form .submit-part {
@@ -6854,6 +7454,12 @@ svg {
 
 .villa-request-form .submit-btn label:hover + .btn {
   background-color: #ee6309;
+}
+
+@media screen and (max-width: 1023px) {
+  .villa-request-form .submit-btn label {
+    display: none;
+  }
 }
 
 .villa-request-form .submit-actions {
@@ -7062,6 +7668,16 @@ svg {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 767px) {
+  .worker {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .workers .worker-img {
   width: 360px;
   height: 360px;
@@ -7102,8 +7718,25 @@ svg {
 
 .experts .worker-img {
   text-align: center;
-  margin-right: 120px;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .experts .worker-img {
+    margin-right: 120px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .experts .worker-img {
+    margin-right: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .experts .worker-img {
+    margin-top: 30px;
+  }
 }
 
 .experts .worker-img figure {
@@ -7113,8 +7746,21 @@ svg {
           border-radius: 50%;
   position: relative;
   overflow: hidden;
-  margin-top: -80px;
   margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .experts .worker-img figure {
+    margin-top: -80px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .experts .worker-img figure {
+    width: 235px;
+    height: 235px;
+    margin: 0 auto 20px;
+  }
 }
 
 .experts .worker-img figure:before {
@@ -7155,7 +7801,18 @@ svg {
       -ms-flex-negative: 500;
           flex-shrink: 500;
   line-height: 1.7;
-  padding: 40px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .worker-descr {
+    padding: 40px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .worker-descr {
+    padding: 20px 0 40px;
+  }
 }
 
 .experts .worker-descr .quote {
@@ -7163,6 +7820,12 @@ svg {
   font-style: italic;
   font-size: 21px;
   margin-bottom: 24px;
+}
+
+@media screen and (max-width: 599px) {
+  .experts .worker-descr .quote {
+    font-size: 17px;
+  }
 }
 
 .experts .worker-descr .position {

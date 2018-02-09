@@ -406,6 +406,15 @@ $(document).ready(function () {
     }
 
     /*
+    ============= show villa request
+   */
+
+    $('.toggleVilla').click(function () {
+        $('.villa-layout--side').toggleClass('active')
+    });
+
+
+    /*
     ============= position for villa request
    */
 

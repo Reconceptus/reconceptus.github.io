@@ -15,7 +15,7 @@
     @include media(hover,1600){
       padding: 20px;
     }
-    @include breakpoints(1200,1599){
+    @include breakpoints(320,1599){
       padding: 10px;
     }
   }
@@ -95,11 +95,17 @@
     }
     .short {
       margin-top: 10px;
-      line-height: 1.6;
       text-align: center;
       color: $white;
       text-shadow: 0 3px 5px rgba($black,0.2);
-      font-size: 17px;
+      @include media(hover,768){
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      @include media(screen,767){
+        font-size: 14px;
+        line-height: 1.4;
+      }
     }
     .price {
 

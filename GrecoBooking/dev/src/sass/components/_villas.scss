@@ -6,29 +6,62 @@
 }
 .villa {
   &-item {
-    width: 50%;
     box-sizing: border-box;
     padding: 0 10px;
     margin-bottom: 40px;
+    @include media(hover,768){
+      width: 50%;
+    }
+    @include media(screen,767){
+      width: 100%;
+    }
     .includes {
       color: $text;
-      padding: 0 15px;
-      font-size: 15px;
+
       font-weight: 400;
       i {
         color: $bg;
         margin-right: 10px;
       }
-      & > span {
-        margin-right: 40px;
+      @include media(hover,1200){
+        & > span {
+          margin-right: 40px;
+        }
+      }
+      @include breakpoints(768,1199){
+        justify-content: space-between;
+      }
+      @include media(hover,1024){
+        font-size: 15px;
+        padding: 0 15px;
+      }
+      @include media(screen,1023){
+        font-size: 12px;
+        padding: 0 10px;
+      }
+      @include breakpoints(481,767){
+        & > span {
+          margin-right: 20px;
+        }
+      }
+      @include media(screen,480){
+        display: block;
+        & > span {
+          margin-top: 10px;
+        }
       }
     }
   }
   &-img {
     width: 100%;
-    height: 290px;
     position: relative;
     transition: all 0.3s;
+    @include media(hover,1024){
+      height: 290px;
+    }
+    @include media(screen,1023){
+      height: 220px;
+    }
     figure {
       width: 100%;
       height: 100%;
@@ -49,9 +82,14 @@
         clear: both;
         padding: 0 12px 0 18px;
         line-height: 28px;
-        font-size: 16px;
         margin-bottom: 12px;
         height: 28px;
+        @include media(hover,481){
+          font-size: 16px;
+        }
+        @include media(screen,480){
+          font-size: 11px;
+        }
         &:after {
           content: "";
           position: absolute;
@@ -96,6 +134,9 @@
       right: 80px;
       width: 85px;
       height: 85px;
+      @include media(screen,1199){
+        right: 25px;
+      }
     }
     &.active {
       color: $white;
@@ -107,10 +148,15 @@
     }
   }
   &-main {
-    padding: 15px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @include media(hover,1024){
+      padding: 15px;
+    }
+    @include media(screen,1023){
+      padding: 10px;
+    }
     .title {
       text-transform: uppercase;
       color: $text;

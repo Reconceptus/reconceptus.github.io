@@ -73,8 +73,15 @@
 /*--------------------------------------------------------------------*/
 
 .villa-nav {
-  height: 120px;
-  margin-bottom: 45px;
+
+  @include media(hover,1024){
+    height: 120px;
+    margin-bottom: 45px;
+  }
+  @include media(screen,1023){
+    height: 160px;
+    margin-bottom: 35px;
+  }
   .short-info {
     background-color: $text;
     width: 100%;
@@ -85,19 +92,58 @@
       justify-content: space-between;
       height: 120px;
       transition: all 0.2s;
+      .show-villa-form {
+        @include media(hover,1024){
+          display: none;
+        }
+        @include media(screen,1023){
+          display: flex;
+          align-items: center;
+          .price {
+            text-transform: uppercase;
+            font-family: Futuris, sans-serif;
+            font-size: 20px;
+            margin-right: 15px;
+            white-space: nowrap;
+            strong {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      @include media(screen,600){
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        height: 170px;
+      }
     }
     &-attributes {
-      max-width: calc(100% - 340px);
       display: flex;
       align-items: center;
+      flex-shrink: 500;
+      @include media(hover,1024){
+        max-width: calc(100% - 340px);
+      }
+      @include media(screen,600){
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .item {
-        margin-right: 44px;
-        cursor: pointer;
+         cursor: pointer;
+        @include media(hover,600){
+          margin-right: 44px;
+        }
         .name {
           text-transform: uppercase;
           font-family: Futuris, sans-serif;
-          font-size: 50px;
           line-height: 1;
+          @include media(hover,600){
+            font-size: 50px;
+          }
+          @include media(screen,599){
+            font-size: 32px;
+          }
         }
         .place {
           display: flex;
@@ -116,12 +162,23 @@
           }
         }
       }
+      .includes {
+        @include breakpoints(600,1023){
+          display: none;
+        }
+        @include media(screen,599){
+          margin: 10px 0;
+        }
+      }
     }
     &-navigate {
       display: flex;
       align-items: center;
       opacity: 0;
       transition: opacity 0.3s;
+      @include media(screen,1023){
+        display: none;
+      }
       .nav-icon {
         position: relative;
         cursor: pointer;
@@ -207,6 +264,10 @@
       z-index: 20;
       .short-info-data {
         height: 60px;
+        @include media(screen,600){
+          height: 85px;
+          .short-info-attributes .includes {display: none}
+        }
       }
       .short-info-attributes {
         .place {
@@ -225,6 +286,18 @@
       position: absolute;
       bottom: 0;
     }
+    .mobile-attributes {
+      @include media(hover,1024){
+        display: none;
+      }
+      @include breakpoints(600,1023){
+        display: flex;
+        padding: 10px 0;
+      }
+      @include media(screen,599){
+        display: none;
+      }
+    }
   }
 }
 
@@ -236,32 +309,79 @@
 .villa-layout {
   display: flex;
   align-items: stretch;
+  position: relative;
+
   &--main {
     flex-shrink: 500;
     width: 100%;
-    padding-right: 40px;
+    @include media(hover,1024){
+      padding-right: 40px;
+    }
+    @include media(screen,1023){
+      padding: 0 20px;
+    }
+    @include media(screen,600){
+      padding: 10px 0;
+    }
   }
   &--side {
-    position: relative;
-    width: 300px;
+
+    @include media(hover,1024){
+      width: 300px;
+      position: relative;
+      .toggleVilla {display: none;}
+    }
+    @include media(screen,1023){
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($text,0.8);
+      .toggleVilla {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
   }
   .cite {
-    margin: 60px auto;
     text-align: center;
     display: block;
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 400;
     color: $btn;
-    font-size: 29px;
     line-height: 1.4;
     max-width: 420px;
-    //padding: 15px 0 0;
+    @include media(hover,600){
+      font-size: 29px;
+      margin: 60px auto;
+    }
+    @include media(screen,599){
+      font-size: 18px;
+      margin: 35px 0;
+    }
     .key {
-      margin: 0 auto;
       display: block;
-      width: 95px;
-      height: 40px;
+      @include media(hover,600){
+        width: 95px;
+        height: 40px;
+        margin: 0 auto;
+      }
+      @include media(screen,599){
+        width: 68px;
+        height: 28px;
+        margin: 0 auto 15px;
+      }
     }
     .infinity {
       margin: 20px auto 0;
@@ -274,6 +394,7 @@
 .villa-page {
   &--wrap {
     position: relative;
+
   }
 }
 .villa-part {
@@ -288,8 +409,11 @@
 /*--------------------------------------------------------------------*/
 
 .experts {
-  margin-top: 100px;
+
   margin-bottom: 65px;
+  @include media(hover,768){
+    margin-top: 100px;
+  }
   &-box {
     background-color: $light-bg;
   }
@@ -303,9 +427,15 @@
   font-size: 17px;
   line-height: 28px;
   margin-bottom: 50px;
+  @include media(screen,599){
+    font-size: 14px;
+    line-height: 20px;
+  }
   &-list {
-    columns: 2 auto;
-    column-gap: 40px;
+    @include media(hover,768){
+      columns: 2 auto;
+      column-gap: 40px;
+    }
     dl {
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
@@ -339,6 +469,9 @@
         height: 1px;
         margin-right: 5px;
         border-bottom: 1px dashed $bg;
+        @include media(screen,599){
+          top: 14px;
+        }
       }
     }
   }
@@ -356,20 +489,36 @@
     position: relative;
   }
   .map-box {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 3000px;
-    height: 100%;
-    transform: translateX(-50%);
+
+    @include media(hover,768){
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3000px;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+    @include media(screen,767){
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
   }
 }
 .place-description {
-  position: absolute;
-  left: 80px;
-  top: 50%;
-  width: 300px;
-  transform: translateY(-50%);
+  @include media(hover,980){
+    left: 80px;
+  }
+  @include media(screen,979){
+    left: 20px;
+  }
+  @include media(hover,768){
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 300px;
+    transform: translateY(-50%);
+  }
   figure {
     width: 100%;
     height: 200px;
@@ -381,11 +530,18 @@
     box-sizing: border-box;
     width: 100%;
     font-size: 15px;
-    padding: 15px 20px;
-    min-height: 220px;
+
+
     .title {
       font-family: Futuris, sans-serif;
       margin-bottom: 20px;
+    }
+    @include media(hover,768){
+      min-height: 220px;
+      padding: 15px 20px;
+    }
+    @include media(screen,767){
+      padding: 15px 20px 25px;
     }
   }
 }
@@ -397,19 +553,46 @@
 .villa-request {
   width: 300px;
   z-index: 55;
-  position: relative;
-  margin-top: -185px;
+
   transition: margin-top 0.4s;
+  @include media(hover,1024){
+    position: relative;
+    margin-top: -185px;
+  }
+  @include media(screen,1023){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
   .fixed & {
     //margin-top: 0;
     //transform: translateY(-50%);
 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: 300px;
-    margin-top: 0;
-    transform: translateY(-50%);
+
+    @include media(hover,1280){
+      left: 50%;
+      margin-left: 300px;
+      position: fixed;
+      top: 50%;
+      margin-top: 0;
+      transform: translateY(-50%);
+    }
+    @include breakpoints(1200,1279){
+      right: 40px;
+      position: fixed;
+      top: 50%;
+      margin-top: 0;
+      transform: translateY(-50%);
+    }
+    @include breakpoints(1024,1199){
+      right: 20px;
+      position: fixed;
+      top: 50%;
+      margin-top: 0;
+      transform: translateY(-50%);
+    }
+
   }
   .absolute & {
     //margin-top: 0;
@@ -419,8 +602,25 @@
 
     margin-top: 0;
     position: absolute;
-    left: 0;
+
     bottom: 0;
+    @include media(hover,1024){
+      left: 0;
+    }
+    @include media(screen,1023){
+      top: auto;
+    }
+  }
+  .show-villa-form {
+    @include media(hover,1024){
+      display: none;
+    }
+    background-color: $btn;
+    color: $white;
+    right: 100%;
+    position: absolute;
+    transform-origin: right bottom;
+    transform: rotate(-90deg);
   }
   .price {
     background-color: $head;
@@ -469,7 +669,11 @@
     .fields-part {
       box-sizing: border-box;
       padding: 10px 0 0;
-      display: none;
+
+      @include media(hover,1024){
+        display: none;
+      }
+
     }
     .submit-part {
       padding: 20px 0 15px;
@@ -490,6 +694,9 @@
           & + .btn {
             background-color: $btn_hover;
           }
+        }
+        @include media(screen,1023){
+          display: none;
         }
       }
     }

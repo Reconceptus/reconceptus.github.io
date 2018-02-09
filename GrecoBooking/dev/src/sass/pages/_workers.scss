@@ -20,6 +20,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include media(screen,767){
+    flex-direction: column;
+  }
   &-img {
 
     .workers & {
@@ -55,16 +58,31 @@
     }
     .experts & {
       text-align: center;
-      margin-right: 120px;
       margin-bottom: 10px;
+      @include media(hover,1024){
+        margin-right: 120px;
+      }
+      @include breakpoints(768,1023){
+        margin-right: 60px;
+      }
+      @include media(screen,767){
+        margin-top: 30px;
+      }
       figure {
         width: 300px;
         height: 300px;
         border-radius: 50%;
         position: relative;
         overflow: hidden;
-        margin-top: -80px;
         margin-bottom: 20px;
+        @include media(hover,768){
+          margin-top: -80px;
+        }
+        @include media(screen,599){
+          width: 235px;
+          height: 235px;
+          margin: 0 auto 20px;
+        }
         &:before {
           content: "";
           position: absolute;
@@ -101,13 +119,21 @@
   &-descr {
     flex-shrink: 500;
     line-height: 1.7;
-    padding: 40px 0;
+    @include media(hover,768){
+      padding: 40px 0;
+    }
+    @include media(screen,767){
+      padding: 20px 0 40px;
+    }
     .experts & {
       .quote {
         font-family: 'Playfair Display', serif;
         font-style: italic;
         font-size: 21px;
         margin-bottom: 24px;
+        @include media(screen,599){
+          font-size: 17px;
+        }
       }
       .position {
         font-size: 15px;

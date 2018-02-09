@@ -45,6 +45,14 @@
       //background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
       //background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
       //background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+      position: relative;
+      .animate-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
     &.placing--request {
       padding-bottom: 80px;
@@ -95,11 +103,16 @@
   &--bg {
     padding-top: 60px;
     box-sizing: border-box;
-    min-height: 680px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    @include media(hover,1200){
+      min-height: 680px;
+    }
+    @include media(screen,1199){
+      min-height: 540px;
+    }
     .content {
       position: relative;
     }
@@ -118,9 +131,15 @@
 }
 
 .half-request {
-  &:not(.double) {
-    height: 40px;
-    margin-bottom: 40px;
+
+  @include media(hover,1024){
+    &:not(.double) {
+      height: 40px;
+      margin-bottom: 40px;
+    }
+  }
+  @include media(screen,1023){
+    padding-bottom: 20px;
   }
   &.double {
     height: 80px;
