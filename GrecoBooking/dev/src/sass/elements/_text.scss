@@ -16,6 +16,11 @@
     &:not(:first-child){
       margin-top: 60px;
     }
+    @include media(screen,599){
+      padding-left: 35px;
+      margin-bottom: 35px;
+      font-size: 17px;
+    }
   }
   h2 {
     text-transform: uppercase;
@@ -24,6 +29,12 @@
     color: $text;
     line-height: 1.2;
     margin-bottom: 15px;
+    @include breakpoints(600,1023){
+      font-size: 34px;
+    }
+    @include media(screen,599){
+      font-size: 25px;
+    }
   }
   h3 {
     text-transform: uppercase;
@@ -33,6 +44,12 @@
     line-height: 1.2;
     margin-bottom: 25px;
     &:not(:first-child){margin-top: 25px;}
+    @include breakpoints(600,1023){
+      font-size: 26px;
+    }
+    @include media(screen,599){
+      font-size: 21px;
+    }
   }
   img {
     margin: 40px 0;
@@ -89,6 +106,9 @@
     img {
       width: 1200px;
       max-width: 1200px;
+      @include media(screen,1199){
+        width: 100vw;
+      }
     }
   }
 }

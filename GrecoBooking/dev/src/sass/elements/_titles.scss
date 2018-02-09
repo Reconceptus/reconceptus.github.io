@@ -32,8 +32,12 @@
       font-size: 50px;
       padding: 20px;
       line-height: 1.2;
+      @include breakpoints(600,1023){
+        font-size: 40px;
+        padding: 20px 0;
+      }
       @include media(screen,599){
-        font-size: 38px;
+        font-size: 30px;
         padding: 20px 0;
       }
     }

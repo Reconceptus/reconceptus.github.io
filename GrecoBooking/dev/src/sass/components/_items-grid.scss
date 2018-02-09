@@ -50,7 +50,24 @@
           width: 100%;
         }
       }
-      .short-offers & {width: 20%;}
+      .short-offers & {
+
+        @include media(hover,1601){
+          width: 20%;
+        }
+        @include breakpoints(1024,1600){
+          width: 25%;
+        }
+        @include breakpoints(901,1023){
+          width: 33.3333%;
+        }
+        @include breakpoints(600,900){
+          width: 50%;
+        }
+        @include media(screen,599){
+          width: 100%;
+        }
+      }
     }
     .item, a {
       display: block;

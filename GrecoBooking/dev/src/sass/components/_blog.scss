@@ -17,8 +17,8 @@
           width: 50%;
         }
         @include media(screen,599){
-          width: 100%;
-        }
+           width: 100%;
+         }
       }
       .article {
 
@@ -73,7 +73,18 @@
     &_sm {
       li {
         margin-top: 20px;
-        width: 20%;
+        @include media(hover,1600){
+          width: 20%;
+        }
+        @include breakpoints(1024,1599){
+          width: 25%;
+        }
+        @include breakpoints(768,1023){
+          width: 33.3333%;
+        }
+        @include breakpoints(568,767){
+          width: 50%;
+        }
       }
       .article {
         height: 100%;

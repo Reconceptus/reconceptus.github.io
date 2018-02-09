@@ -126,6 +126,12 @@
       align-items: center;
       justify-content: center;
       time {margin-right: 40px;}
+      @include media(screen,599){
+        flex-direction: column;
+        time {
+          margin: 0 0 10px;
+        }
+      }
     }
   }
   &--main {
@@ -140,18 +146,24 @@
       height: 40px;
       margin-bottom: 40px;
     }
+    &.double {
+      height: 80px;
+      margin-bottom: 80px;
+      background-color: $border;
+      .fast-request {
+        transform: translateY(40px);
+      }
+    }
   }
   @include media(screen,1023){
     padding-bottom: 20px;
-  }
-  &.double {
-    height: 80px;
-    margin-bottom: 80px;
-    background-color: $border;
-    .fast-request {
-      transform: translateY(40px);
+    &.double {
+      padding-top: 20px;
+      background-color: $border;
+      margin-bottom: 30px;
     }
   }
+
 }
 
 .invalid.field,
