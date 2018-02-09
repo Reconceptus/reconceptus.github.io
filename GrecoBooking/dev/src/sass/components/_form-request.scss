@@ -7,6 +7,9 @@
   }
   @include media(screen,599){
     padding: 0 20px;
+    .selection-request & {
+      padding: 0;
+    }
   }
   .form {
     background-color: $white;
@@ -16,7 +19,7 @@
 
     font-weight: 400;
     @include media(hover,1024){padding: 50px 40px 40px;}
-    @include media(screen,1023){padding: 40px 30px 30px;}
+    @include breakpoints(600,1023){padding: 40px 30px 30px;}
     @include media(hover,768){
       font-size: 14px;
     }
@@ -27,6 +30,9 @@
     @include media(screen,599){
       padding: 20px;
       font-size: 13px;
+      .selection-request & {
+        padding: 15px 10px 30px;
+      }
     }
     &-box {
       .fieldset {

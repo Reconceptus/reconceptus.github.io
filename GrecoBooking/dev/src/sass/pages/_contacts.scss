@@ -1,31 +1,64 @@
 .map-container {
-  min-height: 900px;
+
   position: relative;
   width: 100%;
   overflow: hidden;
   .map-box {
-    position: absolute;
-    top: 0;
-    left: 63%;
-    width: 3000px;
-    height: 100%;
-    transform: translateX(-50%);
+    @include media(hover,1200){
+      position: absolute;
+      top: 0;
+      left: 63%;
+      width: 3000px;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+    @include media(screen,1199){
+      width: 100%;
+      height: 400px;
+    }
+  }
+  @include media(hover,1200){
+    min-height: 900px;
+  }
+  @include media(screen,1199){
+    padding-top: 60px;
   }
 }
 
 
 .contact-form {
-  position: absolute;
+
   z-index: 2;
   background-color: $white;
-  margin-top: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 50%;
-  width: 590px;
-  box-shadow: 0 0 25px 0 rgba($border,0.1);
+
+
+
+  @include media(hover,1200){
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    width: 590px;
+    box-shadow: 0 0 25px 0 rgba($border,0.1);
+    margin-top: 30px;
+  }
+  @include breakpoints(768,1199){
+    display: flex;
+    padding: 40px 40px 40px 20px;
+    flex-flow: row wrap;
+  }
+  @include media(screen,767){
+    padding: 20px;
+  }
   .contacts {
     padding: 20px 25px 25px;
+    box-sizing: border-box;
+    @include breakpoints(768,1199){
+      width: 50%;
+    }
+    @include media(screen,767){
+      width: 100%;
+    }
     .title {
       text-transform: uppercase;
       font-family: Futuris, sans-serif;
@@ -70,8 +103,17 @@
     background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
     background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
     background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+    @include breakpoints(768,1199){
+      width: 50%;
+    }
+    @include media(screen,767){
+      width: 100%;
+    }
     .fields {
       padding: 10px 40px;
+      @include media(screen,599){
+        padding: 10px 20px;
+      }
     }
     .btn-box {
       button {
@@ -102,14 +144,25 @@
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+      @include media(screen,599){
+        flex-direction: column;
+      }
     }
     .field {
       width: 100%;
       position: relative;
       font-weight: 400;
-      &:not(:last-child){
-        margin-right: 10px;
+      @include media(hover,600){
+        &:not(:last-child){
+          margin-right: 10px;
+        }
       }
+      @include media(screen,599){
+        &:not(:last-child){
+          margin-bottom: 10px;
+        }
+      }
+
       .input {
         flex-shrink: 500;
         display: block;

@@ -5354,7 +5354,6 @@ svg {
 }
 
 .vacancy-list li {
-  width: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 10px;
@@ -5393,7 +5392,6 @@ svg {
   font-family: Futuris, sans-serif;
   font-size: 16px;
   color: #F9690E;
-  width: 45%;
   -webkit-flex-shrink: 500;
   -ms-flex-negative: 500;
   flex-shrink: 500;
@@ -5413,7 +5411,6 @@ svg {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-left: 20px;
 }
 
 .vacancy-list .place i {
@@ -5445,10 +5442,14 @@ svg {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 .vacancy-advances ul li {
-  width: 35%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5463,10 +5464,6 @@ svg {
   justify-content: space-between;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-.vacancy-advances ul li:not(:last-child) {
-  padding-right: 40px;
 }
 
 .vacancy-advances ul i {
@@ -5517,7 +5514,6 @@ svg {
 }
 
 .vacancy-terms ul li {
-  width: 33.3333%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 20px;
@@ -5556,7 +5552,11 @@ svg {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 600px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
@@ -5565,7 +5565,6 @@ svg {
 
 .vacancy-quotes .figure {
   position: relative;
-  width: 50%;
   overflow: hidden;
 }
 
@@ -5590,10 +5589,8 @@ svg {
 }
 
 .vacancy-quotes .text {
-  width: 50%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 50px 8% 50px 50px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -5608,17 +5605,6 @@ svg {
   margin-bottom: 40px;
 }
 
-.vacancy-quotes .text .contacts ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .vacancy-quotes .text .contacts li {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5628,10 +5614,6 @@ svg {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.vacancy-quotes .text .contacts li:not(:last-child) {
-  margin-right: 20px;
 }
 
 .vacancy-quotes .text .contacts i {
@@ -5675,40 +5657,20 @@ svg {
 }
 
 .map-container {
-  min-height: 900px;
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.map-container .map-box {
-  position: absolute;
-  top: 0;
-  left: 63%;
-  width: 3000px;
-  height: 100%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-
 .contact-form {
-  position: absolute;
   z-index: 2;
   background-color: #FFF;
-  margin-top: 30px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 50%;
-  width: 590px;
-  -webkit-box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
-  box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
 }
 
 .contact-form .contacts {
   padding: 20px 25px 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .contact-form .contacts .title {
@@ -5820,10 +5782,6 @@ svg {
   width: 100%;
   position: relative;
   font-weight: 400;
-}
-
-.contact-form-box .field:not(:last-child) {
-  margin-right: 10px;
 }
 
 .contact-form-box .field .input {
@@ -6011,6 +5969,53 @@ svg {
 
   .offers .item a .title {
     font-size: 30px;
+  }
+
+  .vacancy-quotes .text {
+    padding: 50px 8% 50px 50px;
+  }
+
+  .vacancy-quotes .text .contacts ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .vacancy-quotes .text .contacts li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .map-container .map-box {
+    position: absolute;
+    top: 0;
+    left: 63%;
+    width: 3000px;
+    height: 100%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .map-container {
+    min-height: 900px;
+  }
+
+  .contact-form {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 50%;
+    width: 590px;
+    -webkit-box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
+    box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
+    margin-top: 30px;
   }
 }
 
@@ -6227,6 +6232,23 @@ svg {
 
   .offers .item a .title {
     font-size: 26px;
+  }
+
+  .vacancy-quotes .text {
+    padding: 40px;
+  }
+
+  .vacancy-quotes .text .contacts li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .map-container .map-box {
+    width: 100%;
+    height: 400px;
+  }
+
+  .map-container {
+    padding-top: 60px;
   }
 }
 
@@ -6582,6 +6604,30 @@ svg {
   .experts .worker-img {
     margin-right: 120px;
   }
+
+  .vacancy-list li {
+    width: 50%;
+  }
+
+  .vacancy-advances ul li {
+    width: 35%;
+  }
+
+  .vacancy-advances ul li:not(:last-child) {
+    padding-right: 40px;
+  }
+
+  .vacancy-quotes {
+    min-height: 600px;
+  }
+
+  .vacancy-quotes .figure {
+    width: 50%;
+  }
+
+  .vacancy-quotes .text {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -6732,8 +6778,12 @@ svg {
   .villa--head .headline_main,
   .blog-box .headline_main,
   .simple-page--bg .headline_main {
-    font-size: 30px;
+    font-size: 26px;
     padding: 20px 0;
+  }
+
+  .select2-container {
+    font-size: 14px;
   }
 
   .text-box blockquote {
@@ -6796,9 +6846,17 @@ svg {
     padding: 0 20px;
   }
 
+  .selection-request .form-request {
+    padding: 0;
+  }
+
   .form-request .form {
     padding: 20px;
     font-size: 13px;
+  }
+
+  .selection-request .form-request .form {
+    padding: 15px 10px 30px;
   }
 
   .form-request .form-box .fieldset {
@@ -6924,6 +6982,57 @@ svg {
   .experts .worker-descr .quote {
     font-size: 17px;
   }
+
+  .vacancy-list a {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .vacancy-list .price {
+    margin: 10px 0;
+  }
+
+  .vacancy-list .arrow {
+    display: none;
+  }
+
+  .vacancy-quotes .text {
+    padding: 20px 0 40px;
+  }
+
+  .vacancy-quotes .text blockquote {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .vacancy-box .placing-form {
+    padding: 0;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .contact-form-box .fields {
+    padding: 10px 20px;
+  }
+
+  .contact-form-box .fieldset {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .contact-form-box .field:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
@@ -6987,10 +7096,6 @@ svg {
 
   .villa-main {
     padding: 10px;
-  }
-
-  .form-request .form {
-    padding: 40px 30px 30px;
   }
 
   .form-request .form-box .field:not(:last-child) {
@@ -7154,6 +7259,27 @@ svg {
 
   .villa-request-form .submit-btn label {
     display: none;
+  }
+
+  .vacancy-list li {
+    width: 100%;
+  }
+
+  .vacancy-advances ul li {
+    width: 100%;
+  }
+
+  .vacancy-advances ul li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .vacancy-quotes .figure {
+    width: 100%;
+    height: 350px;
+  }
+
+  .vacancy-quotes .text {
+    width: 100%;
   }
 }
 
@@ -7365,6 +7491,10 @@ svg {
     width: 50%;
   }
 
+  .form-request .form {
+    padding: 40px 30px 30px;
+  }
+
   .offers .item a .title {
     max-width: 60vw;
   }
@@ -7441,6 +7571,18 @@ svg {
     width: 95px;
     height: 40px;
     margin: 0 auto;
+  }
+
+  .vacancy-list .title {
+    width: 45%;
+  }
+
+  .vacancy-list .place {
+    margin-left: 20px;
+  }
+
+  .contact-form-box .field:not(:last-child) {
+    margin-right: 10px;
   }
 }
 
@@ -7738,6 +7880,10 @@ svg {
   .worker-descr {
     padding: 40px 0;
   }
+
+  .vacancy-terms ul li {
+    width: 33.3333%;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px) {
@@ -7757,6 +7903,10 @@ svg {
   .form-request .form {
     font-size: 13px;
     padding: 30px;
+  }
+
+  .vacancy-terms ul li {
+    width: 50%;
   }
 }
 
@@ -7881,6 +8031,18 @@ svg {
   .worker-descr {
     padding: 20px 0 40px;
   }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form .contacts {
+    width: 100%;
+  }
+
+  .contact-form-box {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) and (min-width: 1024px) {
@@ -7987,6 +8149,27 @@ svg {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .contact-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 40px 40px 40px 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+  .contact-form .contacts {
+    width: 50%;
+  }
+
+  .contact-form-box {
+    width: 50%;
   }
 }
 
