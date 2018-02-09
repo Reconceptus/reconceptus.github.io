@@ -370,12 +370,6 @@ textarea {
 }
 
 .simple-page--head header .send {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
   color: #30343F;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3712,7 +3706,6 @@ svg {
 }
 
 .friend-form {
-  width: 800px;
   -webkit-box-shadow: 0 5px 40px 0 RGBA(48, 52, 63, 0.8);
   box-shadow: 0 5px 40px 0 RGBA(48, 52, 63, 0.8);
 }
@@ -6454,6 +6447,15 @@ svg {
 }
 
 @media screen and (min-width: 1024px) {
+  .simple-page--head header .send {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
   .half-request:not(.double) {
     height: 40px;
     margin-bottom: 40px;
@@ -7113,6 +7115,15 @@ svg {
     font-size: 22px;
   }
 
+  .favorite--head .headline_main,
+  .placing--request .headline_main,
+  .villa--head .headline_main,
+  .blog-box .headline_main,
+  .simple-page--bg .headline_main {
+    font-size: 38px;
+    padding: 20px 0;
+  }
+
   .text-box ul li {
     padding-left: 20px;
   }
@@ -7179,6 +7190,31 @@ svg {
 
   .fast-request .field.f-50 {
     width: 100%;
+  }
+
+  .friend-form .close {
+    right: 15px;
+  }
+
+  .friend-form .title {
+    padding: 20px 20px 10px;
+  }
+
+  .friend-form .fields {
+    padding: 10px 20px;
+  }
+
+  .friend-form .fieldset {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+  .friend-form .fieldset .asterisk {
+    width: 100%;
+    margin-top: 15px;
   }
 
   .intro {
@@ -7887,6 +7923,25 @@ svg {
 @media screen and (min-width: 481px) {
   .villa-img .hashes li {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .friend-form {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 859px) {
+  .friend-form {
+    max-width: 800px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 10px;
+  }
+
+  .friend-form figure {
+    display: none;
   }
 }
 

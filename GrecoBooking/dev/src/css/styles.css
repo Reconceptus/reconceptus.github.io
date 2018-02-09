@@ -354,12 +354,6 @@ textarea {
 }
 
 .simple-page--head header .send {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
   color: #30343f;
   display: -webkit-box;
   display: -webkit-flex;
@@ -384,6 +378,17 @@ textarea {
 @media screen and (min-width: 1025px) {
   .simple-page--head header .send:hover {
     color: #ee6309;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .simple-page--head header .send {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
   }
 }
 
@@ -1971,6 +1976,17 @@ svg {
   font-size: 50px;
   padding: 20px;
   line-height: 1.2;
+}
+
+@media screen and (max-width: 599px) {
+  .favorite--head .headline_main,
+  .placing--request .headline_main,
+  .villa--head .headline_main,
+  .blog-box .headline_main,
+  .simple-page--bg .headline_main {
+    font-size: 38px;
+    padding: 20px 0;
+  }
 }
 
 .headline_submain {
@@ -5406,9 +5422,23 @@ svg {
 }
 
 .friend-form {
-  width: 800px;
   -webkit-box-shadow: 0 5px 40px 0 rgba(48, 52, 63, 0.8);
           box-shadow: 0 5px 40px 0 rgba(48, 52, 63, 0.8);
+}
+
+@media screen and (min-width: 860px) {
+  .friend-form {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 859px) {
+  .friend-form {
+    max-width: 800px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0 10px;
+  }
 }
 
 .friend-form .close {
@@ -5420,6 +5450,12 @@ svg {
   height: 30px;
   color: #657482;
   cursor: pointer;
+}
+
+@media screen and (max-width: 599px) {
+  .friend-form .close {
+    right: 15px;
+  }
 }
 
 .friend-form--wrap {
@@ -5450,6 +5486,12 @@ svg {
   width: 340px;
 }
 
+@media screen and (max-width: 859px) {
+  .friend-form figure {
+    display: none;
+  }
+}
+
 .friend-form .title {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
@@ -5458,8 +5500,20 @@ svg {
   padding: 20px 40px 10px;
 }
 
+@media screen and (max-width: 599px) {
+  .friend-form .title {
+    padding: 20px 20px 10px;
+  }
+}
+
 .friend-form .fields {
   padding: 10px 40px;
+}
+
+@media screen and (max-width: 599px) {
+  .friend-form .fields {
+    padding: 10px 20px;
+  }
 }
 
 .friend-form .btn-box button {
@@ -5554,6 +5608,20 @@ svg {
           -webkit-justify-content: space-between;
               -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 599px) {
+  .friend-form .fieldset {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            -webkit-flex-flow: row wrap;
+                -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .friend-form .fieldset .asterisk {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
 .friend-form .field {

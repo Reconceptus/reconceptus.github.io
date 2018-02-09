@@ -76,10 +76,7 @@
       padding: 40px 0;
       position: relative;
       .send {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+
         color: $text;
         display: flex;
         align-items: center;
@@ -94,6 +91,12 @@
           @include media(hover,1025){
             color: $btn_hover;
           }
+        }
+        @include media(hover,1024){
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 

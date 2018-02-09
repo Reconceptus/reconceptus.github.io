@@ -1,6 +1,13 @@
 .friend-form {
-  width: 800px;
   box-shadow: 0 5px 40px 0 rgba($text,.8);
+  @include media(hover,860){
+    width: 800px;
+  }
+  @include media(screen,859){
+    max-width: 800px;
+    box-sizing: border-box;
+    margin: 0 10px;
+  }
   .close {
     position: absolute;
     z-index: 5;
@@ -10,6 +17,9 @@
     height: 30px;
     color: $border;
     cursor: pointer;
+    @include media(screen,599){
+      right: 15px;
+    }
   }
   &--wrap {
     display: flex;
@@ -27,6 +37,9 @@
   figure {
     width: 340px;
     @extend %cover;
+    @include media(screen,859){
+      display: none;
+    }
   }
   .title {
     text-transform: uppercase;
@@ -34,9 +47,15 @@
     font-size: 16px;
     color: $text;
     padding: 20px 40px 10px;
+    @include media(screen,599){
+      padding: 20px 20px 10px;
+    }
   }
   .fields {
     padding: 10px 40px;
+    @include media(screen,599){
+      padding: 10px 20px;
+    }
   }
   .btn-box {
     button {
@@ -101,6 +120,13 @@
     align-items: center;
     margin-bottom: 10px;
     justify-content: space-between;
+    @include media(screen,599){
+      flex-flow: row wrap;
+      .asterisk {
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
   }
   .field {
     width: 100%;

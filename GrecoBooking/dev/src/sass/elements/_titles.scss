@@ -32,6 +32,10 @@
       font-size: 50px;
       padding: 20px;
       line-height: 1.2;
+      @include media(screen,599){
+        font-size: 38px;
+        padding: 20px 0;
+      }
     }
   }
   &_submain {
