@@ -831,9 +831,10 @@ class Base
 		$lang = empty($lang) ? \App::getLocale() : $lang;
 
 		if(is_array($arr))
-			if(json_decode($t, true)[$lang] ?? false)
+			if(json_decode($t, true)[$lang] ?? false || json_decode($t, true)[$lang] === null)
 				$t = json_decode($t, true)[$lang];
 			else
+
 				$t = current(json_decode($t, true)) ?? $t;
 
 			return $t;
@@ -950,5 +951,25 @@ class Base
 		}
 
 		return $tmp;
+	}
+
+	/**
+	 * Get meta.
+	 *
+	 * @param array  $data
+	 * @param string $key
+	 * @return mixed
+	 */
+	public function getMeta(array $data = [], string $key)
+	{
+		$key                 = $key ? $key : key($data);
+		$meta['title']       = $this->lang($data[$key]['title']);
+		$meta['description'] = $this->lang($data[$key]['description']);
+		$meta['keywords']    = $this->lang($data[$key]['keywords']);
+		$meta['author']      = $this->lang($data[$key]['author']);
+		$meta['created_at']  = $data[$key]['created_at'];
+		$meta['updated_at']  = $data[$key]['updated_at'];
+
+		return $meta;
 	}
 }

@@ -26,4 +26,5 @@ if (!empty($message)){
 @include('site.block.menu_top')
 @yield('content')
 @include('site.block.sharing')
+@stack('bottom')
 @include('site.layouts.footer')

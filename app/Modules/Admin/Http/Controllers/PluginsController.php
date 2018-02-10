@@ -114,8 +114,20 @@ class PluginsController extends Controller
 			->get()
 			->toArray();
 
+
+		$qUnicode = str_replace('\\', '\\', str_replace(['[', ']', '"'], '', json_encode([$q])));
+
 		$tags_enc = $this->dynamic->t('tags')
-			->where('tags.name', 'like', '%' . str_replace('\\', '\\\\', str_replace(['[', ']', '"'], '', json_encode([$q]))) . '%')
+			->where(
+				'tags.name',
+				'like',
+
+				'%' . str_replace(
+					'\\',
+					'\\\\',
+					str_replace(['[', ']', '"'], '', json_encode([mb_convert_case($q, MB_CASE_TITLE, "UTF-8")]))
+				) . '%')
+
 			->limit(100)
 			->get()
 			->toArray();
@@ -157,7 +169,7 @@ class PluginsController extends Controller
 				'result'             => 'ok',
 				'total_count'        => count($tags),
 				'q'                  => (string) str_replace(['[', ']', '"'], '', json_encode([$q])),
-				'aq'                 => (json_decode($v['name'], true)[\App::getLocale()] ?? false),
+				'aq'                 => (json_decode($v['name'] ?? '', true)[\App::getLocale()] ?? false),
 			]
 		);
 	}

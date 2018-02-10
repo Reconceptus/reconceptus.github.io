@@ -164,6 +164,7 @@
 											if(v.typeField === 'functions') {
 												$('#' + v.idAttr + 'en').attr('data-init-value', text ? text : 0);
 												$('#' + v.idAttr + 'ru').attr('data-init-value', text ? text : 0);
+												$('#' + v.idAttr).attr('data-init-value', text ? text : 0);
 											} else
 												$('[name="pl[' + k + ']"]').val(_.unescape(text));
 										}

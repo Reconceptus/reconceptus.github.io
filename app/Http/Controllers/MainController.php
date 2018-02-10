@@ -18,10 +18,16 @@ class MainController extends Controller
 	 */
 	private $dynamic;
 
+	/**
+	 * @var array
+	 */
+	private $request;
+
 	public function __construct(Request $request)
 	{
 		$this->base    = new Base($request);
 		$this->dynamic = new DynamicModel();
+		$this->request = $request->all();
 	}
 
 	/**
@@ -163,17 +169,69 @@ class MainController extends Controller
 	{
 		$data['tags'] = $this->dynamic->t('tags')->limit(100)->get()->toArray();
 		$where[]      = ['str.active', 1];
-		$where[]      = ['str.tags', '!=', '\'\''];
 		$count_box    = 4;
 		$group        = 'id';
 
-		if($id)
+		if($id) {
+			$data['blog'] = $this->dynamic->t('str')
+				->where(array_merge($where, ['str.id' => $id]))
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('str.id', '=','files.id_album')
+						->where('files.name_table', '=', 'stralbum')
+						->where('files.main', '=', 1);
+				})
+
+				->select('str.*', 'files.file', 'files.crop')
+				->first()
+				->toArray();
+
+			$data['meta_c'] = $this->base->getMeta($data, 'blog');
+
+			$data['blogs'] = $this->dynamic->t('str')
+				->whereNotIn('str.id', [$id])
+
+				// TODO скорее отвалится когда теги будут с id больше 10
+				->where(function ($query) use($data) {
+					$tags = explode(',', $data['blog']['tags']);
+
+					for($i = 0; $i < count($tags); $i++){
+						$query->orwhere('str.tags', 'like',  '%' . $tags[$i] .'%');
+					}
+				})
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('str.id', '=','files.id_album')
+						->where('files.name_table', '=', 'stralbum')
+						->where('files.main', '=', 1);
+				})
+
+				->select('str.*', 'files.file', 'files.crop')
+				->orderBy('str.' . $group, 'DESC')
+				->limit(10)
+				->get()
+				->toArray();
+
 			return $this->base->view_s("site.main.blog_id", $data);
-		else {
+		} else {
+			$tags                 = explode(',', str_replace(']', '', str_replace('[', '', $this->request['tag'] ?? '')));
+			$data['current_tags'] = $tags;
+			$where[]              = ['str.tags', '!=', '\'\''];
+
 			$data['blog'] = $this->dynamic->t('str')
 				->where($where)
-				//			->whereIn('blogs.id', $cart_id ?? [])
-				//			->where('blogs.text', 'like', '%' . trim($request['input_search'] ?? '') . '%')
+				->whereNotIn('str.tags', ['[]', ''])
+
+				// TODO скорее отвалится когда теги будут с id больше 10
+				->where(function ($query) use($tags) {
+					for($i = 0; $i < count($tags); $i++){
+						$query->orwhere('str.tags', 'like',  '%' . $tags[$i] .'%');
+					}
+				})
 
 				->join('files', function($join)
 				{

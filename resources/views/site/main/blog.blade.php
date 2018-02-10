@@ -17,7 +17,10 @@
 
 						@foreach($tags as $tag)
 							<li>
-								<a href="?tag={{ strtolower($langSt($tag['name'], 'en')) }}">
+								<a
+									href="?tag={{ $tag['id'] }}"
+									class="{{ array_search($tag['id'], $current_tags) !== false ? 'active' : '' }}"
+								>
 									{{ $langSt($tag['name']) }}
 								</a>
 							</li>

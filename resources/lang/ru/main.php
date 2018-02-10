@@ -33,4 +33,5 @@ return [
 	'children_from_0_to_2_years'      => 'Дети от 0 до 2 года',
 	'adults'                          => 'Взрослые',
 	'e_mail'                          => 'E-mail',
+	'author'                          => 'Автор',
 ];

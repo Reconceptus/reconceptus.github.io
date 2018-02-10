@@ -3,8 +3,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta content="width=device-width" name="viewport" />
-	<meta name="author" content="enenkoff@mail.ru" />
-	<title>Grecobooking</title>
+	<meta name="author" content="{{ $meta['author'] ?? '' }}" />
+	<title>{{ $meta['title'] ?? '' }}</title>
+	<meta content="{{ $meta['description'] ?? '' }}" name="description">
+	<meta content="{{ $meta['keywords'] ?? '' }}" name="keywords">
+	<meta http-equiv="Last-Modified" content="{{ ($meta['created_at'] ?? '') ?? ($meta['updated_at'] ?? '') }}">
 	<link rel="icon" href="/favicon.ico" sizes="32x32" />
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" />
 	<link href="/css/styles.min.css" rel="stylesheet" />
