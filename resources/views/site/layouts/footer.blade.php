@@ -76,7 +76,8 @@
 	</div>
 </footer>
 
-<!--mobile-->
+<!--mobile picker container -->
+<div id="mobile_fastpicker"><div class="calendar"></div></div>
 
 </div><!--wrapper-->
 <script type="text/javascript" src="/js/bower/jquery/dist/jquery.min.js"></script>

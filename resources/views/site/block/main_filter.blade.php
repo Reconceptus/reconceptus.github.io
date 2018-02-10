@@ -16,8 +16,7 @@
 						<label for="f_way">@lang('main.location')</label>
 
 						<div class="select">
-							<select name="f_way" id="f_way">
-								<option value=""></option>
+							<select name="f_way" id="f_way" style="display:none;">
 								<option value="">@lang('main.all_destinations')</option>
 
 								@foreach($locations as $val)
@@ -41,8 +40,7 @@
 						<label for="rooms">@lang('main.rooms')</label>
 
 						<div class="select">
-							<select name="rooms" id="rooms">
-								<option value=""></option>
+							<select name="rooms" id="rooms" style="display:none;">
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>

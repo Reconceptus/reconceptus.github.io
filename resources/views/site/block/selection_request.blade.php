@@ -24,7 +24,7 @@
 					<div class="field">
 						<label for="adults">*Взрослые</label>
 						<div class="select">
-							<select name="adults" id="adults">
+							<select name="adults" id="adults" style="display:none;">
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -35,7 +35,7 @@
 					<div class="field">
 						<label for="childUntil12">*Дети до 12 лет</label>
 						<div class="select">
-							<select name="childUntil12" id="childUntil12">
+							<select name="childUntil12" id="childUntil12" style="display:none;">
 								<option value="Нет">Нет</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -47,7 +47,7 @@
 					<div class="field">
 						<label for="babies">*Дети от 0 до 2 лет</label>
 						<div class="select">
-							<select name="babies" id="babies">
+							<select name="babies" id="babies" style="display:none;">
 								<option value="Нет">Нет</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -61,7 +61,7 @@
 					<div class="field">
 						<label for="way">*Направление</label>
 						<div class="select">
-							<select name="way" id="way">
+							<select name="way" id="way" style="display:none;">
 								<option value="Все направления">Все направления</option>
 								<option value="Афинское побережье">Афинское побережье</option>
 								<option value="Закинтос">Закинтос</option>
