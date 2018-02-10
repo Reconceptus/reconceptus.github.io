@@ -503,11 +503,6 @@ class ModuleController extends Controller
 						if($plugins[$key]['body']['multiple'] ?? false)
 							$this->request['pl'][$key] = $this->request['pl'][$key] ?? [];
 
-
-//					print_r($this->request['pl']);
-//
-//					exit;
-
 					foreach($this->request['pl'] as $key => $v) {
 						$data->$key = is_array($v) ? json_encode($v) : $v;
 
