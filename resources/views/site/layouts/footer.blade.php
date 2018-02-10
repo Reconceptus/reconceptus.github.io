@@ -40,20 +40,24 @@
 					</li>
 				</ul>
 			</div>
+
 			<div class="subscription">
 				<h3 class="title">Подписка</h3>
-				<div class="text">Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш
-					e-mail
+
+				<div class="text">
+					Советы бывалых путешественников, горячие предложения и скидки - лучшие предложения на ваш e-mail
 				</div>
+
 				<div class="subscription-form">
 					<form action="#">
 						<div class="field">
-							<input type="text" placeholder="Ваш e-mail">
+							<input type="text" name="subscribe_mail" placeholder="Ваш e-mail">
 							<button type="submit">Отправить</button>
 						</div>
 					</form>
 				</div>
 			</div>
+
 			<div class="menu">
 				<ul>
 					<li><a href="/request-for-accommodation" class="">разместить виллу</a></li>
@@ -66,7 +70,6 @@
 		<div class="footer--bottom">
 			<div class="copyright">Grecobooking 2017</div>
 			<div class="support">
-				<a href="#">RASE CMS</a>
 				<a href="http://reconcept.ru">ReConcept</a>
 			</div>
 		</div>
@@ -78,9 +81,12 @@
 </div><!--wrapper-->
 <script type="text/javascript" src="/js/bower/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bower/select2/dist/js/select2.full.min.js"></script>
+<script type="text/javascript" src="/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>
 <script type="text/javascript" src="/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>
+<script type="text/javascript" src="/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/js/libs.min.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
+@stack('footer')
 </body>
 </html>

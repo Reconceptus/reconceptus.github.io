@@ -104,7 +104,7 @@ class MainController extends Controller
 	 */
 	public function favorite()
 	{
-		$data = [];
+		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
 
 		return $this->base->view_s("site.main.favorite", $data);
 	}
