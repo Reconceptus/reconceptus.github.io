@@ -231,4 +231,17 @@ class MainController extends Controller
 		else
 			return $this->base->view_s("site.main.vacancies", $data);
 	}
+
+	/**
+	 * Location.
+	 *
+	 * @param $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function location($id)
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.location_id", $data);
+	}
 }
