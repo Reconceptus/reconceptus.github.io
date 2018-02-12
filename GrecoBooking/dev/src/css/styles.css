@@ -1522,6 +1522,18 @@ svg {
   margin-top: auto;
 }
 
+#main.flexible {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1990,6 +2002,7 @@ svg {
   text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
+.results--head .headline_main,
 .favorite--head .headline_main,
 .placing--request .headline_main,
 .villa--head .headline_main,
@@ -2001,6 +2014,7 @@ svg {
 }
 
 @media screen and (min-width: 600px) and (max-width: 1023px) {
+  .results--head .headline_main,
   .favorite--head .headline_main,
   .placing--request .headline_main,
   .villa--head .headline_main,
@@ -2012,6 +2026,7 @@ svg {
 }
 
 @media screen and (max-width: 599px) {
+  .results--head .headline_main,
   .favorite--head .headline_main,
   .placing--request .headline_main,
   .villa--head .headline_main,
@@ -5541,6 +5556,10 @@ svg {
 
 .sharing {
   padding: 20px 0;
+}
+
+.flexible .sharing {
+  margin-top: auto;
 }
 
 .sharing ul {
@@ -9102,4 +9121,48 @@ svg {
 .contact-form-box .field textarea {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.results-box {
+  background-color: #f0f1f3;
+  padding: 40px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.results-list li {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.results-list .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 29px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  color: #f9690e;
+}
+
+.results-list .title a {
+  color: inherit;
+}
+
+@media screen and (min-width: 1025px) {
+  .results-list .title a:hover {
+    color: #ee6309;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .results-list .title {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .results-list .title {
+    font-size: 21px;
+  }
 }

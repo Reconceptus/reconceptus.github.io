@@ -21,6 +21,10 @@ svg {
   width: 100%;
   box-sizing: border-box;
   margin-top: auto;
+  &.flexible {
+    display: flex;
+    flex-direction: column;
+  }
 }
 #wrapper {
   display: flex;

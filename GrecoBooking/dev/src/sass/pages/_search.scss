@@ -1,0 +1,40 @@
+.results {
+  &-box {
+    background-color: $light-bg;
+    padding: 40px 0;
+    box-sizing: border-box;
+  }
+  &-list {
+    li {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-family: Futuris, sans-serif;
+      font-size: 29px;
+      margin-bottom: 25px;
+      line-height: 1.2;
+      color: $btn;
+      a {
+        color: inherit;
+        &:hover {
+          @include media(hover,1025){
+            color: $btn_hover;
+          }
+        }
+      }
+      @include breakpoints(600,1023){
+        font-size: 26px;
+      }
+      @include media(screen,599){
+        font-size: 21px;
+      }
+    }
+
+  }
+
+}
+

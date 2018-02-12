@@ -1,0 +1,127 @@
+<include src="../templates/head.html" title="Grecobooking"></include>
+
+<include src="../templates/header.html"></include>
+
+
+    <div id="main">
+        <section class="simple-page--head results--head" style="background-image: url('assets/images/bg/account-bg.jpeg')">
+            <div class="content">
+                <header class="light-style">
+                    <h1 class="headline_main">Поиск</h1>
+                </header>
+            </div>
+        </section>
+        <div class="results search-results">
+            <div class="content">
+                <div class="results-box">
+                    <div class="content content_sm">
+                        <ul class="results-list">
+                            <li>
+                                <h3 class="title"><a href="#">1. White cube, bermondsey H3</a></h3>
+                                <p>Stepping inside this huge warehouse in Bermondsey, you wouldn’t know that you were in a commercial gallery and that the art was for sale. The dramatic minimalist corridor leads you to vast galleries where some of the most famous contemporary artists are represented and exhibited such as Tracey Emin, Damien Hirst and Jake and Dinos Chapman (Jay Jopling, the founder, championed the ‘Young British Artists’).</p>
+                            </li>
+                            <li>
+                                <h3 class="title"><a href="#">2. White cube, bermondsey H3</a></h3>
+                                <p>Stepping inside this huge warehouse in Bermondsey, you wouldn’t know that you were in a commercial gallery and that the art was for sale. The dramatic minimalist corridor leads you to vast galleries where some of the most famous contemporary artists are represented and exhibited such as Tracey Emin, Damien Hirst and Jake and Dinos Chapman (Jay Jopling, the founder, championed the ‘Young British Artists’).</p>
+                            </li>
+                            <li>
+                                <h3 class="title"><a href="#">3. White cube, bermondsey H3</a></h3>
+                                <p>Stepping inside this huge warehouse in Bermondsey, you wouldn’t know that you were in a commercial gallery and that the art was for sale. The dramatic minimalist corridor leads you to vast galleries where some of the most famous contemporary artists are represented and exhibited such as Tracey Emin, Damien Hirst and Jake and Dinos Chapman (Jay Jopling, the founder, championed the ‘Young British Artists’).</p>
+                            </li>
+                        </ul>
+                        <div class="paging_center">
+                            <div class="paging-list">
+                                <a href="#" class="page-one prev"><svg> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_page-prev"></use> </svg></a>
+                                <a href="#" class="page-one">4</a>
+                                <a href="#" class="page-one current">5</a>
+                                <a href="#" class="page-one">6</a>
+                                <a href="#" class="page-one next"><svg> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_page-next"></use> </svg></a>
+                            </div>
+                            <span class="total">из 8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sharing">
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fb"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-fb"></use> </svg></i>
+                            <span>2356</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="gp"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-google"></use> </svg></i>
+                            <span>355</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tw"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-tw"></use> </svg></i>
+                            <span>45</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="vk"><svg> <use xlink:href="assets/svg/sprite.svg#ico_share-vk"></use> </svg></i>
+                            <span>233</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <include src="../templates/footer.html" vil="active"></include>
+
+    <!--mobile-->
+
+
+<include src="../templates/scripts.html"></include>
+
+<script>
+
+    $('.form-request form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            position: {required: true},
+            villaAddress: {required: true},
+            siteLink: {required: true},
+            name: {required: true},
+            telephone: {required: true},
+            mail: {required: true}
+        },
+        messages: {
+            position: {required: ""},
+            villaAddress: {required: ""},
+            siteLink: {required: ""},
+            name: {required: ""},
+            telephone: {required: ""},
+            mail: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+</script>
+
+</body>
+</html>

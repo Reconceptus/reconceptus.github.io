@@ -904,6 +904,18 @@ svg {
   margin-top: auto;
 }
 
+#main.flexible {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 #wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1193,6 +1205,7 @@ svg {
   text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
 }
 
+.results--head .headline_main,
 .favorite--head .headline_main,
 .placing--request .headline_main,
 .villa--head .headline_main,
@@ -3703,6 +3716,10 @@ svg {
   padding: 20px 0;
 }
 
+.flexible .sharing {
+  margin-top: auto;
+}
+
 .sharing ul {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6010,6 +6027,32 @@ svg {
   padding-bottom: 10px;
 }
 
+.results-box {
+  background-color: #F0F1F3;
+  padding: 40px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.results-list li {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.results-list .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 29px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  color: #F9690E;
+}
+
+.results-list .title a {
+  color: inherit;
+}
+
 @media screen and (min-width: 1200px) {
   .content {
     padding: 0 40px;
@@ -6628,6 +6671,10 @@ svg {
   .contact-form-box .btn-box button:hover {
     background-color: #EE6309;
   }
+
+  .results-list .title a:hover {
+    color: #EE6309;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -6970,6 +7017,7 @@ svg {
     font-size: 22px;
   }
 
+  .results--head .headline_main,
   .favorite--head .headline_main,
   .placing--request .headline_main,
   .villa--head .headline_main,
@@ -7254,6 +7302,10 @@ svg {
 
   .contact-form-box .field:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  .results-list .title {
+    font-size: 21px;
   }
 }
 
@@ -7692,6 +7744,7 @@ svg {
     margin-left: 25px;
   }
 
+  .results--head .headline_main,
   .favorite--head .headline_main,
   .placing--request .headline_main,
   .villa--head .headline_main,
@@ -7735,6 +7788,10 @@ svg {
     display: -ms-flexbox;
     display: flex;
     padding: 10px 0;
+  }
+
+  .results-list .title {
+    font-size: 26px;
   }
 }
 
