@@ -12,7 +12,7 @@
                 <header class="light-style">
                     <h1 class="headline_main">Account manager</h1>
                     <div class="headline_btn">
-                        <a href="#" class="btn btn_subm">Apply now</a>
+                        <a href="javascript:void(0);" class="btn btn_subm show-modal"  data-modal="resume-form">Apply now</a>
                     </div>
                 </header>
             </div>
@@ -149,10 +149,58 @@
 
     <include src="../templates/footer.html" vac="active"></include>
 
-    <!--mobile-->
+<!--modals-->
+
+<div class="modal">
+    <div class="close"></div>
+    <div class="modal--main">
+        <include src="../templates/resume-form.html" data="resume-form"></include>
+    </div>
+
+</div>
 
 
 <include src="../templates/scripts.html"></include>
+
+<!--validate-->
+
+<script>
+
+
+    $('.resume-form form').validate({
+        ignore: ".ignore",
+        rules: {
+            file: {required: true},
+            name: {required: true},
+            mail: {required: true},
+            telephone: {required: true},
+            message: {required: true}
+        },
+        messages: {
+            file: {required: ""},
+            name: {required: ""},
+            mail: {required: ""},
+            telephone: {required: ""},
+            message: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+            if (form.valid()){
+                form.submit();
+            }
+//                return false;
+        }
+    })
+
+</script>
 
 </body>
 </html>

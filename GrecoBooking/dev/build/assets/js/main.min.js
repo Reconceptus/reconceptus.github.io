@@ -415,6 +415,31 @@ $(document).ready(function () {
 
 
     /*
+    ============= change name for load file
+   */
+
+    function showLoadedFileName() {
+        var input = document.getElementById( 'file-upload' );
+        var infoArea = document.getElementById( 'file-name' );
+
+        input.addEventListener( 'change', showFileName );
+
+        function showFileName( event ) {
+
+            var input = event.srcElement;
+            var fileName = input.files[0].name;
+
+            infoArea.textContent = fileName;
+        }
+    }
+    //
+    // $('#file-upload').change(function() {
+    //     var file = $('#file-upload').files[0].name;
+    //     $('#file-name').text(file);
+    // });
+
+
+    /*
     ============= position for villa request
    */
 
@@ -472,6 +497,7 @@ $(document).ready(function () {
     if($('.add-fieldset').length > 0){addFriendFormField();}
     if($('.villa-nav').length > 0){villaNavigation();}
     if($('.villa-request').length > 0){showInput(); villaRequestPosition();}
+    if($('#file-upload').length > 0){showLoadedFileName();}
 
     /* --------------------------------- document resize --------------------------------- */
 

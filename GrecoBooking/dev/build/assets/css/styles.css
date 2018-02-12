@@ -451,12 +451,18 @@ textarea {
   color: #FF807D;
 }
 
+.resume-form .invalid.field input,
+.resume-form .invalid.field textarea,
 .contact-form .invalid.field input,
 .contact-form .invalid.field textarea,
 .friend-form .invalid.field input,
 .friend-form .invalid.field textarea,
 .subscription-form .invalid.field input,
 .subscription-form .invalid.field textarea,
+.resume-form
+.invalid input,
+.resume-form
+.invalid textarea,
 .contact-form
 .invalid input,
 .contact-form
@@ -2191,6 +2197,60 @@ svg {
   margin: auto 16px auto 0;
 }
 
+.load {
+  height: 85px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.load label {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px dashed #F9690E;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  padding: 0 20px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.invalid .load label {
+  background-color: #FF807D;
+}
+
+.load label span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.load input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
 /*!
  * jQuery UI Datepicker 1.9.0
  * http://jqueryui.com
@@ -3721,11 +3781,6 @@ svg {
   -webkit-flex-shrink: 500;
   -ms-flex-negative: 500;
   flex-shrink: 500;
-  background: #F9BBA5;
-  background: -webkit-gradient(linear, left top, right top, from(#FDE4DB), to(#F9BBA5));
-  background: -webkit-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
-  background: -o-linear-gradient(left, #FDE4DB 0%, #F9BBA5 100%);
-  background: linear-gradient(to right, #FDE4DB 0%, #F9BBA5 100%);
 }
 
 .friend-form figure {
@@ -3871,6 +3926,144 @@ svg {
 }
 
 .friend-form .field textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.resume-form {
+  -webkit-box-shadow: 0 5px 40px 0 RGBA(48, 52, 63, 0.8);
+  box-shadow: 0 5px 40px 0 RGBA(48, 52, 63, 0.8);
+}
+
+.resume-form .close {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #657482;
+  cursor: pointer;
+}
+
+.resume-form--wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.resume-form--main {
+  font-size: 15px;
+  width: 100%;
+  -webkit-flex-shrink: 500;
+  -ms-flex-negative: 500;
+  flex-shrink: 500;
+}
+
+.resume-form .title {
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #30343F;
+  padding: 20px 40px 10px;
+}
+
+.resume-form .fields {
+  padding: 10px 40px;
+}
+
+.resume-form .btn-box button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  outline: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #F9690E;
+  color: #FFF;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resume-form .btn-box button i {
+  width: 35px;
+  height: 35px;
+}
+
+.resume-form .fieldset {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.resume-form .field {
+  width: 100%;
+  position: relative;
+  font-weight: 400;
+}
+
+.resume-form .field:not(:last-child) {
+  margin-right: 10px;
+}
+
+.resume-form .field .input {
+  -webkit-flex-shrink: 500;
+  -ms-flex-negative: 500;
+  flex-shrink: 500;
+  display: block;
+  width: 100%;
+  border-top: 1px solid #F9BBA5;
+}
+
+.resume-form .field textarea,
+.resume-form .field input {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 40px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0 10px;
+  resize: none;
+}
+
+.resume-form .field input {
+  line-height: 40px;
+}
+
+.resume-form .field textarea {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -6365,6 +6558,10 @@ svg {
     background-color: #EE6309;
   }
 
+  .resume-form .btn-box button:hover {
+    background-color: #EE6309;
+  }
+
   .intro-values ul li i {
     width: 64px;
     height: 64px;
@@ -6901,6 +7098,31 @@ svg {
   }
 
   .friend-form .fieldset .asterisk {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .resume-form .close {
+    right: 15px;
+  }
+
+  .resume-form .title {
+    padding: 20px 20px 10px;
+  }
+
+  .resume-form .fields {
+    padding: 10px 20px;
+  }
+
+  .resume-form .fieldset {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+  .resume-form .fieldset .asterisk {
     width: 100%;
     margin-top: 15px;
   }
@@ -8189,6 +8411,10 @@ svg {
   .friend-form {
     width: 800px;
   }
+
+  .resume-form {
+    width: 800px;
+  }
 }
 
 @media screen and (max-width: 859px) {
@@ -8201,6 +8427,13 @@ svg {
 
   .friend-form figure {
     display: none;
+  }
+
+  .resume-form {
+    max-width: 800px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 10px;
   }
 }
 
