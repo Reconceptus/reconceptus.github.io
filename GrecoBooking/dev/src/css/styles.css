@@ -5586,18 +5586,16 @@ svg {
           justify-content: center;
 }
 
-@media screen and (max-width: 480px) {
-  .sharing ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-            flex-direction: column;
+@media screen and (min-width: 601px) {
+  .sharing ul li {
+    margin: 0 18px;
   }
 }
 
-.sharing ul li {
-  margin: 0 18px;
+@media screen and (max-width: 600px) {
+  .sharing ul li {
+    margin: 0 7px;
+  }
 }
 
 .sharing a {
@@ -5610,20 +5608,43 @@ svg {
               -ms-flex-align: center;
           align-items: center;
   color: #657482;
-  font-size: 18px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
+@media screen and (min-width: 601px) {
+  .sharing a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sharing a {
+    font-size: 14px;
+  }
+}
+
 .sharing a i {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
   color: #b2b9c1;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media screen and (min-width: 601px) {
+  .sharing a i {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sharing a i {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media screen and (min-width: 1025px) {

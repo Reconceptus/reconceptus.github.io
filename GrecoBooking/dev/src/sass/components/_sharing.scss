@@ -7,25 +7,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include media(screen,480){
-      flex-direction: column;
-    }
     li {
-      margin: 0 18px;
+      @include media(hover,601){margin: 0 18px;}
+      @include media(screen,600){margin: 0 7px;}
     }
+
   }
   a {
     display: flex;
     align-items: center;
     color: $border;
-    font-size: 18px;
     transition: all 0.3s;
+    @include media(hover,601){font-size: 18px;}
+    @include media(screen,600){font-size: 14px;}
     i {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
       color: $bg;
       transition: all 0.3s;
+      @include media(hover,601){
+        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+      }
+      @include media(screen,600){
+        width: 30px;
+        height: 30px;
+      }
     }
     &:hover {
       @include media(hover,1025){
