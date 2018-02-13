@@ -379,6 +379,13 @@ $(document).ready(function () {
         $('html').removeClass('ovh');
         $('.modal').removeClass('active');
         $('.modal').find('[data-modal]').removeClass('active');
+
+        $('.successful').removeClass('successful')
+    });
+
+    $('.form-success .close').click(function (e) {
+        e.preventDefault();
+        $('.successful').removeClass('successful')
     });
 
     /*

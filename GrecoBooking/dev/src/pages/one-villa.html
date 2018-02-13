@@ -694,11 +694,11 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
+            $('.friend-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
         }
     })
 

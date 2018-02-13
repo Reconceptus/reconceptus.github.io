@@ -338,6 +338,17 @@
                     </form>
                 </div>
             </div>
+            <div class="form-success">
+                <div class="form-success--main">
+                    <div class="text">
+                        <h5 class="success-title">Сообщение отправлено!</h5>
+                        <p>Мы рады, что Вас заинтересовала наша компания. Мы свяжемся с Вами в ближайшее время!</p>
+                        <div class="btn_center">
+                            <a href="blog.html" class="more">Читать наш блог</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -385,11 +396,11 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
+            $('.resume-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
         }
     })
 

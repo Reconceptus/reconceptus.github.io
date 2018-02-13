@@ -3530,6 +3530,7 @@ svg {
 
 .form-request .form {
   background-color: #FFF;
+  position: relative;
   -webkit-box-shadow: 0 10px 40px 0 RGBA(74, 84, 96, 0.8);
   box-shadow: 0 10px 40px 0 RGBA(74, 84, 96, 0.8);
   color: #657482;
@@ -3902,10 +3903,6 @@ svg {
   font-weight: 400;
 }
 
-.friend-form .field:not(:last-child) {
-  margin-right: 10px;
-}
-
 .friend-form .field .input {
   -webkit-flex-shrink: 500;
   -ms-flex-negative: 500;
@@ -4040,10 +4037,6 @@ svg {
   font-weight: 400;
 }
 
-.resume-form .field:not(:last-child) {
-  margin-right: 10px;
-}
-
 .resume-form .field .input {
   -webkit-flex-shrink: 500;
   -ms-flex-negative: 500;
@@ -4075,6 +4068,79 @@ svg {
 .resume-form .field textarea {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.form-success {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #FFF;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+.form-request .form-success {
+  left: 0;
+  right: 0;
+}
+
+.successful .form-success {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-success--main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.form-success--main .text {
+  text-align: center;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.form-success--main .success-title {
+  padding: 0;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #30343F;
+}
+
+.form-success--main .btn_center {
+  margin-top: 40px;
+}
+
+.form-success .close {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #657482;
+  cursor: pointer;
 }
 
 /*-------------------------------------------------------------------*/
@@ -7216,8 +7282,8 @@ svg {
     margin-top: 15px;
   }
 
-  .resume-form .close {
-    right: 15px;
+  .friend-form .field:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   .resume-form .title {
@@ -7239,6 +7305,10 @@ svg {
   .resume-form .fieldset .asterisk {
     width: 100%;
     margin-top: 15px;
+  }
+
+  .resume-form .field:not(:last-child) {
+    margin-bottom: 10px;
   }
 
   .intro {
@@ -7977,6 +8047,19 @@ svg {
     margin-right: 60px;
   }
 
+  .friend-form .field:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .resume-form .field:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .form-success--main .text {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .offers {
     padding: 40px 0;
   }
@@ -8633,6 +8716,16 @@ svg {
   .resume-form {
     width: 800px;
   }
+
+  .resume-form .form-success {
+    left: 0;
+    right: 0;
+  }
+
+  .friend-form .form-success {
+    left: 0;
+    right: 0;
+  }
 }
 
 @media screen and (max-width: 859px) {
@@ -8652,6 +8745,20 @@ svg {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 10px;
+  }
+
+  .resume-form .close {
+    right: 20px;
+  }
+
+  .resume-form .form-success {
+    left: 10px;
+    right: 10px;
+  }
+
+  .friend-form .form-success {
+    left: 10px;
+    right: 10px;
   }
 }
 

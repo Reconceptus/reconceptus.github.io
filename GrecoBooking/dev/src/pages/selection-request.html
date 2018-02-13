@@ -122,6 +122,18 @@
                                     <button class="btn btn_subm" type="submit">Отправить запрос</button>
                                 </div>
                             </form>
+                            <div class="form-success">
+                                <span class="close"><svg> <use xlink:href="assets/svg/sprite.svg#ico_close"></use> </svg></span>
+                                <div class="form-success--main">
+                                    <div class="text">
+                                        <h5 class="success-title">Запрос успешно отправлен!</h5>
+                                        <p>Текст после отправки. Эта кнопка объясняет затраты на сайт: компания инвестировала в кнопку и в то, что люди будут её нажимать</p>
+                                        <div class="btn_center">
+                                            <a href="blog.html" class="more">Читать наш блог</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -210,11 +222,11 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
+            $('.form-request').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
         }
     })
 

@@ -5201,6 +5201,7 @@ svg {
 
 .form-request .form {
   background-color: #fff;
+  position: relative;
   -webkit-box-shadow: 0 10px 40px 0 rgba(74, 84, 96, 0.8);
           box-shadow: 0 10px 40px 0 rgba(74, 84, 96, 0.8);
   color: #657482;
@@ -5873,8 +5874,16 @@ svg {
   font-weight: 400;
 }
 
-.friend-form .field:not(:last-child) {
-  margin-right: 10px;
+@media screen and (min-width: 600px) {
+  .friend-form .field:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .friend-form .field:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .friend-form .field .input {
@@ -5941,9 +5950,9 @@ svg {
   cursor: pointer;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 859px) {
   .resume-form .close {
-    right: 15px;
+    right: 20px;
   }
 }
 
@@ -6064,8 +6073,16 @@ svg {
   font-weight: 400;
 }
 
-.resume-form .field:not(:last-child) {
-  margin-right: 10px;
+@media screen and (min-width: 600px) {
+  .resume-form .field:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .resume-form .field:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .resume-form .field .input {
@@ -6099,6 +6116,114 @@ svg {
 .resume-form .field textarea {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.form-success {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+.form-request .form-success {
+  left: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 860px) {
+  .resume-form .form-success {
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 859px) {
+  .resume-form .form-success {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .friend-form .form-success {
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 859px) {
+  .friend-form .form-success {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+.successful .form-success {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-success--main {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.form-success--main .text {
+  text-align: center;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 600px) {
+  .form-success--main .text {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.form-success--main .success-title {
+  padding: 0;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-family: Futuris, sans-serif;
+  font-size: 16px;
+  color: #30343f;
+}
+
+.form-success--main .btn_center {
+  margin-top: 40px;
+}
+
+.form-success .close {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  color: #657482;
+  cursor: pointer;
 }
 
 /*-------------------------------------------------------------------*/

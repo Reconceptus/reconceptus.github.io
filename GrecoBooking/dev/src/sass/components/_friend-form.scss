@@ -133,7 +133,8 @@
     position: relative;
     font-weight: 400;
     &:not(:last-child){
-      margin-right: 10px;
+      @include media(hover,600){margin-right: 10px;}
+      @include media(screen,599){margin-bottom: 10px;}
     }
     .input {
       flex-shrink: 500;
