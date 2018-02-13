@@ -528,6 +528,12 @@ textarea {
   background-color: #ff807d;
 }
 
+@media screen and (max-width: 600px) {
+  .inside-mob {
+    margin: 0 -20px;
+  }
+}
+
 @font-face {
   font-family: Futuris;
   src: url("../fonts/Futuris-Bold.ttf"), url("../fonts/Futuris-Bold.woff"), url("../fonts/Futuris-Bold.eot");
@@ -1959,6 +1965,13 @@ svg {
 
 .btns_center a {
   margin: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  .btns_center a {
+    margin: 5px 0;
+    width: 100%;
+  }
 }
 
 .headline_main {
@@ -8769,6 +8782,12 @@ svg {
 @media screen and (min-width: 1024px) {
   .vacancy-quotes {
     min-height: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .vacancy-quotes {
+    margin-top: 20px;
   }
 }
 

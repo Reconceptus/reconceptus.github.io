@@ -7623,6 +7623,88 @@ svg {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .inside-mob {
+    margin: 0 -20px;
+  }
+
+  .intro-figure .villa-like {
+    right: 10px;
+    top: 70px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .sharing ul li {
+    margin: 0 7px;
+  }
+
+  .sharing a {
+    font-size: 14px;
+  }
+
+  .sharing a i {
+    width: 30px;
+    height: 30px;
+  }
+
+  .villa-carousel .owl-prev {
+    left: 20px;
+  }
+
+  .villa-carousel .owl-next {
+    right: 20px;
+  }
+
+  .show-gallery {
+    right: 20px;
+  }
+
+  .villa-nav .short-info-data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 10px 0;
+    height: 170px;
+  }
+
+  .villa-nav .short-info-attributes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .villa-nav .short-info.fixed .short-info-data,
+  .villa-nav .short-info.absolute .short-info-data {
+    height: 85px;
+  }
+
+  .villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes,
+  .villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
+    display: none;
+  }
+
+  .villa-layout--main {
+    padding: 10px 0;
+  }
+
+  .vacancy-quotes {
+    margin-top: 20px;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .header .logo {
     width: 335px;
@@ -7979,6 +8061,11 @@ svg {
     text-align: center;
     border-bottom: 1px solid #657482;
     padding-bottom: 30px;
+  }
+
+  .btns_center a {
+    margin: 5px 0;
+    width: 100%;
   }
 
   .calendar .ui-datepicker td {
@@ -8519,80 +8606,6 @@ svg {
 @media screen and (min-width: 481px) {
   .villa-img .hashes li {
     font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .intro-figure .villa-like {
-    right: 10px;
-    top: 70px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .sharing ul li {
-    margin: 0 7px;
-  }
-
-  .sharing a {
-    font-size: 14px;
-  }
-
-  .sharing a i {
-    width: 30px;
-    height: 30px;
-  }
-
-  .villa-carousel .owl-prev {
-    left: 20px;
-  }
-
-  .villa-carousel .owl-next {
-    right: 20px;
-  }
-
-  .show-gallery {
-    right: 20px;
-  }
-
-  .villa-nav .short-info-data {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    padding: 10px 0;
-    height: 170px;
-  }
-
-  .villa-nav .short-info-attributes {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-
-  .villa-nav .short-info.fixed .short-info-data,
-  .villa-nav .short-info.absolute .short-info-data {
-    height: 85px;
-  }
-
-  .villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes,
-  .villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
-    display: none;
-  }
-
-  .villa-layout--main {
-    padding: 10px 0;
   }
 }
 

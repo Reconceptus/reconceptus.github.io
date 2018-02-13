@@ -85,6 +85,10 @@
     text-align: center;
     a {
       margin: 4px;
+      @include media(screen,480){
+        margin: 5px 0;
+        width: 100%;
+      }
     }
   }
 }
