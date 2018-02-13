@@ -20,6 +20,13 @@
 
 .villa-carousel {
   height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
   .owl-item,
   .owl-stage,
   .owl-stage-outer {
@@ -56,15 +63,72 @@
   }
   .owl-prev {
     left: 40px;
+    @include media(screen,600){
+      left: 20px;
+    }
     &:before {
       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2010%2018%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22m10%200l-9%209%209%209%22/%3E%3C/svg%3E');
     }
   }
   .owl-next {
     right: 40px;
+    @include media(screen,600){
+      right: 20px;
+    }
     &:before {
       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2021%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22M1%201%2011%2011%201%2021%22/%3E%3C/svg%3E');
     }
+  }
+}
+.show-gallery {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  height: 60px;
+  z-index: 1;
+  right: 40px;
+  margin: auto;
+  @include media(screen,600){
+    right: 20px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2021%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22M1%201%2011%2011%201%2021%22/%3E%3C/svg%3E');
+  }
+}
+.hide-gallery {
+  transition: all 0.4s;
+  cursor: pointer;
+  z-index: 5;
+  position: absolute;
+  background-color: $text;
+  color: $white;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  padding: 3px 6px;
+  opacity: 0;
+  pointer-events: none;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  i {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
   }
 }
 

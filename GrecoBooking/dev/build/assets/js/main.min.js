@@ -282,11 +282,23 @@ $(document).ready(function () {
     function villaCarousel() {
 
         $('.villa-carousel').owlCarousel({
-            loop:false,
+            loop:true,
             nav:true,
             navText:['',''],
             dots: false,
             items:1
+        })
+
+        $('.show-gallery').click(function (e) {
+            e.preventDefault();
+            $('.villa-carousel').addClass('active');
+            $('.hide-gallery').addClass('active');
+        })
+
+        $('.hide-gallery').click(function (e) {
+            e.preventDefault();
+            $('.villa-carousel').removeClass('active');
+            $('.hide-gallery').removeClass('active');
         })
 
     }
