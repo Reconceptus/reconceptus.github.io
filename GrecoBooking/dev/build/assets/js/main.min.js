@@ -29,37 +29,6 @@ $(document).ready(function () {
     }
 
     /*
-     ============= page min height
-    */
-
-    function minHeightPage() {
-        var footerHeight = $('.footer').height(),
-            winHeight = $(window).height(),
-            mainHeight = $('#main').height(),
-            mainNeed = winHeight - footerHeight;
-        if(mainNeed > mainHeight){
-
-
-            $('#main').addClass('flexible');
-
-            if($('.search-results').length > 0){
-                var mainHeadHeight = $('.results--head').outerHeight(),
-                    shareHeight = $('.sharing').outerHeight(),
-                    searchNeed = mainNeed - mainHeadHeight - shareHeight;
-                console.log(mainHeadHeight)
-                $('.results-box').css('min-height',searchNeed+'px');
-            }
-
-        }
-        else {
-            $('#main').removeClass('flexible')
-        }
-
-    }
-
-
-
-    /*
      ============= document click events
     */
 
@@ -527,7 +496,6 @@ $(document).ready(function () {
 
     /* --------------------------------- document load --------------------------------- */
 
-    minHeightPage();
     showSearch();
     documentClick();
     subscribeForm();
@@ -546,7 +514,6 @@ $(document).ready(function () {
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(function () {
-        minHeightPage();
     });
 
     /* --------------------------------- document scroll --------------------------------- */
