@@ -25,4 +25,5 @@ return [
 	'bathrooms'            => 'Bathrooms',
 	'sea'                  => 'Sea',
 	'is_hot_offer'         => 'Hot Offer',
+	'title_prepositional'  => 'Title in the prepositional case',
 ];

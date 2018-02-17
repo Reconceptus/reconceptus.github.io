@@ -36,4 +36,5 @@ return [
 	'author'                          => 'Автор',
 	'bathrooms'                       => 'Ванных комнат',
 	'bedrooms'                        => 'Спален',
+	'villas_on'                       => 'Виллы на',
 ];

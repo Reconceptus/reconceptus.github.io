@@ -363,7 +363,70 @@ class MainController extends Controller
 	 */
 	public function location($id)
 	{
-		$data = [];
+		$whereVillas[] = ['villas.active', 1];
+
+		$data['location'] = $this
+			->dynamic
+			->t('locations')
+
+			->join('menu', function($join) use($id)
+			{
+				$join->type = 'RIGHT OUTER';
+				$join->on('menu.id', '=','locations.cat');
+			})
+
+			->select('locations.*')
+			->where('locations.active', 1)
+			->where('menu.translation', '=', $id)
+			->orWhere('menu.id', '=', $id)
+			->first();
+
+		$whereVillas['villas.cat'] = $data['location']['cat'];
+
+		if(empty($data['location']))
+			return abort(404, 'Страница не существует');
+
+		$data['villas'] = $this->dynamic->t('villas')
+			->where($whereVillas)
+
+			->join('files', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('villas.id', '=','files.id_album')
+					->where('files.name_table', '=', 'villasalbum')
+					->where('files.main', '=', 1);
+			})
+
+			->select('villas.*', 'files.file', 'files.crop')
+			->groupBy('villas.id')
+			->orderBy('villas.id', 'DESC')
+			->orderBy('villas.is_best', 'ASC')
+			->paginate(4);
+
+		$data['locations'] = $this
+			->dynamic
+			->t('locations')
+			->where('locations.active', 1)
+
+			->join('menu', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('locations.cat', '=','menu.id');
+			})
+
+			->join('files', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('locations.id', '=','files.id_album')
+					->where('files.name_table', '=', 'album')
+					->where('files.main', '=', 1);
+			})
+
+			->select('locations.*', 'menu.translation', 'files.file', 'files.crop')
+			->get()
+			->toArray();
+
+		$data['meta_c']    = $this->base->getMeta($data, 'location');
 
 		return $this->base->view_s("site.main.location_id", $data);
 	}

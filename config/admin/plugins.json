@@ -1088,6 +1088,17 @@
 		"translateKey": "location_name"
 	},
 	{
+		"name"        : "name_p",
+		"typeField"   : "input",
+		"classAttr"   : "name_p",
+		"nameText"    : "Название в предложном падеже",
+		"nameAttr"    : "pl[name_p]",
+		"description" : "Поле для падежа \"name_p\"",
+		"idAttr"      : "inputName_p",
+		"sql_column"  : "name_p",
+		"translateKey": "title_prepositional"
+	},
+	{
 		"name"        : "location_description",
 		"typeField"   : "textarea",
 		"classAttr"   : "location_description",

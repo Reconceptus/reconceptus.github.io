@@ -223,6 +223,8 @@
 		"filters"         : [],
 		"lang"            : [
 			"name",
+			"name_p",
+			"little_description",
 			"text",
 			"title",
 			"author",
@@ -236,6 +238,8 @@
 		"order"           : "5",
 		"plugins"         : [
 			"name",
+			"name_p",
+			"little_description",
 			"cat",
 			"text",
 			"album",

@@ -35,5 +35,6 @@ return [
 	'e_mail'                          => 'E-mail',
 	'author'                          => 'Author',
 	'bathrooms'                       => 'Bathrooms',
-	'bedrooms'                        => 'Bathrooms',
+	'bedrooms'                        => 'Bedrooms',
+	'villas_on'                       => 'Villas on',
 ];
