@@ -128,9 +128,74 @@ class MainController extends Controller
 		$count_box = 4;
 		$group     = 'id';
 
-		if($id)
+		if($id) {
+			$data['villa'] = $this->dynamic->t('villas')
+				->where(array_merge($where, [['villas.id', $id]]))
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+				->groupBy('villas.id')
+				->orderBy('villas.' . $group, 'DESC')
+				->first();
+
+			$data['villa']['document'] = false;
+
+			$data['recommended_villas'] = $this->dynamic->t('villas')
+				->where($where)
+				->whereIn('villas.id', json_decode($data['villa']['recommendedVillas'], true) ?? [])
+
+				->join('files', function($join) use($data)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+				->groupBy('villas.id')
+				->orderBy('villas.' . $group, 'DESC')
+				->get()
+				->toArray();
+
+			$data['album'] = $this->dynamic->t('files')
+				->where('files.name_table', '=', 'villasalbum')
+				->where('files.main', '=', 0)
+				->where('files.active', '=', 1)
+				->where('files.id_album', '=', $id)
+				->get()
+				->toArray();
+
+			$data['album_what_is_next'] = $this->dynamic->t('files')
+				->where('files.name_table', '=', 'villaswhat_is_next')
+				->where('files.active', '=', 1)
+				->where('files.id_album', '=', $id)
+				->get()
+				->toArray();
+
+			$data['meta_c'] = $this->base->getMeta($data, 'villa');
+
 			return $this->base->view_s("site.main.villas_id", $data);
-		else {
+		} else {
 			$data['villas'] = $this->dynamic->t('villas')
 				->where($where)
 

@@ -962,13 +962,22 @@ class Base
 	 */
 	public function getMeta(array $data = [], string $key)
 	{
-		$key                 = $key ? $key : key($data);
-		$meta['title']       = $this->lang($data[$key]['title']);
-		$meta['description'] = $this->lang($data[$key]['description']);
-		$meta['keywords']    = $this->lang($data[$key]['keywords']);
-		$meta['author']      = $this->lang($data[$key]['author']);
-		$meta['created_at']  = $data[$key]['created_at'];
-		$meta['updated_at']  = $data[$key]['updated_at'];
+		if($data['title'] ?? false) {
+			$meta['title']       = $this->lang($data['title']);
+			$meta['description'] = $this->lang($data['description']);
+			$meta['keywords']    = $this->lang($data['keywords']);
+			$meta['author']      = $this->lang($data['author']);
+			$meta['created_at']  = $data['created_at'];
+			$meta['updated_at']  = $data['updated_at'];
+		} else {
+			$key                 = $key ? $key : key($data);
+			$meta['title']       = $this->lang($data[$key]['title']);
+			$meta['description'] = $this->lang($data[$key]['description']);
+			$meta['keywords']    = $this->lang($data[$key]['keywords']);
+			$meta['author']      = $this->lang($data[$key]['author']);
+			$meta['created_at']  = $data[$key]['created_at'];
+			$meta['updated_at']  = $data[$key]['updated_at'];
+		}
 
 		return $meta;
 	}

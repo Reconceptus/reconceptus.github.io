@@ -34,4 +34,6 @@ return [
 	'adults'                          => 'Adults',
 	'e_mail'                          => 'E-mail',
 	'author'                          => 'Author',
+	'bathrooms'                       => 'Bathrooms',
+	'bedrooms'                        => 'Bathrooms',
 ];

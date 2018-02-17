@@ -69,9 +69,9 @@
 				<div class="elements">
 					<div class="search">
 						<div class="form" id="searchForm">
-							<form action="#">
+							<form action="/search">
 								<div class="field">
-									<input id="searchInput" type="text" placeholder="@lang('main.search')">
+									<input id="searchInput" name="q" type="text" placeholder="@lang('main.search')">
 								</div>
 
 								<button type="submit">

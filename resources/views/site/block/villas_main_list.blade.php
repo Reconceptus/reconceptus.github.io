@@ -12,12 +12,12 @@
 				<figure style="background-image: url({{ $img }})"></figure>
 
 				<ul class="hashes">
-					<li>На пляже</li>
-					<li>Горячее предложение</li>
+					@if(!$val['sea'])<li>На пляже</li>@endif
+						@if($val['is_hot'])<li>Горячее предложение</li>@endif
 				</ul>
 				<a href="/villas/{{ $val['id'] }}" class="link"></a>
 
-				<a href="javascript:void(0)" class="villa-like">
+				<a href="javascript:void(0)" class="villa-like" onclick="favorete.addCart()" data-fovorite="">
 					<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use></svg>
 				</a>
 			</div>
@@ -32,19 +32,34 @@
 			</div>
 
 			<div class="includes">
-				<span class="bed">
-					<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
-					<span>6 Bedrooms</span>
-				</span>
+				@if($val['bedroom'])
+					<span class="bed">
+						<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
+						<span>{{ $val['bedroom'] }} @lang('main.bedrooms')</span>
+					</span>
+				@endif
 
-				<span class="bath">
-					<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
-					<span>3 Bathrooms</span>
-				</span>
+				@if($val['bathroom'])
+					<span class="bath">
+						<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
+						<span>{{ $val['bathroom'] }} @lang('main.bathrooms')</span>
+					</span>
+				@endif
 
 				<span class="sea">
 					<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-sea"></use> </svg></i>
-					<span>Sea in 3 minutes</span>
+
+					<span>
+						@if($val['sea'] === 0)
+							With access to the beach
+						@elseif($val['sea'] === 1)
+							Sea in 5 minutes
+						@elseif($val['sea'] === 2)
+							Sea in 15 minutes
+						@else
+							The sea more than 1000 meters
+						@endif
+					</span>
 				</span>
 			</div>
 		</li>

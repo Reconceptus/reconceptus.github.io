@@ -258,3 +258,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
     white-space: nowrap;
 }
 /* end album */
+
+.border-green, #select2-inputIs_hot-container {
+    border: 2px solid #4ecc70!important;
+}

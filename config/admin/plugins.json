@@ -1077,9 +1077,31 @@
 		}
 	},
 	{
+		"name"        : "location_name",
+		"typeField"   : "input",
+		"classAttr"   : "location_name",
+		"nameText"    : "Название локации",
+		"nameAttr"    : "pl[location_name]",
+		"description" : "Поле выбора и поиска локации \"location_name\"",
+		"idAttr"      : "inputLocation_name",
+		"sql_column"  : "location_name",
+		"translateKey": "location_name"
+	},
+	{
+		"name"        : "location_description",
+		"typeField"   : "textarea",
+		"classAttr"   : "location_description",
+		"nameText"    : "Описание локации",
+		"nameAttr"    : "pl[location_description]",
+		"description" : "Поле выбора и поиска локации \"location_description\"",
+		"idAttr"      : "inputLocation_description",
+		"sql_column"  : "location_description",
+		"translateKey": "location_description"
+	},
+	{
 		"name"        : "specialist_comment",
 		"typeField"   : "textarea",
-		"classAttr"   : "specialist_comment",
+		"classAttr"   : "specialist_comment border-green",
 		"nameText"    : "Комментарий специалиста",
 		"nameAttr"    : "pl[specialist_comment]",
 		"description" : "Текстовое поле \"specialist_comment\"",
@@ -1087,6 +1109,22 @@
 		"sql_column"  : "specialist_comment",
 		"showOnly"    : ["admin", "specialist"],
 		"translateKey": "specialist_comment"
+	},
+	{
+		"name"        : "is_hot",
+		"typeField"   : "select",
+		"classAttr"   : "select2 border-green",
+		"nameText"    : "Горячее предложение",
+		"nameAttr"    : "pl[is_hot]",
+		"description" : "Селект \"is_hot\"",
+		"idAttr"      : "inputIs_hot",
+		"sql_column"  : "is_hot",
+		"showOnly"    : ["admin", "specialist"],
+		"translateKey": "is_hot_offer",
+		"body"       : {
+			"text": "<option value=\"0\">-</option><option value=\"1\">Hot</option>",
+			"type": "insert"
+		}
 	},
 	{
 		"name"        : "what_is_next",

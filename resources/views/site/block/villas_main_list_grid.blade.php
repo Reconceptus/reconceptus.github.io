@@ -1,4 +1,4 @@
-<ul class="grid-list">
+<ul class="grid-list" style="width: 100%;">
 	@foreach($villas as $val)
 		@php($path = '/images/files/small/')
 
@@ -13,22 +13,36 @@
 
 				<div class="grid--main">
 					<h3 class="title">{{ $langSt($val['name']) }}</h3>
-					<div class="price"><strong>&euro;</strong> {{ $val['price_money'] }}</div>
+					<div class="price"><strong>&euro;</strong> {{ number_format($val['price_money'], 0, ',', ' ') }}</div>
 
 					<div class="includes">
-						<span class="bed">
-							<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
-							<span>6 Bedrooms</span>
-						</span>
+						@if($val['bedroom'])
+							<span class="bed">
+									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
+									<span>{{ $val['bedroom'] }} @lang('main.bedrooms')</span>
+								</span>
+						@endif
 
-						<span class="bath">
-							<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
-							<span>3 Bathrooms</span>
-						</span>
+						@if($val['bathroom'])
+							<span class="bath">
+									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
+									<span>{{ $val['bathroom'] }} @lang('main.bathrooms')</span>
+								</span>
+						@endif
 
 						<span class="sea">
 							<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-sea"></use> </svg></i>
-							<span>Sea in 3 minutes</span>
+							<span>
+								@if($val['sea'] === 0)
+									With access to the beach
+								@elseif($val['sea'] === 1)
+									Sea in 5 minutes
+								@elseif($val['sea'] === 2)
+									Sea in 15 minutes
+								@else
+									The sea more than 1000 meters
+								@endif
+							</span>
 						</span>
 					</div>
 				</div>

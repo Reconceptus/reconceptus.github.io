@@ -34,4 +34,6 @@ return [
 	'adults'                          => 'Взрослые',
 	'e_mail'                          => 'E-mail',
 	'author'                          => 'Автор',
+	'bathrooms'                       => 'Ванных комнат',
+	'bedrooms'                        => 'Спален',
 ];

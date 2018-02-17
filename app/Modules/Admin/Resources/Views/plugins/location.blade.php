@@ -12,7 +12,7 @@
 	<script src="//api-maps.yandex.ru/2.1/?lang={{ $lang ?? 'ru' }}" type="text/javascript"></script>
 @endpush
 
-{!! $field !!}
+{{--{!! $field !!}--}}
 <div id="map-l"></div>
 
 <script>

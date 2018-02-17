@@ -46,14 +46,15 @@
 	{
 		"id"              : "5",
 		"active"          : true,
-		"big_height"      : "1000",
-		"big_width"       : "800",
+		"big_height"      : "800",
+		"big_width"       : "1200",
 		"class_module"    : "fa fa-star",
 		"column_index"    : [
 			"name",
 			"description",
 			"album",
-			"active"
+			"active",
+			"is_hot"
 		],
 		"count_module"    : "20",
 		"show_count"      : true,
@@ -69,6 +70,8 @@
 			"convenience",
 			"services",
 			"distances",
+			"location_name",
+			"location_description",
 			"specialist_comment"
 		],
 		"link_module"     : "villas",
@@ -77,11 +80,11 @@
 		"name_module"     : "Виллы",
 		"order"           : "2",
 		"plugins"         : [
+			"is_hot",
 			"name",
 			"text",
 			"key_feature",
 			"layout",
-			"specialist_comment",
 			"active",
 			"cat",
 			"recommendedVillas",
@@ -99,8 +102,11 @@
 			"sea",
 			"coordinates",
 			"location",
+			"location_name",
+			"location_description",
 			"price_money",
-			"booking_calendar"
+			"booking_calendar",
+			"specialist_comment"
 		],
 		"small_width"     : "445",
 		"small_height"    : "255",
