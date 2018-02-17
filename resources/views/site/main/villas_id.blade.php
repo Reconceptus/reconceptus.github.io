@@ -3,7 +3,14 @@
 @section('content')
 	<section class="simple-page--bg" data-villa-part="photo">
 		<div class="intro-figure slider">
-			<!--<figure style="background-image: url('/images/bg/about-company.jpg')"></figure>-->
+			<figure style="background-image: url('/images/items/oia-hotel.jpg')">
+				<span class="show-gallery"></span>
+				<span class="hide-gallery">
+					<i><svg> <use xlink:href="images/svg/sprite.svg#ico_close"></use> </svg></i>
+					<span>Закрыть</span>
+				</span>
+			</figure>
+
 			<div class="villa-carousel owl-carousel">
 				<div class="item"><figure style="background-image: url('/images/items/10911829_78_z.jpg')"></figure></div>
 				<div class="item"><figure style="background-image: url('/images/items/Sani-Beach-Hotel-Greece-summary.jpg')"></figure></div>
@@ -204,6 +211,18 @@
 									</div>
 								</div>
 							</form>
+						</div>
+					</div>
+
+					<div class="form-success">
+						<div class="form-success--main">
+							<div class="text">
+								<h5 class="success-title">Сообщение отправлено!</h5>
+								<p>Письмо с понравившейся виллой отправлено Вашим друзьям</p>
+								<div class="btn_center">
+									<a href="/blog" class="more">Читать наш блог</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -543,4 +562,96 @@
 			</div>
 		</section>
 	</div>
+
+	@push('footer')
+	<!--validate-->
+	<script>
+		$('.villa-request form').validate({
+			onfocusout: false,
+			ignore    : ".ignore",
+
+			rules: {
+				arrivalDate  : {required: true},
+				departureDate: {required: true},
+				guests       : {required: true},
+				children     : {required: true},
+				mail         : {required: true},
+				wishes       : {required: true}
+			},
+
+			messages: {
+				arrivalDate  : {required: ""},
+				departureDate: {required: ""},
+				guests       : {required: ""},
+				children     : {required: ""},
+				mail         : {required: ""},
+				wishes       : {required: ""}
+			},
+
+			errorClass: 'invalid',
+
+			highlight: function(element, errorClass) {
+				$(element).closest('.field').addClass(errorClass)
+			},
+
+			unhighlight: function(element, errorClass) {
+				$(element).closest('.field').removeClass(errorClass)
+			},
+
+			errorPlacement: $.noop,
+
+			submitHandler: function(form) {
+//                $('#modal').find('.modal-thanks').addClass('active');
+				if(form.valid()) {
+					form.submit();
+				}
+//                return false;
+			}
+		});
+
+		$('.friend-form form').validate({
+			onfocusout: false,
+			ignore    : ".ignore",
+
+			rules: {
+				friendMail: {required: true},
+				yourName  : {required: true},
+				message   : {required: true}
+			},
+
+			messages: {
+				friendMail: {required: ""},
+				yourName  : {required: ""},
+				message   : {required: ""}
+			},
+
+			errorClass: 'invalid',
+
+			highlight: function(element, errorClass) {
+				$(element).closest('.field').addClass(errorClass);
+
+				if($(element).closest('.add-fieldset')) {
+					$(element).closest('.add-fieldset').addClass('disabled')
+				}
+			},
+
+			unhighlight: function(element, errorClass) {
+				$(element).closest('.field').removeClass(errorClass);
+
+				if($(element).closest('.add-fieldset')) {
+					$(element).closest('.add-fieldset').removeClass('disabled')
+				}
+			},
+
+			errorPlacement: $.noop,
+			submitHandler : function(form) {
+				$('.friend-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+				return false;
+			}
+		});
+	</script>
+	@endpush
 @endsection

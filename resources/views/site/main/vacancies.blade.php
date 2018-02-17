@@ -13,7 +13,7 @@
 	</section>
 	<div class="vacancy">
 		<div class="content">
-			<div class="vacancy-box">
+			<div class="vacancy-box inside-mob">
 				<div class="content content_md">
 					<ul class="vacancy-list">
 						<li>
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="vacancy-box">
+			<div class="vacancy-box inside-mob">
 				<div class="content content_md">
 					<header>
 						<h2 class="headline_main">Условия труда</h2>

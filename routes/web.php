@@ -13,4 +13,5 @@ Route::group(["middleware"=>["site"], "prefix"=>""], function() {
 	Route::get('/vacancies/{id?}', 'MainController@vacancies');
 	Route::get('/location/{id}', 'MainController@location');
 	Route::get('/request-for-accommodation', 'MainController@request_for_accommodation');
+	Route::get('/search', 'MainController@search');
 });

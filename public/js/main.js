@@ -251,11 +251,23 @@ $(document).ready(function () {
     function villaCarousel() {
 
         $('.villa-carousel').owlCarousel({
-            loop:false,
+            loop:true,
             nav:true,
             navText:['',''],
             dots: false,
             items:1
+        })
+
+        $('.show-gallery').click(function (e) {
+            e.preventDefault();
+            $('.villa-carousel').addClass('active');
+            $('.hide-gallery').addClass('active');
+        })
+
+        $('.hide-gallery').click(function (e) {
+            e.preventDefault();
+            $('.villa-carousel').removeClass('active');
+            $('.hide-gallery').removeClass('active');
         })
 
     }
@@ -336,6 +348,13 @@ $(document).ready(function () {
         $('html').removeClass('ovh');
         $('.modal').removeClass('active');
         $('.modal').find('[data-modal]').removeClass('active');
+
+        $('.successful').removeClass('successful')
+    });
+
+    $('.form-success .close').click(function (e) {
+        e.preventDefault();
+        $('.successful').removeClass('successful')
     });
 
     /*
@@ -413,6 +432,24 @@ $(document).ready(function () {
         $('.villa-layout--side').toggleClass('active')
     });
 
+    /*
+    ============= change name for load file
+   */
+
+    function showLoadedFileName() {
+        var input = document.getElementById( 'file-upload' );
+        var infoArea = document.getElementById( 'file-name' );
+
+        input.addEventListener( 'change', showFileName );
+
+        function showFileName( event ) {
+
+            var input = event.srcElement;
+            var fileName = input.files[0].name;
+
+            infoArea.textContent = fileName;
+        }
+    }
 
     /*
     ============= position for villa request
@@ -472,11 +509,11 @@ $(document).ready(function () {
     if($('.add-fieldset').length > 0){addFriendFormField();}
     if($('.villa-nav').length > 0){villaNavigation();}
     if($('.villa-request').length > 0){showInput(); villaRequestPosition();}
+    if($('#file-upload').length > 0){showLoadedFileName();}
 
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(function () {
-
     });
 
     /* --------------------------------- document scroll --------------------------------- */

@@ -160,7 +160,7 @@
 				<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
 				<div class="friend-form--wrap">
 					<figure style="background-image: url('/images/items/eirini-luxury-villas-patmos.jpg')"></figure>
-					<div class="friend-form--main">
+					<div class="friend-form--main animate-bg">
 						<h5 class="title">Отправить другу</h5>
 						<form action="#">
 							<div class="fields">
@@ -196,14 +196,22 @@
 							</div>
 							<div class="btn-box">
 								<button type="submit">
-									<i>
-										<svg>
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svg/sprite.svg#ico_submit"></use>
-										</svg>
-									</i>
+									<i><svg> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_submit"></use> </svg></i>
 								</button>
 							</div>
 						</form>
+					</div>
+				</div>
+
+				<div class="form-success">
+					<div class="form-success--main">
+						<div class="text">
+							<h5 class="success-title">Сообщение отправлено!</h5>
+							<p>Письмо с понравившейся виллой отправлено Вашим друзьям</p>
+							<div class="btn_center">
+								<a href="blog.html" class="more">Читать наш блог</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -243,12 +251,9 @@
 
 			errorPlacement: $.noop,
 
-			submitHandler:function (form) {
-				//                $('#modal').find('.modal-thanks').addClass('active');
-				if (form.valid()){
+			submitHandler: function(form) {
+				if(form.valid())
 					form.submit();
-				}
-				//                return false;
 			}
 		});
 
@@ -273,7 +278,7 @@
 			highlight: function(element, errorClass) {
 				$(element).closest('.field').addClass(errorClass);
 
-				if($(element).closest('.add-fieldset')){
+				if($(element).closest('.add-fieldset')) {
 					$(element).closest('.add-fieldset').addClass('disabled')
 				}
 			},
@@ -281,19 +286,17 @@
 			unhighlight: function(element, errorClass) {
 				$(element).closest('.field').removeClass(errorClass);
 
-				if($(element).closest('.add-fieldset')){
+				if($(element).closest('.add-fieldset')) {
 					$(element).closest('.add-fieldset').removeClass('disabled')
 				}
 			},
 
 			errorPlacement: $.noop,
 
-			submitHandler:function (form) {
-				//                $('#modal').find('.modal-thanks').addClass('active');
-				if (form.valid()){
-					form.submit();
-				}
-				//                return false;
+			submitHandler: function(form) {
+				$('.friend-form').addClass('successful');
+
+				return false;
 			}
 		})
 	</script>

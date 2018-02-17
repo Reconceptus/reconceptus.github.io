@@ -302,4 +302,16 @@ class MainController extends Controller
 
 		return $this->base->view_s("site.main.location_id", $data);
 	}
+
+	/**
+	 * Search.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function search()
+	{
+		$data = [];
+
+		return $this->base->view_s("site.main.search", $data);
+	}
 }

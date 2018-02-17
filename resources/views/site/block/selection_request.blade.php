@@ -5,11 +5,13 @@
 				<div class="fieldset pickerfields">
 					<div class="field">
 						<label for="arrivalDate">*Дата заезда</label>
-						<div class="input"><input id="arrivalDate" name="arrivalDate" type="text" data-picker-full></div>
+						<div class="input"><input id="arrivalDate" name="arrivalDate" type="text" data-picker-full>
+						</div>
 					</div>
 					<div class="field">
 						<label for="departureDate">*Дата отъезда</label>
-						<div class="input"><input type="text" id="departureDate" name="departureDate" data-picker-full></div>
+						<div class="input"><input type="text" id="departureDate" name="departureDate" data-picker-full>
+						</div>
 					</div>
 					<div id="picker">
 						<div class="calendar">
@@ -74,13 +76,13 @@
 				<div class="fieldset">
 					<div class="field">
 						<label for="budget">*Бюджет в неделю, евро</label>
-						<div class="input"><input id="budget" name="budget" type="text" ></div>
+						<div class="input"><input id="budget" name="budget" type="text"></div>
 					</div>
 				</div>
 				<div class="fieldset">
 					<div class="field">
 						<label for="name">*Ваше имя</label>
-						<div class="input"><input id="name" name="name" type="text" ></div>
+						<div class="input"><input id="name" name="name" type="text"></div>
 					</div>
 					<div class="field">
 						<label for="telephone">*Телефон</label>
@@ -94,23 +96,38 @@
 				<div class="fieldset">
 					<div class="field">
 						<label for="wishes">Напишите пожелания</label>
-						<div class="input"><input id="wishes" type="text" ></div>
+						<div class="input"><input id="wishes" type="text"></div>
 					</div>
 				</div>
 				<div class="fieldset">
 					<div class="field">
 						<label for="source">Откуда вы о нас узнали</label>
-						<div class="input"><input id="source" type="text" ></div>
+						<div class="input"><input id="source" type="text"></div>
 					</div>
 				</div>
 				<p class="asterisk">*Обязательные поля</p>
 				<button class="btn btn_subm" type="submit">Отправить запрос</button>
 			</div>
 		</form>
+
+		<div class="form-success">
+			<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
+			<div class="form-success--main">
+				<div class="text">
+					<h5 class="success-title">Запрос успешно отправлен!</h5>
+					<p
+					>Текст после отправки. Эта кнопка объясняет затраты на сайт: компания инвестировала в кнопку и в
+						то, что люди будут её нажимать
+					</p>
+
+					<div class="btn_center">
+						<a href="/blog" class="more">Читать наш блог</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-
-
 
 
 @push('footer')
@@ -119,79 +136,91 @@
 
 	$('.form-request form').validate({
 		onfocusout: false,
-		ignore: ".ignore",
+		ignore    : ".ignore",
+
 		rules: {
-			arrivalDate: {required: true},
+			arrivalDate  : {required: true},
 			departureDate: {required: true},
-			adults: {required: true},
-			childUntil12: {required: true},
-			babies: {required: true},
-			way: {required: true},
-			budget: {required: true},
-			name: {required: true},
-			telephone: {required: true},
-			mail: {required: true}
+			adults       : {required: true},
+			childUntil12 : {required: true},
+			babies       : {required: true},
+			way          : {required: true},
+			budget       : {required: true},
+			name         : {required: true},
+			telephone    : {required: true},
+			mail         : {required: true}
 		},
-		messages: {
-			arrivalDate: {required: ""},
+
+		messages  : {
+			arrivalDate  : {required: ""},
 			departureDate: {required: ""},
-			adults: {required: ""},
-			childUntil12: {required: ""},
-			babies: {required: ""},
-			way: {required: ""},
-			budget: {required: ""},
-			name: {required: ""},
-			telephone: {required: ""},
-			mail: {required: ""}
+			adults       : {required: ""},
+			childUntil12 : {required: ""},
+			babies       : {required: ""},
+			way          : {required: ""},
+			budget       : {required: ""},
+			name         : {required: ""},
+			telephone    : {required: ""},
+			mail         : {required: ""}
 		},
 		errorClass: 'invalid',
+
 		highlight: function(element, errorClass) {
 			$(element).closest('.field').addClass(errorClass)
-
 		},
+
 		unhighlight: function(element, errorClass) {
 			$(element).closest('.field').removeClass(errorClass)
 		},
+
 		errorPlacement: $.noop,
-		submitHandler:function (form) {
-			//                $('#modal').find('.modal-thanks').addClass('active');
-			if (form.valid()){
-				form.submit();
-			}
-			//                return false;
+
+		submitHandler: function(form) {
+			$('.form-request').addClass('successful');
+			//            if (form.valid()){
+			//                form.submit();
+			//            }
+			return false;
 		}
-	})
+	});
 
 	$('.fast-request form').validate({
 		onfocusout: false,
-		ignore: ".ignore",
+		ignore    : ".ignore",
+
 		rules: {
-			location: {required: true},
-			check_in: {required: true},
+			location : {required: true},
+			check_in : {required: true},
 			check_out: {required: true},
-			rooms: {required: true}
+			rooms    : {required: true}
 		},
+
 		messages: {
-			location: {required: ""},
-			check_in: {required: ""},
+			location : {required: ""},
+			check_in : {required: ""},
 			check_out: {required: ""},
-			rooms: {required: ""}
+			rooms    : {required: ""}
 		},
+
 		errorClass: 'invalid',
-		highlight: function(element, errorClass) {
+
+		highlight : function(element, errorClass) {
 			$(element).closest('.field').addClass(errorClass)
 		},
+
 		unhighlight: function(element, errorClass) {
 			$(element).closest('.field').removeClass(errorClass)
 		},
+
 		errorPlacement: $.noop,
-		submitHandler:function (form) {
-			//                $('#modal').find('.modal-thanks').addClass('active');
-			if (form.valid()){
+
+		submitHandler: function(form) {
+//				$('#modal').find('.modal-thanks').addClass('active');
+			if(form.valid()) {
 				form.submit();
 			}
-			//                return false;
+//				return false;
 		}
-	})
+	});
 </script>
 @endpush
