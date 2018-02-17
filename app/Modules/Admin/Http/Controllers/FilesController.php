@@ -229,17 +229,39 @@ class FilesController extends Controller
 
 		if($request['id']) {
 			if(!$request['save']) {
-				$data['file'] = $this->files->find(['id' => $request['id']])->first();
+				$data['lang_array'] = $this->dynamic->t('params_lang')->get()->toArray();
+				$data['file']       = $this->files->find(['id' => $request['id']])->first();
 
 				return Base::view("admin::plugins.album.edit_img", $data);
 			} else {
 				$file = $this->files->find(['id' => $request['id']])->first();
+				$form = [];
 
-				$file->name  = $request['name'];
-				$file->text  = $request['text'];
-				$file->order = $request['order'];
+				foreach($request['form'] as $v) {
+					if(count(explode('[', $v['name'])) > 1) {
+						$s = explode('[', $v['name']);
+
+						if(!isset($form[$s[0]]))
+							$form[$s[0]] = [];
+
+						$form[$s[0]][str_replace(']', '', $s[1])] = $v['value'];
+					}
+				}
+
+				$file->name = is_array($form['name_img_edit' . $data['name']])
+					? json_encode($form['name_img_edit' . $data['name']])
+					: $form['name_img_edit' . $data['name']];
+
+				$file->text = is_array($form['text_img_edit' . $data['name']])
+					? json_encode($form['text_img_edit' . $data['name']])
+					: $form['text_img_edit' . $data['name']];
+
+				$file->order = is_array($form['order_img_edit' . $data['name']])
+					? json_encode($form['order_img_edit' . $data['name']])
+					: $form['order_img_edit' . $data['name']];
 
 				$file->save();
+
 				$res['result'] = 'ok';
 				$res['file']   = $file;
 

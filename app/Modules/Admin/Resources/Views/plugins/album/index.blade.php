@@ -218,9 +218,7 @@
 
 								data: {
 									id: id,
-									name: name,
-									text: text,
-									order: order,
+									form: $('[name="edit_img_album"]').serializeArray(),
 									save: true,
 									nameId: '{{ $name }}'
 								},

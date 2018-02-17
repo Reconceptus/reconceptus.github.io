@@ -506,6 +506,7 @@ class Base
 
 		$args['version'] = '4.3.2-dev';
 		$args['lang']    = Session::get('lang');
+		$args['langSt']  = function($t, $l = '') { return Base::langSt($t, $l); };
 
 		return view($url, $args);
 	}
@@ -838,6 +839,27 @@ class Base
 				$t = current(json_decode($t, true)) ?? $t;
 
 			return $t;
+	}
+
+	/**
+	 * Copy lang
+	 * @param        $t
+	 * @param string $lang
+	 * @return mixed
+	 */
+	public static function langSt($t, $lang = '')
+	{
+		$arr  = json_decode($t, true);
+		$lang = empty($lang) ? \App::getLocale() : $lang;
+
+		if(is_array($arr))
+			if(json_decode($t, true)[$lang] ?? false || json_decode($t, true)[$lang] === null)
+				$t = json_decode($t, true)[$lang];
+			else
+
+				$t = current(json_decode($t, true)) ?? $t;
+
+		return $t;
 	}
 
 	/**
