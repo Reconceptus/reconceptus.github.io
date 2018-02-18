@@ -227,46 +227,6 @@
 <script type="text/javascript" src="assets/js/main.min.js"></script>
 
 
-<script>
-
-    $('.form-request form').validate({
-        onfocusout: false,
-        ignore: ".ignore",
-        rules: {
-            position: {required: true},
-            villaAddress: {required: true},
-            siteLink: {required: true},
-            name: {required: true},
-            telephone: {required: true},
-            mail: {required: true}
-        },
-        messages: {
-            position: {required: ""},
-            villaAddress: {required: ""},
-            siteLink: {required: ""},
-            name: {required: ""},
-            telephone: {required: ""},
-            mail: {required: ""}
-        },
-        errorClass: 'invalid',
-        highlight: function(element, errorClass) {
-            $(element).closest('.field').addClass(errorClass)
-
-        },
-        unhighlight: function(element, errorClass) {
-            $(element).closest('.field').removeClass(errorClass)
-        },
-        errorPlacement: $.noop,
-        submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
-        }
-    })
-
-</script>
 
 </body>
 </html>

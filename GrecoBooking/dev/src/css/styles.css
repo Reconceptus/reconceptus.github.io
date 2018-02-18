@@ -534,6 +534,18 @@ textarea {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .desktop-hidden {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
 @font-face {
   font-family: Futuris;
   src: url("../fonts/Futuris-Bold.ttf"), url("../fonts/Futuris-Bold.woff"), url("../fonts/Futuris-Bold.eot");
@@ -1935,6 +1947,11 @@ svg {
 }
 
 .more .ico-like {
+  width: 20px;
+  height: 20px;
+}
+
+.more .ico-fly {
   width: 20px;
   height: 20px;
 }
@@ -8335,6 +8352,14 @@ svg {
   opacity: 1;
 }
 
+/*--------------------------------------------------------------------*/
+/****************          send to friend          ********************/
+/*--------------------------------------------------------------------*/
+.send-friend-box {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
 .location-text {
   padding: 20px 0;
 }
@@ -9065,6 +9090,7 @@ svg {
 
 .selection-request {
   padding: 40px 0 100px;
+  width: 100%;
 }
 
 .selection-request header {

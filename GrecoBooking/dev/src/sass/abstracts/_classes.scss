@@ -188,3 +188,14 @@
     margin: 0 -20px;
   }
 }
+
+.desktop-hidden {
+  @include media(hover,768){
+    display: none !important;
+  }
+}
+.mobile-hidden {
+  @include media(screen,767){
+    display: none !important;
+  }
+}

@@ -9,7 +9,7 @@
             <div class="content content_md">
                 <header>
                     <h1 class="headline_main">Favorites</h1>
-                    <a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
+                    <a href="javascript:void(0);" class="send show-modal mobile-hidden" data-modal="friend-form">
                         <span>Отправить подборку другу</span>
                         <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
                     </a>
@@ -156,6 +156,34 @@
                 </div>
             </div>
         </div>
+        <div class="btns_center send-friend-box desktop-hidden">
+            <div class="content">
+                <a href="javascript:void(0);" class="show-modal more" data-modal="friend-form">
+                    <span>Отправить подборку другу</span>
+                    <i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
+                </a>
+
+                <!--<a href="javascript:void(0);" class="send show-modal mobile-hidden" data-modal="friend-form">-->
+                    <!--<span>Отправить подборку другу</span>-->
+                    <!--<i class="ico-fly"><svg> <use xlink:href="assets/svg/sprite.svg#ico_contact-fly"></use> </svg></i>-->
+                <!--</a>-->
+            </div>
+        </div>
+        <section class="section home-request">
+            <div class="content">
+                <header>
+                    <h3 class="headline_main">SELECTION REQUEST</h3>
+                    <h4 class="headline_submain">Заполните заявку и получите подборку вилл по вашим кретриям</h4>
+                </header>
+                <div class="home-request--wrap">
+                    <div class="home-request--main" style="background-image: url('assets/images/bg/offer01.jpg')">
+
+                        <include src="../templates/selection-request.html"></include>
+
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="sharing">
             <div class="content">
                 <ul>
@@ -192,6 +220,7 @@
 
 <!--mobile picker container -->
 
+<div id="mobile_picker"><div class="calendar"></div></div>
 <div id="mobile_fastpicker"><div class="calendar"></div></div>
 
 <!--modals-->
@@ -209,6 +238,52 @@
 <!--validate-->
 
 <script>
+
+    $('.form-request form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            arrivalDate: {required: true},
+            departureDate: {required: true},
+            adults: {required: true},
+            childUntil12: {required: true},
+            babies: {required: true},
+            way: {required: true},
+            budget: {required: true},
+            name: {required: true},
+            telephone: {required: true},
+            mail: {required: true}
+        },
+        messages: {
+            arrivalDate: {required: ""},
+            departureDate: {required: ""},
+            adults: {required: ""},
+            childUntil12: {required: ""},
+            babies: {required: ""},
+            way: {required: ""},
+            budget: {required: ""},
+            name: {required: ""},
+            telephone: {required: ""},
+            mail: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.field').addClass(errorClass)
+
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.field').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+            $('.form-request').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
 
     $('.fast-request form').validate({
         onfocusout: false,

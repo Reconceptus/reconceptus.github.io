@@ -71,6 +71,10 @@
     width: 20px;
     height: 20px;
   }
+  .ico-fly {
+    width: 20px;
+    height: 20px;
+  }
   &:hover {
     @include media(hover,1025){
       background-color: $btn_hover;

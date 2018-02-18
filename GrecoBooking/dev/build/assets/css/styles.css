@@ -1172,6 +1172,11 @@ svg {
   height: 20px;
 }
 
+.more .ico-fly {
+  width: 20px;
+  height: 20px;
+}
+
 .btns_center {
   text-align: center;
 }
@@ -5525,6 +5530,14 @@ svg {
   opacity: 1;
 }
 
+/*--------------------------------------------------------------------*/
+/****************          send to friend          ********************/
+/*--------------------------------------------------------------------*/
+.send-friend-box {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
 .location-text {
   padding: 20px 0;
 }
@@ -5974,6 +5987,7 @@ svg {
 
 .selection-request {
   padding: 40px 0 100px;
+  width: 100%;
 }
 
 .selection-request header {
@@ -7763,6 +7777,322 @@ svg {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .desktop-hidden {
+    display: none !important;
+  }
+
+  .headline_main {
+    font-size: 40px;
+  }
+
+  .sm .headline_main {
+    font-size: 30px;
+  }
+
+  #fastpicker .calendar > .ui-datepicker,
+  #picker .calendar > .ui-datepicker {
+    width: 720px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  .calendar {
+    position: absolute;
+    z-index: 3;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
+    box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
+    border: 1px solid #B2B9C1;
+  }
+
+  .form-request .calendar,
+  .fast-request .calendar {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .form-request .up .calendar,
+  .fast-request .up .calendar {
+    bottom: 100%;
+  }
+
+  .form-request .down .calendar,
+  .fast-request .down .calendar {
+    top: 100%;
+  }
+
+  .villa-request .calendar {
+    top: 0;
+  }
+
+  .text-box ul.column {
+    -webkit-columns: 2 auto;
+    -moz-columns: 2 auto;
+    columns: 2 auto;
+    -webkit-column-gap: 80px;
+    -moz-column-gap: 80px;
+    column-gap: 80px;
+  }
+
+  .text-box ul.column li {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .grid-list .title {
+    font-size: 30px;
+  }
+
+  .grid-list .short {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .grid-list .price {
+    font-size: 30px;
+  }
+
+  .villa-item {
+    width: 50%;
+  }
+
+  .single-request--wrap .title {
+    font-size: 21px;
+    padding: 40px;
+  }
+
+  .form-request .form {
+    font-size: 14px;
+  }
+
+  .form-request .form-box .fieldset {
+    border-bottom: 1px solid #B2B9C1;
+  }
+
+  .intro-values {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+  }
+
+  .intro-values ul li {
+    width: 33.3333%;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .offers .item:first-child {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .offers .item:not(:first-child) {
+    width: 50%;
+  }
+
+  .qualities ul li {
+    width: 33.3333%;
+  }
+
+  .experts {
+    margin-top: 100px;
+  }
+
+  .showplaces-list {
+    -webkit-columns: 2 auto;
+    -moz-columns: 2 auto;
+    columns: 2 auto;
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
+
+  .villa-map .map-box {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3000px;
+    height: 100%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  .place-description {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 300px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .place-description .text {
+    min-height: 220px;
+    padding: 15px 20px;
+  }
+
+  .experts .worker-img figure {
+    margin-top: -80px;
+  }
+
+  .worker-descr {
+    padding: 40px 0;
+  }
+
+  .vacancy-terms ul li {
+    width: 33.3333%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  #fastpicker .calendar > .ui-datepicker,
+  #picker .calendar > .ui-datepicker {
+    width: 360px !important;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    padding: 20px;
+  }
+
+  .grid-list .title {
+    font-size: 26px;
+  }
+
+  .grid-list .short {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .grid-list .price {
+    font-size: 22px;
+  }
+
+  .villa-item {
+    width: 100%;
+  }
+
+  .form-request .form-box .fieldset.pickerfields {
+    border-bottom: 1px solid #B2B9C1;
+  }
+
+  .form-request .form-box .fieldset:not(.pickerfields) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .form-request .form-box .fieldset:not(.pickerfields) .field {
+    border-bottom: 1px solid #B2B9C1;
+  }
+
+  .intro {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 45px;
+  }
+
+  .intro-values {
+    position: relative;
+  }
+
+  .intro-values ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .intro-values ul li {
+    width: 100%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .intro--main {
+    margin-bottom: 60px;
+  }
+
+  .offers .item {
+    width: 100%;
+  }
+
+  .offers .item:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  .qualities ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .qualities ul li {
+    width: 100%;
+  }
+
+  .qualities ul li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .villa-map .map-box {
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+
+  .place-description .text {
+    padding: 15px 20px 25px;
+  }
+
+  .experts .worker-img {
+    margin-top: 30px;
+  }
+
+  .worker-descr {
+    padding: 20px 0 40px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form .contacts {
+    width: 100%;
+  }
+
+  .contact-form-box {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .header .logo {
     width: 335px;
@@ -8208,179 +8538,6 @@ svg {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .headline_main {
-    font-size: 40px;
-  }
-
-  .sm .headline_main {
-    font-size: 30px;
-  }
-
-  #fastpicker .calendar > .ui-datepicker,
-  #picker .calendar > .ui-datepicker {
-    width: 720px !important;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-  }
-
-  .calendar {
-    position: absolute;
-    z-index: 3;
-    background-color: #FFF;
-    -webkit-box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
-    box-shadow: 0 5px 20px 0 RGBA(74, 84, 96, 0.4);
-    border: 1px solid #B2B9C1;
-  }
-
-  .form-request .calendar,
-  .fast-request .calendar {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .form-request .up .calendar,
-  .fast-request .up .calendar {
-    bottom: 100%;
-  }
-
-  .form-request .down .calendar,
-  .fast-request .down .calendar {
-    top: 100%;
-  }
-
-  .villa-request .calendar {
-    top: 0;
-  }
-
-  .text-box ul.column {
-    -webkit-columns: 2 auto;
-    -moz-columns: 2 auto;
-    columns: 2 auto;
-    -webkit-column-gap: 80px;
-    -moz-column-gap: 80px;
-    column-gap: 80px;
-  }
-
-  .text-box ul.column li {
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-
-  .grid-list .title {
-    font-size: 30px;
-  }
-
-  .grid-list .short {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-
-  .grid-list .price {
-    font-size: 30px;
-  }
-
-  .villa-item {
-    width: 50%;
-  }
-
-  .single-request--wrap .title {
-    font-size: 21px;
-    padding: 40px;
-  }
-
-  .form-request .form {
-    font-size: 14px;
-  }
-
-  .form-request .form-box .fieldset {
-    border-bottom: 1px solid #B2B9C1;
-  }
-
-  .intro-values {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 60px;
-  }
-
-  .intro-values ul li {
-    width: 33.3333%;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-
-  .offers .item:first-child {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .offers .item:not(:first-child) {
-    width: 50%;
-  }
-
-  .qualities ul li {
-    width: 33.3333%;
-  }
-
-  .experts {
-    margin-top: 100px;
-  }
-
-  .showplaces-list {
-    -webkit-columns: 2 auto;
-    -moz-columns: 2 auto;
-    columns: 2 auto;
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
-  }
-
-  .villa-map .map-box {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 3000px;
-    height: 100%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-
-  .place-description {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    width: 300px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  .place-description .text {
-    min-height: 220px;
-    padding: 15px 20px;
-  }
-
-  .experts .worker-img figure {
-    margin-top: -80px;
-  }
-
-  .worker-descr {
-    padding: 40px 0;
-  }
-
-  .vacancy-terms ul li {
-    width: 33.3333%;
-  }
-}
-
 @media screen and (min-width: 600px) and (max-width: 767px) {
   .headline_main {
     font-size: 30px;
@@ -8402,141 +8559,6 @@ svg {
 
   .vacancy-terms ul li {
     width: 50%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  #fastpicker .calendar > .ui-datepicker,
-  #picker .calendar > .ui-datepicker {
-    width: 360px !important;
-    top: 50% !important;
-    left: 50% !important;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-color: #FFF;
-    padding: 20px;
-  }
-
-  .grid-list .title {
-    font-size: 26px;
-  }
-
-  .grid-list .short {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .grid-list .price {
-    font-size: 22px;
-  }
-
-  .villa-item {
-    width: 100%;
-  }
-
-  .form-request .form-box .fieldset.pickerfields {
-    border-bottom: 1px solid #B2B9C1;
-  }
-
-  .form-request .form-box .fieldset:not(.pickerfields) {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .form-request .form-box .fieldset:not(.pickerfields) .field {
-    border-bottom: 1px solid #B2B9C1;
-  }
-
-  .intro {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-bottom: 45px;
-  }
-
-  .intro-values {
-    position: relative;
-  }
-
-  .intro-values ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .intro-values ul li {
-    width: 100%;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .intro--main {
-    margin-bottom: 60px;
-  }
-
-  .offers .item {
-    width: 100%;
-  }
-
-  .offers .item:not(:first-child) {
-    margin-top: 20px;
-  }
-
-  .qualities ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .qualities ul li {
-    width: 100%;
-  }
-
-  .qualities ul li:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
-  .villa-map .map-box {
-    width: 100%;
-    height: 300px;
-    position: relative;
-  }
-
-  .place-description .text {
-    padding: 15px 20px 25px;
-  }
-
-  .experts .worker-img {
-    margin-top: 30px;
-  }
-
-  .worker-descr {
-    padding: 20px 0 40px;
-  }
-
-  .contact-form {
-    padding: 20px;
-  }
-
-  .contact-form .contacts {
-    width: 100%;
-  }
-
-  .contact-form-box {
-    width: 100%;
   }
 }
 
