@@ -504,7 +504,7 @@ class Base
 			$args['left_menu'] = Base::getModule();
 		}
 
-		$args['version'] = '4.3.2-dev';
+		$args['version'] = '4.3.6-dev';
 		$args['lang']    = Session::get('lang');
 		$args['langSt']  = function($t, $l = '') { return Base::langSt($t, $l); };
 

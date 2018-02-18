@@ -94,4 +94,5 @@ return [
 	'anotherUserType'           => 'Другой тип пользователя',
 	'author'                    => 'Автор',
 	'specialist'                => 'Специалист',
+	'image'                     => 'Изображение',
 ];

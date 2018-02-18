@@ -137,6 +137,7 @@
 										'<a href="javascript:void(0)" onclick="cropImg{{ $name }}(' + ds['id'] + ')" class="btn"><i class="fa fa-crop"></i></a>' +
 										'<a href="javascript:void(0)" onclick="$.adm.rowDelete(' + ds['id'] + ', \'files\', \'\' ,\'{{ $name }}\')" class="btn"><i class="fa fa-times"></i></a>' +
 										'<a href="javascript:void(0)" class="btn" onclick="toMain{{ $name }}(' + ds['id'] + ')">';
+
 									if(ds['main'] == 1) {
 										img += '<i class="toMain{{ $name }} toMain{{ $name }}' + ds['id'] + ' glyphicon glyphicon-check"></i>';
 									} else {

@@ -20,6 +20,7 @@ class UsersController extends Controller
 	protected $request;
 	protected $base;
 	protected $dynamic;
+	protected $plugins;
 	protected $modules;
 
 	public function __construct(Guard $auth, Request $request)
@@ -28,6 +29,7 @@ class UsersController extends Controller
 
 		$this->modules = new Modules();
 		$this->dynamic = new DynamicModel();
+		$this->plugins = new PluginsController($request);
 		$this->base    = new Base($request);
 		$this->request = $request->all();
 		$this->rights  = new Right();
@@ -40,13 +42,33 @@ class UsersController extends Controller
 	public function getIndex()
 	{
 		try {
-			$users = User::all();
+			$t     = 'users';
+			$where = [];
+
+			$users = (new User())->where($where)
+				->join(
+					'files',
+
+					function($join) use ($t) {
+						$join->type = 'LEFT OUTER';
+
+						$join->on($t . '.id', '=', 'files.id_album')
+							->where('files.name_table', '=', $t . 'album')
+							->where('files.main', '=', 1);
+					}
+				)
+
+				->select('users.*', 'files.file', 'files.crop')
+				->get()
+				->toArray();
 
 			return Base::view(
-				"admin::users.index", [
-															'right' => Session::get('right'),
-															'users' => $users,
-														]
+				"admin::users.index",
+
+				[
+					'right' => Session::get('right'),
+					'users' => $users,
+				]
 			);
 		} catch(\Exception $err) {
 			return Base::errorPage($err);
@@ -167,11 +189,18 @@ class UsersController extends Controller
 				if(!$id)
 					$id = 0;
 
+				$album = $this->plugins->album(
+					['name' => 'album'],
+					'',
+					['id' => $id, 'table' => 'users']
+				);
+
 				return Base::view(
 					"admin::users.update",
 
 					[
 						'id'      => $id,
+						'album'    => $album,
 						'menu'    => $menu,
 						'modules' => $menu,
 						'right'   => Session::get('right'),

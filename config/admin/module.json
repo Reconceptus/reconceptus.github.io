@@ -2,8 +2,8 @@
 	{
 		"id"              : "1",
 		"active"          : true,
-		"big_height"      : "1000",
-		"big_width"       : "800",
+		"big_height"      : "800",
+		"big_width"       : "1000",
 		"class_module"    : "fa fa-sitemap",
 		"column_index"    : [
 			"name",
@@ -81,6 +81,7 @@
 		"order"           : "2",
 		"plugins"         : [
 			"is_hot",
+			"specialist",
 			"name",
 			"text",
 			"key_feature",
@@ -115,6 +116,12 @@
 		"translate_key"   : "villas",
 		"showOnlyYour"    : true,
 		"isList"          : ["recommendedVillas"],
+		"params"          : {
+			"specialist": {
+				"table": "users",
+				"where": [["user_another_type", "=", "specialist"]]
+			}
+		},
 		"idCatShow"       : {
 			"cat": 4
 		}
@@ -258,8 +265,8 @@
 	{
 		"id"              : "9",
 		"active"          : true,
-		"big_height"      : "0",
-		"big_width"       : "0",
+		"big_height"      : "800",
+		"big_width"       : "1000",
 		"class_module"    : "fa fa-users",
 		"column_index"    : [
 			"name",
@@ -277,8 +284,8 @@
 		"name_module"     : "Пользователи",
 		"order"           : "7",
 		"plugins"         : [],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "445",
+		"small_height"    : "255",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "users"

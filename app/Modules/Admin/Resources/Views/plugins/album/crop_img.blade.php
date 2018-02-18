@@ -446,7 +446,7 @@
 						result = $image.cropper('getCropBoxData');
 
 						if(data.method === 'getCropBoxData') {
-							var id = $('.btnsav').attr('data-id');
+							var id = $('.btnsav{{ $name }}').attr('data-id');
 
 							result['x'] = $('#dataX').val();
 							result['y'] = $('#dataY').val();
@@ -473,10 +473,12 @@
 											 '<img src="' + req["file"] + '" style="width: 100%; display: block;">' +
 											 '</div>' +
 											 '<div class="caption" style="padding-bottom: 0">' +
-											 '<a href="javascript:void(0)" class="btn" onclick="editImg{{ $name }}(' + id + ')"><i class="fa fa-pencil"></i></a>' +
-											 '<a href="javascript:void(0)" class="btn" onclick="cropImg{{ $name }}(' + id + ')"><i class="fa fa-crop"></i></a>' +
-											 '<div class="tools tools-bottom" onclick="deletetImg{{ $name }}(' + id + ')" style="text-align: center">' +
-											 '<a href="javascript:void(0)" class="btn"><i class="fa fa-times"></i></a>' +
+											 '<div class="tools tools-bottom" style="text-align: center">' +
+											 '<a href="javascript:void(0)" onclick="editImg{{ $name }}(' + id + ')" class="btn"><i class="fa fa-pencil"></i></a>' +
+											 '<a href="javascript:void(0)" onclick="cropImg{{ $name }}(' + id + ')" class="btn"><i class="fa fa-crop"></i></a>' +
+											 '<a href="javascript:void(0)" onclick="$.adm.rowDelete(' + id + ', \'files\', \'\' ,\'{{ $name }}\')" class="btn"><i class="fa fa-times"></i></a>' +
+											 '<a href="javascript:void(0)" class="btn" onclick="toMain{{ $name }}(' + id + ')">' +
+											 '</div>' +
 											 '</div>' +
 											 '</div>' +
 											 '</div>');
@@ -563,8 +565,8 @@
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-default btncl" data-dismiss="modal">@lang('admin::main.close')</button>
-	<button class="btn btn-primary btnsav" data-method="getCropBoxData" type="button">
+	<button type="button" class="btn btn-default btncl{{ $name }}" data-dismiss="modal">@lang('admin::main.close')</button>
+	<button class="btn btn-primary btnsav{{ $name }}" data-method="getCropBoxData" type="button">
 		@lang('admin::main.save')
 	</button>
 </div>

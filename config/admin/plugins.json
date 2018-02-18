@@ -1122,13 +1122,29 @@
 		"translateKey": "specialist_comment"
 	},
 	{
+		"name"        : "specialist",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Специалист",
+		"nameAttr"    : "pl[specialist]",
+		"description" : "Селект \"specialist\"",
+		"idAttr"      : "selectSpecialist",
+		"sql_column"  : "specialist",
+		"showOnly"    : ["admin", "specialist"],
+		"translateKey": "specialist",
+		"body"            : {
+			"text": "<option value=\"0\">-</option>{-option-}",
+			"type": "replace"
+		}
+	},
+	{
 		"name"        : "is_hot",
 		"typeField"   : "select",
 		"classAttr"   : "select2 border-green",
 		"nameText"    : "Горячее предложение",
 		"nameAttr"    : "pl[is_hot]",
 		"description" : "Селект \"is_hot\"",
-		"idAttr"      : "inputIs_hot",
+		"idAttr"      : "selectIs_hot",
 		"sql_column"  : "is_hot",
 		"showOnly"    : ["admin", "specialist"],
 		"translateKey": "is_hot_offer",

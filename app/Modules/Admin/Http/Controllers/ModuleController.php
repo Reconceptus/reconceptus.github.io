@@ -414,14 +414,15 @@ class ModuleController extends Controller
 	public static function _cat($inp, $table, $page = null)
 	{
 		$modules = Base::getModule("link_module", $page['table'])[0];
+		$params  = $modules['params'] ?? [];
 
 		if($page['table'] ?? false) {
 			$idCatShow = $modules['idCatShow'][$inp['name']]?? 0;
 		} else
 			$idCatShow = 0;
 
-		if($inp['body']['type'] = 'insert') {
-			$menu_cat = (new Base(self::$requests_self))->_menu_site_select(
+		$list_base = function() use ($inp, $table, $modules, $idCatShow) {
+			return (new Base(self::$requests_self))->_menu_site_select(
 				[],
 				null,
 				0,
@@ -431,6 +432,28 @@ class ModuleController extends Controller
 				$idCatShow,
 				(array_search($inp['name'], $modules['isList'] ?? []) !== false)
 			);
+		};
+
+		if($inp['body']['type'] = 'insert') {
+			if(isset($params[$inp['name']])) {
+				$params = $params[$inp['name']];
+
+				if(isset($params['table'])) {
+					$menu_cat = '';
+
+					$list = DynamicModel::t($params['table'])
+						->where($params['where'])
+						->get()
+						->toArray();
+
+					foreach($list as $v)
+						$menu_cat .= '<option value="' . $v['id'] . '">' . $v['name'] . '</option>';
+				} else {
+					$menu_cat = $list_base();
+				}
+			} else {
+				$menu_cat = $list_base();
+			}
 
 			$sel = str_replace('{-option-}', $menu_cat, $inp['body']['text']);
 		} else {

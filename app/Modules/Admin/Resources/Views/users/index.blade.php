@@ -76,7 +76,8 @@
 								</th>
 								<th>@lang('admin::main.name')</th>
 								<th>@lang('admin::main.description')</th>
-								<th>@lang('admin::main.description')</th>
+								<th>@lang('admin::main.active')</th>
+								<th>@lang('admin::main.image')</th>
 								<th>@lang('admin::main.dateOfCreation')</th>
 								<th>@lang('admin::main.dateOfUpdate')</th>
 							</tr>
@@ -99,6 +100,23 @@
 									<td><a href="/admin/update/users/{{ $val['id'] }}">{{ $val['name'] }}</a></td>
 									<td>{{ mb_substr($val['text'], 0, 100, 'UTF-8') }}</td>
 									<td>@if($val['active']) @lang('admin::main.shown') @else @lang('admin::main.hidden') @endif</td>
+
+									<th>
+										@if(isset($val['file']))
+											@if($val['crop'] != '')
+												<img src="/images/files/small/{{ $val['crop'] }}" style="max-width: 200px" />
+											@else
+												<img src="/images/files/small/{{ $val['file'] }}" style="max-width: 200px" />
+											@endif
+										@else
+											@if(isset($val['name_free']))
+												<img src="{{ $val['name_free'] }}" style="max-width: 200px" />
+											@else
+												<img src="/images/files/no-image.jpg" style="max-width: 200px" />
+											@endif
+										@endif
+									</th>
+
 									<td>{{ $val['created_at'] }}</td>
 									<td>{{ $val['updated_at'] }}</td>
 								</tr>
@@ -110,26 +128,18 @@
 							var handleDataTableButtons = function() {
 									"use strict";
 									0 !== $("#datatable-buttons").length && $("#datatable-buttons").DataTable({
-										dom: "Bfrtip",
-										buttons: [{
-											extend: "copy",
-											className: "btn-sm"
-										}, {
-											extend: "csv",
-											className: "btn-sm"
-										}, {
-											extend: "excel",
-											className: "btn-sm"
-										}, {
-											extend: "pdf",
-											className: "btn-sm"
-										}, {
-											extend: "print",
-											className: "btn-sm"
-										}],
+										dom       : "Bfrtip",
+										buttons   : [
+											{extend: "copy", className: "btn-sm"},
+											{extend: "csv", className: "btn-sm"},
+											{extend: "excel", className: "btn-sm"},
+											{extend: "pdf", className: "btn-sm"},
+											{extend: "print", className: "btn-sm"}
+										],
 										responsive: !0
 									})
 								},
+
 								TableManageButtons = function() {
 									"use strict";
 									return {
@@ -144,17 +154,21 @@
 						<script type="text/javascript">
 							$(document).ready(function() {
 								$('#datatable').dataTable();
+
 								$('#datatable-keytable').DataTable({
 									keys: true
 								});
+
 								$('#datatable-responsive').DataTable();
+
 								$('#datatable-scroller').DataTable({
-									ajax: "js/datatables/json/scroller-demo.json",
-									deferRender: true,
-									scrollY: 380,
+									ajax          : "js/datatables/json/scroller-demo.json",
+									deferRender   : true,
+									scrollY       : 380,
 									scrollCollapse: true,
-									scroller: true
+									scroller      : true
 								});
+
 								var table = $('#datatable-fixed-header').DataTable({
 									fixedHeader: true
 								});
