@@ -8,8 +8,8 @@
     align-items: center;
     justify-content: center;
     li {
-      @include media(hover,601){margin: 0 18px;}
-      @include media(screen,600){margin: 0 7px;}
+      @include media(hover,600){margin: 0 18px;}
+      @include media(screen,599){margin: 0 7px;}
     }
 
   }
@@ -18,17 +18,17 @@
     align-items: center;
     color: $border;
     transition: all 0.3s;
-    @include media(hover,601){font-size: 18px;}
-    @include media(screen,600){font-size: 14px;}
+    @include media(hover,600){font-size: 18px;}
+    @include media(screen,599){font-size: 14px;}
     i {
       color: $bg;
       transition: all 0.3s;
-      @include media(hover,601){
+      @include media(hover,600){
         margin-right: 10px;
         width: 40px;
         height: 40px;
       }
-      @include media(screen,600){
+      @include media(screen,599){
         width: 30px;
         height: 30px;
       }

@@ -1057,7 +1057,6 @@ svg {
 
 .subscription {
   max-width: 600px;
-  text-align: center;
   color: #FFF;
 }
 
@@ -2113,7 +2112,6 @@ svg {
 }
 
 .custom-select .select2-results__option {
-  text-align: center;
   padding: 5px 20px;
   white-space: nowrap;
   line-height: 1.4;
@@ -6012,7 +6010,7 @@ svg {
 }
 
 .contact-form .contacts {
-  padding: 20px 25px 25px;
+  padding: 20px 0 25px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -6020,7 +6018,6 @@ svg {
 .contact-form .contacts .title {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
-  font-size: 16px;
   color: #30343F;
   margin-bottom: 20px;
 }
@@ -6386,6 +6383,10 @@ svg {
     -webkit-box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
     box-shadow: 0 0 25px 0 RGBA(101, 116, 130, 0.1);
     margin-top: 30px;
+  }
+
+  .contact-form .contacts .title {
+    font-size: 16px;
   }
 }
 
@@ -7021,6 +7022,10 @@ svg {
     margin: 0 0 10px;
   }
 
+  .inside-mob {
+    margin: 0 -20px;
+  }
+
   .header .elements .search .search-icon {
     top: 0;
     left: 0;
@@ -7203,6 +7208,13 @@ svg {
     width: 100%;
   }
 
+  .intro-figure .villa-like {
+    right: 10px;
+    top: 70px;
+    width: 50px;
+    height: 50px;
+  }
+
   .single-request--wrap .title {
     padding: 20px 20px 80px 20px;
   }
@@ -7257,6 +7269,19 @@ svg {
 
   .fast-request .field.f-50 {
     width: 100%;
+  }
+
+  .sharing ul li {
+    margin: 0 7px;
+  }
+
+  .sharing a {
+    font-size: 14px;
+  }
+
+  .sharing a i {
+    width: 30px;
+    height: 30px;
   }
 
   .friend-form .close {
@@ -7337,6 +7362,44 @@ svg {
     margin: 0 -20px;
   }
 
+  .villa-carousel .owl-prev {
+    left: 20px;
+  }
+
+  .villa-carousel .owl-next {
+    right: 20px;
+  }
+
+  .show-gallery {
+    right: 20px;
+  }
+
+  .villa-nav .short-info-data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 10px 0;
+    height: 170px;
+  }
+
+  .villa-nav .short-info-attributes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
   .villa-nav .short-info-attributes .item .name {
     font-size: 32px;
   }
@@ -7345,8 +7408,22 @@ svg {
     margin: 10px 0;
   }
 
+  .villa-nav .short-info.fixed .short-info-data,
+  .villa-nav .short-info.absolute .short-info-data {
+    height: 85px;
+  }
+
+  .villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes,
+  .villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
+    display: none;
+  }
+
   .villa-nav .short-info .mobile-attributes {
     display: none;
+  }
+
+  .villa-layout--main {
+    padding: 10px 0;
   }
 
   .villa-layout .cite {
@@ -7411,6 +7488,10 @@ svg {
     display: none;
   }
 
+  .vacancy-quotes {
+    margin-top: 20px;
+  }
+
   .vacancy-quotes .text {
     padding: 20px 0 40px;
   }
@@ -7422,8 +7503,11 @@ svg {
 
   .vacancy-box .placing-form {
     padding: 0;
-    margin-left: -20px;
-    margin-right: -20px;
+  }
+
+  .contact-form .contacts .title {
+    font-size: 26px;
+    line-height: 1.3;
   }
 
   .contact-form-box .fields {
@@ -7695,88 +7779,6 @@ svg {
   }
 }
 
-@media screen and (max-width: 600px) {
-  .inside-mob {
-    margin: 0 -20px;
-  }
-
-  .intro-figure .villa-like {
-    right: 10px;
-    top: 70px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .sharing ul li {
-    margin: 0 7px;
-  }
-
-  .sharing a {
-    font-size: 14px;
-  }
-
-  .sharing a i {
-    width: 30px;
-    height: 30px;
-  }
-
-  .villa-carousel .owl-prev {
-    left: 20px;
-  }
-
-  .villa-carousel .owl-next {
-    right: 20px;
-  }
-
-  .show-gallery {
-    right: 20px;
-  }
-
-  .villa-nav .short-info-data {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    padding: 10px 0;
-    height: 170px;
-  }
-
-  .villa-nav .short-info-attributes {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-  }
-
-  .villa-nav .short-info.fixed .short-info-data,
-  .villa-nav .short-info.absolute .short-info-data {
-    height: 85px;
-  }
-
-  .villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes,
-  .villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
-    display: none;
-  }
-
-  .villa-layout--main {
-    padding: 10px 0;
-  }
-
-  .vacancy-quotes {
-    margin-top: 20px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .desktop-hidden {
     display: none !important;
@@ -7788,6 +7790,10 @@ svg {
 
   .sm .headline_main {
     font-size: 30px;
+  }
+
+  .custom-select .select2-results__option {
+    text-align: center;
   }
 
   #fastpicker .calendar > .ui-datepicker,
@@ -7952,6 +7958,11 @@ svg {
   .vacancy-terms ul li {
     width: 33.3333%;
   }
+
+  .contact-form .contacts {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -8060,6 +8071,10 @@ svg {
 
   .qualities ul li:not(:last-child) {
     margin-bottom: 30px;
+  }
+
+  .hide-gallery {
+    display: none;
   }
 
   .villa-map .map-box {
@@ -8365,6 +8380,20 @@ svg {
     margin-right: 60px;
   }
 
+  .sharing ul li {
+    margin: 0 18px;
+  }
+
+  .sharing a {
+    font-size: 18px;
+  }
+
+  .sharing a i {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
   .friend-form .field:not(:last-child) {
     margin-right: 10px;
   }
@@ -8459,7 +8488,6 @@ svg {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
-    text-align: center;
     border-bottom: 1px solid #657482;
     padding-bottom: 30px;
   }
@@ -8518,6 +8546,16 @@ svg {
   }
 }
 
+@media screen and (min-width: 481px) {
+  .subscription {
+    text-align: center;
+  }
+
+  .villa-img .hashes li {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 980px) {
   .more {
     padding: 8px 24px;
@@ -8559,6 +8597,10 @@ svg {
 
   .vacancy-terms ul li {
     width: 50%;
+  }
+
+  .contact-form .contacts .title {
+    font-size: 30px;
   }
 }
 
@@ -8685,6 +8727,10 @@ svg {
     width: 50%;
   }
 
+  .contact-form .contacts .title {
+    font-size: 40px;
+  }
+
   .contact-form-box {
     width: 50%;
   }
@@ -8693,28 +8739,6 @@ svg {
 @media screen and (min-width: 481px) and (max-width: 767px) {
   .villa-item .includes > span {
     margin-right: 20px;
-  }
-}
-
-@media screen and (min-width: 481px) {
-  .villa-img .hashes li {
-    font-size: 16px;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .sharing ul li {
-    margin: 0 18px;
-  }
-
-  .sharing a {
-    font-size: 18px;
-  }
-
-  .sharing a i {
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
   }
 }
 

@@ -112,7 +112,6 @@
     @include media(screen,480){
       width: 100%;
       order: 2;
-      text-align: center;
       border-bottom: 1px solid #657482;
       padding-bottom: 30px;
 
@@ -138,12 +137,15 @@
 
 .subscription {
   max-width: 600px;
-  text-align: center;
+
   color: $white;
 
   @include media(screen,1023){
     order: 3;
     margin: 40px auto 0;
+  }
+  @include media(hover,481){
+    text-align: center;
   }
   .title {
     text-transform: uppercase;

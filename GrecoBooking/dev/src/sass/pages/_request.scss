@@ -13,8 +13,6 @@
     position: relative;
     @include media(screen,599){
       padding: 0;
-      margin-left: -20px;
-      margin-right: -20px;
     }
   }
 }
