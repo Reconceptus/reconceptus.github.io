@@ -434,11 +434,48 @@ class MainController extends Controller
 	/**
 	 * Search.
 	 *
+	 * @param $page
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
-	public function search()
+	public function search($page = 0)
 	{
-		$data = [];
+		$limit = 4;
+		$page  = $page * $limit;
+		$q     = $this->request['q'];
+		$count  = 0;
+
+		$query = function($count) use ($q)
+		{
+			return '
+			(SELECT
+			 ' . ($count ? 'COUNT(villas.id) AS count' : ('villas.id COLLATE utf8_general_ci as id,
+			 villas.name COLLATE utf8_general_ci as name,
+			 villas.name_table COLLATE utf8_general_ci as name_table,
+			 villas.text COLLATE utf8_general_ci as text')) . '
+			FROM villas
+			WHERE `text` LIKE \'%' . trim($q) . '%\' OR `name` LIKE \'%' . trim($q) . '%\')
+			
+			UNION ALL
+			
+			(SELECT
+		 ' . ($count ? 'COUNT(str.id) AS count' : ('str.id COLLATE utf8_general_ci as id,
+			 str.name COLLATE utf8_general_ci as name,
+			 str.name_table COLLATE utf8_general_ci as name_table,
+			 str.text COLLATE utf8_general_ci as text')) . '
+			FROM str
+			WHERE `text` LIKE \'%' . trim($q) . '%\' OR `name` LIKE \'%' . trim($q) . '%\')';
+		};
+
+		$data['search'] = \DB::select($query(false) . ' ORDER BY `id` DESC LIMIT ' . ($page) . ', ' . ($limit) . ';');
+		$data['count']  = \DB::select($query(true));
+
+		foreach($data['count'] as $v)
+			$count = $count + $v->count;
+
+			$data['count'] = $count;
+			$data['page']  = $page ? $page / $limit : 1;
+			$data['limit'] = $limit;
+			$data['q']     = $q;
 
 		return $this->base->view_s("site.main.search", $data);
 	}

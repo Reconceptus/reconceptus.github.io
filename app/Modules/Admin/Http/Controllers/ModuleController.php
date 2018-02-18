@@ -504,7 +504,7 @@ class ModuleController extends Controller
 							$this->request['pl'][$key] = $this->request['pl'][$key] ?? [];
 
 					foreach($this->request['pl'] as $key => $v) {
-						$data->$key = is_array($v) ? json_encode($v) : $v;
+						$data->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
 						// functionsBefore
 						if($plugins[$key]['functionsBefore'] ?? false) {
@@ -530,7 +530,7 @@ class ModuleController extends Controller
 					$data = [];
 
 					foreach($this->request['pl'] as $key => $v) {
-						$data[$key] = is_array($v) ? json_encode($v) : $v;
+						$data[$key] = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
 						// functionsBefore
 						if($plugins[$key]['functionsBefore'] ?? false) {
