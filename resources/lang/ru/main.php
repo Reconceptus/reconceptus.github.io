@@ -37,4 +37,9 @@ return [
 	'bathrooms'                       => 'Ванных комнат',
 	'bedrooms'                        => 'Спален',
 	'villas_on'                       => 'Виллы на',
+	'favorites'                       => 'Избранные',
+	'_from'                           => 'из',
+	'send_compilation_friend'         => 'Отправить подборку другу',
+	'send_to_a_friend'                => 'Отправить другу',
+	'read_our_blog'                   => 'Читать наш блог',
 ];

@@ -4,7 +4,7 @@
 	<section class="simple-page--head results--head" style="background-image: url('/images/bg/account-bg.jpeg')">
 		<div class="content">
 			<header class="light-style">
-				<h1 class="headline_main">Поиск</h1>
+				<h1 class="headline_main">@lang('main.search')</h1>
 			</header>
 		</div>
 	</section>
@@ -60,7 +60,7 @@
 								@endforeach
 							</div>
 
-							<span class="total">из {{ round($count / $limit) }}</span>
+							<span class="total">@lang('main._from') {{ round($count / $limit) }}</span>
 						</div>
 					@endif
 				</div>

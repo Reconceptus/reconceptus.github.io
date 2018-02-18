@@ -37,4 +37,9 @@ return [
 	'bathrooms'                       => 'Bathrooms',
 	'bedrooms'                        => 'Bedrooms',
 	'villas_on'                       => 'Villas on',
+	'favorites'                       => 'Favorites',
+	'_from'                           => 'from',
+	'send_compilation_friend'         => 'Send this page to a friend',
+	'send_to_a_friend'                => 'Send to a friend',
+	'read_our_blog'                   => 'Read our blog',
 ];

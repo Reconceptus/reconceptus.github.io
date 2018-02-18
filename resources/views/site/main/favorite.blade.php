@@ -6,11 +6,15 @@
 
 		<div class="content content_md">
 			<header>
-				<h1 class="headline_main">Favorites</h1>
+				<h1 class="headline_main">@lang('main.favorites')</h1>
 
 				<a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
-					<span>Отправить подборку другу</span>
-					<i class="ico-fly"><svg> <use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
+					<span>@lang('main.send_compilation_friend')</span>
+					<i class="ico-fly">
+						<svg>
+							<use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use>
+						</svg>
+					</i>
 				</a>
 			</header>
 		</div>
@@ -38,29 +42,52 @@
 				<div class="friend-form--wrap">
 					<figure style="background-image: url('/images/items/eirini-luxury-villas-patmos.jpg')"></figure>
 					<div class="friend-form--main animate-bg">
-						<h5 class="title">Отправить другу</h5>
+						<h5 class="title">@lang('main.send_to_a_friend')</h5>
+
 						<form action="#">
 							<div class="fields">
 								<div class="add-fieldset">
 									<span class="add" id="addFieldset">+1</span>
 									<div class="fieldset">
 										<div class="field">
-											<div class="input"><input id="friendMail" name="friendMail" type="text" placeholder="*Кому: Напишите email друга"></div>
+											<div class="input">
+												<input
+													id="friendMail"
+													name="friendMail"
+													type="text"
+													placeholder="*Кому: Напишите email друга"
+												/>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="fieldset">
-									<div class="field">
-										<div class="input"><input id="yourName" name="yourName" type="text" placeholder="От кого: Напишите ваше имя"></div>
-									</div>
-								</div>
+
 								<div class="fieldset">
 									<div class="field">
 										<div class="input">
-											<textarea id="message" name="message" rows="3" placeholder="Напишите сообщение"></textarea>
+											<input
+												id="yourName"
+												name="yourName"
+												type="text"
+												placeholder="От кого: Напишите ваше имя"
+											/>
 										</div>
 									</div>
 								</div>
+
+								<div class="fieldset">
+									<div class="field">
+										<div class="input">
+											<textarea
+												id="message"
+												name="message"
+												rows="3"
+												placeholder="Напишите сообщение"
+											></textarea>
+										</div>
+									</div>
+								</div>
+
 								<div class="fieldset">
 									<div class="check">
 										<label>
@@ -68,12 +95,18 @@
 											<span>Копию письма мне</span>
 										</label>
 									</div>
+
 									<p class="asterisk">*Обязательные поля</p>
 								</div>
 							</div>
+
 							<div class="btn-box">
 								<button type="submit">
-									<i><svg> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_submit"></use> </svg></i>
+									<i>
+										<svg>
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_submit"></use>
+										</svg>
+									</i>
 								</button>
 							</div>
 						</form>
@@ -85,8 +118,9 @@
 						<div class="text">
 							<h5 class="success-title">Сообщение отправлено!</h5>
 							<p>Письмо с понравившейся виллой отправлено Вашим друзьям</p>
+
 							<div class="btn_center">
-								<a href="blog.html" class="more">Читать наш блог</a>
+								<a href="blog.html" class="more">@lang('main.read_our_blog')</a>
 							</div>
 						</div>
 					</div>
@@ -97,7 +131,7 @@
 
 	@push('footer')
 	<script>
-		$(document).ready(function(){
+		$(document).ready(function() {
 			filFav.initialize({
 				cont      : '.selResult',
 				num       : '.selReN > .i',
@@ -111,20 +145,20 @@
 	<script>
 		$('.fast-request form').validate({
 			onfocusout: false,
-			ignore: ".ignore",
+			ignore    : ".ignore",
 
 			rules: {
-				location: {required: true},
-				check_in: {required: true},
+				location : {required: true},
+				check_in : {required: true},
 				check_out: {required: true},
-				rooms: {required: true}
+				rooms    : {required: true}
 			},
 
 			messages: {
-				location: {required: ""},
-				check_in: {required: ""},
+				location : {required: ""},
+				check_in : {required: ""},
 				check_out: {required: ""},
-				rooms: {required: ""}
+				rooms    : {required: ""}
 			},
 
 			errorClass: 'invalid',
@@ -147,18 +181,18 @@
 
 		$('.friend-form form').validate({
 			onfocusout: false,
-			ignore: ".ignore",
+			ignore    : ".ignore",
 
 			rules: {
 				friendMail: {required: true},
-				yourName: {required: true},
-				message: {required: true}
+				yourName  : {required: true},
+				message   : {required: true}
 			},
 
 			messages: {
 				friendMail: {required: ""},
-				yourName: {required: ""},
-				message: {required: ""}
+				yourName  : {required: ""},
+				message   : {required: ""}
 			},
 
 			errorClass: 'invalid',
