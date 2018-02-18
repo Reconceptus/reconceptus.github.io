@@ -16,8 +16,13 @@
 						@if($val['is_hot'])<li>Горячее предложение</li>@endif
 				</ul>
 				<a href="/villas/{{ $val['id'] }}" class="link"></a>
+				@php($is_favorite = array_search($val['id'], $favorites_id ?? []) !== false ? true : false)
 
-				<a href="javascript:void(0)" class="villa-like" onclick="favorete.addCart()" data-fovorite="">
+				<a
+					href="javascript:void(0)"
+					class="villa-like {!! $is_favorite ? 'active' : '' !!}"
+					onclick="filFav.addCart('{{ $val['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
+				>
 					<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use></svg>
 				</a>
 			</div>

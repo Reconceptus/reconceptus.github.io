@@ -23,11 +23,17 @@ class MainController extends Controller
 	 */
 	private $request;
 
+	/**
+	 * @var Request
+	 */
+	private $requests;
+
 	public function __construct(Request $request)
 	{
-		$this->base    = new Base($request);
-		$this->dynamic = new DynamicModel();
-		$this->request = $request->all();
+		$this->base     = new Base($request);
+		$this->dynamic  = new DynamicModel();
+		$this->request  = $request->all();
+		$this->requests = $request;
 	}
 
 	/**
@@ -478,5 +484,129 @@ class MainController extends Controller
 			$data['q']     = $q;
 
 		return $this->base->view_s("site.main.search", $data);
+	}
+
+	/**
+	 * добавление/удаление в избранное
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function add_favorite()
+	{
+		$idd      = false;
+		$id       = $this->request['id'];
+		$get_data = $this->request['get_data'];
+		$type     = $this->request['type'];
+		$cart     = array_values($this->requests->session()->get('cart') ?? []);
+
+		if($type === 'add') {
+			for($i = 0; count($cart) > $i; $i++)
+				if($cart[$i]['id'] == $id) {
+					$idd = true;
+					break;
+				}
+
+			if(!$idd)
+				$this->requests->session()->put(
+					'cart',
+					array_merge($cart, [$id => ['id' => $id]]));
+		}
+
+		if($type === 'remove') {
+			for($i = 0; count($cart) > $i; $i++)
+				if($cart[$i]['id'] == $id) {
+					unset($cart[$i]);
+					break;
+				}
+
+			$this->requests->session()->flush('cart');
+			$this->requests->session()->put('cart', $cart);
+		}
+
+		if($get_data) {
+			$where[]   = ['villas.active', 1];
+			$group = 'id';
+			$count_box = 24;
+			$cart_0 = array_values($this->requests->session()->get('cart') ?? []);
+
+			for($i = 0; count($cart_0 ?? []) > $i; $i++)
+				$cart_id[] = $cart_0[$i]['id'] ?? 0;
+
+			$data['villas'] = $this->dynamic->t('villas')
+				->where($where)
+				->whereIn('villas.id', $cart_id ?? [])
+				->where('villas.text', 'like', '%' . trim($request['input_search'] ?? '') . '%')
+
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villas')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name as cat_parent')
+				->groupBy('villas.id')
+				->orderBy('villas.' . $group, 'DESC')
+				->paginate($count_box);
+		}
+
+		foreach($this->requests->session()->get('cart') ?? [] as $v)
+			$data['cart'][$v['id']] = $v;
+
+		$data['result'] = 'ok';
+		$data['count']  = count(array_values($this->requests->session()->get('cart') ?? []));
+
+		return json_encode($data);
+	}
+
+	public function search_render_villas($params = [])
+	{
+		$data      = [];
+		$where[]   = ['villas.active', 1];
+		$count_box = 8;
+		$group     = 'id';
+		$cart      = array_values($this->requests->session()->get('cart') ?? []);
+		$cart_id   = [];
+
+		if(!isset($params['id'])) {
+			for($i = 0; count($cart ?? []) > $i; $i++)
+				$cart_id[] = $cart[$i]['id'] ?? 0;
+
+			$params['id'] = $cart_id;
+		}
+
+		$data['villas'] = $this->dynamic->t('villas')
+			->where($where)
+
+			->join('files', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('villas.id', '=','files.id_album')
+					->where('files.name_table', '=', 'villasalbum')
+					->where('files.main', '=', 1);
+			})
+
+			->join('menu', function($join)
+			{
+				$join->type = 'LEFT OUTER';
+				$join->on('villas.cat', '=','menu.id');
+			})
+
+			->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+			->whereIn('villas.id', $params['id'])
+			->groupBy('villas.id')
+			->orderBy('villas.' . $group, 'DESC')
+			->paginate($count_box);
+
+		$data['favorites_id'] = $cart_id;
+		$data['paginate']     = true;
+
+		return $this->base->view_s("site.block.villas_main_list", $data);
 	}
 }

@@ -5,7 +5,6 @@ Auth::routes();
 Route::group(["middleware"=>["site"], "prefix"=>""], function() {
 	Route::get('/', 'MainController@main');
 	Route::get('/selection-request', 'MainController@selection_request');
-	Route::get('/favorite', 'MainController@favorite');
 	Route::get('/villas/{id?}', 'MainController@villas');
 	Route::get('/blog/{id?}', 'MainController@blog');
 	Route::get('/about-us', 'MainController@about_us');
@@ -14,4 +13,9 @@ Route::group(["middleware"=>["site"], "prefix"=>""], function() {
 	Route::get('/location/{id}', 'MainController@location');
 	Route::get('/request-for-accommodation', 'MainController@request_for_accommodation');
 	Route::get('/search/{page?}', 'MainController@search');
+
+	// Favorite
+	Route::get('/favorite', 'MainController@favorite');
+	Route::post('/_tools/add_favorite', 'MainController@add_favorite');
+	Route::post('/_tools/search_render_villas', 'MainController@search_render_villas');
 });

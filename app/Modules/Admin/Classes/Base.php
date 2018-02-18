@@ -686,10 +686,11 @@ class Base
 		if(isset($args['meta_c']))
 			$args['meta'] = $args['meta_c'];
 
-		$args['lang']     = \App::getLocale();
-		$args['segment1'] = $segment1;
-		$args['langSt']   = function($t, $l = '') { return $this->lang($t, $l); };
-		$args['mount']    = function($m) { return $this->monthLang[\App::getLocale()][$m]; };
+		$args['lang']           = \App::getLocale();
+		$args['segment1']       = $segment1;
+		$args['langSt']         = function($t, $l = '') { return $this->lang($t, $l); };
+		$args['mount']          = function($m) { return $this->monthLang[\App::getLocale()][$m]; };
+		$args['isShowFavorite'] = count(array_values($this->requests->session()->get('cart') ?? []));
 
 		return view($url, $args);
 	}

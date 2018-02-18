@@ -22,4 +22,13 @@
 			</div>
 		</div>
 	</div>
+
+	@push('footer')
+	<script>
+		$(document).ready(function(){
+
+			filFav.initialize();
+		});
+	</script>
+	@endpush
 @endsection

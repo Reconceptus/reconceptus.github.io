@@ -28,7 +28,7 @@
 						@endforeach
 					</ul>
 
-					@if(round($count / $limit))
+					@if(round($count / $limit) > 1)
 						<div class="paging_center">
 							<div class="paging-list">
 								@foreach(range($page - 1, $page + 1) as $key => $v)
