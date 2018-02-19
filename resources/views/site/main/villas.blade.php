@@ -16,14 +16,27 @@
 	<div class="simple-page--main">
 		<div class="villas">
 			<div class="content content_md">
-				<div class="villas--wrap">
-					@include('site.block.villas_main_list', ['paginate' => true])
-				</div>
+				<div class="villas--wrap sel-villas"></div>
+				<input name="pagination" value="1" type="hidden" autocomplete="off"/>
 			</div>
 		</div>
 	</div>
 
 	@push('footer')
+	<script>
+		$(document).ready(function() {
+			filVil.initialize({
+				cont      : '.sel-villas',
+				isLoad    : true,
+				num       : '.selReN > .i',
+				pagination: true,
+				url_req   : '/',
+			});
+		});
+
+//		filVil.selectVillas()
+	</script>
+
 	<script>
 		$(document).ready(function(){
 

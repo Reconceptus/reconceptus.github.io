@@ -28,12 +28,12 @@
 
 					<div class="field">
 						<label for="check_in">@lang('main.check_in')</label>
-						<div class="input"><input id="check_in" type="text" data-picker-fast></div>
+						<div class="input"><input id="check_in" name="date_to" type="text" data-picker-fast></div>
 					</div>
 
 					<div class="field">
 						<label for="check_out">@lang('main.check_out')</label>
-						<div class="input"><input type="text" id="check_out" data-picker-fast></div>
+						<div class="input"><input type="text" name="date_from" id="check_out" data-picker-fast></div>
 					</div>
 
 					<div class="field">
@@ -52,14 +52,14 @@
 					<div class="field">
 						<div class="check">
 							<label>
-								<input type="checkbox">
+								<input type="checkbox" name="hot" />
 								<span>@lang('main.hot_offers')</span>
 							</label>
 						</div>
 					</div>
 				</div>
 
-				<button class="btn btn_subm" type="submit">@lang('main.search')</button>
+				<button class="btn btn_subm" name="search-filter" type="submit">@lang('main.search')</button>
 			</div>
 		</form>
 	</div>

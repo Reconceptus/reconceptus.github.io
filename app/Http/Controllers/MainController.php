@@ -573,15 +573,16 @@ class MainController extends Controller
 		$group     = 'id';
 		$cart      = array_values($this->requests->session()->get('cart') ?? []);
 		$cart_id   = [];
+		$session   = $this->request['session'] ?? true;
 
-		if(!isset($params['id'])) {
+		if(!isset($params['id']) && $session) {
 			for($i = 0; count($cart ?? []) > $i; $i++)
 				$cart_id[] = $cart[$i]['id'] ?? 0;
 
 			$params['id'] = $cart_id;
 		}
 
-		$data['villas'] = $this->dynamic->t('villas')
+		$villas_query = $this->dynamic->t('villas')
 			->where($where)
 
 			->join('files', function($join)
@@ -596,14 +597,19 @@ class MainController extends Controller
 			{
 				$join->type = 'LEFT OUTER';
 				$join->on('villas.cat', '=','menu.id');
-			})
+			});
 
+			if(isset($params['id']))
+				$villas_query = $villas_query->whereIn('villas.id', $params['id']);
+
+		$villas_query = $villas_query
 			->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
-			->whereIn('villas.id', $params['id'])
 			->groupBy('villas.id')
 			->orderBy('villas.' . $group, 'DESC')
 			->paginate($count_box);
 
+
+		$data['villas']       = $villas_query;
 		$data['favorites_id'] = $cart_id;
 		$data['paginate']     = true;
 
