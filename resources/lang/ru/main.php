@@ -42,4 +42,11 @@ return [
 	'send_compilation_friend'         => 'Отправить подборку другу',
 	'send_to_a_friend'                => 'Отправить другу',
 	'read_our_blog'                   => 'Читать наш блог',
+	'subscription'                    => 'Подписка',
+	'your'                            => 'Ваш',
+	'send'                            => 'Отправить',
+	'place_a_villa'                   => 'Разместить виллу',
+	'terms_of_use'                    => 'Условия пользования',
+	'vacancies'                       => 'Вакансии',
+	'login'                           => 'Вход',
 ];

@@ -582,6 +582,21 @@ class MainController extends Controller
 			$params['id'] = $cart_id;
 		}
 
+		$way       = (int) $this->request['way'] ?? -1;
+		$date_to   = $this->request['date_to'] ?? -1;
+		$date_from = $this->request['date_from'] ?? -1;
+		$rooms     = (int) $this->request['rooms'] ?? -1;
+		$hot       = (int) $this->request['hot'] ?? -1;
+
+		if($way !== -1 && !empty($way))
+			$where[] = ['villas.cat', $way];
+
+		if($rooms !== -1)
+			$where[] = ['villas.bedroom', $rooms];
+
+		if($hot !== -1)
+			$where[] = ['villas.is_hot', 1];
+
 		$villas_query = $this->dynamic->t('villas')
 			->where($where)
 
@@ -614,5 +629,55 @@ class MainController extends Controller
 		$data['paginate']     = true;
 
 		return $this->base->view_s("site.block.villas_main_list", $data);
+	}
+
+	/**
+	 * Страницы.
+	 *
+	 * @param null $id
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+	 */
+	public function page($id = null)
+	{
+		if(!$id)
+			return abort(404, 'Страница не существует');
+
+		$Mod     = $this->dynamic;
+		$data    = [];
+		$where[] = ['str.active', 1];
+
+		if((int) $id == 0 || strlen($id) > 5) {
+			$data['field'] = 'translation';
+			$where[]       = ['str.translation', $id];
+		} else {
+			$where['str.id'] = $id;
+		}
+
+		$data['page'] = $Mod->t('str')
+			->where($where)
+			->join(
+				'files', function($join) {
+				$join->type = 'LEFT OUTER';
+				$join->on('str.id', '=', 'files.id_album')
+					->where('files.name_table', '=', 'str');
+			}
+			)
+			->select('str.*', 'files.file', 'files.crop')
+			->first();
+
+		if(empty($data['page'])) {
+			return abort(404, 'Страница не существует');
+		}
+		$data['meta_c'] = $this->base->getMeta($data, 'page');
+
+		if(!empty($data['page'][0])) {
+			$data['files'] = $Mod->t('files')
+				->where(['files.active' => 1])
+				->where(['id_album' => $data['page'][0]['id'], 'name_table' => 'str'])->get();
+		} else {
+			$data['files'] = [];
+		}
+
+		return $this->base->view_s("site.main.page_id", $data);
 	}
 }

@@ -355,7 +355,7 @@
 		"count_module"    : "20",
 		"show_count"      : false,
 		"filters"         : [],
-		"lang"            : [],
+		"lang"            : ["little_description"],
 		"link_module"     : "params",
 		"link_site_module": "",
 		"menu_table_name" : "menu",

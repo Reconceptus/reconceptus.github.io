@@ -42,4 +42,11 @@ return [
 	'send_compilation_friend'         => 'Send this page to a friend',
 	'send_to_a_friend'                => 'Send to a friend',
 	'read_our_blog'                   => 'Read our blog',
+	'subscription'                    => 'Subscription',
+	'your'                            => 'Your',
+	'send'                            => 'Send',
+	'place_a_villa'                   => 'Place a villa',
+	'terms_of_use'                    => 'Terms of use',
+	'vacancies'                       => 'Vacancies',
+	'login'                           => 'Login',
 ];
