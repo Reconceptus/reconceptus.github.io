@@ -534,7 +534,7 @@ class MainController extends Controller
 			$data['villas'] = $this->dynamic->t('villas')
 				->where($where)
 				->whereIn('villas.id', $cart_id ?? [])
-				->where('villas.text', 'like', '%' . trim($request['input_search'] ?? '') . '%')
+				->where('villas.text', 'like', '%' . trim($this->requests['input_search'] ?? '') . '%')
 
 				->join('files', function($join)
 				{
