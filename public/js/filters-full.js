@@ -80,5 +80,59 @@ var
 					return false;
 				}
 			});
-		}
+		},
+
+		initRequestForAccommodation: function() {
+			$('.form-request form').validate({
+				onfocusout: false,
+				ignore    : ".ignore",
+
+				rules: {
+					position    : {required: true},
+					villaAddress: {required: true},
+					siteLink    : {required: true},
+					name        : {required: true},
+					telephone   : {required: true},
+					mail        : {required: true}
+				},
+
+				messages: {
+					position    : {required: ""},
+					villaAddress: {required: ""},
+					siteLink    : {required: ""},
+					name        : {required: ""},
+					telephone   : {required: ""},
+					mail        : {required: ""}
+				},
+
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass)
+
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass)
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					formsFull.submitForm(
+						{
+							data: $('.request-for-accommodation-form').serializeArray(),
+							type: 'request_for_accommodation'
+						},
+
+						function() {
+							$('.form-request').addClass('successful');
+							document.getElementById("request-for-accommodation-form").reset();
+						}
+					);
+
+					return false;
+				}
+			})
+		},
 	};

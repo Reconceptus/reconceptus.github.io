@@ -3,6 +3,7 @@
 return [
 	'search'                          => 'Search',
 	'selection_request'               => 'Selection request',
+	'request_for_accommodation'       => 'Request for accommodation',
 	'selection_request_title'         => 'Fill out the application and get a selection of villas according to your criteria',
 	'all_articles'                    => 'All articles',
 	'blog'                            => 'Blog',
@@ -75,6 +76,11 @@ return [
 	'message_sent'                    => 'Message sent!',
 	'expert_opinion'                  => 'Мнение эксперта Grecobooking',
 	'request_was_successfully_sent'   => 'The request was successfully sent!',
-	'selection_request_mess_admin'    => 'Request for selection from the site Greecobooking',
-	'selection_request_mess_user'     => 'Request for selection of a selection request from Greecobooking принят!',
+	'selection_request_mess_admin'    => 'Request for selection from the Greecobooking',
+	'selection_request_mess_user'     => 'Request for selection from the Greecobooking accepted!',
+	'position'                        => 'Position',
+	'address_of_the_villa'            => 'Address of the villa',
+	'site_or_link_to_photos'          => 'Site or link to photos',
+	'request_for_accommodation_admin' => 'Request for accommodation from the site the Greecobooking',
+	'request_for_accommodation_user'  => 'Request for accommodation a selection request from the Greecobooking accepted!',
 ];

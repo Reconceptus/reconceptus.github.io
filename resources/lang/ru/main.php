@@ -3,6 +3,7 @@
 return [
 	'search'                          => 'Поиск',
 	'selection_request'               => 'Запрос на подбор',
+	'request_for_accommodation'       => 'Запрос на размещение',
 	'selection_request_title'         => 'Заполните заявку и получите подборку вилл по вашим критериям',
 	'all_articles'                    => 'Все статьи',
 	'blog'                            => 'Блог',
@@ -76,5 +77,10 @@ return [
 	'expert_opinion'                  => 'Expert opinion Grecobooking',
 	'request_was_successfully_sent'   => 'Запрос успешно отправлен!',
 	'selection_request_mess_admin'    => 'Запрос на подбор с сайта Greecobooking',
-	'selection_request_mess_user'     => 'Запрос на подбор запрос на подбор с Greecobooking принят!',
+	'selection_request_mess_user'     => 'Запрос на подбор с сайта Greecobooking принят!',
+	'position'                        => 'Должность',
+	'address_of_the_villa'            => 'Адрес виллы',
+	'site_or_link_to_photos'          => 'Сайт или ссылка на фотографии',
+	'request_for_accommodation_admin' => 'Запрос на размещение с сайта Greecobooking',
+	'request_for_accommodation_user'  => 'Запрос на размещение с сайта Greecobooking принят!',
 ];

@@ -707,6 +707,10 @@ class MainController extends Controller
 		$title     = '';
 		$from      = 'no-realy@greecobooking.niws.ru';
 
+//		print_r($form);
+//		print_r($type);
+//		exit;
+
 		$param = $this
 			->dynamic
 			->t('params')
@@ -732,14 +736,19 @@ class MainController extends Controller
 			$title = __('main.selection_request_mess_admin');
 		}
 
+		if($type == 'request_for_accommodation') {
+			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from, $form_data) {
+				$m->from($from, __('main.request_for_accommodation_user'));
+				$m->to($form_data['mail'], 'no-realy')->subject(__('main.request_for_accommodation_user'));
+			});
+
+			$title = __('main.request_for_accommodation_admin');
+		}
+
 		Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
 			$m->from($from, $title);
 			$m->to($param->key, 'no-realy')->subject($title);
 		});
-
-//		var_dump($mail);
-//		print_r($form);
-//		print_r($type);
 
 		$ret['result'] = 'ok';
 		echo json_encode($ret);

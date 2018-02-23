@@ -1,4 +1,3 @@
-
 <table border="0">
 	<tr>
 		<td>@lang('main.name'): </td>

@@ -33,14 +33,14 @@
 			</div>
 
 			<div class="subscription">
-				<h3 class="title">@lang('subscription')</h3>
+				<h3 class="title">@lang('main.subscription')</h3>
 				<div class="text">{!! $langSt($params['text_subscription']['key']) !!}</div>
 
 				<div class="subscription-form">
 					<form action="#">
 						<div class="field">
-							<input type="text" name="subscribe_mail" placeholder="@lang('your') e-mail">
-							<button type="submit">@lang('send')</button>
+							<input type="text" name="subscribe_mail" placeholder="@lang('main.your') e-mail">
+							<button type="submit">@lang('main.send')</button>
 						</div>
 					</form>
 				</div>
@@ -48,10 +48,10 @@
 
 			<div class="menu">
 				<ul>
-					<li><a href="/request-for-accommodation" class="">@lang('place_a_villa')</a></li>
-					<li><a href="/privacy-policy" class="">@lang('terms_of_use')</a></li>
-					<li><a href="/vacancies" class="">@lang('vacancies')</a></li>
-					<li><a href="/admin/index" target="_blank">@lang('login')</a></li>
+					<li><a href="/request-for-accommodation" class="">@lang('main.place_a_villa')</a></li>
+					<li><a href="/privacy-policy" class="">@lang('main.terms_of_use')</a></li>
+					<li><a href="/vacancies" class="">@lang('main.vacancies')</a></li>
+					<li><a href="/admin/index" target="_blank">@lang('main.login')</a></li>
 				</ul>
 			</div>
 		</div>
