@@ -40,6 +40,7 @@
 											class="form-control"
 											name="name_img_edit{{ $name . $str_lang }}"
 											value="{{ $langSt($file['name']) }}"
+											maxlength="80"
 										/>
 									</div>
 
@@ -56,6 +57,7 @@
 										class="form-control"
 										id="text_img_edit{{ $name }}"
 										name="text_img_edit{{ $name . $str_lang }}"
+										maxlength="200"
 									>{{ $langSt($file['text']) }}</textarea>
 									</div>
 

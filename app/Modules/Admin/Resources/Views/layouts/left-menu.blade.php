@@ -2,8 +2,7 @@
 	<div class="left_col scroll-view">
 		<div class="navbar nav_title" style="border: 0;">
 			<a href="/admin/" class="site_title" style="text-align: left">
-				<i class="fa fa-rocket" style="font-size: 24px"> </i>
-				@lang('admin::main.namePanel')
+				<img style="max-width: 205px;" src="/images/svg/logo-green.svg" alt="GrecoBooking" />
 			</a>
 		</div>
 		<div class="clearfix"></div>

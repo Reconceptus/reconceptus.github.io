@@ -355,11 +355,12 @@ class ModuleController extends Controller
 	public static function _input($inp)
 	{
 		$classAttr = isset($inp['classAttr']) ? $inp['classAttr'] : '';
+		$maxlength = isset($inp['maxlength']) ? 'maxlength="' . $inp['maxlength'] . '"' : '';
 
 		return '<div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
+                <input type="text" ' . $maxlength . ' name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
             </div>
              <br class="clear"/>
         </div>';
@@ -393,11 +394,12 @@ class ModuleController extends Controller
 	public static function _textarea($inp)
 	{
 		$classAttr = isset($inp['classAttr']) ? $inp['classAttr'] : '';
+		$maxlength = isset($inp['maxlength']) ? 'maxlength="' . $inp['maxlength'] . '"' : '';
 
 		return '<div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <textarea class="form-control ' . $classAttr . '" id="' . $inp['idAttr'] . '" name="' . $inp['nameAttr'] . '--options--" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '" rows="3"></textarea>
+                <textarea ' . $maxlength . ' class="form-control ' . $classAttr . '" id="' . $inp['idAttr'] . '" name="' . $inp['nameAttr'] . '--options--" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '" rows="3"></textarea>
             </div>
              <br class="clear"/>
         </div>';
