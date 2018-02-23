@@ -51,7 +51,7 @@
 					<li><a href="/request-for-accommodation" class="">@lang('place_a_villa')</a></li>
 					<li><a href="/privacy-policy" class="">@lang('terms_of_use')</a></li>
 					<li><a href="/vacancies" class="">@lang('vacancies')</a></li>
-					<li><a href="/admin">@lang('login')</a></li>
+					<li><a href="/admin/index" target="_blank">@lang('login')</a></li>
 				</ul>
 			</div>
 		</div>

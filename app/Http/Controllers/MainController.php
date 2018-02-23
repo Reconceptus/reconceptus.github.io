@@ -157,7 +157,10 @@ class MainController extends Controller
 				->orderBy('villas.' . $group, 'DESC')
 				->first();
 
-			$data['villa']['document'] = false;
+			$data['villa']['document'] = $this->dynamic->t('files')
+				->where('files.name_table', '=', 'villasfiles')
+				->where('files.id_album', '=', $id)
+				->first();
 
 			$data['recommended_villas'] = $this->dynamic->t('villas')
 				->where($where)

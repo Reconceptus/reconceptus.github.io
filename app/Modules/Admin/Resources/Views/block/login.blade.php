@@ -37,7 +37,9 @@
 						<br/>
 
 						<div>
-							<h1><i class="fa fa-paw" style="font-size: 26px;"></i> {{ $version }}</h1>
+							<a href="/" class="logo">
+								<img style="width: 100%" src="/images/svg/logo-green.svg" alt="GrecoBooking" />
+							</a>
 						</div>
 					</div>
 				</form>

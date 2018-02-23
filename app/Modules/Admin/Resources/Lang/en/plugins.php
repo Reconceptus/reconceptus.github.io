@@ -15,6 +15,7 @@ return [
 	'specialist_comment'   => 'Specialist comment',
 	'what_is_next'         => 'What is next',
 	'album'                => 'Album',
+	'files'                => 'Files',
 	'recommendedVillas'    => 'Recommended Villas',
 	'convenience'          => 'Convenience',
 	'services'             => 'Services',

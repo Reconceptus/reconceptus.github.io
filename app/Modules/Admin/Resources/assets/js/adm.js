@@ -96,18 +96,18 @@
 			});
 		},
 
-		rowDelete: function rowDelete(id, t, n, name) {
+		rowDelete: function rowDelete(id, t, n, name, callback) {
 			t = t.split('\'').length > 1 ? t : '\'' + t + '\'';
 			name = name || '';
 
 			$('#modalDel').modal('show');
-			$('.delbMod').attr('onclick','$.adm.rowDeleteOk('+ id +', '+ t +', \''+ n +'\', \''+ name +'\')');
+			$('.delbMod').attr('onclick','$.adm.rowDeleteOk('+ id +', '+ t +', \''+ n +'\', \''+ name +'\', ' + callback +')');
 
 			$(".modal-body-mess").html('Вы уверены?');
 			$(".modal-title-mess").html('Удалить');
 		},
 
-		rowDeleteOk: function rowDeleteOk(id, t, n, name) {
+		rowDeleteOk: function rowDeleteOk(id, t, n, name, callback) {
 			var
 				dataString = 'id=' + id + '&table=' + t + '&name=' + n;
 
@@ -126,12 +126,16 @@
 							$.adm.close_mt();
 						}
 					}
+
 					if(data['mess'] != '' && data['mess'] != undefined) {
 						$(".modal-body-mess").html(data['mess']);
 						if(data['title'] != '') {
 							$(".modal-title-mess").html(data['title']);
 						}
 					}
+
+					if(_.isFunction(callback))
+						callback();
 				}
 			});
 		},

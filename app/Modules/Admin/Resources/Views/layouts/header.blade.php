@@ -115,6 +115,8 @@
 	<script src="{{ asset('/modules/js/code_editor/mode/php/php.js') }}"></script>
 	<script src="{{ asset('/modules/js/code_editor/mode/markdown/markdown.js') }}"></script>
 
+	<link rel="stylesheet" href="{{ asset('/modules/css/fontawesome-all.min.css') }}">
+
 	<style type="text/css">
 		.CodeMirror {
 			border-top: 1px solid black;

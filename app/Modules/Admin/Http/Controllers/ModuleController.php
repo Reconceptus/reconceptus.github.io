@@ -614,10 +614,18 @@ class ModuleController extends Controller
 					$isUserAnotherType = array_search($this->base->getUser('user_another_type'), $showOnly);
 
 					if(empty($showOnly))
-						$plugins_sel[$k]['html'] = $this->_switch($c, $modules['menu_table_name'], ['id' => $id, 'table' => $page]);
+						$plugins_sel[$k]['html'] = $this->_switch(
+							$c,
+							$modules['menu_table_name'],
+							['id' => $id, 'table' => $page, 'modules' => $modules]
+						);
 					else
 						if($isUserType !== false || $isUserAnotherType !== false)
-							$plugins_sel[$k]['html'] = $this->_switch($c, $modules['menu_table_name'], ['id' => $id, 'table' => $page]);
+							$plugins_sel[$k]['html'] = $this->_switch(
+								$c,
+								$modules['menu_table_name'],
+								['id' => $id, 'table' => $page, 'modules' => $modules]
+							);
 						else
 							unset($plugins_sel[$k]);
 

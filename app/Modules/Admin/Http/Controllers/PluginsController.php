@@ -325,4 +325,37 @@ class PluginsController extends Controller
 	public function insertDistances($val){
 		return json_encode($val);
 	}
+
+	/**
+	 * Function generation field files
+	 *
+	 * @param        $field
+	 * @param string $table_params - table load params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function files($field, $table_params = '', $params = [])
+	{
+		$id_album   = $params['id'];
+		$name_table = $table_params;
+
+		$files = ($this->files)
+			->where(['name_table' => $params['table'] . $field['name'], 'id_album' => $id_album])
+			->get();
+
+		$limit = $params['modules']['params'][$field['name']]['limit'] ?? -1;
+
+		return Base::view(
+			"admin::plugins.files.index",
+
+			[
+				'name'       => $field['name'],
+				'plugin'     => $field,
+				'id_album'   => $id_album,
+				'name_table' => $params['table'],
+				'files'      => $files,
+				'limit'      => $limit,
+			]
+		);
+	}
 }

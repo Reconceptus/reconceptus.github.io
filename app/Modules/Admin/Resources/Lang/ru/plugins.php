@@ -15,6 +15,7 @@ return [
 	'specialist_comment'   => 'Комментарий специалиста',
 	'what_is_next'         => 'Что есть рядом',
 	'album'                => 'Альбом',
+	'files'                => 'Файлы',
 	'recommendedVillas'    => 'Рекомендованные виллы',
 	'convenience'          => 'Удобства',
 	'services'             => 'Услуги',

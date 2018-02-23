@@ -56,13 +56,13 @@
 
 					<span>
 						@if($val['sea'] === 0)
-							With access to the beach
+							@lang('main.with_access_to_the_beach')
 						@elseif($val['sea'] === 1)
-							Sea in 5 minutes
+							@lang('main.sea_in_5_minutes')
 						@elseif($val['sea'] === 2)
-							Sea in 15 minutes
+							@lang('main.sea_in_15_minutes')
 						@else
-							The sea more than 1000 meters
+							@lang('main.the_sea_more_than_1000_meters')
 						@endif
 					</span>
 				</span>

@@ -314,6 +314,15 @@
 		"sql_column" : "album"
 	},
 	{
+		"name"       : "files",
+		"typeField"  : "functions",
+		"nameText"   : "Файлы",
+		"nameAttr"   : "pl[files]",
+		"description": "Плагин \"Files\"",
+		"idAttr"     : "inputFiles",
+		"sql_column" : "files"
+	},
+	{
 		"name"       : "ordering",
 		"typeField"  : "ordering",
 		"nameText"   : "Инормация о заказе",

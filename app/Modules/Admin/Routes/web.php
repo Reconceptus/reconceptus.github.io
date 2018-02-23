@@ -60,6 +60,8 @@ Route::group([
 		Route::post('/files/set_edit','FilesController@get_edit');
 		Route::post('/files/edit_img','FilesController@edit_img');
 		Route::post('/files/to_main','FilesController@to_main');
+		Route::post('/files/upload_files', 'FilesController@upload_files');
+		Route::post('/files/get_edit_file','FilesController@get_edit_file');
 
 		// Plugins
 		Route::post('/plugins/getTags','PluginsController@getTags');

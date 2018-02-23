@@ -75,11 +75,10 @@ class FilesController extends Controller
 	 */
 	private function _load_img($data)
 	{
-		if(isset($data['images'])) {
+		if(isset($data['images']))
 			$images = $data['images'];
-		} else {
+		else
 			$images = [];
-		}
 
 		$res        = [];
 		$valid      = false;
@@ -91,15 +90,13 @@ class FilesController extends Controller
 		$sw         = $data['small_width'];
 		$sh         = $data['small_height'];
 
-		if(!isset($data['type'])) {
+		if(!isset($data['type']))
 			$data['type'] = 'input';
-		}
 
-		if(!isset($data['id_album'])) {
+		if(!isset($data['id_album']))
 			$id_album = 0;
-		} else {
+		else
 			$id_album = $data['id_album'];
-		}
 
 		foreach($file as $i => $f) {
 			if($f == null) {
@@ -114,6 +111,7 @@ class FilesController extends Controller
 					if($validator2->fails()) {
 						$valid        = true;
 						$res['error'] = "Файл должен быть изображением";
+
 						break;
 					}
 				}
@@ -133,8 +131,7 @@ class FilesController extends Controller
 				}
 
 				$filename = str_random(10) . time() . str_random(5);
-
-				$img = Image::make($f);
+				$img      = Image::make($f);
 				$img->backup();
 
 				/* original */
@@ -144,17 +141,23 @@ class FilesController extends Controller
 
 				// делаем ресайз по ширине
 				$img->reset();
+
 				$img->resize(
-					$bw, null, function($constraint) {
-					$constraint->aspectRatio();
-					$constraint->upsize();
-				}
+					$bw,
+					null,
+
+					function($constraint) {
+						$constraint->aspectRatio();
+						$constraint->upsize();
+					}
 				);
+
 				$img->save($path_b . $filename . '.' . $fileExt);
 
 				/* big */
 				/*  small */
 				$img->reset();
+
 				// Crop and resize combined
 				$img->fit($sw, $sh);
 				$img->save($path_s . $filename . '.' . $fileExt);
@@ -166,9 +169,8 @@ class FilesController extends Controller
 				chmod($path_b . $filename . '.' . $fileExt, 0777);
 				chmod($path_s . $filename . '.' . $fileExt, 0777);
 
-				if($data['type'] == 'url') {
+				if($data['type'] == 'url')
 					unlink($f);
-				}
 			}
 
 			$file = $this->files->where(['id_album' => $id_album, 'name_table' => $name_table])->first();
@@ -201,6 +203,125 @@ class FilesController extends Controller
 	}
 
 	/**
+	 * Upload files.
+	 *
+	 * @param null $data
+	 * @return mixed
+	 */
+	public function upload_files($data = null)
+	{
+		if(!$data) {
+			$request            = $this->requests;
+			$data['file'][]     = $request->file("Filedata");
+			$data['name']       = 'files';
+			$data['name_table'] = $request->input("name_table") . $request->input("name_field");
+			$data['id_album']   = $request->input("id_album");
+			$data['limit']      = $request->input("limit");
+		}
+
+		$res           = $this->_load($data);
+		$res['result'] = 'ok';
+
+		return $res;
+	}
+
+	/**
+	 * Загрузка файла.
+	 *
+	 * @param $data
+	 * @return mixed
+	 */
+	private function _load($data)
+	{
+		if(isset($data['files']))
+			$files = $data['files'];
+		else
+			$files = [];
+
+		$res        = [];
+		$valid      = false;
+		$file       = $data['file'];
+		$name_table = $data['name_table'];
+
+		if(!isset($data['type']))
+			$data['type'] = 'input';
+
+		if(!isset($data['id_album']))
+			$id_album = 0;
+		else
+			$id_album = $data['id_album'];
+
+		foreach($file as $i => $f) {
+			if($f == null) {
+				$valid = true;
+			} else {
+				if($data['type'] != 'url') {
+					$validator2 = Validator::make(
+						['file' => $f],
+						['file' => 'required|max:20000']
+					);
+
+					if($validator2->fails()) {
+						$valid        = true;
+						$res['error'] = "Не правильный формат файла";
+						break;
+					}
+				}
+
+				if($data['type'] == 'url') {
+					$fileExt   = $data['ext'];
+					$orig_name = $data['orig_name'];
+					$size      = $data['size'];
+				} else {
+					$fileExt   = strtolower($f->getClientOriginalExtension());
+					$orig_name = $f->getClientOriginalName();
+					$size      = $f->getSize();
+				}
+
+				$path     = public_path() . "/images/files/files/";
+				$filename = str_random(10) . time() . str_random(5);
+
+				if(!file_exists($path)) {
+					mkdir($path);
+					chmod($path, 0777);
+				}
+
+				$f->move($path, $orig_name);
+				rename($path . $orig_name, $path . $filename . '.' . $fileExt);
+				chmod($path . $filename . '.' . $fileExt, 0777);
+
+				if($data['type'] == 'url')
+					unlink($f);
+
+				$file = $this->files->where(['id_album' => $id_album, 'name_table' => $name_table])->first();
+				$fil  = $this->files;
+
+				$fil->type       = 'file';
+				$fil->orig_name  = $orig_name;
+				$fil->size       = $size;
+				$fil->file       = $filename . '.' . $fileExt;
+				$fil->id_album   = $id_album;
+				$fil->name_table = $name_table;
+
+				if(empty($file)) {
+					$fil->main   = 1;
+					$res['main'] = 1;
+				} else
+					$res['main'] = 0;
+
+				$fil->save();
+				$res['id'] = $fil->id;
+			}
+		}
+
+		$res['name']  = !isset($filename) ? 'error files' : ($filename ?? '') . '.' . ($fileExt ?? '');
+		$res['file']  = $files;
+		$res['valid'] = $valid;
+
+		return $res;
+	}
+
+	/**
 	 * function for load ajax crop img
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
 	 */
@@ -219,10 +340,22 @@ class FilesController extends Controller
 	}
 
 	/**
-	 * function for load ajax edit img
+	 * function for load ajax edit file.
+	 *
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
 	 */
-	public function get_edit()
+	public function get_edit_file()
+	{
+		return $this->get_edit('admin::plugins.files.edit_file');
+	}
+
+	/**
+	 * function for load ajax edit img.
+	 *
+	 * @param string $path
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View|string
+	 */
+	public function get_edit($path = 'admin::plugins.album.edit_img')
 	{
 		$request      = $this->requests;
 		$data['name'] = $this->request['nameId'] ?? '';
@@ -232,7 +365,7 @@ class FilesController extends Controller
 				$data['lang_array'] = $this->dynamic->t('params_lang')->get()->toArray();
 				$data['file']       = $this->files->find(['id' => $request['id']])->first();
 
-				return Base::view("admin::plugins.album.edit_img", $data);
+				return Base::view($path, $data);
 			} else {
 				$file = $this->files->find(['id' => $request['id']])->first();
 				$form = [];
