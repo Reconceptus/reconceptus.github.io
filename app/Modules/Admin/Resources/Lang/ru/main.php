@@ -97,4 +97,5 @@ return [
 	'author'                    => 'Автор',
 	'specialist'                => 'Специалист',
 	'image'                     => 'Изображение',
+	'subscribers'               => 'Подписчики',
 ];

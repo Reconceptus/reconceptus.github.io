@@ -433,5 +433,38 @@
 		"views_module"    : "table",
 		"translate_key"   : "",
 		"menu_table_name" : "tags"
+	},
+	{
+		"id"              : "11",
+		"active"          : true,
+		"big_height"      : "0",
+		"big_width"       : "0",
+		"class_module"    : "fa fa-cog",
+		"column_index"    : [
+			"name",
+			"little_description",
+			"subscribe_mail",
+			"active"
+		],
+		"count_module"    : "20",
+		"show_count"      : false,
+		"filters"         : [],
+		"lang"            : ["little_description"],
+		"link_module"     : "params_subscribe",
+		"link_site_module": "",
+		"menu_table_name" : "menu",
+		"name_module"     : "Подписчики",
+		"order"           : "11",
+		"parent"          : "8",
+		"plugins"         : [
+			"name",
+			"subscribe_mail",
+			"little_description"
+		],
+		"small_width"     : "0",
+		"small_height"    : "0",
+		"sort"            : "1",
+		"views_module"    : "table",
+		"translate_key"   : "subscribers"
 	}
 ]

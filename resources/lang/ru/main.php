@@ -86,4 +86,5 @@ return [
 	'contact_us_admin'                => 'Письмо с формы контактов с сайта Greecobooking',
 	'contacts'                        => 'Контакты',
 	'message'                         => 'Сообщение',
+	'subscription_admin'              => 'Подписка на рассылку с сайта Greecobooking',
 ];

@@ -189,5 +189,41 @@ var
 					return false;
 				}
 			})
+		},
+
+		initSubscription: function() {
+			$('.subscription-form form').validate({
+				onfocusout: false,
+				ignore    : ".ignore",
+				rules     : {subscribe_mail: {required: true}},
+				messages  : {subscribe_mail: {required: ""}},
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass)
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass)
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					formsFull.submitForm(
+						{
+							data: $('.subscription-form form').serializeArray(),
+							type: 'subscription'
+						},
+
+						function() {
+							$('.subscription-form').addClass('successful');
+							document.getElementById("subscription-form").reset();
+						}
+					);
+
+					return false;
+				}
+			})
 		}
 	};

@@ -494,8 +494,17 @@
 		"typeField"  : "input",
 		"nameText"   : "Email",
 		"nameAttr"   : "pl[email]",
-		"description": "Текстовое поле инпут \"Подъезд/этаж\"",
+		"description": "Текстовое поле инпут \"Email\"",
 		"idAttr"     : "inputEmail",
+		"sql_column" : "email"
+	},
+	{
+		"name"       : "subscribe_mail",
+		"typeField"  : "input",
+		"nameText"   : "Email",
+		"nameAttr"   : "pl[subscribe_mail]",
+		"description": "Текстовое поле инпут \"Email\"",
+		"idAttr"     : "inputSubscribe_mail",
 		"sql_column" : "email"
 	},
 	{

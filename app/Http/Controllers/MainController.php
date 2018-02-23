@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Classes\DynamicModel;
 use App\Modules\Admin\Classes\Base;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -747,6 +748,23 @@ class MainController extends Controller
 
 		if($type == 'contact_us')
 			$title = __('main.contact_us_admin');
+
+		if($type == 'subscription') {
+			$title = __('main.subscription_admin');
+
+			// Insert Subscribe email
+			$subscribe_mail = $this->dynamic->t('params_subscribe')
+				->where('subscribe_mail', '=' , trim($form_data['subscribe_mail']))
+				->first();
+
+			if(!$subscribe_mail)
+				$this->dynamic->t('params_subscribe')->insertGetId(
+					[
+						'created_at'     => Carbon::now(),
+						'subscribe_mail' => $form_data['subscribe_mail'],
+					]
+				);
+		}
 
 			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
 			$m->from($from, $title);

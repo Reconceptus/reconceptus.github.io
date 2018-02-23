@@ -36,13 +36,31 @@
 				<h3 class="title">@lang('main.subscription')</h3>
 				<div class="text">{!! $langSt($params['text_subscription']['key']) !!}</div>
 
-				<div class="subscription-form">
-					<form action="#">
+				<div class="subscription-form" style="position: relative;">
+					<form action="#" id="subscription-form">
 						<div class="field">
 							<input type="text" name="subscribe_mail" placeholder="@lang('main.your') e-mail">
 							<button type="submit">@lang('main.send')</button>
 						</div>
 					</form>
+
+					<div class="form-success" style="width: 100%;">
+						<span class="close" style="top: 6px;right: 5px;">
+							<svg><use xlink:href="/images/svg/sprite.svg#ico_close"></use></svg>
+						</span>
+
+						<div class="form-success--main">
+							<div class="text">
+								<h5 class="success-title" style="margin-bottom: -30px;">
+									@lang('main.request_was_successfully_sent')
+								</h5>
+
+								<div class="btn_center">
+									<a href="/blog" class="more">@lang('main.read_our_blog')</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -75,6 +93,10 @@
 <script type="text/javascript" src="/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/js/libs.min.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
+
+<script>
+	formsFull.initSubscription();
+</script>
 @stack('footer')
 </body>
 </html>

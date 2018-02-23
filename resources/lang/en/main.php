@@ -86,4 +86,5 @@ return [
 	'contact_us_admin'                => 'Letter from the form of contacts from the siteGreecobooking',
 	'contacts'                        => 'Contacts',
 	'message'                         => 'Message',
+	'subscription_admin'              => 'Subscribe to newsletter from the site the Greecobooking',
 ];
