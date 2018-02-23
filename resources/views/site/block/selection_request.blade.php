@@ -7,7 +7,7 @@
 						<label for="arrivalDate">*@lang('main.check_in')</label>
 
 						<div class="input">
-							<input id="arrivalDate" name="arrivalDate" type="text" data-picker-full autocomplete="off" />
+							<input id="arrivalDate" name="arrivalDate" type="text" data-picker-full />
 						</div>
 					</div>
 
@@ -15,7 +15,7 @@
 						<label for="departureDate">*@lang('main.check_out')</label>
 
 						<div class="input">
-							<input type="text" id="departureDate" name="departureDate" data-picker-full autocomplete="off" />
+							<input type="text" id="departureDate" name="departureDate" data-picker-full />
 						</div>
 					</div>
 
@@ -90,38 +90,38 @@
 				<div class="fieldset">
 					<div class="field">
 						<label for="budget">*@lang('main.budget_per_week_euro')</label>
-						<div class="input"><input id="budget" name="budget" type="text" autocomplete="off" /></div>
+						<div class="input"><input id="budget" name="budget" type="text" /></div>
 					</div>
 				</div>
 
 				<div class="fieldset">
 					<div class="field">
 						<label for="name">*@lang('main.your_name')</label>
-						<div class="input"><input id="name" name="name" type="text" autocomplete="off" /></div>
+						<div class="input"><input id="name" name="name" type="text" /></div>
 					</div>
 
 					<div class="field">
 						<label for="telephone">*@lang('main.phone')</label>
-						<div class="input"><input type="text" name="telephone" id="telephone" autocomplete="off" /></div>
+						<div class="input"><input type="text" name="telephone" id="telephone" /></div>
 					</div>
 
 					<div class="field">
 						<label for="mail">*E-mail</label>
-						<div class="input"><input type="text" name="mail" id="mail" autocomplete="off" /></div>
+						<div class="input"><input type="text" name="mail" id="mail" /></div>
 					</div>
 				</div>
 
 				<div class="fieldset">
 					<div class="field">
 						<label for="wishes">@lang('main.write_your_wishes')</label>
-						<div class="input"><input id="wishes" type="text" autocomplete="off" /></div>
+						<div class="input"><input id="wishes" type="text" /></div>
 					</div>
 				</div>
 
 				<div class="fieldset">
 					<div class="field">
 						<label for="source">@lang('main.where_did_you_find_out_about_us')</label>
-						<div class="input"><input id="source" type="text" autocomplete="off" /></div>
+						<div class="input"><input id="source" type="text" /></div>
 					</div>
 				</div>
 

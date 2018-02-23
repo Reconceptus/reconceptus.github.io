@@ -696,12 +696,16 @@ class MainController extends Controller
 		return $this->base->view_s("site.main.page_id", $data);
 	}
 
+	/**
+	 * Tools Send mail.
+	 */
 	public function submit_required()
 	{
-		$form  = $this->base->decode_serialize($this->request['data']);
-		$type  = $this->request['type'];
-		$title = '';
-		$from  = 'no-realy@greecobooking.niws.ru';
+		$form      = $this->base->decode_serialize($this->request['data']);
+		$form_data = [];
+		$type      = $this->request['type'];
+		$title     = '';
+		$from      = 'no-realy@greecobooking.niws.ru';
 
 		$param = $this
 			->dynamic
@@ -710,20 +714,25 @@ class MainController extends Controller
 			->where('name', 'email_alerts')
 			->first();
 
-		if($type === 'selection_request') {
-			$title = 'Запрос на подбор с сайта Greecobooking';
+		foreach($form as $k => $v)
+			$form_data[$k] = (int) $v == -1 ? '' : $v;
 
+		if($type === 'selection_request') {
 			if($form['way'] != -1) {
 				$way = $this->dynamic->t('menu')->select('menu.name')->where('id', $form['way'])->first();
 				$form['way'] = $this->base->lang($way['name']);
 			} else
 				$form['way'] = __('main.all_destinations');
+
+			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from, $form_data) {
+				$m->from($from, __('main.selection_request_mess_user'));
+				$m->to($form_data['mail'], 'no-realy')->subject(__('main.selection_request_mess_user'));
+			});
+
+			$title = __('main.selection_request_mess_admin');
 		}
 
-		foreach($form as $k => $v)
-			$form[$k] = $v == -1 ? '' : $v;
-
-		Mail::send('emails.' . $type, $form, function($m) use($param, $title, $from) {
+		Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
 			$m->from($from, $title);
 			$m->to($param->key, 'no-realy')->subject($title);
 		});

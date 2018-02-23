@@ -75,4 +75,6 @@ return [
 	'message_sent'                    => 'Message sent!',
 	'expert_opinion'                  => 'Мнение эксперта Grecobooking',
 	'request_was_successfully_sent'   => 'The request was successfully sent!',
+	'selection_request_mess_admin'    => 'Request for selection from the site Greecobooking',
+	'selection_request_mess_user'     => 'Request for selection of a selection request from Greecobooking принят!',
 ];
