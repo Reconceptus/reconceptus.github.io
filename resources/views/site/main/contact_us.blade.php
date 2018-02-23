@@ -4,57 +4,94 @@
 	<div class="map-container">
 		<div class="contact-form">
 			<div class="contacts">
-				<h3 class="title">Контакты</h3>
+				<h3 class="title">@lang('main.contacts')</h3>
+
 				<ul>
 					<li>
-						<i class="ico-tel"><svg> <use xlink:href="/images/svg/sprite.svg#ico_contact-tel"></use> </svg></i>
-						<a href="tel:+38090500500">+38 (090) 500-500</a>
+						<i class="ico-tel"><svg><use xlink:href="/images/svg/sprite.svg#ico_contact-tel"></use></svg></i>
+
+						<a href="tel:{{ $langSt($params['phone_footer']['key']) }}">
+							{{ $langSt($params['phone_footer']['key']) }}
+						</a>
 					</li>
+
 					<li>
-						<i class="ico-fly"><svg> <use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use> </svg></i>
-						<a href="mailto:greecobooking@info.gr">greecobooking@info.gr</a>
+						<i class="ico-fly"><svg><use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use></svg></i>
+						<a href="mailto:{{ $langSt($params['email']['key']) }}">{{ $langSt($params['email']['key']) }}</a>
 					</li>
+
 					<li>
-						<i class="ico-adr"><svg> <use xlink:href="/images/svg/sprite.svg#ico_contact-address"></use> </svg></i>
-						<span>Stefanou Nikolaidi Str., Heraklion, Crete,  Greece</span>
+						<i class="ico-adr"><svg><use xlink:href="/images/svg/sprite.svg#ico_contact-address"></use></svg></i>
+						<span>{{ $langSt($params['footer_address']['key']) }}</span>
 					</li>
+
 					<li>
-						<i class="ico-mes"><svg> <use xlink:href="/images/svg/sprite.svg#ico_contact-messenger"></use> </svg></i>
-						<span>official accounts: <a href="#">facebook</a> <a href="#">instagram</a></span>
+						<i class="ico-mes"><svg><use xlink:href="/images/svg/sprite.svg#ico_contact-messenger"></use></svg></i>
+						<span>{!! $langSt($params['official_accounts']['key']) !!}</span>
 					</li>
 				</ul>
 			</div>
+
 			<div class="contact-form-box">
-				<form action="#">
+				<form action="#" id="contact-us-form">
 					<div class="fields">
 						<div class="fieldset">
 							<div class="field">
-								<div class="input"><input id="name" name="name" type="text" placeholder="Ваше имя"></div>
+								<div class="input">
+									<input id="name" name="name" type="text" placeholder="@lang('main.your_name')" />
+								</div>
 							</div>
-							<div class="field">
-								<div class="input"><input type="text" name="mail" id="mail" placeholder="*E-mail"></div>
-							</div>
-							<div class="field">
-								<div class="input"><input type="text" id="telephone" name="telephone" placeholder="Телефон"></div>
-							</div>
-						</div>
-						<div class="fieldset">
+
 							<div class="field">
 								<div class="input">
-									<textarea id="message" name="message" rows="3" placeholder="*Сообщение"></textarea>
+									<input type="text" name="mail" id="mail" placeholder="*@lang('main.e_mail')" />
+								</div>
+							</div>
+
+							<div class="field">
+								<div class="input">
+									<input type="text" id="telephone" name="telephone" placeholder="@lang('main.phone')" />
 								</div>
 							</div>
 						</div>
-						<p class="asterisk">*Обязательные поля</p>
+
+						<div class="fieldset">
+							<div class="field">
+								<div class="input">
+									<textarea
+										id="message_form"
+										name="message_form"
+										rows="3"
+										placeholder="*@lang('main.message')"></textarea>
+								</div>
+							</div>
+						</div>
+
+						<p class="asterisk">*@lang('main.required_fields')</p>
 					</div>
+
 					<div class="btn-box">
 						<button type="submit">
-							<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_submit"></use> </svg></i>
+							<i><svg><use xlink:href="/images/svg/sprite.svg#ico_submit"></use></svg></i>
 						</button>
 					</div>
 				</form>
+
+				<div class="form-success" style="width: 100%;">
+					<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
+					<div class="form-success--main">
+						<div class="text">
+							<h5 class="success-title">@lang('main.request_was_successfully_sent')</h5>
+
+							<div class="btn_center">
+								<a href="/blog" class="more">@lang('main.read_our_blog')</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+
 		<div id="map" class="map-box"></div>
 	</div>
 
@@ -85,44 +122,7 @@
 
 	<!--validate-->
 	<script>
-		$('.contact-form form').validate({
-			onfocusout: false,
-			ignore: ".ignore",
-			rules: {
-				name: {required: true},
-				mail: {required: true},
-				telephone: {required: true},
-				message: {required: true}
-			},
-			messages: {
-				name: {required: ""},
-				mail: {required: ""},
-				telephone: {required: ""},
-				message: {required: ""}
-			},
-			errorClass: 'invalid',
-			highlight: function(element, errorClass) {
-				$(element).closest('.field').addClass(errorClass)
-				if($(element).closest('.add-fieldset')){
-					$(element).closest('.add-fieldset').addClass('disabled')
-				}
-			},
-			unhighlight: function(element, errorClass) {
-				$(element).closest('.field').removeClass(errorClass)
-				if($(element).closest('.add-fieldset')){
-					$(element).closest('.add-fieldset').removeClass('disabled')
-				}
-			},
-			errorPlacement: $.noop,
-			submitHandler:function (form) {
-				//                $('#modal').find('.modal-thanks').addClass('active');
-				if (form.valid()){
-					form.submit();
-				}
-				//                return false;
-			}
-		})
-
+		formsFull.initContactUs();
 	</script>
 	@endpush
 @endsection

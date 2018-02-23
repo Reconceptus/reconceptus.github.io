@@ -83,4 +83,7 @@ return [
 	'site_or_link_to_photos'          => 'Сайт или ссылка на фотографии',
 	'request_for_accommodation_admin' => 'Запрос на размещение с сайта Greecobooking',
 	'request_for_accommodation_user'  => 'Запрос на размещение с сайта Greecobooking принят!',
+	'contact_us_admin'                => 'Письмо с формы контактов с сайта Greecobooking',
+	'contacts'                        => 'Контакты',
+	'message'                         => 'Сообщение',
 ];

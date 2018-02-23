@@ -745,7 +745,10 @@ class MainController extends Controller
 			$title = __('main.request_for_accommodation_admin');
 		}
 
-		Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
+		if($type == 'contact_us')
+			$title = __('main.contact_us_admin');
+
+			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
 			$m->from($from, $title);
 			$m->to($param->key, 'no-realy')->subject($title);
 		});

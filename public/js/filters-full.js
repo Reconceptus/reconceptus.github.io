@@ -135,4 +135,59 @@ var
 				}
 			})
 		},
+
+		initContactUs: function() {
+			$('.contact-form form').validate({
+				onfocusout: false,
+				ignore    : ".ignore",
+
+				rules: {
+					name     : {required: true},
+					mail     : {required: true},
+					telephone: {required: true},
+					message  : {required: true}
+				},
+
+				messages: {
+					name        : {required: ""},
+					mail        : {required: ""},
+					telephone   : {required: ""},
+					message_form: {required: ""}
+				},
+
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass);
+
+					if($(element).closest('.add-fieldset'))
+						$(element).closest('.add-fieldset').addClass('disabled')
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass);
+
+					if($(element).closest('.add-fieldset'))
+						$(element).closest('.add-fieldset').removeClass('disabled')
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					formsFull.submitForm(
+						{
+							data: $('.contact-form form').serializeArray(),
+							type: 'contact_us'
+						},
+
+						function() {
+							$('.contact-form').addClass('successful');
+							document.getElementById("contact-us-form").reset();
+						}
+					);
+
+					return false;
+				}
+			})
+		}
 	};
