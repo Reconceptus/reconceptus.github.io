@@ -1004,4 +1004,29 @@ class Base
 
 		return $meta;
 	}
+
+	/**
+	 * Decode serialize array.
+	 *
+	 * @param $array
+	 * @return array
+	 */
+	public function decode_serialize($array)
+	{
+		$data = [];
+
+		foreach($array as $v) {
+			if(count(explode('[', $v['name'])) > 1) {
+				$s = explode('[', $v['name']);
+
+				if(!isset($data[$s[0]]))
+					$data[$s[0]] = [];
+
+				$data[$s[0]][str_replace(']', '', $s[1])] = $v['value'];
+			} else
+				$data[$v['name']] = $v['value'];
+		}
+
+		return $data;
+	}
 }

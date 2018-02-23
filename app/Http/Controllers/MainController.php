@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classes\DynamicModel;
 use App\Modules\Admin\Classes\Base;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -130,9 +131,16 @@ class MainController extends Controller
 	public function villas($id = null)
 	{
 		$data      = [];
+		$cart      = array_values($this->requests->session()->get('cart') ?? []);
 		$where[]   = ['villas.active', 1];
 		$count_box = 4;
 		$group     = 'id';
+		$session   = $this->request['session'] ?? true;
+
+		if(!isset($params['id']) && $session) {
+			for($i = 0; count($cart ?? []) > $i; $i++)
+				$data['favorites_id'][] = $cart[$i]['id'] ?? 0;
+		}
 
 		if($id) {
 			$data['villa'] = $this->dynamic->t('villas')
@@ -585,11 +593,11 @@ class MainController extends Controller
 			$params['id'] = $cart_id;
 		}
 
-		$way       = (int) $this->request['way'] ?? -1;
+		$way       = (int) ($this->request['way'] ?? -1);
 		$date_to   = $this->request['date_to'] ?? -1;
 		$date_from = $this->request['date_from'] ?? -1;
-		$rooms     = (int) $this->request['rooms'] ?? -1;
-		$hot       = (int) $this->request['hot'] ?? -1;
+		$rooms     = (int) ($this->request['rooms'] ?? -1);
+		$hot       = (int) ($this->request['hot'] ?? -1);
 
 		if($way !== -1 && !empty($way))
 			$where[] = ['villas.cat', $way];
@@ -658,13 +666,17 @@ class MainController extends Controller
 
 		$data['page'] = $Mod->t('str')
 			->where($where)
+
 			->join(
-				'files', function($join) {
-				$join->type = 'LEFT OUTER';
-				$join->on('str.id', '=', 'files.id_album')
-					->where('files.name_table', '=', 'str');
-			}
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('str.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'str');
+				}
 			)
+
 			->select('str.*', 'files.file', 'files.crop')
 			->first();
 
@@ -682,5 +694,45 @@ class MainController extends Controller
 		}
 
 		return $this->base->view_s("site.main.page_id", $data);
+	}
+
+	public function submit_required()
+	{
+		$form  = $this->base->decode_serialize($this->request['data']);
+		$type  = $this->request['type'];
+		$title = '';
+		$from  = 'no-realy@greecobooking.niws.ru';
+
+		$param = $this
+			->dynamic
+			->t('params')
+			->select('params.*', 'little_description as key')
+			->where('name', 'email_alerts')
+			->first();
+
+		if($type === 'selection_request') {
+			$title = 'Запрос на подбор с сайта Greecobooking';
+
+			if($form['way'] != -1) {
+				$way = $this->dynamic->t('menu')->select('menu.name')->where('id', $form['way'])->first();
+				$form['way'] = $this->base->lang($way['name']);
+			} else
+				$form['way'] = __('main.all_destinations');
+		}
+
+		foreach($form as $k => $v)
+			$form[$k] = $v == -1 ? '' : $v;
+
+		Mail::send('emails.' . $type, $form, function($m) use($param, $title, $from) {
+			$m->from($from, $title);
+			$m->to($param->key, 'no-realy')->subject($title);
+		});
+
+//		var_dump($mail);
+//		print_r($form);
+//		print_r($type);
+
+		$ret['result'] = 'ok';
+		echo json_encode($ret);
 	}
 }

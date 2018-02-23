@@ -5,6 +5,7 @@
 	@php($img_small = $villa['file'] ? $villa['crop'] ? $path_small . $villa['crop'] : $path_small . $villa['file'] : '')
 	@php($path_big = '/images/files/big/')
 	@php($img_big = $villa['file'] ? $villa['crop'] ? $path_big . $villa['crop'] : $path_big . $villa['file'] : '')
+	@php($is_favorite = array_search($villa['id'], $favorites_id ?? []) !== false ? true : false)
 
 	<section class="simple-page--bg" data-villa-part="photo">
 		<div class="intro-figure slider">
@@ -27,7 +28,12 @@
 				</div>
 			@endif
 
-			<a href="javascript:void(0)" class="villa-like" onclick="favorete.addCart()" data-fovorite="">
+			<a
+				style="pointer-events: all"
+				href="javascript:void(0)"
+				class="villa-like {!! $is_favorite ? 'active' : '' !!}"
+				onclick="favorete.addCart()" data-fovorite=""
+			>
 				<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use></svg>
 			</a>
 		</div>
@@ -243,8 +249,12 @@
 									</div>
 
 									<div class="submit-actions">
-										<a href="#" class="like">
-											<svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like"></use> </svg>
+										<a
+											href="javascript:void(0)"
+											class="like {!! $is_favorite ? 'active' : '' !!}"
+											onclick="filFav.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
+										>
+											<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like"></use></svg>
 										</a>
 
 										<a href="#" class="send">
@@ -305,7 +315,7 @@
 				<div class="showplaces-list">
 					@php($distances = $langSt($villa['distances']))
 
-					@foreach($distances['distances'] as $key => $v)
+					@foreach($distances['distances'] ?? [] as $key => $v)
 						@if(!empty($v))
 							<dl>
 								<dt><span>{{ $v }}</span></dt>
@@ -370,7 +380,11 @@
 							<span>@lang('main.back_to_the_list_of_villas')</span>
 						</a>
 
-						<a href="javascript:void(0)" class="more" onclick="favorete.addCart()" data-fovorite="">
+						<a
+							href="javascript:void(0)"
+							class="more {!! $is_favorite ? 'active' : '' !!}"
+							onclick="favorete.addCart()" data-fovorite=""
+						>
 							<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
 							<span>@lang('main.add_to_favorites')</span>
 						</a>
@@ -497,7 +511,7 @@
 
 	@php($coordinates = explode(',', $villa['coordinates']))
 
-	@if(!empty($coordinates))
+	@if(count($coordinates) > 1)
 		<script type="text/javascript">
 			function initMap() {
 				new google.maps.Marker({

@@ -18,6 +18,7 @@ Route::group(["middleware"=>["site"], "prefix"=>""], function() {
 	Route::get('/favorite', 'MainController@favorite');
 	Route::post('/_tools/add_favorite', 'MainController@add_favorite');
 	Route::post('/_tools/search_render_villas', 'MainController@search_render_villas');
+	Route::post('/_tools/submit_required', 'MainController@submit_required');
 
 	// Page
 	Route::get('/{name?}','MainController@page');

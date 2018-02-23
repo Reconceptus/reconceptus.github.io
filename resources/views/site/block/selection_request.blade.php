@@ -1,32 +1,40 @@
 <div class="form-request">
 	<div class="form">
-		<form action="#">
+		<form action="#" id="selection-request-form">
 			<div class="form-box">
 				<div class="fieldset pickerfields">
 					<div class="field">
-						<label for="arrivalDate">*Дата заезда</label>
-						<div class="input"><input id="arrivalDate" name="arrivalDate" type="text" data-picker-full>
+						<label for="arrivalDate">*@lang('main.check_in')</label>
+
+						<div class="input">
+							<input id="arrivalDate" name="arrivalDate" type="text" data-picker-full autocomplete="off" />
 						</div>
 					</div>
+
 					<div class="field">
-						<label for="departureDate">*Дата отъезда</label>
-						<div class="input"><input type="text" id="departureDate" name="departureDate" data-picker-full>
+						<label for="departureDate">*@lang('main.check_out')</label>
+
+						<div class="input">
+							<input type="text" id="departureDate" name="departureDate" data-picker-full autocomplete="off" />
 						</div>
 					</div>
+
 					<div id="picker">
 						<div class="calendar">
 							<div class="annotation">
-								<span class="closed">Занято</span>
-								<span class="opened">Свободно</span>
+								<span class="closed">@lang('main.busy')</span>
+								<span class="opened">@lang('main.Свободно')</span>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="adults">*Взрослые</label>
+						<label for="adults">*@lang('main.adults')</label>
+
 						<div class="select">
-							<select name="adults" id="adults" style="display:none;">
+							<select name="adults" id="adults" style="display:none;" autocomplete="off">
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -34,11 +42,13 @@
 							</select>
 						</div>
 					</div>
+
 					<div class="field">
-						<label for="childUntil12">*Дети до 12 лет</label>
+						<label for="childUntil12">*@lang('main.children_under_12_years')</label>
+
 						<div class="select">
-							<select name="childUntil12" id="childUntil12" style="display:none;">
-								<option value="Нет">Нет</option>
+							<select name="childUntil12" id="childUntil12" style="display:none;" autocomplete="off">
+								<option value="-1">@lang('main.no')</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -46,11 +56,12 @@
 							</select>
 						</div>
 					</div>
+
 					<div class="field">
-						<label for="babies">*Дети от 0 до 2 лет</label>
+						<label for="babies">*@lang('main.children_from_0_to_2_years')</label>
 						<div class="select">
-							<select name="babies" id="babies" style="display:none;">
-								<option value="Нет">Нет</option>
+							<select name="babies" id="babies" style="display:none;" autocomplete="off">
+								<option value="-1">@lang('main.no')</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
@@ -59,54 +70,63 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="way">*Направление</label>
+						<label for="way">*@lang('main.direction')</label>
+
 						<div class="select">
-							<select name="way" id="way" style="display:none;">
-								<option value="Все направления">Все направления</option>
-								<option value="Афинское побережье">Афинское побережье</option>
-								<option value="Закинтос">Закинтос</option>
-								<option value="Крит">Крит</option>
-								<option value="Материковая Греция">Материковая Греция</option>
+							<select name="way" id="way" style="display:none;" autocomplete="off">
+								<option value="-1">@lang('main.all_destinations')</option>
+
+								@foreach($locations as $val)
+									<option value="{{ $val['id'] }}">{{ $langSt($val['name']) }}</option>
+								@endforeach
 							</select>
 						</div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="budget">*Бюджет в неделю, евро</label>
-						<div class="input"><input id="budget" name="budget" type="text"></div>
+						<label for="budget">*@lang('main.budget_per_week_euro')</label>
+						<div class="input"><input id="budget" name="budget" type="text" autocomplete="off" /></div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="name">*Ваше имя</label>
-						<div class="input"><input id="name" name="name" type="text"></div>
+						<label for="name">*@lang('main.your_name')</label>
+						<div class="input"><input id="name" name="name" type="text" autocomplete="off" /></div>
 					</div>
+
 					<div class="field">
-						<label for="telephone">*Телефон</label>
-						<div class="input"><input type="text" name="telephone" id="telephone"></div>
+						<label for="telephone">*@lang('main.phone')</label>
+						<div class="input"><input type="text" name="telephone" id="telephone" autocomplete="off" /></div>
 					</div>
+
 					<div class="field">
 						<label for="mail">*E-mail</label>
-						<div class="input"><input type="text" name="mail" id="mail"></div>
+						<div class="input"><input type="text" name="mail" id="mail" autocomplete="off" /></div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="wishes">Напишите пожелания</label>
-						<div class="input"><input id="wishes" type="text"></div>
+						<label for="wishes">@lang('main.write_your_wishes')</label>
+						<div class="input"><input id="wishes" type="text" autocomplete="off" /></div>
 					</div>
 				</div>
+
 				<div class="fieldset">
 					<div class="field">
-						<label for="source">Откуда вы о нас узнали</label>
-						<div class="input"><input id="source" type="text"></div>
+						<label for="source">@lang('main.where_did_you_find_out_about_us')</label>
+						<div class="input"><input id="source" type="text" autocomplete="off" /></div>
 					</div>
 				</div>
-				<p class="asterisk">*Обязательные поля</p>
-				<button class="btn btn_subm" type="submit">Отправить запрос</button>
+
+				<p class="asterisk">*@lang('main.required_fields')</p>
+				<button class="btn btn_subm" type="submit">@lang('main.send_request')</button>
 			</div>
 		</form>
 
@@ -114,14 +134,11 @@
 			<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
 			<div class="form-success--main">
 				<div class="text">
-					<h5 class="success-title">Запрос успешно отправлен!</h5>
-					<p
-					>Текст после отправки. Эта кнопка объясняет затраты на сайт: компания инвестировала в кнопку и в
-						то, что люди будут её нажимать
-					</p>
+					<h5 class="success-title">@lang('main.request_was_successfully_sent')</h5>
+					<p>{!! $params['send_request_text']['key'] !!}</p>
 
 					<div class="btn_center">
-						<a href="/blog" class="more">Читать наш блог</a>
+						<a href="/blog" class="more">@lang('main.read_our_blog')</a>
 					</div>
 				</div>
 			</div>
@@ -133,94 +150,6 @@
 @push('footer')
 <!--validate-->
 <script>
-
-	$('.form-request form').validate({
-		onfocusout: false,
-		ignore    : ".ignore",
-
-		rules: {
-			arrivalDate  : {required: true},
-			departureDate: {required: true},
-			adults       : {required: true},
-			childUntil12 : {required: true},
-			babies       : {required: true},
-			way          : {required: true},
-			budget       : {required: true},
-			name         : {required: true},
-			telephone    : {required: true},
-			mail         : {required: true}
-		},
-
-		messages  : {
-			arrivalDate  : {required: ""},
-			departureDate: {required: ""},
-			adults       : {required: ""},
-			childUntil12 : {required: ""},
-			babies       : {required: ""},
-			way          : {required: ""},
-			budget       : {required: ""},
-			name         : {required: ""},
-			telephone    : {required: ""},
-			mail         : {required: ""}
-		},
-		errorClass: 'invalid',
-
-		highlight: function(element, errorClass) {
-			$(element).closest('.field').addClass(errorClass)
-		},
-
-		unhighlight: function(element, errorClass) {
-			$(element).closest('.field').removeClass(errorClass)
-		},
-
-		errorPlacement: $.noop,
-
-		submitHandler: function(form) {
-			$('.form-request').addClass('successful');
-			//            if (form.valid()){
-			//                form.submit();
-			//            }
-			return false;
-		}
-	});
-
-	$('.fast-request form').validate({
-		onfocusout: false,
-		ignore    : ".ignore",
-
-		rules: {
-			location : {required: true},
-			check_in : {required: true},
-			check_out: {required: true},
-			rooms    : {required: true}
-		},
-
-		messages: {
-			location : {required: ""},
-			check_in : {required: ""},
-			check_out: {required: ""},
-			rooms    : {required: ""}
-		},
-
-		errorClass: 'invalid',
-
-		highlight : function(element, errorClass) {
-			$(element).closest('.field').addClass(errorClass)
-		},
-
-		unhighlight: function(element, errorClass) {
-			$(element).closest('.field').removeClass(errorClass)
-		},
-
-		errorPlacement: $.noop,
-
-		submitHandler: function(form) {
-//				$('#modal').find('.modal-thanks').addClass('active');
-			if(form.valid()) {
-				form.submit();
-			}
-//				return false;
-		}
-	});
+	formsFull.initSelectionRequest();
 </script>
 @endpush

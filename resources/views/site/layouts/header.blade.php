@@ -12,8 +12,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" />
 	<link href="/css/styles.min.css" rel="stylesheet" />
 	<link href="/css/common.css" rel="stylesheet" />
+	<script type="text/javascript" src="/js/lodash.min.js"></script>
 	<script type="text/javascript" src="/js/filters-favorite.js"></script>
 	<script type="text/javascript" src="/js/filters-villas.js"></script>
+	<script type="text/javascript" src="/js/filters-full.js"></script>
 </head>
 <body>
 <div id="wrapper">

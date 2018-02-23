@@ -28,9 +28,10 @@ return [
 	'write_your_wishes'               => 'Напишите пожелания',
 	'phone'                           => 'Телефон',
 	'your_name'                       => 'Ваше имя',
+	'name'                            => 'Имя',
 	'budget_per_week_euro'            => 'Бюджет в неделю, евро',
 	'children_under_12_years'         => 'Дети до 12 лет',
-	'children_from_0_to_2_years'      => 'Дети от 0 до 2 года',
+	'children_from_0_to_2_years'      => 'Дети от 0 до 2 лет',
 	'adults'                          => 'Взрослые',
 	'e_mail'                          => 'E-mail',
 	'author'                          => 'Автор',
@@ -73,4 +74,5 @@ return [
 	'guests'                          => 'Гости',
 	'message_sent'                    => 'Сообщение отправлено!',
 	'expert_opinion'                  => 'Expert opinion Grecobooking',
+	'request_was_successfully_sent'   => 'Запрос успешно отправлен!',
 ];

@@ -28,6 +28,7 @@ return [
 	'write_your_wishes'               => 'Write your wishes',
 	'phone'                           => 'Phone',
 	'your_name'                       => 'Your name',
+	'name'                            => 'Name',
 	'budget_per_week_euro'            => 'Budget per week, Euro',
 	'children_under_12_years'         => 'Children under 12 years old',
 	'children_from_0_to_2_years'      => 'Children from 0 to 2 years old',
@@ -73,4 +74,5 @@ return [
 	'guests'                          => 'Guests',
 	'message_sent'                    => 'Message sent!',
 	'expert_opinion'                  => 'Мнение эксперта Grecobooking',
+	'request_was_successfully_sent'   => 'The request was successfully sent!',
 ];
