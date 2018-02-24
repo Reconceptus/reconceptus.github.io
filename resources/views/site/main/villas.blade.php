@@ -33,15 +33,6 @@
 				url_req   : '/',
 			});
 		});
-
-//		filVil.selectVillas()
-	</script>
-
-	<script>
-		$(document).ready(function(){
-
-			filFav.initialize();
-		});
 	</script>
 	@endpush
 @endsection

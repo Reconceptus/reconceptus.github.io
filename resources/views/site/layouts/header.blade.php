@@ -13,7 +13,6 @@
 	<link href="/css/styles.min.css" rel="stylesheet" />
 	<link href="/css/common.css" rel="stylesheet" />
 	<script type="text/javascript" src="/js/lodash.min.js"></script>
-	<script type="text/javascript" src="/js/filters-favorite.js"></script>
 	<script type="text/javascript" src="/js/filters-villas.js"></script>
 	<script type="text/javascript" src="/js/filters-full.js"></script>
 </head>

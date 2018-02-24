@@ -252,7 +252,7 @@
 										<a
 											href="javascript:void(0)"
 											class="like {!! $is_favorite ? 'active' : '' !!}"
-											onclick="filFav.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
+											onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
 										>
 											<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like"></use></svg>
 										</a>

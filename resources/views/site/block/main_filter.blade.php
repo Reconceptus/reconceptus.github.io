@@ -97,10 +97,12 @@
 
 		errorPlacement: $.noop,
 
-		submitHandler: function(form) {
-			if(form.valid())
-				form.submit();
-		}
+//		submitHandler: function(form) {
+////			if(form.valid())
+////				form.submit();
+//
+//			return false
+//		}
 	});
 </script>
 @endpush

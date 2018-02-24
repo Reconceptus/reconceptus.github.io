@@ -149,7 +149,7 @@
 	@push('footer')
 	<script>
 		$(document).ready(function() {
-			filFav.initialize({
+			filVil.initialize({
 				cont      : '.selResult',
 				num       : '.selReN > .i',
 				pagination: true,

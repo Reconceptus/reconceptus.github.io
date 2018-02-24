@@ -14,13 +14,52 @@ var filVil = {
 			if(filVil.isLoad)
 				filVil.selectVillas();
 
+			// init cart min
+			filVil.addCart(0, 'init');
+
 			$('[name="search-filter"]').click(function(e) {
 				e.preventDefault();
 
 				if(window.location.pathname.split('/').indexOf('villas') !== -1)
 					filVil.selectVillas();
+
+				if(window.location.pathname.split('/').indexOf('favorite') !== -1)
+					filVil.selectVillas();
 			})
 		}, 100)
+	},
+
+	addCart: function(id, type) {
+		$.ajax
+		 ({
+			 type: "post",
+			 url : "/_tools/add_favorite",
+
+			 data: {
+				 get_data: true,
+				 id      : id,
+				 type    : type,
+			 },
+
+			 cache: false,
+
+			 dataType: "JSON",
+			 success : function(data) {
+				 if(data.result === 'ok') {
+					 var
+						 fav = $('.top-favorite');
+
+					 fav.find('.cnt').html(data.count);
+
+					 if(data.count)
+						 fav.show();
+					 else
+						 fav.hide();
+
+					 filVil.selectFavorites();
+				 }
+			 }
+		 })
 	},
 
 	// select Villas
@@ -41,7 +80,7 @@ var filVil = {
 		hot       = $("[name=hot]:checked").val() || -1;
 		url       = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
 
-		$(this.cont).css({opacity: 0.3});
+		$(filVil.cont).css({opacity: 0.3});
 
 		$.ajax({
 			type    : "post",
