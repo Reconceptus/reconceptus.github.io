@@ -237,7 +237,8 @@ $(document).ready(function () {
             var currentField = $addBtn.next('.fieldset'),
                 clonedField = currentField.clone();
 
-            clonedField.find('input').attr('id',currentFieldID+cnt);
+            clonedField.addClass('added-input');
+            clonedField.find('input').attr('id', currentFieldID+cnt);
             cnt++;
             currentField.find('input').val('');
             currentField.after(clonedField);

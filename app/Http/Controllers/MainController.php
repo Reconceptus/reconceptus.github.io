@@ -702,7 +702,11 @@ class MainController extends Controller
 	 */
 	public function submit_required()
 	{
-		$form      = $this->base->decode_serialize($this->request['data']);
+		if(isset($this->request['data2']))
+			$form = $this->base->decode_serialize($this->request['data2']);
+		else
+			$form = $this->base->decode_serialize($this->request['data']);
+
 		$form_data = [];
 		$type      = $this->request['type'];
 		$title     = '';
@@ -766,7 +770,57 @@ class MainController extends Controller
 				);
 		}
 
-			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
+		if($type == 'friend_form') {
+			$cart  = array_values($this->requests->session()->get('cart') ?? []);
+			$title = __('main.send_compilation_friend_user');
+			$form_data['message_s'] = $form_data['message'];
+
+			for($i = 0; count($cart ?? []) > $i; $i++)
+				$form_data['selected_villas'][] = $cart[$i]['id'] ?? 0;
+
+			$form_data['selected_villas'] = $this->dynamic->t('villas')
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->whereIn('villas.id', $form_data['selected_villas'])
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+				->groupBy('villas.id')
+				->orderBy('villas.id', 'DESC')
+				->get()
+				->toArray();
+
+			$form_data['langSt']  = function($t, $l = '') {
+				return Base::langSt($t, $l);
+			};
+
+			if(isset($form['send-me']))
+				Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from, $form_data) {
+					$m->from($from, __('main.send_compilation_friend_user'));
+					$m->to($form_data['yourEmail'], 'no-realy')->subject(__('main.send_compilation_friend_user'));
+				});
+
+			foreach($form_data['friendMail'] ?? [] as $mail) {
+				Mail::send('emails.' . $type . '_friend', $form_data, function($m) use($param, $title, $from, $form_data, $mail) {
+					$m->from($from, $form_data['yourName'] ?? __('main.send_compilation_friend_user'));
+					$m->to($mail, 'no-realy')->subject(__('main.send_compilation_friend_user'));
+				});
+			}
+
+			$title = __('main.send_compilation_friend_admin');
+		}
+
+		Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
 			$m->from($from, $title);
 			$m->to($param->key, 'no-realy')->subject($title);
 		});

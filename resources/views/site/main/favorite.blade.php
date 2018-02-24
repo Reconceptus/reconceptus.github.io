@@ -10,6 +10,7 @@
 
 				<a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
 					<span>@lang('main.send_compilation_friend')</span>
+
 					<i class="ico-fly">
 						<svg>
 							<use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use>
@@ -39,23 +40,39 @@
 		<div class="modal--main">
 			<div class="friend-form" data-modal="friend-form">
 				<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
+
 				<div class="friend-form--wrap">
 					<figure style="background-image: url('/images/items/eirini-luxury-villas-patmos.jpg')"></figure>
+
 					<div class="friend-form--main animate-bg">
 						<h5 class="title">@lang('main.send_to_a_friend')</h5>
 
-						<form action="#">
+						<form action="#" id="friend-form">
 							<div class="fields">
+								<div class="fieldset your-name-cont" style="display:none;">
+									<div class="field">
+										<div class="input">
+											<input
+												id="yourEmail"
+												name="yourEmail"
+												type="text"
+												placeholder="*@lang('main.your_e_mail')"
+												disabled="disabled"
+											/>
+										</div>
+									</div>
+								</div>
+
 								<div class="add-fieldset">
-									<span class="add" id="addFieldset">+1</span>
+									<span class="add" id="addFieldset" style="pointer-events: all">+1</span>
 									<div class="fieldset">
 										<div class="field">
 											<div class="input">
 												<input
 													id="friendMail"
-													name="friendMail"
+													name="friendMail[]"
 													type="text"
-													placeholder="*Кому: Напишите email друга"
+													placeholder="*@lang('main.to'): @lang('main.write_email_a_friend')"
 												/>
 											</div>
 										</div>
@@ -69,7 +86,7 @@
 												id="yourName"
 												name="yourName"
 												type="text"
-												placeholder="От кого: Напишите ваше имя"
+												placeholder="*@lang('main.from'): @lang('main.write_your_name')"
 											/>
 										</div>
 									</div>
@@ -82,7 +99,7 @@
 												id="message"
 												name="message"
 												rows="3"
-												placeholder="Напишите сообщение"
+												placeholder="*@lang('main.write_a_message')"
 											></textarea>
 										</div>
 									</div>
@@ -91,12 +108,12 @@
 								<div class="fieldset">
 									<div class="check">
 										<label>
-											<input type="checkbox">
-											<span>Копию письма мне</span>
+											<input type="checkbox" name="send-me" autocomplete="off" />
+											<span>@lang('main.a_copy_of_the_letter_to_me')</span>
 										</label>
 									</div>
 
-									<p class="asterisk">*Обязательные поля</p>
+									<p class="asterisk">*@lang('main.required_fields')</p>
 								</div>
 							</div>
 
@@ -104,7 +121,7 @@
 								<button type="submit">
 									<i>
 										<svg>
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#ico_submit"></use>
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/svg/sprite.svg#ico_submit"></use>
 										</svg>
 									</i>
 								</button>
@@ -116,11 +133,11 @@
 				<div class="form-success">
 					<div class="form-success--main">
 						<div class="text">
-							<h5 class="success-title">Сообщение отправлено!</h5>
-							<p>Письмо с понравившейся виллой отправлено Вашим друзьям</p>
+							<h5 class="success-title">@lang('main.message_sent')</h5>
+							<p>@lang('main.selection_sent_to_your_friends')</p>
 
 							<div class="btn_center">
-								<a href="blog.html" class="more">@lang('main.read_our_blog')</a>
+								<a href="/blog" class="more">@lang('main.read_our_blog')</a>
 							</div>
 						</div>
 					</div>
@@ -143,84 +160,7 @@
 
 	<!--validate-->
 	<script>
-		$('.fast-request form').validate({
-			onfocusout: false,
-			ignore    : ".ignore",
-
-			rules: {
-				location : {required: true},
-				check_in : {required: true},
-				check_out: {required: true},
-				rooms    : {required: true}
-			},
-
-			messages: {
-				location : {required: ""},
-				check_in : {required: ""},
-				check_out: {required: ""},
-				rooms    : {required: ""}
-			},
-
-			errorClass: 'invalid',
-
-			highlight: function(element, errorClass) {
-				$(element).closest('.field').addClass(errorClass)
-			},
-
-			unhighlight: function(element, errorClass) {
-				$(element).closest('.field').removeClass(errorClass)
-			},
-
-			errorPlacement: $.noop,
-
-			submitHandler: function(form) {
-				if(form.valid())
-					form.submit();
-			}
-		});
-
-		$('.friend-form form').validate({
-			onfocusout: false,
-			ignore    : ".ignore",
-
-			rules: {
-				friendMail: {required: true},
-				yourName  : {required: true},
-				message   : {required: true}
-			},
-
-			messages: {
-				friendMail: {required: ""},
-				yourName  : {required: ""},
-				message   : {required: ""}
-			},
-
-			errorClass: 'invalid',
-
-			highlight: function(element, errorClass) {
-				$(element).closest('.field').addClass(errorClass);
-
-				if($(element).closest('.add-fieldset')) {
-					$(element).closest('.add-fieldset').addClass('disabled')
-				}
-			},
-
-			unhighlight: function(element, errorClass) {
-				$(element).closest('.field').removeClass(errorClass);
-
-				if($(element).closest('.add-fieldset')) {
-					$(element).closest('.add-fieldset').removeClass('disabled')
-				}
-			},
-
-			errorPlacement: $.noop,
-
-			submitHandler: function(form) {
-				$('.friend-form').addClass('successful');
-
-				return false;
-			}
-		})
+		formsFull.initFriendForm();
 	</script>
 	@endpush
 @endsection

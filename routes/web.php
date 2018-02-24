@@ -20,6 +20,8 @@ Route::group(["middleware"=>["site"], "prefix"=>""], function() {
 	Route::post('/_tools/search_render_villas', 'MainController@search_render_villas');
 	Route::post('/_tools/submit_required', 'MainController@submit_required');
 
+	Route::get('/admin/','Admin::LoginController@index');
+
 	// Page
 	Route::get('/{name?}','MainController@page');
 });

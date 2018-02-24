@@ -29,6 +29,11 @@ Route::group([
 	"middleware"=>["authAdmin"]
 ],
 	function() {
+		// главная (рабочий стол)
+		Route::get('/','MainController@getIndex');
+		Route::get('/index','MainController@getIndex');
+		Route::get('/docs','DocsController@getIndex');
+
 		Route::get('/index/backup','BackupController@getIndex');
 		Route::get('/index/backup/sqlBackup','BackupController@sqlBackup');
 		Route::get('/index/backup/tarBackup','BackupController@tarBackup');
@@ -78,8 +83,4 @@ Route::group([
 
 		// /tools
 		Route::post('/_tools/change_param','SettingsController@change_param');
-
-		// главная (рабочий стол)
-		Route::get('/','MainController@getIndex');
-		Route::get('/docs','DocsController@getIndex');
 	});

@@ -225,5 +225,107 @@ var
 					return false;
 				}
 			})
+		},
+
+		initFriendForm: function() {
+			$('.friend-form form').validate({
+				onfocusout: false,
+				ignore    : ".ignore",
+
+				rules: {
+					'friendMail[]': {required: true},
+					yourName      : {required: true},
+					yourEmail     : {required: true},
+					message       : {required: true}
+				},
+
+				messages: {
+					'friendMail[]': {required: ""},
+					yourEmail     : {required: ""},
+					message       : {required: ""}
+				},
+
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass);
+
+					if($(element).closest('.add-fieldset')) {
+						$(element).closest('.add-fieldset').addClass('disabled')
+					}
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass);
+
+					if($(element).closest('.add-fieldset')) {
+						$(element).closest('.add-fieldset').removeClass('disabled')
+					}
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					formsFull.submitForm(
+						{
+							data : $('.friend-form form').serializeArray(),
+							data2: formsFull.gatherMultipleValues($('.friend-form form')),
+							type : 'friend_form'
+						},
+
+						function() {
+							$('.friend-form').addClass('successful');
+							document.getElementById("friend-form").reset();
+							$('.friend-form .added-input').remove();
+						}
+					);
+
+					return false;
+				}
+			});
+
+			$('[name="send-me"]').click(function() {
+				if($('[name="send-me"]').prop('checked')) {
+					$('[name="yourEmail"]').removeAttr('disabled');
+					$('.your-name-cont').css('display', 'block');
+				} else {
+					$('[name="yourEmail"]').attr('disabled', 'disabled');
+					$('.your-name-cont').css('display', 'none');
+				}
+			});
+		},
+
+		gatherMultipleValues: function(that) {
+			var
+				final_array = [];
+
+			$.each(that.serializeArray(), function(key, field) {
+				// Copy normal fields to final array without changes
+				if(field.name.indexOf('[]') < 0) {
+					final_array.push(field);
+
+					return true; // That's it, jump to next iteration
+				}
+
+				// Remove "[]" from the field name
+				var
+					field_name = field.name.split('[]')[0];
+
+				// Add the field value in its array of values
+				var has_value = false;
+				$.each(final_array, function(final_key, final_field) {
+					if(final_field.name === field_name) {
+						has_value = true;
+						final_array[final_key]['value'].push(field.value);
+					}
+				});
+
+				// If it doesn't exist yet, create the field's array of values
+				if(!has_value) {
+					final_array.push({'name': field_name, 'value': [field.value]});
+				}
+			});
+
+			return final_array;
 		}
 	};

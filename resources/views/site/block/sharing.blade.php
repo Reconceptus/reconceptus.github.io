@@ -88,9 +88,9 @@
 <script>
 	$(document).ready(function() {
 		$('.pluso-more').remove();
-		$('.pluso-facebook').replaceWith('<i class="fb pluso-facebook"><svg>' +
-			'<use xlink:href="/images/svg/sprite.svg#ico_share-fb"></use>' +
-			'</svg></i>');
+//		$('.pluso-facebook').replaceWith('<i class="fb pluso-facebook"><svg>' +
+//			'<use xlink:href="/images/svg/sprite.svg#ico_share-fb"></use>' +
+//			'</svg></i>');
 	})
 </script>
 @endpush

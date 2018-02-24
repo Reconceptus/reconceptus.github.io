@@ -52,7 +52,7 @@
 					<div class="field">
 						<div class="check">
 							<label>
-								<input type="checkbox" name="hot" />
+								<input type="checkbox" name="hot"/>
 								<span>@lang('main.hot_offers')</span>
 							</label>
 						</div>
@@ -64,3 +64,43 @@
 		</form>
 	</div>
 </div>
+
+@push('footer')
+<script>
+	$('.fast-request form').validate({
+		onfocusout: false,
+		ignore    : ".ignore",
+
+		rules: {
+			location : {required: true},
+			check_in : {required: true},
+			check_out: {required: true},
+			rooms    : {required: true}
+		},
+
+		messages: {
+			location : {required: ""},
+			check_in : {required: ""},
+			check_out: {required: ""},
+			rooms    : {required: ""}
+		},
+
+		errorClass: 'invalid',
+
+		highlight: function(element, errorClass) {
+			$(element).closest('.field').addClass(errorClass)
+		},
+
+		unhighlight: function(element, errorClass) {
+			$(element).closest('.field').removeClass(errorClass)
+		},
+
+		errorPlacement: $.noop,
+
+		submitHandler: function(form) {
+			if(form.valid())
+				form.submit();
+		}
+	});
+</script>
+@endpush
