@@ -76,6 +76,9 @@ Route::group([
 		// сборщик
 		Route::get('/engineer','EngineerController@getIndex');
 
+		// /tools
+		Route::post('/_tools/change_param','SettingsController@change_param');
+
 		// главная (рабочий стол)
 		Route::get('/','MainController@getIndex');
 		Route::get('/docs','DocsController@getIndex');

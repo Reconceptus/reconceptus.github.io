@@ -45,7 +45,7 @@
 													title="Редактировать"
 													onclick="editImg{{ $name }}({{ $v->id }})"
 												>
-													<i class="fa fa-pencil-alt"></i>
+													<i class="fa fa-pencil"></i>
 												</a>
 
 												<a
@@ -133,7 +133,7 @@
 										'</div>' +
 										'<div class="caption" style="padding-bottom: 0">' +
 										'<div class="tools tools-bottom" style="text-align: center">' +
-										'<a href="javascript:void(0)" onclick="editImg{{ $name }}(' + ds['id'] + ')" class="btn"><i class="fa fa-pencil-alt"></i></a>' +
+										'<a href="javascript:void(0)" onclick="editImg{{ $name }}(' + ds['id'] + ')" class="btn"><i class="fa fa-pencil"></i></a>' +
 										'<a href="javascript:void(0)" onclick="cropImg{{ $name }}(' + ds['id'] + ')" class="btn"><i class="fa fa-crop"></i></a>' +
 										'<a href="javascript:void(0)" onclick="$.adm.rowDelete(' + ds['id'] + ', \'files\', \'\' ,\'{{ $name }}\')" class="btn"><i class="fa fa-times"></i></a>' +
 										'<a href="javascript:void(0)" class="btn" onclick="toMain{{ $name }}(' + ds['id'] + ')">';

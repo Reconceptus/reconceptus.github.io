@@ -29,12 +29,18 @@ class SettingsController extends Controller
 	 */
 	protected $dynamic;
 
+	/**
+	 * @var array
+	 */
+	protected $request;
+
 	public function __construct(Request $request)
 	{
 		parent::__construct();
 
 		$this->modules        = new Modules();
 		$this->base           = new Base($request);
+		$this->request        = $request->all();
 		self::$dynamic_static = $this->dynamic = new DynamicModel();
 	}
 
@@ -74,9 +80,55 @@ class SettingsController extends Controller
 				->orderBy("$t.id", 'DESC')
 				->paginate(100);
 
+			$data['send_notifications'] = $this
+				->dynamic
+				->t('params')
+				->select('params.*', 'little_description as key')
+				->where('name', 'send_notifications')
+				->first();
+
+			$data['lang_s'] = $this
+				->dynamic
+				->t('params_lang')
+				->select('params_lang.*', 'little_description as key')
+				->where('active', 1)
+				->get()
+				->toArray();
+
 			return Base::view("admin::settings.index", $data);
 		} catch(\Exception $err) {
 			return Base::errorPage($err);
 		}
+	}
+
+	/**
+	 * Change param.
+	 *
+	 * @param array $data
+	 */
+	public function change_param($data = [])
+	{
+		if(!empty($data)) {
+			$table  = $data['table'];
+			$active = $data['active'];
+			$name   = $data['name'];
+		} else {
+			$table  = $this->request['table'];
+			$active = $this->request['active'];
+			$name   = $this->request['name'];
+		}
+
+		$params = $this
+			->dynamic
+			->t($table)
+			->select('params.*', 'little_description as key')
+			->where('name', $name)
+			->first();
+
+		$params->active = $active;
+		$params->save();
+		$ret['result'] = 'ok';
+
+		echo json_encode($ret);
 	}
 }

@@ -98,4 +98,5 @@ return [
 	'specialist'                => 'Specialist',
 	'image'                     => 'Image',
 	'subscribers'               => 'Subscribers',
+	'send_notifications'        => 'Send notifications',
 ];

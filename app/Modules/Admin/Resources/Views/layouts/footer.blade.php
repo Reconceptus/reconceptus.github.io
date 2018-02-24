@@ -15,6 +15,7 @@
 <script src="{{ asset('/modules/js/nicescroll/jquery.nicescroll.min.js') }}"></script>
 <!-- icheck -->
 <script src="{{ asset('/modules/js/icheck/icheck.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/modules/js/switchery/switchery.min.js') }}"></script>
 <!-- daterangepicker -->
 <script type="text/javascript" src="{{ asset('/modules/js/moment/moment.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/modules/js/datepicker/daterangepicker.js') }}"></script>

@@ -367,7 +367,8 @@
 		"order"           : "11",
 		"plugins"         : [
 			"name",
-			"little_description"
+			"little_description",
+			"active"
 		],
 		"small_width"     : "0",
 		"small_height"    : "0",

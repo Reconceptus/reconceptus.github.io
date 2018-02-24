@@ -12,8 +12,24 @@
 				<div class="x_panel">
 					<div class="x_title">
 						<h2>{{ trans('admin::main.system') }}</h2>
-						<hr class="clear"/>
 
+						<ul class="nav navbar-right panel_toolbox">
+							<li>
+								<label class="switch">
+									<input
+										type="checkbox"
+										{!! $send_notifications['active'] ? 'checked="checked"' : '' !!}
+										id="send-notifications"
+										class="js-switch"
+										style="z-index: 101"
+									/>
+
+									@lang('admin::main.send_notifications')
+								</label>
+							</li>
+						</ul>
+
+						<hr class="clear"/>
 					</div>
 				</div>
 			</div>
@@ -23,6 +39,9 @@
 					<div class="x_title">
 						<h2></h2>
 						<div class="clearfix"></div>
+					</div>
+
+					<div class="x_content" >
 					</div>
 				</div>
 			</div>
@@ -57,6 +76,24 @@
 													@lang('admin::main.action'): {{ $type_actions[$values['type_actions']] }}
 												</p>
 
+												@foreach($lang_s as $v)
+													@foreach(json_decode($values['text'], true)['a'] as $kk => $vv)
+														@if(!empty(trim($vv[$v['name']] ?? '')))
+															<b>{{ $kk }} :</b>
+															{!! '<pre class="excerpt">' .trim($vv[$v['name']] ?? '') . '</pre>' !!}
+														@endif
+													@endforeach
+												@endforeach
+
+												@foreach($lang_s as $v)
+													@foreach(json_decode($values['text'], true)['b'] as $kk => $vv)
+														@if(!empty(trim($vv[$v['name']] ?? '')))
+															<b>{{ $kk }} :</b>
+															{!! '<pre class="excerpt">' .trim($vv[$v['name']] ?? '') . '</pre>' !!}
+														@endif
+													@endforeach
+												@endforeach
+
 												@if($values['table_name'] && $values['table_row_id'])
 													<a href="/admin/update/{{ $values['table_name'] }}/{{ $values['table_row_id'] }}">
 														@lang('admin::main.more')
@@ -73,4 +110,31 @@
 			</div>
 		</div>
 	</div>
+
+	@push('footer')
+	<script>
+		$('#send-notifications').click(function() {
+			var
+				ch = false;
+
+			if($('#send-notifications').prop('checked'))
+				ch = true;
+
+			$.ajax({
+				type    : "post",
+				url     : "/admin/_tools/change_param",
+				data    : {active: ch, name: 'send_notifications', table: 'params'},
+				cache   : false,
+				dataType: "JSON",
+
+				success: function(data) {
+					if(data.result === 'ok') {
+						if(_.isFunction(callback))
+							callback();
+					}
+				}
+			});
+		})
+	</script>
+	@endpush
 @stop

@@ -59,6 +59,26 @@ class ModuleController extends Controller
 	}
 
 	/**
+	 * Функция рендера input.
+	 *
+	 * @param       $inp
+	 * @param array $param
+	 * @return string
+	 */
+	public static function _body($inp, $param = [])
+	{
+		return '<div class="form-group ' . ($param['class'] ?? '') . '">
+			<label class="control-label col-md-3 col-sm-3 col-xs-12">
+			' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '
+			</label>
+			
+			<input type="hidden" id="' . $inp['idAttr'] . '-]-options-[-" />
+			<div class="col-md-6 col-sm-6 col-xs-12">' . ($inp['body']['text'] ?? '') . '</div>
+			<br class="clear" />
+		</div>';
+	}
+
+	/**
 	 * функция для подгрузки инфы
 	 * @param $page
 	 * @return \Illuminate\Contracts\Routing\ResponseFactory|string|\Symfony\Component\HttpFoundation\Response
@@ -120,7 +140,7 @@ class ModuleController extends Controller
 			if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin')
 				$query->where($t . '.user_id', '=', $this->base->getUser('id'));
 
-				$req['data'] = $query->select($t . '.*', 'files.file', 'files.crop')
+			$req['data'] = $query->select($t . '.*', 'files.file', 'files.crop')
 				->groupBy($t . '.id', 'files.file', 'files.crop')
 				->orderBy($t . '.' . $sortF, $sort)
 				->skip($skip)
@@ -367,26 +387,6 @@ class ModuleController extends Controller
 	}
 
 	/**
-	 * Функция рендера input.
-	 *
-	 * @param       $inp
-	 * @param array $param
-	 * @return string
-	 */
-	public static function _body($inp, $param = [])
-	{
-		return '<div class="form-group ' . ($param['class'] ?? '') . '">
-			<label class="control-label col-md-3 col-sm-3 col-xs-12">
-			' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '
-			</label>
-			
-			<input type="hidden" id="' . $inp['idAttr'] . '-]-options-[-" />
-			<div class="col-md-6 col-sm-6 col-xs-12">' . ($inp['body']['text'] ?? '') . '</div>
-			<br class="clear" />
-		</div>';
-	}
-
-	/**
 	 * функция рендера textarea
 	 * @param $inp
 	 * @return string
@@ -519,7 +519,7 @@ class ModuleController extends Controller
 			if(isset($this->request['pl'])) {
 				if(!empty($id)) {
 					// редактированине
-					$data = $this->dynamic->t($page)->where(['id' => $id])->first();
+					$data      = $this->dynamic->t($page)->where(['id' => $id])->first();
 					$dataArray = $this->dynamic->t($page)->where(['id' => $id])->first()->toArray();
 
 					// если поле массив(multiple), то без выбранного значения(при очистке) в pl оно вообще не приходит, по этому
@@ -539,18 +539,89 @@ class ModuleController extends Controller
 					}
 
 					$data->updated_at = Carbon::now();
+					$result_a_ar      = [];
+					$result_b_ar      = [];
 					$data->save();
 
-					// create item log action
-					SettingsController::addingLogActions(
-						[
-							'table_name'     => $page,
-							'table_row_id'   => $data->id ?? null,
-							'users_id'       => Base::$user['id'],
-							'type_actions'   => 'update_table_row',
-							'table_tow_name' => $data->name ?? 'no name',
-						]
-					);
+					/* DIFF */
+					foreach($this->request['pl'] as $kk => $vv) {
+						$text_b = Base::is_json($dataArray[$kk]) ? json_decode($dataArray[$kk], true) : $dataArray[$kk];
+
+						$result_a = '';
+						$result_b = '';
+						$text_a   = $vv;
+
+						if(is_array($text_a)) {
+							foreach($text_a as $key => $v) {
+								$a = strip_tags($text_a[$key]);
+								$b = strip_tags($text_b[$key]);
+
+								$this->base->SelectedDiffs($a, $b, $result_a, $result_b, true);
+
+								if(isset($result_a_ar[$kk][$key]))
+									$result_a_ar[$kk] = [];
+
+								$result_a_ar[$kk][$key] = $result_a;
+								$result_b_ar[$kk][$key] = $result_b;
+							}
+						} else {
+							$a = strip_tags($text_a);
+							$b = strip_tags($text_b);
+
+							$this->base->SelectedDiffs($a, $b, $result_a, $result_b, true);
+							$result_a_ar[$kk] = $result_a;
+							$result_b_ar[$kk] = $result_b;
+						}
+					}
+
+					foreach($result_a_ar as $k => $r) {
+						if(is_array($r)) {
+							$s = false;
+
+							foreach($r as $rr) {
+								if(!empty($rr)) {
+									$s = true;
+
+									continue;
+								}
+							}
+						} else
+							$s = !empty($r);
+
+						if(!$s)
+							unset($result_a_ar[$k]);
+					}
+
+					foreach($result_b_ar as $k => $r) {
+						if(is_array($r)) {
+							$s = false;
+							foreach($r as $rr) {
+								if(!empty($rr)) {
+									$s = true;
+
+									continue;
+								}
+							}
+						} else
+							$s = !empty($r);
+
+						if(!$s)
+							unset($result_b_ar[$k]);
+					}
+					/* DIFF END */
+
+					if(!empty($result_a_ar) || !empty($result_b_ar))
+						// create item log action
+						SettingsController::addingLogActions(
+							[
+								'table_name'     => $page,
+								'table_row_id'   => $data->id ?? null,
+								'users_id'       => Base::$user['id'],
+								'type_actions'   => 'update_table_row',
+								'table_tow_name' => $data->name ?? 'no name',
+								'text'           => json_encode(['a' => $result_a_ar, 'b' => $result_b_ar], JSON_UNESCAPED_UNICODE),
+							]
+						);
 				} else {
 					$data = [];
 

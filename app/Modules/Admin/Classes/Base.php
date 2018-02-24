@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Log;
 use Mail;
 use Session;
 
+ini_set('display_errors', 'On');
+error_reporting('E_ALL');
+
 class Base
 {
 	/**
@@ -133,15 +136,6 @@ class Base
 		$right = $base->right();
 
 		return $base->right();
-	}
-
-	/**
-	 * @param string $param
-	 * @return mixed
-	 */
-	public function getUser($param = '')
-	{
-		return $param ? (self::$user[$param] ?? self::$user) : self::$user;
 	}
 
 	/**
@@ -506,9 +500,33 @@ class Base
 
 		$args['version'] = '4.3.6-dev';
 		$args['lang']    = Session::get('lang');
-		$args['langSt']  = function($t, $l = '') { return Base::langSt($t, $l); };
+
+		$args['langSt']  = function($t, $l = '') {
+			return Base::langSt($t, $l);
+		};
 
 		return view($url, $args);
+	}
+
+	/**
+	 * Copy lang
+	 * @param        $t
+	 * @param string $lang
+	 * @return mixed
+	 */
+	public static function langSt($t, $lang = '')
+	{
+		$arr  = is_array($t) ? $t : json_decode($t, true);
+		$lang = empty($lang) ? \App::getLocale() : $lang;
+
+		if(is_array($arr))
+			if($arr[$lang] ?? false || $arr[$lang] === null)
+				$t = $arr[$lang];
+			else
+
+				$t = current($arr) ?? $t;
+
+		return $t;
 	}
 
 	/**
@@ -571,6 +589,15 @@ class Base
 		}
 
 		return '';
+	}
+
+	/**
+	 * @param string $param
+	 * @return mixed
+	 */
+	public function getUser($param = '')
+	{
+		return $param ? (self::$user[$param] ?? self::$user) : self::$user;
 	}
 
 	/**
@@ -688,8 +715,12 @@ class Base
 
 		$args['lang']           = \App::getLocale();
 		$args['segment1']       = $segment1;
-		$args['langSt']         = function($t, $l = '') { return $this->lang($t, $l); };
-		$args['mount']          = function($m) { return $this->monthLang[\App::getLocale()][$m]; };
+		$args['langSt']         = function($t, $l = '') {
+			return $this->lang($t, $l);
+		};
+		$args['mount']          = function($m) {
+			return $this->monthLang[\App::getLocale()][$m];
+		};
 		$args['isShowFavorite'] = count(array_values($this->requests->session()->get('cart') ?? []));
 
 		return view($url, $args);
@@ -752,6 +783,27 @@ class Base
 	}
 
 	/**
+	 * Get string to current lang
+	 * @param        $t
+	 * @param string $lang
+	 * @return mixed
+	 */
+	public function lang($t, $lang = '')
+	{
+		$arr  = json_decode($t, true);
+		$lang = empty($lang) ? \App::getLocale() : $lang;
+
+		if(is_array($arr))
+			if(json_decode($t, true)[$lang] ?? false || json_decode($t, true)[$lang] === null)
+				$t = json_decode($t, true)[$lang];
+			else
+
+				$t = current(json_decode($t, true)) ?? $t;
+
+		return $t;
+	}
+
+	/**
 	 * @param array  $where
 	 * @param null   $array
 	 * @param int    $cat
@@ -805,7 +857,7 @@ class Base
 				$return .= $this->_menu_site_select($where, $array, $cat, $item['id'], $level + 1, $table, $idCat);
 			}
 		else
-			foreach($array as $item)  {
+			foreach($array as $item) {
 				if($cat == $item['id']) {
 					$t = 'selected';
 				} else {
@@ -818,49 +870,6 @@ class Base
 			}
 
 		return $return . '';
-	}
-
-
-	/**
-	 * Get string to current lang
-	 * @param        $t
-	 * @param string $lang
-	 * @return mixed
-	 */
-	public function lang($t, $lang = '')
-	{
-		$arr  = json_decode($t, true);
-		$lang = empty($lang) ? \App::getLocale() : $lang;
-
-		if(is_array($arr))
-			if(json_decode($t, true)[$lang] ?? false || json_decode($t, true)[$lang] === null)
-				$t = json_decode($t, true)[$lang];
-			else
-
-				$t = current(json_decode($t, true)) ?? $t;
-
-			return $t;
-	}
-
-	/**
-	 * Copy lang
-	 * @param        $t
-	 * @param string $lang
-	 * @return mixed
-	 */
-	public static function langSt($t, $lang = '')
-	{
-		$arr  = json_decode($t, true);
-		$lang = empty($lang) ? \App::getLocale() : $lang;
-
-		if(is_array($arr))
-			if(json_decode($t, true)[$lang] ?? false || json_decode($t, true)[$lang] === null)
-				$t = json_decode($t, true)[$lang];
-			else
-
-				$t = current(json_decode($t, true)) ?? $t;
-
-		return $t;
 	}
 
 	/**
@@ -1028,5 +1037,213 @@ class Base
 		}
 
 		return $data;
+	}
+
+	function SelectedDiffs(&$sA, &$sB, &$retA, &$retB, $only_diff = false)
+	{
+		$this->SelDiffsText($sA, $sB, $retAText, $retBText);
+		$this->MergeInsertAndDelete($retAText, $retBText);
+		$this->SelDiffsColor($retAText, $retBText, $retA, $retB, $only_diff);
+	}
+
+	function SelDiffsText(&$aText, &$bText, &$retAText, &$retBText)
+	{
+		$arrA       = str_replace("r", "", $aText);
+		$arrB       = str_replace("r", "", $bText);
+		$arrA       = explode("\n", $arrA);
+		$arrB       = explode("\n", $arrB);
+		$unickTable = array_unique(array_merge($arrA, $arrB));
+
+		$strA = $this->GetUnickStr($arrA, $unickTable);
+		$strB = $this->GetUnickStr($arrB, $unickTable);
+
+		$this->SelDiffsStr($strA, $strB, $retA, $retB);
+		$retAText = $this->FromUnickToArr($retA, $unickTable);
+		$retBText = $this->FromUnickToArr($retB, $unickTable);
+	}
+
+	function GetUnickStr(&$arr, &$arrUnick)
+	{
+		$s            = '';
+		$arrUnickFlip = array_flip($arrUnick);
+		foreach($arr as $v) {
+			$s .= $arrUnickFlip[$v] . ' ';
+		}
+		return trim($s);
+	}
+
+	function SelDiffsStr(&$_a, &$_b, &$retA, &$retB)
+	{
+		$_longest = $this->GetLCSAlgoritm($_a, $_b);
+		$longest  = explode(" ", $_longest);
+
+		$a  = explode(" ", $_a);
+		$b  = explode(" ", $_b);
+		$rB = [];
+
+		$i1 = 0;
+		$i2 = 0;
+		for($i = 0, $iters = count($b); $i < $iters; $i++) {
+			$simbol = [];
+			if(isset($longest[$i1]) && ($longest[$i1] ?? 0) == $b[$i2]) {
+				if(isset($longest[$i1]))
+					$simbol[] = $longest[$i1];
+
+				$simbol[] = "*";
+				$rB[]     = $simbol;
+				$i1++;
+				$i2++;
+			} else {
+				$simbol[] = $b[$i2];
+				$simbol[] = "+";
+				$rB[]     = $simbol;
+				$i2++;
+			}
+		}
+		$retB = $rB;
+
+		$i1 = 0;
+		$i2 = 0;
+		for($i = 0, $iters = count($a); $i < $iters; $i++) {
+			$simbol = [];
+			if(isset($longest[$i1]) && ($longest[$i1] ?? 0) == $a[$i2]) {
+				if(isset($longest[$i1]))
+					$simbol[] = $longest[$i1];
+
+				$simbol[] = "*";
+				$rA[]     = $simbol;
+				$i1++;
+				$i2++;
+			} else {
+				$simbol[] = $a[$i2];
+				$simbol[] = "-";
+				$rA[]     = $simbol;
+				$i2++;
+			}
+		}
+		$retA = $rA;
+	}
+
+	public function GetLCSAlgoritm(&$_a, &$_b)
+	{
+		$a      = explode(" ", $_a);
+		$b      = explode(" ", $_b);
+		$maxLen = [];
+
+
+		for($i = 0, $x = count($a); $i <= $x; $i++) {
+			$maxLen[$i] = [];
+
+			for($j = 0, $y = count($b); $j <= $y; $j++)
+				$maxLen[$i][$j] = 0;
+		}
+
+
+		for($i = count($a) - 1; $i >= 0; $i--) {
+			for($j = count($b) - 1; $j >= 0; $j--) {
+				//				if(isset($maxLen[$i]))
+				//					$maxLen = [$i];
+				//
+				//
+				//
+				//				if(isset($maxLen[$i][$j]))
+				//					$maxLen[$i] = [$j];
+
+				//				print_r($maxLen[$i][$j]);
+				//				var_dump($maxLen[$i + 1][$j + 1] );
+
+				if(($a[$i] ?? 0) == ($b[$j] ?? 0)) {
+					$maxLen[$i][$j] = 1 + (isset($maxLen[$i + 1])
+							? isset($maxLen[$i + 1][$j + 1]) ? $maxLen[$i + 1][$j + 1] : 0
+							: 0);
+				} else {
+					$maxLen[$i][$j] = max($maxLen[$i + 1][$j], $maxLen[$i][$j + 1]);
+				}
+			}
+		}
+
+		$rez = "";
+
+		for($i = 0, $j = 0; $maxLen[$i][$j] != 0 && $i < $x && $j < $y = count($b);) {
+			if($a[$i] == $b[$j]) {
+				$rez .= $a[$i] . " ";
+				$i++;
+				$j++;
+			} else {
+				if($maxLen[$i][$j] == $maxLen[$i + 1][$j] ?? 0)
+					$i++;
+				else $j++;
+			}
+		}
+
+		//		exit;
+
+		return trim($rez);
+	}
+
+	function FromUnickToArr(&$arrStr, &$arrUnick)
+	{
+		$r = [];
+		foreach($arrStr as $v) {
+			$buff   = [];
+			$buff[] = $arrUnick[$v[0]];
+			$buff[] = $v[1];
+			$r[]    = $buff;
+		}
+		return $r;
+	}
+
+	function MergeInsertAndDelete(&$rdyAText, &$rdyBText)
+	{
+		$max = count($rdyAText) > count($rdyBText) ? count($rdyAText) : count($rdyBText);
+
+		for($i1 = 0, $i2 = 0; $i1 < $max && $i2 < $max;) {
+			if($rdyAText[$i1][1] == "-" && $rdyBText[$i2][1] == "+" && $rdyBText[$i2][0] != "") {
+				$rdyAText[$i1][1] = "*";
+				$rdyBText[$i2][1] = "m";
+			} elseif($rdyAText[$i1][1] != "-" && $rdyBText[$i2][1] == "+")
+				$i2++;
+			elseif($rdyAText[$i1][1] == "-" && $rdyBText[$i2][1] != "+")
+				$i1++;
+
+			$i1++;
+			$i2++;
+		}
+	}
+
+	// ***********************************************************
+	// 					Main function
+	// ***********************************************************
+	// string  $sA, $sB 	= 	strings where try find differences
+	// string  $retA, $retB	=	strings for return result of work
+
+	function SelDiffsColor(&$rdyAText, &$rdyBText, &$strRetA, &$strRetB, $only_diff)
+	{
+		$strRetA = "";
+		$strRetB = "";
+
+		foreach($rdyAText as $v) {
+			if($v[1] == "+")
+				$strRetA .= '<span style="color: #ac0b06;"><s>' . $v[0] . '</s></span>';
+			elseif($v[1] == '-')
+				$strRetA .= '<span style="color: #00cc33;">' . $v[0] . '</span>';
+			elseif($v[1] == 'm')
+				$strRetA .= '<span style="color: #2c2f88;">' . $v[0] . '</span>';
+			elseif($v[1] == '*')
+				if(!$only_diff)
+					$strRetA .= $v[0];
+		}
+
+		foreach($rdyBText as $v) {
+			if($v[1] == "+")
+				$strRetB .= '<span style="color: #ac0b06;"><s>' . $v[0] . '</s></span>';
+			elseif($v[1] == '-')
+				$strRetB .= '<span style="color: #00cc33;">' . $v[0] . '</span>';
+			elseif($v[1] == 'm')
+				$strRetB .= '<span style="color: #2c2f88;">' . $v[0] . '</span>';
+			elseif($v[1] == '*')
+				if(!$only_diff)
+					$strRetB .= $v[0];
+		}
 	}
 }

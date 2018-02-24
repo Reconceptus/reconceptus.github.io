@@ -13,7 +13,7 @@
 	<!-- Bootstrap core CSS -->
 
 	<link href="{{ asset('/modules/css/bootstrap.min.css') }}" rel="stylesheet">
-
+	<link rel="stylesheet" href="{{ asset('/modules/css/fontawesome-all.min.css') }}">
 	<link href="{{ asset('/modules/fonts/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('/modules/css/animate.min.css') }}" rel="stylesheet">
 
@@ -21,6 +21,7 @@
 	<link href="{{ asset('/modules/css/custom.css') }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset('/modules/css/maps/jquery-jvectormap-2.0.3.css') }}"/>
 	<link href="{{ asset('/modules/css/icheck/flat/green.css') }}" rel="stylesheet"/>
+	<link href="{{ asset('/modules/css/switchery/switchery.min.css') }}" rel="stylesheet"/>
 	<link href="{{ asset('/modules/css/floatexamples.css') }}" rel="stylesheet" type="text/css"/>
 
 	<link href="{{ asset('/modules/css/select/select2.min.css') }}" rel="stylesheet">
@@ -114,8 +115,6 @@
 	<script src="{{ asset('/modules/js/code_editor/mode/clike/clike.js') }}"></script>
 	<script src="{{ asset('/modules/js/code_editor/mode/php/php.js') }}"></script>
 	<script src="{{ asset('/modules/js/code_editor/mode/markdown/markdown.js') }}"></script>
-
-	<link rel="stylesheet" href="{{ asset('/modules/css/fontawesome-all.min.css') }}">
 
 	<style type="text/css">
 		.CodeMirror {
