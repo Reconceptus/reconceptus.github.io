@@ -99,4 +99,5 @@ return [
 	'image'                     => 'Image',
 	'subscribers'               => 'Subscribers',
 	'send_notifications'        => 'Send notifications',
+	'main_page'                 => 'Main page',
 ];
