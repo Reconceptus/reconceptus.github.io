@@ -642,6 +642,9 @@ class MainController extends Controller
 			$params['id'] = $cart_id;
 		}
 
+//		var_dump($session);
+//		var_dump($params);
+
 		$way       = (int) ($this->request['way'] ?? -1);
 		$date_to   = $this->request['date_to'] ?? -1;
 		$date_from = $this->request['date_from'] ?? -1;
@@ -683,9 +686,14 @@ class MainController extends Controller
 			->orderBy('villas.' . $group, 'DESC')
 			->paginate($count_box);
 
+		$cart         = array_values($this->requests->session()->get('cart') ?? []);
+		$favorites_id = [];
+
+		for($i = 0; count($cart ?? []) > $i; $i++)
+			$favorites_id[] = $cart[$i]['id'] ?? 0;
 
 		$data['villas']       = $villas_query;
-		$data['favorites_id'] = $cart_id;
+		$data['favorites_id'] = $favorites_id;
 		$data['paginate']     = true;
 
 		return $this->base->view_s("site.block.villas_main_list", $data);

@@ -11,6 +11,9 @@ var filVil = {
 	// подгружаем обработчки событий
 	loadOnclick: function loadOnclick(e) {
 		setTimeout(function() {
+			var
+				urlArr = window.location.pathname.split('/');
+
 			if(filVil.isLoad)
 				filVil.selectVillas();
 
@@ -20,11 +23,11 @@ var filVil = {
 			$('[name="search-filter"]').click(function(e) {
 				e.preventDefault();
 
-				if(window.location.pathname.split('/').indexOf('villas') !== -1)
+				if(urlArr.indexOf('villas') !== -1)
 					filVil.selectVillas();
 
-				if(window.location.pathname.split('/').indexOf('favorite') !== -1)
-					filVil.selectVillas();
+				if(urlArr.indexOf('favorite') !== -1)
+					filVil.selectVillas(true);
 			})
 		}, 100)
 	},
@@ -47,7 +50,8 @@ var filVil = {
 			 success : function(data) {
 				 if(data.result === 'ok') {
 					 var
-						 fav = $('.top-favorite');
+						 fav = $('.top-favorite'),
+						 selectorLice = $('.like-button');
 
 					 fav.find('.cnt').html(data.count);
 
@@ -56,14 +60,26 @@ var filVil = {
 					 else
 						 fav.hide();
 
-					 filVil.selectFavorites();
+					 if(selectorLice.hasClass('like-button-' + id))
+						 selectorLice = $('.like-button-' + id);
+
+					 if(type == 'add') {
+						 selectorLice.addClass('active');
+						 selectorLice.attr('onclick', 'filVil.addCart(' + id + ', \'remove\')');
+					 } else {
+						 selectorLice.removeClass('active');
+						 selectorLice.attr('onclick', 'filVil.addCart(' + id + ', \'add\')');
+
+						 if(window.location.pathname.split('/').indexOf('favorite') !== -1)
+							 filVil.selectVillas();
+					 }
 				 }
 			 }
 		 })
 	},
 
 	// select Villas
-	selectVillas: function() {
+	selectVillas: function(isSession) {
 		var
 			page = $('[name="pagination"]').val(),
 			date_from,
@@ -73,18 +89,22 @@ var filVil = {
 			way,
 			url;
 
+		if(!isSession)
+			isSession = window.location.pathname.split('/').indexOf('favorite') !== -1;
+
 		way       = $('[name="f_way"]').val();
 		date_to   = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
 		date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_out').datepicker('getDate'));
 		rooms     = $('[name="rooms"]').val();
 		hot       = $("[name=hot]:checked").val() || -1;
 		url       = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
+		url       =  isSession ? url + '&session=1' : '&session=0';
 
 		$(filVil.cont).css({opacity: 0.3});
 
 		$.ajax({
 			type    : "post",
-			url     : "/_tools/search_render_villas?page=" + page + '&session=0' + url,
+			url     : "/_tools/search_render_villas?page=" + page + url,
 			cache   : false,
 			dataType: "html",
 

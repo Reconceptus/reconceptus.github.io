@@ -31,8 +31,8 @@
 			<a
 				style="pointer-events: all"
 				href="javascript:void(0)"
-				class="villa-like {!! $is_favorite ? 'active' : '' !!}"
-				onclick="favorete.addCart()" data-fovorite=""
+				class="villa-like like-button {!! $is_favorite ? 'active' : '' !!}"
+				onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
 			>
 				<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use></svg>
 			</a>
@@ -255,7 +255,7 @@
 									<div class="submit-actions">
 										<a
 											href="javascript:void(0)"
-											class="like {!! $is_favorite ? 'active' : '' !!}"
+											class="like like-button {!! $is_favorite ? 'active' : '' !!}"
 											onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
 										>
 											<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like"></use></svg>
@@ -407,7 +407,7 @@
 						<a
 							href="javascript:void(0)"
 							class="more {!! $is_favorite ? 'active' : '' !!}"
-							onclick="favorete.addCart()" data-fovorite=""
+							onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
 						>
 							<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
 							<span>@lang('main.add_to_favorites')</span>
