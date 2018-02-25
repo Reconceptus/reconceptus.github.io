@@ -290,7 +290,15 @@
 
 		@include('site.block.favorite_modal')
 
-		@if(!empty($langSt($villa['specialist_comment'])))
+		@if(!empty($villa['specialist']) && !empty($villa['specialist_comment']))
+			@php($path_original = '/images/files/original/')
+
+			@php($img_original_user = $villa['specialist']['file']
+			? $villa['specialist']['crop']
+				? $path_original . $villa['specialist']['crop']
+				: $path_original . $villa['specialist']['file']
+			: '')
+
 			<div class="experts">
 				<div class="content">
 					<div class="experts-box">
@@ -298,7 +306,7 @@
 							<div class="worker">
 								<div class="worker-img">
 									<figure>
-										<img src="/images/workers/worker01.png" alt="{{ $langSt($villa['specialist_name']) }}">
+										<img src="{!! $img_original_user !!}" alt="{{ $langSt($villa['specialist']['name']) }}" />
 									</figure>
 
 									<h4 class="name">@lang('main.expert_opinion')</h4>
@@ -310,7 +318,8 @@
 									</div>
 
 									<h6 class="position">
-										{{ $langSt($villa['specialist_name']) }} {{ ', ' .$langSt($villa['specialist_text']) }}
+										{{ $langSt($villa['specialist']['name']) }}
+										{{ ', ' .$langSt($villa['specialist']['text']) }}
 									</h6>
 								</div>
 							</div>

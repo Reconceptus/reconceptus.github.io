@@ -167,6 +167,20 @@ class MainController extends Controller
 				->orderBy('villas.' . $group, 'DESC')
 				->first();
 
+			if($data['villa']['specialist'])
+				$data['villa']['specialist'] = $this->dynamic->t('users')
+					->join('files', function($join)
+					{
+						$join->type = 'LEFT OUTER';
+						$join->on('users.id', '=','files.id_album')
+							->where('files.name_table', '=', 'usersalbum')
+							->where('files.main', '=', 1);
+					})
+
+					->where('users.id', '=', (int) $data['villa']['specialist'])
+					->select('users.*', 'files.file', 'files.crop')
+					->first();
+
 			$data['villa']['document'] = $this->dynamic->t('files')
 				->where('files.name_table', '=', 'villasfiles')
 				->where('files.id_album', '=', $id)
