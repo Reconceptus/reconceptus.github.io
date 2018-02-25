@@ -100,6 +100,7 @@ return [
 	'sender_name'                     => 'Sender name',
 	'emails_friends'                  => 'Email`s of friends',
 	'selected_villas'                 => 'Selected villas',
+	'selected_villa'                  => 'Selected villa',
 	'key_duties'                      => 'Key duties',
 	'description'                     => 'Description',
 	'apply_now'                       => 'Apply now',
@@ -112,4 +113,10 @@ We will contact you shortly!',
 	'job_request_from_admin' => 'Job request from the Greecobooking',
 	'link_to_cv'             => 'Link to CV',
 	'advantages'             => 'Advantages',
+
+	'villa_request_success'=> 'The reservation has been successfully sent, expect you to be contacted within a 
+	certain time',
+
+	'villa_request_user'  => 'Reservation villa successfully sent',
+	'villa_request_admin' => 'Reservation of a villa from the Greecobooking website',
 ];

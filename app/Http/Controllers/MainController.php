@@ -870,6 +870,43 @@ class MainController extends Controller
 			}
 		}
 
+		if($type == 'villa_request') {
+			$title                  = __('main.villa_request_user');
+			$form_data['message_s'] = $form_data['message'];
+
+			$form_data['selected_villa'] = $this->dynamic->t('villas')
+				->join('files', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=','files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				})
+
+				->join('menu', function($join)
+				{
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.cat', '=','menu.id');
+				})
+
+				->where('villas.id', $this->request['id'])
+				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+				->groupBy('villas.id')
+				->orderBy('villas.id', 'DESC')
+				->first();
+
+			$form_data['langSt']  = function($t, $l = '') {
+				return Base::langSt($t, $l);
+			};
+
+			Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from, $form_data) {
+				$m->from($from, $title);
+				$m->to($form_data['mail'], 'no-realy')->subject($title);
+			});
+
+			$title = __('main.villa_request_admin');
+		}
+
 //		print_r($form);
 //		print_r($type);
 //		print_r($this->request);

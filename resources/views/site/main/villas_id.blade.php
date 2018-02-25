@@ -172,17 +172,21 @@
 						<div class="villa-request-form">
 							<input type="radio" id="showVillaForm" />
 
-							<form action="#">
+							<form action="#" id="villa-request-form">
 								<div class="fields-part">
 									<div class="fieldset pickerfields">
 										<div class="field">
 											<label for="arrivalDate">@lang('main.check_in')</label>
-											<div class="input"><input id="arrivalDate" type="text" data-picker-full></div>
+											<div class="input">
+												<input id="arrivalDate" name="arrivalDate" type="text" data-picker-full />
+											</div>
 										</div>
 
 										<div class="field">
 											<label for="departureDate">@lang('main.check_out')</label>
-											<div class="input"><input type="text" id="departureDate" data-picker-full></div>
+											<div class="input">
+												<input type="text" id="departureDate" name="departureDate" data-picker-full />
+											</div>
 										</div>
 
 										<div id="picker">
@@ -197,12 +201,12 @@
 
 									<div class="fieldset">
 										<div class="field field-select">
-											<label for="guests">@lang('main.free')</label>
+											<label for="guests">@lang('main.guests')</label>
 
 											<div class="select">
 												<select name="guests" id="guests">
 													<option value=""></option>
-													<option value="">@lang('main.no')</option>
+													<option value="-1">@lang('main.no')</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -217,7 +221,7 @@
 											<div class="select">
 												<select name="children" id="children">
 													<option value=""></option>
-													<option value="">@lang('main.no')</option>
+													<option value="-1">@lang('main.no')</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -230,14 +234,14 @@
 									<div class="fieldset">
 										<div class="field">
 											<label for="mail">@lang('main.your_e_mail')</label>
-											<div class="input"><input type="text" id="mail"></div>
+											<div class="input"><input type="text" id="mail" name="mail" /></div>
 										</div>
 									</div>
 
 									<div class="fieldset">
 										<div class="field">
 											<label for="wishes">@lang('main.your_wishes')</label>
-											<div class="input"><input id="wishes" type="text" ></div>
+											<div class="input"><input id="wishes" name="message" type="text" /></div>
 										</div>
 									</div>
 								</div>
@@ -257,23 +261,25 @@
 											<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like"></use></svg>
 										</a>
 
-										<a href="#" class="send">
-											<svg> <use xlink:href="/images/svg/sprite.svg#ico_action-write"></use> </svg>
+										<a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
+											<svg>
+												<use xlink:href="/images/svg/sprite.svg#ico_action-write"></use>
+											</svg>
 										</a>
 									</div>
 								</div>
 							</form>
 						</div>
-					</div>
 
-					<div class="form-success">
-						<div class="form-success--main">
-							<div class="text">
-								<h5 class="success-title">@lang('main.message_sent')</h5>
-								<p>Письмо с понравившейся виллой отправлено Вашим друзьям</p>
+						<div class="form-success" style="width: 100%;">
+							<div class="form-success--main">
+								<div class="text">
+									<h5 class="success-title">@lang('main.request_was_successfully_sent')</h5>
+									<p>@lang('main.villa_request_success')</p>
 
-								<div class="btn_center">
-									<a href="/blog" class="more">@lang('main.read_our_blog')</a>
+									<div class="btn_center">
+										<a href="/blog" class="more">@lang('main.read_our_blog')</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -282,28 +288,37 @@
 			</div>
 		</div>
 
-		<div class="experts">
-			<div class="content">
-				<div class="experts-box">
-					<div class="content content_md">
-						<div class="worker">
-							<div class="worker-img">
-								<figure><img src="/images/workers/worker01.png" alt="Иван Петров"></figure>
-								<h4 class="name">@lang('main.expert_opinion')</h4>
-							</div>
+		@include('site.block.favorite_modal')
 
-							<div class="worker-descr">
-								<div class="quote">
-									<p>{{ $langSt($villa['specialist_comment']) }}</p>
+		@if(!empty($langSt($villa['specialist_comment'])))
+			<div class="experts">
+				<div class="content">
+					<div class="experts-box">
+						<div class="content content_md">
+							<div class="worker">
+								<div class="worker-img">
+									<figure>
+										<img src="/images/workers/worker01.png" alt="{{ $langSt($villa['specialist_name']) }}">
+									</figure>
+
+									<h4 class="name">@lang('main.expert_opinion')</h4>
 								</div>
 
-								<h6 class="position">Мария, туризм-эксперт</h6>
+								<div class="worker-descr">
+									<div class="quote">
+										<p>{{ $langSt($villa['specialist_comment']) }}</p>
+									</div>
+
+									<h6 class="position">
+										{{ $langSt($villa['specialist_name']) }} {{ ', ' .$langSt($villa['specialist_text']) }}
+									</h6>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		@endif
 
 		<section class="showplaces" data-villa-part="map">
 			<div class="content content_md">
@@ -421,92 +436,7 @@
 	@push('footer')
 	<!--validate-->
 	<script>
-		$('.villa-request form').validate({
-			onfocusout: false,
-			ignore    : ".ignore",
-
-			rules: {
-				arrivalDate  : {required: true},
-				departureDate: {required: true},
-				guests       : {required: true},
-				children     : {required: true},
-				mail         : {required: true},
-				wishes       : {required: true}
-			},
-
-			messages: {
-				arrivalDate  : {required: ""},
-				departureDate: {required: ""},
-				guests       : {required: ""},
-				children     : {required: ""},
-				mail         : {required: ""},
-				wishes       : {required: ""}
-			},
-
-			errorClass: 'invalid',
-
-			highlight: function(element, errorClass) {
-				$(element).closest('.field').addClass(errorClass)
-			},
-
-			unhighlight: function(element, errorClass) {
-				$(element).closest('.field').removeClass(errorClass)
-			},
-
-			errorPlacement: $.noop,
-
-			submitHandler: function(form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-				if(form.valid()) {
-					form.submit();
-				}
-//                return false;
-			}
-		});
-
-		$('.friend-form form').validate({
-			onfocusout: false,
-			ignore    : ".ignore",
-
-			rules: {
-				friendMail: {required: true},
-				yourName  : {required: true},
-				message   : {required: true}
-			},
-
-			messages: {
-				friendMail: {required: ""},
-				yourName  : {required: ""},
-				message   : {required: ""}
-			},
-
-			errorClass: 'invalid',
-
-			highlight: function(element, errorClass) {
-				$(element).closest('.field').addClass(errorClass);
-
-				if($(element).closest('.add-fieldset')) {
-					$(element).closest('.add-fieldset').addClass('disabled')
-				}
-			},
-
-			unhighlight: function(element, errorClass) {
-				$(element).closest('.field').removeClass(errorClass);
-
-				if($(element).closest('.add-fieldset')) {
-					$(element).closest('.add-fieldset').removeClass('disabled')
-				}
-			},
-
-			errorPlacement: $.noop,
-			submitHandler : function(form) {
-				$('.friend-form').addClass('successful');
-//            if (form.valid()){
-//                form.submit();
-//            }
-				return false;
-			}
-		});
+		formsFull.initVillaRequestForm('{{ $villa['id'] }}');
 	</script>
 
 	@php($coordinates = explode(',', $villa['coordinates']))

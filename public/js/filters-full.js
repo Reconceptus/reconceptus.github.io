@@ -396,5 +396,59 @@ var
 					return false;
 				}
 			});
+		},
+
+		initVillaRequestForm: function(id) {
+			$('.villa-request form').validate({
+				onfocusout: false,
+				ignore    : ".ignore",
+
+				rules: {
+					arrivalDate  : {required: true},
+					departureDate: {required: true},
+					guests       : {required: true},
+					children     : {required: true},
+					mail         : {required: true},
+					wishes       : {required: true}
+				},
+
+				messages: {
+					arrivalDate  : {required: ""},
+					departureDate: {required: ""},
+					guests       : {required: ""},
+					children     : {required: ""},
+					mail         : {required: ""},
+					wishes       : {required: ""}
+				},
+
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass)
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass)
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					formsFull.submitForm(
+						{
+							data: $('#villa-request-form').serializeArray(),
+							id  : id,
+							type: 'villa_request'
+						},
+
+						function() {
+							$('.villa-request').addClass('successful');
+							document.getElementById("villa-request-form").reset();
+						}
+					);
+
+					return false;
+				}
+			});
 		}
 	};

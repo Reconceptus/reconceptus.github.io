@@ -100,6 +100,7 @@ return [
 	'sender_name'                     => 'Имя отправителя',
 	'emails_friends'                  => 'Email`s друзей',
 	'selected_villas'                 => 'Выбранные виллы',
+	'selected_villa'                  => 'Выбранная вилла',
 	'key_duties'                      => 'Обязанности',
 	'description'                     => 'Описание',
 	'apply_now'                       => 'Отправить заявку',
@@ -112,4 +113,7 @@ return [
 	'job_request_from_admin' => 'Запрос вакансии с Greecobooking',
 	'link_to_cv'             => 'Ссылка на резюме',
 	'advantages'             => 'Преимущества',
+	'villa_request_success'  => 'Бронь успешно отправлена, ожидайте с вами свяжутся в течении некоторого времени',
+	'villa_request_user'     => 'Бронирование виллы успешно отправлено',
+	'villa_request_admin'    => 'Бронирование виллы с сайта Greecobooking',
 ];
