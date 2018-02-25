@@ -354,6 +354,7 @@
 		"column_index"    : [
 			"name",
 			"little_description",
+			"description_param",
 			"active"
 		],
 		"count_module"    : "20",
@@ -368,6 +369,7 @@
 		"plugins"         : [
 			"name",
 			"little_description",
+			"description_param",
 			"active"
 		],
 		"small_width"     : "0",

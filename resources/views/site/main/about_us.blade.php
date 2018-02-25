@@ -8,7 +8,7 @@
 
 		<div class="content">
 			<header class="light-style">
-				<h1 class="headline_main">О нас</h1>
+				<h1 class="headline_main">@lang('main.about_us')</h1>
 			</header>
 		</div>
 	</section>

@@ -333,7 +333,7 @@
 			<div class="content content_md">
 				<header class="sm">
 					<h3 class="headline_main">@lang('main.distances_and_location')</h3>
-					<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+					<h4 class="headline_submain">{{ $langSt($params['distances_and_location_villa_h3']['key']) }}</h4>
 				</header>
 
 				<div class="showplaces-list">
@@ -376,7 +376,7 @@
 			<div class="content">
 				<header>
 					<h3 class="headline_main">@lang('main.what_is_nearby')</h3>
-					<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+					<h4 class="headline_submain">{{ $langSt($params['what_is_nearby_villa_h3']['key']) }}</h4>
 				</header>
 
 				<div class="grid">
@@ -430,7 +430,7 @@
 			<div class="content">
 				<header>
 					<h3 class="headline_main">@lang('main.you_may_also_like')</h3>
-					<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+					<h4 class="headline_submain">{{ $langSt($params['you_may_also_like_villa_h3']['key']) }}</h4>
 				</header>
 
 				<div class="grid">

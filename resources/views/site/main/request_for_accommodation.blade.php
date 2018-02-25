@@ -71,7 +71,7 @@
 								<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
 								<div class="form-success--main">
 									<div class="text">
-										<h5 class="success-title">@lang('main.request_was_successfully_sent')</h5>
+										<h5 class="success-title">@lang('main.advantages')</h5>
 									</div>
 								</div>
 							</div>
@@ -79,8 +79,8 @@
 					</div>
 
 					<header>
-						<h2 class="headline_main">ПРЕИМУЩЕСТВА</h2>
-						<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+						<h2 class="headline_main">@lang('main.advantages')</h2>
+						<h4 class="headline_submain">{{ $langSt($params['advantages_accommodation_h3']['key']) }}</h4>
 					</header>
 
 					<div class="vacancy-advances">

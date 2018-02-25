@@ -71,9 +71,10 @@
 	<section class="section qualities">
 		<div class="content">
 			<header>
-				<h2 class="headline_main">Booking is easy as 1, 2, 3..</h2>
-				<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+				<h2 class="headline_main">@lang('main.booking_is_easy')</h2>
+				<h4 class="headline_submain">{{ $langSt($params['booking_is_easy_main_h3']['key']) }}</h4>
 			</header>
+
 			<div class="qualities--main">
 				<div class="content content_md">
 					<ul>
@@ -104,7 +105,7 @@
 		<div class="content">
 			<header>
 				<h3 class="headline_main">@lang('main.our_best_offers')</h3>
-				<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+				<h4 class="headline_submain">{{ $langSt($params['our_best_offers_main_h3']['key']) }}</h4>
 			</header>
 
 			<div class="grid">
@@ -121,7 +122,7 @@
 		<div class="content">
 			<header>
 				<h3 class="headline_main">@lang('main.blog')</h3>
-				<h4 class="headline_submain">@lang('main.blog_title')</h4>
+				<h4 class="headline_submain">{{ $langSt($params['blog_main_h3']['key']) }}</h4>
 			</header>
 		</div>
 		<div class="blog-box">

@@ -119,4 +119,7 @@ We will contact you shortly!',
 
 	'villa_request_user'  => 'Reservation villa successfully sent',
 	'villa_request_admin' => 'Reservation of a villa from the Greecobooking website',
+	'booking_is_easy'     => 'Booking is easy as 1, 2, 3..',
+	'working_conditions'  => 'Working conditions',
+	'about_us'            => 'About us',
 ];

@@ -116,4 +116,7 @@ return [
 	'villa_request_success'  => 'Бронь успешно отправлена, ожидайте с вами свяжутся в течении некоторого времени',
 	'villa_request_user'     => 'Бронирование виллы успешно отправлено',
 	'villa_request_admin'    => 'Бронирование виллы с сайта Greecobooking',
+	'booking_is_easy'        => 'Бронирование легко, как 1, 2, 3 ..',
+	'working_conditions'     => 'Условия труда',
+	'about_us'               => 'About us',
 ];

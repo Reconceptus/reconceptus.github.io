@@ -44,7 +44,7 @@
 					<div class="content content_md">
 						<header>
 							<h2 class="headline_main">@lang('main.vacancies')</h2>
-							<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+							<h4 class="headline_submain">{{ $langSt($params['vacancies_vacancies_h3']['key']) }}</h4>
 						</header>
 
 						<ul class="vacancy-list">

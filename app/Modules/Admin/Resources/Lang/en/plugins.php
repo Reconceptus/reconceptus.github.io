@@ -28,4 +28,5 @@ return [
 	'is_hot_offer'         => 'Hot Offer',
 	'title_prepositional'  => 'Title in the prepositional case',
 	'specialist'           => 'Specialist',
+	'description_param'    => 'Description of the parameter',
 ];

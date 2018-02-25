@@ -28,4 +28,5 @@ return [
 	'is_hot_offer'         => 'Горячее предложение',
 	'title_prepositional'  => 'Название в предложном падеже',
 	'specialist'           => 'Специалист',
+	'description_param'    => 'Описание параметра',
 ];

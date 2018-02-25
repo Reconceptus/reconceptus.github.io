@@ -1128,6 +1128,17 @@
 		"translateKey": "location_description"
 	},
 	{
+		"name"        : "description_param",
+		"typeField"   : "textarea",
+		"classAttr"   : "description_param",
+		"nameText"    : "Описание параметра",
+		"nameAttr"    : "pl[description_param]",
+		"description" : "Поле выбора и поиска локации \"description_param\"",
+		"idAttr"      : "inputВescription_param",
+		"sql_column"  : "description_param",
+		"translateKey": "description_param"
+	},
+	{
 		"name"        : "specialist_comment",
 		"typeField"   : "textarea",
 		"classAttr"   : "specialist_comment border-green",

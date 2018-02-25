@@ -38,7 +38,7 @@
 
 					<header>
 						<h2 class="headline_main">@lang('main.advantages')</h2>
-						<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+						<h4 class="headline_submain">{{ $langSt($params['advantages_vacancy_h3']['key']) }}</h4>
 					</header>
 
 					<div class="vacancy-advances">
@@ -102,8 +102,8 @@
 			<div class="vacancy-box inside-mob">
 				<div class="content content_md">
 					<header>
-						<h2 class="headline_main">Условия труда</h2>
-						<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+						<h2 class="headline_main">@lang('main.working_conditions')</h2>
+						<h4 class="headline_submain">{{ $langSt($params['working_conditions_vacancy_h3']['key']) }}</h4>
 					</header>
 					<div class="vacancy-terms">
 						<ul>

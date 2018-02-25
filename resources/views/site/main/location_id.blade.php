@@ -46,8 +46,11 @@
 		<div class="section single-request">
 			<div class="content content_md">
 				<div class="single-request--wrap">
-					<div class="title animate-bg"><span>Здесь фраза про индивидуальный подбор виллы под разные требования</span></div>
-					<a href="/selection-request" class="btn">Запрос на подбор</a>
+					<div class="title animate-bg">
+						<span>{{ $langSt($params['selection_request_location_h3']['key']) }}</span>
+					</div>
+
+					<a href="/selection-request" class="btn">@lang('main.selection_request')</a>
 				</div>
 			</div>
 		</div>
