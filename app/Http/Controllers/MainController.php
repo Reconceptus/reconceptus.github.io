@@ -642,9 +642,6 @@ class MainController extends Controller
 			$params['id'] = $cart_id;
 		}
 
-//		var_dump($session);
-//		var_dump($params);
-
 		$way       = (int) ($this->request['way'] ?? -1);
 		$date_to   = $this->request['date_to'] ?? -1;
 		$date_from = $this->request['date_from'] ?? -1;
