@@ -93,7 +93,7 @@
 <script type="text/javascript" src="/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/js/libs.min.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
-
+<script type="text/javascript" src="/js/soc.js"></script>
 <script>
 	formsFull.initSubscription();
 </script>

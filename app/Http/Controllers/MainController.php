@@ -213,6 +213,12 @@ class MainController extends Controller
 
 			$data['meta_c'] = $this->base->getMeta($data, 'villa');
 
+			$data['meta_c']['og_image'] = $data['villa']['file']
+				? $data['villa']['crop']
+					? "http://{$_SERVER['SERVER_NAME']}/images/files/small/{$data['villa']['crop']}"
+					: "http://{$_SERVER['SERVER_NAME']}/images/files/small/{$data['villa']['file']}"
+				: '';
+
 			return $this->base->view_s("site.main.villas_id", $data);
 		} else {
 			$data['villas'] = $this->dynamic->t('villas')

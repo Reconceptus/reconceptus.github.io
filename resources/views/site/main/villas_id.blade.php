@@ -464,5 +464,9 @@
 		</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
 	@endif
+
+	{{--<script>--}}
+		{{--$('[property="og:image"]').attr('content', window.location.origin + '/{{ $img_small }}')--}}
+	{{--</script>--}}
 	@endpush
 @endsection

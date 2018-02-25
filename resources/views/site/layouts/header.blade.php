@@ -15,6 +15,14 @@
 	<script type="text/javascript" src="/js/lodash.min.js"></script>
 	<script type="text/javascript" src="/js/filters-villas.js"></script>
 	<script type="text/javascript" src="/js/filters-full.js"></script>
+
+	<meta property="og:title" content="{{ $meta['title'] ?? '' }}"/>
+	{{--<meta property="og:type" content="movie"/>--}}
+	<meta property="og:url" content="http://greecobooking.niws.ru/villas/1"/>
+	<meta property="og:image" content="{{ $meta['og_image'] ?? '' }}"/>
+	{{--<meta property="og:site_name" content="IMDb"/>--}}
+	{{--<meta property="fb:admins" content="USER_ID"/>--}}
+	<meta property="og:description" content="{{ $meta['description'] ?? '' }}"/>
 </head>
 <body>
 <div id="wrapper">
