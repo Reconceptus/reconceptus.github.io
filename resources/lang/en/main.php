@@ -100,4 +100,16 @@ return [
 	'sender_name'                     => 'Sender name',
 	'emails_friends'                  => 'Email`s of friends',
 	'selected_villas'                 => 'Selected villas',
+	'key_duties'                      => 'Key duties',
+	'description'                     => 'Description',
+	'apply_now'                       => 'Apply now',
+	'to_send_a_resume'                => 'To send a resume',
+	'upload_your_cv'                  => 'Upload your CV',
+
+	'resume_form_mess' => 'We are glad that you are interested in our company.
+We will contact you shortly!',
+
+	'job_request_from_admin' => 'Job request from the Greecobooking',
+	'link_to_cv'             => 'Link to CV',
+	'advantages'             => 'Advantages',
 ];

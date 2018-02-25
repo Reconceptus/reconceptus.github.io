@@ -100,4 +100,16 @@ return [
 	'sender_name'                     => 'Имя отправителя',
 	'emails_friends'                  => 'Email`s друзей',
 	'selected_villas'                 => 'Выбранные виллы',
+	'key_duties'                      => 'Обязанности',
+	'description'                     => 'Описание',
+	'apply_now'                       => 'Отправить заявку',
+	'to_send_a_resume'                => 'Отправить резюме',
+	'upload_your_cv'                  => 'Загрузите резюме',
+
+	'resume_form_mess' => 'Мы рады, что Вас заинтересовала наша компания.
+	 Мы свяжемся с Вами в ближайшее время!',
+
+	'job_request_from_admin' => 'Запрос вакансии с Greecobooking',
+	'link_to_cv'             => 'Ссылка на резюме',
+	'advantages'             => 'Преимущества',
 ];

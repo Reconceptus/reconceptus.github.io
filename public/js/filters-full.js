@@ -327,5 +327,74 @@ var
 			});
 
 			return final_array;
+		},
+
+		initResumeForm: function(fileEmpty) {
+			$('.resume-form form').validate({
+				ignore: ".ignore",
+
+				rules: {
+					file     : {required: false},
+					name     : {required: true},
+					mail     : {required: true},
+					telephone: {required: true},
+					message  : {required: false}
+				},
+
+				messages: {
+					file     : {required: ""},
+					name     : {required: ""},
+					mail     : {required: ""},
+					telephone: {required: ""},
+					message  : {required: ""}
+				},
+
+				errorClass: 'invalid',
+
+				highlight: function(element, errorClass) {
+					$(element).closest('.field').addClass(errorClass)
+				},
+
+				unhighlight: function(element, errorClass) {
+					$(element).closest('.field').removeClass(errorClass)
+				},
+
+				errorPlacement: $.noop,
+
+				submitHandler: function(form) {
+					var
+						formData = new FormData(),
+						request = new XMLHttpRequest(),
+						file = document.getElementById('file-upload').files[0];
+
+					if(file)
+						formData.append('file_cv', file);
+
+					formData.append('data[name]', $('#name-form-resume').val());
+					formData.append('data[mail]', $('#mail-form-resume').val());
+					formData.append('data[telephone]', $('#telephone-form-resume').val());
+					formData.append('data[message]', $('#message-form-resume').val());
+					formData.append('type', 'resume_form');
+					request.open("POST", "/_tools/submit_required");
+					request.send(formData);
+
+					request.onload = request.onerror = function() {
+						var
+							data = JSON.parse(request.response);
+
+						if(this.status == 200) {
+							if(data.result === 'ok') {
+								document.getElementById('file-name').textContent = fileEmpty;
+								$('.resume-form').addClass('successful');
+								document.getElementById("resume-form").reset();
+							}
+						} else {
+							log("error " + this.status);
+						}
+					};
+
+					return false;
+				}
+			});
 		}
 	};

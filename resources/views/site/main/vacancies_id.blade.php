@@ -2,114 +2,174 @@
 
 @section('content')
 	<section class="simple-page--bg">
-		<div class="intro-figure">
+		<div class="intro-figure dynamic">
 			<figure style="background-image: url('/images/bg/account-bg.jpeg')"></figure>
 		</div>
+
 		<div class="content">
 			<header class="light-style">
-				<h1 class="headline_main">Account manager</h1>
+				<h1 class="headline_main">{{ $langSt($vacancy['name']) }}</h1>
+
 				<div class="headline_btn">
-					<a href="#" class="btn btn_subm">Apply now</a>
+					<a href="javascript:void(0);" class="btn btn_subm show-modal"  data-modal="resume-form">
+						@lang('main.apply_now')
+					</a>
 				</div>
 			</header>
 		</div>
 	</section>
+
 	<div class="simple-page--main">
 		<div class="content content_sm">
 			<div class="text-box">
-				<h3>FUNCTION DESCRIPTION: H3</h3>
-				<p>Стили статьи. As a Key Account Manager you are responsible for managing the relationship with existing Key Accommodation Partners. In addition you will support Booking.com BV’s acquisition of new Key Accommodation Partners in Hong Kong.  You create in depth quantity and quality reports on results and performance for information support to Booking.com BV. You proactively inform Key Accommodation Partners about the benefits of Booking.com products and services. You will be responsible for the improvement of Key Accommodations Partner’s availability and supply in order to support Booking.com BV in meeting the demands of the visitors on the Booking.com website. To be successful in this role you will need to demonstrate strong networking skills in order to connect with different stakeholders within Booking.com as well as within the Hotel Industry in Hong Kong.</p>
-				<h3>Key responsibilities</h3>
+				<h3>@lang('main.description')</h3>
+				{!! $langSt($vacancy['text']) !!}
+				<h3>@lang('main.key_duties')</h3>
+
 				<ul>
-					<li>Support Booking.com BV’s-strategy for Key Accommodation Partners availability and supply within Hong Kong</li>
-					<li>Promote the Booking.com BV brand name and its online products and services to Key Partners;</li>
-					<li>Create in depth Key Account profiles that show understanding of the complexity of the Account;</li>
-					<li>Assist Booking.com BV in being the relationship builder for various internal and external stakeholders that are involved in the specific Key Account;</li>
-					<li>Train, consult, monitor, support internal and external stakeholders in handling the Key Accounts in order to optimize their performance;</li>
-					<li>Support Booking.com BV in securing its relationship and optimizing its partnerships with Key Accounts;</li>
-					<li>Introduce initiatives and execute Booking.com BV’s innovations with Key Accounts to increase their performance;</li>
-					<li>Analyze Key Accounts on global level, national level and on local/Property level;</li>
+					@php($key_feature = explode("\r", $langSt($vacancy['key_feature'])))
+
+					@foreach($key_feature as $v)
+						@if(!empty($v))<li>{{ $v }}</li>@endif
+					@endforeach
 				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="vacancy">
-		<div class="content">
-			<div class="vacancy-box inside-mob">
-				<div class="content content_md">
-					<header>
-						<h2 class="headline_main">ВАКАНСИИ</h2>
-						<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
-					</header>
-					<ul class="vacancy-list">
-						<li>
-							<a href="#">
-								<h3 class="title">Менеджер по рекламе</h3>
-								<span class="price">&euro; 1 500-2000</span>
-								<span class="place">
+
+	@if(count($vacancies))
+		<div class="vacancy">
+			<div class="content">
+				<div class="vacancy-box inside-mob">
+					<div class="content content_md">
+						<header>
+							<h2 class="headline_main">@lang('main.vacancies')</h2>
+							<h4 class="headline_submain">The cream of the crop of London's accommodation</h4>
+						</header>
+
+						<ul class="vacancy-list">
+							@foreach($vacancies as $val)
+								<li>
+									<a href="/vacancies/{{ $val['id'] }}">
+										<h3 class="title">{{ $langSt($val['name']) }}</h3>
+										<span class="price">&euro; {{ $val['price_money'] }}</span>
+										<span class="place">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-									<span>Heraclion</span>
+									<span>{{ $val['location'] }}</span>
 								</span>
-								<span class="arrow">
+										<span class="arrow">
 									<svg> <use xlink:href="/images/svg/sprite.svg#ico_arrow-right-small"></use> </svg>
 								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<h3 class="title">Manager</h3>
-								<span class="price">&euro; 1 500-2000</span>
-								<span class="place">
-									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-									<span>Heraclion</span>
-								</span>
-								<span class="arrow">
-									<svg> <use xlink:href="/images/svg/sprite.svg#ico_arrow-right-small"></use> </svg>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<h3 class="title">Guide</h3>
-								<span class="price">&euro; 1 500-2000</span>
-								<span class="place">
-									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-									<span>Heraclion</span>
-								</span>
-								<span class="arrow">
-									<svg> <use xlink:href="/images/svg/sprite.svg#ico_arrow-right-small"></use> </svg>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<h3 class="title">Manager</h3>
-								<span class="price">&euro; 1 500-2000</span>
-								<span class="place">
-									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-									<span>Heraclion</span>
-								</span>
-								<span class="arrow">
-									<svg> <use xlink:href="/images/svg/sprite.svg#ico_arrow-right-small"></use> </svg>
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<h3 class="title">Driver</h3>
-								<span class="price">&euro; 1 500-2000</span>
-								<span class="place">
-									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-                                        <span>Heraclion</span>
-								</span>
-								<span class="arrow">
-									<svg> <use xlink:href="/images/svg/sprite.svg#ico_arrow-right-small"></use> </svg>
-								</span>
-							</a>
-						</li>
-					</ul>
+									</a>
+								</li>
+							@endforeach
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	@endif
+
+	<!--modals-->
+	<div class="modal">
+		<div class="close"></div>
+		<div class="modal--main">
+			<div class="resume-form" data-modal="resume-form">
+				<span class="close"><svg><use xlink:href="/images/svg/sprite.svg#ico_close"></use></svg></span>
+
+				<div class="resume-form--wrap">
+					<div class="resume-form--main animate-bg">
+						<h5 class="title">@lang('main.to_send_a_resume')</h5>
+
+						<form action="#" id="resume-form">
+							<div class="fields">
+								<div class="fieldset">
+									<div class="field">
+										<div class="load">
+											<label>
+												<input type="file" name="file" id="file-upload" />
+												<span id="file-name">@lang('main.upload_your_cv')</span>
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="fieldset">
+									<div class="field">
+										<div class="input">
+											<input id="name-form-resume" name="name" type="text" placeholder="*@lang('main.your_name')" />
+										</div>
+									</div>
+
+									<div class="field">
+										<div class="input">
+											<input type="text" id="mail-form-resume" name="mail" placeholder="*@lang('main.e_mail')" />
+										</div>
+									</div>
+
+									<div class="field">
+										<div class="input">
+											<input
+												type="text"
+												id="telephone-form-resume"
+												name="telephone"
+												placeholder=*"@lang('main.phone')"
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div class="fieldset">
+									<div class="field">
+										<div class="input">
+											<textarea
+												id="message-form-resume"
+												name="message"
+												rows="3"
+												placeholder="@lang('main.write_a_message')"
+											></textarea>
+										</div>
+									</div>
+								</div>
+
+								<div class="fieldset">
+									<p class="asterisk">*@lang('main.required_fields')</p>
+								</div>
+							</div>
+
+							<div class="btn-box">
+								<button type="submit">
+									<i>
+										<svg>
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/svg/sprite.svg#ico_submit"></use>
+										</svg>
+									</i>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="form-success">
+					<div class="form-success--main">
+						<div class="text">
+							<h5 class="success-title">@lang('main.message_sent')</h5>
+
+							<p>@lang('main.resume_form_mess')</p>
+							<div class="btn_center">
+								<a href="/blog" class="more">@lang('main.read_our_blog')</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!--validate-->
+
+	@push('footer')
+	<script>
+		formsFull.initResumeForm('@lang('main.upload_your_cv')');
+	</script>
+	@endpush
 @endsection

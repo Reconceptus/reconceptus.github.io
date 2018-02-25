@@ -212,11 +212,12 @@ class FilesController extends Controller
 	{
 		if(!$data) {
 			$request            = $this->requests;
-			$data['file'][]     = $request->file("Filedata");
+			$data['file']       = $data['file'] ?? [$request->file("Filedata")];
 			$data['name']       = 'files';
-			$data['name_table'] = $request->input("name_table") . $request->input("name_field");
-			$data['id_album']   = $request->input("id_album");
-			$data['limit']      = $request->input("limit");
+			$data['name_table'] = $data['name_table'] ?? $request->input("name_table") . $request->input("name_field");
+			$data['id_album']   = $data['id_album'] ?? $request->input("id_album");
+			$data['limit']      = $data['limit'] ?? $request->input("limit");
+			$data['path']       = $data['path'] ?? "/images/files/files/";
 		}
 
 		$res           = $this->_load($data);
@@ -278,7 +279,7 @@ class FilesController extends Controller
 					$size      = $f->getSize();
 				}
 
-				$path     = public_path() . "/images/files/files/";
+				$path     = public_path() . $data['path'];
 				$filename = str_random(10) . time() . str_random(5);
 
 				if(!file_exists($path)) {

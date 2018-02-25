@@ -100,4 +100,5 @@ return [
 	'subscribers'               => 'Подписчики',
 	'send_notifications'        => 'Отправлять оповещения',
 	'main_page'                 => 'Главная страница',
+	'vacancies'                 => 'Вакансии',
 ];

@@ -496,5 +496,53 @@
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "main_page"
+	},
+	{
+		"id"              : "13",
+		"active"          : true,
+		"big_height"      : "0",
+		"big_width"       : "0",
+		"class_module"    : "fa fa-briefcase",
+		"column_index"    : [
+			"name",
+			"active",
+			"text",
+			"price_money"
+		],
+		"count_module"    : "20",
+		"show_count"      : false,
+		"filters"         : [],
+		"lang"            : [
+			"name",
+			"text",
+			"key_feature",
+			"location_name",
+			"title",
+			"author",
+			"keywords",
+			"description"
+		],
+		"link_module"     : "vacancies",
+		"link_site_module": "",
+		"menu_table_name" : "menu",
+		"name_module"     : "Вакансии",
+		"order"           : "5",
+		"plugins"         : [
+			"name",
+			"active",
+			"price_money",
+			"text",
+			"key_feature",
+			"location_name",
+			"title",
+			"author",
+			"keywords",
+			"description"
+		],
+		"small_width"     : "0",
+		"small_height"    : "0",
+		"sort"            : "1",
+		"views_module"    : "table",
+		"translate_key"   : "vacancies"
 	}
 ]

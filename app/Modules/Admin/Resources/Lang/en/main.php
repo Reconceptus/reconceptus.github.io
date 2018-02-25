@@ -100,4 +100,5 @@ return [
 	'subscribers'               => 'Subscribers',
 	'send_notifications'        => 'Send notifications',
 	'main_page'                 => 'Main page',
+	'vacancies'                 => 'Vacancies',
 ];

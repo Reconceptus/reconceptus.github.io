@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Classes\DynamicModel;
 use App\Modules\Admin\Classes\Base;
+use App\Modules\Admin\Http\Controllers\FilesController;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -367,10 +368,37 @@ class MainController extends Controller
 	{
 		$data = [];
 
-		if($id)
+		if($id) {
+			$data['vacancy'] = $this
+				->dynamic
+				->t('vacancies')
+				->select('vacancies.*')
+				->where('vacancies.active', 1)
+				->first();
+
+			$data['vacancies'] = $this->dynamic->t('vacancies')
+				->where('vacancies.active', 1)
+				->whereNotIn('vacancies.id', [$id])
+				->select('vacancies.*')
+				->groupBy('vacancies.id')
+				->orderBy('vacancies.id', 'DESC')
+				->get()
+				->toArray();
+
+			$data['meta_c']    = $this->base->getMeta($data, 'vacancy');
+
 			return $this->base->view_s("site.main.vacancies_id", $data);
-		else
+		} else {
+			$data['vacancies'] = $this->dynamic->t('vacancies')
+				->where('vacancies.active', 1)
+				->select('vacancies.*')
+				->groupBy('vacancies.id')
+				->orderBy('vacancies.id', 'DESC')
+				->get()
+				->toArray();
+
 			return $this->base->view_s("site.main.vacancies", $data);
+		}
 	}
 
 	/**
@@ -712,10 +740,6 @@ class MainController extends Controller
 		$title     = '';
 		$from      = 'no-realy@greecobooking.niws.ru';
 
-//		print_r($form);
-//		print_r($type);
-//		exit;
-
 		$param = $this
 			->dynamic
 			->t('params')
@@ -811,21 +835,58 @@ class MainController extends Controller
 				});
 
 			foreach($form_data['friendMail'] ?? [] as $mail) {
-				Mail::send('emails.' . $type . '_friend', $form_data, function($m) use($param, $title, $from, $form_data, $mail) {
-					$m->from($from, $form_data['yourName'] ?? __('main.send_compilation_friend_user'));
-					$m->to($mail, 'no-realy')->subject(__('main.send_compilation_friend_user'));
-				});
+				Mail::send(
+					'emails.' . $type . '_friend',
+					$form_data,
+
+					function($m) use($param, $title, $from, $form_data, $mail) {
+						$m->from($from, $form_data['yourName'] ?? __('main.send_compilation_friend_user'));
+						$m->to($mail, 'no-realy')->subject(__('main.send_compilation_friend_user'));
+					}
+				);
 			}
 
 			$title = __('main.send_compilation_friend_admin');
 		}
 
-		Mail::send('emails.' . $type, $form_data, function($m) use($param, $title, $from) {
-			$m->from($from, $title);
-			$m->to($param->key, 'no-realy')->subject($title);
-		});
+		if($type == 'resume_form') {
+			$form_data              = $this->request['data'];
+			$title                  = __('main.job_request_from_admin');
+			$form_data['file']      = '';
+			$form_data['message_s'] = $form_data['message'];
+
+			if(!empty($this->request['file_cv'])) {
+				$form_data['file'] = (new FilesController($this->requests))->upload_files(
+					[
+						'file'       => [$this->request['file_cv']],
+						'name_table' => 'resume_form',
+						'id_album'   => 0,
+						'limit'      => 0,
+						'path'       => '/images/resume_form/',
+					]
+				);
+
+				$form_data['file'] = "http://greecobooking.niws.ru/images/resume_form/{$form_data['file']['name']}";
+			}
+		}
+
+//		print_r($form);
+//		print_r($type);
+//		print_r($this->request);
+//		exit;
+
+		Mail::send(
+			'emails.' . $type, $form_data,
+
+			function($m) use ($param, $title, $from) {
+				$m->from($from, $title);
+				$m->to($param->key, 'no-realy')->subject($title);
+			}
+		);
 
 		$ret['result'] = 'ok';
 		echo json_encode($ret);
+
+		exit;
 	}
 }
