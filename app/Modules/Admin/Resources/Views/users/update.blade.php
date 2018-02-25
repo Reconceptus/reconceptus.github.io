@@ -5,7 +5,7 @@
 	@include('admin::layouts.left-menu')
 	@include('admin::layouts.top-menu')
 	<div class="right_col" role="main">
-		<br />
+		<br/>
 
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
@@ -19,213 +19,269 @@
 								<small>@lang('admin::main.edit')</small>
 							@endif
 						</h2>
-						<hr class="clear" />
+						<hr class="clear"/>
 
 						<form method="post" class="form-modules form-horizontal form-label-left">
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.name')</label>
+							<div class="" role="tabpanel" data-example-id="togglable-tabs">
 
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input
-										type="text"
-										name="pl[name]"
-										value="{{ $data->name or '' }}"
-										id="inputName"
-										class="form-control"
-										placeholder="@lang('admin::main.name')"
+								<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+									<li role="presentation" class="active">
+										<a
+											href="#url-main-tab"
+											id="main-tab"
+											role="tab"
+											data-toggle="tab"
+											aria-expanded="true"
+										>
+											@lang('admin::main.basic')
+										</a>
+									</li>
+									@foreach($lang_array as $key => $val)
+										<li role="presentation" class="">
+											<a
+												href="#url-{{ $key }}-tab"
+												id="{{ $key }}-tab"
+												role="tab"
+												data-toggle="tab"
+												aria-expanded="false"
+											>
+												{{ $val['name'] }}
+											</a>
+										</li>
+									@endforeach
+								</ul>
+
+								<div id="myTabContent" class="tab-content">
+									<div
+										role="tabpanel"
+										class="tab-pane fade active in"
+										id="url-main-tab"
+										aria-labelledby="main-tab"
 									>
-								</div>
+										{!! $album !!}
 
-								<br class="clear" />
-							</div>
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12">Статус</label>
 
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">
-									@lang('admin::main.description')
-								</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select name="pl[active]" id="selectActive" class="form-control select2">
+													<option value="1" {!! (isset($data->active) ? $data->active : '') == 1 ? 'selected' : '' !!}>
+														@lang('admin::main.active')
+													</option>
+													<option value="0" {!! (isset($data->active) ? $data->active : '') == 0 ? 'selected' : '' !!}>
+														@lang('admin::main.notActive')
+													</option>
+												</select>
+											</div>
 
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<textarea
-										class="form-control"
-										id="textareaText"
-										name="pl[text]"
-										placeholder="@lang('admin::main.description')"
-										rows="3"
-									>{{ $data->text or '' }}</textarea>
-								</div>
-
-								<br class="clear" />
-							</div>
-
-							{!! $album !!}
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">Статус</label>
-
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<select name="pl[active]" id="selectActive" class="form-control select2">
-										<option value="1" {!! (isset($data->active) ? $data->active : '') == 1 ? 'selected' : '' !!}>
-											@lang('admin::main.active')
-										</option>
-										<option value="0" {!! (isset($data->active) ? $data->active : '') == 0 ? 'selected' : '' !!}>
-											@lang('admin::main.notActive')
-										</option>
-									</select>
-								</div>
-
-								<br class="clear" />
-							</div>
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
-
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input
-										type="text"
-										name="pl[email]"
-										value="{{ $data->email or '' }}"
-										id="inputEmail"
-										class="form-control"
-										placeholder="E-mail"
-									>
-								</div>
-
-								<br class="clear" />
-							</div>
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.currentPassword')</label>
-
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input
-										type="text"
-										value="{{ $data->save_password or '' }}"
-										class="form-control"
-										id="exampleInputEmail"
-										placeholder="@lang('admin::main.currentPassword')"
-										disabled
-									/>
-								</div>
-
-								<br class="clear" />
-							</div>
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.newPassword')</label>
-
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input
-										type="text"
-										name="pl[password]"
-										autocomplete="false"
-										value=""
-										class="form-control"
-										id="exampleInputEmail"
-										placeholder="@lang('admin::main.newPassword')"
-									>
-								</div>
-
-								<br class="clear" />
-							</div>
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.typeOfRights')</label>
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<select name="pl[usertype]" id="selectRight" class="form-control select2">
-										<option
-											value="user"
-											{!! (isset($data->usertype) ? $data->usertype : '') == 'user' ? 'selected' : '' !!}
-										>@lang('admin::main.mixedRights')</option>
-
-										<option
-											value="admin"
-											{!! (isset($data->usertype) ? $data->usertype : '') == 'admin' ? 'selected' : '' !!}
-										>@lang('admin::main.fullRights')</option>
-									</select>
-
-								</div>
-								<br class="clear" />
-							</div>
-
-							<div class="form-group">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.anotherUserType')</label>
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<select name="pl[user_another_type]" id="selectAnotherUserType" class="form-control select2">
-										<option value="">-</option>
-
-										<option
-											value="author"
-											{!! ($data->user_another_type ?? '') == 'author' ? 'selected' : '' !!}
-										>@lang('admin::main.author')</option>
-
-										<option
-											value="specialist"
-											{!! ($data->user_another_type ?? '') == 'specialist' ? 'selected' : '' !!}
-										>@lang('admin::main.specialist')</option>
-									</select>
-
-								</div>
-								<br class="clear" />
-							</div>
-
-							<div class="module-right">
-								@foreach($modules as $val)
-									<div class="form-group">
-										<label class="control-label col-md-3 col-sm-3 col-xs-12">
-											{{ $val['name_module'] }}
-										</label>
-										<div class="col-md-6 col-sm-6 col-xs-12">
-											<input type="hidden" value="{{ $val['id'] }}" name="id_menu[{{ $val['id'] }}]" />
-
-											<label>
-												<input
-													type="checkbox"
-													class="flat"
-													value="1"
-													name="r[{{ $val['id'] }}]"
-													{!! (isset($val['r']) ? $val['r'] : '') == 1 ? 'checked' : '' !!}
-												/>
-												@lang('admin::main.view')
-											</label>
-
-											<label>
-												<input
-													type="checkbox"
-													class="flat"
-													value="1"
-													name="x[{{ $val['id'] }}]"
-													{!! (isset($val['x']) ? $val['x'] : '') == 1 ? 'checked' : '' !!}
-												/>
-												@lang('admin::main.change')
-											</label>
-
-											<label>
-												<input
-													type="checkbox"
-													class="flat"
-													value="1"
-													name="w[{{ $val['id'] }}]"
-													{!! (isset($val['w']) ? $val['w'] : '') == 1 ? 'checked' : '' !!}
-												/>
-												@lang('admin::main.creation')
-											</label>
-
-											<label>
-												<input
-													type="checkbox"
-													class="flat"
-													value="1"
-													name="d[{{ $val['id'] }}]"
-													{!! (isset($val['d']) ? $val['d'] : '') == 1 ? 'checked' : '' !!}
-												/>
-												@lang('admin::main.removal')
-											</label>
-
-											<hr style="margin: 0" />
+											<br class="clear"/>
 										</div>
-										<br class="clear" />
+
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12">E-mail</label>
+
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input
+													type="text"
+													name="pl[email]"
+													value="{{ $data->email or '' }}"
+													id="inputEmail"
+													class="form-control"
+													placeholder="E-mail"
+												>
+											</div>
+
+											<br class="clear"/>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12">
+												@lang('admin::main.currentPassword')
+											</label>
+
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input
+													type="text"
+													value="{{ $data->save_password or '' }}"
+													class="form-control"
+													id="exampleInputEmail"
+													placeholder="@lang('admin::main.currentPassword')"
+													disabled
+												/>
+											</div>
+
+											<br class="clear"/>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.newPassword')</label>
+
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<input
+													type="text"
+													name="pl[password]"
+													autocomplete="false"
+													value=""
+													class="form-control"
+													id="exampleInputEmail"
+													placeholder="@lang('admin::main.newPassword')"
+												>
+											</div>
+
+											<br class="clear"/>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-md-3 col-sm-3 col-xs-12">
+												@lang('admin::main.typeOfRights')
+											</label>
+
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select name="pl[usertype]" id="selectRight" class="form-control select2">
+													<option
+														value="user"
+														{!! (isset($data->usertype) ? $data->usertype : '') == 'user' ? 'selected' : '' !!}
+													>@lang('admin::main.mixedRights')</option>
+
+													<option
+														value="admin"
+														{!! (isset($data->usertype) ? $data->usertype : '') == 'admin' ? 'selected' : '' !!}
+													>@lang('admin::main.fullRights')</option>
+												</select>
+
+											</div>
+											<br class="clear"/>
+										</div>
+
+										<div class="form-group">
+											<label
+												class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.anotherUserType')</label>
+											<div class="col-md-6 col-sm-6 col-xs-12">
+												<select name="pl[user_another_type]" id="selectAnotherUserType" class="form-control select2">
+													<option value="">-</option>
+
+													<option
+														value="author"
+														{!! ($data->user_another_type ?? '') == 'author' ? 'selected' : '' !!}
+													>@lang('admin::main.author')</option>
+
+													<option
+														value="specialist"
+														{!! ($data->user_another_type ?? '') == 'specialist' ? 'selected' : '' !!}
+													>@lang('admin::main.specialist')</option>
+												</select>
+
+											</div>
+											<br class="clear"/>
+										</div>
+
+										<div class="module-right">
+											@foreach($modules as $val)
+												<div class="form-group">
+													<label class="control-label col-md-3 col-sm-3 col-xs-12">
+														{{ $val['name_module'] }}
+													</label>
+													<div class="col-md-6 col-sm-6 col-xs-12">
+														<input type="hidden" value="{{ $val['id'] }}" name="id_menu[{{ $val['id'] }}]"/>
+
+														<label>
+															<input
+																type="checkbox"
+																class="flat"
+																value="1"
+																name="r[{{ $val['id'] }}]"
+																{!! (isset($val['r']) ? $val['r'] : '') == 1 ? 'checked' : '' !!}
+															/>
+															@lang('admin::main.view')
+														</label>
+
+														<label>
+															<input
+																type="checkbox"
+																class="flat"
+																value="1"
+																name="x[{{ $val['id'] }}]"
+																{!! (isset($val['x']) ? $val['x'] : '') == 1 ? 'checked' : '' !!}
+															/>
+															@lang('admin::main.change')
+														</label>
+
+														<label>
+															<input
+																type="checkbox"
+																class="flat"
+																value="1"
+																name="w[{{ $val['id'] }}]"
+																{!! (isset($val['w']) ? $val['w'] : '') == 1 ? 'checked' : '' !!}
+															/>
+															@lang('admin::main.creation')
+														</label>
+
+														<label>
+															<input
+																type="checkbox"
+																class="flat"
+																value="1"
+																name="d[{{ $val['id'] }}]"
+																{!! (isset($val['d']) ? $val['d'] : '') == 1 ? 'checked' : '' !!}
+															/>
+															@lang('admin::main.removal')
+														</label>
+
+														<hr style="margin: 0"/>
+													</div>
+													<br class="clear"/>
+												</div>
+											@endforeach
+										</div>
 									</div>
-								@endforeach
+
+									@foreach($lang_array as $key => $val)
+										<div
+											role="tabpanel"
+											class="tab-pane fade"
+											id="url-{{ $key }}-tab"
+											aria-labelledby="{{ $key }}-tab"
+										>
+											<div class="wrapper wrapper-content animated fadeIn">
+												<div class="form-group">
+													<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.name')</label>
+
+													<div class="col-md-6 col-sm-6 col-xs-12">
+														<input
+															type="text"
+															name="pl[name][{{ $val['name'] }}]"
+															value="{{ $langSt($data->name ?? '') }}"
+															id="inputName"
+															class="form-control"
+															placeholder="@lang('admin::main.name')"
+														>
+													</div>
+
+													<br class="clear"/>
+												</div>
+
+												<div class="form-group">
+													<label class="control-label col-md-3 col-sm-3 col-xs-12">
+														@lang('admin::main.description')
+													</label>
+
+													<div class="col-md-6 col-sm-6 col-xs-12">
+														<textarea
+															class="form-control"
+															id="textareaText"
+															name="pl[text][{{ $val['name'] }}]"
+															placeholder="@lang('admin::main.description')"
+															rows="3"
+														>{!! $langSt($data->text ?? '') !!}</textarea>
+													</div>
+
+													<br class="clear"/>
+												</div>
+											</div>
+										</div>
+									@endforeach
+								</div>
 							</div>
 
 							<div class="loader"></div>

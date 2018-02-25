@@ -106,8 +106,9 @@ class UsersController extends Controller
 
 					unset($this->request['pl']['password']);
 					unset($this->request['pl']['save_password']);
+
 					foreach($this->request['pl'] as $key => $v)
-						$users->$key = $v;
+						$users->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;;
 
 					$users->save();
 				} else {
@@ -115,10 +116,9 @@ class UsersController extends Controller
 					// создаём пользователя
 					$users = new User();
 
-					foreach($this->request['pl'] as $key => $v) {
+					foreach($this->request['pl'] as $key => $v)
 						if($v)
-							$users->$key = $v;
-					}
+							$users->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
 					if(!empty($this->request['pl']['password'])) {
 						$users->password = Hash::make("r3j1d3n3e7y" . $this->request['pl']['password']);
@@ -195,16 +195,19 @@ class UsersController extends Controller
 					['id' => $id, 'table' => 'users']
 				);
 
+				$lang = $this->dynamic->t('params_lang')->get()->toArray();
+
 				return Base::view(
 					"admin::users.update",
 
 					[
-						'id'      => $id,
-						'album'    => $album,
-						'menu'    => $menu,
-						'modules' => $menu,
-						'right'   => Session::get('right'),
-						'data'    => User::find($id),
+						'id'         => $id,
+						'album'      => $album,
+						'menu'       => $menu,
+						'modules'    => $menu,
+						'right'      => Session::get('right'),
+						'data'       => User::find($id),
+						'lang_array' => $lang,
 					]
 				);
 			}
