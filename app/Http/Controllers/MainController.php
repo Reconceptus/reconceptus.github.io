@@ -937,14 +937,15 @@ class MainController extends Controller
 //		print_r($this->request);
 //		exit;
 
-		Mail::send(
-			'emails.' . $type, $form_data,
+		foreach(explode(',', $this->base->lang($param->key)) as $mail)
+			Mail::send(
+				'emails.' . $type, $form_data,
 
-			function($m) use ($param, $title, $from) {
-				$m->from($from, $title);
-				$m->to($param->key, 'no-realy')->subject($title);
-			}
-		);
+				function($m) use ($param, $title, $from, $mail) {
+					$m->from($from, $title);
+					$m->to(trim($mail), 'no-realy')->subject($title);
+				}
+			);
 
 		$ret['result'] = 'ok';
 		echo json_encode($ret);
