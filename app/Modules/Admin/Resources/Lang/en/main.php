@@ -101,4 +101,6 @@ return [
 	'send_notifications'        => 'Send notifications',
 	'main_page'                 => 'Main page',
 	'vacancies'                 => 'Vacancies',
+	'select_all'                => 'Select all',
+	'remove_all'                => 'Remove all',
 ];

@@ -101,4 +101,6 @@ return [
 	'send_notifications'        => 'Отправлять оповещения',
 	'main_page'                 => 'Главная страница',
 	'vacancies'                 => 'Вакансии',
+	'select_all'                => 'Выбрать всё',
+	'remove_all'                => 'Снять всё',
 ];

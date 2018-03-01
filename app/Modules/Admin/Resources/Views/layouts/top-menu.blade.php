@@ -19,7 +19,7 @@
 						 aria-expanded="false">
 						<img src="/modules/images/user.png" alt="">
 						@if (!empty(\App\Modules\Admin\Classes\Base::$user))
-							{{ \App\Modules\Admin\Classes\Base::$user->name }}
+							{{ $langSt(\App\Modules\Admin\Classes\Base::$user->name) }}
 						@else
 							@lang('admin::main.administrator')
 						@endif

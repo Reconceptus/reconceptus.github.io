@@ -100,7 +100,7 @@ class UsersController extends Controller
 					}
 
 					if(isset($this->request['pl']['password']) || !$id) {
-						$users->password      = Hash::make("r3j1d3n3e7y" . $this->request['pl']['password']);
+						$users->password      = Hash::make($this->request['pl']['password']);
 						$users->save_password = $this->request['pl']['password'];
 					}
 
@@ -121,7 +121,7 @@ class UsersController extends Controller
 							$users->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
 					if(!empty($this->request['pl']['password'])) {
-						$users->password = Hash::make("r3j1d3n3e7y" . $this->request['pl']['password']);
+						$users->password = Hash::make($this->request['pl']['password']);
 
 						$users->save_password = $this->request['pl']['password'];
 					}
@@ -185,7 +185,9 @@ class UsersController extends Controller
 					return redirect('/admin/index/users');
 				}
 			} else {
-				$menu = Base::getModule("link_module", null, true);
+				$menu    = Base::getModule("link_module", null, true);
+				$modules = Base::getModule("link_module", null, true, $id);
+
 				if(!$id)
 					$id = 0;
 
@@ -204,7 +206,7 @@ class UsersController extends Controller
 						'id'         => $id,
 						'album'      => $album,
 						'menu'       => $menu,
-						'modules'    => $menu,
+						'modules'    => $modules,
 						'right'      => Session::get('right'),
 						'data'       => User::find($id),
 						'lang_array' => $lang,

@@ -97,8 +97,8 @@
 										/>
 									</td>
 
-									<td><a href="/admin/update/users/{{ $val['id'] }}">{{ $val['name'] }}</a></td>
-									<td>{{ mb_substr($val['text'], 0, 100, 'UTF-8') }}</td>
+									<td><a href="/admin/update/users/{{ $val['id'] }}">{{ $langSt($val['name']) }}</a></td>
+									<td>{{ mb_substr($langSt($val['text']), 0, 100, 'UTF-8') }}</td>
 									<td>@if($val['active']) @lang('admin::main.shown') @else @lang('admin::main.hidden') @endif</td>
 
 									<th>

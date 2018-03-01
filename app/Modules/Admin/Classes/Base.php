@@ -3,6 +3,7 @@
 namespace App\Modules\Admin\Classes;
 
 use App\Classes\DynamicModel;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -226,6 +227,7 @@ class Base
 	 * @param $keySearch - ключ
 	 * @param $name - с чем сверять
 	 * @param $list - игнорировать parent и оставить массив одномерным
+	 * @param $id - id юзера для которого надо сформировать права
 	 * @return mixed
 	 * admin - если тип юзера (admin) то права будут полные, всегда
 	 * r - просмотр
@@ -233,11 +235,16 @@ class Base
 	 * w - добавление
 	 * d - удаление
 	 */
-	public static function getModule($keySearch = "link_module", $name = null, $list = false)
+	public static function getModule($keySearch = "link_module", $name = null, $list = false, $id = null)
 	{
 		$module = config('admin.module');
 
-		if(Auth::user()['usertype'] == 'admin') {
+		if($id)
+			$user = User::find($id);
+		else
+			$user = Auth::user();
+
+		if($user['usertype'] == 'admin') {
 			foreach($module as $key => $v) {
 				if($name === $module[$key][$keySearch] || !$name) {
 					$module[$key] = array_merge($v, ['r' => 1, 'x' => 1, 'w' => 1, 'd' => 1]);
@@ -274,7 +281,7 @@ class Base
 		} else {
 			$right = DynamicModel::t('right')
 				->select('id_menu', 'r', 'x', 'w', 'd')
-				->where('id_user', Auth::user()['id'])
+				->where('id_user', $user['id'])
 				->whereIn('id_menu', Base::getArrayVal("id", $module))
 				->groupBy('id')
 				->get()
@@ -284,15 +291,10 @@ class Base
 
 			foreach($module as $key => $v) {
 				if($name === $module[$key][$keySearch] || !$name) {
-					if(Auth::user()['usertype'] == 'admin') {
-						$module[$key] = array_merge($v, ['r' => 1, 'x' => 1, 'w' => 1, 'd' => 1]);
-					} else {
-						if(!isset($right[$v['id']])) {
-							$module[$key] = array_merge($v, ['r' => 0, 'x' => 0, 'w' => 0, 'd' => 0]);
-						} else {
-							$module[$key] = array_merge(['r' => 1, 'x' => 1, 'w' => 1, 'd' => 1], $v, $right[$v['id']]);
-						}
-					}
+					if(!isset($right[$v['id']]))
+						$module[$key] = array_merge($v, ['r' => 0, 'x' => 0, 'w' => 0, 'd' => 0]);
+					 else
+						$module[$key] = array_merge(['r' => 1, 'x' => 1, 'w' => 1, 'd' => 1], $v, $right[$v['id']]);
 
 					if(isset($v['parent']) && !$list) {
 						$parent = Base::findKey($module, 'id', $v['parent']);
@@ -305,12 +307,14 @@ class Base
 
 							[
 								array_merge(
-									$v, [
-											'r' => $module[$key]['r'],
-											'x' => $module[$key]['x'],
-											'w' => $module[$key]['w'],
-											'd' => $module[$key]['d'],
-										]
+									$v,
+
+									[
+										'r' => $module[$key]['r'],
+										'x' => $module[$key]['x'],
+										'w' => $module[$key]['w'],
+										'd' => $module[$key]['d'],
+									]
 								),
 							]
 						);

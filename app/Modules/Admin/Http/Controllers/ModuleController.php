@@ -665,7 +665,7 @@ class ModuleController extends Controller
 				}
 
 				if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin')
-					if($data->user_id !== $this->base->getUser('id'))
+					if($data->user_id !== $this->base->getUser('id') && $data->user_id)
 						abort(503, 503);
 
 				$plugins          = config('admin.plugins');

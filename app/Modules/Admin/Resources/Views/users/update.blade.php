@@ -175,6 +175,18 @@
 											<br class="clear"/>
 										</div>
 
+										<div class="col-md-offset-3 col-md-6 col-sm-6 col-xs-12">
+											<a class="btn btn-default" onclick="$('.flat-power').iCheck('check')">
+												@lang('admin::main.select_all')
+											</a>
+
+											<a class="btn btn-default" onclick="$('.flat-power').iCheck('uncheck')">
+												@lang('admin::main.remove_all')
+											</a>
+										</div>
+
+										<div class="clear"></div>
+
 										<div class="module-right">
 											@foreach($modules as $val)
 												<div class="form-group">
@@ -186,19 +198,21 @@
 
 														<label>
 															<input
+																autocomplete="off"
 																type="checkbox"
-																class="flat"
+																class="flat flat-power"
 																value="1"
 																name="r[{{ $val['id'] }}]"
-																{!! (isset($val['r']) ? $val['r'] : '') == 1 ? 'checked' : '' !!}
+																{!! ($val['r'] ?? 0) === 1 ? 'checked' : '' !!}
 															/>
+															{{--{{ print_r($val) }}--}}
 															@lang('admin::main.view')
 														</label>
 
 														<label>
 															<input
 																type="checkbox"
-																class="flat"
+																class="flat flat-power"
 																value="1"
 																name="x[{{ $val['id'] }}]"
 																{!! (isset($val['x']) ? $val['x'] : '') == 1 ? 'checked' : '' !!}
@@ -209,7 +223,7 @@
 														<label>
 															<input
 																type="checkbox"
-																class="flat"
+																class="flat flat-power"
 																value="1"
 																name="w[{{ $val['id'] }}]"
 																{!! (isset($val['w']) ? $val['w'] : '') == 1 ? 'checked' : '' !!}
@@ -220,7 +234,7 @@
 														<label>
 															<input
 																type="checkbox"
-																class="flat"
+																class="flat flat-power"
 																value="1"
 																name="d[{{ $val['id'] }}]"
 																{!! (isset($val['d']) ? $val['d'] : '') == 1 ? 'checked' : '' !!}
@@ -245,7 +259,9 @@
 										>
 											<div class="wrapper wrapper-content animated fadeIn">
 												<div class="form-group">
-													<label class="control-label col-md-3 col-sm-3 col-xs-12">@lang('admin::main.name')</label>
+													<label class="control-label col-md-3 col-sm-3 col-xs-12">
+														@lang('admin::main.name')
+													</label>
 
 													<div class="col-md-6 col-sm-6 col-xs-12">
 														<input
@@ -262,7 +278,7 @@
 												</div>
 
 												<div class="form-group">
-													<label class="control-label col-md-3 col-sm-3 col-xs-12">
+													<label style="padding-top: 0px;" class="control-label col-md-3 col-sm-3 col-xs-12">
 														@lang('admin::main.description')
 													</label>
 
@@ -285,15 +301,18 @@
 							</div>
 
 							<div class="loader"></div>
-							<button class="btn btn-success" type="submit">@lang('admin::main.save')</button>
 
-							<button class="btn btn-primary" formaction="/admin/update/users/{{ $id }}/1" type="submit">
-								@lang('admin::main.apply')
-							</button>
+							<div class="text-right">
+								<button class="btn btn-success" type="submit">@lang('admin::main.save')</button>
 
-							<button class="btn btn-default" formaction="/admin/index/users" type="submit">
-								@lang('admin::main.close')
-							</button>
+								<button class="btn btn-primary" formaction="/admin/update/users/{{ $id }}/1" type="submit">
+									@lang('admin::main.apply')
+								</button>
+
+								<button class="btn btn-default" formaction="/admin/index/users" type="submit">
+									@lang('admin::main.close')
+								</button>
+							</div>
 						</form>
 					</div>
 				</div>
