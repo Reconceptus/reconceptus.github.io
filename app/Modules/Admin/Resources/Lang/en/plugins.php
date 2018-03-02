@@ -2,7 +2,7 @@
 
 return [
 	'title'                => 'Title',
-	'fullText'             => 'Full text',
+	'fullText'             => 'Text',
 	'author'               => 'Author',
 	'location_name'        => 'Location name',
 	'location_description' => 'Description name',
@@ -29,4 +29,5 @@ return [
 	'title_prepositional'  => 'Title in the prepositional case',
 	'specialist'           => 'Specialist',
 	'description_param'    => 'Description of the parameter',
+	'preview'              => 'Preview',
 ];

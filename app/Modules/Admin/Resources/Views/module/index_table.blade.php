@@ -1,8 +1,8 @@
-<link href="{{ asset('/modules/js/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('/modules/js/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('/modules/js/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('/modules/js/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('/modules/js/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <style>
 	.img_none img {
 		display: none;
@@ -14,7 +14,7 @@
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 15px">
 		<div class="panel panel-default">
 			<div class="panel-heading" id="headingOne" role="button" data-toggle="collapse" data-parent="#accordion"
-					 href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 				<h4 class="panel-title">@lang('admin::main.filters')</h4>
 			</div>
 
@@ -29,7 +29,7 @@
 										{!! $sort !!}
 									</select>
 								</div>
-								<br class="clear"/>
+								<br class="clear" />
 							</div>
 
 							<script>
@@ -76,7 +76,23 @@
 <script src="{{ asset('/modules/js/datatables/responsive.bootstrap.min.js') }}"></script>
 <script src="{{ asset('/modules/js/datatables/dataTables.scroller.min.js') }}"></script>
 
-<div class="table-responsive">
+<style>
+	#table_id_wrapper .row{
+		min-height: .01%;
+		overflow-x: auto;
+		width: 100%;
+	}
+
+	#table_id_wrapper .row table {
+		width: 100%!important;
+	}
+
+	#table_id_wrapper .row .dataTables_filter {
+		width: 100%;
+	}
+</style>
+
+<div class="">
 	<table id="table_id" class="table table-striped table-bordered">
 		<thead>
 		<tr>
@@ -94,11 +110,12 @@
 
 <script>
 	$('#table_id').DataTable({
-		"bServerSide": true,
-		"sAjaxSource": "/admin/getData/{{ $table }}?{!! $url !!}",
-		"sServerMethod": "POST",
+		"bServerSide"   : true,
+		"aaSorting"     : [[0,'desc']],
+		"sAjaxSource"   : "/admin/getData/{{ $table }}?{!! $url !!}",
+		"sServerMethod" : "POST",
 		"iDisplayLength": 10,
-		"sAjaxDataProp": "data",
+		"sAjaxDataProp" : "data",
 
 		columns: [
 			{data: 'id'},
@@ -117,11 +134,11 @@
 		if($("input.flat")[0]) {
 			$('input.flat').iCheck({
 				checkboxClass: 'icheckbox_flat-green',
-				radioClass: 'iradio_flat-green'
+				radioClass   : 'iradio_flat-green'
 			});
 
 			$('input[type="radio"]').on('ifChanged', function(event) {
-				var id = event['target']['id'];
+				var id    = event['target']['id'];
 				var title = event['target']['title'];
 
 				$.adm.inp_edit(id, title)

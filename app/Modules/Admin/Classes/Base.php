@@ -501,12 +501,15 @@ class Base
 			$args['left_menu'] = Base::getModule();
 		}
 
-		$args['version'] = '4.3.11-dev';
+		$args['version'] = '4.3.14-dev';
 		$args['lang']    = Session::get('lang');
 
 		$args['langSt']  = function($t, $l = '') {
 			return Base::langSt($t, $l);
 		};
+
+		if(isset($args['meta_c']))
+			$args['meta'] = $args['meta_c'];
 
 		return view($url, $args);
 	}
@@ -995,7 +998,7 @@ class Base
 	 * @param string $key
 	 * @return mixed
 	 */
-	public function getMeta(array $data = [], string $key)
+	public function getMeta(array $data = [], string $key = '')
 	{
 		if($data['title'] ?? false) {
 			$meta['title']       = $this->lang($data['title']);

@@ -305,13 +305,14 @@
 		}
 	},
 	{
-		"name"       : "album",
-		"typeField"  : "functions",
-		"nameText"   : "Изображение",
-		"nameAttr"   : "pl[album]",
-		"description": "Плагин \"Album\" для выбора создания альбома",
-		"idAttr"     : "inputAlbum",
-		"sql_column" : "album"
+		"name"        : "album",
+		"typeField"   : "functions",
+		"nameText"    : "Изображение",
+		"nameAttr"    : "pl[album]",
+		"description" : "Плагин \"Album\" для выбора создания альбома",
+		"idAttr"      : "inputAlbum",
+		"sql_column"  : "album",
+		"translateKey": "preview"
 	},
 	{
 		"name"       : "files",

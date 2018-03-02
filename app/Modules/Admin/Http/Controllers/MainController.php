@@ -59,13 +59,13 @@ class MainController extends Controller
 			$menu = Base::getModule();
 
 			foreach($menu as $v)
-				if(isset($v['link_module'])) {
+				if(isset($v['link_module']))
 					if(!Schema::hasTable($v['link_module']) || !$v['show_count'])
 						$data[$v['id']] = 0;
-					else {
-						$data[$v['id']] = $Mod->t($v['link_module'])->count();
-					}
-				}
+					elseif($this->base->getUser('usertype') !== 'admin' &&
+						$this->base->getUser('user_another_type') !== 'specialist')
+						$data[$v['id']] = $Mod->t($v['link_module'])->where('user_id', $this->base->getUser('id'))->count();
+					else$data[$v['id']] = $Mod->t($v['link_module'])->count();
 
 			return Base::view(
 				"admin::dashboard.index",

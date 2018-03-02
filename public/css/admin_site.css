@@ -282,3 +282,17 @@ pre {
 	cursor: default;
 	white-space: pre-wrap;
 }
+
+.mce-tinymce.mce-container.mce-panel {
+	border-width: 0!important;
+	box-shadow: none;
+}
+
+.mce-tinymce.mce-container.mce-panel > .mce-container-body.mce-stack-layout {
+	border: 1px solid hsl(0, 0%, 80%);
+	box-shadow: none;
+}
+
+.modal-content, .alert, .btn {
+	border-radius: 2px;
+}

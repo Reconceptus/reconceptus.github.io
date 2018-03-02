@@ -20,8 +20,7 @@
 						</h2>
 
 						<div class="nav navbar-right panel_toolbox">
-
-							@if($right['x'])
+							@if($right['w'])
 								<a href="/admin/update/{{ $modules['link_module'] }}" class="btn btn-primary">
 									@lang('admin::main.create')
 								</a>

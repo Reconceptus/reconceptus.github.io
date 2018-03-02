@@ -132,17 +132,18 @@ class ModuleController extends Controller
 						$join->type = 'LEFT OUTER';
 
 						$join->on($t . '.id', '=', 'files.id_album')
-							->where('files.name_table', '=', $t)
+							->where('files.name_table', '=', $t . 'album')
 							->where('files.main', '=', 1);
 					}
 				);
 
-			if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin')
+			if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin' &&
+				$this->base->getUser('user_another_type') !== 'specialist')
 				$query->where($t . '.user_id', '=', $this->base->getUser('id'));
 
 			$req['data'] = $query->select($t . '.*', 'files.file', 'files.crop')
 				->groupBy($t . '.id', 'files.file', 'files.crop')
-				->orderBy($t . '.' . $sortF, $sort)
+				->orderBy(($sortF === 'album' ? 'files' : $t) . '.' . ($sortF === 'album' ? 'file' : $sortF), $sort)
 				->skip($skip)
 				->take($length)
 				->get()
@@ -228,6 +229,19 @@ class ModuleController extends Controller
 
 					case 'active':
 						$req['data'][$key]['active'] = $st[$val[$v['name']]];
+					break;
+
+					case 'tags':
+						$id        = json_decode($val['tags'], true);
+						$tags_name = '';
+						$tags      = $this->dynamic->t('tags')->whereIn('id', $id)->get()->toArray();
+
+						foreach($tags as $tag)
+							$tags_name .= '#' . $this->base->lang($tag['name']) . ' ';
+
+						$tags_name = mb_substr(htmlspecialchars(strip_tags($tags_name)), 0, 100, 'UTF-8');
+
+						$req['data'][$key]['tags'] = empty($tags_name) ? '—' : $tags_name;
 					break;
 
 					default:
@@ -531,6 +545,9 @@ class ModuleController extends Controller
 					foreach($this->request['pl'] as $key => $v) {
 						$data->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
+						if($data->$key == '[]')
+							$data->$key = '';
+
 						// functionsBefore
 						if($plugins[$key]['functionsBefore'] ?? false) {
 							$functionsBefore = $plugins[$key]['functionsBefore'];
@@ -628,6 +645,9 @@ class ModuleController extends Controller
 					foreach($this->request['pl'] as $key => $v) {
 						$data[$key] = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
 
+						if($data[$key] == '[]')
+							$data[$key] = '';
+
 						// functionsBefore
 						if($plugins[$key]['functionsBefore'] ?? false) {
 							$functionsBefore = $plugins[$key]['functionsBefore'];
@@ -659,7 +679,7 @@ class ModuleController extends Controller
 				}
 			} else {
 				if($id) {
-					$data = $this->dynamic->t($page)->where(['id' => $id])->first();
+					$data           = $this->dynamic->t($page)->where(['id' => $id])->first();
 				} else {
 					$data = [];
 				}

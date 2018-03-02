@@ -190,7 +190,7 @@
 										<div class="module-right">
 											@foreach($modules as $val)
 												<div class="form-group">
-													<label class="control-label col-md-3 col-sm-3 col-xs-12">
+													<label class="control-label col-md-3 col-sm-3 col-xs-12" style="padding: 0">
 														{{ $val['name_module'] }}
 													</label>
 													<div class="col-md-6 col-sm-6 col-xs-12">

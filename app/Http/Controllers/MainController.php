@@ -46,24 +46,24 @@ class MainController extends Controller
 	 */
 	public function main()
 	{
-		$whereBlog[]   = ['str.active', 1];
-		$whereBlog[]   = ['str.tags', '!=', '\'\''];
+		$whereBlog[]   = ['blog.active', 1];
+		$whereBlog[]   = ['blog.tags', '!=', '\'\''];
 		$whereVillas[] = ['villas.active', 1];
 
-		$data['blog'] = $this->dynamic->t('str')
+		$data['blog'] = $this->dynamic->t('blog')
 			->where($whereBlog)
 
 			->join('files', function($join)
 			{
 				$join->type = 'LEFT OUTER';
-				$join->on('str.id', '=','files.id_album')
-					->where('files.name_table', '=', 'stralbum')
+				$join->on('blog.id', '=','files.id_album')
+					->where('files.name_table', '=', 'blogalbum')
 					->where('files.main', '=', 1);
 			})
 
-			->select('str.*', 'files.file', 'files.crop')
-			->groupBy('str.id')
-			->orderBy('str.id', 'DESC')
+			->select('blog.*', 'files.file', 'files.crop')
+			->groupBy('blog.id')
+			->orderBy('blog.id', 'DESC')
 			->paginate(4);
 
 		$data['villas'] = $this->dynamic->t('villas')
@@ -272,50 +272,50 @@ class MainController extends Controller
 	public function blog($id = null)
 	{
 		$data['tags'] = $this->dynamic->t('tags')->limit(100)->get()->toArray();
-		$where[]      = ['str.active', 1];
+		$where[]      = ['blog.active', 1];
 		$count_box    = 4;
 		$group        = 'id';
 
 		if($id) {
-			$data['blog'] = $this->dynamic->t('str')
-				->where(array_merge($where, ['str.id' => $id]))
+			$data['blog'] = $this->dynamic->t('blog')
+				->where(array_merge($where, ['blog.id' => $id]))
 
 				->join('files', function($join)
 				{
 					$join->type = 'LEFT OUTER';
-					$join->on('str.id', '=','files.id_album')
-						->where('files.name_table', '=', 'stralbum')
+					$join->on('blog.id', '=','files.id_album')
+						->where('files.name_table', '=', 'blogalbum')
 						->where('files.main', '=', 1);
 				})
 
-				->select('str.*', 'files.file', 'files.crop')
+				->select('blog.*', 'files.file', 'files.crop')
 				->first()
 				->toArray();
 
 			$data['meta_c'] = $this->base->getMeta($data, 'blog');
 
-			$data['blogs'] = $this->dynamic->t('str')
-				->whereNotIn('str.id', [$id])
+			$data['blogs'] = $this->dynamic->t('blog')
+				->whereNotIn('blog.id', [$id])
 
 				// TODO скорее отвалится когда теги будут с id больше 10
 				->where(function ($query) use($data) {
 					$tags = explode(',', $data['blog']['tags']);
 
 					for($i = 0; $i < count($tags); $i++){
-						$query->orwhere('str.tags', 'like',  '%' . $tags[$i] .'%');
+						$query->orwhere('blog.tags', 'like',  '%' . $tags[$i] .'%');
 					}
 				})
 
 				->join('files', function($join)
 				{
 					$join->type = 'LEFT OUTER';
-					$join->on('str.id', '=','files.id_album')
-						->where('files.name_table', '=', 'stralbum')
+					$join->on('blog.id', '=','files.id_album')
+						->where('files.name_table', '=', 'blogalbum')
 						->where('files.main', '=', 1);
 				})
 
-				->select('str.*', 'files.file', 'files.crop')
-				->orderBy('str.' . $group, 'DESC')
+				->select('blog.*', 'files.file', 'files.crop')
+				->orderBy('blog.' . $group, 'DESC')
 				->limit(10)
 				->get()
 				->toArray();
@@ -324,30 +324,30 @@ class MainController extends Controller
 		} else {
 			$tags                 = explode(',', str_replace(']', '', str_replace('[', '', $this->request['tag'] ?? '')));
 			$data['current_tags'] = $tags;
-			$where[]              = ['str.tags', '!=', '\'\''];
+			$where[]              = ['blog.tags', '!=', '\'\''];
 
-			$data['blog'] = $this->dynamic->t('str')
+			$data['blog'] = $this->dynamic->t('blog')
 				->where($where)
-				->whereNotIn('str.tags', ['[]', ''])
+				->whereNotIn('blog.tags', ['[]', ''])
 
 				// TODO скорее отвалится когда теги будут с id больше 10
 				->where(function ($query) use($tags) {
 					for($i = 0; $i < count($tags); $i++){
-						$query->orwhere('str.tags', 'like',  '%' . $tags[$i] .'%');
+						$query->orwhere('blog.tags', 'like',  '%' . $tags[$i] .'%');
 					}
 				})
 
 				->join('files', function($join)
 				{
 					$join->type = 'LEFT OUTER';
-					$join->on('str.id', '=','files.id_album')
-						->where('files.name_table', '=', 'stralbum')
+					$join->on('blog.id', '=','files.id_album')
+						->where('files.name_table', '=', 'blogalbum')
 						->where('files.main', '=', 1);
 				})
 
-				->select('str.*', 'files.file', 'files.crop')
-				->groupBy('str.id')
-				->orderBy('str.' . $group, 'DESC')
+				->select('blog.*', 'files.file', 'files.crop')
+				->groupBy('blog.id')
+				->orderBy('blog.' . $group, 'DESC')
 				->paginate($count_box);
 
 			return $this->base->view_s("site.main.blog", $data);
@@ -524,11 +524,11 @@ class MainController extends Controller
 			UNION ALL
 			
 			(SELECT
-		 ' . ($count ? 'COUNT(str.id) AS count' : ('str.id COLLATE utf8_general_ci as id,
-			 str.name COLLATE utf8_general_ci as name,
-			 str.name_table COLLATE utf8_general_ci as name_table,
-			 str.text COLLATE utf8_general_ci as text')) . '
-			FROM str
+		 ' . ($count ? 'COUNT(blog.id) AS count' : ('blog.id COLLATE utf8_general_ci as id,
+			 blog.name COLLATE utf8_general_ci as name,
+			 blog.name_table COLLATE utf8_general_ci as name_table,
+			 blog.text COLLATE utf8_general_ci as text')) . '
+			FROM blog
 			WHERE `text` LIKE \'%' . trim($q) . '%\' OR `name` LIKE \'%' . trim($q) . '%\')';
 		};
 

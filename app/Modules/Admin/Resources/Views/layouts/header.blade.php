@@ -19,10 +19,10 @@
 
 	<!-- Custom styling plus plugins -->
 	<link href="{{ asset('/modules/css/custom.css') }}" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ asset('/modules/css/maps/jquery-jvectormap-2.0.3.css') }}"/>
-	<link href="{{ asset('/modules/css/icheck/flat/green.css') }}" rel="stylesheet"/>
-	<link href="{{ asset('/modules/css/switchery/switchery.min.css') }}" rel="stylesheet"/>
-	<link href="{{ asset('/modules/css/floatexamples.css') }}" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="{{ asset('/modules/css/maps/jquery-jvectormap-2.0.3.css') }}" />
+	<link href="{{ asset('/modules/css/icheck/flat/green.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/modules/css/switchery/switchery.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/modules/css/floatexamples.css') }}" rel="stylesheet" type="text/css" />
 
 	<link href="{{ asset('/modules/css/select/select2.min.css') }}" rel="stylesheet">
 
@@ -39,25 +39,40 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script src="{{ asset('/modules/js/tinymce/moxiemanager/js/moxman.loader.min.js') }}"></script>
 	<script src="{{ asset('/modules/js/tinymce/tinymce.min.js') }}"></script>
 	<script>
-		tinymce.PluginManager.load('moxiemanager', '/modules/js/tinymce/moxiemanager/plugin.min.js');
-
 		tinymce.init({
 			selector: ".area",
 
 			plugins: [
-				"advlist autolink lists link image charmap print preview anchor",
-				"searchreplace visualblocks code fullscreen",
-				"insertdatetime media table contextmenu paste moxiemanager",
-				" emoticons imagetools fullscreen"
+				"autolink",
+				"lists",
+				"link",
+				"image",
+				"charmap",
+				"code",
+				"insertdatetime",
+				"media",
+				"table",
+				"paste",
+				"imagetools"
 			],
 
-			toolbar: "fullscreen insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | fontselect fontsizeselect"
-			+ 'print preview media | emoticons ',
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |" +
+			" bullist numlist | link | table  media image | code",
 
-				imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
+			// without images_upload_url set, Upload tab won't show up
+			images_upload_url: 'postAcceptor.php',
+
+			// we override default upload handler to simulate successful upload
+			images_upload_handler: function(blobInfo, success, failure) {
+				setTimeout(function() {
+					// no matter what you upload, we will turn it into TinyMCE logo :)
+					success('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
+				}, 2000);
+			},
+
+			imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
 
 			image_class_list: [
 				{title: 'None', value: ''},
@@ -71,14 +86,14 @@
 				{title: 'Thumbnail', value: 'thumbnail'}
 			],
 
-			menubar: true,
-			image_advtab: true,
-			image_dimensions: true,
+			menubar          : false,
+			image_advtab     : true,
+			image_dimensions : true,
 			// image_prepend_url: "/",
 			document_base_url: "/",
-			relative_urls: false,
-			language: "{{ \App::getLocale() }}",
-			font_formats: "Andale Mono=andale mono,times;" +
+			relative_urls    : false,
+			language         : "{{ \App::getLocale() }}",
+			font_formats     : "Andale Mono=andale mono,times;" +
 			"Arial=arial,helvetica,sans-serif;" +
 			"Arial Black=arial black,avant garde;" +
 			"Book Antiqua=book antiqua,palatino;" +
@@ -99,7 +114,7 @@
 
 		tinymce.init({
 			selector: ".area_min",
-			menubar: false,
+			menubar : false,
 			language: "{{ \App::getLocale() }}",
 		});
 	</script>
@@ -123,7 +138,7 @@
 		}
 	</style>
 
-	<link href="/css/admin_site.css" rel="stylesheet" type="text/css"/>
+	<link href="/css/admin_site.css" rel="stylesheet" type="text/css" />
 	<script src="{{ asset('/modules/js/adm.js') }}"></script>
 
 	<script>

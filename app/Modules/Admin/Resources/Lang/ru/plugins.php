@@ -2,7 +2,7 @@
 
 return [
 	'title'                => 'Название',
-	'fullText'             => 'Полный текст',
+	'fullText'             => 'Текст',
 	'author'               => 'Author',
 	'location_name'        => 'Название локации',
 	'location_description' => 'Описание локации',
@@ -29,4 +29,5 @@ return [
 	'title_prepositional'  => 'Название в предложном падеже',
 	'specialist'           => 'Специалист',
 	'description_param'    => 'Описание параметра',
+	'preview'              => 'Превью',
 ];

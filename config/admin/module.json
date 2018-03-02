@@ -165,15 +165,11 @@
 			"cat",
 			"translation",
 			"date",
-			"order",
-			"html_top",
-			"html_bottom",
 			"title",
 			"author",
 			"keywords",
 			"description",
-			"album",
-			"tags"
+			"album"
 		],
 		"small_width"     : "500",
 		"small_height"    : "350",
@@ -546,5 +542,53 @@
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "vacancies"
+	},
+	{
+		"id"              : "14",
+		"active"          : true,
+		"big_height"      : "1200",
+		"big_width"       : "800",
+		"class_module"    : "fa fa-bullhorn",
+		"column_index"    : [
+			"name",
+			"description",
+			"album",
+			"tags",
+			"active"
+		],
+		"count_module"    : "20",
+		"show_count"      : true,
+		"filters"         : [],
+		"lang"            : [
+			"name",
+			"text",
+			"title",
+			"author",
+			"keywords",
+			"description"
+		],
+		"link_module"     : "blog",
+		"link_site_module": "/blog/",
+		"menu_table_name" : "menu",
+		"name_module"     : "Блог",
+		"order"           : "2",
+		"plugins"         : [
+			"name",
+			"text",
+			"active",
+			"translation",
+			"date",
+			"title",
+			"author",
+			"keywords",
+			"description",
+			"album",
+			"tags"
+		],
+		"small_width"     : "500",
+		"small_height"    : "350",
+		"sort"            : "1",
+		"views_module"    : "table",
+		"translate_key"   : "blog"
 	}
 ]
