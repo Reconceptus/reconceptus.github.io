@@ -22,7 +22,7 @@
 					</h4>
 				</div>
 				<div id="collapseOne{{ $name }}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-					<div class="panel-body">
+					<div class="panel-body" style="padding: 0">
 
 						@if($id_album != '0')
 							@php($id_page = 1)
@@ -36,9 +36,9 @@
 								@foreach($files as $v)
 									<div class="col-md-4 rowID{{ $name }}-{{ $v->id }}">
 										<div class="thumbnail">
-											<div class="image view view-first">
+											<div class="image view view-first pointer" onclick="editImg{{ $name }}({{ $v->id }})">
 												@if($v->crop)
-													<img src="/images/files/small/{{  $v->crop }}" style="width: 100%; display: block;"/>
+													<img src="/images/files/small/{{ $v->crop }}" style="width: 100%; display: block;"/>
 												@else
 													<img src="/images/files/small/{{ $v->file }}" style="width: 100%; display: block;"/>
 												@endif
@@ -115,6 +115,7 @@
 											'name_field': '{{ $name }}'
 										},
 
+										'removeCompleted' : true,
 										'debug': true,
 										'queueID': 'queue{{ $name }}',
 										'buttonText': '@lang('admin::main.selectImage')',
@@ -134,7 +135,7 @@
 
 											var img = '<div class="col-md-4 rowID{{ $name }}-' + ds['id'] + '">' +
 												'<div class="thumbnail">' +
-												'<div class="image view view-first">' +
+												'<div class="image view view-first pointer" onclick="editImg{{ $name }}(\' + ds[\'id\'] + \')">' +
 												'<img src="/images/files/small/' + ds['name'] + '" style="width: 100%; display: block;"/>' +
 												'</div>' +
 												'<div class="caption" style="padding-bottom: 0">' +
@@ -333,8 +334,10 @@
 	<div class="modal-dialog modal-lg modal-lgAl{{ $name }}">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">&times;</span></button>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+
 				<h4 class="modal-title"></h4>
 			</div>
 			<div class="bodyModal{{ $name }}"></div>

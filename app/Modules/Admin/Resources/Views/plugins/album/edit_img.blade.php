@@ -1,13 +1,21 @@
-<div class="modal-body">
-	<div class="panel-body">
+<div class="modal-body" style="padding: 0">
+	<div class="panel-body" style="padding: 0">
 		<form name="edit_img_album">
+			<div class="thumbnail">
+				@if($file['crop'])
+					<img src="/images/files/small/{{ $file['crop'] }}" style="width: 100%; display: block;"/>
+				@else
+					<img src="/images/files/small/{{ $file['file'] }}" style="width: 100%; display: block;"/>
+				@endif
+			</div>
+
 			<div class="" role="tabpanel" data-example-id="togglable-tabs">
 				<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
 					@foreach($lang_array as $key => $val)
 						<li role="presentation" class="{!! !$key ? 'active' : '' !!}">
 							<a
-								href="#album-url-{{ $key }}-tab"
-								id="{{ $key }}-tab"
+								href="#album-url-{{ $name . $key }}-tab"
+								id="{{ $name . $key }}-tab"
 								role="tab"
 								data-toggle="tab"
 								aria-expanded="{!! !$key ? 'true' : 'false' !!}"
@@ -18,14 +26,14 @@
 					@endforeach
 				</ul>
 
-				<div id="myTabContent" class="tab-content">
+				<div id="myTabContent{{ $name }}" class="tab-content">
 					@foreach($lang_array as $key => $v)
 						@php($str_lang = count($lang_array) ? '[' . $v['name'] . ']' : '')
 						<div
 							role="tabpanel"
 							class="tab-pane fade {!! !$key ? 'active in' : '' !!}"
-							id="album-url-{{ $key }}-tab"
-							aria-labelledby="{{ $key }}-tab"
+							id="album-url-{{ $name . $key }}-tab"
+							aria-labelledby="{{ $name . $key }}-tab"
 						>
 							<div class="wrapper wrapper-content animated fadeIn">
 								<div class="form-group">

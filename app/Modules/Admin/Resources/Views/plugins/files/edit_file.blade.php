@@ -1,5 +1,5 @@
-<div class="modal-body">
-	<div class="panel-body">
+<div class="modal-body" style="padding: 0">
+	<div class="panel-body" style="padding: 0">
 		<form name="edit-form-file">
 			<div class="" role="tabpanel" data-example-id="togglable-tabs">
 				<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">

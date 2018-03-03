@@ -33,7 +33,7 @@
 								@foreach($files as $v)
 									<div class="col-md-4 rowID{{ $name }}-{{ $v->id }}">
 										<div class="thumbnail">
-											<div class="image view view-first">
+											<div class="image view view-first pointer" onclick="editFile{{ $name }}({{ $v->id }})">
 												<i
 													style="font-size: 120px; padding: 5px;"
 													class="fas fa-file-{{ explode('.', $v->file)[count(explode('.', $v->file)) - 1] }}"
@@ -81,8 +81,6 @@
 							@php($timestamp = time())
 							<script type="text/javascript">
 								function callDel() {
-									console.log(parseInt('{{ $limit }}'), $('#response_suss{{ $name }}').children().length)
-
 									if(parseInt('{{ $limit }}') > $('#response_suss{{ $name }}').children().length) {
 										$('#cont-file-upload').html(
 											'<input id="file_upload{{ $name }}" name="file_upload" type="file" multiple="multiple">'
@@ -137,13 +135,13 @@
 
 												var file = '<div class="col-md-4 rowID{{ $name }}-' + ds['id'] + '">' +
 													'<div class="thumbnail">' +
-													'<div class="image view view-first">' +
+													'<div class="image view view-first pointer" onclick="editFile{{ $name }}(\' + ds[\'id\'] + \')">' +
 													'<i style="font-size: 120px; padding: 5px;" class="fas fa-file-' + ext + '"></i>' +
 													'</div>' +
 													'<div class="caption" style="padding-bottom: 0">' +
 													'<div class="tools tools-bottom" style="text-align: center">' +
 													'<a href="javascript:void(0)" onclick="editFile{{ $name }}(' + ds['id'] + ')" class="btn"><i class="fa fa-pencil"></i></a>' +
-													'<a href="javascript:void(0)" onclick="$.adm.rowDelete(' + ds['id'] + ', \'files\', \'\' ,\'{{ $name }}\', callDel)" class="btn"><i class="fa fa-times"></i></a>' +
+													'<a href="javascript:void(0)" onclick="$.adm.rowDelete(' + ds['id'] + ', \'files\', \'\' ,\'{{ $name }}\')" class="btn"><i class="fa fa-times"></i></a>' +
 													'<a href="javascript:void(0)" class="btn" onclick="toMain{{ $name }}(' + ds['id'] + ')">';
 
 												if(ds['main'] == 1) {
