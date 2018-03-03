@@ -43,27 +43,18 @@
 
 					<div class="vacancy-advances">
 						<ul>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Мы всегда на связи! В любое время дня и ночи наши сотрудники готовы ответить на все вопросы.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Только лицензированные обьекты, отвечающие всем требуемым стандартам. Честные и разумные цены! </p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Все объекты мы видели вживую и они прошли наш контроль. Наша компания основана и работает в Греции уже 8 лет.</p>
-								</div>
-							</li>
+							@foreach($benefits as $v)
+								@php($path_small = '/images/files/small/')
+								@php($img_small = $v['file'] ? $v['crop'] ? $path_small . $v['crop'] : $path_small . $v['file'] : '')
+
+								<li>
+									<i><img src="{{ $img_small }}" alt="img" /></i>
+									<div class="text">
+										<h5 class="title">{!! $langSt($v['name']) !!}</h5>
+										{!! $langSt($v['text']) !!}
+									</div>
+								</li>
+							@endforeach
 						</ul>
 					</div>
 				</div>
@@ -75,7 +66,8 @@
 				</div>
 
 				<div class="text">
-					<blockquote>Здесь что-то воодушевляющее. Вы любите Грецию как и мы и знаете все о туристическом бизнесе?- мы ждем вас в нашу команду, присылайте резюме.</blockquote>
+					<blockquote>{{ $langSt($main_page['little_description']) }}</blockquote>
+
 					<div class="contacts">
 						<ul>
 							<li>
@@ -107,49 +99,18 @@
 					</header>
 					<div class="vacancy-terms">
 						<ul>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Учимся</h5>
-									<p>Посетители ищут на сайте нужную информацию и ждут удобной навигации. Понятная навигация помогает найти нужное.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Учим</h5>
-									<p>Неудобный сайт заставляет думать. Чем больше посетитель думает, тем меньше шансов, что он найдет нужную информацию.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">ПОМОГАЕМ</h5>
-									<p>Посетители ищут на сайте нужную информацию и ждут удобной навигации. Понятная навигация помогает найти нужное.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Делимся</h5>
-									<p>Неудобный сайт заставляет думать. Чем больше посетитель думает, тем меньше шансов, что он найдет нужную информацию.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Снабжаем</h5>
-									<p>Посетители ищут на сайте нужную информацию и ждут удобной навигации. Понятная навигация помогает найти нужное.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-img-sm.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Угощаем</h5>
-									<p>
-										Посетители ищут на сайте нужную информацию и ждут удобной навигации. Понятная навигация помогает найти нужное.</p>
-								</div>
-							</li>
+							@foreach($working_conditions as $v)
+								@php($path_small = '/images/files/small/')
+								@php($img_small = $v['file'] ? $v['crop'] ? $path_small . $v['crop'] : $path_small . $v['file'] : '')
+
+								<li>
+									<i><img src="{{ $img_small }}" alt="img" /></i>
+									<div class="text">
+										<h5 class="title">{!! $langSt($v['name']) !!}</h5>
+										{!! $langSt($v['text']) !!}
+									</div>
+								</li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

@@ -47,7 +47,7 @@
 											id="name_img_edit{{ $name }}"
 											class="form-control"
 											name="name_img_edit{{ $name . $str_lang }}"
-											value="{{ $langSt($file['name']) }}"
+											value="{{ $langSt($file['name'], $v['name']) }}"
 											maxlength="80"
 										/>
 									</div>
@@ -66,7 +66,7 @@
 										id="text_img_edit{{ $name }}"
 										name="text_img_edit{{ $name . $str_lang }}"
 										maxlength="200"
-									>{{ $langSt($file['text']) }}</textarea>
+									>{{ $langSt($file['text'], $v['name']) }}</textarea>
 									</div>
 
 									<div class="clear"></div>
@@ -83,7 +83,7 @@
 											id="order_img_edit{{ $name }}"
 											class="form-control"
 											name="order_img_edit{{ $name . $str_lang }}"
-											value="{{ $file['order'] }}"
+											value="{{ $langSt($file['order'], $v['name']) }}"
 										/>
 									</div>
 

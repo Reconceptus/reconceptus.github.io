@@ -206,8 +206,8 @@
 			"description",
 			"active"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "seo"
@@ -256,8 +256,8 @@
 			"description",
 			"active"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "locations"
@@ -312,8 +312,8 @@
 		"name_module"     : "Бекапы",
 		"order"           : "8",
 		"plugins"         : [],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "backup"
@@ -335,8 +335,8 @@
 		"name_module"     : "Система",
 		"order"           : "9",
 		"plugins"         : [],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "system"
@@ -368,8 +368,8 @@
 			"description_param",
 			"active"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "options"
@@ -398,8 +398,8 @@
 			"name",
 			"little_description"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "",
@@ -426,8 +426,8 @@
 		"plugins"         : [
 			"name"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "",
@@ -460,8 +460,8 @@
 			"subscribe_mail",
 			"little_description"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "subscribers"
@@ -489,8 +489,8 @@
 			"name",
 			"active"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "main_page"
@@ -537,8 +537,22 @@
 			"keywords",
 			"description"
 		],
-		"small_width"     : "0",
-		"small_height"    : "0",
+		"main_page": [
+			"working_conditions",
+			"benefits",
+			"little_description",
+			"title",
+			"keywords",
+			"description"
+		],
+		"lang_main_page": [
+			"little_description",
+			"title",
+			"keywords",
+			"description"
+		],
+		"small_width"     : "500",
+		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
 		"translate_key"   : "vacancies"

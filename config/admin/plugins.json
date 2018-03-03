@@ -1186,12 +1186,32 @@
 	{
 		"name"        : "what_is_next",
 		"typeField"   : "functions",
-		"nameText"    : "Изображение",
+		"nameText"    : "Что есть рядом",
 		"nameAttr"    : "pl[what_is_next]",
 		"description" : "Плагин \"what_is_next\" сделанный из album",
 		"idAttr"      : "inputWhat_is_next",
 		"sql_column"  : "what_is_next",
 		"translateKey": "what_is_next"
+	},
+	{
+		"name"        : "working_conditions",
+		"typeField"   : "functions",
+		"nameText"    : "Условия труда",
+		"nameAttr"    : "pl[working_conditions]",
+		"description" : "Плагин \"working_conditions\" сделанный из album",
+		"idAttr"      : "inputWorking_conditions",
+		"sql_column"  : "working_conditions",
+		"translateKey": "working_conditions"
+	},
+	{
+		"name"        : "benefits",
+		"typeField"   : "functions",
+		"nameText"    : "Benefits",
+		"nameAttr"    : "pl[benefits]",
+		"description" : "Плагин \"benefits\" сделанный из album",
+		"idAttr"      : "inputBbenefits",
+		"sql_column"  : "benefits",
+		"translateKey": "benefits"
 	},
 	{
 		"name"            : "distances",

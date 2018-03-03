@@ -484,7 +484,7 @@
 										$('.btncl{{ $name }}').click();
 										$('.rowID{{ $name }}-' + id).html(
 											'<div class="thumbnail">' +
-											'<div class="image view view-first">' +
+											'<div class="image view view-first pointer" onclick="editImg{{ $name }}(' + id + ')">' +
 											'<img src="' + req["file"] + '" style="width: 100%; display: block;">' +
 											'</div>' +
 											'<div class="caption" style="padding-bottom: 0">' +
@@ -584,9 +584,19 @@
 </div>
 
 <div class="modal-footer">
-	<button type="button" class="btn btn-default btncl{{ $name }}"
-		data-dismiss="modal">@lang('admin::main.close')</button>
-	<button class="btn btn-primary btnsav{{ $name }}" data-method{{ $name }}="getCropBoxData" type="button">
-		@lang('admin::main.save')
-	</button>
+	<div class="text-right">
+		<button
+			type="button"
+			class="btn btn-default btncl{{ $name }}"
+			data-dismiss="modal"
+			type="button"
+			style="margin-bottom: 0"
+		>
+			@lang('admin::main.close')
+		</button>
+
+		<button class="btn btn-primary btnsav{{ $name }}" data-method{{ $name }}="getCropBoxData" type="button">
+			@lang('admin::main.save')
+		</button>
+	</div>
 </div>

@@ -103,4 +103,5 @@ return [
 	'vacancies'                 => 'Vacancies',
 	'select_all'                => 'Select all',
 	'remove_all'                => 'Remove all',
+	'edit_main_page'            => 'Edit main page',
 ];

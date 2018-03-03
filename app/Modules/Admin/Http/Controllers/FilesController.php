@@ -32,6 +32,11 @@ class FilesController extends Controller
 	 */
 	protected $dynamic;
 
+	/**
+	 * @var Base
+	 */
+	protected $base;
+
 	public function __construct(Request $request)
 	{
 		parent::__construct();
@@ -39,6 +44,7 @@ class FilesController extends Controller
 		$this->requests = $request;
 
 		$this->files   = new Files();
+		$this->base   = new Base($request);
 		$this->dynamic = new DynamicModel();
 	}
 
@@ -383,15 +389,15 @@ class FilesController extends Controller
 				}
 
 				$file->name = is_array($form['name_img_edit' . $data['name']])
-					? json_encode($form['name_img_edit' . $data['name']])
+					? json_encode($form['name_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
 					: $form['name_img_edit' . $data['name']];
 
 				$file->text = is_array($form['text_img_edit' . $data['name']])
-					? json_encode($form['text_img_edit' . $data['name']])
+					? json_encode($form['text_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
 					: $form['text_img_edit' . $data['name']];
 
 				$file->order = is_array($form['order_img_edit' . $data['name']])
-					? json_encode($form['order_img_edit' . $data['name']])
+					? json_encode($form['order_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
 					: $form['order_img_edit' . $data['name']];
 
 				$file->save();

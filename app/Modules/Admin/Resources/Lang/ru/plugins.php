@@ -30,4 +30,6 @@ return [
 	'specialist'           => 'Специалист',
 	'description_param'    => 'Описание параметра',
 	'preview'              => 'Превью',
+	'working_conditions'   => 'Условия труда',
+	'benefits'             => 'Преимущества',
 ];

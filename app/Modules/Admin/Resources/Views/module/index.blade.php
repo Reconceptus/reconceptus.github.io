@@ -20,6 +20,12 @@
 						</h2>
 
 						<div class="nav navbar-right panel_toolbox">
+							@if($right['w'] && !empty($modules['main_page'] ?? []))
+								<a href="/admin/update/{{ $modules['link_module'] }}/main_page" class="btn btn-warning">
+									@lang('admin::main.edit_main_page')
+								</a>
+							@endif
+
 							@if($right['w'])
 								<a href="/admin/update/{{ $modules['link_module'] }}" class="btn btn-primary">
 									@lang('admin::main.create')

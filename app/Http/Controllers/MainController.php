@@ -417,6 +417,21 @@ class MainController extends Controller
 				->get()
 				->toArray();
 
+			$data['main_page'] = $this->dynamic->t('main_page')->where('table', 'vacancies')->first()->toArray();
+			$data['meta_c']    = $this->base->getMeta($data['main_page']);
+
+			$data['working_conditions'] = $this->dynamic->t('files')
+				->where('files.name_table', '=', 'vacanciesworking_conditions')
+				->select('files.*', 'files.file', 'files.crop')
+				->get()
+				->toArray();
+
+			$data['benefits'] = $this->dynamic->t('files')
+				->where('files.name_table', '=', 'vacanciesbenefits')
+				->select('files.*', 'files.file', 'files.crop')
+				->get()
+				->toArray();
+
 			return $this->base->view_s("site.main.vacancies", $data);
 		}
 	}

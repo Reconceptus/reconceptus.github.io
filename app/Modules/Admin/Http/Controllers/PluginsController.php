@@ -66,7 +66,35 @@ class PluginsController extends Controller
 		);
 	}
 
+	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
 	public function what_is_next($field, $table_params = '', $params = [])
+	{
+		return $this->album($field, $table_params, $params);
+	}
+
+	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function working_conditions($field, $table_params = '', $params = [])
+	{
+		return $this->album($field, $table_params, $params);
+	}
+
+	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function benefits($field, $table_params = '', $params = [])
 	{
 		return $this->album($field, $table_params, $params);
 	}

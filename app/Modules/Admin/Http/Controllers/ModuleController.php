@@ -530,11 +530,25 @@ class ModuleController extends Controller
 			$url     = (isset($_SESSION['url'])) ? '?' . $_SESSION['url'] : '';
 			$modules = Base::getModule("link_module", $page)[0];
 
+			if($id == 'main_page') {
+				$modules['plugins'] = $modules['main_page'];
+				$modules['lang']    = $modules['lang_main_page'];
+			}
+
 			if(isset($this->request['pl'])) {
 				if(!empty($id)) {
 					// редактированине
-					$data      = $this->dynamic->t($page)->where(['id' => $id])->first();
-					$dataArray = $this->dynamic->t($page)->where(['id' => $id])->first()->toArray();
+					if($id == 'main_page') {
+
+						if(!$this->dynamic->t($id)->where(['table' => $page])->first())
+							$this->dynamic->t($id)->insertGetId(['created_at' => Carbon::now(), 'table' => $page]);
+
+						$data        = $this->dynamic->t($id)->where(['table' => $page])->first();
+						$dataArray   = $this->dynamic->t($id)->where(['table' => $page])->first()->toArray();
+					} else {
+						$data      = $this->dynamic->t($page)->where(['id' => $id])->first();
+						$dataArray = $this->dynamic->t($page)->where(['id' => $id])->first()->toArray();
+					}
 
 					// если поле массив(multiple), то без выбранного значения(при очистке) в pl оно вообще не приходит, по этому
 					// для очистки надо принудительно ему задать пустой массив
@@ -678,11 +692,13 @@ class ModuleController extends Controller
 					return redirect('/admin/index/' . $page . $need . 'id=' . $id . '#rowID' . $id);
 				}
 			} else {
-				if($id) {
-					$data           = $this->dynamic->t($page)->where(['id' => $id])->first();
-				} else {
+				if($id)
+					if($id == 'main_page')
+						$data = $this->dynamic->t($id)->where(['table' => $page])->first();
+					else
+						$data = $this->dynamic->t($page)->where(['id' => $id])->first();
+				else
 					$data = [];
-				}
 
 				if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin')
 					if($data->user_id !== $this->base->getUser('id') && $data->user_id)
