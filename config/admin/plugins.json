@@ -1220,12 +1220,27 @@
 		"js_init_function": "distancesInit",
 		"nameText"        : "Удобства",
 		"nameAttr"        : "pl[distances]",
-		"description"     : "Плагин \"cistances\"",
+		"description"     : "Плагин \"distances\"",
 		"idAttr"          : "inputDistances",
 		"sql_column"      : "distances",
 		"translateKey"    : "distances_location",
 		"body"            : {
 			"text": "<button data-n=\"0\" type=\"button\" class=\"add-distances-]-options-[- btn btn-success btn-icon\"><i class=\"fa fa-plus\"></i></button><div id=\"distances-]-options-[-\" class=\"form-group\"></div>"
+		}
+	},
+	{
+		"name"            : "booking_is_easy",
+		"typeField"       : "functions",
+		"functionsBefore" : "insertBooking_is_easy",
+		"js_init_function": "booking_is_easyInit",
+		"nameText"        : "Удобства",
+		"nameAttr"        : "pl[booking_is_easy]",
+		"description"     : "Плагин \"booking_is_easy\"",
+		"idAttr"          : "inputBooking_is_easy",
+		"sql_column"      : "booking_is_easy",
+		"translateKey"    : "booking_is_easy",
+		"body"            : {
+			"text": "<button data-n=\"0\" type=\"button\" class=\"add-booking_is_easy-]-options-[- btn btn-success btn-icon\"><i class=\"fa fa-plus\"></i></button><div id=\"booking_is_easy-]-options-[-\" class=\"form-group\"></div>"
 		}
 	},
 	{

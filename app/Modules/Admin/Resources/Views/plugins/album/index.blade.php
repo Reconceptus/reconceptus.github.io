@@ -135,7 +135,7 @@
 
 											var img = '<div class="col-md-4 rowID{{ $name }}-' + ds['id'] + '">' +
 												'<div class="thumbnail">' +
-												'<div class="image view view-first pointer" onclick="editImg{{ $name }}(\' + ds[\'id\'] + \')">' +
+												'<div class="image view view-first pointer" onclick="editImg{{ $name }}(' + ds['id'] + ')">' +
 												'<img src="/images/files/small/' + ds['name'] + '" style="width: 100%; display: block;"/>' +
 												'</div>' +
 												'<div class="caption" style="padding-bottom: 0">' +

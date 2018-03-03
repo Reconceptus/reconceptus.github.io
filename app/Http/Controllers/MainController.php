@@ -83,7 +83,17 @@ class MainController extends Controller
 			->orderBy('villas.is_best', 'ASC')
 			->paginate(6);
 
-		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
+			$data['preview'] = $this
+				->dynamic
+				->t('files')
+				->where('name_table', 'mainalbum')
+				->orderBy('order', 'ASC')
+				->get()
+				->toArray();
+
+			$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
+		$data['main_page'] = $this->dynamic->t('main')->where('main.active', 1)->first()->toArray();
+		$data['meta_c']    = $this->base->getMeta($data['main_page']);
 
 		return $this->base->view_s("site.main.index", $data);
 	}

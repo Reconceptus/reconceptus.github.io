@@ -18,12 +18,13 @@
 	}
 
 	var
-		addDistances{{ $langName }} = function (ev, d, l) {
-			console.log(d, l)
-			var n = $(this).data('n');
+		addDistances{{ $langName }} = function(ev, d, l) {
+			var
+				n = $(this).data('n');
+
 			$(this).data('n', n + 1);
 
-			$('#distances{{ $langName }}').append('<div class="id{{ $langName }}-'+ n + ' row" style="margin-bottom: 15px">' +
+			$('#distances{{ $langName }}').append('<div class="id{{ $langName }}-' + n + ' row" style="margin-bottom: 15px">' +
 				'<div class="col-md-5">' +
 				'<input placeholder="@lang('admin::plugins.distances')" type="text" name="pl[distances]' + '{{ $lang }}' + '[distances][]" class="form-control" value="' + (d || '') + '" />' +
 				'</div>' +
@@ -31,7 +32,7 @@
 				'<input placeholder="@lang('admin::plugins.location')" type="text" name="pl[distances]' + '{{ $lang }}' + '[location][]" class="form-control" value="' + (l || '') + '" />' +
 				'</div>' +
 				'<div class="col-md-2">' +
-				'<button type="button" onclick="deleteDi{{ $langName }}(\'.id{{ $langName }}-'+ n + '\')" class="btn btn-danger btn-icon">' +
+				'<button type="button" onclick="deleteDi{{ $langName }}(\'.id{{ $langName }}-' + n + '\')" class="btn btn-danger btn-icon">' +
 				'<i class="fa fa-minus"></i>' +
 				'</button>' +
 				'</div>' +
@@ -43,19 +44,26 @@
 	/**
 	 * Tags init functions
 	 */
-	window.distancesInit{{ $langName }} = function distancesInit{{ $langName }}() {
+	window.distancesInit{{ $langName }} = function distancesInit{{ $langName }}(lang) {
 		var
-			initValue = $('#' + '{{ $plugin['idAttr'] }}{{ $langName }}').attr('data-init-value');
+			initValue,
+			obj;
+
+		if(lang)
+			lang = lang.trim();
+
+		if(lang)
+			initValue = $('#' + '{{ $plugin['idAttr'] }}' + lang).attr('data-init-value');
+		else
+			initValue = $('#' + '{{ $plugin['idAttr'] }}').attr('data-init-value');
 
 		try {
 			initValue = JSON.parse(initValue);
+			obj       = initValue[lang] || initValue;
 
-			for(var i = 0; Object.keys(initValue['{{ $langName }}']['distances']).length > i; i++)
-				addDistances{{ $langName }}(
-					null,
-					initValue['{{ $langName }}']['distances'][i] || initValue['distances'][i],
-					initValue['{{ $langName }}']['location'][i] || initValue['location'][i]
-				)
+			for(var i = 0; Object.keys(obj['distances']).length > i; i++) {
+				addDistances{{ $langName }}(null, obj['distances'][i], obj['location'][i]);
+			}
 		} catch(err) {
 		}
 	};

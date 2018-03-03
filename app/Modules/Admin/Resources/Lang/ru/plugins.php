@@ -32,4 +32,5 @@ return [
 	'preview'              => 'Превью',
 	'working_conditions'   => 'Условия труда',
 	'benefits'             => 'Преимущества',
+	'booking_is_easy'      => 'Бронирование легко',
 ];

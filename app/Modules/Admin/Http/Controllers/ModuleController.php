@@ -534,7 +534,7 @@ class ModuleController extends Controller
 			$url     = (isset($_SESSION['url'])) ? '?' . $_SESSION['url'] : '';
 			$modules = Base::getModule("link_module", $page)[0];
 
-			if($id == 'main_page') {
+			if($id === 'main_page') {
 				$modules['plugins'] = $modules['main_page'];
 				$modules['lang']    = $modules['lang_main_page'];
 			}

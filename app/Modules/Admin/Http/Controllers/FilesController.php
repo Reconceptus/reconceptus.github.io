@@ -375,18 +375,7 @@ class FilesController extends Controller
 				return Base::view($path, $data);
 			} else {
 				$file = $this->files->find(['id' => $request['id']])->first();
-				$form = [];
-
-				foreach($request['form'] as $v) {
-					if(count(explode('[', $v['name'])) > 1) {
-						$s = explode('[', $v['name']);
-
-						if(!isset($form[$s[0]]))
-							$form[$s[0]] = [];
-
-						$form[$s[0]][str_replace(']', '', $s[1])] = $v['value'];
-					}
-				}
+				$form = $this->base->decode_serialize($request['form']);
 
 				$file->name = is_array($form['name_img_edit' . $data['name']])
 					? json_encode($form['name_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
@@ -396,9 +385,7 @@ class FilesController extends Controller
 					? json_encode($form['text_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
 					: $form['text_img_edit' . $data['name']];
 
-				$file->order = is_array($form['order_img_edit' . $data['name']])
-					? json_encode($form['order_img_edit' . $data['name']], JSON_UNESCAPED_UNICODE)
-					: $form['order_img_edit' . $data['name']];
+				$file->order = (int) $form['order_img_edit' . $data['name']] ;
 
 				$file->save();
 

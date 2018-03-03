@@ -110,13 +110,14 @@ return [
 	'resume_form_mess' => 'Мы рады, что Вас заинтересовала наша компания.
 	 Мы свяжемся с Вами в ближайшее время!',
 
-	'job_request_from_admin' => 'Запрос вакансии с Greecobooking',
-	'link_to_cv'             => 'Ссылка на резюме',
-	'advantages'             => 'Преимущества',
-	'villa_request_success'  => 'Бронь успешно отправлена, ожидайте с вами свяжутся в течении некоторого времени',
-	'villa_request_user'     => 'Бронирование виллы успешно отправлено',
-	'villa_request_admin'    => 'Бронирование виллы с сайта Greecobooking',
-	'booking_is_easy'        => 'Бронирование легко, как 1, 2, 3 ..',
-	'working_conditions'     => 'Условия труда',
-	'about_us'               => 'About us',
+	'job_request_from_admin'    => 'Запрос вакансии с Greecobooking',
+	'link_to_cv'                => 'Ссылка на резюме',
+	'advantages'                => 'Преимущества',
+	'villa_request_success'     => 'Бронь успешно отправлена, ожидайте с вами свяжутся в течении некоторого времени',
+	'villa_request_user'        => 'Бронирование виллы успешно отправлено',
+	'villa_request_admin'       => 'Бронирование виллы с сайта Greecobooking',
+	'booking_is_easy'           => 'Бронирование легко, как 1, 2, 3 ..',
+	'working_conditions'        => 'Условия труда',
+	'about_us'                  => 'О нас',
+	'get_a_selection_of_villas' => 'Получить подборку вилл',
 ];

@@ -30,6 +30,7 @@ return [
 	'specialist'           => 'Specialist',
 	'description_param'    => 'Description of the parameter',
 	'preview'              => 'Preview',
-	'working_conditions'        => 'Working conditions',
-	'benefits'                  => 'Benefits',
+	'working_conditions'   => 'Working conditions',
+	'benefits'             => 'Benefits',
+	'booking_is_easy'      => 'Booking is easy',
 ];

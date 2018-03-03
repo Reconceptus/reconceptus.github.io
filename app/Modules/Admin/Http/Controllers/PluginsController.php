@@ -227,7 +227,7 @@ class PluginsController extends Controller
 				$res = array_merge($res, [(string) $v]);
 		}
 
-		return json_encode($res);
+		return json_encode($res, JSON_UNESCAPED_UNICODE);
 	}
 
 	// --------------------------------------------- booking_calendar------------------------------------------------ //
@@ -351,7 +351,37 @@ class PluginsController extends Controller
 	}
 
 	public function insertDistances($val){
-		return json_encode($val);
+		return json_encode($val, JSON_UNESCAPED_UNICODE);
+	}
+
+	/**
+	 * Booking is easy.
+	 *
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+	 */
+	public function booking_is_easy($field, $table_params = '', $params = [])
+	{
+		return Base::view(
+			"admin::plugins.booking_is_easy",
+
+			[
+				'field'  => ModuleController::_body($field, ['class' => 'booking_is_easy']),
+				'plugin' => $field,
+				'id'     => $params['id'],
+				'lang'   => \App::getLocale(),
+			]
+		);
+	}
+
+	/**
+	 * @param $val
+	 * @return string
+	 */
+	public function insertBooking_is_easy($val) {
+		return json_encode($val, JSON_UNESCAPED_UNICODE);
 	}
 
 	/**

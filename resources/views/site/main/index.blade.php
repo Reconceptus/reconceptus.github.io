@@ -47,24 +47,17 @@
 	<div class="section offers">
 		<div class="content">
 			<div class="offers--wrap">
-				<div class="item">
-					<a href="#">
-						<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
-						<h3 class="title">Шикарные резиденции в нескольких шагах от пляжа</h3>
-					</a>
-				</div>
-				<div class="item">
-					<a href="#">
-						<figure style="background-image: url('/images/bg/offer02.jpg')"></figure>
-						<h3 class="title">Отдых вдвоем <br>ваш медовый месяц в греции</h3>
-					</a>
-				</div>
-				<div class="item">
-					<a href="#">
-						<figure style="background-image: url('/images/bg/offer03.jpg')"></figure>
-						<h3 class="title">виллы с отдельным обслуживанием</h3>
-					</a>
-				</div>
+				@foreach($preview as $val)
+					@php($original = '/images/files/original/')
+					@php($img_original = $val['file'] ? $val['crop'] ? $original . $val['crop'] : $original . $val['file'] : '')
+
+					<div class="item">
+						<a href="#">
+							<figure style="background-image: url('{{ $img_original }}')"></figure>
+							<h3 class="title">{{ $langSt($val['name']) }}</h3>
+						</a>
+					</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -78,24 +71,17 @@
 			<div class="qualities--main">
 				<div class="content content_md">
 					<ul>
-						<li>
-							<div class="num">1</div>
-							<h5 class="title">Надежность</h5>
-							<p>Бронирование у греческого оператора без посредников</p>
-						</li>
-						<li>
-							<div class="num">2</div>
-							<h5 class="title">ИНДИВИДУАЛЬНЫЙ СЕРВИС 24/7</h5>
-							<p>Мы всегда на связи!</p>
-						</li>
-						<li>
-							<div class="num">3</div>
-							<h5 class="title">ГАРАНТИЯ КАЧЕСТВА</h5>
-							<p>Только лицензированные объекты, отвечающие всем требуемым стандартам</p>
-						</li>
+						@foreach($langSt($main_page['booking_is_easy'])['name'] ?? [] as $key => $val)
+							<li>
+								<div class="num">{{ $key + 1 }}</div>
+								<h5 class="title">{{ $val }}</h5>
+								<p>{{ $langSt($main_page['booking_is_easy'])[$key]['text'] }}</p>
+							</li>
+						@endforeach
 					</ul>
+
 					<div class="btns_center">
-						<a href="#" class="btn btn_subm">Получить подборку вилл</a>
+						<a href="/selection-request" class="btn btn_subm">@lang('main.get_a_selection_of_villas')</a>
 					</div>
 				</div>
 			</div>

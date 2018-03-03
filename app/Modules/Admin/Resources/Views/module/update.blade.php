@@ -203,7 +203,7 @@
 			name = '{{ $init }}';
 
 			if(window[name]) {
-				{!! 'window.' . $plugins['js_init_function'] . $lang['name'] . '();'!!}
+				{!! 'window.' . $plugins['js_init_function'] . $lang['name'] . '(\'  ' . $lang['name'] . ' \');'!!}
 			}
 			@endforeach
 			@endif

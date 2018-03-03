@@ -117,9 +117,10 @@ We will contact you shortly!',
 	'villa_request_success'=> 'The reservation has been successfully sent, expect you to be contacted within a 
 	certain time',
 
-	'villa_request_user'  => 'Reservation villa successfully sent',
-	'villa_request_admin' => 'Reservation of a villa from the Greecobooking website',
-	'booking_is_easy'     => 'Booking is easy as 1, 2, 3..',
-	'working_conditions'  => 'Working conditions',
-	'about_us'            => 'About us',
+	'villa_request_user'        => 'Reservation villa successfully sent',
+	'villa_request_admin'       => 'Reservation of a villa from the Greecobooking website',
+	'booking_is_easy'           => 'Booking is easy as 1, 2, 3..',
+	'working_conditions'        => 'Working conditions',
+	'about_us'                  => 'About us',
+	'get_a_selection_of_villas' => 'Get a selection of villas',
 ];

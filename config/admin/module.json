@@ -474,19 +474,35 @@
 		"class_module"    : "fa fa-home",
 		"column_index"    : [
 			"name",
+			"title",
+			"author",
+			"keywords",
+			"description",
 			"active"
 		],
 		"count_module"    : "20",
 		"show_count"      : false,
 		"filters"         : [],
-		"lang"            : ["little_description"],
-		"link_module"     : "main_page",
+		"lang"            : [
+			"name",
+			"booking_is_easy",
+			"title",
+			"keywords",
+			"description"
+		],
+		"link_module"     : "main",
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Главная страница",
 		"order"           : "0",
 		"plugins"         : [
 			"name",
+			"booking_is_easy",
+			"album",
+			"title",
+			"author",
+			"keywords",
+			"description",
 			"active"
 		],
 		"small_width"     : "500",
