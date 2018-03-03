@@ -43,6 +43,7 @@
 	<script>
 		tinymce.init({
 			selector: ".area",
+			height  : 450,
 
 			plugins: [
 				"autolink",
@@ -61,18 +62,41 @@
 			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |" +
 			" bullist numlist | link | table  media image | code",
 
-			// without images_upload_url set, Upload tab won't show up
-			images_upload_url: 'postAcceptor.php',
-
-			// we override default upload handler to simulate successful upload
 			images_upload_handler: function(blobInfo, success, failure) {
-				setTimeout(function() {
-					// no matter what you upload, we will turn it into TinyMCE logo :)
-					success('http://moxiecode.cachefly.net/tinymce/v9/images/logo.png');
-				}, 2000);
-			},
+				var
+					xhr,
+					formData;
 
-			imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
+				xhr                 = new XMLHttpRequest();
+				xhr.withCredentials = false;
+				xhr.open('POST', '/admin/files/upload_img');
+
+				xhr.onload = function() {
+					var json;
+
+					if(xhr.status != 200) {
+						failure('HTTP Error: ' + xhr.status);
+						return;
+					}
+
+					json = JSON.parse(xhr.responseText);
+
+					if(!json || typeof json.name != 'string') {
+						failure('Invalid JSON: ' + xhr.responseText);
+						return;
+					}
+
+					success('/images/files/big/' + json.name);
+				};
+
+				formData = new FormData();
+				formData.append('Filedata', blobInfo.blob(), blobInfo.filename());
+				formData.append('name_table', '{{ $segment3 ?? '' }}');
+				formData.append('name_field', 'text');
+				formData.append('id_album', 0);
+
+				xhr.send(formData);
+			},
 
 			image_class_list: [
 				{title: 'None', value: ''},

@@ -11,10 +11,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
+/**
+ * Class ModuleController
+ * @package App\Modules\Admin\Http\Controllers
+ */
 class ModuleController extends Controller
 {
 	/**
-	 * @var $requests_self
+	 * @var Request
 	 */
 	public static $requests_self;
 
@@ -29,7 +33,7 @@ class ModuleController extends Controller
 	protected $request;
 
 	/**
-	 * @var Request
+	 * @var
 	 */
 	protected $requests;
 
@@ -463,7 +467,7 @@ class ModuleController extends Controller
 						->toArray();
 
 					foreach($list as $v)
-						$menu_cat .= '<option value="' . $v['id'] . '">' . $v['name'] . '</option>';
+						$menu_cat .= '<option value="' . $v['id'] . '">' . Base::langSt($v['name']) . '</option>';
 				} else {
 					$menu_cat = $list_base();
 				}
