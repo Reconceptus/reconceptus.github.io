@@ -12,8 +12,10 @@
 	<script src="//api-maps.yandex.ru/2.1/?lang={{ $lang ?? 'ru' }}" type="text/javascript"></script>
 @endpush
 
-{{--{!! $field !!}--}}
-<div id="map-l"></div>
+<div class="form-group">
+	<label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+	<div class="col-md-6 col-sm-6 col-xs-12"><div id="map-l"></div></div>
+</div>
 
 <script>
 	window.locationInit = function(w) {
