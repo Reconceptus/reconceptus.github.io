@@ -93,14 +93,16 @@ var filVil = {
 			isSession = window.location.pathname.split('/').indexOf('favorite') !== -1;
 
 		way       = $('[name="f_way"]').val();
-		date_to   = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
-		date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_out').datepicker('getDate'));
+		date_to   = $.datepicker.formatDate("yy-mm-dd", $('#check_out').datepicker('getDate'));
+		date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
 		rooms     = $('[name="rooms"]').val();
 		hot       = $("[name=hot]:checked").val() || -1;
 		url       = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
-		url       =  isSession ? url + '&session=1' : '&session=0';
+		url       +=  isSession ? url + '&session=1' : '&session=0';
 
 		$(filVil.cont).css({opacity: 0.3});
+
+		console.log('gfd', date_to, date_from, $('#check_in').datepicker('getDate'),  $('#check_in').val())
 
 		$.ajax({
 			type    : "post",

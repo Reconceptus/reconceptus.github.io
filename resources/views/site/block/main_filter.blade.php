@@ -1,6 +1,6 @@
 <div class="content content_md">
 	<div class="fast-request">
-		<form action="#">
+		<form action="/villas">
 			<div class="fast-request--wrap">
 				<div class="fieldgroup">
 					<div id="fastpicker">
@@ -20,7 +20,9 @@
 								<option value="">@lang('main.all_destinations')</option>
 
 								@foreach($locations as $val)
-									<option value="{{ $val['cat'] }}">{{ $langSt($val['name']) }}</option>
+									<option value="{{ $val['cat'] }}" {{ ($_GET['f_way'] ?? '') == $val['cat'] ? 'selected' : '' }}>
+										{{ $langSt($val['name']) }}
+									</option>
 								@endforeach
 							</select>
 						</div>
@@ -28,12 +30,32 @@
 
 					<div class="field">
 						<label for="check_in">@lang('main.check_in')</label>
-						<div class="input"><input id="check_in" name="date_to" type="text" data-picker-fast></div>
+
+						<div
+							class="input">
+							<input
+								id="check_in"
+								name="date_to"
+								type="text"
+								data-picker-fast
+								value="{{ $_GET['date_to'] ?? '' }}"
+								autocomplete="off"
+							/></div>
 					</div>
 
 					<div class="field">
 						<label for="check_out">@lang('main.check_out')</label>
-						<div class="input"><input type="text" name="date_from" id="check_out" data-picker-fast></div>
+
+						<div class="input">
+							<input
+								type="text"
+								name="date_from"
+								id="check_out"
+								data-picker-fast
+								value="{{ $_GET['date_from'] ?? '' }}"
+								autocomplete="off"
+							/>
+						</div>
 					</div>
 
 					<div class="field">
@@ -41,10 +63,10 @@
 
 						<div class="select">
 							<select name="rooms" id="rooms" style="display:none;">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
+								<option value="1" {{ ($_GET['rooms'] ?? '') === '1' ? 'selected' : '' }}>1</option>
+								<option value="2" {{ ($_GET['rooms'] ?? '') === '2' ? 'selected' : '' }}>2</option>
+								<option value="3" {{ ($_GET['rooms'] ?? '') === '3' ? 'selected' : '' }}>3</option>
+								<option value="4" {{ ($_GET['rooms'] ?? '') === '4' ? 'selected' : '' }}>4</option>
 							</select>
 						</div>
 					</div>
@@ -52,7 +74,7 @@
 					<div class="field">
 						<div class="check">
 							<label>
-								<input type="checkbox" name="hot"/>
+								<input type="checkbox" name="hot" {{ ($_GET['hot'] ?? '') ? 'checked' : '' }} />
 								<span>@lang('main.hot_offers')</span>
 							</label>
 						</div>

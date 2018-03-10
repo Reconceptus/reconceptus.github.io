@@ -3,6 +3,8 @@
 <link href="{{ asset('/modules/js/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('/modules/js/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/modules/js/datatables/rowReorder.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
 <style>
 	.img_none img {
 		display: none;
@@ -75,6 +77,7 @@
 <script src="{{ asset('/modules/js/datatables/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('/modules/js/datatables/responsive.bootstrap.min.js') }}"></script>
 <script src="{{ asset('/modules/js/datatables/dataTables.scroller.min.js') }}"></script>
+<script src="{{ asset('/modules/js/datatables/dataTables.rowReorder.js') }}"></script>
 
 <style>
 	#table_id_wrapper .row{
@@ -108,41 +111,59 @@
 	</table>
 </div>
 
-<script>
-	$('#table_id').DataTable({
-		"bServerSide"   : true,
-		"aaSorting"     : [[0,'desc']],
-		"sAjaxSource"   : "/admin/getData/{{ $table }}?{!! $url !!}",
-		"sServerMethod" : "POST",
-		"iDisplayLength": 10,
-		"sAjaxDataProp" : "data",
+@push('footer')
+	<script>
+		var
+			table = $('#table_id').DataTable({
+//				rowReorder: {
+//					dataSrc: 'order',
+//					selector: 'tr',
+//					update: true,
+//				},
 
-		columns: [
-			{data: 'id'},
-				@foreach($column as $v)
-			{
-				data: '{{ $v['name'] }}'
-			},
-				@endforeach
-			{
-				data: 'created_at'
-			}
-		]
-	});
-
-	$('#table_id').on('draw.dt', function() {
-		if($("input.flat")[0]) {
-			$('input.flat').iCheck({
-				checkboxClass: 'icheckbox_flat-green',
-				radioClass   : 'iradio_flat-green'
+				"bServerSide"   : true,
+				"aaSorting"     : [[0,'desc']],
+				"sAjaxSource"   : "/admin/getData/{{ $table }}?{!! $url !!}",
+				"sServerMethod" : "POST",
+				"iDisplayLength": 10,
+				"sAjaxDataProp" : "data",
+				select: true,
+				columns: [
+					{data: 'id'},
+						@foreach($column as $v)
+					{
+						data: '{{ $v['name'] }}'
+					},
+						@endforeach
+					{
+						data: 'created_at'
+					}
+				],
 			});
 
-			$('input[type="radio"]').on('ifChanged', function(event) {
-				var id    = event['target']['id'];
-				var title = event['target']['title'];
+		{{--table.on('mousedown', 'tbody tr', function() {--}}
+				{{--@php($i = 1)--}}
+			{{--var order = parseInt(' @foreach($column as $v) @if($v['name'] == 'order'){{ $i }}@endif @php($i++) @endforeach');--}}
 
-				$.adm.inp_edit(id, title)
-			});
-		}
-	});
-</script>
+			{{--$('body').mouseup(function() {--}}
+			{{--setTimeout(function() {--}}
+				{{--var--}}
+					{{--row = [],--}}
+					{{--tr = $('#table_id > tbody > tr');--}}
+
+				{{--console.log(tr)--}}
+
+				{{--for(var i = 0; tr.length > i; i++) {--}}
+					{{--tmp = tr[i];--}}
+					{{--row.push({--}}
+						{{--id   : $($(tr[i]).find('td')[0]).find('input').attr('id'),--}}
+						{{--order: $($(tr[i]).find('td')[order]).html() === '—' ? 0 : $($(tr[i]).find('td')[order]).html()--}}
+					{{--});--}}
+				{{--}--}}
+				{{--console.log(row)--}}
+			{{--}, 300)--}}
+
+			{{--})--}}
+		{{--});--}}
+	</script>
+@endpush

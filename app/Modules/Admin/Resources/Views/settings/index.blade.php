@@ -69,7 +69,10 @@
 												<div class="byline">
 													<span>{{ $values['created_at'] ?? $values['updated_at'] }}</span>
 													by
-													<a href="/admin/update/users/{{ $values['users_id'] }}">{{ $values['users_name'] }}</a>
+
+													<a href="/admin/update/users/{{ $values['users_id'] }}">
+														{{ $langSt($values['users_name']) }}
+													</a>
 												</div>
 
 												<p class="excerpt">

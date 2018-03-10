@@ -5,6 +5,7 @@ namespace App\Modules\Admin\Classes;
 use App\Classes\DynamicModel;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Mail;
@@ -1251,5 +1252,28 @@ class Base
 				if(!$only_diff)
 					$strRetB .= $v[0];
 		}
+	}
+
+	/**
+	 * Range date.
+	 *
+	 * @param $date_time_from
+	 * @param $date_time_to
+	 * @return array
+	 */
+	function getDatesFromRange($date_time_from, $date_time_to)
+	{
+		// cut hours, because not getting last day when hours of time to is less than hours of time_from
+		// see while loop
+		$start = Carbon::createFromFormat('Y-m-d', substr($date_time_from, 0, 10));
+		$end   = Carbon::createFromFormat('Y-m-d', substr($date_time_to, 0, 10));
+		$dates = [];
+
+		while($start->lte($end)) {
+			$dates[] = $start->copy()->format('Y-m-d');
+			$start->addDay();
+		}
+
+		return $dates;
 	}
 }
