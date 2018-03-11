@@ -38,6 +38,7 @@ Route::group([
 		Route::get('/index/backup/sqlBackup','BackupController@sqlBackup');
 		Route::get('/index/backup/tarBackup','BackupController@tarBackup');
 		Route::get('/index/backup/delBackup','BackupController@delBackup');
+		Route::post('/index/backup/upload-xml','BackupController@postUploadXml');
 		/*backup*/
 //		Route::controller('/index/backup','BackupController');
 
