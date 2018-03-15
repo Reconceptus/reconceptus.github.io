@@ -2816,6 +2816,10 @@ svg {
   margin-top: 60px;
 }
 
+.text-box p {
+  margin-bottom: 15px;
+}
+
 .text-box h2 {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
