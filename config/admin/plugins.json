@@ -129,13 +129,14 @@
 		"sql_column" : "class"
 	},
 	{
-		"name"       : "translation",
-		"typeField"  : "input",
-		"nameText"   : "Translation",
-		"nameAttr"   : "pl[translation]",
-		"description": "Текстовое поле инпут \"Translation\"",
-		"idAttr"     : "inputTranslation",
-		"sql_column" : "translation"
+		"name"        : "translation",
+		"typeField"   : "functions",
+		"nameText"    : "Translation",
+		"nameAttr"    : "pl[translation]",
+		"description" : "Текстовое поле инпут \"Translation\"",
+		"idAttr"      : "inputTranslation",
+		"sql_column"  : "translation",
+		"translateKey": "translation"
 	},
 	{
 		"name"       : "controller",

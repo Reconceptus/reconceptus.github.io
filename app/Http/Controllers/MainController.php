@@ -290,24 +290,35 @@ class MainController extends Controller
 		$group        = 'id';
 
 		if($id) {
+			if(!is_numeric($id))
+				$where_id = ['blog.translation' => $id];
+			else
+				$where_id = ['blog.id' => $id];
+
 			$data['blog'] = $this->dynamic->t('blog')
-				->where(array_merge($where, ['blog.id' => $id]))
+				->where(array_merge($where, $where_id))
+
 				->join(
-					'files', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('blog.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'blogalbum')
-						->where('files.main', '=', 1);
-				}
+					'files',
+
+					function($join) {
+						$join->type = 'LEFT OUTER';
+						$join->on('blog.id', '=', 'files.id_album')
+							->where('files.name_table', '=', 'blogalbum')
+							->where('files.main', '=', 1);
+					}
 				)
+
 				->select('blog.*', 'files.file', 'files.crop')
-				->first()
-				->toArray();
+				->first();
+
+			if(empty($data['blog']))
+				return abort(404, 'Страница не существует');
 
 			$data['meta_c'] = $this->base->getMeta($data, 'blog');
 
 			$data['blogs'] = $this->dynamic->t('blog')
-				->whereNotIn('blog.id', [$id])
+				->whereNotIn('blog.id', [$data['blog']['id']])
 
 				// TODO скорее отвалится когда теги будут с id больше 10
 				->where(
@@ -319,14 +330,18 @@ class MainController extends Controller
 						}
 					}
 				)
+
 				->join(
-					'files', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('blog.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'blogalbum')
-						->where('files.main', '=', 1);
-				}
+					'files',
+
+					function($join) {
+						$join->type = 'LEFT OUTER';
+						$join->on('blog.id', '=', 'files.id_album')
+							->where('files.name_table', '=', 'blogalbum')
+							->where('files.main', '=', 1);
+					}
 				)
+
 				->select('blog.*', 'files.file', 'files.crop')
 				->orderBy('blog.' . $group, 'DESC')
 				->limit(10)
@@ -341,7 +356,6 @@ class MainController extends Controller
 
 			$data['blog'] = $this->dynamic->t('blog')
 				->where($where)
-				->whereNotIn('blog.tags', ['[]', ''])
 
 				// TODO скорее отвалится когда теги будут с id больше 10
 				->where(
@@ -351,14 +365,18 @@ class MainController extends Controller
 						}
 					}
 				)
+
 				->join(
-					'files', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('blog.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'blogalbum')
-						->where('files.main', '=', 1);
-				}
+					'files',
+
+					function($join) {
+						$join->type = 'LEFT OUTER';
+						$join->on('blog.id', '=', 'files.id_album')
+							->where('files.name_table', '=', 'blogalbum')
+							->where('files.main', '=', 1);
+					}
 				)
+
 				->select('blog.*', 'files.file', 'files.crop')
 				->groupBy('blog.id')
 				->orderBy('blog.' . $group, 'DESC')

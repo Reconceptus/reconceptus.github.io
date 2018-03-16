@@ -33,4 +33,5 @@ return [
 	'working_conditions'   => 'Working conditions',
 	'benefits'             => 'Benefits',
 	'booking_is_easy'      => 'Booking is easy',
+	'translation'          => 'Translation',
 ];

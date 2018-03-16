@@ -10,12 +10,12 @@
 				)
 
 				<figure style="background-image: url({{ $img }})">
-					<a href="/blog/{{ $val['id'] }}"></a>
+					<a href="/blog/{{ $val['translation'] ?? $val['id'] }}"></a>
 				</figure>
 
 				<div class="head">
 					<h4 class="title">
-						<a href="/blog/{{ $val['id'] }}">{{  $langSt($val['name']) }}</a>
+						<a href="/blog/{{ $val['translation'] ?? $val['id'] }}">{{  $langSt($val['name']) }}</a>
 					</h4>
 
 					<div class="article-data">

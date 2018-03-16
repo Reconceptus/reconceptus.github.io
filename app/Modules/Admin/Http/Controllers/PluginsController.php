@@ -416,4 +416,28 @@ class PluginsController extends Controller
 			]
 		);
 	}
+
+	public function translation($field, $table_params = '', $params = [])
+	{
+		$id_album   = $params['id'];
+
+		$files = ($this->files)
+			->where(['name_table' => $params['table'] . $field['name'], 'id_album' => $id_album])
+			->get();
+
+		$limit = $params['modules']['params'][$field['name']]['limit'] ?? -1;
+
+		return Base::view(
+			"admin::plugins.translation",
+
+			[
+				'name'       => $field['name'],
+				'plugin'     => $field,
+				'id_album'   => $id_album,
+				'name_table' => $params['table'],
+				'files'      => $files,
+				'limit'      => $limit,
+			]
+		);
+	}
 }
