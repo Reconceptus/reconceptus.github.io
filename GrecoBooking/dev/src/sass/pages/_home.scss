@@ -29,6 +29,38 @@
     @include media(screen,767){
       position: relative;
     }
+    .intro-text {
+
+      line-height: 1.6;
+      color: $white;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 300;
+      text-align: center;
+      @include media(hover,1024){
+        font-size: 21px;
+      }
+      @include media(screen,1023){
+        font-size: 17px;
+      }
+    }
+    .scroll-down {
+      @include media(hover,768){
+        display: block;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin: 30px auto 0;
+        border-radius: 50%;
+        transition: all 0.2s;
+        &:hover {
+          background-color: rgba($white,0.1);
+        }
+      }
+      @include media(screen,767){
+        display: none;
+      }
+    }
     ul {
       display: flex;
       align-items: flex-start;
@@ -106,36 +138,61 @@
   &--wrap {
     display: flex;
     flex-flow: row wrap;
-    margin: 0 -10px;
+    margin: -10px;
   }
+  &--grid {
+    width: 100%;
+    padding-top: 75%;
+    height: 0;
+    position: relative;
+    [data-item="1"]{left: 0; top: 0;}
+    [data-item="2"]{right: 0; top: 0;}
+    [data-item="3"]{right: 0; bottom: 0;}
+    [data-item="4"]{left: 0; bottom: 0;}
+    [data-item="5"]{left: 25%; bottom: 0;}
+
+  }
+
   .item {
     box-sizing: border-box;
-    padding: 0 10px;
-
-    @include media(hover,1024){
-      height: 450px;
-    }
-    @include media(screen,1023){
-      height: 360px;
-    }
-    @include media(hover,768){
-      &:first-child{
-        width: 100%;
-        margin-bottom: 20px;
-      }
-      &:not(:first-child){
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &-box {
+      position: absolute;
+      &.item-lg {
         width: 50%;
+        padding-top: 50%;
+        a {
+          align-items: flex-end;
+        }
+      }
+      &.item-md {
+        width: 50%;
+        padding-top: 25%;
+        a {
+          align-items: flex-end;
+        }
+      }
+      &.item-sm {
+        width: 25%;
+        padding-top: 25%;
+        a {
+          align-items: center;
+          header {
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+          }
+        }
       }
     }
-    @include media(screen,767){
-      width: 100%;
-      &:not(:first-child){
-        margin-top: 20px;
-      }
-    }
-    @include media(screen,599){
-      height: 200px;
-    }
+
 
     a {
       display: flex;
@@ -143,7 +200,6 @@
       height: 100%;
       overflow: hidden;
       position: relative;
-      align-items: center;
       box-sizing: border-box;
 
       figure {
@@ -155,6 +211,16 @@
         @extend %cover;
         transition: transform 0.65s;
         will-change: transform;
+      }
+      header {
+        position: absolute;
+        padding: 40px 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        background-color: rgba($black,0.5);
+        transition: background-color 0.35s;
       }
       .title {
         position: relative;
@@ -170,27 +236,18 @@
         @include media(screen,1199){
           font-size: 26px;
         }
-        @include media(hover,1024){
-          max-width: 30vw;
-        }
-        @include breakpoints(600,1023){
-          max-width: 60vw;
-        }
+
         @include media(screen,599){
           font-size: 18px;
         }
 
       }
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($text,0.5);
-        z-index: 1;
-        transition: background-color 0.35s;
+      .subtitle {
+        color: $white;
+        margin-bottom: 35px;
+        font-size: 17px;
+        font-weight: 100;
+        margin-top: 15px;
       }
       &:hover {
         @include media(hover,1025){
