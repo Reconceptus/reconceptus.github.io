@@ -160,6 +160,7 @@
     font-size: 17px;
   }
   &-form {
+    position: relative;
     .field {
       width: 100%;
       display: flex;
@@ -191,6 +192,27 @@
         @include media(screen,1199){
           padding: 10px 30px;
         }
+      }
+    }
+    .success-title {
+      display: none;
+    }
+    &.successful {
+      form {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .success-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: $btn;
       }
     }
   }

@@ -65,7 +65,7 @@ $(document).ready(function () {
     }
 
     $('.scroll-up').click(function () {
-        $('html,body').animate({'scrollTop':0},200);
+        $('html,body').animate({'scrollTop':0},400);
     });
 
     /*
@@ -242,11 +242,11 @@ $(document).ready(function () {
             },
             errorPlacement: $.noop,
             submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-                if (form.valid()){
-                    form.submit();
-                }
-//                return false;
+                $('.subscription-form').addClass('successful');
+                // if (form.valid()){
+                //     form.submit();
+                // }
+               return false;
             }
         })
 

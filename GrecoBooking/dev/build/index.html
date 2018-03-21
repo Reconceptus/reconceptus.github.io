@@ -558,6 +558,7 @@
                                 <button type="submit">Отправить</button>
                             </div>
                         </form>
+                        <div class="success-title">Спасибо! Теперь вы на нас подписаны!</div>
                     </div>
                 </div>
                 <div class="menu">
@@ -604,51 +605,6 @@
 <!--validate-->
 
 <script>
-
-    $('.form-request form').validate({
-        onfocusout: false,
-        ignore: ".ignore",
-        rules: {
-            arrivalDate: {required: true},
-            departureDate: {required: true},
-            adults: {required: true},
-            childUntil12: {required: true},
-            babies: {required: true},
-            way: {required: true},
-            budget: {required: true},
-            name: {required: true},
-            telephone: {required: true},
-            mail: {required: true}
-        },
-        messages: {
-            arrivalDate: {required: ""},
-            departureDate: {required: ""},
-            adults: {required: ""},
-            childUntil12: {required: ""},
-            babies: {required: ""},
-            way: {required: ""},
-            budget: {required: ""},
-            name: {required: ""},
-            telephone: {required: ""},
-            mail: {required: ""}
-        },
-        errorClass: 'invalid',
-        highlight: function(element, errorClass) {
-            $(element).closest('.field').addClass(errorClass)
-
-        },
-        unhighlight: function(element, errorClass) {
-            $(element).closest('.field').removeClass(errorClass)
-        },
-        errorPlacement: $.noop,
-        submitHandler:function (form) {
-            $('.form-request').addClass('successful');
-//            if (form.valid()){
-//                form.submit();
-//            }
-            return false;
-        }
-    })
 
     $('.fast-request form').validate({
         onfocusout: false,

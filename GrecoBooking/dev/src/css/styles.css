@@ -1856,6 +1856,10 @@ svg {
   font-size: 17px;
 }
 
+.subscription-form {
+  position: relative;
+}
+
 .subscription-form .field {
   width: 100%;
   display: -webkit-box;
@@ -1907,6 +1911,37 @@ svg {
   .subscription-form .field button {
     padding: 10px 30px;
   }
+}
+
+.subscription-form .success-title {
+  display: none;
+}
+
+.subscription-form.successful form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.subscription-form.successful .success-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+          align-items: center;
+  color: #f9690e;
 }
 
 .btn {
