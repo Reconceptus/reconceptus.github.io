@@ -15,6 +15,7 @@
     @include media(screen,1199){
       width: 100%;
       height: 400px;
+      position: relative;
     }
   }
   @include media(hover,1200){
@@ -31,7 +32,9 @@
   z-index: 2;
   background-color: $white;
 
-
+  .form-success {
+    width: 100%;
+  }
 
   @include media(hover,1200){
     position: absolute;
@@ -122,9 +125,11 @@
     background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
     @include breakpoints(768,1199){
       width: 50%;
+      position: relative;
     }
     @include media(screen,767){
       width: 100%;
+      position: relative;
     }
     .fields {
       padding: 10px 40px;

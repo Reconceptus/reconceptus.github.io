@@ -1,6 +1,11 @@
 .selection-request {
-  padding: 40px 0 100px;
   width: 100%;
+  @include media(hover,600){
+    padding: 40px 0 100px;
+  }
+  @include media(screen,599){
+    padding: 40px 0;
+  }
   header {
     margin-bottom: 40px;
   }

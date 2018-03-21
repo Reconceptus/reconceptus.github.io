@@ -28,6 +28,11 @@
       will-change: transform;
     }
   }
+  &.selection-mode {
+    @include media(screen,599){
+      height: 320px;
+    }
+  }
   &:not(.slider){
     &:after {
       content: "";

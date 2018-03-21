@@ -2278,6 +2278,12 @@ svg {
   will-change: transform;
 }
 
+@media screen and (max-width: 599px) {
+  .intro-figure.selection-mode {
+    height: 320px;
+  }
+}
+
 .intro-figure:not(.slider):after {
   content: "";
   position: absolute;
@@ -4075,8 +4081,24 @@ svg {
   z-index: 1;
 }
 
+@media screen and (max-width: 480px) {
+  .modal--main {
+    padding: 10px 0;
+  }
+}
+
 .modal [data-modal]:not(.active) {
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .modal {
+    -webkit-box-align: start;
+            -webkit-align-items: flex-start;
+                -ms-flex-align: start;
+            align-items: flex-start;
+    overflow: auto;
+  }
 }
 
 @-webkit-keyframes anim_bg {
@@ -9542,8 +9564,19 @@ svg {
 }
 
 .selection-request {
-  padding: 40px 0 100px;
   width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .selection-request {
+    padding: 40px 0 100px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .selection-request {
+    padding: 40px 0;
+  }
 }
 
 .selection-request header {
@@ -9585,6 +9618,7 @@ svg {
   .map-container .map-box {
     width: 100%;
     height: 400px;
+    position: relative;
   }
 }
 
@@ -9603,6 +9637,10 @@ svg {
 .contact-form {
   z-index: 2;
   background-color: #fff;
+}
+
+.contact-form .form-success {
+  width: 100%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -9755,12 +9793,14 @@ svg {
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .contact-form-box {
     width: 50%;
+    position: relative;
   }
 }
 
 @media screen and (max-width: 767px) {
   .contact-form-box {
     width: 100%;
+    position: relative;
   }
 }
 

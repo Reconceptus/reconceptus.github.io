@@ -28,10 +28,17 @@
   &--main {
     position: relative;
     z-index: 1;
+    @include media(screen,480){
+      padding: 10px 0;
+    }
   }
   [data-modal] {
     &:not(.active){
       display: none;
     }
+  }
+  @include media(screen,480){
+    align-items: flex-start;
+    overflow: auto;
   }
 }

@@ -57,6 +57,18 @@
                             </button>
                         </div>
                     </form>
+                    <div class="form-success">
+                        <span class="close"><svg> <use xlink:href="assets/svg/sprite.svg#ico_close"></use> </svg></span>
+                        <div class="form-success--main">
+                            <div class="text">
+                                <h5 class="success-title">Запрос успешно отправлен!</h5>
+
+                                <div class="btn_center">
+                                    <a href="/blog" class="more">Читать наш блог</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="map" class="map-box"></div>
@@ -162,11 +174,11 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
+            $('.contact-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
         }
     })
 
