@@ -1,11 +1,18 @@
 .header {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   background-color: rgba($text,0.7);
   color: $white;
+  transition: background 0.25s;
+  &.static{
+    position: absolute;
+  }
+  &:not(.static){
+    position: fixed;
+  }
+
   &--wrap {
     display: flex;
     justify-content: space-between;
@@ -17,15 +24,16 @@
   .logo {
     @include media(hover,1600){width: 335px;}
     @include breakpoints(1200,1599){width: 265px;}
-
-
     a {
       display: block;
 
       @include media(hover,1600){width: 250px;}
       @include breakpoints(1024,1599){width: 200px;}
       @include media(screen,1023){width: 175px;}
-
+      svg {
+        fill: $white;
+        transition: all 0.3s;
+      }
       img {
         display: block;
         width: 100%;
@@ -459,7 +467,7 @@
             padding: 8px 15px;
             display: inline-block;
           }
-          color: $white;
+          color: inherit;
           font-weight: 500;
           height: 100%;
           white-space: nowrap;
@@ -609,5 +617,37 @@
         opacity: 1;
       }
     }
+  }
+  &.sticky {
+    background-color: $white;
+    &:not(.show-menu){
+      color: $border;
+      .elements {
+        .burger {
+          .line1,
+          .line2,
+          .line2:before,
+          .line3 {
+            background-color: $head;
+          }
+        }
+        .language {
+          ul {
+            li {
+              color: $border;
+            }
+          }
+        }
+      }
+    }
+    box-shadow: 0 2px 5px 0 rgba($head,0.3);
+    .logo {
+      a {
+        svg {
+          fill: $btn;
+        }
+      }
+    }
+
   }
 }

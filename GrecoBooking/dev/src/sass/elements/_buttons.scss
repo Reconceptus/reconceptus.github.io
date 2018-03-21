@@ -18,10 +18,19 @@
     color: $white;
     padding: 10px 30px;
     font-size: 14px;
+    .sticky & {
+      border-color: $border;
+      color: $border;
+    }
     &:hover {
       @include media(hover,1025){
         background-color: $white;
         color: $head;
+        .sticky & {
+          border-color: $head;
+          background-color: $head;
+          color: $white;
+        }
       }
     }
   }

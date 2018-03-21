@@ -484,13 +484,23 @@ textarea {
 }
 
 .header {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   background-color: RGBA(48, 52, 63, 0.7);
   color: #FFF;
+  -webkit-transition: background 0.25s;
+  -o-transition: background 0.25s;
+  transition: background 0.25s;
+}
+
+.header.static {
+  position: absolute;
+}
+
+.header:not(.static) {
+  position: fixed;
 }
 
 .header--wrap {
@@ -510,6 +520,13 @@ textarea {
 
 .header .logo a {
   display: block;
+}
+
+.header .logo a svg {
+  fill: #FFF;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .header .logo a img {
@@ -829,7 +846,7 @@ textarea {
 
 .header .nav ul li > span,
 .header .nav ul li > a {
-  color: #FFF;
+  color: inherit;
   font-weight: 500;
   height: 100%;
   white-space: nowrap;
@@ -876,6 +893,31 @@ textarea {
   height: 1px;
   background-color: #657482;
   position: absolute;
+}
+
+.header.sticky {
+  background-color: #FFF;
+  -webkit-box-shadow: 0 2px 5px 0 RGBA(74, 84, 96, 0.3);
+  box-shadow: 0 2px 5px 0 RGBA(74, 84, 96, 0.3);
+}
+
+.header.sticky:not(.show-menu) {
+  color: #657482;
+}
+
+.header.sticky:not(.show-menu) .elements .burger .line1,
+.header.sticky:not(.show-menu) .elements .burger .line2,
+.header.sticky:not(.show-menu) .elements .burger .line2:before,
+.header.sticky:not(.show-menu) .elements .burger .line3 {
+  background-color: #4A5460;
+}
+
+.header.sticky:not(.show-menu) .elements .language ul li {
+  color: #657482;
+}
+
+.header.sticky .logo a svg {
+  fill: #F9690E;
 }
 
 html.ovh {
@@ -1131,6 +1173,11 @@ svg {
   color: #FFF;
   padding: 10px 30px;
   font-size: 14px;
+}
+
+.sticky .btn_bord {
+  border-color: #657482;
+  color: #657482;
 }
 
 .btn_subm {
@@ -6708,6 +6755,12 @@ svg {
   .btn_bord:hover {
     background-color: #FFF;
     color: #4A5460;
+  }
+
+  .sticky .btn_bord:hover {
+    border-color: #4A5460;
+    background-color: #4A5460;
+    color: #FFF;
   }
 
   .btn_subm:hover {

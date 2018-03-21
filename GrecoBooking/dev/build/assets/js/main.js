@@ -5,6 +5,7 @@ $(document).ready(function () {
     var btn = $('#search_btn'),
         nav = $('.nav'),
         lang = $('.language'),
+        $header = $('#header'),
         search = btn.closest('.search');
 
     /* ----------------------------------- functions ----------------------------------- */
@@ -282,6 +283,15 @@ $(document).ready(function () {
     }
 
     /*
+     ============= fixed header
+    */
+
+    function fixed_header(){
+        var currentScrollTop = $(window).scrollTop();
+        currentScrollTop > 0 ? $header.addClass('sticky') : $header.removeClass('sticky');
+    }
+
+    /*
      ============= burger
     */
 
@@ -289,7 +299,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $('#header').toggleClass('show-menu');
         $('html').toggleClass('ovh');
-    })
+    });
 
     /*
      ============= touch-mouse events
@@ -510,6 +520,7 @@ $(document).ready(function () {
     subscribeForm();
     header_submenu();
 
+    if($('#header.static').length == 0){fixed_header();}
     if($('select').length > 0){select2();}
     if($('[data-picker-full]').length > 0){datePickerFullRequest();}
     if($('[data-picker-fast]').length > 0){datePickerFastRequest();}
@@ -530,7 +541,7 @@ $(document).ready(function () {
 
     $(window).scroll(function (e) {
 
-
+        if($('#header.static').length == 0){fixed_header();}
 
     });
 
