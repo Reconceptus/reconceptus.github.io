@@ -6867,7 +6867,7 @@ svg {
     transform: scale(1.05);
   }
 
-  .offers .item a:hover:before {
+  .offers .item a:hover header {
     background-color: RGBA(249, 105, 14, 0.5);
   }
 

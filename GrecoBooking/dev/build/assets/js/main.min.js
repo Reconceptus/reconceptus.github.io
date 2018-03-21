@@ -49,6 +49,15 @@ $(document).ready(function () {
     }
 
     /*
+     ============= scroll slide
+    */
+
+    $('.scroll-down').click(function () {
+        var winHeight = $(window).height();
+        $('html,body').animate({'scrollTop':winHeight},600);
+    });
+
+    /*
      ============= custom select init
     */
 

@@ -254,7 +254,9 @@
           figure {
             transform: scale(1.05);
           }
-          &:before {background-color: rgba($btn,0.5);}
+          header {
+            background-color: rgba($btn,0.5);
+          }
         }
       }
       @include media(hover,1024){
