@@ -133,61 +133,168 @@
     padding: 40px 0;
   }
   @include media(screen,599){
-    padding: 20px 0;
+    padding: 40px 0 20px;
   }
   &--wrap {
     display: flex;
     flex-flow: row wrap;
-    margin: -10px;
+
+    @include media(hover,768){
+      margin: -10px;
+    }
+    @include breakpoints(600,767){
+      margin: -5px;
+    }
   }
   &--grid {
     width: 100%;
-    padding-top: 75%;
-    height: 0;
     position: relative;
-    [data-item="1"]{left: 0; top: 0;}
-    [data-item="2"]{right: 0; top: 0;}
-    [data-item="3"]{right: 0; bottom: 0;}
-    [data-item="4"]{left: 0; bottom: 0;}
-    [data-item="5"]{left: 25%; bottom: 0;}
+    @include media(hover,1024){
+      padding-top: 75%;
+      height: 0;
+    }
+    @include breakpoints(600,1023) {
+      padding-top: 100%;
+      height: 0;
+    }
+
+    [data-item="1"]{
+
+      @include media(hover,600){
+        left: 0; top: 0;
+      }
+    }
+    [data-item="2"]{
+      @include media(hover,1024){
+        right: 0; top: 0;
+      }
+      @include breakpoints(600,1023) {
+        left: 0; bottom: 0;
+      }
+
+    }
+    [data-item="3"]{
+      @include media(hover,1024){
+        right: 0; bottom: 0;
+      }
+      @include breakpoints(600,1023) {
+        right: 0; top: 0;
+      }
+    }
+    [data-item="4"]{
+      @include media(hover,1024){
+        left: 0; bottom: 0;
+      }
+      @include breakpoints(600,1023) {
+        right: 0; bottom: 25%;
+      }
+    }
+    [data-item="5"]{
+      @include media(hover,1024){
+        left: 25%; bottom: 0;
+      }
+      @include breakpoints(600,1023) {
+        right: 0; bottom: 0;
+      }
+    }
 
   }
 
   .item {
     box-sizing: border-box;
-    padding: 10px;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+
+    @include media(hover,768){
+      padding: 10px;
+    }
+    @include breakpoints(600,767){
+      padding: 5px;
+    }
     &-box {
-      position: absolute;
+      @include media(hover,600){
+        position: absolute;
+      }
+      @include media(screen,599){
+        position: relative;
+        margin-bottom: 20px;
+      }
       &.item-lg {
-        width: 50%;
-        padding-top: 50%;
+
         a {
           align-items: flex-end;
+        }
+        @include media(hover,600){
+          width: 50%;
+          padding-top: 50%;
+        }
+        @include media(screen,599){
+          width: 100%;
+          padding-top: 100%;
         }
       }
       &.item-md {
-        width: 50%;
-        padding-top: 25%;
+
+        @include media(hover,1024){
+          width: 50%;
+          padding-top: 25%;
+        }
+        @include breakpoints(600,1023) {
+          width: 50%;
+          padding-top: 50%;
+        }
+        @include media(screen,599){
+          width: 100%;
+          padding-top: 100%;
+        }
         a {
-          align-items: flex-end;
+          @include media(hover,1601){
+            align-items: flex-end;
+          }
+          @include breakpoints(1024,1600){
+            header {
+              top: 0;
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+              padding: 40px;
+              flex-direction: column;
+            }
+          }
         }
       }
       &.item-sm {
-        width: 25%;
-        padding-top: 25%;
+
+        @include media(hover,1024){
+          width: 25%;
+          padding-top: 25%;
+        }
+        @include breakpoints(600,1023) {
+          width: 50%;
+          padding-top: 25%;
+        }
+        @include media(screen,599){
+          width: 100%;
+          padding-top: 100%;
+        }
         a {
           align-items: center;
+          @include media(hover,1024){
+            header {
+              top: 0;
+              display: flex;
+              justify-content: center;
+              padding: 20px;
+            }
+          }
           header {
-            top: 0;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+          }
+          .title {
+            text-align: center;
           }
         }
       }
@@ -214,13 +321,29 @@
       }
       header {
         position: absolute;
-        padding: 40px 60px;
         bottom: 0;
         left: 0;
         right: 0;
         box-sizing: border-box;
         background-color: rgba($black,0.5);
         transition: background-color 0.35s;
+        @include media(hover,1601){
+          padding: 40px 60px;
+        }
+        @include breakpoints(768,1600){
+          padding: 40px;
+        }
+        @include media(screen,767){
+          padding: 20px;
+        }
+        @include media(screen,1023){
+          top: 0;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+        }
+
       }
       .title {
         position: relative;
@@ -233,10 +356,12 @@
         @include media(hover,1200){
           font-size: 30px;
         }
-        @include media(screen,1199){
+        @include breakpoints(768,1199){
           font-size: 26px;
         }
-
+        @include breakpoints(600,767){
+          font-size: 22px;
+        }
         @include media(screen,599){
           font-size: 18px;
         }
@@ -244,10 +369,16 @@
       }
       .subtitle {
         color: $white;
-        margin-bottom: 35px;
         font-size: 17px;
         font-weight: 100;
-        margin-top: 15px;
+        @include media(hover,1200){
+          margin-top: 15px;
+          margin-bottom: 30px;
+        }
+        @include media(screen,1199){
+          margin-top: 5px;
+          margin-bottom: 20px;
+        }
       }
       &:hover {
         @include media(hover,1025){
@@ -354,9 +485,9 @@
 /*****************          blog box          ********************/
 /*---------------------------------------------------------------*/
 
-.blog-section {
-  margin-bottom: 40px;
-}
+//.blog-section {
+//  margin-bottom: 40px;
+//}
 
 
 /*------------------------------------------------------------------*/
