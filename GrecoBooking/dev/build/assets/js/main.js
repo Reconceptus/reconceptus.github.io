@@ -50,12 +50,31 @@ $(document).ready(function () {
     }
 
     /*
+     ============= scroll up
+    */
+
+    function windowScroll() {
+        var winScroll = $(window).scrollTop(),
+            winHeight = $(window).height();
+        if(winScroll > winHeight){
+            $('.scroll-up').addClass('active')
+        }
+        else {
+            $('.scroll-up').removeClass('active')
+        }
+    }
+
+    $('.scroll-up').click(function () {
+        $('html,body').animate({'scrollTop':0},200);
+    });
+
+    /*
      ============= scroll slide
     */
 
     $('.scroll-down').click(function () {
         var winHeight = $(window).height();
-        $('html,body').animate({'scrollTop':winHeight},600);
+        $('html,body').animate({'scrollTop':winHeight-60},600);
     });
 
     /*
@@ -519,6 +538,7 @@ $(document).ready(function () {
     documentClick();
     subscribeForm();
     header_submenu();
+    windowScroll();
 
     if($('#header.static').length == 0){fixed_header();}
     if($('select').length > 0){select2();}
@@ -534,6 +554,7 @@ $(document).ready(function () {
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(function () {
+        windowScroll();
     });
 
     /* --------------------------------- document scroll --------------------------------- */
@@ -541,6 +562,7 @@ $(document).ready(function () {
 
     $(window).scroll(function (e) {
 
+        windowScroll();
         if($('#header.static').length == 0){fixed_header();}
 
     });

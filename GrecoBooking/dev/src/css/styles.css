@@ -4096,6 +4096,48 @@ svg {
   position: relative;
 }
 
+.scroll-up {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  z-index: 9;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.scroll-up:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-up.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-up i {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 25px;
+  height: 15px;
+}
+
+.scroll-up svg {
+  color: #657482;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.scroll-up:hover svg {
+  color: #f9690e;
+}
+
 .grid--main {
   position: absolute;
   top: 0;
