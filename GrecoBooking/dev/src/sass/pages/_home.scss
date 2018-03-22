@@ -136,8 +136,7 @@
     padding: 40px 0 20px;
   }
   &--wrap {
-    display: flex;
-    flex-flow: row wrap;
+    display: block;
 
     @include media(hover,768){
       margin: -10px;
@@ -370,7 +369,7 @@
       .subtitle {
         color: $white;
         font-size: 17px;
-        font-weight: 100;
+        font-weight: 300;
         @include media(hover,1200){
           margin-top: 15px;
           margin-bottom: 30px;

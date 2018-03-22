@@ -3072,12 +3072,6 @@ svg {
   line-height: 1.4;
 }
 
-@media screen and (min-width: 768px) {
-  .custom-select .select2-results__option {
-    text-align: center;
-  }
-}
-
 .check {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4180,8 +4174,9 @@ svg {
   position: absolute;
   left: 5px;
   right: 5px;
-  bottom: 25px;
+  bottom: 50%;
   height: 15px;
+  margin-bottom: -7px;
 }
 
 .scroll-up svg {
@@ -6619,15 +6614,7 @@ svg {
 }
 
 .offers--wrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          -webkit-flex-flow: row wrap;
-              -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -7005,7 +6992,7 @@ svg {
 .offers .item a .subtitle {
   color: #fff;
   font-size: 17px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 @media screen and (min-width: 1200px) {

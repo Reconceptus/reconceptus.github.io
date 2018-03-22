@@ -3102,8 +3102,9 @@ svg {
   position: absolute;
   left: 5px;
   right: 5px;
-  bottom: 25px;
+  bottom: 50%;
   height: 15px;
+  margin-bottom: -7px;
 }
 
 .scroll-up svg {
@@ -4335,15 +4336,7 @@ svg {
 /*--------------------------------------------------------------------*/
 
 .offers--wrap {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
+  display: block;
 }
 
 .offers--grid {
@@ -4438,7 +4431,7 @@ svg {
 .offers .item a .subtitle {
   color: #FFF;
   font-size: 17px;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 /*--------------------------------------------------------------------*/
@@ -8062,10 +8055,6 @@ svg {
 
   .sm .headline_main {
     font-size: 30px;
-  }
-
-  .custom-select .select2-results__option {
-    text-align: center;
   }
 
   #fastpicker .calendar > .ui-datepicker,

@@ -67,9 +67,7 @@
     white-space: nowrap;
     line-height: 1.4;
     //&:first-child {display: none;}
-    @include media(hover,768){
-      text-align: center;
-    }
+
   }
 
 
