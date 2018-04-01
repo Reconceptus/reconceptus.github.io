@@ -308,6 +308,10 @@ textarea {
   max-width: 780px;
 }
 
+.bg-grey {
+  background-color: #f0f1f3;
+}
+
 .simple-page--head {
   padding-top: 60px;
 }
@@ -316,8 +320,32 @@ textarea {
   background-color: #657482;
 }
 
+@media screen and (min-width: 1024px) {
+  .simple-page--head.villa--head + .simple-page--main {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .simple-page--head.villa--head + .simple-page--main {
+    padding-top: 40px;
+  }
+}
+
 .simple-page--head.favorite--head {
   position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .simple-page--head.favorite--head + .simple-page--main {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .simple-page--head.favorite--head + .simple-page--main {
+    padding-top: 40px;
+  }
 }
 
 .simple-page--head.favorite--head .animate-bg {
@@ -468,7 +496,6 @@ textarea {
 @media screen and (min-width: 1024px) {
   .half-request:not(.double) {
     height: 40px;
-    margin-bottom: 40px;
   }
   .half-request.double {
     height: 80px;
@@ -2227,6 +2254,7 @@ svg {
 
 .paging-list .page-one.current {
   color: #f9690e;
+  pointer-events: none;
 }
 
 .paging-list .page-one.prev, .paging-list .page-one.next {
@@ -4980,7 +5008,7 @@ svg {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -5049,12 +5077,24 @@ svg {
   }
 }
 
-.villa-img {
-  width: 100%;
-  position: relative;
+.villa-item--cover {
+  background-color: #fff;
+  padding-bottom: 20px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .villa-item--cover:hover {
+    -webkit-box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
+            box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
+  }
+}
+
+.villa-img {
+  width: 100%;
+  position: relative;
 }
 
 @media screen and (min-width: 1024px) {
@@ -5126,13 +5166,6 @@ svg {
   width: 100%;
   height: 100%;
   z-index: 1;
-}
-
-@media screen and (min-width: 1025px) {
-  .villa-img:hover {
-    -webkit-box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
-            box-shadow: 0 5px 20px 0 rgba(74, 84, 96, 0.5);
-  }
 }
 
 .villa-like {
@@ -7283,6 +7316,10 @@ svg {
 /*------------------------------------------------------------------*/
 /*****************          request box          ********************/
 /*------------------------------------------------------------------*/
+.home-request {
+  margin-top: 20px;
+}
+
 .home-request--wrap {
   padding-top: 80px;
 }
@@ -7587,6 +7624,11 @@ svg {
 /*--------------------------------------------------------------------*/
 /******************          villas common          **********************/
 /*--------------------------------------------------------------------*/
+.villas.bg-grey {
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
 .villas--wrap {
   padding-bottom: 20px;
 }

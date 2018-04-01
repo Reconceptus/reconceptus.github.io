@@ -35,16 +35,33 @@
     max-width: 780px;
   }
 }
-
+.bg-grey {
+  background-color: $light-bg;
+}
 .simple-page {
   &--head {
     padding-top: 60px;
-    &.villa--head {background-color: $border;}
+    &.villa--head {
+      background-color: $border;
+      & + .simple-page--main {
+
+        @include media(hover,1024){
+          padding-top: 80px;
+        }
+        @include media(screen,1023){
+          padding-top: 40px;
+        }
+      }
+    }
     &.favorite--head {
-      //background: $pink_dark;
-      //background: -moz-linear-gradient(left, $pink 0%, $pink_dark 100%);
-      //background: -webkit-linear-gradient(left, $pink 0%,$pink_dark 100%);
-      //background: linear-gradient(to right, $pink 0%,$pink_dark 100%);
+      & + .simple-page--main {
+        @include media(hover,1024){
+          padding-top: 80px;
+        }
+        @include media(screen,1023){
+          padding-top: 40px;
+        }
+      }
       position: relative;
       .animate-bg {
         position: absolute;
@@ -144,7 +161,7 @@
   @include media(hover,1024){
     &:not(.double) {
       height: 40px;
-      margin-bottom: 40px;
+      //margin-bottom: 40px;
     }
     &.double {
       height: 80px;

@@ -11,6 +11,7 @@
     margin-right: 10px;
     color: $border;
     font-size: 17px;
+    //background-color: $light-bg;
     .page-one {
       display: flex;
       box-sizing: border-box;
@@ -23,7 +24,10 @@
       &:not(:last-child){
         border-right: 1px solid $bg;
       }
-      &.current {color: $btn;}
+      &.current {
+        color: $btn;
+        pointer-events: none;
+      }
       &.prev,
       &.next {
         color: $bg;

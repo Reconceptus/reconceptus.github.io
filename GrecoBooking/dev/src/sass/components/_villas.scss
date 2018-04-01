@@ -8,7 +8,7 @@
   &-item {
     box-sizing: border-box;
     padding: 0 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     @include media(hover,768){
       width: 50%;
     }
@@ -51,11 +51,21 @@
         }
       }
     }
+    &--cover {
+      background-color: $white;
+      padding-bottom: 20px;
+      transition: all 0.3s;
+      &:hover {
+        @include media(hover,1025){
+          box-shadow: 0 5px 20px 0 rgba($head,0.5);
+        }
+      }
+    }
   }
   &-img {
     width: 100%;
     position: relative;
-    transition: all 0.3s;
+
     @include media(hover,1024){
       height: 290px;
     }
@@ -112,11 +122,7 @@
       z-index: 1;
     }
 
-    &:hover {
-      @include media(hover,1025){
-        box-shadow: 0 5px 20px 0 rgba($head,0.5);
-      }
-    }
+
   }
   &-like {
     position: absolute;
