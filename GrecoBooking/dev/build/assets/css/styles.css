@@ -6817,10 +6817,6 @@ svg {
     padding-top: 80px;
   }
 
-  .simple-page--head.favorite--head + .simple-page--main {
-    padding-top: 80px;
-  }
-
   .simple-page--head header .send {
     position: absolute;
     left: 0;
@@ -7065,283 +7061,6 @@ svg {
 
   .vacancy-quotes .text {
     width: 50%;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .simple-page--head.villa--head + .simple-page--main {
-    padding-top: 40px;
-  }
-
-  .simple-page--head.favorite--head + .simple-page--main {
-    padding-top: 40px;
-  }
-
-  .half-request {
-    padding-bottom: 20px;
-  }
-
-  .half-request.double {
-    padding-top: 20px;
-    background-color: #657482;
-    margin-bottom: 30px;
-  }
-
-  .header .logo a {
-    width: 175px;
-  }
-
-  .header .elements .request {
-    display: none;
-  }
-
-  .footer--main {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-  }
-
-  .subscription {
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
-    order: 3;
-    margin: 40px auto 0;
-  }
-
-  .villa-item .includes .bed i {
-    width: 20px;
-    height: 16px;
-  }
-
-  .villa-item .includes .bath i {
-    width: 20px;
-    height: 18px;
-  }
-
-  .villa-item .includes .sea i {
-    width: 20px;
-    height: 20px;
-  }
-
-  .villa-item .includes {
-    font-size: 12px;
-    padding: 0 10px;
-  }
-
-  .villa-img {
-    height: 220px;
-  }
-
-  .villa-main {
-    padding: 10px;
-  }
-
-  .form-request .form-box .field:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  .fast-request {
-    height: auto;
-    padding: 10px;
-  }
-
-  .fast-request--wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-  }
-
-  .fast-request button {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .fast-request .fieldgroup {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-
-  .fast-request .field {
-    padding-bottom: 5px;
-    padding-top: 10px;
-    border-bottom: 1px solid #B2B9C1;
-  }
-
-  .fast-request .field.f-100 {
-    width: 100%;
-  }
-
-  .fast-request .field.f-50 {
-    width: 50%;
-  }
-
-  .intro-values {
-    font-size: 13px;
-  }
-
-  .intro-values .intro-text {
-    font-size: 17px;
-  }
-
-  .intro--main {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .offers .item a header {
-    top: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .qualities ul li {
-    font-size: 15px;
-  }
-
-  .banners-box {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .banners .ban {
-    width: 100%;
-  }
-
-  .banners .ban:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .villa-nav {
-    height: 160px;
-    margin-bottom: 35px;
-  }
-
-  .villa-nav .short-info-data .show-villa-form {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-
-  .villa-nav .short-info-data .show-villa-form .price {
-    text-transform: uppercase;
-    font-family: Futuris, sans-serif;
-    font-size: 20px;
-    margin-right: 15px;
-    white-space: nowrap;
-  }
-
-  .villa-nav .short-info-data .show-villa-form .price strong {
-    font-weight: bold;
-  }
-
-  .villa-nav .short-info-navigate {
-    display: none;
-  }
-
-  .villa-layout--main {
-    padding: 0 20px;
-  }
-
-  .villa-layout--side {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: RGBA(48, 52, 63, 0.8);
-  }
-
-  .villa-layout--side .toggleVilla {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .villa-layout--side.active {
-    display: block;
-  }
-
-  .villa-request {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  .absolute .villa-request {
-    top: auto;
-  }
-
-  .villa-request-form .submit-btn label {
-    display: none;
-  }
-
-  .vacancy-list li {
-    width: 100%;
-  }
-
-  .vacancy-advances ul li {
-    width: 100%;
-  }
-
-  .vacancy-advances ul li:not(:last-child) {
-    margin-bottom: 20px;
-  }
-
-  .vacancy-quotes .figure {
-    width: 100%;
-    height: 350px;
-  }
-
-  .vacancy-quotes .text {
-    width: 100%;
   }
 }
 
@@ -8078,6 +7797,275 @@ svg {
 
   .results-list .title {
     font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .half-request {
+    padding-bottom: 20px;
+  }
+
+  .half-request.double {
+    padding-top: 20px;
+    background-color: #657482;
+    margin-bottom: 30px;
+  }
+
+  .header .logo a {
+    width: 175px;
+  }
+
+  .header .elements .request {
+    display: none;
+  }
+
+  .footer--main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+  .subscription {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+    margin: 40px auto 0;
+  }
+
+  .villa-item .includes .bed i {
+    width: 20px;
+    height: 16px;
+  }
+
+  .villa-item .includes .bath i {
+    width: 20px;
+    height: 18px;
+  }
+
+  .villa-item .includes .sea i {
+    width: 20px;
+    height: 20px;
+  }
+
+  .villa-item .includes {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .villa-img {
+    height: 220px;
+  }
+
+  .villa-main {
+    padding: 10px;
+  }
+
+  .form-request .form-box .field:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .fast-request {
+    height: auto;
+    padding: 10px;
+  }
+
+  .fast-request--wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+  .fast-request button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .fast-request .fieldgroup {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+
+  .fast-request .field {
+    padding-bottom: 5px;
+    padding-top: 10px;
+    border-bottom: 1px solid #B2B9C1;
+  }
+
+  .fast-request .field.f-100 {
+    width: 100%;
+  }
+
+  .fast-request .field.f-50 {
+    width: 50%;
+  }
+
+  .intro-values {
+    font-size: 13px;
+  }
+
+  .intro-values .intro-text {
+    font-size: 17px;
+  }
+
+  .intro--main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .offers .item a header {
+    top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .qualities ul li {
+    font-size: 15px;
+  }
+
+  .banners-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .banners .ban {
+    width: 100%;
+  }
+
+  .banners .ban:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .villa-nav {
+    height: 160px;
+    margin-bottom: 35px;
+  }
+
+  .villa-nav .short-info-data .show-villa-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .villa-nav .short-info-data .show-villa-form .price {
+    text-transform: uppercase;
+    font-family: Futuris, sans-serif;
+    font-size: 20px;
+    margin-right: 15px;
+    white-space: nowrap;
+  }
+
+  .villa-nav .short-info-data .show-villa-form .price strong {
+    font-weight: bold;
+  }
+
+  .villa-nav .short-info-navigate {
+    display: none;
+  }
+
+  .villa-layout--main {
+    padding: 0 20px;
+  }
+
+  .villa-layout--side {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: RGBA(48, 52, 63, 0.8);
+  }
+
+  .villa-layout--side .toggleVilla {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .villa-layout--side.active {
+    display: block;
+  }
+
+  .villa-request {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .absolute .villa-request {
+    top: auto;
+  }
+
+  .villa-request-form .submit-btn label {
+    display: none;
+  }
+
+  .vacancy-list li {
+    width: 100%;
+  }
+
+  .vacancy-advances ul li {
+    width: 100%;
+  }
+
+  .vacancy-advances ul li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .vacancy-quotes .figure {
+    width: 100%;
+    height: 350px;
+  }
+
+  .vacancy-quotes .text {
+    width: 100%;
   }
 }
 

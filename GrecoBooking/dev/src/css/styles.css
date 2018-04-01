@@ -326,26 +326,8 @@ textarea {
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .simple-page--head.villa--head + .simple-page--main {
-    padding-top: 40px;
-  }
-}
-
 .simple-page--head.favorite--head {
   position: relative;
-}
-
-@media screen and (min-width: 1024px) {
-  .simple-page--head.favorite--head + .simple-page--main {
-    padding-top: 80px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .simple-page--head.favorite--head + .simple-page--main {
-    padding-top: 40px;
-  }
 }
 
 .simple-page--head.favorite--head .animate-bg {

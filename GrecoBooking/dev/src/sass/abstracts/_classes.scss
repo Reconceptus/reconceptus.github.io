@@ -48,20 +48,9 @@
         @include media(hover,1024){
           padding-top: 80px;
         }
-        @include media(screen,1023){
-          padding-top: 40px;
-        }
       }
     }
     &.favorite--head {
-      & + .simple-page--main {
-        @include media(hover,1024){
-          padding-top: 80px;
-        }
-        @include media(screen,1023){
-          padding-top: 40px;
-        }
-      }
       position: relative;
       .animate-bg {
         position: absolute;

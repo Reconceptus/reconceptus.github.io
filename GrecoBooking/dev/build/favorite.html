@@ -103,67 +103,6 @@
                     </a>
                 </header>
             </div>
-            <div class="half-request">
-                <div class="content content_md">
-                    <div class="fast-request">
-                        <form action="#">
-                            <div class="fast-request--wrap">
-                                <div class="fieldgroup">
-                                    <div id="fastpicker">
-                                        <div class="calendar">
-                                            <div class="annotation">
-                                                <span class="closed">Занято</span>
-                                                <span class="opened">Свободно</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="field f-100 col-30">
-                                        <label for="location">location</label>
-                                        <div class="select">
-                                            <select name="location" id="location">
-                                                <option value="Все направления">Все направления</option>
-                                                <option value="Афинское побережье">Афинское побережье</option>
-                                                <option value="Закинтос">Закинтос</option>
-                                                <option value="Крит">Крит</option>
-                                                <option value="Материковая Греция">Материковая Греция</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="field f-50">
-                                        <label for="check_in">check-in</label>
-                                        <div class="input"><input id="check_in" name="check_in" type="text" data-picker-fast></div>
-                                    </div>
-                                    <div class="field f-50">
-                                        <label for="check_out">check-out</label>
-                                        <div class="input"><input type="text" name="check_out" id="check_out" data-picker-fast></div>
-                                    </div>
-                                    <div class="field f-50 col-10">
-                                        <label for="rooms">guests</label>
-                                        <div class="select">
-                                            <select name="rooms" id="rooms">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="field f-50">
-                                        <div class="check">
-                                            <label>
-                                                <input type="checkbox">
-                                                <span>Горячие предложения</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="btn btn_subm" type="submit">search</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
         </section>
         <div class="simple-page--main bg-grey">
             <div class="villas">
@@ -683,38 +622,6 @@
         }
     })
 
-
-    $('.fast-request form').validate({
-        onfocusout: false,
-        ignore: ".ignore",
-        rules: {
-            location: {required: true},
-            check_in: {required: true},
-            check_out: {required: true},
-            rooms: {required: true}
-        },
-        messages: {
-            location: {required: ""},
-            check_in: {required: ""},
-            check_out: {required: ""},
-            rooms: {required: ""}
-        },
-        errorClass: 'invalid',
-        highlight: function(element, errorClass) {
-            $(element).closest('.field').addClass(errorClass)
-        },
-        unhighlight: function(element, errorClass) {
-            $(element).closest('.field').removeClass(errorClass)
-        },
-        errorPlacement: $.noop,
-        submitHandler:function (form) {
-//                $('#modal').find('.modal-thanks').addClass('active');
-            if (form.valid()){
-                form.submit();
-            }
-//                return false;
-        }
-    })
 
     $('.friend-form form').validate({
         onfocusout: false,
