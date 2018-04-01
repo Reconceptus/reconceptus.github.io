@@ -4389,9 +4389,6 @@ svg {
             -ms-transform: scale(1.05);
         transform: scale(1.05);
   }
-  .grid-list .item:hover:before, .grid-list a:hover:before {
-    background-color: rgba(249, 105, 14, 0.5);
-  }
 }
 
 .grid-list .title {
