@@ -7084,6 +7084,14 @@ svg {
     height: 55px;
   }
 
+  .fast-request .field.col-30 {
+    width: 30%;
+  }
+
+  .fast-request .field.col-10 {
+    width: 10%;
+  }
+
   .fast-request .field:not(:last-child) {
     border-right: 1px solid #B2B9C1;
   }

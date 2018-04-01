@@ -58,6 +58,8 @@
       width: 20%;
       padding-top: 5px;
       height: 55px;
+      &.col-30 {width: 30%}
+      &.col-10 {width: 10%}
       &:not(:last-child){
         border-right: 1px solid $bg;
       }
