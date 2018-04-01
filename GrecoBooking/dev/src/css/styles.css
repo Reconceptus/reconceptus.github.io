@@ -7626,6 +7626,164 @@ svg {
 }
 
 /*--------------------------------------------------------------------*/
+/******************            gallery           **********************/
+/*--------------------------------------------------------------------*/
+.villa-gallery {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background-color: #050505;
+}
+
+.villa-gallery:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.villa-gallery .close {
+  position: absolute;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .villa-gallery .close {
+    top: 35px;
+    right: 35px;
+    width: 43px;
+    height: 43px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .villa-gallery .close {
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.villa-gallery .royalSlider {
+  width: 100%;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.villa-gallery .rsOverflow {
+  width: 100% !important;
+}
+
+.villa-gallery .rsContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.villa-gallery .rsSlide {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.villa-gallery .rsContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.villa-gallery .rsContent img {
+  max-width: 1200px;
+  max-height: 800px;
+  display: inline-block;
+  margin: auto !important;
+}
+
+.villa-gallery .rsBullets {
+  position: absolute;
+  bottom: 0;
+  height: 24px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 3px 0 4px;
+}
+
+.villa-gallery .rsBullet {
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin: 6px 5px;
+  width: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.villa-gallery .rsBullet.rsNavSelected {
+  background: #fff;
+}
+
+.villa-gallery .rsArrow {
+  width: 30px;
+  height: 60px;
+  margin-top: -30px;
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  -webkit-background-size: 100% 100%;
+          background-size: 100% 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .villa-gallery .rsArrow {
+    display: none !important;
+  }
+}
+
+.villa-gallery .rsArrow.rsArrowRight {
+  right: 40px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2012%2021%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22M1%201%2011%2011%201%2021%22/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 599px) {
+  .villa-gallery .rsArrow.rsArrowRight {
+    right: 20px;
+  }
+}
+
+.villa-gallery .rsArrow.rsArrowLeft {
+  left: 40px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%228%22%20height%3D%2215%22%20viewBox%3D%220%200%2010%2018%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20d%3D%22m10%200l-9%209%209%209%22/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 599px) {
+  .villa-gallery .rsArrow.rsArrowLeft {
+    left: 20px;
+  }
+}
+
+/*--------------------------------------------------------------------*/
 /******************          carousel          **********************/
 /*--------------------------------------------------------------------*/
 .villa-carousel {

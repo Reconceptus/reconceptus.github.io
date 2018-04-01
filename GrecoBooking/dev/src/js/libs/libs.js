@@ -7,5 +7,8 @@
 // touch-or-mouse
 //= touchOrMouse.min.js
 
+// royal-slider
+//= rslider.js
+
 
 
