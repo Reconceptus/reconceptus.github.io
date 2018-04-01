@@ -540,6 +540,12 @@ textarea {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .mobile-hidden {
     display: none !important;
@@ -4149,10 +4155,10 @@ svg {
 
 .scroll-up {
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
-  bottom: 0;
   width: 40px;
+  height: 60px;
   z-index: 9;
   cursor: pointer;
   -webkit-transition: all 0.3s;
