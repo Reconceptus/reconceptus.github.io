@@ -98,11 +98,10 @@
 
         display: flex;
         align-items:flex-start;
-        justify-content: space-between;
         box-sizing: border-box;
 
         @include media(hover,1024){
-          width: 35%;
+          width: 33.333%;
           &:not(:last-child){
             padding-right: 40px;
           }

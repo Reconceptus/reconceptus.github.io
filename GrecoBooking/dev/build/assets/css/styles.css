@@ -669,6 +669,10 @@ textarea {
   color: #FFF;
 }
 
+.header .elements .language ul li.current {
+  cursor: default;
+}
+
 .header .elements .language ul li:not(.current) {
   display: none;
   color: transparent;
@@ -2222,6 +2226,10 @@ svg {
   padding-bottom: 5px;
 }
 
+.form-request .check {
+  margin: 10px 5px;
+}
+
 .check label {
   position: relative;
   display: block;
@@ -2251,6 +2259,7 @@ svg {
   margin: auto 14px auto 0;
 }
 
+.form-request .check label span:before,
 .fast-request .check label span:before {
   border: 1px solid #B2B9C1;
   top: 0;
@@ -5978,10 +5987,6 @@ svg {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -7044,7 +7049,7 @@ svg {
   }
 
   .vacancy-advances ul li {
-    width: 35%;
+    width: 33.333%;
   }
 
   .vacancy-advances ul li:not(:last-child) {

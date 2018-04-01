@@ -6,6 +6,9 @@
   .fast-request & {
     padding-bottom: 5px;
   }
+  .form-request & {
+    margin: 10px 5px;
+  }
   label {
     position: relative;
     display: block;
@@ -26,6 +29,7 @@
 
         bottom: 0;
         margin: auto 14px auto 0;
+        .form-request &,
         .fast-request & {
           border: 1px solid $bg;
           top: 0;
