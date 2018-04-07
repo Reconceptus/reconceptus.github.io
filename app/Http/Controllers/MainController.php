@@ -690,6 +690,7 @@ class MainController extends Controller
 		$date_from = $this->request['date_from'] ?? -1;
 		$rooms     = (int) ($this->request['rooms'] ?? -1);
 		$hot       = (int) ($this->request['hot'] ?? -1);
+		$dates     = '';
 
 		if($way !== -1 && !empty($way))
 			$where[] = ['villas.cat', $way];
@@ -700,23 +701,39 @@ class MainController extends Controller
 		if($hot !== -1)
 			$where[] = ['villas.is_hot', 1];
 
-		/* $id_ignoring */
-		$tomorrow    = Carbon::createFromFormat('Y-m-d', substr($date_from, 0, 10))->addDay(1)->toDateString();
-		$dates       = $this->base->getDatesFromRange($tomorrow, $date_to);
+		if((int) $date_to !== -1) {
+			$tomorrow    = Carbon::createFromFormat('Y-m-d', substr($date_from, 0, 10))->addDay(1)->toDateString();
+			$dates       = $this->base->getDatesFromRange($tomorrow, $date_to);
+		}
+
 		$id_ignoring = [];
 
-		$order_villas = $this
-			->dynamic
-			->t('booking_calendar')
-			->whereIn('start', $dates)
-			->orWhereIn('end', $dates)
-			->select('villas_id')
-			->groupBy('villas_id')
-			->get()
-			->toArray();
+		if($dates)
+			$order_villas = $this
+				->dynamic
+				->t('booking_calendar')
+				->whereIn('start', $dates)
+				->orWhereIn('end', $dates)
+				->select('villas_id')
+				->groupBy('villas_id')
+				->get()
+				->toArray();
+		else
+			$order_villas = $this
+				->dynamic
+				->t('booking_calendar')
+				->select('villas_id')
+				->groupBy('villas_id')
+				->get()
+				->toArray();
+
+		// clear where params for Favorite query
+		if(!$dates)
+			$where = [['villas.active', 1]];
 
 		foreach($order_villas as $v)
-			$id_ignoring[] = $v['villas_id'];
+//			if($dates)
+//				$id_ignoring[] = $v['villas_id'];
 		/* $id_ignoring */
 
 		$villas_query = $this->dynamic->t('villas')
@@ -743,7 +760,7 @@ class MainController extends Controller
 			$villas_query = $villas_query->whereIn('villas.id', $params['id']);
 
 		$villas_query = $villas_query
-			->whereNotIn('villas.id', $id_ignoring)
+//			->whereNotIn('villas.id', $id_ignoring)
 			->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
 			->groupBy('villas.id')
 			->orderBy('villas.' . $group, 'DESC')

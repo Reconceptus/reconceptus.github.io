@@ -12,21 +12,8 @@
 			<figure style="background-image: url('{{ $img_big }}')">
 				@if(!empty($album))
 					<span class="show-gallery"></span>
-					<span class="hide-gallery">
-					<i><svg><use xlink:href="/images/svg/sprite.svg#ico_close"></use></svg></i>
-					<span>@lang('main.close')</span>
-				</span>
 				@endif
 			</figure>
-
-			@if(!empty($album))
-				<div class="villa-carousel owl-carousel">
-					@foreach($album as $v)
-						@php($img_big = $v['file'] ? $v['crop'] ? $path_big . $v['crop'] : $path_big . $v['file'] : '')
-						<div class="item"><figure style="background-image: url('{{ $img_big }}')"></figure></div>
-					@endforeach
-				</div>
-			@endif
 
 			<a
 				style="pointer-events: all"
@@ -474,8 +461,28 @@
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
 	@endif
 
-	{{--<script>--}}
-		{{--$('[property="og:image"]').attr('content', window.location.origin + '/{{ $img_small }}')--}}
-	{{--</script>--}}
+	@if(!empty($album))
+		<div class="villa-gallery">
+			<div class="royalSlider">
+				@foreach($album as $v)
+					@php($img_big = $v['file'] ? $v['crop'] ? $path_big . $v['crop'] : $path_big . $v['file'] : '')
+
+					<div class="rsContent">
+						<div class="tableBox">
+							<div>
+								<div>
+									<img src="{{ $img_big }}" class="rsImg rsMainSlideImage" width="1230" height="770" alt="img" />
+								</div>
+							</div>
+						</div>
+					</div>
+				@endforeach
+			</div>
+
+			<span class="close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 7" enable-background="new 0 0 7 7"><g fill="none" stroke="#fff" stroke-width=".24" stroke-miterlimit="22.926"><path d="m.72 6.279l5.76-5.759"/><path d="M 6.479,6.279 0.72,0.52"/></g></svg>
+			</span>
+		</div>
+	@endif
 	@endpush
 @endsection

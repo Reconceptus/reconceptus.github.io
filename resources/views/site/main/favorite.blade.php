@@ -20,13 +20,13 @@
 			</header>
 		</div>
 
-		<div class="half-request">
-			@include('site.block.main_filter')
-			<input name="pagination" value="1" type="hidden" autocomplete="off"/>
-		</div>
+		{{--<div class="half-request">--}}
+			{{--@include('site.block.main_filter')--}}
+			{{--<input name="pagination" value="1" type="hidden" autocomplete="off"/>--}}
+		{{--</div>--}}
 	</section>
 
-	<div class="simple-page--main">
+	<div class="simple-page--main bg-grey">
 		<div class="villas">
 			<div class="content content_md">
 				<div class="villas--wrap selResult"></div>

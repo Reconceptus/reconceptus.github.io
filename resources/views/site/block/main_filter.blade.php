@@ -12,7 +12,7 @@
 						</div>
 					</div>
 
-					<div class="field">
+					<div class="field f-100 col-30">
 						<label for="f_way">@lang('main.location')</label>
 
 						<div class="select">
@@ -28,7 +28,7 @@
 						</div>
 					</div>
 
-					<div class="field">
+					<div class="field f-50">
 						<label for="check_in">@lang('main.check_in')</label>
 
 						<div
@@ -43,7 +43,7 @@
 							/></div>
 					</div>
 
-					<div class="field">
+					<div class="field f-50">
 						<label for="check_out">@lang('main.check_out')</label>
 
 						<div class="input">
@@ -58,7 +58,7 @@
 						</div>
 					</div>
 
-					<div class="field">
+					<div class="field f-50 col-10">
 						<label for="rooms">@lang('main.rooms')</label>
 
 						<div class="select">
@@ -71,7 +71,7 @@
 						</div>
 					</div>
 
-					<div class="field">
+					<div class="field f-50">
 						<div class="check">
 							<label>
 								<input type="checkbox" name="hot" {{ ($_GET['hot'] ?? '') ? 'checked' : '' }} />

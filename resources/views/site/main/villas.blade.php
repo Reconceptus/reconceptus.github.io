@@ -13,7 +13,7 @@
 		</div>
 	</section>
 
-	<div class="simple-page--main">
+	<div class="simple-page--main bg-grey">
 		<div class="villas">
 			<div class="content content_md">
 				<div class="villas--wrap sel-villas"></div>

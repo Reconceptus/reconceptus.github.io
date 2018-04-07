@@ -1,8 +1,8 @@
 var filVil = {
 	initialize: function initialize(data) {
-		this.conf      = data || {};
-		this.url       = '/';
-		this.cont      = this.conf.cont;
+		this.conf   = data || {};
+		this.url    = '/';
+		this.cont   = this.conf.cont;
 		this.isLoad = this.conf.isLoad == undefined ? true : this.conf.isLoad;
 
 		filVil.loadOnclick();
@@ -29,7 +29,23 @@ var filVil = {
 				if(urlArr.indexOf('favorite') !== -1)
 					filVil.selectVillas(true);
 			})
-		}, 100)
+		}, 100);
+
+		if(!$(filVil.cont).html())
+			$(filVil.cont).html('<div class="loader">' +
+				'<div>' +
+				'<svg xmlns="http://www.w3.org/2000/svg" version="1.1">' +
+				'<defs>' +
+				'<filter id="goo">' +
+				'<fegaussianblur in="SourceGraphic" stddeviation="15" result="blur"></fegaussianblur>' +
+				'<fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -7"' +
+				' result="goo"></fecolormatrix>' +
+				'<feblend in="SourceGraphic" in2="goo"></feblend>' +
+				'</filter>' +
+				'</defs>' +
+				'</svg>' +
+				'</div>' +
+				'</div>');
 	},
 
 	addCart: function(id, type) {
@@ -50,7 +66,7 @@ var filVil = {
 			 success : function(data) {
 				 if(data.result === 'ok') {
 					 var
-						 fav = $('.top-favorite'),
+						 fav          = $('.top-favorite'),
 						 selectorLice = $('.like-button');
 
 					 fav.find('.cnt').html(data.count);
@@ -81,28 +97,31 @@ var filVil = {
 	// select Villas
 	selectVillas: function(isSession) {
 		var
-			page = $('[name="pagination"]').val(),
-			date_from,
-			date_to,
+			page      = $('[name="pagination"]').val(),
+			date_from = -1,
+			date_to   = -1,
 			rooms,
 			hot,
 			way,
 			url;
 
+		if(!$(filVil.cont).find('.loader').html())
+			$(filVil.cont).css({opacity: 0.3});
+
 		if(!isSession)
 			isSession = window.location.pathname.split('/').indexOf('favorite') !== -1;
 
-		way       = $('[name="f_way"]').val();
-		date_to   = $.datepicker.formatDate("yy-mm-dd", $('#check_out').datepicker('getDate'));
-		date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
-		rooms     = $('[name="rooms"]').val();
-		hot       = $("[name=hot]:checked").val() || -1;
-		url       = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
-		url       +=  isSession ? url + '&session=1' : '&session=0';
+		if($('#check_out').length)
+			date_to = $.datepicker.formatDate("yy-mm-dd", $('#check_out').datepicker('getDate'));
 
-		$(filVil.cont).css({opacity: 0.3});
+		if($('#check_in').length)
+			date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
 
-		console.log('gfd', date_to, date_from, $('#check_in').datepicker('getDate'),  $('#check_in').val())
+		way   = $('[name="f_way"]').val();
+		rooms = $('[name="rooms"]').val();
+		hot   = $("[name=hot]:checked").val() || -1;
+		url   = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
+		url += isSession ? url + '&session=1' : '&session=0';
 
 		$.ajax({
 			type    : "post",

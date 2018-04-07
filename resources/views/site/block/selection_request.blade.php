@@ -125,6 +125,15 @@
 					</div>
 				</div>
 
+				<div class="fieldset">
+					<div class="check">
+						<label>
+							<input type="checkbox">
+							<span>I'd like to receive marketing and policy communications from Grecobooking</span>
+						</label>
+					</div>
+				</div>
+
 				<p class="asterisk">*@lang('main.required_fields')</p>
 				<button class="btn btn_subm" type="submit">@lang('main.send_request')</button>
 			</div>

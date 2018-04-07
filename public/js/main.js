@@ -1,10 +1,11 @@
 $(document).ready(function() {
 	/* ----------------------------------- variables ----------------------------------- */
 	var
-		btn    = $('#search_btn'),
-		nav    = $('.nav'),
-		lang   = $('.language'),
-		search = btn.closest('.search');
+		btn     = $('#search_btn'),
+		nav     = $('.nav'),
+		lang    = $('.language'),
+		$header = $('#header'),
+		search  = btn.closest('.search');
 
 	/* ----------------------------------- functions ----------------------------------- */
 
@@ -14,14 +15,10 @@ $(document).ready(function() {
 
 	function showSearch() {
 		btn.click(function() {
-			var
-				w_width = $(window).width();
-
-			if(w_width >= 600) {
+			if($(window).width() >= 600) {
 				search.addClass('active');
 				nav.addClass('hidden');
-			}
-			else {
+			} else {
 				search.addClass('active');
 			}
 		})
@@ -48,6 +45,35 @@ $(document).ready(function() {
 			}
 		})
 	}
+
+	/*
+	 ============= scroll up
+	*/
+
+	function windowScroll() {
+		var
+			winScroll = $(window).scrollTop(),
+			winHeight = $(window).height();
+
+		if(winScroll > winHeight) {
+			$('.scroll-up').addClass('active')
+		} else {
+			$('.scroll-up').removeClass('active')
+		}
+	}
+
+	$('.scroll-up').click(function() {
+		$('html,body').animate({'scrollTop': 0}, 400);
+	});
+
+	/*
+	 ============= scroll slide
+	*/
+
+	$('.scroll-down').click(function() {
+		var winHeight = $(window).height();
+		$('html,body').animate({'scrollTop': winHeight - 60}, 600);
+	});
 
 	/*
 	 ============= custom select init
@@ -165,11 +191,11 @@ $(document).ready(function() {
 
 		if($('#check_in').val() && $('#check_out').val()) {
 			currentDate = $.datepicker.parseDate('dd.mm.yy', $('#check_in').val());
-			nextDate = $.datepicker.parseDate('dd.mm.yy', $('#check_out').val())
+			nextDate    = $.datepicker.parseDate('dd.mm.yy', $('#check_out').val())
 		}
 
 		$('#' + el01).datepicker('setDate', currentDate || 'today');
-		$('#' + el02).datepicker('setDate',nextDate || '+1w');
+		$('#' + el02).datepicker('setDate', nextDate || '+1w');
 	}
 
 	function datePickerFastRequest() {
@@ -200,6 +226,7 @@ $(document).ready(function() {
 					} else {
 						picker.addClass('up');
 					}
+
 					picker.addClass('show');
 					picker.find('.calendar').prepend($('#ui-datepicker-div'));
 
@@ -216,6 +243,7 @@ $(document).ready(function() {
 					var
 						option   = this.id == el01 ? "minDate" : "maxDate",
 						instance = $(this).data("datepicker"),
+
 						date     = $.datepicker.parseDate(
 							instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
 							selectedDate, instance.settings
@@ -238,11 +266,11 @@ $(document).ready(function() {
 
 		if($('#check_in').val() && $('#check_out').val()) {
 			currentDate = $.datepicker.parseDate('dd.mm.yy', $('#check_in').val());
-			nextDate = $.datepicker.parseDate('dd.mm.yy', $('#check_out').val())
+			nextDate    = $.datepicker.parseDate('dd.mm.yy', $('#check_out').val())
 		}
 
 		$('#' + el01).datepicker('setDate', currentDate || 'today');
-		$('#' + el02).datepicker('setDate',nextDate || '+1w');
+		$('#' + el02).datepicker('setDate', nextDate || '+1w');
 	}
 
 	/*
@@ -296,6 +324,60 @@ $(document).ready(function() {
 	}
 
 	/*
+	============= gallery for villa
+	*/
+
+	function villaGallery() {
+		$('.royalSlider').royalSlider({
+			arrowsNav          : true,
+			loop               : true,
+			controlsInside     : false,
+			imageScaleMode     : 'fit-if-smaller',
+			arrowsNavAutoHide  : false,
+			autoScaleSlider    : true,
+			controlNavigation  : 'bullets',
+			thumbsFitInViewport: false,
+			navigateByClick    : false,
+			startSlideId       : 0,
+			autoPlay           : false,
+			transitionType     : 'move',
+			numImagesToPreload : 2,
+			globalCaption      : true,
+			deeplinking        : {
+				enabled: true,
+				change : false
+			}
+		});
+
+		$('.show-gallery').click(function(e) {
+			e.preventDefault();
+			$('.villa-gallery').addClass('active');
+			$('html').addClass('ovh');
+		});
+
+		$('.villa-gallery .close').click(function(e) {
+			e.preventDefault();
+			$('.villa-gallery').removeClass('active');
+			$('html').removeClass('ovh');
+		});
+
+		$(document).keyup(function(e) {
+			if(e.keyCode === 27) {
+				$('.villa-gallery').removeClass('active');
+				$('html').removeClass('ovh');
+			}
+		});
+	}
+
+	/*
+	 ============= fixed header
+	*/
+
+	function fixed_header() {
+		$(window).scrollTop() > 0 ? $header.addClass('sticky') : $header.removeClass('sticky');
+	}
+
+	/*
 	 ============= burger
 	 */
 
@@ -317,10 +399,7 @@ $(document).ready(function() {
 	 */
 
 	function header_submenu() {
-		var
-			container = $('.has-submenu');
-
-		container.each(function() {
+		$('.has-submenu').each(function() {
 			var
 				$thisContainer = $(this),
 				$thislist      = $thisContainer.find('.submenu');
@@ -331,22 +410,19 @@ $(document).ready(function() {
 				.mouseleave(myMouseleaveCallback);
 
 			function myClickCallback(e) {
-				var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
-				if(touchOrMouse === 'touch') {
+				if($bodyTouch.touchOrMouse('get', e) === 'touch') {
 					$thisContainer.toggleClass('show');
 				}
 			}
 
 			function myMouseenterCallback(e) {
-				var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
-				if(touchOrMouse === 'mouse') {
+				if($bodyTouch.touchOrMouse('get', e) === 'mouse') {
 					$thisContainer.addClass('show');
 				}
 			}
 
 			function myMouseleaveCallback(e) {
-				var touchOrMouse = $bodyTouch.touchOrMouse('get', e);
-				if(touchOrMouse === 'mouse') {
+				if($bodyTouch.touchOrMouse('get', e) === 'mouse') {
 					$thisContainer.removeClass('show');
 				}
 			}
@@ -364,7 +440,6 @@ $(document).ready(function() {
 			currentData = $(this).attr('data-modal');
 
 		$('html').addClass('ovh');
-
 		$('.modal').find('[data-modal="' + currentData + '"]').addClass('active');
 		$('.modal').addClass('active');
 	});
@@ -390,8 +465,7 @@ $(document).ready(function() {
 		function effectInp(addr) {
 			if(addr.val().trim() != '') {
 				addr.parent().addClass('filled')
-			}
-			else {
+			} else {
 				addr.parent().removeClass('filled')
 			}
 		}
@@ -421,29 +495,30 @@ $(document).ready(function() {
 			if(currentScrollTop < scrollForDetachFix) {
 				el.removeClass('absolute');
 				el.addClass('fixed');
-			}
-			else {
+			} else {
 				el.removeClass('fixed');
 				el.addClass('absolute');
 			}
-		}
-		else {
+		} else {
 			el.removeClass('fixed absolute');
 		}
 	}
 
 	function scrollToVillaPart() {
 		$('[data-nav-part]').click(function() {
-			var villaNavHeight = $('.villa-nav').height(),
-					dataClick      = $(this).attr('data-nav-part'),
-					targetOffset   = $('[data-villa-part="' + dataClick + '"]').offset().top;
-			villaNavHeight     = 0.5 * villaNavHeight + 20;
+			var
+				villaNavHeight = $('.villa-nav').height(),
+				dataClick      = $(this).attr('data-nav-part'),
+				targetOffset   = $('[data-villa-part="' + dataClick + '"]').offset().top;
+
+			villaNavHeight = 0.5 * villaNavHeight + 20;
 			$('html,body').animate({scrollTop: targetOffset - villaNavHeight}, 300);
 		})
 	}
 
 	function villaNavigation() {
-		var $villaNav = $('#villaNav');
+		var
+			$villaNav = $('#villaNav');
 
 		villaPosition($villaNav);
 		scrollToVillaPart();
@@ -520,6 +595,11 @@ $(document).ready(function() {
 	showSearch();
 	documentClick();
 	header_submenu();
+	windowScroll();
+
+	if($('#header.static').length == 0) {
+		fixed_header();
+	}
 
 	if($('select').length > 0) {
 		select2();
@@ -535,6 +615,10 @@ $(document).ready(function() {
 
 	if($('.villa-carousel').length > 0) {
 		villaCarousel();
+	}
+
+	if($('.villa-gallery').length > 0) {
+		villaGallery();
 	}
 
 	if($('.dynamic').length > 0) {
@@ -560,9 +644,14 @@ $(document).ready(function() {
 
 	/* --------------------------------- document resize --------------------------------- */
 	$(window).resize(function() {
+		windowScroll();
 	});
 
 	/* --------------------------------- document scroll --------------------------------- */
 	$(window).scroll(function(e) {
+		windowScroll();
+		if($('#header.static').length == 0) {
+			fixed_header();
+		}
 	});
 });

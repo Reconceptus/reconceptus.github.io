@@ -2,7 +2,7 @@
 
 @section('content')
 	<section class="simple-page--bg">
-		<div class="intro-figure">
+		<div class="intro-figure selection-mode dynamic">
 			<figure style="background-image: url('/images/bg/Navagio-beach-featured.jpg')"></figure>
 		</div>
 

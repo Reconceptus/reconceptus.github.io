@@ -22,7 +22,7 @@
 			</div>
 		</div>
 
-		<div class="villas">
+		<div class="villas bg-grey">
 			<div class="content content_md">
 				<header>
 					<h3 class="headline_main">@lang('main.villas_on') {{ $langSt($location['name_p']) }}</h3>
@@ -39,18 +39,6 @@
 			<div class="content content_md">
 				<div class="villas--wrap">
 					@include('site.block.villas_main_list', ['villas' => $villas])
-				</div>
-			</div>
-		</div>
-
-		<div class="section single-request">
-			<div class="content content_md">
-				<div class="single-request--wrap">
-					<div class="title animate-bg">
-						<span>{{ $langSt($params['selection_request_location_h3']['key']) }}</span>
-					</div>
-
-					<a href="/selection-request" class="btn">@lang('main.selection_request')</a>
 				</div>
 			</div>
 		</div>

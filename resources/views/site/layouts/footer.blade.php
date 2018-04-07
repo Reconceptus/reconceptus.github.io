@@ -85,6 +85,11 @@
 <div id="mobile_fastpicker"><div class="calendar"></div></div>
 
 </div><!--wrapper-->
+
+<div class="scroll-up mobile-hidden">
+	<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_scroll-up"></use> </svg></i>
+</div>
+
 <script type="text/javascript" src="/js/bower/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bower/select2/dist/js/select2.full.min.js"></script>
 <script type="text/javascript" src="/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
