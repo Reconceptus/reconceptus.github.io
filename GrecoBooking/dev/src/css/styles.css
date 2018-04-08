@@ -4174,15 +4174,19 @@ svg {
 
 .scroll-up {
   position: fixed;
-  right: 0;
-  top: 0;
+  bottom: 40px;
+  height: 40px;
   width: 40px;
-  height: 60px;
   z-index: 9;
+  right: 20px;
   cursor: pointer;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-box-shadow: 0 0 5px 0 #f9690e;
+          box-shadow: 0 0 5px 0 #f9690e;
 }
 
 .scroll-up:not(.active) {
@@ -4197,22 +4201,33 @@ svg {
 
 .scroll-up i {
   position: absolute;
-  left: 5px;
-  right: 5px;
-  bottom: 50%;
-  height: 15px;
-  margin-bottom: -7px;
-}
-
-.scroll-up svg {
-  color: #657482;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  padding: 8px;
+  border: 2px solid #f9690e;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.scroll-up:hover svg {
+.scroll-up svg {
   color: #f9690e;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.scroll-up:hover i {
+  border-color: #f9690e;
+  background-color: #f9690e;
+}
+
+.scroll-up:hover svg {
+  color: #fff;
 }
 
 .grid--main {

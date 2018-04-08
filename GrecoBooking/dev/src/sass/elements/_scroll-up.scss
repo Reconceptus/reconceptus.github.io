@@ -1,12 +1,14 @@
 .scroll-up {
   position: fixed;
-  right: 0;
-  top: 0;
+  bottom: 40px;
+  height: 40px;
   width: 40px;
-  height: 60px;
   z-index: 9;
+  right: 20px;
   cursor: pointer;
+  border-radius: 30px;
   transition: all 0.3s;
+  box-shadow: 0 0 5px 0 $btn;
   &:not(.active) {
     opacity: 0;
     pointer-events: none;
@@ -17,19 +19,26 @@
   }
   i {
     position: absolute;
-    left: 5px;
-    right: 5px;
-    bottom: 50%;
-    height: 15px;
-    margin-bottom: -7px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 30px;
+    padding: 8px;
+    border: 2px solid $btn;
+    transition: all 0.3s;
   }
   svg {
-    color: $border;
+    color: $btn;
     transition: all 0.3s;
   }
   &:hover {
+    i {
+      border-color: $btn;
+      background-color: $btn;
+    }
     svg {
-      color: $btn;
+      color: $white;
     }
   }
 }
