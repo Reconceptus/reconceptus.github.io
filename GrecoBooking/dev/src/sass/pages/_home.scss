@@ -259,7 +259,6 @@
               display: flex;
               align-items: flex-start;
               justify-content: center;
-              padding: 40px;
               flex-direction: column;
             }
           }
@@ -297,6 +296,32 @@
           }
         }
       }
+
+      @include media(hover,1024){
+        &.head-top {
+          a {
+            header {
+              top: 0;
+            }
+          }
+        }
+        &.head-bottom {
+          a {
+            header {
+              bottom: 0;
+            }
+          }
+        }
+        &.head-full {
+          a {
+            header {
+              top: 0;
+              bottom: 0;
+            }
+          }
+        }
+      }
+
     }
 
 
@@ -320,7 +345,6 @@
       }
       header {
         position: absolute;
-        bottom: 0;
         left: 0;
         right: 0;
         box-sizing: border-box;
@@ -337,6 +361,7 @@
         }
         @include media(screen,1023){
           top: 0;
+          bottom: 0;
           display: flex;
           align-items: flex-start;
           flex-direction: column;
