@@ -8574,6 +8574,12 @@ svg {
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .villa-map .content {
+    padding: 0;
+  }
+}
+
 .villa-map--wrap {
   min-height: 500px;
   overflow: hidden;

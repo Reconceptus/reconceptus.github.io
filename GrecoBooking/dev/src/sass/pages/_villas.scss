@@ -680,6 +680,11 @@
 
 .villa-map {
   margin-bottom: 20px;
+  .content {
+    @include media(hover,768){
+      padding: 0;
+    }
+  }
   &--wrap {
     min-height: 500px;
     overflow: hidden;

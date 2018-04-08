@@ -8378,6 +8378,10 @@ svg {
     column-gap: 40px;
   }
 
+  .villa-map .content {
+    padding: 0;
+  }
+
   .villa-map .map-box {
     position: absolute;
     top: 0;
