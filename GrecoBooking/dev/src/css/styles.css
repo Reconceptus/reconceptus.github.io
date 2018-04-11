@@ -245,7 +245,7 @@ textarea {
   vertical-align: middle;
 }
 
-.simple-page--head.placing--request, .intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .friend-form figure, .offers .item a figure, .home-request--main, .place-description figure, .vacancy-quotes .figure figure {
+.simple-page--head.placing--request, .intro-figure figure, .grid figure, .blog-box .article figure, .villa-img figure, .friend-form figure, .offers .item a figure, .home-request--main, .place-description figure, .places-list figure, .vacancy-quotes .figure figure {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -9045,6 +9045,65 @@ svg {
 .villa-request-form .fieldset .field input:focus {
   height: auto;
   opacity: 1;
+}
+
+/*----------------------------------------------------------------------*/
+/*****************          nearest offesr           ********************/
+/*----------------------------------------------------------------------*/
+.nearests:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.nearests .grid-list:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.nearests .places {
+  padding: 40px 0 20px;
+  overflow: hidden;
+}
+
+.places-list li {
+  padding: 0 0 20px;
+}
+
+.places-list li a {
+  background-color: #fff;
+  display: block;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 1025px) {
+  .places-list li a:hover {
+    -webkit-box-shadow: 0 3px 15px 0 rgba(74, 84, 96, 0.5);
+            box-shadow: 0 3px 15px 0 rgba(74, 84, 96, 0.5);
+  }
+}
+
+.places-list .owl-item {
+  width: 300px;
+}
+
+.places-list figure {
+  width: 100%;
+  height: 0;
+  padding-top: 66.667%;
+}
+
+.places-list .text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  font-size: 15px;
+  color: #30343f;
+  padding: 15px 20px 25px;
+}
+
+.places-list .text .title {
+  font-family: Futuris, sans-serif;
+  margin-bottom: 20px;
 }
 
 /*--------------------------------------------------------------------*/

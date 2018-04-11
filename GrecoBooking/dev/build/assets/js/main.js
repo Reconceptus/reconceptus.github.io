@@ -274,6 +274,57 @@ $(document).ready(function () {
     }
 
     /*
+     ============= carousel for places
+    */
+
+    $('.places-list').owlCarousel({
+        loop:false,
+        nav:true,
+        navText:['',''],
+        dots: false,
+
+
+        responsive:{
+            0:{
+                stagePadding: 20,
+                margin:20,
+                items:1
+            },
+            480:{
+                stagePadding: 20,
+                margin:20,
+                items:2
+            },
+            768:{
+                stagePadding: 20,
+                margin:20,
+                items:3
+            },
+            1024:{
+                stagePadding: 20,
+                margin:20,
+                items:4
+            },
+            1200:{
+                stagePadding: 40,
+                margin:40,
+                items:4
+            },
+            1280:{
+                stagePadding: 40,
+                margin:40,
+                items:5
+            },
+            1600:{
+                stagePadding: 40,
+                margin:40,
+                items:6
+            }
+        }
+    });
+
+
+    /*
      ============= carousel for villa
     */
 
