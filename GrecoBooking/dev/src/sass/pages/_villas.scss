@@ -1026,22 +1026,21 @@
 
 .nearests {
   &:not(:last-child){margin-bottom: 40px;}
-  .grid-list {
-    &:not(:last-child){margin-bottom: 40px;}
-  }
   .places {
     padding: 40px 0 20px;
     overflow: hidden;
+    &:not(:last-child){margin-bottom: 40px;}
   }
 }
 .places-list {
   li {
-    padding: 0 0 20px;
     //width: 300px;
+    height: 100%;
     a {
       background-color: $white;
       display: block;
       transition: all 0.3s;
+      height: 100%;
       &:hover {
         @include media(hover,1025){
           box-shadow: 0 3px 15px 0 rgba($head,0.5);
@@ -1052,6 +1051,83 @@
   .owl-item {
     width: 300px;
   }
+  .owl-stage {
+    display: flex;
+    align-items: flex-start;
+    &-outer {
+      padding-bottom: 20px;
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba($light-bg,0);
+    transition: all 0.3s;
+
+    @include media(hover,600){
+      width: 100px;
+    }
+    @include media(screen,599){
+      width: 50px;
+    }
+    @include media(hover,1025){
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 60px;
+      margin-top: -30px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+    &.disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .owl-prev {
+    left: 0;
+    background: -moz-linear-gradient(left, $light-bg 30%, rgba($light-bg,0) 100%);
+    background: -webkit-linear-gradient(left, $light-bg 30%, rgba($light-bg,0) 100%);
+    background: linear-gradient(to right, $light-bg 30%, rgba($light-bg,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f1f3', endColorstr='transparent',GradientType=1 );
+    &:before {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22106%22%20height%3D%22195%22%20viewBox%3D%220%200%209793%2017966%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20stroke-width%3D%221143%22%20d%3D%22M9389%2017562%20808%208982%209389%20404%22/%3E%3C/svg%3E');
+      @include media(hover,600){
+        right: 45px;
+      }
+      @include media(screen,599){
+        right: 10px;
+      }
+    }
+  }
+  .owl-next {
+    right: 0;
+    background: -moz-linear-gradient(left, rgba($light-bg,0) 0%, $light-bg 70%);
+    background: -webkit-linear-gradient(left, rgba($light-bg,0) 0%, $light-bg 70%);
+    background: linear-gradient(to right, rgba($light-bg,0) 0%, $light-bg 70%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#f0f1f3',GradientType=1 );
+    &:before {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2234%22%20height%3D%2263%22%20viewBox%3D%220%200%203546%206507%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20stroke-width%3D%22414%22%20d%3D%22M146%20146%203254%203254%20146%206361%22/%3E%3C/svg%3E');
+
+      @include media(hover,600){
+        left: 45px;
+      }
+      @include media(screen,599){
+        left: 10px;
+      }
+    }
+  }
   figure {
     width: 100%;
     height: 0;
@@ -1059,7 +1135,6 @@
     @extend %cover;
   }
   .text {
-
     box-sizing: border-box;
     width: 100%;
     font-size: 15px;

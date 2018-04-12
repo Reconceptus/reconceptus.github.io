@@ -9054,17 +9054,17 @@ svg {
   margin-bottom: 40px;
 }
 
-.nearests .grid-list:not(:last-child) {
-  margin-bottom: 40px;
-}
-
 .nearests .places {
   padding: 40px 0 20px;
   overflow: hidden;
 }
 
+.nearests .places:not(:last-child) {
+  margin-bottom: 40px;
+}
+
 .places-list li {
-  padding: 0 0 20px;
+  height: 100%;
 }
 
 .places-list li a {
@@ -9073,6 +9073,7 @@ svg {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  height: 100%;
 }
 
 @media screen and (min-width: 1025px) {
@@ -9084,6 +9085,127 @@ svg {
 
 .places-list .owl-item {
   width: 300px;
+}
+
+.places-list .owl-stage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.places-list .owl-stage-outer {
+  padding-bottom: 20px;
+}
+
+.places-list .owl-prev,
+.places-list .owl-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(240, 241, 243, 0);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media screen and (min-width: 600px) {
+  .places-list .owl-prev,
+  .places-list .owl-next {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .places-list .owl-prev,
+  .places-list .owl-next {
+    width: 50px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .places-list .owl-prev,
+  .places-list .owl-next {
+    opacity: 0.8;
+  }
+  .places-list .owl-prev:hover,
+  .places-list .owl-next:hover {
+    opacity: 1;
+  }
+}
+
+.places-list .owl-prev:before,
+.places-list .owl-next:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 60px;
+  margin-top: -30px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+}
+
+.places-list .owl-prev.disabled,
+.places-list .owl-next.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.places-list .owl-prev {
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(30%, #f0f1f3), to(rgba(240, 241, 243, 0)));
+  background: -webkit-linear-gradient(left, #f0f1f3 30%, rgba(240, 241, 243, 0) 100%);
+  background: -o-linear-gradient(left, #f0f1f3 30%, rgba(240, 241, 243, 0) 100%);
+  background: linear-gradient(to right, #f0f1f3 30%, rgba(240, 241, 243, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f1f3', endColorstr='transparent',GradientType=1 );
+}
+
+.places-list .owl-prev:before {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22106%22%20height%3D%22195%22%20viewBox%3D%220%200%209793%2017966%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20stroke-width%3D%221143%22%20d%3D%22M9389%2017562%20808%208982%209389%20404%22/%3E%3C/svg%3E");
+}
+
+@media screen and (min-width: 600px) {
+  .places-list .owl-prev:before {
+    right: 45px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .places-list .owl-prev:before {
+    right: 10px;
+  }
+}
+
+.places-list .owl-next {
+  right: 0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(240, 241, 243, 0)), color-stop(70%, #f0f1f3));
+  background: -webkit-linear-gradient(left, rgba(240, 241, 243, 0) 0%, #f0f1f3 70%);
+  background: -o-linear-gradient(left, rgba(240, 241, 243, 0) 0%, #f0f1f3 70%);
+  background: linear-gradient(to right, rgba(240, 241, 243, 0) 0%, #f0f1f3 70%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#f0f1f3',GradientType=1 );
+}
+
+.places-list .owl-next:before {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2234%22%20height%3D%2263%22%20viewBox%3D%220%200%203546%206507%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23657482%22%20stroke-width%3D%22414%22%20d%3D%22M146%20146%203254%203254%20146%206361%22/%3E%3C/svg%3E");
+}
+
+@media screen and (min-width: 600px) {
+  .places-list .owl-next:before {
+    left: 45px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .places-list .owl-next:before {
+    left: 10px;
+  }
 }
 
 .places-list figure {

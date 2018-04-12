@@ -282,8 +282,7 @@ $(document).ready(function () {
         nav:true,
         navText:['',''],
         dots: false,
-
-
+        autoHeight:true,
         responsive:{
             0:{
                 stagePadding: 20,
