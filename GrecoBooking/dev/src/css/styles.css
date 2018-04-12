@@ -6848,6 +6848,7 @@ svg {
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
   .offers .item-box.item-md a header {
     top: 0;
+    bottom: 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
