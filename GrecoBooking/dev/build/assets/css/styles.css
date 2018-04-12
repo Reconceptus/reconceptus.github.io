@@ -1210,6 +1210,24 @@ svg {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   white-space: nowrap;
+  outline: none;
+}
+
+.btn_nobord {
+  border-color: transparent;
+  color: #657482;
+  padding: 6.5px 10px;
+  font-size: 15px;
+}
+
+.fixed .btn_nobord,
+.absolute .btn_nobord {
+  color: #FFF;
+}
+
+.btn_nobord .ico-send {
+  width: 30px;
+  height: 30px;
 }
 
 .btn_bord {
@@ -3146,6 +3164,55 @@ svg {
 
 .scroll-up:hover svg {
   color: #FFF;
+}
+
+.request-head {
+  margin-bottom: 40px;
+  height: 46px;
+}
+
+.request-head--nav {
+  width: 100%;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.request-head--nav.fixed,
+.request-head--nav.absolute {
+  left: 0;
+  z-index: 20;
+  padding: 5px 0;
+  background-color: #30343F;
+}
+
+.request-head--nav.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.request-head--nav.absolute {
+  position: absolute;
+  bottom: 0;
+}
+
+.request-head .btns_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.request-head .btns_box .btn {
+  margin-right: 20px;
+}
+
+.favorite-box {
+  position: relative;
 }
 
 .grid--main {
@@ -7377,6 +7444,16 @@ svg {
     background-color: #EE6309;
   }
 
+  .btn_nobord:hover {
+    color: #4A5460;
+  }
+
+  .fixed .btn_nobord:hover,
+  .absolute .btn_nobord:hover {
+    background-color: #FFF;
+    color: #4A5460;
+  }
+
   .btn_bord:hover {
     background-color: #FFF;
     color: #4A5460;
@@ -7730,6 +7807,10 @@ svg {
 
   .text-box ul li {
     padding-left: 20px;
+  }
+
+  .request-head .show-modal span {
+    display: none;
   }
 
   .best-offers .grid-list > li {

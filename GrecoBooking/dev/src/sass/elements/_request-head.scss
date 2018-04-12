@@ -1,0 +1,39 @@
+.request-head {
+  margin-bottom: 40px;
+  height: 46px;
+  .show-modal {
+    @include media(screen,599){
+      span {display: none}
+    }
+  }
+  &--nav {
+    width: 100%;
+    transition: all 0.2s;
+    &.fixed,
+    &.absolute {
+      left: 0;
+      z-index: 20;
+      padding: 5px 0;
+      background-color: $text;
+    }
+    &.fixed {
+      position: fixed;
+      top: 0;
+    }
+    &.absolute {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .btns_box {
+    display: flex;
+    align-items: center;
+    .btn {
+      margin-right: 20px;
+    }
+  }
+}
+
+.favorite-box {
+  position: relative;
+}

@@ -10,8 +10,33 @@
   text-align: center;
   transition: all 0.3s;
   white-space: nowrap;
+  outline: none;
   span, i {
     @extend %valign;
+  }
+  &_nobord {
+    border-color: transparent;
+    color: $border;
+    padding: 6.5px 10px;
+    font-size: 15px;
+    .fixed &,
+    .absolute & {
+      color: $white;
+    }
+    &:hover {
+      @include media(hover,1025){
+        color: $head;
+        .fixed &,
+        .absolute & {
+          background-color: $white;
+          color: $head;
+        }
+      }
+    }
+    .ico-send {
+      width: 30px;
+      height: 30px;
+    }
   }
   &_bord {
     border-color: $white;
