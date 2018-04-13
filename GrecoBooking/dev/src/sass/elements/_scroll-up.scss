@@ -1,14 +1,25 @@
 .scroll-up {
-  position: fixed;
-  bottom: 40px;
-  height: 40px;
-  width: 40px;
+  position: absolute;
+  bottom: 100%;
+
   z-index: 9;
-  right: 20px;
+
   cursor: pointer;
   border-radius: 30px;
   transition: all 0.3s;
   box-shadow: 0 0 5px 0 $btn;
+  right: 10px;
+  @include media(hover,1200){
+    margin: 0 20px 10px 0;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+  }
+  @include media(screen,1199){
+    margin: 0 10px 20px 0;
+    height: 40px;
+    width: 40px;
+  }
   &:not(.active) {
     opacity: 0;
     pointer-events: none;
