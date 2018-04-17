@@ -95,7 +95,7 @@ var filVil = {
 		 })
 	},
 
-	// select Villas
+// select Villas
 	selectVillas: function(isSession) {
 		var
 			page      = $('[name="pagination"]').val(),
