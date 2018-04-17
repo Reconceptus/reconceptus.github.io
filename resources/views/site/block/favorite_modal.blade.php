@@ -63,7 +63,7 @@
 												id="message"
 												name="message"
 												rows="3"
-												placeholder="*@lang('main.write_a_message')"
+												placeholder="@lang('main.write_a_message')"
 											></textarea>
 									</div>
 								</div>
@@ -78,6 +78,18 @@
 								</div>
 
 								<p class="asterisk">*@lang('main.required_fields')</p>
+							</div>
+
+							<div class="fieldset">
+								<div class="check check_field">
+									<label>
+										<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+
+										<span>
+											<a href="/privacy-policy" target="_blank" class="link">*@lang('main.security_policy_text')</a>
+										</span>
+									</label>
+								</div>
 							</div>
 						</div>
 

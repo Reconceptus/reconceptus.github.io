@@ -62,8 +62,19 @@
 										id="message_form"
 										name="message_form"
 										rows="3"
-										placeholder="*@lang('main.message')"></textarea>
+										placeholder="@lang('main.message')"></textarea>
 								</div>
+							</div>
+						</div>
+
+						<div class="fieldset">
+							<div class="check check_field">
+								<label>
+									<input type="checkbox" id="securityPolicy" name="securityPolicy" />
+									<span>
+										<a href="/privacy-policy" target="_blank" class="link-black">*@lang('main.security_policy_text')</a>
+									</span>
+								</label>
 							</div>
 						</div>
 

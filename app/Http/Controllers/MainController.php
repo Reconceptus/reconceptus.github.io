@@ -87,7 +87,7 @@ class MainController extends Controller
 			->groupBy('villas.id')
 			->orderBy('villas.id', 'DESC')
 			->orderBy('villas.is_best', 'ASC')
-			->paginate(6);
+			->paginate(10);
 
 		$data['preview'] = $this
 			->dynamic
@@ -672,7 +672,7 @@ class MainController extends Controller
 	{
 		$data      = [];
 		$where[]   = ['villas.active', 1];
-		$count_box = 8;
+		$count_box = 10;
 		$group     = 'id';
 		$cart      = array_values($this->requests->session()->get('cart') ?? []);
 		$cart_id   = [];
@@ -731,7 +731,7 @@ class MainController extends Controller
 		if(!$dates)
 			$where = [['villas.active', 1]];
 
-		foreach($order_villas as $v)
+//		foreach($order_villas as $v)
 //			if($dates)
 //				$id_ignoring[] = $v['villas_id'];
 		/* $id_ignoring */
@@ -876,6 +876,23 @@ class MainController extends Controller
 			);
 
 			$title = __('main.selection_request_mess_admin');
+
+//			/* subscription */
+//			if($form_data['subscription'] === 'on') {
+//				// Insert Subscribe email
+//				$subscribe_mail = $this->dynamic->t('params_subscribe')
+//					->where('subscribe_mail', '=', trim($form_data['mail']))
+//					->first();
+//
+//				if(!$subscribe_mail)
+//					$this->dynamic->t('params_subscribe')->insertGetId(
+//						[
+//							'created_at'     => Carbon::now(),
+//							'subscribe_mail' => $form_data['mail'],
+//						]
+//					);
+//			}
+//			/* subscription */
 		}
 
 		if($type == 'request_for_accommodation') {

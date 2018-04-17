@@ -26,7 +26,7 @@
 
 			$('#distances{{ $langName }}').append('<div class="id{{ $langName }}-' + n + ' row" style="margin-bottom: 15px">' +
 				'<div class="col-md-5">' +
-				'<input placeholder="@lang('admin::plugins.distances')" type="text" name="pl[distances]' + '{{ $lang }}' + '[distances][]" class="form-control" value="' + (d || '') + '" />' +
+				'<input placeholder="@lang('admin::plugins.object')" type="text" name="pl[distances]' + '{{ $lang }}' + '[distances][]" class="form-control" value="' + (d || '') + '" />' +
 				'</div>' +
 				'<div class="col-md-5">' +
 				'<input placeholder="@lang('admin::plugins.location')" type="text" name="pl[distances]' + '{{ $lang }}' + '[location][]" class="form-control" value="' + (l || '') + '" />' +

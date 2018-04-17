@@ -298,6 +298,30 @@ $(document).ready(function() {
 	}
 
 	/*
+ ============= carousel for places
+*/
+
+	function placesCarousel() {
+		$('.places-list').owlCarousel({
+			loop:false,
+			nav:true,
+			navText:['',''],
+			dots: false,
+			autoHeight:true,
+
+			responsive:{
+				0:{stagePadding: 20, margin:20, items:1},
+				480:{stagePadding: 20, margin:20, items:2},
+				768:{stagePadding: 20, margin:20, items:3},
+				1024:{stagePadding: 20, margin:20, items:4},
+				1200:{stagePadding: 40, margin:40, items:4},
+				1280:{stagePadding: 40, margin:40, items:5},
+				1600:{stagePadding: 40, margin:40, items:6}
+			}
+		});
+	}
+
+	/*
 	 ============= carousel for villa
 	 */
 
@@ -480,6 +504,51 @@ $(document).ready(function() {
 	}
 
 	/*
+			 ============= navigation for favorite
+			*/
+
+	var formRequestOffset,
+			requestNavHeight;
+
+	function favoriteMenu(el) {
+
+		requestNavHeight = $('.request-head').height();
+		formRequestOffset = $('.home-request').offset().top;
+
+		var currentScrollTop = $(window).scrollTop(),
+				currentRequestOffset = $('.request-head').offset().top,
+				favoriteContentHeight = $('.favorite-box').height(),
+				scrollForDetachFix = currentRequestOffset + favoriteContentHeight - requestNavHeight;
+
+		if(currentScrollTop > currentRequestOffset){
+			if(currentScrollTop < scrollForDetachFix){
+				el.removeClass('absolute');
+				el.addClass('fixed');
+			}
+			else {
+				el.removeClass('fixed');
+				el.addClass('absolute');
+			}
+		}
+		else {
+			el.removeClass('fixed absolute');
+		}
+
+	}
+
+	function favoriteNavigation() {
+		var $favoriteNav = $('#favoriteNav');
+
+		favoriteMenu($favoriteNav);
+		$(window).scroll(function () {
+			favoriteMenu($favoriteNav);
+		});
+		$('.scroll-to-request').click(function () {
+			$('html,body').animate({scrollTop:formRequestOffset-requestNavHeight},'300')
+		})
+	}
+
+	/*
 	 ============= navigation for villa
 	 */
 
@@ -617,6 +686,8 @@ $(document).ready(function() {
 		villaCarousel();
 	}
 
+	if($('.places-list').length > 0){placesCarousel();}
+
 	if($('.villa-gallery').length > 0) {
 		villaGallery();
 	}
@@ -632,6 +703,8 @@ $(document).ready(function() {
 	if($('.villa-nav').length > 0) {
 		villaNavigation();
 	}
+
+	if($('.request-head').length > 0){favoriteNavigation();}
 
 	if($('.villa-request').length > 0) {
 		showInput();

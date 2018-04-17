@@ -8,7 +8,7 @@
 		)
 
 		<li>
-			<a href="/villas/{{ $val['id'] }}">
+			<a href="/villas/{{ $val['id'] }}" target="_blank">>
 				<figure style="background-image: url({{ $img }})"></figure>
 
 				<div class="grid--main">

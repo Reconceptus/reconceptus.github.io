@@ -26,7 +26,23 @@
 		{{--</div>--}}
 	</section>
 
-	<div class="simple-page--main bg-grey">
+	<div class="simple-page--main bg-grey favorite-box">
+		<div class="request-head">
+			<div class="request-head--nav" id="favoriteNav">
+				<div class="content content_md">
+					<div class="btns_box">
+						<button type="button" class="btn btn_subm scroll-to-request">
+							<span>Запросить все</span>
+						</button>
+						<a href="javascript:void(0);" class="btn btn_nobord show-modal" data-modal="friend-form">
+							<i class="ico-send"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-write"></use> </svg></i>
+							<span>Отправить</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="villas">
 			<div class="content content_md">
 				<div class="villas--wrap selResult"></div>
@@ -35,6 +51,21 @@
 	</div>
 
 	@include('site.block.favorite_modal')
+
+	<section class="section home-request">
+		<div class="content">
+			<header>
+				<h3 class="headline_main">@lang('main.selection_request')</h3>
+				{{--<h4 class="headline_submain">Заполните заявку и получите подборку вилл по вашим кретриям</h4>--}}
+			</header>
+
+			<div class="home-request--wrap">
+				<div class="home-request--main" style="background-image: url('/images/bg/offer01.jpg')">
+					@include('site.block.selection_request')
+				</div>
+			</div>
+		</div>
+	</section>
 
 	@push('footer')
 	<script>
@@ -46,6 +77,8 @@
 				url_req   : '/',
 			});
 		});
+
+		$('#header').addClass('static');
 	</script>
 	@endpush
 @endsection

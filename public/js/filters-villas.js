@@ -82,6 +82,7 @@ var filVil = {
 					 if(type == 'add') {
 						 selectorLice.addClass('active');
 						 selectorLice.attr('onclick', 'filVil.addCart(' + id + ', \'remove\')');
+						 $('html, body').animate({scrollTop: 0}, '300')
 					 } else {
 						 selectorLice.removeClass('active');
 						 selectorLice.attr('onclick', 'filVil.addCart(' + id + ', \'add\')');

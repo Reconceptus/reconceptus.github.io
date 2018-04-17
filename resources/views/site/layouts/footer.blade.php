@@ -22,7 +22,7 @@
 
 					<li>
 						<i class="ico-adr"><svg><use xlink:href="/images/svg/sprite.svg#ico_contact-address"></use></svg></i>
-						<span>{{ $langSt($params['footer_address']['key']) }}</span>
+						<span><a href="/contact-us" class="">{{ $langSt($params['footer_address']['key']) }}</a></span>
 					</li>
 
 					<li>
@@ -78,6 +78,10 @@
 			<div class="copyright">Grecobooking 2017 - {{ date('Y') }}</div>
 			<div class="support"><a href="http://reconcept.ru">ReConcept</a></div>
 		</div>
+	</div>
+
+	<div class="scroll-up mobile-hidden">
+		<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_scroll-up"></use> </svg></i>
 	</div>
 </footer>
 

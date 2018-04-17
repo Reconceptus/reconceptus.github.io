@@ -231,6 +231,28 @@
 											<div class="input"><input id="wishes" name="message" type="text" /></div>
 										</div>
 									</div>
+
+									<div class="fieldset">
+										<div class="check check_field">
+											<label>
+												<style>
+													.check input:checked ~ span::after, .check label span::before {
+														border: 1px solid HSL(212, 10.8%, 72.7%);
+														width: 18px;
+														height: 18px;
+														top: 0;
+														left: -25px;
+														margin: auto 16px auto 0;
+													}
+												</style>
+												<input type="checkbox" checked id="securityPolicy" name="securityPolicy" style="border: solid 1px #ccc "/>
+
+												<span>
+													<a href="/privacy-policy" target="_blank" class="link">*@lang('main.security_policy_text')</a>
+												</span>
+											</label>
+										</div>
+									</div>
 								</div>
 
 								<div class="submit-part">
@@ -359,15 +381,15 @@
 	</div>
 
 	<div class="simple-page--main">
-		<section class="section best-offers">
-			<div class="content">
+		<section class="section nearests">
+			<div class="">
 				<header>
 					<h3 class="headline_main">@lang('main.what_is_nearby')</h3>
 					<h4 class="headline_submain">{{ $langSt($params['what_is_nearby_villa_h3']['key']) }}</h4>
 				</header>
 
-				<div class="grid">
-					<ul class="grid-list">
+				<div class="places bg-grey">
+					<ul class="places-list owl-carousel">
 						@foreach($album_what_is_next as $v)
 							@php($path_small = '/images/files/small/')
 							@php($img_small = $v['file'] ? $v['crop'] ? $path_small . $v['crop'] : $path_small . $v['file'] : '')
@@ -376,39 +398,39 @@
 								<a href="javascript:void(0)">
 									<figure style="background-image: url('{{ $img_small }}')"></figure>
 
-									<div class="grid--main">
+									<div class="text">
 										<h3 class="title">{{ $langSt($v['name']) }}</h3>
-										<div class="short">{{ $langSt($v['text']) }}</div>
+										<p>{{ $langSt($v['text']) }}</p>
 									</div>
 								</a>
 							</li>
 						@endforeach
 					</ul>
+				</div>
 
-					<div class="btns_center">
-						<a href="/villas" class="more">
-							<i class="ico-back"><svg><use xlink:href="/images/svg/sprite.svg#ico_arrow-left-long"></use></svg></i>
-							<span>@lang('main.back_to_the_list_of_villas')</span>
-						</a>
+				<div class="btns_center">
+					<a href="/villas" class="more">
+						<i class="ico-back"><svg><use xlink:href="/images/svg/sprite.svg#ico_arrow-left-long"></use></svg></i>
+						<span>@lang('main.back_to_the_list_of_villas')</span>
+					</a>
 
+					<a
+						href="javascript:void(0)"
+						class="more {!! $is_favorite ? 'active' : '' !!}"
+						onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
+					>
+						<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
+						<span>@lang('main.add_to_favorites')</span>
+					</a>
+
+					@if($villa['document'])
 						<a
-							href="javascript:void(0)"
-							class="more {!! $is_favorite ? 'active' : '' !!}"
-							onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
-						>
-							<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
-							<span>@lang('main.add_to_favorites')</span>
-						</a>
-
-						@if($villa['document'])
-							<a
-								href="/images/villas_file/{{ $villa['id'] }}/{{ $villa['file'] }}"
-								title="{{ $langSt($v['name']) }}"
-								class="more"
-								target="_blank"
-							>@lang('main.download_villa_presentation')</a>
-						@endif
-					</div>
+							href="/images/villas_file/{{ $villa['id'] }}/{{ $villa['file'] }}"
+							title="{{ $langSt($v['name']) }}"
+							class="more"
+							target="_blank"
+						>@lang('main.download_villa_presentation')</a>
+					@endif
 				</div>
 			</div>
 		</section>

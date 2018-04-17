@@ -42,7 +42,7 @@
 			</header>
 			<div class="offers--wrap">
 				<div class="offers--grid">
-					<div class="item-box item-lg" data-item="1">
+					<div class="item-box item-lg head-bottom" data-item="1">
 						<section class="item">
 							<a href="#">
 								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
@@ -54,7 +54,7 @@
 							</a>
 						</section>
 					</div>
-					<div class="item-box item-md" data-item="2">
+					<div class="item-box item-md head-top" data-item="2">
 						<section class="item">
 							<a href="#">
 								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
@@ -66,7 +66,7 @@
 							</a>
 						</section>
 					</div>
-					<div class="item-box item-lg" data-item="3">
+					<div class="item-box item-lg head-top" data-item="3">
 						<section class="item">
 							<a href="#">
 								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
@@ -78,7 +78,7 @@
 							</a>
 						</section>
 					</div>
-					<div class="item-box item-sm" data-item="4">
+					<div class="item-box item-sm head-full" data-item="4">
 						<section class="item">
 							<a href="#">
 								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
@@ -88,7 +88,7 @@
 							</a>
 						</section>
 					</div>
-					<div class="item-box item-sm" data-item="5">
+					<div class="item-box item-sm head-full" data-item="5">
 						<section class="item">
 							<a href="#">
 								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>

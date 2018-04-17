@@ -17,7 +17,7 @@
 						@if($val['is_hot'])<li>Горячее предложение</li>@endif
 					</ul>
 
-					<a href="/villas/{{ $val['id'] }}" class="link"></a>
+					<a href="/villas/{{ $val['id'] }}" class="link" target="_blank"></a>
 					@php($is_favorite = array_search($val['id'], $favorites_id ?? []) !== false ? true : false)
 
 					<a
@@ -30,7 +30,10 @@
 
 				<div class="villa-main">
 					<div class="name">
-						<h3 class="title"><a href="/villas/{{ $val['id'] }}">{{ $langSt($val['name']) }}</a></h3>
+						<h3 class="title">
+							<a href="/villas/{{ $val['id'] }}" target="_blank">>{{ $langSt($val['name']) }}</a>
+						</h3>
+
 						<h5 class="place">{{ $langSt($val['place']) }}</h5>
 					</div>
 

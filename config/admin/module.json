@@ -8,7 +8,6 @@
 		"column_index"    : [
 			"name",
 			"description",
-			"album",
 			"active"
 		],
 		"count_module"    : "0",
@@ -31,10 +30,8 @@
 			"class",
 			"translation",
 			"controller",
-			"sys_cat",
 			"active",
 			"cat",
-			"album",
 			"sort"
 		],
 		"small_width"     : "445",
@@ -88,7 +85,6 @@
 			"layout",
 			"active",
 			"cat",
-			"recommendedVillas",
 			"convenience",
 			"services",
 			"distances",
@@ -116,7 +112,7 @@
 		"views_module"    : "table",
 		"translate_key"   : "villas",
 		"showOnlyYour"    : true,
-		"isList"          : ["recommendedVillas"],
+		"isList"          : [],
 		"params"          : {
 			"specialist": {
 				"table": "users",

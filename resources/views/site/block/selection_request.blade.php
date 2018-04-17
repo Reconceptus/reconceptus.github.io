@@ -59,6 +59,7 @@
 
 					<div class="field">
 						<label for="babies">*@lang('main.children_from_0_to_2_years')</label>
+
 						<div class="select">
 							<select name="babies" id="babies" style="display:none;" autocomplete="off">
 								<option value="-1">@lang('main.no')</option>
@@ -126,10 +127,12 @@
 				</div>
 
 				<div class="fieldset">
-					<div class="check">
+					<div class="check check_field">
 						<label>
-							<input type="checkbox">
-							<span>I'd like to receive marketing and policy communications from Grecobooking</span>
+							<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+							<span>
+								<a href="/privacy-policy" target="_blank" class="link-black">*@lang('main.security_policy_text')</a>
+							</span>
 						</label>
 					</div>
 				</div>

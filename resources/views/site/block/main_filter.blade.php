@@ -63,6 +63,7 @@
 
 						<div class="select">
 							<select name="rooms" id="rooms" style="display:none;">
+								<option value="-1" {{ ($_GET['rooms'] ?? '') === '-1' ? 'selected' : '' }}>@lang('main.all')</option>
 								<option value="1" {{ ($_GET['rooms'] ?? '') === '1' ? 'selected' : '' }}>1</option>
 								<option value="2" {{ ($_GET['rooms'] ?? '') === '2' ? 'selected' : '' }}>2</option>
 								<option value="3" {{ ($_GET['rooms'] ?? '') === '3' ? 'selected' : '' }}>3</option>

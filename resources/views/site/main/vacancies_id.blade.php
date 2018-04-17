@@ -133,6 +133,20 @@
 								</div>
 
 								<div class="fieldset">
+									<div class="check check_field">
+										<label>
+											<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+
+											<span>
+												<a href="/privacy-policy" target="_blank" class="link-black">
+													*@lang('main.security_policy_text')
+												</a>
+											</span>
+										</label>
+									</div>
+								</div>
+
+								<div class="fieldset">
 									<p class="asterisk">*@lang('main.required_fields')</p>
 								</div>
 							</div>

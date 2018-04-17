@@ -34,9 +34,16 @@
 									<div class="col-md-4 rowID{{ $name }}-{{ $v->id }}">
 										<div class="thumbnail">
 											<div class="image view view-first pointer" onclick="editFile{{ $name }}({{ $v->id }})">
+												@php($ext = explode('.', $v->file)[count(explode('.', $v->file)) - 1])
+												@php($ignore = ['jpg' => 1, 'jpeg' => 1, 'png' => 1])
+
+												@if(isset($ignore[$ext]))
+													@php($ext = 'image')
+												@endif
+
 												<i
 													style="font-size: 120px; padding: 5px;"
-													class="fas fa-file-{{ explode('.', $v->file)[count(explode('.', $v->file)) - 1] }}"
+													class="fas fa-file-{{ $ext }}"
 												></i>
 											</div>
 											<div class="caption" style="padding-bottom: 0">
@@ -129,9 +136,13 @@
 											'onUploadComplete': function(file, data) {
 												var
 													ds = JSON.parse(data),
-													ext = ds['name'].toString().split('.');
+													ext = ds['name'].toString().split('.'),
+													ignore = ['jpg', 'jpeg', 'png'];
 
 												ext =  ext[ext.length - 1];
+
+												if(ignore.indexOf(ext) > 0)
+													ext = 'image';
 
 												var file = '<div class="col-md-4 rowID{{ $name }}-' + ds['id'] + '">' +
 													'<div class="thumbnail">' +

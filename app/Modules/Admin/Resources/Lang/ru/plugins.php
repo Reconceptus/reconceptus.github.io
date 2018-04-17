@@ -34,4 +34,5 @@ return [
 	'benefits'             => 'Преимущества',
 	'booking_is_easy'      => 'Бронирование легко',
 	'translation'          => 'Translation',
+	'object'               => 'Объект',
 ];

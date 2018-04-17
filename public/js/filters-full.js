@@ -28,38 +28,42 @@ var
 				ignore    : ".ignore",
 
 				rules: {
-					arrivalDate  : {required: true},
-					departureDate: {required: true},
-					adults       : {required: true},
-					childUntil12 : {required: true},
-					babies       : {required: true},
-					way          : {required: true},
-					budget       : {required: true},
-					name         : {required: true},
-					telephone    : {required: true},
-					mail         : {required: true}
+					arrivalDate   : {required: true},
+					departureDate : {required: true},
+					adults        : {required: true},
+					childUntil12  : {required: true},
+					babies        : {required: true},
+					way           : {required: true},
+					budget        : {required: true},
+					name          : {required: true},
+					telephone     : {required: true, phone: true},
+					mail          : {required: true, email: true},
+					securityPolicy: {required: true}
 				},
 
-				messages  : {
-					arrivalDate  : {required: ""},
-					departureDate: {required: ""},
-					adults       : {required: ""},
-					childUntil12 : {required: ""},
-					babies       : {required: ""},
-					way          : {required: ""},
-					budget       : {required: ""},
-					name         : {required: ""},
-					telephone    : {required: ""},
-					mail         : {required: ""}
+				messages: {
+					arrivalDate   : {required: ""},
+					departureDate : {required: ""},
+					adults        : {required: ""},
+					childUntil12  : {required: ""},
+					babies        : {required: ""},
+					way           : {required: ""},
+					budget        : {required: ""},
+					name          : {required: ""},
+					telephone     : {required: ""},
+					mail          : {required: ""},
+					securityPolicy: {required: ""}
 				},
+
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass)
+					$(element).closest('.field, .check_field').addClass(errorClass);
+					$(element).closest('.field, .check_field').addClass(errorClass);
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass)
+					$(element).closest('.field, .check_field').removeClass(errorClass);
 				},
 
 				errorPlacement: $.noop,
@@ -80,6 +84,12 @@ var
 					return false;
 				}
 			});
+
+			jQuery.validator.addMethod("phone", function(phone_number, element) {
+				phone_number = phone_number.replace(/\s+/g, "");
+				return this.optional(element) || phone_number.length > 9 &&
+					phone_number.match(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/);
+			}, "Invalid phone number");
 		},
 
 		initRequestForAccommodation: function() {
@@ -88,32 +98,34 @@ var
 				ignore    : ".ignore",
 
 				rules: {
-					position    : {required: true},
-					villaAddress: {required: true},
-					siteLink    : {required: true},
-					name        : {required: true},
-					telephone   : {required: true},
-					mail        : {required: true}
+					position      : {required: true},
+					villaAddress  : {required: true},
+					siteLink      : {required: true},
+					name          : {required: true},
+					telephone     : {required: true},
+					mail          : {required: true, email: true},
+					securityPolicy: {required: true},
 				},
 
 				messages: {
-					position    : {required: ""},
-					villaAddress: {required: ""},
-					siteLink    : {required: ""},
-					name        : {required: ""},
-					telephone   : {required: ""},
-					mail        : {required: ""}
+					position      : {required: ""},
+					villaAddress  : {required: ""},
+					siteLink      : {required: ""},
+					name          : {required: ""},
+					telephone     : {required: ""},
+					mail          : {required: ""},
+					securityPolicy: {required: ""},
 				},
 
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass)
+					$(element).closest('.field, .check_field').addClass(errorClass)
 
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass)
+					$(element).closest('.field, .check_field').removeClass(errorClass)
 				},
 
 				errorPlacement: $.noop,
@@ -142,33 +154,35 @@ var
 				ignore    : ".ignore",
 
 				rules: {
-					name     : {required: true},
-					mail     : {required: true},
-					telephone: {required: true},
-					message  : {required: true}
+					name          : {required: true},
+					mail          : {required: true, email: true},
+					telephone     : {required: true},
+					//					message  : {required: true}
+					securityPolicy: {required: true}
 				},
 
 				messages: {
-					name        : {required: ""},
-					mail        : {required: ""},
-					telephone   : {required: ""},
-					message_form: {required: ""}
+					name          : {required: ""},
+					mail          : {required: ""},
+					telephone     : {required: ""},
+					//					message  : {required: ""}
+					securityPolicy: {required: ""}
 				},
 
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass);
+					$(element).closest('.field, .check_field').addClass(errorClass);
 
 					if($(element).closest('.add-fieldset'))
-						$(element).closest('.add-fieldset').addClass('disabled')
+						$(element).closest('.add-fieldset, .check_field').addClass('disabled')
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass);
+					$(element).closest('.field, .check_field').removeClass(errorClass);
 
 					if($(element).closest('.add-fieldset'))
-						$(element).closest('.add-fieldset').removeClass('disabled')
+						$(element).closest('.add-fieldset, .check_field').removeClass('disabled')
 				},
 
 				errorPlacement: $.noop,
@@ -195,16 +209,16 @@ var
 			$('.subscription-form form').validate({
 				onfocusout: false,
 				ignore    : ".ignore",
-				rules     : {subscribe_mail: {required: true}},
+				rules     : {subscribe_mail: {required: true, email: true}},
 				messages  : {subscribe_mail: {required: ""}},
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass)
+					$(element).closest('.field, .check_field').addClass(errorClass)
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass)
+					$(element).closest('.field, .check_field').removeClass(errorClass)
 				},
 
 				errorPlacement: $.noop,
@@ -235,31 +249,33 @@ var
 				rules: {
 					'friendMail[]': {required: true},
 					yourName      : {required: true},
-					yourEmail     : {required: true},
-					message       : {required: true}
+					yourEmail     : {required: true, email: true},
+					//message       : {required: true}
+					securityPolicy: {required: true},
 				},
 
 				messages: {
 					'friendMail[]': {required: ""},
 					yourEmail     : {required: ""},
-					message       : {required: ""}
+					//	message       : {required: ""}
+					securityPolicy: {required: ""},
 				},
 
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass);
+					$(element).closest('.field, .check_field').addClass(errorClass);
 
 					if($(element).closest('.add-fieldset')) {
-						$(element).closest('.add-fieldset').addClass('disabled')
+						$(element).closest('.add-fieldset, .check_field').addClass('disabled')
 					}
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass);
+					$(element).closest('.field, .check_field').removeClass(errorClass);
 
 					if($(element).closest('.add-fieldset')) {
-						$(element).closest('.add-fieldset').removeClass('disabled')
+						$(element).closest('.add-fieldset, .check_field').removeClass('disabled')
 					}
 				},
 
@@ -334,29 +350,31 @@ var
 				ignore: ".ignore",
 
 				rules: {
-					file     : {required: false},
-					name     : {required: true},
-					mail     : {required: true},
-					telephone: {required: true},
-					message  : {required: false}
+					file          : {required: false},
+					name          : {required: true},
+					mail          : {required: true, email: true},
+					telephone     : {required: true},
+					message       : {required: false},
+					securityPolicy: {required: true},
 				},
 
 				messages: {
-					file     : {required: ""},
-					name     : {required: ""},
-					mail     : {required: ""},
-					telephone: {required: ""},
-					message  : {required: ""}
+					file          : {required: ""},
+					name          : {required: ""},
+					mail          : {required: ""},
+					telephone     : {required: ""},
+					message       : {required: ""},
+					securityPolicy: {required: ""},
 				},
 
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass)
+					$(element).closest('.field, .check_field').addClass(errorClass)
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass)
+					$(element).closest('.field, .check_field').removeClass(errorClass)
 				},
 
 				errorPlacement: $.noop,
@@ -364,8 +382,8 @@ var
 				submitHandler: function(form) {
 					var
 						formData = new FormData(),
-						request = new XMLHttpRequest(),
-						file = document.getElementById('file-upload').files[0];
+						request  = new XMLHttpRequest(),
+						file     = document.getElementById('file-upload').files[0];
 
 					if(file)
 						formData.append('file_cv', file);
@@ -404,31 +422,33 @@ var
 				ignore    : ".ignore",
 
 				rules: {
-					arrivalDate  : {required: true},
-					departureDate: {required: true},
-					guests       : {required: true},
-					children     : {required: true},
-					mail         : {required: true},
-					wishes       : {required: true}
+					arrivalDate   : {required: true},
+					departureDate : {required: true},
+					guests        : {required: true},
+					children      : {required: true},
+					mail          : {required: true, email: true},
+					wishes        : {required: true},
+					securityPolicy: {required: true}
 				},
 
 				messages: {
-					arrivalDate  : {required: ""},
-					departureDate: {required: ""},
-					guests       : {required: ""},
-					children     : {required: ""},
-					mail         : {required: ""},
-					wishes       : {required: ""}
+					arrivalDate   : {required: ""},
+					departureDate : {required: ""},
+					guests        : {required: ""},
+					children      : {required: ""},
+					mail          : {required: ""},
+					wishes        : {required: ""},
+					securityPolicy: {required: ""}
 				},
 
 				errorClass: 'invalid',
 
 				highlight: function(element, errorClass) {
-					$(element).closest('.field').addClass(errorClass)
+					$(element).closest('.field, .check_field').addClass(errorClass)
 				},
 
 				unhighlight: function(element, errorClass) {
-					$(element).closest('.field').removeClass(errorClass)
+					$(element).closest('.field, .check_field').removeClass(errorClass)
 				},
 
 				errorPlacement: $.noop,
