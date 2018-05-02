@@ -124,6 +124,15 @@ var filVil = {
 		url   = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
 		url += isSession ? url + '&session=1' : '&session=0';
 
+		if(window.location.href.indexOf('villas_by_the_sea') !== -1)
+			url += url + '&villas_by_the_sea=1';
+
+		if(window.location.href.indexOf('villas_with_private_service') !== -1)
+			url += url + '&villas_with_private_service=1';
+
+		if(window.location.href.indexOf('vacation_together') !== -1)
+			url += url + '&vacation_together=1';
+
 		$.ajax({
 			type    : "post",
 			url     : "/_tools/search_render_villas?page=" + page + url,

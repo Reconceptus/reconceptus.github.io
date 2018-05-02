@@ -316,13 +316,14 @@
 		"translateKey": "preview"
 	},
 	{
-		"name"       : "files",
-		"typeField"  : "functions",
-		"nameText"   : "Файлы",
-		"nameAttr"   : "pl[files]",
-		"description": "Плагин \"Files\"",
-		"idAttr"     : "inputFiles",
-		"sql_column" : "files"
+		"name"            : "files",
+		"typeField"       : "functions",
+		"nameText"        : "Файлы",
+		"nameAttr"        : "pl[files]",
+		"description"     : "Плагин \"Files\"",
+		"idAttr"          : "inputFiles",
+		"noSaveInDatabase": true,
+		"sql_column"      : "files"
 	},
 	{
 		"name"       : "ordering",
@@ -1068,7 +1069,6 @@
 		"name"            : "booking_calendar",
 		"typeField"       : "functions",
 		"classAttr"       : "booking-calendar",
-		"functionsBefore" : "insertBooking_calendar",
 		"nameText"        : "Календарь бронирования",
 		"nameAttr"        : "pl[booking_calendar]",
 		"description"     : "Текстовое поле селект \"booking_calendar\"",
@@ -1163,36 +1163,77 @@
 		"sql_column"  : "specialist",
 		"showOnly"    : ["admin", "specialist"],
 		"translateKey": "specialist",
-		"body"            : {
+		"body"        : {
 			"text": "<option value=\"0\">-</option>{-option-}",
 			"type": "replace"
 		}
 	},
 	{
-		"name"        : "is_hot",
-		"typeField"   : "select",
-		"classAttr"   : "select2 border-green",
-		"nameText"    : "Горячее предложение",
-		"nameAttr"    : "pl[is_hot]",
-		"description" : "Селект \"is_hot\"",
-		"idAttr"      : "selectIs_hot",
-		"sql_column"  : "is_hot",
-		"showOnly"    : ["admin", "specialist"],
-		"translateKey": "is_hot_offer",
-		"body"       : {
-			"text": "<option value=\"0\">-</option><option value=\"1\">Hot</option>",
-			"type": "insert"
-		}
+		"name"           : "is_hot",
+		"typeField"      : "checkbox",
+		"classAttr"      : "flat border-green",
+		"classAttrDiv"   : "border-green-checkbox",
+		"nameText"       : "Горячее предложение",
+		"nameAttr"       : "pl[is_hot]",
+		"description"    : "Селект \"is_hot\"",
+		"idAttr"         : "checkboxIs_hot",
+		"functionsBefore": "checkboxCheck",
+		"sql_column"     : "is_hot",
+		"showOnly"       : ["admin", "specialist"],
+		"translateKey"   : "is_hot_offer"
 	},
 	{
-		"name"        : "what_is_next",
-		"typeField"   : "functions",
-		"nameText"    : "Что есть рядом",
-		"nameAttr"    : "pl[what_is_next]",
-		"description" : "Плагин \"what_is_next\" сделанный из album",
-		"idAttr"      : "inputWhat_is_next",
-		"sql_column"  : "what_is_next",
-		"translateKey": "what_is_next"
+		"name"           : "villas_by_the_sea",
+		"typeField"      : "checkbox",
+		"classAttr"      : "flat border-green",
+		"classAttrDiv"   : "border-green-checkbox",
+		"nameText"       : "Виллы на берегу моря",
+		"nameAttr"       : "pl[villas_by_the_sea]",
+		"description"    : "Селект \"villas_by_the_sea\"",
+		"idAttr"         : "checkboxVillas_by_the_seat",
+		"functionsBefore": "checkboxCheck",
+		"sql_column"     : "villas_by_the_sea",
+		"showOnly"       : ["admin", "specialist"],
+		"translateKey"   : "villas_by_the_sea"
+	},
+	{
+		"name"           : "villas_with_private_service",
+		"typeField"      : "checkbox",
+		"classAttr"      : "flat border-green",
+		"classAttrDiv"   : "border-green-checkbox",
+		"nameText"       : "Виллы c отельным обслуживанием",
+		"nameAttr"       : "pl[villas_with_private_service]",
+		"description"    : "Селект \"villas_with_private_service\"",
+		"idAttr"         : "checkboxVillas_with_private_service",
+		"functionsBefore": "checkboxCheck",
+		"sql_column"     : "villas_with_private_service",
+		"showOnly"       : ["admin", "specialist"],
+		"translateKey"   : "villas_with_private_service"
+	},
+	{
+		"name"           : "vacation_together",
+		"typeField"      : "checkbox",
+		"classAttr"      : "flat border-green",
+		"classAttrDiv"   : "border-green-checkbox",
+		"nameText"       : "Отдых вдвоем",
+		"nameAttr"       : "pl[vacation_together]",
+		"description"    : "Селект \"vacation_together\"",
+		"idAttr"         : "checkboxVacation_together",
+		"functionsBefore": "checkboxCheck",
+		"sql_column"     : "vacation_together",
+		"showOnly"       : ["admin", "specialist"],
+		"translateKey"   : "vacation_together"
+	},
+	{
+		"name"            : "what_is_next",
+		"typeField"       : "functions",
+		"nameText"        : "Что есть рядом",
+		"nameAttr"        : "pl[what_is_next]",
+		"description"     : "Плагин \"what_is_next\" сделанный из album",
+		"idAttr"          : "inputWhat_is_next",
+		"sql_column"      : "what_is_next",
+		"noSaveInDatabase": true,
+		"translateKey"    : "what_is_next"
 	},
 	{
 		"name"        : "working_conditions",
@@ -1219,7 +1260,7 @@
 		"typeField"       : "functions",
 		"functionsBefore" : "insertDistances",
 		"js_init_function": "distancesInit",
-		"nameText"        : "Удобства",
+		"nameText"        : "Расстояния",
 		"nameAttr"        : "pl[distances]",
 		"description"     : "Плагин \"distances\"",
 		"idAttr"          : "inputDistances",
@@ -1234,7 +1275,7 @@
 		"typeField"       : "functions",
 		"functionsBefore" : "insertBooking_is_easy",
 		"js_init_function": "booking_is_easyInit",
-		"nameText"        : "Удобства",
+		"nameText"        : "Бронирование легко",
 		"nameAttr"        : "pl[booking_is_easy]",
 		"description"     : "Плагин \"booking_is_easy\"",
 		"idAttr"          : "inputBooking_is_easy",
@@ -1245,66 +1286,96 @@
 		}
 	},
 	{
-		"name"        : "convenience",
-		"typeField"   : "textarea",
-		"nameText"    : "Удобства",
-		"nameAttr"    : "pl[convenience]",
-		"description" : "Плагин \"convenience\"",
-		"idAttr"      : "inputConvenience",
-		"sql_column"  : "convenience",
-		"translateKey": "convenience"
+		"name"            : "convenience",
+		"typeField"       : "functions",
+		"functionsBefore" : "insertTagers",
+		"js_init_function": "tagersInitConvenience",
+		"classAttr"       : "select2-convenience convenience-]-options-[-",
+		"nameText"        : "Описание локации",
+		"nameAttr"        : "pl[convenience]",
+		"description"     : "Поле выбора и поиска локации \"convenience\"",
+		"idAttr"          : "inputConvenience",
+		"sql_column"      : "convenience",
+		"translateKey"    : "convenience",
+		"body"            : {
+			"text"    : "",
+			"type"    : "insert",
+			"multiple": "multiple"
+		}
 	},
 	{
-		"name"        : "services",
-		"typeField"   : "textarea",
-		"nameText"    : "Услуги",
-		"nameAttr"    : "pl[services]",
-		"description" : "Плагин \"services\"",
-		"idAttr"      : "inputServices",
-		"sql_column"  : "services",
-		"translateKey": "services"
+		"name"            : "services",
+		"typeField"       : "functions",
+		"functionsBefore" : "insertTagers",
+		"js_init_function": "tagersInitServices",
+		"classAttr"       : "select2-services services-]-options-[-",
+		"nameText"        : "Описание локации",
+		"nameAttr"        : "pl[services]",
+		"description"     : "Поле выбора и поиска локации \"services\"",
+		"idAttr"          : "inputServices",
+		"sql_column"      : "services",
+		"translateKey"    : "services",
+		"body"            : {
+			"text"    : "",
+			"type"    : "insert",
+			"multiple": "multiple"
+		}
 	},
 	{
-		"name"       : "bedroom",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Спальни",
-		"nameAttr"   : "pl[bedroom]",
-		"description": "Селект \"Спальни\"",
-		"idAttr"     : "selectBedroom",
-		"sql_column" : "bedroom",
+		"name"        : "bedroom",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Спальни",
+		"nameAttr"    : "pl[bedroom]",
+		"description" : "Селект \"Спальни\"",
+		"idAttr"      : "selectBedroom",
+		"sql_column"  : "bedroom",
 		"translateKey": "bedroom",
-		"body"       : {
+		"body"        : {
 			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
 			"type": "insert"
 		}
 	},
 	{
-		"name"       : "bathroom",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Ванные комнаты",
-		"nameAttr"   : "pl[bathroom]",
-		"description": "Селект \"Ванные комнаты\"",
-		"idAttr"     : "selectBathroom",
-		"sql_column" : "bathroom",
+		"name"           : "to_main",
+		"typeField"      : "checkbox",
+		"classAttr"      : "flat",
+		"classAttrDiv"   : "border-green-checkbox",
+		"nameText"       : "На главную",
+		"nameAttr"       : "pl[to_main]",
+		"description"    : "Селект \"На главную\"",
+		"idAttr"         : "checkboxTo_main",
+		"sql_column"     : "to_main",
+		"functionsBefore": "checkboxCheck",
+		"showOnly"       : ["admin", "specialist"],
+		"translateKey"   : "to_main"
+	},
+	{
+		"name"        : "bathroom",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Ванные комнаты",
+		"nameAttr"    : "pl[bathroom]",
+		"description" : "Селект \"Ванные комнаты\"",
+		"idAttr"      : "selectBathroom",
+		"sql_column"  : "bathroom",
 		"translateKey": "bathrooms",
-		"body"       : {
+		"body"        : {
 			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
 			"type": "insert"
 		}
 	},
 	{
-		"name"       : "sea",
-		"typeField"  : "select",
-		"classAttr"  : "select2",
-		"nameText"   : "Море",
-		"nameAttr"   : "pl[sea]",
-		"description": "Селект \"Море\"",
-		"idAttr"     : "selectSea",
-		"sql_column" : "sea",
+		"name"        : "sea",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Море",
+		"nameAttr"    : "pl[sea]",
+		"description" : "Селект \"Море\"",
+		"idAttr"      : "selectSea",
+		"sql_column"  : "sea",
 		"translateKey": "sea",
-		"body"       : {
+		"body"        : {
 			"text": "<option value=\"0\"></option><option value=\"1\">With access to the beach</option><option value=\"2\">Up to 500 meters</option><option value=\"3\">500 to 1000 meters</option><option value=\"4\">More than 1000 meters</option>",
 			"type": "insert"
 		}

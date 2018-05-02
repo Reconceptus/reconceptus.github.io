@@ -379,6 +379,9 @@ class ModuleController extends Controller
 		if($c['typeField'] == 'select')
 			$plugins = $this->_cat($c, $t, $p);
 
+		if($c['typeField'] == 'checkbox')
+			$plugins = $this->_checkbox($c);
+
 		if($c['typeField'] == 'functions')
 			$plugins = $this->plugins->$name($c, $t, $p);
 
@@ -399,6 +402,26 @@ class ModuleController extends Controller
             <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <input type="text" ' . $maxlength . ' name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
+            </div>
+             <br class="clear"/>
+        </div>';
+	}
+
+	/**
+	 * функция рендера checkbox
+	 * @param $inp
+	 * @return string
+	 */
+	public static function _checkbox($inp)
+	{
+		$classAttr    = isset($inp['classAttr']) ? $inp['classAttr'] : '';
+		$classAttrDiv = isset($inp['classAttrDiv']) ? $inp['classAttrDiv'] : '';
+		$maxlength    = isset($inp['maxlength']) ? 'maxlength="' . $inp['maxlength'] . '"' : '';
+
+		return '<div class="form-group ' . $classAttrDiv . '">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="checkbox" ' . $maxlength . ' name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
             </div>
              <br class="clear"/>
         </div>';
@@ -560,8 +583,10 @@ class ModuleController extends Controller
 						if($plugins[$key]['body']['multiple'] ?? false)
 							$this->request['pl'][$key] = $this->request['pl'][$key] ?? [];
 
-					foreach($this->request['pl'] as $key => $v) {
-						$data->$key = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE) : $v;
+					foreach($modules['plugins'] as $key) {
+						$data->$key = is_array($this->request['pl'][$key])
+							? json_encode($this->request['pl'][$key], JSON_UNESCAPED_UNICODE)
+							: $this->request['pl'][$key];
 
 						if($data->$key == '[]')
 							$data->$key = '';
@@ -569,8 +594,11 @@ class ModuleController extends Controller
 						// functionsBefore
 						if($plugins[$key]['functionsBefore'] ?? false) {
 							$functionsBefore = $plugins[$key]['functionsBefore'];
-							$data->$key      = $this->plugins->$functionsBefore($v, $key, null);
+							$data->$key      = $this->plugins->$functionsBefore($this->request['pl'][$key], $key, null);
 						}
+
+						if($plugins[$key]['noSaveInDatabase'])
+							unset($data->$key);
 					}
 
 					$data->updated_at = Carbon::now();

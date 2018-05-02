@@ -32,7 +32,7 @@
 
 			<div class="content">
 				<div class="half-request double">
-					@include('site.block.main_filter', ['locations' => $locations])
+					@include('site.block.main_filter', ['locations' => [$location], 'all_destinations' => false])
 				</div>
 			</div>
 

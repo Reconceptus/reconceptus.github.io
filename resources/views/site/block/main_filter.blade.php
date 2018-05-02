@@ -17,7 +17,9 @@
 
 						<div class="select">
 							<select name="f_way" id="f_way" style="display:none;">
-								<option value="">@lang('main.all_destinations')</option>
+								@if(isset($all_destinations) ? $all_destinations : true)
+									<option value="">@lang('main.all_destinations')</option>
+								@endif
 
 								@foreach($locations as $val)
 									<option value="{{ $val['cat'] }}" {{ ($_GET['f_way'] ?? '') == $val['cat'] ? 'selected' : '' }}>

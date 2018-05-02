@@ -440,4 +440,97 @@ class PluginsController extends Controller
 			]
 		);
 	}
+
+	/**
+	 * Functions render tag filed.
+	 *
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+	 */
+	public function services($field, $table_params = '', $params = [])
+	{
+		return Base::view(
+			"admin::plugins.tagers",
+
+			[
+				'class'  => 'services',
+				'field'  => ModuleController::_cat($field, $table_params),
+				'plugin' => $field,
+				'lang'   => \App::getLocale(),
+			]
+		);
+	}
+
+	/**
+	 * Insert tags
+	 *
+	 * @param      $value
+	 * @param      $name
+	 * @param null $id
+	 * @return string
+	 */
+	public function insertTagers($value, $name, $id = null)
+	{
+		$res = [];
+
+		foreach($value as $key => $v)
+			$res[key($v)][] = array_shift($v);
+
+		return json_encode($res, JSON_UNESCAPED_UNICODE);
+	}
+
+	/**
+	 * Functions render tag filed.
+	 *
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+	 */
+	public function convenience($field, $table_params = '', $params = [])
+	{
+		return Base::view(
+			"admin::plugins.tagers",
+
+			[
+				'class'  => 'convenience',
+				'field'  => ModuleController::_cat($field, $table_params),
+				'plugin' => $field,
+				'lang'   => \App::getLocale(),
+			]
+		);
+	}
+
+	/**
+	 * Insert tags
+	 *
+	 * @param      $value
+	 * @param      $name
+	 * @param null $id
+	 * @return string
+	 */
+	public function insertConvenience($value, $name, $id = null)
+	{
+		$res = [];
+
+		foreach($value as $key => $v)
+			$res[key($v)][] = array_shift($v);
+
+		return json_encode($res, JSON_UNESCAPED_UNICODE);
+	}
+
+	/**
+	 * Checkbox Check.
+	 *
+	 * @param      $value
+	 * @param      $name
+	 * @param null $id
+	 * @return bool
+	 */
+	public function checkboxCheck($value, $name, $id = null)
+	{
+		return $value === 'on' ? 1 : 0;
+	}
 }

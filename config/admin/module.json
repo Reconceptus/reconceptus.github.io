@@ -51,6 +51,7 @@
 			"description",
 			"album",
 			"active",
+			"to_main",
 			"is_hot"
 		],
 		"count_module"    : "20",
@@ -78,6 +79,10 @@
 		"order"           : "2",
 		"plugins"         : [
 			"is_hot",
+			"to_main",
+			"villas_by_the_sea",
+			"villas_with_private_service",
+			"vacation_together",
 			"specialist",
 			"name",
 			"text",
@@ -217,6 +222,8 @@
 		"column_index"    : [
 			"name",
 			"description",
+			"to_main",
+			"translation",
 			"cat",
 			"album",
 			"active"
@@ -243,7 +250,9 @@
 			"name",
 			"name_p",
 			"little_description",
+			"translation",
 			"cat",
+			"to_main",
 			"text",
 			"album",
 			"title",
@@ -464,7 +473,7 @@
 	},
 	{
 		"id"              : "12",
-		"active"          : true,
+		"active"          : false,
 		"big_height"      : "0",
 		"big_width"       : "0",
 		"class_module"    : "fa fa-home",

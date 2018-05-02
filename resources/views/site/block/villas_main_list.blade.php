@@ -13,8 +13,10 @@
 					<figure style="background-image: url({{ $img }})"></figure>
 
 					<ul class="hashes">
-						@if(!$val['sea'])<li>На пляже</li>@endif
-						@if($val['is_hot'])<li>Горячее предложение</li>@endif
+						@if($val['villas_by_the_sea'])<li>@lang('main.villas_by_the_sea')</li>@endif
+						@if($val['is_hot'])<li>@lang('main.is_hot_offer')</li>@endif
+						@if($val['villas_with_private_service'])<li>@lang('main.villas_with_private_service')</li>@endif
+						@if($val['vacation_together'])<li>@lang('main.vacation_together')</li>@endif
 					</ul>
 
 					<a href="/villas/{{ $val['id'] }}" class="link" target="_blank"></a>
@@ -31,7 +33,7 @@
 				<div class="villa-main">
 					<div class="name">
 						<h3 class="title">
-							<a href="/villas/{{ $val['id'] }}" target="_blank">>{{ $langSt($val['name']) }}</a>
+							<a href="/villas/{{ $val['id'] }}" target="_blank">{{ $langSt($val['name']) }}</a>
 						</h3>
 
 						<h5 class="place">{{ $langSt($val['place']) }}</h5>

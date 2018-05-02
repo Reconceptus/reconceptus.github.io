@@ -97,9 +97,44 @@ class MainController extends Controller
 			->get()
 			->toArray();
 
-		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
-		$data['main_page'] = $this->dynamic->t('main')->where('main.active', 1)->first()->toArray();
-		$data['meta_c']    = $this->base->getMeta($data['main_page']);
+		$data['locations'] = $this->dynamic
+			->t('locations')
+			->where([['locations.active','=', 1]])
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('locations.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'locationsalbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('locations.*', 'files.file', 'files.crop')
+			->get()
+			->toArray();
+
+		$data['locations_main'] = $this->dynamic
+			->t('locations')
+			->where([['locations.active','=', 1], ['locations.to_main','=', 1]])
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('locations.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'locationsalbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('locations.*', 'files.file', 'files.crop')
+			->limit(2)
+			->get()
+			->toArray();
 
 		return $this->base->view_s("site.main.index", $data);
 	}
@@ -184,14 +219,19 @@ class MainController extends Controller
 
 			if($data['villa']['specialist'])
 				$data['villa']['specialist'] = $this->dynamic->t('users')
+
 					->join(
-						'files', function($join) {
-						$join->type = 'LEFT OUTER';
-						$join->on('users.id', '=', 'files.id_album')
-							->where('files.name_table', '=', 'usersalbum')
-							->where('files.main', '=', 1);
-					}
+						'files',
+
+						function($join) {
+							$join->type = 'LEFT OUTER';
+
+							$join->on('users.id', '=', 'files.id_album')
+								->where('files.name_table', '=', 'usersalbum')
+								->where('files.main', '=', 1);
+						}
 					)
+
 					->where('users.id', '=', (int) $data['villa']['specialist'])
 					->select('users.*', 'files.file', 'files.crop')
 					->first();
@@ -202,25 +242,40 @@ class MainController extends Controller
 				->first();
 
 			$data['recommended_villas'] = $this->dynamic->t('villas')
-				->where($where)
-				->whereIn('villas.id', json_decode($data['villa']['recommendedVillas'], true) ?? [])
+				->where(array_merge(
+									$where,
+
+									[
+										'bedroom' => $data['villa']['bedroom'],
+										'bathroom' => $data['villa']['bathroom'],
+									]
+								))
+				//				->whereIn('villas.id', json_decode($data['villa']['recommendedVillas'], true) ?? [])
+								->whereNotIn('villas.id', [$data['villa']['id']])
 				->join(
-					'files', function($join) use ($data) {
-					$join->type = 'LEFT OUTER';
-					$join->on('villas.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'villasalbum')
-						->where('files.main', '=', 1);
-				}
+					'files',
+
+					function($join) use ($data) {
+						$join->type = 'LEFT OUTER';
+						$join->on('villas.id', '=', 'files.id_album')
+							->where('files.name_table', '=', 'villasalbum')
+							->where('files.main', '=', 1);
+					}
 				)
+
 				->join(
-					'menu', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
-				}
+					'menu',
+
+					function($join) {
+						$join->type = 'LEFT OUTER';
+						$join->on('villas.cat', '=', 'menu.id');
+					}
 				)
+
 				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
 				->groupBy('villas.id')
 				->orderBy('villas.' . $group, 'DESC')
+				->limit(6)
 				->get()
 				->toArray();
 
@@ -238,6 +293,32 @@ class MainController extends Controller
 				->where('files.id_album', '=', $id)
 				->get()
 				->toArray();
+
+
+			$dates = $this->base->getDatesFromRange(
+				Carbon::yesterday(),
+				Carbon::yesterday()->month(Carbon::yesterday()->month + 6)
+			);
+
+			$order_days = $this
+				->dynamic
+				->t('booking_calendar')
+				->whereIn('start', $dates)
+				->orWhereIn('end', $dates)
+				->get()
+				->toArray();
+
+			$data['order_days'] = [];
+
+			foreach($order_days as $val)
+				$data['order_days'] = array_merge(
+					$data['order_days'],
+
+					$this->base->getDatesFromRange(
+						$val['start'],
+						$val['end']
+					)
+				);
 
 			$data['meta_c'] = $this->base->getMeta($data, 'villa');
 
@@ -271,6 +352,19 @@ class MainController extends Controller
 				->paginate($count_box);
 
 			$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
+
+			$villas_by_the_sea           = (int) ($this->request['villas_by_the_sea'] ?? false);
+			$villas_with_private_service = (int) ($this->request['villas_with_private_service'] ?? false);
+			$vacation_together           = (int) ($this->request['vacation_together'] ?? false);
+
+			if($villas_by_the_sea)
+				$data['meta_d']['title'] = ' :: ' . __('main.all_destinations');
+
+			if($villas_with_private_service)
+				$data['meta_d']['title'] = ' :: ' . __('main.villas_with_private_service');
+
+			if($vacation_together)
+				$data['meta_d']['title'] = ' :: ' . __('main.vacation_together');
 
 			return $this->base->view_s("site.main.villas", $data);
 		}
@@ -481,12 +575,15 @@ class MainController extends Controller
 		$data['location'] = $this
 			->dynamic
 			->t('locations')
+
 			->join(
-				'menu', function($join) use ($id) {
-				$join->type = 'RIGHT OUTER';
-				$join->on('menu.id', '=', 'locations.cat');
-			}
+				'menu',
+				function($join) use ($id) {
+					$join->type = 'RIGHT OUTER';
+					$join->on('menu.id', '=', 'locations.cat');
+				}
 			)
+
 			->select('locations.*')
 			->where('locations.active', 1)
 			->where('menu.translation', '=', $id)
@@ -500,41 +597,23 @@ class MainController extends Controller
 
 		$data['villas'] = $this->dynamic->t('villas')
 			->where($whereVillas)
+
 			->join(
-				'files', function($join) {
-				$join->type = 'LEFT OUTER';
-				$join->on('villas.id', '=', 'files.id_album')
-					->where('files.name_table', '=', 'villasalbum')
-					->where('files.main', '=', 1);
-			}
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('villas.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'villasalbum')
+						->where('files.main', '=', 1);
+				}
 			)
+
 			->select('villas.*', 'files.file', 'files.crop')
 			->groupBy('villas.id')
 			->orderBy('villas.id', 'DESC')
 			->orderBy('villas.is_best', 'ASC')
 			->paginate(4);
-
-		$data['locations'] = $this
-			->dynamic
-			->t('locations')
-			->where('locations.active', 1)
-			->join(
-				'menu', function($join) {
-				$join->type = 'LEFT OUTER';
-				$join->on('locations.cat', '=', 'menu.id');
-			}
-			)
-			->join(
-				'files', function($join) {
-				$join->type = 'LEFT OUTER';
-				$join->on('locations.id', '=', 'files.id_album')
-					->where('files.name_table', '=', 'album')
-					->where('files.main', '=', 1);
-			}
-			)
-			->select('locations.*', 'menu.translation', 'files.file', 'files.crop')
-			->get()
-			->toArray();
 
 		$data['meta_c'] = $this->base->getMeta($data, 'location');
 
@@ -685,12 +764,15 @@ class MainController extends Controller
 			$params['id'] = $cart_id;
 		}
 
-		$way       = (int) ($this->request['way'] ?? -1);
-		$date_to   = $this->request['date_to'] ?? -1;
-		$date_from = $this->request['date_from'] ?? -1;
-		$rooms     = (int) ($this->request['rooms'] ?? -1);
-		$hot       = (int) ($this->request['hot'] ?? -1);
-		$dates     = '';
+		$way                         = (int) ($this->request['way'] ?? -1);
+		$date_to                     = $this->request['date_to'] ?? -1;
+		$date_from                   = $this->request['date_from'] ?? -1;
+		$rooms                       = (int) ($this->request['rooms'] ?? -1);
+		$hot                         = (int) ($this->request['hot'] ?? -1);
+		$villas_by_the_sea           = (int) ($this->request['villas_by_the_sea'] ?? -1);
+		$villas_with_private_service = (int) ($this->request['villas_with_private_service'] ?? -1);
+		$vacation_together           = (int) ($this->request['vacation_together'] ?? -1);
+		$dates                       = '';
 
 		if($way !== -1 && !empty($way))
 			$where[] = ['villas.cat', $way];
@@ -700,6 +782,15 @@ class MainController extends Controller
 
 		if($hot !== -1)
 			$where[] = ['villas.is_hot', 1];
+
+		if($villas_by_the_sea !== -1)
+			$where[] = ['villas.villas_by_the_sea', 1];
+
+		if($villas_with_private_service !== -1)
+			$where[] = ['villas.villas_with_private_service', 1];
+
+		if($vacation_together !== -1)
+			$where[] = ['villas.vacation_together', 1];
 
 		if((int) $date_to !== -1) {
 			$tomorrow    = Carbon::createFromFormat('Y-m-d', substr($date_from, 0, 10))->addDay(1)->toDateString();
@@ -784,7 +875,7 @@ class MainController extends Controller
 	 * Страницы.
 	 *
 	 * @param null $id
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
 	 */
 	public function page($id = null)
 	{

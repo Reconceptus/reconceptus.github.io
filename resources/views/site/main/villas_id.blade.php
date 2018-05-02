@@ -126,9 +126,9 @@
 
 						<div class="text-box">
 							<ul class="column">
-								@php($convenience = explode("\r", $langSt($villa['convenience'])))
+								@php($convenience = json_decode($villa['convenience'], true))
 
-								@foreach($convenience as $v)
+								@foreach($convenience[$lang] as $v)
 									@if(!empty($v))<li>{{ $v }}</li>@endif
 								@endforeach
 							</ul>
@@ -142,9 +142,9 @@
 
 						<div class="text-box">
 							<ul class="column">
-								@php($services = explode("\r", $langSt($villa['services'])))
+								@php($services = json_decode($villa['services'], true))
 
-								@foreach($services as $v)
+								@foreach($services[$lang] as $v)
 									@if(!empty($v))<li>{{ $v }}</li>@endif
 								@endforeach
 							</ul>
@@ -163,16 +163,16 @@
 								<div class="fields-part">
 									<div class="fieldset pickerfields">
 										<div class="field">
-											<label for="arrivalDate">@lang('main.check_in')</label>
+											<label for="arrivalDate_v">@lang('main.check_in')</label>
 											<div class="input">
-												<input id="arrivalDate" name="arrivalDate" type="text" data-picker-full />
+												<input id="arrivalDate_v" name="arrivalDate" type="text" data-picker-full />
 											</div>
 										</div>
 
 										<div class="field">
-											<label for="departureDate">@lang('main.check_out')</label>
+											<label for="departureDate_v">@lang('main.check_out')</label>
 											<div class="input">
-												<input type="text" id="departureDate" name="departureDate" data-picker-full />
+												<input type="text" id="departureDate_v" name="departureDate" data-picker-full />
 											</div>
 										</div>
 
@@ -435,20 +435,22 @@
 			</div>
 		</section>
 
-		<section class="section best-offers">
-			<div class="content">
-				<header>
-					<h3 class="headline_main">@lang('main.you_may_also_like')</h3>
-					<h4 class="headline_submain">{{ $langSt($params['you_may_also_like_villa_h3']['key']) }}</h4>
-				</header>
+		@if(count($recommended_villas))
+			<section class="section best-offers">
+				<div class="content">
+					<header>
+						<h3 class="headline_main">@lang('main.you_may_also_like')</h3>
+						<h4 class="headline_submain">{{ $langSt($params['you_may_also_like_villa_h3']['key']) }}</h4>
+					</header>
 
-				<div class="grid">
-					<ul class="grid-list">
-						@include('site.block.villas_main_list_grid', ['villas' => $recommended_villas])
-					</ul>
+					<div class="grid">
+						<ul class="grid-list">
+							@include('site.block.villas_main_list_grid', ['villas' => $recommended_villas])
+						</ul>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		@endif
 	</div>
 
 	@push('footer')
@@ -461,24 +463,137 @@
 
 	@if(count($coordinates) > 1)
 		<script type="text/javascript">
+			var
+				month_num = 2;
+
+			if($('html').hasClass('tablet') && $(window).width() < 767)
+				month_num = 1;
+
+			function datePickerVilla() {
+				var
+					dateToday = new Date(),
+					el01      = 'arrivalDate_v',
+					el02      = 'departureDate_v',
+					basePicker;
+
+				var
+					dates = $('#' + el01 + ',#' + el02).datepicker({
+						changeMonth   : true,
+						changeYear    : true,
+						numberOfMonths: month_num,
+						minDate       : dateToday,
+
+						beforeShowDay: function(d) {
+							var
+								disabledDates = [
+									@foreach($order_days as $day)
+										"{{ $day }}",
+									@endforeach
+								],
+
+								dmy;
+
+							dmy = d.getFullYear() + "-";
+
+							if(d.getMonth() < 9) dmy += "0";
+							dmy += (d.getMonth() + 1) + "-";
+
+							if(d.getDate() < 10) dmy += "0";
+							dmy += d.getDate();
+
+							if($.inArray(dmy, disabledDates) === -1)
+								return [true, "", "Available"];
+							else
+								return [false, "", "unAvailable"];
+						},
+
+						beforeShow: function() {
+							month_num > 1 ? basePicker = $('#picker') : basePicker = $('#mobile_picker')
+
+							var
+								picker       = basePicker,
+								pickerOffset = picker.offset().top,
+								scrollTop    = $(window).scrollTop(),
+								needScroll   = pickerOffset - 350;
+
+							if(scrollTop > needScroll) {
+								picker.addClass('down');
+							} else {
+								picker.addClass('up');
+							}
+
+							picker.addClass('show');
+							picker.find('.calendar').prepend($('#ui-datepicker-div'));
+
+							if($('.villa-request').length > 0) {
+								$('.villa-request .pickerfields .input').addClass('filled')
+							}
+
+							setTimeout(function(args) {
+								$('#' + el01 + ',#' + el02).blur();
+							}, 50)
+						},
+
+						onClose: function() {
+							basePicker.removeClass('show up down');
+							if($('.villa-request').length > 0) {
+								if($("#arrivalDate").val() == '' && $("#departureDate").val() == '') {
+									$('.villa-request .pickerfields .input').removeClass('filled')
+								}
+							}
+						},
+
+						onSelect: function(selectedDate) {
+							var
+								option   = this.id == el01 ? "minDate" : "maxDate",
+								instance = $(this).data("datepicker"),
+								date     = $.datepicker.parseDate(
+									instance.settings.dateFormat || $.datepicker._defaults.dateFormat,
+									selectedDate, instance.settings
+								);
+
+							dates.not(this).datepicker("option", option, date);
+
+							if($('#' + el01).val() != '') {
+								$('#' + el01).closest('.field').removeClass('invalid')
+							}
+
+							if($('#' + el02).val() != '') {
+								$('#' + el02).closest('.field').removeClass('invalid')
+							}
+						}
+					});
+
+				var
+					currentDate,
+					nextDate;
+
+				if($('#check_in').val() && $('#check_out').val()) {
+					currentDate = $.datepicker.parseDate('dd.mm.yy', $('#check_in').val());
+					nextDate    = $.datepicker.parseDate('dd.mm.yy', $('#check_out').val())
+				}
+
+				$('#' + el01).datepicker('setDate', currentDate || 'today');
+				$('#' + el02).datepicker('setDate', nextDate || '+1w');
+			}
+
 			function initMap() {
 				new google.maps.Marker({
-					position: {
-						lat: parseFloat('{{ $coordinates[0] }}'), lng: parseFloat('{{ $coordinates[1] }}'),
-						map: new google.maps.Map(document.getElementById('place'), {
-							zoom       : 12,
-							scrollwheel: false,
+					position: {lat: parseFloat('{{ $coordinates[0] }}'), lng: parseFloat('{{ $coordinates[1] }}')},
 
-							center: new google.maps.LatLng(
-								parseFloat('{{ $coordinates[0] }}'),
-								parseFloat('{{ $coordinates[1] }}')
-							)
-						}),
-					},
+					map: new google.maps.Map(document.getElementById('place'), {
+						zoom       : 12,
+						scrollwheel: false,
+						center     : new google.maps.LatLng(parseFloat('{{ $coordinates[0] }}'), parseFloat('{{ $coordinates[1] }}'))
+					}),
 
-					icon: './images/villa-mark.png'
+					icon: '/images/villa-mark.png'
 				});
 			}
+
+			$(document).ready(function() {
+				datePickerVilla();
+			})
 		</script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
 	@endif

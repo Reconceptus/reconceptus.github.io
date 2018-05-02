@@ -40,65 +40,70 @@
 				<h2 class="headline_main">GET INSPIRED</h2>
 				<h4 class="headline_submain">Browse Our Top Villa Collections</h4>
 			</header>
+
+			@php($i = 4)
+
 			<div class="offers--wrap">
 				<div class="offers--grid">
 					<div class="item-box item-lg head-bottom" data-item="1">
 						<section class="item">
-							<a href="#">
-								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
+							<a href="/villas?villas_by_the_sea=1">
+								<figure style="background-image: url('/images/items/3_PLYAZ-BEACH-.jpg')"></figure>
+
 								<header>
-									<h3 class="title">Виллы на берегу моря</h3>
+									<h3 class="title">@lang('main.villas_by_the_sea')</h3>
 									<h5 class="subtitle">Роскошные виллы в нескольких шагах от пляжа</h5>
-									<span class="btn btn_bord">Смотреть</span>
-								</header>
-							</a>
-						</section>
-					</div>
-					<div class="item-box item-md head-top" data-item="2">
-						<section class="item">
-							<a href="#">
-								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
-								<header>
-									<h3 class="title">Виллы с отельным обслуживанием</h3>
-									<h5 class="subtitle">Виллы с полным набором услуг</h5>
-									<span class="btn btn_bord">Смотреть</span>
-								</header>
-							</a>
-						</section>
-					</div>
-					<div class="item-box item-lg head-top" data-item="3">
-						<section class="item">
-							<a href="#">
-								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
-								<header>
-									<h3 class="title">Отдых вдвоем</h3>
-									<h5 class="subtitle">Ваш романтический отдых на двоих</h5>
-									<span class="btn btn_bord">Смотреть</span>
-								</header>
-							</a>
-						</section>
-					</div>
-					<div class="item-box item-sm head-full" data-item="4">
-						<section class="item">
-							<a href="#">
-								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
-								<header>
-									<h3 class="title">Афины</h3>
-								</header>
-							</a>
-						</section>
-					</div>
-					<div class="item-box item-sm head-full" data-item="5">
-						<section class="item">
-							<a href="#">
-								<figure style="background-image: url('/images/bg/offer01.jpg')"></figure>
-								<header>
-									<h3 class="title">Санторини</h3>
+									<span class="btn btn_bord">@lang('main.look')</span>
 								</header>
 							</a>
 						</section>
 					</div>
 
+					<div class="item-box item-md head-top" data-item="2">
+						<section class="item">
+							<a href="/villas?villas_with_private_service=1">
+								<figure style="background-image: url('/images/items/2_HOTEL-SERVICE-VILLAS.jpg')"></figure>
+
+								<header>
+									<h3 class="title">@lang('main.villas_with_private_service')</h3>
+									<h5 class="subtitle">Виллы с полным набором услуг</h5>
+									<span class="btn btn_bord">@lang('main.look')</span>
+								</header>
+							</a>
+						</section>
+					</div>
+
+					<div class="item-box item-lg head-top" data-item="3">
+						<section class="item">
+							<a href="/villas?vacation_together=1">
+								<figure style="background-image: url('/images/items/1_OTDYH-VDVOEM-ROMANTIC.jpg')"></figure>
+
+								<header>
+									<h3 class="title">@lang('main.vacation_together')</h3>
+									<h5 class="subtitle">Ваш романтический отдых на двоих</h5>
+									<span class="btn btn_bord">@lang('main.look')</span>
+								</header>
+							</a>
+						</section>
+					</div>
+
+					@foreach($locations_main as $v)
+						@php($path_small = '/images/files/small/')
+						@php($img_small = $v['file'] ? $v['crop'] ? $path_small . $v['crop'] : $path_small . $v['file'] : '')
+
+						<div class="item-box item-sm head-full" data-item="{{ $i }}">
+							<section class="item">
+								<a href="/location/{{ empty($v['translation']) ? $v['cat'] : $v['translation'] }}">
+									<figure style="background-image: url('{{ $img_small }}')"></figure>
+									<header>
+										<h3 class="title">{{ $langSt($v['name']) }}</h3>
+									</header>
+								</a>
+							</section>
+						</div>
+
+						@php(++$i)
+					@endforeach
 				</div>
 			</div>
 		</div>

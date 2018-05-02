@@ -263,6 +263,13 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	border: 2px solid #4ecc70 !important;
 }
 
+.border-green-checkbox .icheckbox_flat-green {
+	border: 2px solid #4ecc70 !important;
+	border-radius: 5px;
+	width: 24px;
+	height: 24px;
+}
+
 .switch {
 	cursor: pointer;
 }
