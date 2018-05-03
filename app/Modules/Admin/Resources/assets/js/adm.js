@@ -4,7 +4,10 @@
 
 		initialize: function initialize(data) {
 			this.conf = new Map(data.pram);
-			$.adm.loadOnclick();
+
+			$(window).load(function() {
+				$.adm.loadOnclick();
+			});
 		},
 
 		loadOnclick: function loadOnclick() {
@@ -72,7 +75,7 @@
 		},
 
 		elementsLoad: function elementsLoad () {
-			$('input[type="radio"]').on('ifChanged', function(event) {
+			$('input.flat').on('ifChanged', function(event) {
 				var id = event['target']['id'];
 				var title = event['target']['title'];
 

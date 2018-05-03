@@ -4,7 +4,13 @@
 	<section class="simple-page--head villa--head">
 		<div class="content">
 			<header class="light-style">
-				<h1 class="headline_main">@lang('main.villas')</h1>
+				<h1 class="headline_main">
+					@if($title)
+						{{ str_replace(':: ', '', $title) }}
+					@else
+						@lang('main.villas')
+					@endif
+				</h1>
 			</header>
 		</div>
 

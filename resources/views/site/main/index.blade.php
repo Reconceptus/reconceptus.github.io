@@ -4,9 +4,14 @@
 	<div class="section intro">
 		<div class="intro-figure">
 			<figure style="background-image: url('/images/bg/intro-bg.png')"></figure>
+			@php($path_small = '/images/files/big/')
+			@php($img_small = $main_page['file'] ? $main_page['crop'] ? $path_small . $main_page['crop'] : $path_small . $main_page['file'] : '')
+			<figure style="background-image: url({{ $img_small }})"></figure>
+
 			<video muted autoplay loop>
-				<source src="/images/media/grecobooking.mp4" type="video/mp4">
-				<source src="/images/media/grecobooking.webm" type="video/webm">
+				@foreach($main_page_video as $video)
+					<source src="/images/files/files/{{ $video['file'] }}" type="video/{{ explode('.', $video['file'])[count(explode('.', $video['file'])) - 1] }}">
+				@endforeach
 			</video>
 		</div>
 
@@ -23,19 +28,6 @@
 	</div>
 	<div class="section offers">
 		<div class="content">
-			{{--<div class="offers--wrap">--}}
-				{{--@foreach($preview as $val)--}}
-					{{--@php($original = '/images/files/original/')--}}
-					{{--@php($img_original = $val['file'] ? $val['crop'] ? $original . $val['crop'] : $original . $val['file'] : '')--}}
-
-					{{--<div class="item">--}}
-						{{--<a href="#">--}}
-							{{--<figure style="background-image: url('{{ $img_original }}')"></figure>--}}
-							{{--<h3 class="title">{{ $langSt($val['name']) }}</h3>--}}
-						{{--</a>--}}
-					{{--</div>--}}
-				{{--@endforeach--}}
-			{{--</div>--}}
 			<header>
 				<h2 class="headline_main">GET INSPIRED</h2>
 				<h4 class="headline_submain">Browse Our Top Villa Collections</h4>
@@ -45,7 +37,7 @@
 
 			<div class="offers--wrap">
 				<div class="offers--grid">
-					<div class="item-box item-lg head-bottom" data-item="1">
+					<div class="item-box item-lg head-top" data-item="1">
 						<section class="item">
 							<a href="/villas?villas_by_the_sea=1">
 								<figure style="background-image: url('/images/items/3_PLYAZ-BEACH-.jpg')"></figure>

@@ -7,7 +7,7 @@
 		"description" : "Текстовое поле инпут для названия",
 		"idAttr"      : "inputName",
 		"sql_column"  : "name",
-		"translateKey": "title"
+		"translateKey": "caption"
 	},
 	{
 		"name"        : "text",
@@ -306,14 +306,15 @@
 		}
 	},
 	{
-		"name"        : "album",
-		"typeField"   : "functions",
-		"nameText"    : "Изображение",
-		"nameAttr"    : "pl[album]",
-		"description" : "Плагин \"Album\" для выбора создания альбома",
-		"idAttr"      : "inputAlbum",
-		"sql_column"  : "album",
-		"translateKey": "preview"
+		"name"            : "album",
+		"typeField"       : "functions",
+		"nameText"        : "Изображение",
+		"nameAttr"        : "pl[album]",
+		"description"     : "Плагин \"Album\" для выбора создания альбома",
+		"idAttr"          : "inputAlbum",
+		"sql_column"      : "album",
+		"noSaveInDatabase": true,
+		"translateKey"    : "preview"
 	},
 	{
 		"name"            : "files",

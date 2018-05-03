@@ -128,4 +128,5 @@ return [
 	'villas_with_private_service' => 'Виллы с отельным обслуживанием',
 	'vacation_together'           => 'Отдых вдвоем',
 	'is_hot_offer'                => 'Горячее предложение',
+	'request_all'                 => 'Запросить все',
 ];

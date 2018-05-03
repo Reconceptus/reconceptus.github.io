@@ -39,4 +39,5 @@ return [
 	'villas_by_the_sea'           => 'Виллы на берегу моря',
 	'villas_with_private_service' => 'Виллы с отельным обслуживанием',
 	'vacation_together'           => 'Отдых вдвоем',
+	'caption'                     => 'Заголовок',
 ];

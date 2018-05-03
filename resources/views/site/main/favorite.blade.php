@@ -1,29 +1,19 @@
 @extends('site.layouts.default')
 
 @section('content')
-	<section class="simple-page--head favorite--head">
-		<div class="animate-bg"></div>
+	<section class="simple-page--bg">
+		<div class="intro-figure dynamic">
+			@php($path_small = '/images/files/big/')
+			@php($img_small = $menu_segment['file'] ? $menu_segment['crop'] ? $path_small . $menu_segment['crop'] : $path_small . $menu_segment['file'] : '')
 
-		<div class="content content_md">
-			<header>
-				<h1 class="headline_main">@lang('main.favorites')</h1>
-
-				<a href="javascript:void(0);" class="send show-modal" data-modal="friend-form">
-					<span>@lang('main.send_compilation_friend')</span>
-
-					<i class="ico-fly">
-						<svg>
-							<use xlink:href="/images/svg/sprite.svg#ico_contact-fly"></use>
-						</svg>
-					</i>
-				</a>
-			</header>
+			<figure style="background-image: url({{ $img_small }})"></figure>
 		</div>
 
-		{{--<div class="half-request">--}}
-			{{--@include('site.block.main_filter')--}}
-			{{--<input name="pagination" value="1" type="hidden" autocomplete="off"/>--}}
-		{{--</div>--}}
+		<div class="content">
+			<header class="light-style">
+				<h1 class="headline_main">@lang('main.favorites')</h1>
+			</header>
+		</div>
 	</section>
 
 	<div class="simple-page--main bg-grey favorite-box">
@@ -32,11 +22,12 @@
 				<div class="content content_md">
 					<div class="btns_box">
 						<button type="button" class="btn btn_subm scroll-to-request">
-							<span>Запросить все</span>
+							<span>@lang('main.request_all')</span>
 						</button>
+
 						<a href="javascript:void(0);" class="btn btn_nobord show-modal" data-modal="friend-form">
 							<i class="ico-send"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-write"></use> </svg></i>
-							<span>Отправить</span>
+							<span>@lang('main.send')</span>
 						</a>
 					</div>
 				</div>

@@ -39,4 +39,5 @@ return [
 	'villas_by_the_sea'           => 'Villas by the sea',
 	'villas_with_private_service' => 'Villas with private service',
 	'vacation_together'           => 'Vacation together',
+	'caption'                     => 'Caption',
 ];

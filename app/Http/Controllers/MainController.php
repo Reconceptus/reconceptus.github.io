@@ -136,6 +136,35 @@ class MainController extends Controller
 			->get()
 			->toArray();
 
+		$data['main_page'] = $this
+			->dynamic
+			->t('main')
+			->where('main.active', 1)
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('main.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'mainalbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('main.*', 'files.file', 'files.crop')
+			->first()
+			->toArray();
+
+		$data['main_page_video'] = $this
+			->dynamic
+			->t('files')
+			->where('files.name_table', '=', 'mainfiles')
+			->get()
+			->toArray();
+
+		$data['meta_c']    = $this->base->getMeta($data['main_page']);
+
 		return $this->base->view_s("site.main.index", $data);
 	}
 
@@ -170,6 +199,30 @@ class MainController extends Controller
 	 */
 	public function favorite()
 	{
+		$id_segment = $this->requests->segment(1);
+
+		if(!is_numeric($id_segment))
+			$where_id = ['menu.translation' => $id_segment];
+		else
+			$where_id = ['menu.id' => $id_segment];
+
+		$data['menu_segment'] = $this->dynamic->t('menu')
+			->where($where_id)
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('menu.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'menualbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('menu.*', 'files.file', 'files.crop')
+			->first();
+
 		$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
 
 		return $this->base->view_s("site.main.favorite", $data);
@@ -358,13 +411,15 @@ class MainController extends Controller
 			$vacation_together           = (int) ($this->request['vacation_together'] ?? false);
 
 			if($villas_by_the_sea)
-				$data['meta_d']['title'] = ' :: ' . __('main.all_destinations');
+				$data['meta_d']['title'] = ' :: ' . __('main.villas_by_the_sea');
 
 			if($villas_with_private_service)
 				$data['meta_d']['title'] = ' :: ' . __('main.villas_with_private_service');
 
 			if($vacation_together)
 				$data['meta_d']['title'] = ' :: ' . __('main.vacation_together');
+
+			$data['title'] = $data['meta_d']['title'] ?? '';
 
 			return $this->base->view_s("site.main.villas", $data);
 		}
@@ -378,7 +433,13 @@ class MainController extends Controller
 	 */
 	public function blog($id = null)
 	{
-		$data['tags'] = $this->dynamic->t('tags')->limit(100)->get()->toArray();
+		$blog    = $this->dynamic->t('blog')->select('tags')->get()->toArray();
+		$tags_id = [];
+
+		foreach($blog as $v)
+			$tags_id = array_merge($tags_id, json_decode($v['tags'], true));
+
+		$data['tags'] = $this->dynamic->t('tags')->whereIn('id', $tags_id)->limit(100)->get()->toArray();
 		$where[]      = ['blog.active', 1];
 		$count_box    = 4;
 		$group        = 'id';

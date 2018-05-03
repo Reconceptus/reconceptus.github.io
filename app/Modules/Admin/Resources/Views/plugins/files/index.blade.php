@@ -35,10 +35,10 @@
 										<div class="thumbnail">
 											<div class="image view view-first pointer" onclick="editFile{{ $name }}({{ $v->id }})">
 												@php($ext = explode('.', $v->file)[count(explode('.', $v->file)) - 1])
-												@php($ignore = ['jpg' => 1, 'jpeg' => 1, 'png' => 1])
+												@php($ignore = ['jpg' => 'image', 'jpeg' => 'image', 'png' => 'image', 'webm' => 'video', 'mp4' => 'video'])
 
 												@if(isset($ignore[$ext]))
-													@php($ext = 'image')
+													@php($ext = $ignore[$ext])
 												@endif
 
 												<i
@@ -99,6 +99,8 @@
 
 								var typeFile = [
 									'application/pdf',
+									'video/webm',
+									'video/mp4',
 									'application/msword',
 									'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 									'image/jpg',
@@ -137,12 +139,12 @@
 												var
 													ds = JSON.parse(data),
 													ext = ds['name'].toString().split('.'),
-													ignore = ['jpg', 'jpeg', 'png'];
+													ignore = {jpg: 'image', jpeg: 'image', png: 'image', webm: 'video', mp4: 'video'};
 
 												ext =  ext[ext.length - 1];
 
-												if(ignore.indexOf(ext) > 0)
-													ext = 'image';
+												if(ignore[ext])
+													ext = ignore[ext];
 
 												var file = '<div class="col-md-4 rowID{{ $name }}-' + ds['id'] + '">' +
 													'<div class="thumbnail">' +

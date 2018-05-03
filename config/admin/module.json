@@ -3,11 +3,12 @@
 		"id"              : "1",
 		"active"          : true,
 		"big_height"      : "800",
-		"big_width"       : "1000",
+		"big_width"       : "1200",
 		"class_module"    : "fa fa-sitemap",
 		"column_index"    : [
 			"name",
 			"description",
+			"album",
 			"active"
 		],
 		"count_module"    : "0",
@@ -30,6 +31,7 @@
 			"class",
 			"translation",
 			"controller",
+			"album",
 			"active",
 			"cat",
 			"sort"
@@ -473,7 +475,7 @@
 	},
 	{
 		"id"              : "12",
-		"active"          : false,
+		"active"          : true,
 		"big_height"      : "0",
 		"big_width"       : "0",
 		"class_module"    : "fa fa-home",
@@ -490,7 +492,6 @@
 		"filters"         : [],
 		"lang"            : [
 			"name",
-			"booking_is_easy",
 			"title",
 			"keywords",
 			"description"
@@ -502,14 +503,19 @@
 		"order"           : "0",
 		"plugins"         : [
 			"name",
-			"booking_is_easy",
 			"album",
+			"files",
 			"title",
 			"author",
 			"keywords",
 			"description",
 			"active"
 		],
+		"params": {
+			"files": {
+				"limit": 2
+			}
+		},
 		"small_width"     : "500",
 		"small_height"    : "350",
 		"sort"            : "1",

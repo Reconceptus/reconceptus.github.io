@@ -131,4 +131,5 @@ We will contact you shortly!',
 	'villas_with_private_service' => 'Villas with private service',
 	'vacation_together'           => 'Vacation together',
 	'is_hot_offer'                => 'Hot Offer',
+	'request_all'                 => 'Request All',
 ];
