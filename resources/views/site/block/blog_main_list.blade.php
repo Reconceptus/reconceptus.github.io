@@ -26,16 +26,15 @@
 						@endif
 							<time>{{ (int) $date['2'] . ' ' . $mount($date['1']) . ' ' . $date['0'] }}</time>
 
-						{{--<span class="views">--}}
-							{{--<i><svg><use xlink:href="/images/svg/sprite.svg#ico_blog-eye"></use></svg></i>--}}
-							{{--<span>{{ $val['views'] ?? 0 }}</span>--}}
-						{{--</span>--}}
+						<span class="views">
+							<i><svg><use xlink:href="/images/svg/sprite.svg#ico_blog-eye"></use></svg></i>
+							<span>{{ $val['views'] ?? 0 }}</span>
+						</span>
 
 						{{--<span class="comments">--}}
 							{{--<i><svg><use xlink:href="/images/svg/sprite.svg#ico_blog-message"></use></svg></i>--}}
 							{{--<span>{{ $val['comments'] ?? 0 }}</span>--}}
 						{{--</span>--}}
-
 					</div>
 				</div>
 			</article>

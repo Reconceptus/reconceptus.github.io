@@ -409,6 +409,34 @@ class MainController extends Controller
 			if(empty($data['blog']))
 				return abort(404, 'Страница не существует');
 
+			$views_ip = $this
+				->dynamic
+				->t('views_ip')
+				->where(
+					[
+						['ip', $this->requests->ip()], ['parent_id', $data['blog']['id']],
+					]
+				)
+				->count();
+
+			if(!$views_ip) {
+				$this
+					->dynamic
+					->t('views_ip')
+
+					->insert(
+						[
+							'ip'         => $this->requests->ip(),
+							'parent_id'  => $data['blog']['id'],
+							'created_at' => Carbon::now(),
+						]
+					);
+
+				$blog        = $this->dynamic->t('blog')->where(array_merge($where, $where_id))->first();
+				$blog->views = $blog['views'] + 1;
+				$blog->save();
+			}
+
 			$data['meta_c'] = $this->base->getMeta($data, 'blog');
 
 			$data['blogs'] = $this->dynamic->t('blog')
