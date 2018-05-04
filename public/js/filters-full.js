@@ -98,9 +98,9 @@ var
 				ignore    : ".ignore",
 
 				rules: {
-					position      : {required: true},
+					position      : {required: false},
 					villaAddress  : {required: true},
-					siteLink      : {required: true},
+					siteLink      : {required: false},
 					name          : {required: true},
 					telephone     : {required: true},
 					mail          : {required: true, email: true},

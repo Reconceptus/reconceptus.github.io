@@ -195,7 +195,13 @@
 		"count_module"    : "20",
 		"show_count"      : true,
 		"filters"         : [],
-		"lang"            : [],
+		"lang"            : [
+			"text",
+			"title",
+			"author",
+			"keywords",
+			"description"
+		],
 		"link_module"     : "seo",
 		"link_site_module": "",
 		"menu_table_name" : "menu",

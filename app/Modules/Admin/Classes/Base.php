@@ -686,15 +686,9 @@ class Base
 		}
 
 		if(!empty($args['data'])) {
-			if($this->is_json($args['data'][0]['title'])) {
-				$args['meta']['title']       = $this->lang($args['data'][0]['title']);
-				$args['meta']['description'] = $this->lang($args['data'][0]['description']);
-				$args['meta']['keywords']    = $this->lang($args['data'][0]['keywords']);
-			} else {
-				$args['meta']['title']       = $args['data'][0]['title'];
-				$args['meta']['description'] = $args['data'][0]['description'];
-				$args['meta']['keywords']    = $args['data'][0]['keywords'];
-			}
+			$args['meta']['title']       = $this->lang($args['data'][0]['title']);
+			$args['meta']['description'] = $this->lang($args['data'][0]['description']);
+			$args['meta']['keywords']    = $this->lang($args['data'][0]['keywords']);
 		}
 
 		if(isset($args['meta'])) {
@@ -704,9 +698,9 @@ class Base
 			$dat = $this->dynamic->t('seo')->where(['name' => $segment1])->get()->toArray();
 
 			if(!empty($dat)) {
-				$args['meta']['title']       = $dat[0]['title'];
-				$args['meta']['description'] = $dat[0]['description'];
-				$args['meta']['keywords']    = $dat[0]['keywords'];
+				$args['meta']['title']       = $this->lang($dat[0]['title']);
+				$args['meta']['description'] = $this->lang($dat[0]['description']);
+				$args['meta']['keywords']    = $this->lang($dat[0]['keywords']);
 			}
 		}
 

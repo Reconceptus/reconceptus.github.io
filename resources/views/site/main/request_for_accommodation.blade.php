@@ -24,7 +24,7 @@
 										</div>
 
 										<div class="field">
-											<label for="position">*@lang('main.position')</label>
+											<label for="position">@lang('main.position')</label>
 											<div class="input"><input type="text" name="position" id="position" /></div>
 										</div>
 									</div>
@@ -50,7 +50,7 @@
 
 									<div class="fieldset">
 										<div class="field">
-											<label for="siteLink">*@lang('main.site_or_link_to_photos')</label>
+											<label for="siteLink">@lang('main.site_or_link_to_photos')</label>
 											<div class="input"><input id="siteLink" name="siteLink" type="text"></div>
 										</div>
 									</div>
@@ -65,13 +65,16 @@
 									<div class="fieldset">
 										<div class="check">
 											<label>
-												<input type="checkbox">
-												<span>I'd like to receive marketing and policy communications from Grecobooking</span>
+												<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+
+												<span>
+													<a href="/privacy-policy" target="_blank" class="link-black">*@lang('main.security_policy_text')</a>
+												</span>
 											</label>
 										</div>
 									</div>
 
-									<p class="asterisk">*</p>
+									<p class="asterisk">*@lang('main.required_fields')</p>
 									<button class="btn btn_subm" type="submit">@lang('main.send_request')</button>
 								</div>
 							</form>
@@ -80,7 +83,7 @@
 								<span class="close"><svg> <use xlink:href="/images/svg/sprite.svg#ico_close"></use> </svg></span>
 								<div class="form-success--main">
 									<div class="text">
-										<h5 class="success-title">@lang('main.advantages')</h5>
+										<h5 class="success-title">{!! $langSt($params['send_advantages_text']['key']) !!}</h5>
 									</div>
 								</div>
 							</div>

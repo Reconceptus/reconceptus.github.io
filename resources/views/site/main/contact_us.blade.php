@@ -70,7 +70,8 @@
 						<div class="fieldset">
 							<div class="check check_field">
 								<label>
-									<input type="checkbox" id="securityPolicy" name="securityPolicy" />
+									<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+
 									<span>
 										<a href="/privacy-policy" target="_blank" class="link-black">*@lang('main.security_policy_text')</a>
 									</span>

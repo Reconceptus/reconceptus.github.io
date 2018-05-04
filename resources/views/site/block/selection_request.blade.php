@@ -130,6 +130,7 @@
 					<div class="check check_field">
 						<label>
 							<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
+
 							<span>
 								<a href="/privacy-policy" target="_blank" class="link-black">*@lang('main.security_policy_text')</a>
 							</span>
@@ -147,7 +148,7 @@
 			<div class="form-success--main">
 				<div class="text">
 					<h5 class="success-title">@lang('main.request_was_successfully_sent')</h5>
-					<p>{!! $params['send_request_text']['key'] !!}</p>
+					<p>{!! $langSt($params['send_request_text']['key']) !!}</p>
 
 					<div class="btn_center">
 						<a href="/blog" class="more">@lang('main.read_our_blog')</a>
