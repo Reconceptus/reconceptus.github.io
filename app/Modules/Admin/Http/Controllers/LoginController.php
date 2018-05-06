@@ -26,11 +26,15 @@ class LoginController extends Controller
 
 	public function login()
 	{
-		$email    = Request::input("email");
-		$password = Request::input("password");
+		$email    = Request::input('email');
+		$password = Request::input('password');
 
 		if(Auth::attempt(['email' => $email, 'password' => $password])) {
-			return redirect()->intended("/admin");
+			// TODO removing this redirect
+			if(Auth::user()['user_another_type'] === 'author')
+				return redirect('/admin/index/villas');
+			else
+				return redirect()->intended('/admin');
 		}
 
 		return redirect('/admin/login');
