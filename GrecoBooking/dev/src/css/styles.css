@@ -2155,6 +2155,10 @@ svg {
   }
 }
 
+.headline_main:last-child {
+  margin-bottom: 40px;
+}
+
 .light-style .headline_main {
   color: #fff;
   text-shadow: 0 3px 5px RGBA(0, 0, 0, 0.4);
@@ -3153,6 +3157,10 @@ svg {
   cursor: pointer;
 }
 
+.villa-request-form .check label {
+  padding-left: 34px;
+}
+
 .check label span {
   position: relative;
   display: block;
@@ -3160,6 +3168,7 @@ svg {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  line-height: 1.1;
 }
 
 .check label span:before {
@@ -3173,6 +3182,7 @@ svg {
   margin: auto 14px auto 0;
 }
 
+.villa-request-form .check label span:before,
 .form-request .check label span:before,
 .fast-request .check label span:before {
   border: 1px solid #b2b9c1;
@@ -3182,6 +3192,25 @@ svg {
 .friend-form .check label span:before {
   border-top: 1px solid #f9bba5;
   top: -1px;
+}
+
+.check label span a {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 1025px) {
+  .check label span a {
+    color: inherit;
+  }
+  .check label span a:hover {
+    color: #f9690e;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .check label span a {
+    color: #f9690e;
+  }
 }
 
 .check input {
@@ -10456,5 +10485,44 @@ svg {
 @media screen and (max-width: 599px) {
   .results-list .title {
     font-size: 21px;
+  }
+}
+
+.error-page {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .error-page {
+    padding: 150px 0 80px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .error-page {
+    padding: 100px 0 40px;
+  }
+}
+
+.error-page .title {
+  color: #f9690e;
+  line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .error-page .title {
+    font-size: 200px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .error-page .title {
+    font-size: 100px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .error-page .headline_submain {
+    font-size: 26px;
   }
 }

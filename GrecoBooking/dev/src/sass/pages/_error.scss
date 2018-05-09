@@ -1,0 +1,25 @@
+.error-page {
+  text-align: center;
+
+  @include media(hover,600){
+    padding: 150px 0 80px;
+  }
+  @include media(screen,599){
+    padding: 100px 0 40px;
+  }
+  .title {
+    color: $btn;
+    line-height: 1;
+    @include media(hover,600){
+      font-size: 200px;
+    }
+    @include media(screen,599){
+      font-size: 100px;
+    }
+  }
+  .headline_submain {
+    @include media(hover,600){
+      font-size: 26px;
+    }
+  }
+}

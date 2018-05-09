@@ -15,10 +15,14 @@
     box-sizing: border-box;
     padding-left: 30px;
     cursor: pointer;
+    .villa-request-form & {
+      padding-left: 34px;
+    }
     span {
       position: relative;
       display: block;
       user-select: none;
+      line-height: 1.1;
       &:before {
         content: "";
         width: 18px;
@@ -29,6 +33,7 @@
 
         bottom: 0;
         margin: auto 14px auto 0;
+        .villa-request-form &,
         .form-request &,
         .fast-request & {
           border: 1px solid $bg;
@@ -37,6 +42,18 @@
         .friend-form & {
           border-top: 1px solid $pink_dark;
           top: -1px;
+        }
+      }
+      a {
+        font-size: 12px;
+        @include media(hover,1025){
+          color: inherit;
+          &:hover {
+            color: $btn;
+          }
+        }
+        @include media(screen,1024){
+          color: $btn;
         }
       }
     }
