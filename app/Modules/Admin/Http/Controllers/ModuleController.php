@@ -96,6 +96,7 @@ class ModuleController extends Controller
 			$length   = $this->request['iDisplayLength'];
 			$skip     = $this->request['iDisplayStart'];
 			$sort     = $this->request['sSortDir_0'];
+			$search   = $this->request['sSearch'];
 			$sortF    = $this->request['mDataProp_' . $this->request['iSortCol_0']];
 			$locale   = \App::getLocale();
 			$modules  = Base::getModule("link_module", $page)[0];
@@ -148,6 +149,7 @@ class ModuleController extends Controller
 			$req['data'] = $query->select($t . '.*', 'files.file', 'files.crop')
 				->groupBy($t . '.id', 'files.file', 'files.crop')
 				->orderBy(($sortF === 'album' ? 'files' : $t) . '.' . ($sortF === 'album' ? 'file' : $sortF), $sort)
+				->where($t. '.name', 'like', '%' . trim($search ?? '') . '%')
 				->skip($skip)
 				->take($length)
 				->get()
@@ -397,11 +399,12 @@ class ModuleController extends Controller
 	{
 		$classAttr = isset($inp['classAttr']) ? $inp['classAttr'] : '';
 		$maxlength = isset($inp['maxlength']) ? 'maxlength="' . $inp['maxlength'] . '"' : '';
+		$type      = isset($inp['type']) ? $inp['type'] : 'text';
 
 		return '<div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <input type="text" ' . $maxlength . ' name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
+                <input type="' . $type . '" ' . $maxlength . ' name="' . $inp['nameAttr'] . '--options--" id="' . $inp['idAttr'] . '" class="form-control ' . $classAttr . '" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '">
             </div>
              <br class="clear"/>
         </div>';
@@ -732,7 +735,8 @@ class ModuleController extends Controller
 				else
 					$data = [];
 
-				if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin')
+				// TODO пересмотреть политику дополнительных админов
+				if(($modules['showOnlyYour'] ?? false) && $this->base->getUser('usertype') !== 'admin' && $this->base->getUser('user_another_type') !== 'specialist')
 					if($data->user_id !== $this->base->getUser('id') && $data->user_id)
 						abort(503, 503);
 

@@ -77,7 +77,7 @@
 					<div class="field f-50">
 						<div class="check">
 							<label>
-								<input type="checkbox" name="hot" {{ ($_GET['hot'] ?? '') ? 'checked' : '' }} />
+								<input type="checkbox" name="hot" {{ str_replace('-1', 0, $_GET['hot'] ?? '') ? 'checked' : '' }} />
 								<span>@lang('main.hot_offers')</span>
 							</label>
 						</div>

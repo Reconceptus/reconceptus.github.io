@@ -1,13 +1,14 @@
 @extends('site.layouts.default')
 
 @section('content')
-	@php($path = '/images/files/small/')
+	@php($path = '/images/files/big/')
 	@php($img = $location['file'] ? $location['crop'] ? $path . $location['crop'] : $path . $location['file'] : '')
 
 	<section class="simple-page--bg">
 		<div class="intro-figure dynamic">
-			<figure style="background-image: url('{{ $img }}')"></figure>
+			<figure style="background-image: url({{ $img }})"></figure>
 		</div>
+
 		<div class="content">
 			<header class="light-style">
 				<h1 class="headline_main">{{ $langSt($location['name']) }}</h1>
@@ -56,7 +57,7 @@
 							)
 
 							<li>
-								<a href="/location/{{ $v['translation'] }}">
+								<a href="/location/{{ $v['id'] ?? $v['translation'] }}">
 									<figure style="background-image: url('{{ $img }}')"></figure>
 									<div class="grid--main">
 										<h3 class="title">{{ $langSt($v['name']) }}</h3>

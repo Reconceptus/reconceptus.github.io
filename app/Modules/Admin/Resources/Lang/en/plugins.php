@@ -29,6 +29,8 @@ return [
 	'title_prepositional'         => 'Title in the prepositional case',
 	'specialist'                  => 'Specialist',
 	'description_param'           => 'Description of the parameter',
+	'description'                 => 'Description',
+	'date'                        => 'Date',
 	'preview'                     => 'Album & Preview',
 	'working_conditions'          => 'Working conditions',
 	'benefits'                    => 'Benefits',

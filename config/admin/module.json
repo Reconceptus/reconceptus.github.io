@@ -19,7 +19,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Меню",
-		"order"           : "1",
+		"order"           : "9",
 		"plugins"         : [
 			"name",
 			"text",
@@ -53,6 +53,7 @@
 			"description",
 			"album",
 			"active",
+			"order",
 			"to_main",
 			"is_hot"
 		],
@@ -78,7 +79,7 @@
 		"link_site_module": "/villas/",
 		"menu_table_name" : "menu",
 		"name_module"     : "Виллы",
-		"order"           : "2",
+		"order"           : "3",
 		"plugins"         : [
 			"is_hot",
 			"to_main",
@@ -86,6 +87,7 @@
 			"villas_with_private_service",
 			"vacation_together",
 			"specialist",
+			"order",
 			"name",
 			"text",
 			"key_feature",
@@ -160,7 +162,7 @@
 		"link_site_module": "/page/",
 		"menu_table_name" : "menu",
 		"name_module"     : "Статьи",
-		"order"           : "2",
+		"order"           : "7",
 		"plugins"         : [
 			"name",
 			"text",
@@ -206,7 +208,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Seo",
-		"order"           : "5",
+		"order"           : "10",
 		"plugins"         : [
 			"name",
 			"title",
@@ -224,8 +226,8 @@
 	{
 		"id"              : "11",
 		"active"          : true,
-		"big_height"      : "0",
-		"big_width"       : "0",
+		"big_height"      : "1200",
+		"big_width"       : "800",
 		"class_module"    : "fa fa-map-marker",
 		"column_index"    : [
 			"name",
@@ -295,7 +297,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Пользователи",
-		"order"           : "7",
+		"order"           : "8",
 		"plugins"         : [],
 		"small_width"     : "445",
 		"small_height"    : "255",
@@ -323,7 +325,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Бекапы",
-		"order"           : "8",
+		"order"           : "11",
 		"plugins"         : [],
 		"small_width"     : "500",
 		"small_height"    : "350",
@@ -346,7 +348,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Система",
-		"order"           : "9",
+		"order"           : "12",
 		"plugins"         : [],
 		"small_width"     : "500",
 		"small_height"    : "350",
@@ -374,7 +376,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Параметры",
-		"order"           : "11",
+		"order"           : "13",
 		"plugins"         : [
 			"name",
 			"little_description",
@@ -482,8 +484,8 @@
 	{
 		"id"              : "12",
 		"active"          : true,
-		"big_height"      : "0",
-		"big_width"       : "0",
+		"big_height"      : "1200",
+		"big_width"       : "800",
 		"class_module"    : "fa fa-home",
 		"column_index"    : [
 			"name",
@@ -506,7 +508,7 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Главная страница",
-		"order"           : "0",
+		"order"           : "2",
 		"plugins"         : [
 			"name",
 			"album",
@@ -531,14 +533,15 @@
 	{
 		"id"              : "13",
 		"active"          : true,
-		"big_height"      : "0",
-		"big_width"       : "0",
+		"big_height"      : "1200",
+		"big_width"       : "800",
 		"class_module"    : "fa fa-briefcase",
 		"column_index"    : [
 			"name",
 			"active",
 			"text",
-			"price_money"
+			"price_money",
+			"album"
 		],
 		"count_module"    : "20",
 		"show_count"      : false,
@@ -546,7 +549,6 @@
 		"lang"            : [
 			"name",
 			"text",
-			"key_feature",
 			"location_name",
 			"title",
 			"author",
@@ -557,13 +559,13 @@
 		"link_site_module": "",
 		"menu_table_name" : "menu",
 		"name_module"     : "Вакансии",
-		"order"           : "5",
+		"order"           : "6",
 		"plugins"         : [
 			"name",
 			"active",
 			"price_money",
+			"album",
 			"text",
-			"key_feature",
 			"location_name",
 			"title",
 			"author",
@@ -618,7 +620,7 @@
 		"link_site_module": "/blog/",
 		"menu_table_name" : "menu",
 		"name_module"     : "Блог",
-		"order"           : "2",
+		"order"           : "4",
 		"plugins"         : [
 			"name",
 			"text",

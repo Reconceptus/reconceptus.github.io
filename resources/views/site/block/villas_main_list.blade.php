@@ -19,7 +19,7 @@
 						@if($val['vacation_together'])<li>@lang('main.vacation_together')</li>@endif
 					</ul>
 
-					<a href="/villas/{{ $val['id'] }}" class="link" target="_blank"></a>
+					<a href="/villas/{{ $val['id'] . '/' . $full_url }}" class="link" target="_blank"></a>
 					@php($is_favorite = array_search($val['id'], $favorites_id ?? []) !== false ? true : false)
 
 					<a
@@ -27,8 +27,11 @@
 						class="villa-like like-button {!! $is_favorite ? 'active' : '' !!} like-button-{{ $val['id'] }}"
 						onclick="filVil.addCart('{{ $val['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
 					>
-						<svg><use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use></svg>
-					</a>				</div>
+						<svg>
+							<use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use>
+						</svg>
+					</a>
+				</div>
 
 				<div class="villa-main">
 					<div class="name">

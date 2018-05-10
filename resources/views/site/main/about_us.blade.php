@@ -3,7 +3,9 @@
 @section('content')
 	<section class="simple-page--bg">
 		<div class="intro-figure dynamic">
-			<figure style="background-image: url('/images/bg/about-company.jpg')"></figure>
+			@php($path = '/images/files/big/')
+			@php($img_big = $menu_segment['file'] ? $menu_segment['crop'] ? $path . $menu_segment['crop'] : $path . $menu_segment['file'] : '')
+			<figure style="background-image: url({{ $img_big }})"></figure>
 		</div>
 
 		<div class="content">

@@ -29,6 +29,8 @@ return [
 	'title_prepositional'         => 'Название в предложном падеже',
 	'specialist'                  => 'Специалист',
 	'description_param'           => 'Описание параметра',
+	'description'                 => 'Описание',
+	'date'                        => 'Дата',
 	'preview'                     => 'Альбом и Превью',
 	'working_conditions'          => 'Условия труда',
 	'benefits'                    => 'Преимущества',

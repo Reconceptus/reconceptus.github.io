@@ -2,8 +2,10 @@
 
 @section('content')
 	<section class="simple-page--bg">
+		@php($path_big = '/images/files/big/')
+		@php($img_big = $vacancy['file'] ? $vacancy['crop'] ? $path_big . $vacancy['crop'] : $path_big . $vacancy['file'] : '')
 		<div class="intro-figure dynamic">
-			<figure style="background-image: url('/images/bg/account-bg.jpeg')"></figure>
+			<figure style="background-image: url('{{ $img_big }}')"></figure>
 		</div>
 
 		<div class="content">
@@ -24,15 +26,6 @@
 			<div class="text-box">
 				<h3>@lang('main.description')</h3>
 				{!! $langSt($vacancy['text']) !!}
-				<h3>@lang('main.key_duties')</h3>
-
-				<ul>
-					@php($key_feature = explode("\r", $langSt($vacancy['key_feature'])))
-
-					@foreach($key_feature as $v)
-						@if(!empty($v))<li>{{ $v }}</li>@endif
-					@endforeach
-				</ul>
 			</div>
 		</div>
 	</div>

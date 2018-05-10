@@ -373,7 +373,8 @@ class MainController extends Controller
 					)
 				);
 
-			$data['meta_c'] = $this->base->getMeta($data, 'villa');
+			$data['meta_c']   = $this->base->getMeta($data, 'villa');
+			$data['full_url'] = $this->getUrlVilla();
 
 			$data['meta_c']['og_image'] = $data['villa']['file']
 				? $data['villa']['crop']
@@ -576,7 +577,29 @@ class MainController extends Controller
 	 */
 	public function about_us()
 	{
-		$data = [];
+		$id_segment = $this->requests->segment(1);
+
+		if(!is_numeric($id_segment))
+			$where_id = ['menu.translation' => $id_segment];
+		else
+			$where_id = ['menu.id' => $id_segment];
+
+		$data['menu_segment'] = $this->dynamic->t('menu')
+			->where($where_id)
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('menu.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'menualbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('menu.*', 'files.file', 'files.crop')
+			->first();
 
 		return $this->base->view_s("site.main.about_us", $data);
 	}
@@ -607,8 +630,20 @@ class MainController extends Controller
 			$data['vacancy'] = $this
 				->dynamic
 				->t('vacancies')
-				->select('vacancies.*')
-				->where('vacancies.active', 1)
+
+				->join(
+					'files',
+
+					function($join) {
+						$join->type = 'LEFT OUTER';
+						$join->on('vacancies.id', '=', 'files.id_album')
+							->where('files.name_table', '=', 'vacanciesalbum')
+							->where('files.main', '=', 1);
+					}
+				)
+
+				->select('vacancies.*', 'files.file', 'files.crop')
+				->where([['vacancies.active', 1], ['vacancies.id', $id]])
 				->first();
 
 			$data['vacancies'] = $this->dynamic->t('vacancies')
@@ -673,11 +708,42 @@ class MainController extends Controller
 				}
 			)
 
-			->select('locations.*')
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('locations.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'locationsalbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('locations.*', 'files.file', 'files.crop')
 			->where('locations.active', 1)
 			->where('menu.translation', '=', $id)
 			->orWhere('menu.id', '=', $id)
 			->first();
+
+
+		$data['locations'] = $this->dynamic
+			->t('locations')
+			->where([['locations.active','=', 1]])
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('locations.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'locationsalbum')
+						->where('files.main', '=', 1);
+				}
+			)
+
+			->select('locations.*', 'files.file', 'files.crop')
+			->get()
+			->toArray();
 
 		$whereVillas['villas.cat'] = $data['location']['cat'];
 
@@ -886,8 +952,6 @@ class MainController extends Controller
 			$dates       = $this->base->getDatesFromRange($tomorrow, $date_to);
 		}
 
-		$id_ignoring = [];
-
 		if($dates)
 			$order_villas = $this
 				->dynamic
@@ -908,13 +972,8 @@ class MainController extends Controller
 				->toArray();
 
 		// clear where params for Favorite query
-		if(!$dates)
+		if(!$dates && !$this->requests['return'])
 			$where = [['villas.active', 1]];
-
-//		foreach($order_villas as $v)
-//			if($dates)
-//				$id_ignoring[] = $v['villas_id'];
-		/* $id_ignoring */
 
 		$villas_query = $this->dynamic->t('villas')
 			->where($where)
@@ -943,7 +1002,7 @@ class MainController extends Controller
 //			->whereNotIn('villas.id', $id_ignoring)
 			->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
 			->groupBy('villas.id')
-			->orderBy('villas.' . $group, 'DESC')
+			->orderBy('villas.order', 'DESC')
 			->orderBy('villas.' . $group, 'DESC')
 			->paginate($count_box);
 
@@ -953,11 +1012,51 @@ class MainController extends Controller
 		for($i = 0; count($cart ?? []) > $i; $i++)
 			$favorites_id[] = $cart[$i]['id'] ?? 0;
 
+		$data['full_url']     = $this->getUrlVilla();
 		$data['villas']       = $villas_query;
 		$data['favorites_id'] = $favorites_id;
 		$data['paginate']     = true;
 
 		return $this->base->view_s("site.block.villas_main_list", $data);
+	}
+
+	/**
+	 * getUrlVilla.
+	 *
+	 * @return string
+	 */
+	function getUrlVilla()
+	{
+		$url = '?';
+
+		if(($this->request['way'] ?? -1) !== -1)
+			$url .= '&way=' . $this->request['way'];
+
+		if(($this->request['date_to'] ?? -1) !== -1)
+			$url .= '&date_to=' . $this->request['date_to'];
+
+		if(($this->request['date_from'] ?? -1) !== -1)
+			$url .= '&date_from=' . $this->request['date_from'];
+
+		if(($this->request['rooms'] ?? -1) !== -1)
+			$url .= '&rooms=' . $this->request['rooms'];
+
+		if(($this->request['hot'] ?? -1) !== -1)
+			$url .= '&hot=1';
+
+		if(($this->request['villas_by_the_sea'] ?? -1) !== -1)
+			$url .= '&villas_by_the_sea=' . $this->request['villas_by_the_sea'];
+
+		if(($this->request['villas_with_private_service'] ?? -1) !== -1)
+			$url .= '&villas_with_private_service=1';
+
+		if(($this->request['vacation_together'] ?? -1) !== -1)
+			$url .= '&vacation_together=1';
+
+		if(($this->request['return'] ?? -1) !== -1)
+			$url .= '&return=1';
+
+		return str_replace('?&', '?', $url);
 	}
 
 	/**

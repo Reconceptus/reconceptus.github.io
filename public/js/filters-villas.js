@@ -133,6 +133,9 @@ var filVil = {
 		if(window.location.href.indexOf('vacation_together') !== -1)
 			url += url + '&vacation_together=1';
 
+		if(window.location.href.indexOf('return=1') !== -1)
+			url += url + '&return=1';
+
 		$.ajax({
 			type    : "post",
 			url     : "/_tools/search_render_villas?page=" + page + url,

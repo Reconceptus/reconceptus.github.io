@@ -111,13 +111,17 @@
 		"tabs"       : "htmlInserts"
 	},
 	{
-		"name"       : "order",
-		"typeField"  : "input",
-		"nameText"   : "Сортировка",
-		"nameAttr"   : "pl[order]",
-		"description": "Текстовое поле инпут \"Порядок сортировки\"",
-		"idAttr"     : "inputOrder",
-		"sql_column" : "order"
+		"name"        : "order",
+		"typeField"   : "input",
+		"type"        : "number",
+		"classAttr"   : "border-green",
+		"nameText"    : "Сортировка",
+		"nameAttr"    : "pl[order]",
+		"description" : "Текстовое поле инпут \"Порядок сортировки\"",
+		"idAttr"      : "inputOrder",
+		"showOnly"    : ["admin", "specialist"],
+		"sql_column"  : "order",
+		"translateKey ": "order"
 	},
 	{
 		"name"       : "class",
@@ -1075,6 +1079,7 @@
 		"description"     : "Текстовое поле селект \"booking_calendar\"",
 		"idAttr"          : "selectBooking_calendar",
 		"sql_column"      : "booking_calendar",
+		"showOnly"        : ["admin", "author", "specialist"],
 		"js_init_function": "bookingCalendarInit",
 		"tabs"            : "calendar",
 		"body"            : {

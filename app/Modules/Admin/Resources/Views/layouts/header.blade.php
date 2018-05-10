@@ -59,8 +59,8 @@
 				"imagetools"
 			],
 
-			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify |" +
-			" bullist numlist | link | table  media image | code",
+			toolbar: "insertfile undo redo | styleselect | bold italic blockquote |" +
+			" bullist numlist | link | media image | code",
 
 			images_upload_handler: function(blobInfo, success, failure) {
 				var
@@ -110,6 +110,55 @@
 				{title: 'Thumbnail', value: 'thumbnail'}
 			],
 
+			style_formats: [
+				{title: 'Headers', items: [
+						{title: 'Header 1', format: 'h1'},
+						{title: 'Header 2', format: 'h2'},
+						{title: 'Header 3', format: 'h3'},
+						{title: 'Header 4', format: 'h4'},
+						{title: 'Header 5', format: 'h5'},
+						{title: 'Header 6', format: 'h6'}
+					]},
+				{title: 'Inline', items: [
+						{title: 'Bold', icon: 'bold', format: 'bold'},
+						{title: 'Italic', icon: 'italic', format: 'italic'},
+						{title: 'Underline', icon: 'underline', format: 'underline'},
+						{title: 'Strikethrough', icon: 'strikethrough', format: 'strikethrough'},
+						{title: 'Superscript', icon: 'superscript', format: 'superscript'},
+						{title: 'Subscript', icon: 'subscript', format: 'subscript'},
+						{title: 'Code', icon: 'code', format: 'code'}
+					]},
+
+				{title: 'Paragraph', format: 'p'},
+
+//				{title: 'Blocks', items: [
+//						{title: 'Paragraph', format: 'p'},
+//						{title: 'Blockquote', format: 'blockquote'},
+//						{title: 'Div', format: 'div'},
+//						{title: 'Pre', format: 'pre'}
+//					]},
+//				{title: 'Alignment', items: [
+//						{title: 'Left', icon: 'alignleft', format: 'alignleft'},
+//						{title: 'Center', icon: 'aligncenter', format: 'aligncenter'},
+//						{title: 'Right', icon: 'alignright', format: 'alignright'},
+//						{title: 'Justify', icon: 'alignjustify', format: 'alignjustify'}
+//					]}
+			],
+
+			content_css: [
+				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+				'//www.tinymce.com/css/codepen.min.css'],
+
+			setup: function (editor) {
+				editor.addButton('paragraph', {
+					text: 'Paragraph',
+					icon: false,
+					onclick: function () {
+						editor.insertContent('<p>' + tinymce.activeEditor.selection.getContent() + '</p>');
+					}
+				});
+			},
+
 			menubar          : false,
 			image_advtab     : true,
 			image_dimensions : true,
@@ -141,6 +190,9 @@
 			menubar : false,
 			language: "{{ \App::getLocale() }}",
 		});
+
+		// Applying the specified format
+		//tinymce.formatter.apply('custom_format');
 	</script>
 
 

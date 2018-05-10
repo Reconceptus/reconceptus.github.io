@@ -5,7 +5,6 @@
 		<div class="intro-figure dynamic">
 			@php($path_small = '/images/files/big/')
 			@php($img_small = $menu_segment['file'] ? $menu_segment['crop'] ? $path_small . $menu_segment['crop'] : $path_small . $menu_segment['file'] : '')
-
 			<figure style="background-image: url({{ $img_small }})"></figure>
 		</div>
 

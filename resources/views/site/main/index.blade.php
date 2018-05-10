@@ -3,10 +3,9 @@
 @section('content')
 	<div class="section intro">
 		<div class="intro-figure">
-			<figure style="background-image: url('/images/bg/intro-bg.png')"></figure>
-			@php($path_small = '/images/files/big/')
-			@php($img_small = $main_page['file'] ? $main_page['crop'] ? $path_small . $main_page['crop'] : $path_small . $main_page['file'] : '')
-			<figure style="background-image: url({{ $img_small }})"></figure>
+			@php($path = '/images/files/big/')
+			@php($img_big = $main_page['file'] ? $main_page['crop'] ? $path . $main_page['crop'] : $path . $main_page['file'] : '')
+			<figure style="background-image: url({{ $img_big }})"></figure>
 
 			<video muted autoplay loop>
 				@foreach($main_page_video as $video)
@@ -21,8 +20,14 @@
 
 		<div class="intro-values">
 			<div class="content content_mx">
-				<div class="intro-text">Мы более 9 лет предоставляем услуги по подбору премиальных  лицензированных вилл для вашего отдыха. Хороший вкус, высочайший сервис  24/7, новаторство — это то, за что нас выбрали более 300 семей.</div>
-				<span class="scroll-down"><svg xmlns="http://www.w3.org/2000/svg" width="137" height="137" viewBox="0 0 13700 13700" shape-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><circle cx="6850" cy="6850" r="6683" fill="none" stroke="#fff" stroke-width="334"/><path d="m4799 6179c-130-130-130-343 0-473 131-130 343-130 473 0l1578 1578 1578-1578c130-130 342-130 473 0 130 130 130 343 0 473l-1815 1814c-130 131-342 131-472 0l-1815-1814" fill="#fff" fill-rule="nonzero"/></svg></span>
+				<div class="intro-text">{{ $langSt($params['main_div_bout_us']['key']) }}</div>
+
+				<span class="scroll-down">
+					<svg xmlns="http://www.w3.org/2000/svg" width="137" height="137" viewBox="0 0 13700 13700" shape-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
+						<circle cx="6850" cy="6850" r="6683" fill="none" stroke="#fff" stroke-width="334"/>
+						<path d="m4799 6179c-130-130-130-343 0-473 131-130 343-130 473 0l1578 1578 1578-1578c130-130 342-130 473 0 130 130 130 343 0 473l-1815 1814c-130 131-342 131-472 0l-1815-1814" fill="#fff" fill-rule="nonzero"/>
+					</svg>
+				</span>
 			</div>
 		</div>
 	</div>

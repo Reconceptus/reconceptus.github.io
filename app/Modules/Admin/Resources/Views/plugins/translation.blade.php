@@ -93,11 +93,12 @@
 				'ch',
 				'sh',
 				'sh',
-				"'",
+				"",
 				'i',
 				'i',
-				'a',
+				'e',
 				'yu',
+				'ya',
 				'–'
 			],
 			val = [];
@@ -117,10 +118,11 @@
 				.replace(/[^A-Za-zА-Яа-яЁё /]/g, '')
 				.replace(/\s+/g, ' ');
 
-		$('#' + id).val(_.isArray(val) ? val.join('') : val.replace(/ /g, '-'))
+		val = _.isArray(val) ? val.join('') : val.replace(/ /g, '-');
+		$('#' + id).val(val.length < 4 ? '': val)
 	});
 
 	$(window).load(function() {
-		$('#' + id).val($('#' + id).data('init-value'))
+		$('#' + id).val($('#' + id).data('init-value') == 0 ? '': $('#' + id).data('init-value'))
 	})
 </script>

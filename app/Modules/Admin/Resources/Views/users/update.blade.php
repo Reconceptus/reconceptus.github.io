@@ -163,7 +163,7 @@
 													<option
 														value="author"
 														{!! ($data->user_another_type ?? '') == 'author' ? 'selected' : '' !!}
-													>@lang('admin::main.author')</option>
+													>@lang('admin::main.client')</option>
 
 													<option
 														value="specialist"
@@ -267,7 +267,7 @@
 														<input
 															type="text"
 															name="pl[name][{{ $val['name'] }}]"
-															value="{{ $langSt($data->name ?? '') }}"
+															value="{{ $langSt($data->name ?? '', $val['name']) }}"
 															id="inputName"
 															class="form-control"
 															placeholder="@lang('admin::main.name')"
@@ -289,7 +289,7 @@
 															name="pl[text][{{ $val['name'] }}]"
 															placeholder="@lang('admin::main.description')"
 															rows="3"
-														>{!! $langSt($data->text ?? '') !!}</textarea>
+														>{!! $langSt($data->text ?? '', $val['name']) !!}</textarea>
 													</div>
 
 													<br class="clear"/>
