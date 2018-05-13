@@ -159,6 +159,7 @@
     font-style: italic;
     margin-bottom: 30px;
     font-size: 17px;
+
   }
   &-form {
     position: relative;
@@ -198,7 +199,7 @@
     .success-title {
       display: none;
     }
-    &.successful {
+    .successful & {
       form {
         opacity: 0;
         pointer-events: none;
@@ -213,8 +214,17 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        color: $btn;
+        color: $white;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        margin-bottom: 30px;
+        font-size: 17px;
       }
+    }
+  }
+  &.successful {
+    .text {
+      display: none;
     }
   }
 }

@@ -242,7 +242,7 @@ $(document).ready(function () {
             },
             errorPlacement: $.noop,
             submitHandler:function (form) {
-                $('.subscription-form').addClass('successful');
+                $('.subscription').addClass('successful');
                 // if (form.valid()){
                 //     form.submit();
                 // }

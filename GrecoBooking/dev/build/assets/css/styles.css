@@ -1169,12 +1169,12 @@ svg {
   display: none;
 }
 
-.subscription-form.successful form {
+.successful .subscription-form form {
   opacity: 0;
   pointer-events: none;
 }
 
-.subscription-form.successful .success-title {
+.successful .subscription-form .success-title {
   position: absolute;
   top: 0;
   left: 0;
@@ -1193,7 +1193,15 @@ svg {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #F9690E;
+  color: #FFF;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+.subscription.successful .text {
+  display: none;
 }
 
 .btn {
