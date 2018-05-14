@@ -2958,6 +2958,11 @@ svg {
   margin-bottom: 15px;
 }
 
+.text-box iframe {
+  display: block;
+  width: 100%;
+}
+
 .text-box h2 {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
@@ -9521,6 +9526,12 @@ svg {
 
   .experts .worker-img {
     margin-right: 60px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .text-box iframe {
+    height: 50vw;
   }
 }
 

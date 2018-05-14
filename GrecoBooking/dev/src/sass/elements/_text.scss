@@ -25,6 +25,13 @@
   p {
     margin-bottom: 15px;
   }
+  iframe {
+    display: block;
+    width: 100%;
+    @include media(screen,800){
+      height: 50vw;
+    }
+  }
   h2 {
     text-transform: uppercase;
     font-family: Futuris, sans-serif;
