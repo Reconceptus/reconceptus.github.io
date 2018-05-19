@@ -34,3 +34,20 @@
 		<td>{{ empty($source) ? '-' : $source }}</td>
 	</tr>
 </table>
+<table width="90%" border="0" cellspacing="0" cellpadding="0" style="text-align: left;">
+	<tbody>
+	<tr>
+		<td style="height: 20px; font-size: 20px; line-height: 20px;">
+			<img width="20" height="20" title="OK" alt="OK" src="http://greecobooking.niws.ru/images/check.png"
+				style="border:none; max-width: 20px; height: auto; max-height: 20px;">
+		</td>
+		<td
+			style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left;">
+			@lang('main.security_policy_text') <a href="http://greecobooking.niws.ru/privacy-policy"
+				target="_blank"
+				style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;">security
+				police</a>
+		</td>
+	</tr>
+	</tbody>
+</table>

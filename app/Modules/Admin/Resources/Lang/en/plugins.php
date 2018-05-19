@@ -22,6 +22,7 @@ return [
 	'distances_location'          => 'Distances and Location',
 	'distances'                   => 'Distances',
 	'location'                    => 'Location',
+	'cat_location'                => 'Location',
 	'bedroom'                     => 'Bedrooms',
 	'bathrooms'                   => 'Bathrooms',
 	'sea'                         => 'Sea',
@@ -34,6 +35,7 @@ return [
 	'preview'                     => 'Album & Preview',
 	'working_conditions'          => 'Working conditions',
 	'benefits'                    => 'Benefits',
+	'benefits_accommodation'      => 'Advantages for the "Request for accommodation" page',
 	'booking_is_easy'             => 'Booking is easy',
 	'translation'                 => 'Translation',
 	'object'                      => 'Object',
@@ -42,4 +44,7 @@ return [
 	'villas_with_private_service' => 'Villas with private service',
 	'vacation_together'           => 'Vacation together',
 	'caption'                     => 'Caption',
+	'collections'                 => 'Image collections',
+	'main_img_small'              => 'First Screen(mobile)',
+	'guests_person'               => 'Number of Guests / Person',
 ];

@@ -97,9 +97,34 @@ class MainController extends Controller
 			->get()
 			->toArray();
 
+		$data['collections'] = $this
+			->dynamic
+			->t('files')
+			->where('name_table', 'maincollections')
+			->orderBy('order', 'ASC')
+			->get()
+			->toArray();
+
+		$data['img_mobile'] = $this
+			->dynamic
+			->t('files')
+			->where('name_table', 'mainmain_img_small')
+			->orderBy('order', 'ASC')
+			->first()
+			->toArray();
+
 		$data['locations'] = $this->dynamic
 			->t('locations')
 			->where([['locations.active','=', 1]])
+
+			->join(
+				'villas',
+
+				function($join) {
+					$join->type = 'LEFT';
+					$join->on('villas.cat_location', '=', 'locations.cat');
+				}
+			)
 
 			->join(
 				'files',
@@ -113,6 +138,7 @@ class MainController extends Controller
 			)
 
 			->select('locations.*', 'files.file', 'files.crop')
+			->groupBy('villas.cat_location')
 			->get()
 			->toArray();
 
@@ -169,6 +195,16 @@ class MainController extends Controller
 	}
 
 	/**
+	 * errors_404.
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function errors_404()
+	{
+		return $this->base->view_s("errors.404", []);
+	}
+
+	/**
 	 * Selection request.
 	 *
 	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -187,7 +223,11 @@ class MainController extends Controller
 	 */
 	public function request_for_accommodation()
 	{
-		$data = [];
+		$data['benefits_accommodation'] = $this->dynamic->t('files')
+			->where('files.name_table', '=', 'mainbenefits_accommodation')
+			->select('files.*', 'files.file', 'files.crop')
+			->get()
+			->toArray();
 
 		return $this->base->view_s("site.main.request_for_accommodation", $data);
 	}
@@ -262,7 +302,7 @@ class MainController extends Controller
 				->join(
 					'menu', function($join) {
 					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
+					$join->on('villas.cat_location', '=', 'menu.id');
 				}
 				)
 				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
@@ -321,7 +361,7 @@ class MainController extends Controller
 
 					function($join) {
 						$join->type = 'LEFT OUTER';
-						$join->on('villas.cat', '=', 'menu.id');
+						$join->on('villas.cat_location', '=', 'menu.id');
 					}
 				)
 
@@ -397,7 +437,7 @@ class MainController extends Controller
 				->join(
 					'menu', function($join) {
 					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
+					$join->on('villas.cat_location', '=', 'menu.id');
 				}
 				)
 				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
@@ -405,7 +445,24 @@ class MainController extends Controller
 				->orderBy('villas.' . $group, 'DESC')
 				->paginate($count_box);
 
-			$data['locations'] = $this->dynamic->t('locations')->where('locations.active', 1)->get()->toArray();
+			$data['locations'] = $this
+				->dynamic
+				->t('locations')
+				->where('locations.active', 1)
+
+				->join(
+					'villas',
+
+					function($join) {
+						$join->type = 'LEFT';
+						$join->on('villas.cat_location', '=', 'locations.cat');
+					}
+				)
+
+				->select('locations.*')
+				->groupBy('villas.cat_location')
+				->get()
+				->toArray();
 
 			$villas_by_the_sea           = (int) ($this->request['villas_by_the_sea'] ?? false);
 			$villas_with_private_service = (int) ($this->request['villas_with_private_service'] ?? false);
@@ -469,7 +526,7 @@ class MainController extends Controller
 				->first();
 
 			if(empty($data['blog']))
-				return abort(404, 'Страница не существует');
+				return $this->errors_404();
 
 			$views_ip = $this
 				->dynamic
@@ -600,6 +657,54 @@ class MainController extends Controller
 
 			->select('menu.*', 'files.file', 'files.crop')
 			->first();
+
+		$where[] = ['str.active', 1];
+
+		if((int) $id_segment == 0 || strlen($id_segment) > 5) {
+			$data['field'] = 'translation';
+			$where[]       = ['str.translation', $id_segment];
+		} else {
+			$where['str.id'] = $id_segment;
+		}
+
+		$data['page'] = $this->dynamic->t('str')
+			->where($where)
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('str.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'str');
+				}
+			)
+
+			->select('str.*', 'files.file', 'files.crop')
+			->first();
+
+		if(empty($data['page'])) {
+			return $this->errors_404();
+		}
+
+		$data['meta_c'] = $this->base->getMeta($data, 'page');
+
+		$data['users'] = $this->dynamic->t('users')
+			->where([['users.is_about_us', 1]])
+
+			->join(
+				'files',
+
+				function($join) {
+					$join->type = 'LEFT OUTER';
+					$join->on('users.id', '=', 'files.id_album')
+						->where('files.name_table', '=', 'usersalbum');
+				}
+			)
+
+			->select('users.*', 'files.file', 'files.crop')
+			->get()
+			->toArray();
 
 		return $this->base->view_s("site.main.about_us", $data);
 	}
@@ -745,10 +850,10 @@ class MainController extends Controller
 			->get()
 			->toArray();
 
-		$whereVillas['villas.cat'] = $data['location']['cat'];
+		$whereVillas['villas.cat_location'] = $data['location']['cat'];
 
 		if(empty($data['location']))
-			return abort(404, 'Страница не существует');
+			return $this->errors_404();
 
 		$data['villas'] = $this->dynamic->t('villas')
 			->where($whereVillas)
@@ -884,7 +989,7 @@ class MainController extends Controller
 				->join(
 					'menu', function($join) {
 					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
+					$join->on('villas.cat_location', '=', 'menu.id');
 				}
 				)
 				->select('villas.*', 'files.file', 'files.crop', 'menu.name as cat_parent')
@@ -922,7 +1027,7 @@ class MainController extends Controller
 		$way                         = (int) ($this->request['way'] ?? -1);
 		$date_to                     = $this->request['date_to'] ?? -1;
 		$date_from                   = $this->request['date_from'] ?? -1;
-		$rooms                       = (int) ($this->request['rooms'] ?? -1);
+		$guests_person               = (int) ($this->request['guests_person'] ?? -1);
 		$hot                         = (int) ($this->request['hot'] ?? -1);
 		$villas_by_the_sea           = (int) ($this->request['villas_by_the_sea'] ?? -1);
 		$villas_with_private_service = (int) ($this->request['villas_with_private_service'] ?? -1);
@@ -930,10 +1035,13 @@ class MainController extends Controller
 		$dates                       = '';
 
 		if($way !== -1 && !empty($way))
-			$where[] = ['villas.cat', $way];
+			$where[] = ['villas.cat_location', $way];
 
-		if($rooms !== -1)
-			$where[] = ['villas.bedroom', $rooms];
+		if($guests_person !== -1)
+			if($guests_person === 7)
+				$where[] = ['villas.guests_person', '>=', $guests_person];
+			else
+				$where[] = ['villas.guests_person', $guests_person];
 
 		if($hot !== -1)
 			$where[] = ['villas.is_hot', 1];
@@ -991,7 +1099,7 @@ class MainController extends Controller
 
 				function($join) {
 					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
+					$join->on('villas.cat_location', '=', 'menu.id');
 				}
 			);
 
@@ -1068,7 +1176,7 @@ class MainController extends Controller
 	public function page($id = null)
 	{
 		if(!$id)
-			return abort(404, 'Страница не существует');
+			return $this->errors_404();
 
 		$Mod     = $this->dynamic;
 		$data    = [];
@@ -1098,8 +1206,9 @@ class MainController extends Controller
 			->first();
 
 		if(empty($data['page'])) {
-			return abort(404, 'Страница не существует');
+			return $this->errors_404();
 		}
+
 		$data['meta_c'] = $this->base->getMeta($data, 'page');
 
 		if(!empty($data['page'][0])) {
@@ -1118,6 +1227,17 @@ class MainController extends Controller
 	 */
 	public function submit_required()
 	{
+		$param  = $this->dynamic->t('params')->select('params.*', 'little_description as key')->get();
+		$params = [];
+		$params['params'] = [];
+
+		$params['langSt'] = function($t, $l = '') {
+			return $this->base->lang($t, $l);
+		};
+
+		foreach($param as $key => $p)
+			$params['params'][$p->name] = $p->toArray();
+
 		if(isset($this->request['data2']))
 			$form = $this->base->decode_serialize($this->request['data2']);
 		else
@@ -1147,8 +1267,9 @@ class MainController extends Controller
 
 			Mail::send(
 				'emails.' . $type,
+				array_merge($form_data, $params),
 
-				$form_data, function($m) use ($param, $title, $from, $form_data) {
+				function($m) use ($param, $title, $from, $form_data) {
 				$m->from($from, __('main.selection_request_mess_user'));
 				$m->to($form_data['mail'], 'no-realy')->subject(__('main.selection_request_mess_user'));
 			}
@@ -1177,7 +1298,7 @@ class MainController extends Controller
 		if($type == 'request_for_accommodation') {
 			Mail::send(
 				'emails.' . $type,
-				$form_data,
+				array_merge($form_data, $params),
 
 				function($m) use ($param, $title, $from, $form_data) {
 					$m->from($from, __('main.request_for_accommodation_user'));
@@ -1228,7 +1349,7 @@ class MainController extends Controller
 				->join(
 					'menu', function($join) {
 					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat', '=', 'menu.id');
+					$join->on('villas.cat_location', '=', 'menu.id');
 				}
 				)
 				->whereIn('villas.id', $form_data['selected_villas'])
@@ -1244,7 +1365,10 @@ class MainController extends Controller
 
 			if(isset($form['send-me']))
 				Mail::send(
-					'emails.' . $type, $form_data, function($m) use ($param, $title, $from, $form_data) {
+					'emails.' . $type,
+					array_merge($form_data, $params),
+
+					function($m) use ($param, $title, $from, $form_data) {
 					$m->from($from, __('main.send_compilation_friend_user'));
 					$m->to($form_data['yourEmail'], 'no-realy')->subject(__('main.send_compilation_friend_user'));
 				}
@@ -1253,7 +1377,7 @@ class MainController extends Controller
 			foreach($form_data['friendMail'] ?? [] as $mail) {
 				Mail::send(
 					'emails.' . $type . '_friend',
-					$form_data,
+					array_merge($form_data, $params),
 
 					function($m) use ($param, $title, $from, $form_data, $mail) {
 						$m->from($from, $form_data['yourName'] ?? __('main.send_compilation_friend_user'));
@@ -1306,7 +1430,7 @@ class MainController extends Controller
 
 					function($join) {
 						$join->type = 'LEFT OUTER';
-						$join->on('villas.cat', '=', 'menu.id');
+						$join->on('villas.cat_location', '=', 'menu.id');
 					}
 				)
 				->where('villas.id', $this->request['id'])
@@ -1321,7 +1445,7 @@ class MainController extends Controller
 
 			Mail::send(
 				'emails.' . $type,
-				$form_data,
+				array_merge($form_data, $params),
 
 				function($m) use ($param, $title, $from, $form_data) {
 					$m->from($from, $title);
@@ -1339,7 +1463,8 @@ class MainController extends Controller
 
 		foreach(explode(',', $this->base->lang($param->key)) as $mail)
 			Mail::send(
-				'emails.' . $type, $form_data,
+				'emails.' . $type,
+				array_merge($form_data, $params),
 
 				function($m) use ($param, $title, $from, $mail) {
 					$m->from($from, $title);

@@ -74,6 +74,7 @@ ul {
 ul li {
 	padding-left: 40px;
 	position: relative;
+	list-style: none;
 }
 
 ul li:before {

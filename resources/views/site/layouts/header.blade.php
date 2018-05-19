@@ -110,8 +110,13 @@
 
 					<div class="language has-submenu">
 						<ul>
-							<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en"><span>EN</span></a></li>
-							<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
+							@if($lang === 'en')
+								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en"><span>EN</span></a></li>
+								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
+							@else
+								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
+								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en"><span>EN</span></a></li>
+							@endif
 						</ul>
 					</div>
 

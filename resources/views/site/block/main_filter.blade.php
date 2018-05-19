@@ -61,15 +61,18 @@
 					</div>
 
 					<div class="field f-50 col-10">
-						<label for="rooms">@lang('main.rooms')</label>
+						<label for="guests_person">@lang('main.guests_person')</label>
 
 						<div class="select">
-							<select name="rooms" id="rooms" style="display:none;">
-								<option value="-1" {{ ($_GET['rooms'] ?? '') === '-1' ? 'selected' : '' }}>@lang('main.all')</option>
-								<option value="1" {{ ($_GET['rooms'] ?? '') === '1' ? 'selected' : '' }}>1</option>
-								<option value="2" {{ ($_GET['rooms'] ?? '') === '2' ? 'selected' : '' }}>2</option>
-								<option value="3" {{ ($_GET['rooms'] ?? '') === '3' ? 'selected' : '' }}>3</option>
-								<option value="4" {{ ($_GET['rooms'] ?? '') === '4' ? 'selected' : '' }}>4</option>
+							<select name="guests_person" id="guests_person" style="display:none;">
+								<option value="-1" {{ ($_GET['guests_person'] ?? '') === '-1' ? 'selected' : '' }}>-</option>
+								<option value="1" {{ ($_GET['guests_person'] ?? '') === '1' ? 'selected' : '' }}>1</option>
+								<option value="2" {{ ($_GET['guests_person'] ?? '') === '2' ? 'selected' : '' }}>2</option>
+								<option value="3" {{ ($_GET['guests_person'] ?? '') === '3' ? 'selected' : '' }}>3</option>
+								<option value="4" {{ ($_GET['guests_person'] ?? '') === '4' ? 'selected' : '' }}>4</option>
+								<option value="5" {{ ($_GET['guests_person'] ?? '') === '5' ? 'selected' : '' }}>5</option>
+								<option value="6" {{ ($_GET['guests_person'] ?? '') === '6' ? 'selected' : '' }}>6</option>
+								<option value="7" {{ ($_GET['guests_person'] ?? '') === '7' ? 'selected' : '' }}>7+</option>
 							</select>
 						</div>
 					</div>
@@ -91,43 +94,43 @@
 </div>
 
 @push('footer')
-<script>
-	$('.fast-request form').validate({
-		onfocusout: false,
-		ignore    : ".ignore",
+	<script>
+		$('.fast-request form').validate({
+			onfocusout: false,
+			ignore    : ".ignore",
 
-		rules: {
-			location : {required: true},
-			check_in : {required: true},
-			check_out: {required: true},
-			rooms    : {required: true}
-		},
+			rules: {
+				location     : {required: true},
+				check_in     : {required: true},
+				check_out    : {required: true},
+				guests_person: {required: true}
+			},
 
-		messages: {
-			location : {required: ""},
-			check_in : {required: ""},
-			check_out: {required: ""},
-			rooms    : {required: ""}
-		},
+			messages: {
+				location     : {required: ""},
+				check_in     : {required: ""},
+				check_out    : {required: ""},
+				guests_person: {required: ""}
+			},
 
-		errorClass: 'invalid',
+			errorClass: 'invalid',
 
-		highlight: function(element, errorClass) {
-			$(element).closest('.field').addClass(errorClass)
-		},
+			highlight: function(element, errorClass) {
+				$(element).closest('.field').addClass(errorClass)
+			},
 
-		unhighlight: function(element, errorClass) {
-			$(element).closest('.field').removeClass(errorClass)
-		},
+			unhighlight: function(element, errorClass) {
+				$(element).closest('.field').removeClass(errorClass)
+			},
 
-		errorPlacement: $.noop,
+			errorPlacement: $.noop,
 
-//		submitHandler: function(form) {
-////			if(form.valid())
-////				form.submit();
-//
-//			return false
-//		}
-	});
-</script>
+			//		submitHandler: function(form) {
+			////			if(form.valid())
+			////				form.submit();
+			//
+			//			return false
+			//		}
+		});
+	</script>
 @endpush

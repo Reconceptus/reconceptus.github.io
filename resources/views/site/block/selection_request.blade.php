@@ -115,14 +115,14 @@
 				<div class="fieldset">
 					<div class="field">
 						<label for="wishes">@lang('main.write_your_wishes')</label>
-						<div class="input"><input id="wishes" type="text" /></div>
+						<div class="input"><input id="wishes" name="wishes" type="text" /></div>
 					</div>
 				</div>
 
 				<div class="fieldset">
 					<div class="field">
 						<label for="source">@lang('main.where_did_you_find_out_about_us')</label>
-						<div class="input"><input id="source" type="text" /></div>
+						<div class="input"><input id="source" name="message_t" type="text" /></div>
 					</div>
 				</div>
 

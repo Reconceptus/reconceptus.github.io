@@ -439,11 +439,12 @@ class ModuleController extends Controller
 	{
 		$classAttr = isset($inp['classAttr']) ? $inp['classAttr'] : '';
 		$maxlength = isset($inp['maxlength']) ? 'maxlength="' . $inp['maxlength'] . '"' : '';
+		$rows = isset($inp['rows']) ? 'rows="' . $inp['rows'] . '"' : '';
 
 		return '<div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-                <textarea ' . $maxlength . ' class="form-control ' . $classAttr . '" id="' . $inp['idAttr'] . '" name="' . $inp['nameAttr'] . '--options--" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '" rows="3"></textarea>
+                <textarea ' . $rows . $maxlength . ' class="form-control ' . $classAttr . '" id="' . $inp['idAttr'] . '" name="' . $inp['nameAttr'] . '--options--" placeholder="' . ($inp['translateKey'] ?? false ? trans('admin::plugins.' . $inp['translateKey']) : $inp['nameText']) . '" rows="3"></textarea>
             </div>
              <br class="clear"/>
         </div>';
@@ -536,7 +537,8 @@ class ModuleController extends Controller
 			$data = $Mod->t($page)->where(['id' => $id])->first()->toArray();
 			unset($data['id']);
 
-			$data['name']       = 'Копия ' . $data['name'];
+			$data['name']       = 'Копия ' . $this->base->lang($data['name']);
+			$data['email']      = 'Копия ' . $data['email'];
 			$data['updated_at'] = $data['created_at'] = Carbon::now();
 			$id                 = $Mod->t($page)->insertGetId($data);
 

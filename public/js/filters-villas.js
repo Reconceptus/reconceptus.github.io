@@ -95,13 +95,17 @@ var filVil = {
 		 })
 	},
 
-// select Villas
+	/**
+	 * Select Villas.
+	 *
+	 * @param isSession
+	 */
 	selectVillas: function(isSession) {
 		var
 			page      = $('[name="pagination"]').val(),
 			date_from = -1,
 			date_to   = -1,
-			rooms,
+			guests_person,
 			hot,
 			way,
 			url;
@@ -118,10 +122,10 @@ var filVil = {
 		if($('#check_in').length)
 			date_from = $.datepicker.formatDate("yy-mm-dd", $('#check_in').datepicker('getDate'));
 
-		way   = $('[name="f_way"]').val();
-		rooms = $('[name="rooms"]').val();
-		hot   = $("[name=hot]:checked").val() || -1;
-		url   = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&rooms=' + rooms + '&hot=' + hot;
+		way           = $('[name="f_way"]').val();
+		guests_person = $('[name="guests_person"]').val();
+		hot           = $("[name=hot]:checked").val() || -1;
+		url           = '&way=' + way + '&date_to=' + date_to + '&date_from=' + date_from + '&guests_person=' + guests_person + '&hot=' + hot;
 		url += isSession ? url + '&session=1' : '&session=0';
 
 		if(window.location.href.indexOf('villas_by_the_sea') !== -1)

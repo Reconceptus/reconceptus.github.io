@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="8.999" height="4.2" viewBox="0 0 254 119" shape-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
-    <g fill="currentColor" fill-rule="nonzero" >
-        <path d="m0 63l127-64 127 64v56l-127-63-127 63z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" enable-background="new 0 0 24 24">
+    <g fill="currentColor">
+    <path d="m3.4 17.3c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l8.7-8.6c.4-.4 1-.4 1.4 0l8.5 8.5c.4.4.4 1 0 1.4-.4.4-1 .4-1.4 0l-7.8-7.8-8 8c-.2.1-.4.2-.7.2" />
     </g>
-
 </svg>

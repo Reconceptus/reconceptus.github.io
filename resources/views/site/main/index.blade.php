@@ -4,8 +4,11 @@
 	<div class="section intro">
 		<div class="intro-figure">
 			@php($path = '/images/files/big/')
+			@php($path_small = '/images/files/small/')
 			@php($img_big = $main_page['file'] ? $main_page['crop'] ? $path . $main_page['crop'] : $path . $main_page['file'] : '')
-			<figure style="background-image: url({{ $img_big }})"></figure>
+			@php($img_small = $img_mobile['file'] ? $img_mobile['crop'] ? $path_small . $img_mobile['crop'] : $path_small . $img_mobile['file'] : '')
+			<figure class="mobile" style="background-image: url({{ $img_small }})"></figure>
+			<figure class="" style="background-image: url({{ $img_big }})"></figure>
 
 			<video muted autoplay loop>
 				@foreach($main_page_video as $video)
@@ -34,8 +37,8 @@
 	<div class="section offers">
 		<div class="content">
 			<header>
-				<h2 class="headline_main">GET INSPIRED</h2>
-				<h4 class="headline_submain">Browse Our Top Villa Collections</h4>
+				<h2 class="headline_main">@lang('main.get_inspired')</h2>
+				<h4 class="headline_submain">{{ $langSt($params['browse_Collections_h3']['key']) }}</h4>
 			</header>
 
 			@php($i = 4)
@@ -45,11 +48,18 @@
 					<div class="item-box item-lg head-top" data-item="1">
 						<section class="item">
 							<a href="/villas?villas_by_the_sea=1">
-								<figure style="background-image: url('/images/items/3_PLYAZ-BEACH-.jpg')"></figure>
+								@php($path_big = '/images/files/big/')
+								@php($img_big = '')
+
+								@if(isset($collections[0]['file']))
+									@php($c = $collections[0])
+									@php($img_big = $c['file'] ? $c['crop'] ? $path_big . $c['crop'] : $path_big . $c['file'] : '')
+								@endif
+								<figure style="background-image: url({{ $img_big  }})"></figure>
 
 								<header>
-									<h3 class="title">@lang('main.villas_by_the_sea')</h3>
-									<h5 class="subtitle">Роскошные виллы в нескольких шагах от пляжа</h5>
+									<h3 class="title">{{ $langSt($collections[0]['name'] ?? '') }}</h3>
+									<h5 class="subtitle">{{ $langSt($collections[0]['text'] ?? '') }}</h5>
 									<span class="btn btn_bord">@lang('main.look')</span>
 								</header>
 							</a>
@@ -59,11 +69,18 @@
 					<div class="item-box item-md head-top" data-item="2">
 						<section class="item">
 							<a href="/villas?villas_with_private_service=1">
-								<figure style="background-image: url('/images/items/2_HOTEL-SERVICE-VILLAS.jpg')"></figure>
+								@php($path_big = '/images/files/big/')
+								@php($img_big = '')
+
+								@if(isset($collections[1]['file']))
+									@php($c = $collections[1])
+									@php($img_big = $c['file'] ? $c['crop'] ? $path_big . $c['crop'] : $path_big . $c['file'] : '')
+								@endif
+								<figure style="background-image: url({{ $img_big  }})"></figure>
 
 								<header>
-									<h3 class="title">@lang('main.villas_with_private_service')</h3>
-									<h5 class="subtitle">Виллы с полным набором услуг</h5>
+									<h3 class="title">{{ $langSt($collections[1]['name'] ?? '') }}</h3>
+									<h5 class="subtitle">{{ $langSt($collections[1]['text'] ?? '') }}</h5>
 									<span class="btn btn_bord">@lang('main.look')</span>
 								</header>
 							</a>
@@ -73,11 +90,18 @@
 					<div class="item-box item-lg head-top" data-item="3">
 						<section class="item">
 							<a href="/villas?vacation_together=1">
-								<figure style="background-image: url('/images/items/1_OTDYH-VDVOEM-ROMANTIC.jpg')"></figure>
+								@php($path_big = '/images/files/big/')
+								@php($img_big = '')
+
+								@if(isset($collections[2]['file']))
+									@php($c = $collections[2])
+									@php($img_big = $c['file'] ? $c['crop'] ? $path_big . $c['crop'] : $path_big . $c['file'] : '')
+								@endif
+								<figure style="background-image: url({{ $img_big  }})"></figure>
 
 								<header>
-									<h3 class="title">@lang('main.vacation_together')</h3>
-									<h5 class="subtitle">Ваш романтический отдых на двоих</h5>
+									<h3 class="title">{{ $langSt($collections[2]['name'] ?? '') }}</h3>
+									<h5 class="subtitle">{{ $langSt($collections[2]['text'] ?? '') }}</h5>
 									<span class="btn btn_bord">@lang('main.look')</span>
 								</header>
 							</a>

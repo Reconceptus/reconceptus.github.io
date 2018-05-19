@@ -389,7 +389,11 @@
 		}
 
 		$(function() {
-			$('input[name="daterange"]').daterangepicker({opens: 'left', forceUpdate: true});
+			$('input[name="daterange"]').daterangepicker({
+				//daterangepicker: 'dateRange3',
+			//	opens: 'right',
+				forceUpdate: true,
+			});
 		});
 	</script>
 

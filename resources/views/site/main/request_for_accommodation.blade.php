@@ -97,28 +97,18 @@
 
 					<div class="vacancy-advances">
 						<ul>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Мы всегда на связи! В любое время дня и ночи наши сотрудники готовы ответить на все вопросы.</p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Только лицензированные обьекты, отвечающие всем требуемым стандартам. Честные и разумные цены! </p>
-								</div>
-							</li>
-							<li>
-								<i><img src="/images/defaulf-icon.png" alt="img"></i>
-								<div class="text">
-									<h5 class="title">Заголовок</h5>
-									<p>Все объекты мы видели вживую и они прошли наш контроль. Наша компания основана и работает в Греции
-										уже 8 лет.</p>
-								</div>
-							</li>
+							@foreach($benefits_accommodation as $v)
+								@php($path_small = '/images/files/small/')
+								@php($img_small = $v['file'] ? $v['crop'] ? $path_small . $v['crop'] : $path_small . $v['file'] : '')
+
+								<li>
+									<i><img src="{{ $img_small }}" alt="img" /></i>
+									<div class="text">
+										<h5 class="title">{!! $langSt($v['name']) !!}</h5>
+										{!! $langSt($v['text']) !!}
+									</div>
+								</li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

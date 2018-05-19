@@ -108,12 +108,12 @@
 	}
 }
 
-.link-black, .link-black:visited, .link-black:focus {
-	color: #30343F;
-	-webkit-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
-}
+/*.link-black, .link-black:visited, .link-black:focus {*/
+	/*color: #30343F;*/
+	/*-webkit-transition: all 0.2s;*/
+	/*-o-transition: all 0.2s;*/
+	/*transition: all 0.2s;*/
+/*}*/
 
 .invalid, .invalid a, .invalid span {
 	color: HSL(1.4, 100%, 74.5%)!important;

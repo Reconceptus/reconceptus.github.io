@@ -291,6 +291,24 @@
 		}
 	},
 	{
+		"name"        : "cat_location",
+		"typeField"   : "select",
+		"classAttr"   : "select2",
+		"nameText"    : "Категория",
+		"nameAttr"    : "pl[cat_location]",
+		"description" : "Текстовое поле селект \"Cat\" для выбора категории",
+		"idAttr"      : "selectCat_location",
+		"sql_column"  : "location",
+		"accurate"    : true,
+		"recursive"   : true,
+		"parent_table": "menu",
+		"translateKey": "cat_location",
+		"body"        : {
+			"text": "<option value=\"0\">(Без категории)</option>{-option-}",
+			"type": "replace"
+		}
+	},
+	{
 		"name"        : "recommendedVillas",
 		"typeField"   : "select",
 		"classAttr"   : "select2",
@@ -1257,9 +1275,39 @@
 		"nameText"    : "Benefits",
 		"nameAttr"    : "pl[benefits]",
 		"description" : "Плагин \"benefits\" сделанный из album",
-		"idAttr"      : "inputBbenefits",
+		"idAttr"      : "inputBenefits",
 		"sql_column"  : "benefits",
 		"translateKey": "benefits"
+	},
+	{
+		"name"        : "benefits_accommodation",
+		"typeField"   : "functions",
+		"nameText"    : "Benefits",
+		"nameAttr"    : "pl[benefits_accommodation]",
+		"description" : "Плагин \"benefits_accommodation\" сделанный из album",
+		"idAttr"      : "inputBenefits_accommodation",
+		"sql_column"  : "benefits_accommodation",
+		"translateKey": "benefits_accommodation"
+	},
+	{
+		"name"        : "collections",
+		"typeField"   : "functions",
+		"nameText"    : "Collections",
+		"nameAttr"    : "pl[collections]",
+		"description" : "Плагин \"collections\" сделанный из album",
+		"idAttr"      : "inputCollections",
+		"sql_column"  : "collections",
+		"translateKey": "collections"
+	},
+	{
+		"name"        : "main_img_small",
+		"typeField"   : "functions",
+		"nameText"    : "Первый экран(mobile)",
+		"nameAttr"    : "pl[main_img_small]",
+		"description" : "Плагин \"main_img_small\" сделанный из album",
+		"idAttr"      : "inputMain_img_small",
+		"sql_column"  : "main_img_small",
+		"translateKey": "main_img_small"
 	},
 	{
 		"name"            : "distances",
@@ -1292,55 +1340,48 @@
 		}
 	},
 	{
-		"name"            : "convenience",
-		"typeField"       : "functions",
-		"functionsBefore" : "insertTagers",
-		"js_init_function": "tagersInitConvenience",
-		"classAttr"       : "select2-convenience convenience-]-options-[-",
-		"nameText"        : "Описание локации",
-		"nameAttr"        : "pl[convenience]",
-		"description"     : "Поле выбора и поиска локации \"convenience\"",
-		"idAttr"          : "inputConvenience",
-		"sql_column"      : "convenience",
-		"translateKey"    : "convenience",
-		"body"            : {
-			"text"    : "",
-			"type"    : "insert",
-			"multiple": "multiple"
-		}
+		"name"        : "convenience",
+		"typeField"   : "textarea",
+		"nameText"    : "Удобства",
+		"nameAttr"    : "pl[convenience]",
+		"description" : "Плагин \"convenience\"",
+		"idAttr"      : "inputConvenience",
+		"sql_column"  : "convenience",
+		"translateKey": "convenience",
+		"rows"        : "10"
 	},
 	{
-		"name"            : "services",
-		"typeField"       : "functions",
-		"functionsBefore" : "insertTagers",
-		"js_init_function": "tagersInitServices",
-		"classAttr"       : "select2-services services-]-options-[-",
-		"nameText"        : "Описание локации",
-		"nameAttr"        : "pl[services]",
-		"description"     : "Поле выбора и поиска локации \"services\"",
-		"idAttr"          : "inputServices",
-		"sql_column"      : "services",
-		"translateKey"    : "services",
-		"body"            : {
-			"text"    : "",
-			"type"    : "insert",
-			"multiple": "multiple"
-		}
+		"name"        : "services",
+		"typeField"   : "textarea",
+		"nameText"    : "Услуги",
+		"nameAttr"    : "pl[services]",
+		"description" : "Плагин \"services\"",
+		"idAttr"      : "inputServices",
+		"sql_column"  : "services",
+		"translateKey": "services",
+		"rows"        : "10"
 	},
 	{
 		"name"        : "bedroom",
-		"typeField"   : "select",
-		"classAttr"   : "select2",
+		"typeField"   : "input",
+		"classAttr"   : "bedroom",
 		"nameText"    : "Спальни",
 		"nameAttr"    : "pl[bedroom]",
 		"description" : "Селект \"Спальни\"",
 		"idAttr"      : "selectBedroom",
 		"sql_column"  : "bedroom",
-		"translateKey": "bedroom",
-		"body"        : {
-			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
-			"type": "insert"
-		}
+		"translateKey": "bedroom"
+	},
+	{
+		"name"        : "guests_person",
+		"typeField"   : "input",
+		"classAttr"   : "guests_person",
+		"nameText"    : "Кол-во гостей/человек",
+		"nameAttr"    : "pl[guests_person]",
+		"description" : "Селект \"Кол-во гостей/человек\"",
+		"idAttr"      : "selectGuests_person",
+		"sql_column"  : "guests_person",
+		"translateKey": "guests_person"
 	},
 	{
 		"name"           : "to_main",
@@ -1382,7 +1423,7 @@
 		"sql_column"  : "sea",
 		"translateKey": "sea",
 		"body"        : {
-			"text": "<option value=\"0\"></option><option value=\"1\">With access to the beach</option><option value=\"2\">Up to 500 meters</option><option value=\"3\">500 to 1000 meters</option><option value=\"4\">More than 1000 meters</option>",
+			"text": "<option value=\"0\"></option><option value=\"1\">With access to the beach</option><option value=\"2\">500 meters</option><option value=\"3\">1km</option><option value=\"4\">More than 1km</option>",
 			"type": "insert"
 		}
 	}

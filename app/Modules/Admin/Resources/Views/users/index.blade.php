@@ -60,6 +60,7 @@
 									<option value="0" id="defo">@lang('admin::main.selectActions')</option>
 									<option value="edit">@lang('admin::main.edit')</option>
 									<option value="delete">@lang('admin::main.remove')</option>
+									<option value="copy">@lang('admin::main.copy')</option>
 								</select>
 							</div>
 

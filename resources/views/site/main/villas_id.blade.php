@@ -44,28 +44,29 @@
 								@if($villa['bedroom'])
 									<span class="bed">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
-									<span>{{ $villa['bedroom'] }} @lang('main.bedrooms')</span>
+									<span>{{ $villa['bedroom'] }}</span>
 								</span>
 								@endif
 
 								@if($villa['bathroom'])
 									<span class="bath">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
-									<span>{{ $villa['bathroom'] }} @lang('main.bathrooms')</span>
+									<span>{{ $villa['bathroom'] }}</span>
 								</span>
 								@endif
 
 								<span class="sea">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-sea"></use> </svg></i>
+
 									<span>
-										@if($villa['sea'] === 0)
+										@if($villa['sea'] === 1)
 											@lang('main.with_access_to_the_beach')
-										@elseif($villa['sea'] === 1)
-											@lang('main.sea_in_5_minutes')
 										@elseif($villa['sea'] === 2)
-											@lang('main.sea_in_15_minutes')
-										@else
-											@lang('main.the_sea_more_than_1000_meters')
+											500 @lang('main.m')
+										@elseif($villa['sea'] === 3)
+											1 @lang('main.km')
+										@elseif($villa['sea'] === 4)
+											@lang('main.more_than') 1 @lang('main.km')
 										@endif
 									</span>
 								</span>
@@ -126,9 +127,9 @@
 
 						<div class="text-box">
 							<ul class="column">
-								@php($convenience = json_decode($villa['convenience'], true))
+								@php($convenience = explode("\r", $langSt($villa['convenience'])))
 
-								@foreach($convenience[$lang] as $v)
+								@foreach($convenience as $v)
 									@if(!empty($v))<li>{{ $v }}</li>@endif
 								@endforeach
 							</ul>
@@ -142,9 +143,9 @@
 
 						<div class="text-box">
 							<ul class="column">
-								@php($services = json_decode($villa['services'], true))
+								@php($services = explode("\r", $langSt($villa['services'])))
 
-								@foreach($services[$lang] as $v)
+								@foreach($services as $v)
 									@if(!empty($v))<li>{{ $v }}</li>@endif
 								@endforeach
 							</ul>
@@ -154,7 +155,12 @@
 
 				<div class="villa-layout--side">
 					<div class="villa-request">
-						<div class="price"><strong>&euro;</strong> {!! number_format($villa['price_money'], 0, ',', ' ') !!}</div>
+						<div class="price">
+							@lang('main.from_')
+							{!! number_format($villa['price_money'], 0, ',', ' ') !!}
+							&nbsp;
+							<strong>&euro;</strong>
+						</div>
 
 						<div class="villa-request-form">
 							<input type="radio" id="showVillaForm" />
@@ -235,17 +241,7 @@
 									<div class="fieldset">
 										<div class="check check_field">
 											<label>
-												<style>
-													.check input:checked ~ span::after, .check label span::before {
-														border: 1px solid HSL(212, 10.8%, 72.7%);
-														width: 18px;
-														height: 18px;
-														top: 0;
-														left: -25px;
-														margin: auto 16px auto 0;
-													}
-												</style>
-												<input type="checkbox" checked id="securityPolicy" name="securityPolicy" style="border: solid 1px #ccc "/>
+												<input type="checkbox" checked id="securityPolicy" name="securityPolicy" />
 
 												<span>
 													<a href="/privacy-policy" target="_blank" class="link">*@lang('main.security_policy_text')</a>

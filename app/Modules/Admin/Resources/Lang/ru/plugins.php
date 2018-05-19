@@ -22,6 +22,7 @@ return [
 	'distances_location'          => 'Расстояния и расположение',
 	'distances'                   => 'Расстояние',
 	'location'                    => 'Расположение',
+	'cat_location'                => 'Локация',
 	'bedroom'                     => 'Спальни',
 	'bathrooms'                   => 'Ванные комнаты',
 	'sea'                         => 'Море',
@@ -34,6 +35,7 @@ return [
 	'preview'                     => 'Альбом и Превью',
 	'working_conditions'          => 'Условия труда',
 	'benefits'                    => 'Преимущества',
+	'benefits_accommodation'      => 'Преимущества для страницы "Запрос на размещение"',
 	'booking_is_easy'             => 'Бронирование легко',
 	'translation'                 => 'Translation',
 	'object'                      => 'Объект',
@@ -42,4 +44,7 @@ return [
 	'villas_with_private_service' => 'Виллы с отельным обслуживанием',
 	'vacation_together'           => 'Отдых вдвоем',
 	'caption'                     => 'Заголовок',
+	'collections'                 => 'Изображения подборок',
+	'main_img_small'              => 'Первый экран(mobile)',
+	'guests_person'               => 'Кол-во гостей/человек',
 ];

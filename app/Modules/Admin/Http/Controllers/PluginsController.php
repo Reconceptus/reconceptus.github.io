@@ -100,6 +100,39 @@ class PluginsController extends Controller
 	}
 
 	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function benefits_accommodation($field, $table_params = '', $params = [])
+	{
+		return $this->album($field, $table_params, $params);
+	}
+
+	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function collections($field, $table_params = '', $params = [])
+	{
+		return $this->album($field, $table_params, $params);
+	}
+
+	/**
+	 * @param        $field
+	 * @param string $table_params
+	 * @param array  $params
+	 * @return string
+	 */
+	public function main_img_small($field, $table_params = '', $params = [])
+	{
+		return $this->album($field, $table_params, $params);
+	}
+
+	/**
 	 * Functions render tag filed
 	 * @param        $field
 	 * @param string $table_params

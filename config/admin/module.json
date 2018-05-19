@@ -93,7 +93,7 @@
 			"key_feature",
 			"layout",
 			"active",
-			"cat",
+			"cat_location",
 			"convenience",
 			"services",
 			"distances",
@@ -104,6 +104,7 @@
 			"album",
 			"what_is_next",
 			"files",
+			"guests_person",
 			"bedroom",
 			"bathroom",
 			"sea",
@@ -132,7 +133,7 @@
 			}
 		},
 		"idCatShow"       : {
-			"cat": 4
+			"cat_location": 4
 		}
 	},
 	{
@@ -512,6 +513,9 @@
 		"plugins"         : [
 			"name",
 			"album",
+			"main_img_small",
+			"collections",
+			"benefits_accommodation",
 			"files",
 			"title",
 			"author",
@@ -522,6 +526,9 @@
 		"params": {
 			"files": {
 				"limit": 2
+			},
+			"main_img_small": {
+				"limit": 1
 			}
 		},
 		"small_width"     : "500",

@@ -106,4 +106,7 @@ return [
 	'select_all'                => 'Select all',
 	'remove_all'                => 'Remove all',
 	'edit_main_page'            => 'Edit main page',
+	'yes'                       => 'Yes',
+	'no'                        => 'No',
+	'is_about_us'               => 'Display in "About Us"',
 ];
