@@ -4,13 +4,19 @@
 	<section class="simple-page--bg">
 		<div class="intro-figure dynamic">
 			@php($path = '/images/files/big/')
-			@php($img_big = $menu_segment['file'] ? $menu_segment['crop'] ? $path . $menu_segment['crop'] : $path . $menu_segment['file'] : '')
+
+			@if($page['file'])
+				@php($img_big = $page['file'] ? $page['crop'] ? $path . $page['crop'] : $path . $page['file'] : '')
+			@else
+				@php($img_big = $menu_segment['file'] ? $menu_segment['crop'] ? $path . $menu_segment['crop'] : $path . $menu_segment['file'] : '')
+			@endif
+
 			<figure style="background-image: url({{ $img_big }})"></figure>
 		</div>
 
 		<div class="content">
 			<header class="light-style">
-				<h1 class="headline_main">@lang('main.about_us')</h1>
+				<h1 class="headline_main">{{ $langSt($page['name']) }}</h1>
 			</header>
 		</div>
 	</section>

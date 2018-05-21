@@ -137,7 +137,7 @@
 												<table width="90%" cellspacing="0" cellpadding="0" border="0">
 													<tr>
 														<td align="center" style="height: 18px; font-size: 18px; line-height: 18px;">
-															<a href="http://greecobooking.niws.ru" style="color: #909192; text-decoration: none;"
+															<a href="{{ env('APP_URL') }}" style="color: #909192; text-decoration: none;"
 																target="_blank">
 																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING"
 																	src="images/greecobooking.png"
@@ -153,16 +153,16 @@
 												<table width="90%" cellspacing="0" cellpadding="0" border="0">
 													<tr>
 														<td align="center">
-															<a href="http://greecobooking.niws.ru/villas"
+															<a href="{{ env('APP_URL') }}/villas"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">VILLAS</a>
-															<a href="http://greecobooking.niws.ru/blog"
+															<a href="{{ env('APP_URL') }}/blog"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">BLOG</a>
-															<a href="http://greecobooking.niws.ru/about-us"
+															<a href="{{ env('APP_URL') }}/about-us"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">ABOUT US</a>
-															<a href="http://greecobooking.niws.ru/contact-us"
+															<a href="{{ env('APP_URL') }}/contact-us"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">CONTACT US</a>
 														</td>
@@ -329,7 +329,7 @@
 														</td>
 														<td
 															style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left;">
-															@lang('main.security_policy_text') <a href="http://greecobooking.niws.ru/privacy-policy"
+															@lang('main.security_policy_text') <a href="{{ env('APP_URL') }}/privacy-policy"
 																target="_blank"
 																style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;">security
 																police</a>

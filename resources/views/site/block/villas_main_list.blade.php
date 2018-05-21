@@ -39,7 +39,7 @@
 							<a href="/villas/{{ $val['id'] }}" target="_blank">{{ $langSt($val['name']) }}</a>
 						</h3>
 
-						<h5 class="place">{{ $langSt($val['place']) }}</h5>
+						<h5 class="place">{{ $langSt($val['location_name']) }}</h5>
 					</div>
 
 					<div class="price">@lang('main.from_') {{ $val['price_money'] }} <strong>&euro;</strong></div>

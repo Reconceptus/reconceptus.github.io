@@ -537,8 +537,11 @@ class ModuleController extends Controller
 			$data = $Mod->t($page)->where(['id' => $id])->first()->toArray();
 			unset($data['id']);
 
-			$data['name']       = 'Копия ' . $this->base->lang($data['name']);
-			$data['email']      = 'Копия ' . $data['email'];
+			$data['name'] = 'Копия ' . $this->base->lang($data['name']);
+
+			if($data['email'])
+				$data['email'] = 'Копия ' . $data['email'];
+
 			$data['updated_at'] = $data['created_at'] = Carbon::now();
 			$id                 = $Mod->t($page)->insertGetId($data);
 

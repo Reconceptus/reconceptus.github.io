@@ -676,7 +676,7 @@ class MainController extends Controller
 				function($join) {
 					$join->type = 'LEFT OUTER';
 					$join->on('str.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'str');
+						->where('files.name_table', '=', 'stralbum');
 				}
 			)
 
@@ -1198,7 +1198,7 @@ class MainController extends Controller
 				function($join) {
 					$join->type = 'LEFT OUTER';
 					$join->on('str.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'str');
+						->where('files.name_table', '=', 'stralbum');
 				}
 			)
 

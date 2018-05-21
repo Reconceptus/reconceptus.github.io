@@ -36,7 +36,7 @@
 								<h2 class="name">{{ $langSt($villa['name']) }}</h2>
 								<div class="place">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_mark"></use> </svg></i>
-									<span>{{ $langSt($villa['place']) }}</span>
+									<span>{{ $langSt($villa['location_name']) }}</span>
 								</div>
 							</div>
 

@@ -188,6 +188,16 @@
 	<script type="text/javascript" src="{{ asset('/modules/js/modules.js') }}"></script>
 	<script type="text/javascript" src="/js/lodash.min.js"></script>
 	<script>
+		$(window).load(function(){
+			if(window.location.hash){
+				$('a[href="'+window.location.hash+'"]').trigger('click');
+			}
+		});
+
+		$(document).on('click', 'a[data-toggle="tab"]', function(){
+			window.location.hash = $(this).attr('href');
+		});
+
 		$(document).ready(function() {
 			modules.initialize({});
 		});

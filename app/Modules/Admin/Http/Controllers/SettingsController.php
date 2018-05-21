@@ -9,6 +9,7 @@ use App\Modules\Admin\Classes\Base;
 use App\Modules\Admin\Models\Modules;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SettingsController extends Controller
 {
@@ -47,7 +48,82 @@ class SettingsController extends Controller
 	public static function addingLogActions(array $data)
 	{
 		$data['created_at'] = Carbon::now();
-		$data['id']         = (new DynamicModel())->t('actions_log')->insertGetId($data);
+		$t                  = 'actions_log';
+		$data['id']         = (new DynamicModel())->t($t)->insertGetId($data);
+		$data['plugins']    = config('admin.plugins');
+
+		$data[$t] = (new DynamicModel())
+			->t($t)
+			->where([[$t . '.id', $data['id']]])
+
+			->join(
+				'users',
+
+				function($join) use ($t) {
+					$join->type = 'LEFT OUTER';
+					$join->on($t . '.users_id', '=', 'users.id');
+				}
+			)
+
+			->select("$t.*", 'users.name as users_name', 'users.usertype')
+			->get()
+			->toArray();
+
+		$send_notifications = (new DynamicModel())
+			->t('params')
+			->select('params.*', 'little_description as key')
+			->where('name', 'send_notifications')
+			->first();
+
+		$lang_s = (new DynamicModel())
+			->t('params_lang')
+			->select('params_lang.*', 'little_description as key')
+			->where('active', 1)
+			->get()
+			->toArray();
+
+		if($send_notifications['active'] && ($data[$t][0]['usertype'] ?? '') !== 'admin') {
+			$from = 'no-realy@greecobooking.niws.ru';
+
+			$param = (new DynamicModel())
+				->t('params')
+				->select('params.*', 'little_description as key')
+				->where('name', 'email_alerts')
+				->first();
+
+			$params = [];
+
+			$params['langSt'] = function($t, $l = '') {
+				return Base::langSt($t, $l);
+			};
+
+//			foreach($param as $key => $p)
+//				$params['params'][$p->name] = $p->toArray();
+
+			$data['type_actions'] = [
+				'insert_table_row' => 'Create table row',
+				'update_table_row' => 'Update table row',
+			];
+
+			foreach(explode(',', $params['langSt']($param['little_description'])) as $email) {
+				Mail::send(
+					'admin::emails.notifications',
+
+					array_merge(
+						[
+							'lang_s' => $lang_s,
+						],
+
+						array_merge($data, $params)
+					),
+
+					function($m) use ($param, $from, $params, $email) {
+						$m->from($from, 'Notification From Grecobooking');
+						$m->to($email, 'no-realy')->subject('Notification From Grecobooking');
+					}
+				);
+			}
+		}
 
 		return $data['id'];
 	}
@@ -125,9 +201,13 @@ class SettingsController extends Controller
 			->where('name', $name)
 			->first();
 
-		$params->active = $active;
-		$params->save();
-		$ret['result'] = 'ok';
+		$params->active = $active === 'true' ? 1 : 0;
+		$result = $params->save();
+
+		if($result)
+			$ret['result'] = 'ok';
+		else
+			$ret['result'] = 'error';
 
 		echo json_encode($ret);
 	}

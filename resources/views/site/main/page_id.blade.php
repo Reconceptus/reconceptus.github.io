@@ -1,7 +1,7 @@
 @extends('site.layouts.default')
 
 @section('content')
-	@php($path = '/images/files/small/')
+	@php($path = '/images/files/big/')
 	@php($img = $page['file'] ? $page['crop'] ? $path . $page['crop'] : $path . $page['file'] : '')
 
 	<section class="simple-page--bg">

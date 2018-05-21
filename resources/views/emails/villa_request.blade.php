@@ -137,10 +137,10 @@
 												<table width="90%" cellspacing="0" cellpadding="0" border="0">
 													<tr>
 														<td align="center" style="height: 18px; font-size: 18px; line-height: 18px;">
-															<a href="http://greecobooking.niws.ru" style="color: #909192; text-decoration: none;"
+															<a href="{{ env('APP_URL') }}" style="color: #909192; text-decoration: none;"
 																target="_blank">
 																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING"
-																	src="http://greecobooking.niws.ru/images/greecobooking.png"
+																	src="{{ env('APP_URL') }}/images/greecobooking.png"
 																	style="border:none; max-width: 207px; height: auto; max-height: 18px;">
 															</a>
 														</td>
@@ -153,16 +153,16 @@
 												<table width="90%" cellspacing="0" cellpadding="0" border="0">
 													<tr>
 														<td align="center">
-															<a href="http://greecobooking.niws.ru/villas"
+															<a href="{{ env('APP_URL') }}/villas"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">VILLAS</a>
-															<a href="http://greecobooking.niws.ru/blog"
+															<a href="{{ env('APP_URL') }}/blog"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">BLOG</a>
-															<a href="http://greecobooking.niws.ru/about-us"
+															<a href="{{ env('APP_URL') }}/about-us"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">ABOUT US</a>
-															<a href="http://greecobooking.niws.ru/contact-us"
+															<a href="{{ env('APP_URL') }}/contact-us"
 																style="margin: 0 4px; font-size: 14px; color: #30343f; text-transform: uppercase; text-decoration: none; font-family:Verdana, Arial, sans-serif;"
 																target="_blank">CONTACT US</a>
 														</td>
@@ -204,10 +204,10 @@
 																<tr>
 																	<td align="center" style="height: 128px; font-size: 128px; line-height: 128px;">
 																		<a
-																			href="http://greecobooking.niws.ru/villas/7/?date_to=2018-05-21&date_from=2018-05-14&rooms=-1&hot=1"
+																			href="{{ env('APP_URL') }}/villas/7/?date_to=2018-05-21&date_from=2018-05-14&rooms=-1&hot=1"
 																			 style="color: #909192; text-decoration: none;" target="_blank">
 
-																			@php($path_small = 'http://greecobooking.niws.ru/images/files/small/')
+																			@php($path_small = env('APP_URL') . '/images/files/small/')
 																			@php($img_small = $selected_villa['file'] ? $selected_villa['crop'] ? $path_small . $selected_villa['crop'] : $path_small . $selected_villa['file'] : '')
 
 																			<img
@@ -228,7 +228,7 @@
 																			<tr>
 																				<td align="left" style="text-align: left;">
 																						<a
-																							href="http://greecobooking.niws.ru/villas/{{ $selected_villa['id'] }}"
+																							href="{{ env('APP_URL') }}/villas/{{ $selected_villa['id'] }}"
 																							style="text-decoration: none; text-transform: uppercase; color: #000000; font-size: 17px; line-height: 20px; font-family: Verdana, Arial, sans-serif;"
 																						>
 																							<strong>{{ $langSt($selected_villa['name']) }}</strong>
@@ -344,12 +344,12 @@
 													<tbody>
 													<tr>
 														<td style="height: 20px; font-size: 20px; line-height: 20px;">
-															<img width="20" height="20" title="OK" alt="OK" src="http://greecobooking.niws.ru/images/check.png"
+															<img width="20" height="20" title="OK" alt="OK" src="{{ env('APP_URL') }}/images/check.png"
 																style="border:none; max-width: 20px; height: auto; max-height: 20px;">
 														</td>
 														<td
 															style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left;">
-															@lang('main.security_policy_text') <a href="http://greecobooking.niws.ru/privacy-policy"
+															@lang('main.security_policy_text') <a href="{{ env('APP_URL') }}/privacy-policy"
 																target="_blank"
 																style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;">security
 																police</a>

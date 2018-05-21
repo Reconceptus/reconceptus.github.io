@@ -3,6 +3,7 @@
 return [
 	'title'                       => 'Title',
 	'fullText'                    => 'Text',
+	'text'                        => 'Text',
 	'author'                      => 'Author',
 	'location_name'               => 'Location name',
 	'location_description'        => 'Description name',
