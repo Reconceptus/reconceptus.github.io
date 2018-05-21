@@ -29,7 +29,14 @@
         }
       }
       @include breakpoints(768,1199){
-        justify-content: space-between;
+        & > span {
+          margin-right: 25px;
+        }
+      }
+      @include media(screen,767){
+        & > span {
+          margin-right: 20px;
+        }
       }
       @include media(hover,1024){
         font-size: 15px;
@@ -38,17 +45,6 @@
       @include media(screen,1023){
         font-size: 12px;
         padding: 0 10px;
-      }
-      @include breakpoints(481,767){
-        & > span {
-          margin-right: 20px;
-        }
-      }
-      @include media(screen,480){
-        display: block;
-        & > span {
-          margin-top: 10px;
-        }
       }
     }
     &--cover {
@@ -172,7 +168,6 @@
     .title {
       text-transform: uppercase;
       color: $text;
-      font-size: 24px;
       font-family: Futuris, sans-serif;
       line-height: 1;
       a {
@@ -184,6 +179,12 @@
           }
         }
       }
+      @include media(hover,600){
+        font-size: 24px;
+      }
+      @include media(screen,599){
+        font-size: 20px;
+      }
     }
     .place {
       font-family: 'Playfair Display', serif;
@@ -194,10 +195,16 @@
     .price {
       margin-left: 20px;
       color: $text;
-      font-size: 24px;
+      white-space: nowrap;
       font-family: Futuris, sans-serif;
       line-height: 1;
       strong {font-weight: bold;}
+      @include media(hover,600){
+        font-size: 24px;
+      }
+      @include media(screen,599){
+        font-size: 20px;
+      }
     }
   }
 }

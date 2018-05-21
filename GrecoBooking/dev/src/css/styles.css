@@ -944,6 +944,7 @@ textarea {
 
 .header .elements .language ul li.current {
   cursor: default;
+  pointer-events: none;
 }
 
 .header .elements .language ul li:not(.current) {
@@ -2165,6 +2166,10 @@ svg {
 
 .headline_main:last-child {
   margin-bottom: 40px;
+}
+
+.simple-page--head .headline_main:last-child {
+  margin-bottom: 0;
 }
 
 .light-style .headline_main {
@@ -5190,11 +5195,14 @@ svg {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .villa-item .includes {
-    -webkit-box-pack: justify;
-            -webkit-justify-content: space-between;
-                -ms-flex-pack: justify;
-            justify-content: space-between;
+  .villa-item .includes > span {
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .villa-item .includes > span {
+    margin-right: 20px;
   }
 }
 
@@ -5209,21 +5217,6 @@ svg {
   .villa-item .includes {
     font-size: 12px;
     padding: 0 10px;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 767px) {
-  .villa-item .includes > span {
-    margin-right: 20px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .villa-item .includes {
-    display: block;
-  }
-  .villa-item .includes > span {
-    margin-top: 10px;
   }
 }
 
@@ -5396,7 +5389,6 @@ svg {
 .villa-main .title {
   text-transform: uppercase;
   color: #30343f;
-  font-size: 24px;
   font-family: Futuris, sans-serif;
   line-height: 1;
 }
@@ -5414,6 +5406,18 @@ svg {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .villa-main .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-main .title {
+    font-size: 20px;
+  }
+}
+
 .villa-main .place {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -5424,13 +5428,25 @@ svg {
 .villa-main .price {
   margin-left: 20px;
   color: #30343f;
-  font-size: 24px;
+  white-space: nowrap;
   font-family: Futuris, sans-serif;
   line-height: 1;
 }
 
 .villa-main .price strong {
   font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .villa-main .price {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-main .price {
+    font-size: 20px;
+  }
 }
 
 .single-request {
@@ -8224,8 +8240,8 @@ svg {
 
 @media screen and (min-width: 1024px) {
   .villa-nav .short-info-attributes {
-    max-width: -webkit-calc(100% - 340px);
-    max-width: calc(100% - 340px);
+    max-width: -webkit-calc(100% - 320px);
+    max-width: calc(100% - 320px);
   }
 }
 
@@ -8243,25 +8259,35 @@ svg {
   }
 }
 
+.villa-nav .short-info-attributes .includes {
+  white-space: nowrap;
+}
+
 .villa-nav .short-info-attributes .item {
   cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
   .villa-nav .short-info-attributes .item {
-    margin-right: 44px;
+    margin-right: 30px;
   }
 }
 
 .villa-nav .short-info-attributes .item .name {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
-  line-height: 1;
+  line-height: 0.85;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1200px) {
   .villa-nav .short-info-attributes .item .name {
     font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .villa-nav .short-info-attributes .item .name {
+    font-size: 35px;
   }
 }
 
@@ -8456,8 +8482,17 @@ svg {
   }
 }
 
+.villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
+  max-width: -webkit-calc(100% - 200px);
+  max-width: calc(100% - 200px);
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .place, .villa-nav .short-info.absolute .short-info-attributes .place {
   height: 0;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
+  font-size: 40px;
 }
 
 .villa-nav .short-info.fixed .short-info-navigate, .villa-nav .short-info.absolute .short-info-navigate {

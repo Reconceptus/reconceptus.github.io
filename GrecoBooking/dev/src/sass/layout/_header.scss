@@ -210,6 +210,7 @@
           color: $white;
           &.current{
             cursor: default;
+            pointer-events: none;
           }
           &:not(.current){
             display: none;
