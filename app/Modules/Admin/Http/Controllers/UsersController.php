@@ -66,8 +66,9 @@ class UsersController extends Controller
 				"admin::users.index",
 
 				[
-					'right' => Session::get('right'),
-					'users' => $users,
+					'modules' => Base::getModule("link_module", 'users')[0],
+					'right'   => Session::get('right'),
+					'users'   => $users,
 				]
 			);
 		} catch(\Exception $err) {

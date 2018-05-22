@@ -66,7 +66,7 @@ return [
 	'what_is_nearby'                  => 'What is nearby',
 	'you_may_also_like'               => 'You may also like',
 	'close'                           => 'Close',
-	'with_access_to_the_beach'        => 'With access to the beach',
+	'with_access_to_the_beach'        => '1st line',
 	'sea_in_5_minutes'                => 'Beach at 500 meters',
 	'sea_in_15_minutes'               => 'Beach in kilometer',
 	'the_sea_more_than _1000_meters'  => 'The beach is a kilometer away',

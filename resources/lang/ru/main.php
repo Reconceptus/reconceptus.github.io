@@ -66,7 +66,7 @@ return [
 	'what_is_nearby'                  => 'Что есть рядом',
 	'you_may_also_like'               => 'Вам может понравиться',
 	'close'                           => 'Закрыть',
-	'with_access_to_the_beach'        => 'С выходом на пляж',
+	'with_access_to_the_beach'        => '1-ая линия',
 	'sea_in_5_minutes'                => 'Пляж в 500 метрах',
 	'sea_in_15_minutes'               => 'Пляж в километре',
 	'the_sea_more_than_1000_meters'   => 'Пляж дальше километра',

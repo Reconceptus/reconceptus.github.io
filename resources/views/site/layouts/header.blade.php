@@ -7,7 +7,7 @@
 	<title>{{ $meta['title'] ?? '' }}</title>
 	<meta content="{{ $meta['description'] ?? '' }}" name="description">
 	<meta content="{{ $meta['keywords'] ?? '' }}" name="keywords">
-	<meta http-equiv="Last-Modified" content="{{ ($meta['created_at'] ?? '') ?? ($meta['updated_at'] ?? '') }}">
+	<meta http-equiv="Last-Modified" content="{{ ($meta['created_at'] ?? '') ?? ($meta['updated_at'] ?? '') }}" />
 	<link rel="icon" href="/favicon.ico" sizes="32x32" />
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet" />
 	<link href="/css/styles.min.css" rel="stylesheet" />
@@ -16,13 +16,13 @@
 	<script type="text/javascript" src="/js/filters-villas.js"></script>
 	<script type="text/javascript" src="/js/filters-full.js"></script>
 
-	<meta property="og:title" content="{{ $meta['title'] ?? '' }}"/>
+	<meta property="og:title" content="{{ $meta['title'] ?? '' }}" />
 	{{--<meta property="og:type" content="movie"/>--}}
-	<meta property="og:url" content="http://greecobooking.niws.ru/villas/1"/>
-	<meta property="og:image" content="{{ $meta['og_image'] ?? '' }}"/>
+	<meta property="og:url" content="http://greecobooking.niws.ru/villas/1" />
+	<meta property="og:image" content="{{ $meta['og_image'] ?? '' }}" />
 	{{--<meta property="og:site_name" content="IMDb"/>--}}
 	{{--<meta property="fb:admins" content="USER_ID"/>--}}
-	<meta property="og:description" content="{{ $meta['description'] ?? '' }}"/>
+	<meta property="og:description" content="{{ $meta['description'] ?? '' }}" />
 </head>
 <body>
 <div id="wrapper">
@@ -111,11 +111,11 @@
 					<div class="language has-submenu">
 						<ul>
 							@if($lang === 'en')
-								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en"><span>EN</span></a></li>
-								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
+								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a style="z-index: 9999" href="?setLang=en"><span>EN</span></a></li>
+								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a style="z-index: 9999" href="?setLang=ru">RU</a></li>
 							@else
-								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a href="?setLang=ru">RU</a></li>
-								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a href="?setLang=en"><span>EN</span></a></li>
+								<li class="{!! $lang === 'ru' ? 'current' : '' !!}"><a style="z-index: 9999" href="?setLang=ru">RU</a></li>
+								<li class="{!! $lang === 'en' ? 'current' : '' !!}"><a style="z-index: 9999" href="?setLang=en"><span>EN</span></a></li>
 							@endif
 						</ul>
 					</div>

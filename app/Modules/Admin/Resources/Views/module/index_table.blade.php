@@ -125,7 +125,7 @@
 				"aaSorting"     : [[0,'desc']],
 				"sAjaxSource"   : "/admin/getData/{{ $table }}?{!! $url !!}",
 				"sServerMethod" : "POST",
-				"iDisplayLength": 10,
+				"iDisplayLength": '{{ $modules['count_module'] or 10 }}',
 				"sAjaxDataProp" : "data",
 				select: true,
 				columns: [

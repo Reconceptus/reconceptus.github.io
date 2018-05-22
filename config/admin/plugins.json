@@ -1399,18 +1399,14 @@
 	},
 	{
 		"name"        : "bathroom",
-		"typeField"   : "select",
-		"classAttr"   : "select2",
-		"nameText"    : "Ванные комнаты",
+		"typeField"   : "input",
+		"classAttr"   : "bathroom",
+		"nameText"    : "Спальни",
 		"nameAttr"    : "pl[bathroom]",
 		"description" : "Селект \"Ванные комнаты\"",
 		"idAttr"      : "selectBathroom",
 		"sql_column"  : "bathroom",
-		"translateKey": "bathrooms",
-		"body"        : {
-			"text": "<option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7+</option>",
-			"type": "insert"
-		}
+		"translateKey": "bathrooms"
 	},
 	{
 		"name"        : "sea",

@@ -57,7 +57,7 @@
 			"to_main",
 			"is_hot"
 		],
-		"count_module"    : "20",
+		"count_module"    : "100",
 		"show_count"      : true,
 		"filters"         : [],
 		"lang"            : [
@@ -290,7 +290,7 @@
 			"album",
 			"active"
 		],
-		"count_module"    : "20",
+		"count_module"    : "100",
 		"show_count"      : true,
 		"filters"         : [],
 		"lang"            : [],

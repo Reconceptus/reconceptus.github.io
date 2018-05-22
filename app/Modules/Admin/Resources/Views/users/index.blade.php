@@ -5,11 +5,11 @@
 	@include('admin::layouts.left-menu')
 	@include('admin::layouts.top-menu')
 
-	<link href="{{ asset('/modules/js/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('/modules/js/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('/modules/js/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('/modules/js/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
-	<link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+	<link href="{{ asset('/modules/js/datatables/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('/modules/js/datatables/buttons.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('/modules/js/datatables/fixedHeader.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('/modules/js/datatables/responsive.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ asset('/modules/js/datatables/scroller.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 	{{----}}
 	<!-- pace -->
 	<script src="{{ asset('/modules/js/pace/pace.min.js') }}"></script>
@@ -30,7 +30,7 @@
 	<script src="{{ asset('/modules/js/datatables/dataTables.scroller.min.js') }}"></script>
 
 	<div class="right_col" role="main">
-		<br/>
+		<br />
 
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
@@ -46,7 +46,7 @@
 
 						<div class="clearfix"></div>
 
-						<hr class="clear"/>
+						<hr class="clear" />
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon">@lang('admin::main.selectActions'): </span>
@@ -66,7 +66,7 @@
 
 							<div class="error"></div>
 							<div class="sass"></div>
-							<input type="hidden" name="id_mt" class="id_mt"/>
+							<input type="hidden" name="id_mt" class="id_mt" />
 						</div>
 
 						<table id="datatable" class="table table-striped table-bordered">
@@ -127,34 +127,38 @@
 
 						<script>
 							var handleDataTableButtons = function() {
-									"use strict";
-									0 !== $("#datatable-buttons").length && $("#datatable-buttons").DataTable({
-										dom       : "Bfrtip",
-										buttons   : [
-											{extend: "copy", className: "btn-sm"},
-											{extend: "csv", className: "btn-sm"},
-											{extend: "excel", className: "btn-sm"},
-											{extend: "pdf", className: "btn-sm"},
-											{extend: "print", className: "btn-sm"}
-										],
-										responsive: !0
-									})
-								},
+										"use strict";
+										0 !== $("#datatable-buttons").length && $("#datatable-buttons").DataTable({
+											dom: "Bfrtip",
 
-								TableManageButtons = function() {
-									"use strict";
-									return {
-										init: function() {
-											handleDataTableButtons()
+											buttons: [
+												{extend: "copy", className: "btn-sm"},
+												{extend: "csv", className: "btn-sm"},
+												{extend: "excel", className: "btn-sm"},
+												{extend: "pdf", className: "btn-sm"},
+												{extend: "print", className: "btn-sm"}
+											],
+
+											responsive      : !0,
+										})
+									},
+
+									TableManageButtons     = function() {
+										"use strict";
+										return {
+											init: function() {
+												handleDataTableButtons()
+											}
 										}
-									}
-								}();
+									}();
 						</script>
 						<script type="text/javascript" src="{{ asset('/modules/js/adm.js') }}"></script>
 
 						<script type="text/javascript">
 							$(document).ready(function() {
-								$('#datatable').dataTable();
+								$('#datatable').dataTable({
+									"iDisplayLength": '{{ $modules['count_module'] or 10 }}',
+								});
 
 								$('#datatable-keytable').DataTable({
 									keys: true

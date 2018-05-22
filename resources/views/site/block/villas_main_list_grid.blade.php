@@ -8,11 +8,11 @@
 		)
 
 		<li>
-			<a href="/villas/{{ $val['id'] }}" target="_blank">>
+			<a href="/villas/{{ $val['id'] }}" target="_blank">
 				<figure style="background-image: url({{ $img }})"></figure>
 
 				<div class="grid--main">
-					<h3 class="title">{{ $langSt($val['name']) }}
+					<h3 class="title">{{ $langSt($val['name']) }}</h3>
 
 					<div class="price">
 						@lang('main.from_') {{ number_format($val['price_money'], 0, ',', ' ') }} <strong>&euro;</strong>
@@ -23,14 +23,14 @@
 							<span class="bed">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bed"></use> </svg></i>
 									<span>{{ $val['bedroom'] }}</span>
-								</span>
+							</span>
 						@endif
 
 						@if($val['bathroom'])
 							<span class="bath">
 									<i><svg> <use xlink:href="/images/svg/sprite.svg#ico_villa-bath"></use> </svg></i>
 									<span>{{ $val['bathroom'] }}</span>
-								</span>
+							</span>
 						@endif
 
 						<span class="sea">
