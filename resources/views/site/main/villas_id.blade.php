@@ -404,36 +404,38 @@
 					</ul>
 				</div>
 
-				<div class="btns_center">
-					<a href="/villas{{ $full_url }}" class="more">
-						<i class="ico-back"><svg><use xlink:href="/images/svg/sprite.svg#ico_arrow-left-long"></use></svg></i>
-						<span>@lang('main.back_to_the_list_of_villas')</span>
-					</a>
+				<div class="content">
+					<div class="btns_center">
+						<a href="/villas{{ $full_url }}" class="more">
+							<i class="ico-back"><svg><use xlink:href="/images/svg/sprite.svg#ico_arrow-left-long"></use></svg></i>
+							<span>@lang('main.back_to_the_list_of_villas')</span>
+						</a>
 
-					<a
-						href="javascript:void(0)"
-						class="more {!! $is_favorite ? 'active' : '' !!}"
-						onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
-					>
-						<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
-						<span>@lang('main.add_to_favorites')</span>
-					</a>
+						<a
+							href="javascript:void(0)"
+							class="more {!! $is_favorite ? 'active' : '' !!}"
+							onclick="filVil.addCart('{{ $villa['id'] }}', '{!! $is_favorite ? 'remove' : 'add' !!}')"
+						>
+							<i class="ico-like"><svg> <use xlink:href="/images/svg/sprite.svg#ico_action-like-full"></use> </svg></i>
+							<span>@lang('main.add_to_favorites')</span>
+						</a>
 
-					@if($villa['document'])
-						@php($path_document = "/images/files/original/")
-						@php($path_img = "/images/files/original/")
+						@if($villa['document'])
+							@php($path_document = "/images/files/original/")
+							@php($path_img = "/images/files/original/")
 
-						@if(file_exists($path_document . $villa['file']))
-							@php($document = $path_document . $villa['file'])
-						@else
-							@php($document = $path_img . $villa['file'])
+							@if(file_exists($path_document . $villa['file']))
+								@php($document = $path_document . $villa['file'])
+							@else
+								@php($document = $path_img . $villa['file'])
+							@endif
+
+							<a href="{{ $document }}" title="{{ $langSt($v['name']) }}" class="more" target="_blank">
+								@lang('main.download_villa_presentation')
+							</a>
 						@endif
-
-					<a href="{{ $document }}" title="{{ $langSt($v['name']) }}" class="more" target="_blank">
-						@lang('main.download_villa_presentation')
-					</a>
-				@endif
-			</div>
+					</div>
+				</div>
 		</div>
 	</section>
 

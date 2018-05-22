@@ -672,6 +672,7 @@ textarea {
 
 .header .elements .language ul li.current {
 	cursor: default;
+	pointer-events: none;
 }
 
 .header .elements .language ul li:not(.current) {
@@ -1312,6 +1313,10 @@ svg {
 
 .headline_main:last-child {
 	margin-bottom: 40px;
+}
+
+.simple-page--head .headline_main:last-child {
+	margin-bottom: 0;
 }
 
 .light-style .headline_main {
@@ -3684,7 +3689,6 @@ svg {
 .villa-main .title {
 	text-transform: uppercase;
 	color: #30343F;
-	font-size: 24px;
 	font-family: Futuris, sans-serif;
 	line-height: 1;
 }
@@ -3706,7 +3710,7 @@ svg {
 .villa-main .price {
 	margin-left: 20px;
 	color: #30343F;
-	font-size: 24px;
+	white-space: nowrap;
 	font-family: Futuris, sans-serif;
 	line-height: 1;
 }
@@ -5341,6 +5345,10 @@ svg {
 	flex-shrink: 500;
 }
 
+.villa-nav .short-info-attributes .includes {
+	white-space: nowrap;
+}
+
 .villa-nav .short-info-attributes .item {
 	cursor: pointer;
 }
@@ -5348,7 +5356,7 @@ svg {
 .villa-nav .short-info-attributes .item .name {
 	text-transform: uppercase;
 	font-family: Futuris, sans-serif;
-	line-height: 1;
+	line-height: 0.85;
 }
 
 .villa-nav .short-info-attributes .item .place {
@@ -5502,9 +5510,20 @@ svg {
 	height: 60px;
 }
 
+.villa-nav .short-info.fixed .short-info-attributes,
+.villa-nav .short-info.absolute .short-info-attributes {
+	max-width: -webkit-calc(100% - 200px);
+	max-width: calc(100% - 200px);
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .place,
 .villa-nav .short-info.absolute .short-info-attributes .place {
 	height: 0;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item .name,
+.villa-nav .short-info.absolute .short-info-attributes .item .name {
+	font-size: 40px;
 }
 
 .villa-nav .short-info.fixed .short-info-navigate,
@@ -6901,6 +6920,10 @@ svg {
 		margin-bottom: 30px;
 	}
 
+	.villa-nav .short-info-attributes .item .name {
+		font-size: 50px;
+	}
+
 	.vacancy-quotes .text {
 		padding: 50px 8% 50px 50px;
 	}
@@ -7392,8 +7415,8 @@ svg {
 	}
 
 	.villa-nav .short-info-attributes {
-		max-width: -webkit-calc(100% - 340px);
-		max-width: calc(100% - 340px);
+		max-width: -webkit-calc(100% - 320px);
+		max-width: calc(100% - 320px);
 	}
 
 	.villa-nav .short-info .mobile-attributes {
@@ -7889,6 +7912,14 @@ svg {
 		top: 70px;
 		width: 50px;
 		height: 50px;
+	}
+
+	.villa-main .title {
+		font-size: 20px;
+	}
+
+	.villa-main .price {
+		font-size: 20px;
 	}
 
 	.single-request--wrap .title {
@@ -8779,6 +8810,10 @@ svg {
 		width: 100%;
 	}
 
+	.villa-item .includes > span {
+		margin-right: 20px;
+	}
+
 	.form-request .form-box .fieldset.pickerfields {
 		border-bottom: 1px solid #B2B9C1;
 	}
@@ -9174,6 +9209,14 @@ svg {
 		width: 50%;
 	}
 
+	.villa-main .title {
+		font-size: 24px;
+	}
+
+	.villa-main .price {
+		font-size: 24px;
+	}
+
 	.form-request {
 		padding: 0 40px;
 	}
@@ -9245,11 +9288,7 @@ svg {
 	}
 
 	.villa-nav .short-info-attributes .item {
-		margin-right: 44px;
-	}
-
-	.villa-nav .short-info-attributes .item .name {
-		font-size: 50px;
+		margin-right: 30px;
 	}
 
 	.villa-layout .cite {
@@ -9405,14 +9444,6 @@ svg {
 		-ms-flex-align: start;
 		align-items: flex-start;
 		overflow: auto;
-	}
-
-	.villa-item .includes {
-		display: block;
-	}
-
-	.villa-item .includes > span {
-		margin-top: 10px;
 	}
 
 	.villa-img .hashes li {
@@ -9640,11 +9671,8 @@ svg {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-	.villa-item .includes {
-		-webkit-box-pack: justify;
-		-webkit-justify-content: space-between;
-		-ms-flex-pack: justify;
-		justify-content: space-between;
+	.villa-item .includes > span {
+		margin-right: 25px;
 	}
 
 	.offers .item a .title {
@@ -9675,12 +9703,6 @@ svg {
 	.contact-form-box {
 		width: 50%;
 		position: relative;
-	}
-}
-
-@media screen and (min-width: 481px) and (max-width: 767px) {
-	.villa-item .includes > span {
-		margin-right: 20px;
 	}
 }
 
@@ -9741,6 +9763,12 @@ svg {
 @media screen and (min-width: 768px) and (max-width: 1600px) {
 	.offers .item a header {
 		padding: 40px;
+	}
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+	.villa-nav .short-info-attributes .item .name {
+		font-size: 35px;
 	}
 }
 
