@@ -585,7 +585,7 @@ class MainController extends Controller
 
 				->select('blog.*', 'files.file', 'files.crop')
 				->orderBy('blog.' . $group, 'DESC')
-				->limit(10)
+				->limit(20)
 				->get()
 				->toArray();
 

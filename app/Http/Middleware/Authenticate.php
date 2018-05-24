@@ -51,7 +51,7 @@ class Authenticate
 		}
 
 		if(Session::get('lang') === null) {
-			Session::put('lang', 'ru');
+			Session::put('lang', env('LOCALE'));
 		}
 
 		\App::setLocale(Session::get('lang'));

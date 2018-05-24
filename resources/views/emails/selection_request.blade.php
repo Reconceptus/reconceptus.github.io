@@ -140,7 +140,7 @@
 															<a href="{{ env('APP_URL') }}" style="color: #909192; text-decoration: none;"
 																target="_blank">
 																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING"
-																	src="images/greecobooking.png"
+																	src="{{ env('APP_URL') }}/images/greecobooking.png"
 																	style="border:none; max-width: 207px; height: auto; max-height: 18px;">
 															</a>
 														</td>
@@ -324,7 +324,7 @@
 													<tbody>
 													<tr>
 														<td style="height: 20px; font-size: 20px; line-height: 20px;">
-															<img width="20" height="20" title="OK" alt="OK" src="images/check.png"
+															<img width="20" height="20" title="OK" alt="OK" src="{{ env('APP_URL') }}/images/check.png"
 																style="border:none; max-width: 20px; height: auto; max-height: 20px;">
 														</td>
 														<td

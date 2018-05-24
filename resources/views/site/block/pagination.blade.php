@@ -53,6 +53,8 @@
 			@endif
 		</div>
 
-		<span class="total">из {{ $paginator->total() }}</span>
+		@if(ceil($paginator->total() / $paginator->perPage()))
+			<span class="total">из {{ ceil($paginator->total() / $paginator->perPage()) }}</span>
+		@endif
 	</div>
 @endif

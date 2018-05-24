@@ -72,7 +72,10 @@
 								<option value="4" {{ ($_GET['guests_person'] ?? '') === '4' ? 'selected' : '' }}>4</option>
 								<option value="5" {{ ($_GET['guests_person'] ?? '') === '5' ? 'selected' : '' }}>5</option>
 								<option value="6" {{ ($_GET['guests_person'] ?? '') === '6' ? 'selected' : '' }}>6</option>
-								<option value="7" {{ ($_GET['guests_person'] ?? '') === '7' ? 'selected' : '' }}>7+</option>
+								<option value="7" {{ ($_GET['guests_person'] ?? '') === '7' ? 'selected' : '' }}>7</option>
+								<option value="8" {{ ($_GET['guests_person'] ?? '') === '8' ? 'selected' : '' }}>8</option>
+								<option value="9" {{ ($_GET['guests_person'] ?? '') === '9' ? 'selected' : '' }}>9</option>
+								<option value="10" {{ ($_GET['guests_person'] ?? '') === '10' ? 'selected' : '' }}>10</option>
 							</select>
 						</div>
 					</div>

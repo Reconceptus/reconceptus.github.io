@@ -140,7 +140,7 @@
 															<a href="{{ env('APP_URL') }}" style="color: #909192; text-decoration: none;"
 																target="_blank">
 																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING"
-																	src="images/greecobooking.png"
+																	src="{{ env('APP_URL') }}/images/greecobooking.png"
 																	style="border:none; max-width: 207px; height: auto; max-height: 18px;">
 															</a>
 														</td>
@@ -205,7 +205,7 @@
 																	href="{{ env('APP_URL') }}/villas/7/?date_to=2018-05-21&date_from=2018-05-14&rooms=-1&hot=1"
 																	style="color: #909192; text-decoration: none;" target="_blank">
 
-																	@php($path_small = '{{ env('APP_URL') }}/images/files/small/')
+																	@php($path_small = '{{ env(\'APP_URL\') }}/images/files/small/')
 																	@php($img_small = $selected_villa['file'] ? $selected_villa['crop'] ? $path_small . $selected_villa['crop'] : $path_small . $selected_villa['file'] : '')
 
 																	<img

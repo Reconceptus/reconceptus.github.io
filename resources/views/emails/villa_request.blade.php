@@ -324,16 +324,6 @@
 															{{ empty($message_s) ? '-' : $message_s }}
 														</td>
 													</tr>
-													<tr>
-														<td width="50%"
-															style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#657482; text-align: left; border-top-width: 1px; border-top-color: #b2b9c1; border-top-style: solid; border-bottom-width: 1px; border-bottom-color: #b2b9c1; border-bottom-style: solid;">
-															@lang('main.security_policy_text'):
-														</td>
-														<td width="50%"
-															style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left; border-top-width: 1px; border-top-color: #b2b9c1; border-top-style: solid; border-bottom-width: 1px; border-bottom-color: #b2b9c1; border-bottom-style: solid;">
-															<span style="font-size: 20px">✓</span>
-														</td>
-													</tr>
 													</tbody>
 												</table>
 											</td>

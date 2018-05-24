@@ -4,7 +4,7 @@
 	<div class="content">
 		<div class="footer--main">
 			<div class="contacts">
-				<a href="/" class="logo"><img src="/images/svg/logo-green.svg" alt="GrecoBooking"></a>
+				<a href="/" class="logo"><img src="/images/svg/logo-grey.svg" alt="GrecoBooking"></a>
 
 				<ul>
 					<li>

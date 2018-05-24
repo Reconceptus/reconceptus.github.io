@@ -135,7 +135,7 @@
 													<tr>
 														<td align="center" style="height: 18px; font-size: 18px; line-height: 18px;">
 															<a href="{{ env('APP_URL') }}" style="color: #909192; text-decoration: none;" target="_blank">
-																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING" src="images/greecobooking.png" style="border:none; max-width: 207px; height: auto; max-height: 18px;">
+																<img width="207" height="18" title="GRECOBOOKING" alt="GRECOBOOKING" src="{{ env('APP_URL') }}/images/greecobooking.png" style="border:none; max-width: 207px; height: auto; max-height: 18px;">
 															</a>
 														</td>
 													</tr>
@@ -292,8 +292,6 @@
 						</table>
 					</td>
 				</tr>
-
-
 			</table>
 
 			<!--[if gte mso 10]>
