@@ -769,15 +769,11 @@ svg {
 }
 
 .text-box img.right-align {
-  float: right;
-  margin: 0 0 1.5rem 2rem;
-  max-width: 50%;
+  margin-bottom: 1.5rem;
 }
 
 .text-box img.left-align {
-  float: left;
-  max-width: 50%;
-  margin: 0 2rem 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .text-box img:not(.right-align):not(.left-align) {
@@ -1493,6 +1489,16 @@ svg {
     font-size: 1.5rem;
   }
 
+  .text-box .right-align {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-box .left-align {
+    width: 100%;
+    height: auto;
+  }
+
   .blog--tags {
     margin-bottom: 37.5px;
   }
@@ -1732,6 +1738,20 @@ svg {
     padding-left: 1.5rem;
   }
 
+  .text-box .right-align {
+    float: right;
+    max-width: -webkit-calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+    margin-left: 2rem;
+  }
+
+  .text-box .left-align {
+    float: left;
+    max-width: -webkit-calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+    margin-right: 2rem;
+  }
+
   .blog--search {
     width: 30%;
   }
@@ -1786,11 +1806,11 @@ svg {
 
 @media screen and (min-width: 681px) and (min-width: 1025px) {
   .text-box .quote-parts > div:first-child *:not(img) {
-    margin-left: 8rem;
+    margin-left: 80px;
   }
 
   .text-box .quote-parts > div:last-child *:not(img) {
-    margin-right: 8rem;
+    margin-right: 80px;
   }
 }
 

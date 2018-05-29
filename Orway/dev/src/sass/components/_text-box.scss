@@ -20,14 +20,10 @@
     display: block;
     max-width: 100%;
     &.right-align {
-      float: right;
-      margin: 0 0 1.5rem 2rem;
-      max-width: 50%;
+      margin-bottom: 1.5rem;
     }
     &.left-align {
-      float: left;
-      max-width: 50%;
-      margin: 0 2rem 1.5rem 0;
+      margin-bottom: 1.5rem;
     }
     &:not(.right-align):not(.left-align) {
       width: 100%;
@@ -109,7 +105,7 @@
           padding-right: 1.5rem;
           @include media(hover,1025){
             *:not(img){
-              margin-left: 8rem;
+              margin-left: 80px;
             }
           }
         }
@@ -117,13 +113,35 @@
           padding-left: 1.5rem;
           @include media(hover,1025){
             *:not(img){
-              margin-right: 8rem;
+              margin-right: 80px;
             }
           }
         }
       }
     }
 
+  }
+  .right-align {
+    @include media(hover,681){
+      float: right;
+      max-width: calc(50% - 2rem);
+      margin-left: 2rem;
+    }
+    @include media(screen,680){
+      width: 100%;
+      height: auto;
+    }
+  }
+  .left-align {
+    @include media(hover,681){
+      float: left;
+      max-width: calc(50% - 2rem);
+      margin-right: 2rem;
+    }
+    @include media(screen,680){
+      width: 100%;
+      height: auto;
+    }
   }
 
 }
