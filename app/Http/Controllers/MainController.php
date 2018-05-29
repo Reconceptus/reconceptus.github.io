@@ -87,7 +87,7 @@ class MainController extends Controller
 			->groupBy('villas.id')
 			->orderBy('villas.id', 'DESC')
 			->orderBy('villas.is_best', 'ASC')
-			->paginate(10);
+			->paginate(20);
 
 		$data['preview'] = $this
 			->dynamic
@@ -279,7 +279,7 @@ class MainController extends Controller
 		$data      = [];
 		$cart      = array_values($this->requests->session()->get('cart') ?? []);
 		$where[]   = ['villas.active', 1];
-		$count_box = 4;
+		$count_box = 20;
 		$group     = 'id';
 		$session   = $this->request['session'] ?? true;
 
@@ -424,26 +424,26 @@ class MainController extends Controller
 
 			return $this->base->view_s("site.main.villas_id", $data);
 		} else {
-			$data['villas'] = $this->dynamic->t('villas')
-				->where($where)
-				->join(
-					'files', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('villas.id', '=', 'files.id_album')
-						->where('files.name_table', '=', 'villasalbum')
-						->where('files.main', '=', 1);
-				}
-				)
-				->join(
-					'menu', function($join) {
-					$join->type = 'LEFT OUTER';
-					$join->on('villas.cat_location', '=', 'menu.id');
-				}
-				)
-				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
-				->groupBy('villas.id')
-				->orderBy('villas.' . $group, 'DESC')
-				->paginate($count_box);
+//			$data['villas'] = $this->dynamic->t('villas')
+//				->where($where)
+//				->join(
+//					'files', function($join) {
+//					$join->type = 'LEFT OUTER';
+//					$join->on('villas.id', '=', 'files.id_album')
+//						->where('files.name_table', '=', 'villasalbum')
+//						->where('files.main', '=', 1);
+//				}
+//				)
+//				->join(
+//					'menu', function($join) {
+//					$join->type = 'LEFT OUTER';
+//					$join->on('villas.cat_location', '=', 'menu.id');
+//				}
+//				)
+//				->select('villas.*', 'files.file', 'files.crop', 'menu.name AS place')
+//				->groupBy('villas.id')
+//				->orderBy('villas.' . $group, 'DESC')
+//				->paginate($count_box);
 
 			$data['locations'] = $this
 				->dynamic
@@ -499,7 +499,7 @@ class MainController extends Controller
 
 		$data['tags'] = $this->dynamic->t('tags')->whereIn('id', $tags_id)->limit(100)->get()->toArray();
 		$where[]      = ['blog.active', 1];
-		$count_box    = 4;
+		$count_box    = 20;
 		$group        = 'id';
 
 		if($id) {
@@ -558,36 +558,36 @@ class MainController extends Controller
 
 			$data['meta_c'] = $this->base->getMeta($data, 'blog');
 
-			$data['blogs'] = $this->dynamic->t('blog')
-				->whereNotIn('blog.id', [$data['blog']['id']])
-
-				// TODO скорее отвалится когда теги будут с id больше 10
-				->where(
-					function($query) use ($data) {
-						$tags = explode(',', $data['blog']['tags']);
-
-						for($i = 0; $i < count($tags); $i++) {
-							$query->orwhere('blog.tags', 'like', '%' . $tags[$i] . '%');
-						}
-					}
-				)
-
-				->join(
-					'files',
-
-					function($join) {
-						$join->type = 'LEFT OUTER';
-						$join->on('blog.id', '=', 'files.id_album')
-							->where('files.name_table', '=', 'blogalbum')
-							->where('files.main', '=', 1);
-					}
-				)
-
-				->select('blog.*', 'files.file', 'files.crop')
-				->orderBy('blog.' . $group, 'DESC')
-				->limit(20)
-				->get()
-				->toArray();
+//			$data['blogs'] = $this->dynamic->t('blog')
+//				->whereNotIn('blog.id', [$data['blog']['id']])
+//
+//				// TODO скорее отвалится когда теги будут с id больше 10
+//				->where(
+//					function($query) use ($data) {
+//						$tags = explode(',', $data['blog']['tags']);
+//
+//						for($i = 0; $i < count($tags); $i++) {
+//							$query->orwhere('blog.tags', 'like', '%' . $tags[$i] . '%');
+//						}
+//					}
+//				)
+//
+//				->join(
+//					'files',
+//
+//					function($join) {
+//						$join->type = 'LEFT OUTER';
+//						$join->on('blog.id', '=', 'files.id_album')
+//							->where('files.name_table', '=', 'blogalbum')
+//							->where('files.main', '=', 1);
+//					}
+//				)
+//
+//				->select('blog.*', 'files.file', 'files.crop')
+//				->orderBy('blog.' . $group, 'DESC')
+//				->limit(20)
+//				->get()
+//				->toArray();
 
 			return $this->base->view_s("site.main.blog_id", $data);
 		} else {
@@ -1011,7 +1011,7 @@ class MainController extends Controller
 	{
 		$data      = [];
 		$where[]   = ['villas.active', 1];
-		$count_box = 10;
+		$count_box = 20;
 		$group     = 'id';
 		$cart      = array_values($this->requests->session()->get('cart') ?? []);
 		$cart_id   = [];

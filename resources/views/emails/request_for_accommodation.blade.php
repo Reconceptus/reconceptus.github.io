@@ -45,8 +45,10 @@
 			style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left;">
 			@lang('main.security_policy_text') <a href="{{ env('APP_URL') }}/privacy-policy"
 				target="_blank"
-				style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;">security
-				police</a>
+				style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;"
+			>
+				security police
+			</a>
 		</td>
 	</tr>
 	</tbody>

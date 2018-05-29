@@ -172,25 +172,22 @@
 										</tr>
 										<tr>
 											<td align="center" style="padding-top: 35px;">
-												{{--<table width="90%" border="0" cellspacing="0" cellpadding="0" style="text-align: left;">--}}
-													{{--<tbody>--}}
+												<table width="90%" border="0" cellspacing="0" cellpadding="0" style="text-align: left;">
+													<tbody>
 													{{--<tr>--}}
 														{{--<td--}}
 															{{--style="padding-bottom: 16px; font-size: 17px; line-height: 22px;  font-family:Verdana, Arial, sans-serif;  color:#000000; text-align: left;">--}}
 															{{--<strong>Dear Sergey Vesnin,</strong>--}}
 														{{--</td>--}}
 													{{--</tr>--}}
-													{{--<tr>--}}
-														{{--<td--}}
-															{{--style="color:#000000;  font-family:Verdana, Arial, sans-serif; font-size:15px; line-height: 21px;">--}}
-															{{--Thank you for далее стандартный текст от сервиса для этой формы «Запрос на подбор». Мы--}}
-															{{--более 9 лет предоставляем услуги по подбору премиальных лицензированных вилл для вашего--}}
-															{{--отдыха. Хороший вкус, высочайший сервис 24/7, новаторство — это то, за что нас выбрали--}}
-															{{--более 300 семей.--}}
-														{{--</td>--}}
-													{{--</tr>--}}
-													{{--</tbody>--}}
-												{{--</table>--}}
+													<tr>
+														<td
+															style="color:#000000;  font-family:Verdana, Arial, sans-serif; font-size:15px; line-height: 21px;">
+															{{ $langSt($params['text_mail_villa_request']['key']) }}
+														</td>
+													</tr>
+													</tbody>
+												</table>
 											</td>
 										</tr>
 										<tr>
@@ -341,8 +338,10 @@
 															style="font-size: 15px; line-height: 18px; padding: 10px 0; font-family:Verdana, Arial, sans-serif; color:#30343f; text-align: left;">
 															@lang('main.security_policy_text') <a href="{{ env('APP_URL') }}/privacy-policy"
 																target="_blank"
-																style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;">security
-																police</a>
+																style="font-size: 15px; line-height: 18px; font-family:Verdana, Arial, sans-serif; color:#30343f; text-decoration: underline;"
+															>
+																security police
+															</a>
 														</td>
 													</tr>
 													</tbody>
