@@ -1,0 +1,5 @@
+.section {
+  @include media(hover,1025){padding-top: 1.32*$padding;}
+  @include breakpoints(681,1024){padding-top: 1.15*$padding;}
+  @include media(screen,680){padding-top: $padding;}
+}

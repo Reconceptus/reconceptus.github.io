@@ -1,0 +1,129 @@
+.text-box {
+  line-height: 1.55;
+  margin-bottom: 4rem;
+  @include media(hover,681){
+    font-size: 1.3rem;
+  }
+  @include media(screen,680){
+    font-size: 1.5rem;
+  }
+  .single-article & {
+    @include media(hover,681){
+      padding: 0 0.66*$padding;
+    }
+  }
+  p {
+    margin-bottom: 2rem;
+    min-height: 1px;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    &.right-align {
+      float: right;
+      margin: 0 0 1.5rem 2rem;
+      max-width: 50%;
+    }
+    &.left-align {
+      float: left;
+      max-width: 50%;
+      margin: 0 2rem 1.5rem 0;
+    }
+    &:not(.right-align):not(.left-align) {
+      width: 100%;
+      height: auto;
+      margin: 0 auto 2rem;
+    }
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  h1 {font-size: 3.5rem;}
+  h2 {font-size: 2.8rem;}
+  h3 {font-size: 2.14rem;}
+  h4 {font-size: 1.7rem;}
+  h5 {font-size: 1.4rem;}
+  h6 {font-size: 1.2rem;}
+  strong, b {
+    font-weight: 700;
+  }
+  a {
+    color: inherit;
+    border-bottom: 1px solid;
+    @include media(hover,1025){
+      &:hover {
+        border-bottom-width: 2px;
+      }
+    }
+  }
+  blockquote {
+    position: relative;
+    padding: 3rem 0;
+    font-size: 1.7rem;
+    font-style: italic;
+    margin: 4rem auto;
+    text-align: center;
+    max-width: 600px;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 1px;
+      background-color: currentColor;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    &:before {top: 0;}
+    &:after {bottom: 0;}
+  }
+  .flex-parts {
+
+    @include media(hover,681){
+      display: flex;
+      align-items: center;
+      & > div {
+        width: 50%;
+        &:first-child {padding-right: 1.5rem}
+        &:last-child {padding-left: 1.5rem}
+      }
+    }
+
+  }
+  .quote-parts {
+
+    @include media(hover,1025){
+      margin: 0 -80px;
+    }
+    *:not(img){
+      text-align: left;
+    }
+    @include media(hover,681){
+      display: flex;
+      align-items: center;
+      & > div {
+        width: 50%;
+        &:first-child {
+          padding-right: 1.5rem;
+          @include media(hover,1025){
+            *:not(img){
+              margin-left: 8rem;
+            }
+          }
+        }
+        &:last-child {
+          padding-left: 1.5rem;
+          @include media(hover,1025){
+            *:not(img){
+              margin-right: 8rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,111 @@
+.article {
+
+  box-sizing: border-box;
+  @include media(hover,1025){
+    margin-bottom: 85px;
+  }
+  @include breakpoints(681,1024){
+    margin-bottom: 5rem;
+  }
+  @include media(screen,680){
+    margin-bottom: 4rem;
+  }
+  .more & {
+
+    @include media(hover,1201){
+      width: 33.3333%;
+      padding: 0 0.8*$padding;
+    }
+    @include breakpoints(681,1200){
+      width: 50%;
+      padding: 0 0.8*$padding;
+    }
+  }
+  &--data {
+    position: relative;
+    padding-left: 0.66*$padding;
+
+  }
+  &--date {
+    position: absolute;
+    top: 2rem;
+    right: 100%;
+    white-space: nowrap;
+    color: $border;
+    font-weight: 700;
+    font-size: .86rem;
+    text-transform: uppercase;
+    transform-origin: top right;
+    transform: rotate(-90deg);
+    background-color: $white;
+    line-height: 1.1rem;
+    padding: 0 15px;
+  }
+  &--tag {
+    color: $black;
+    font-size: 1rem;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  &--title {
+    color: $dark;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1.1rem;
+    @include media(hover,1025){
+      font-size: 2.58rem;
+    }
+    @include breakpoints(681,1024){
+      font-size: 2.2rem;
+    }
+    @include media(screen,680){
+      font-size: 2rem;
+    }
+    span {
+      transition: all 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+  }
+  &--descr {
+    color:rgba($dark,0.8);
+    font-size: 1.14rem;
+    line-height: 1.87;
+  }
+  &--img {
+    display: flex;
+    margin-left: 0.66*$padding;
+    margin-right: 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid $lt_border;
+    margin-bottom: 10px;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &--box {
+    display: block;
+    color: inherit;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 0.5rem;
+      top: 0;
+      width: 1px;
+      background-color: $border;
+    }
+    @include media(hover,1025){
+      &:hover {
+        .article--title {
+          span {border-color: $dark;}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,291 @@
+.placeholder {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  background-color: #17191f;
+  background-repeat: no-repeat;
+  background-position: center 0, center 200px;
+  background-size: 1920px auto;
+
+  font-family: 'Noto', sans-serif;
+  &-main {
+    color: #fff;
+    width: 100%;
+    @include media(hover,1024){
+      padding: 95px 0 140px;
+    }
+    @include breakpoints(680,1023){
+      padding: 65px 0 75px;
+    }
+    @include media(screen,679){
+      padding: 30px 0 50px;
+    }
+  }
+  &-footer {
+    color: #aaa;
+    background-color: #fff;
+    margin-top: auto;
+    width: 100%;
+    @include media(hover,680){
+      padding: 45px 0;
+      font-size: 13px;
+    }
+    @include media(screen,679){
+      padding: 45px 0 20px;
+      font-size: 10px;
+    }
+    .banners {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media(hover,680){
+        margin-bottom: 120px;
+      }
+      @include media(screen,679){
+        margin-bottom: 60px;
+      }
+      &-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #17191f;
+        @include media(hover,1024){
+          font-size: 48px;
+          margin-bottom: 35px;
+        }
+        @include breakpoints(680,1023){
+          font-size: 36px;
+          margin-bottom: 30px;
+        }
+        @include media(screen,679){
+          font-size: 24px;
+          margin-bottom: 25px;
+        }
+      }
+      li {
+        &:not(:last-child){
+          @include media(hover,680){
+            margin-right: 45px;
+          }
+          @include media(screen,679){
+            margin-right: 25px;
+          }
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .copyright {
+      text-align: center;
+    }
+  }
+  &-content {
+    margin: 0 auto;
+    max-width: 990px;
+    box-sizing: border-box;
+    overflow: hidden;
+    @include media(hover,680){
+      padding: 0 50px;
+    }
+    @include media(screen,679){
+      padding: 0 25px;
+    }
+  }
+
+  .company {
+    &-main {
+      &-info {
+        @include media(hover,1024){
+          margin-bottom: 230px;
+        }
+        @include breakpoints(680,1023){
+          margin-bottom: 130px;
+        }
+        @include media(screen,679){
+          margin-bottom: 75px;
+        }
+        header {
+          text-align: center;
+          line-height: 1.6;
+          @include media(hover,1024){
+            font-size: 20px;
+            margin-bottom: 105px;
+          }
+          @include breakpoints(680,1023){
+            font-size: 14px;
+            margin-bottom: 80px;
+          }
+          @include media(screen,679){
+            font-size: 12px;
+            margin-bottom: 60px;
+          }
+        }
+        .logo {
+          margin: 0 auto 85px;
+          @include media(hover,1024){
+            width: 445px;
+          }
+          @include breakpoints(680,1023){
+            width: 360px;
+          }
+          @include media(screen,679){
+            width: 250px;
+            margin-bottom: 50px;
+          }
+          img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+    &-list {
+      @include media(hover,1024){
+        padding-right: 230px;
+        font-size: 18px;
+      }
+      @include breakpoints(680,1023){
+        font-size: 15px;
+      }
+      @include media(screen,679){
+        font-size: 13px;
+      }
+      li {
+        padding-left: 20px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 10px;
+          width: 5px;
+          height: 5px;
+          background-color: #fff;
+          border-radius: 50%;
+        }
+      }
+    }
+    &-descr {
+      strong {
+        font-weight: 700;
+      }
+    }
+    &-advantageous {
+      position: relative;
+      @include media(hover,1024){
+        padding-left: 260px;
+      }
+      header {
+        position: relative;
+        line-height: 1.5;
+
+        @include media(hover,680){
+          padding-left: 120px;
+          margin-bottom: 80px;
+        }
+        @include media(screen,679){
+          padding-left: 50px;
+          margin-bottom: 50px;
+        }
+        &:before {
+          content: "2";
+          position: absolute;
+          font-weight: 700;
+          line-height: 1;
+          left: 0;
+          top: 50%;
+          color: #7d8188;
+          transform: translateY(-50%);
+          @include media(hover,680){
+            font-size: 150px;
+          }
+          @include media(screen,679){
+            font-size: 70px;
+          }
+        }
+      }
+      article {
+        position: relative;
+        padding: 10px;
+        line-height: 1.5;
+        margin-bottom: 40px;
+        @include media(hover,1024){
+          font-size: 30px;
+        }
+        @include breakpoints(680,1023){
+          font-size: 24px;
+        }
+        @include media(screen,679){
+          font-size: 20px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 8px;
+          width: 105px;
+          height: 3px;
+          background-color: #fff;
+        }
+      }
+      .adv-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        @include media(hover,1024){
+          font-size: 48px;
+        }
+        @include breakpoints(680,1023){
+          font-size: 36px;
+        }
+        @include media(screen,679){
+          font-size: 24px;
+        }
+        &-text {
+          text-transform: uppercase;
+          @include media(hover,1024){
+            font-size: 36px;
+          }
+          @include breakpoints(680,1023){
+            font-size: 28px;
+          }
+          @include media(screen,679){
+            font-size: 18px;
+          }
+        }
+      }
+      .fingerprint {
+        position: absolute;
+        opacity: 0.1;
+        @include media(hover,1024){
+          left: 36px;
+          top: -70px;
+          bottom: -46px;
+        }
+        @include breakpoints(680,1023){
+          right: 0;
+          top: -70px;
+          bottom: -46px;
+        }
+        @include media(screen,679){
+          right: 0;
+          top: -15px;
+          bottom: 0;
+        }
+        img {
+          width: auto;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,10 @@
+.footer {
+  background-color: $light;
+  &--main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 160px;
+  }
+
+}
