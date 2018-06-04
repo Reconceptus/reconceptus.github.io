@@ -320,7 +320,7 @@
       align-items: center;
       flex-shrink: 500;
       @include media(hover,1024){
-        max-width: calc(100% - 320px);
+        width: calc(100% - 320px);
       }
       @include media(screen,599){
         flex-direction: column;
@@ -328,6 +328,7 @@
       }
       .includes {
         white-space: nowrap;
+        margin-left: auto;
       }
       .item {
          cursor: pointer;
@@ -339,20 +340,18 @@
           font-family: Futuris, sans-serif;
           line-height: 0.85;
           @include media(hover,1200){
-            font-size: 50px;
+            font-size: 42px;
           }
           @include breakpoints(600,1199){
-            font-size: 35px;
+            font-size: 32px;
           }
           @include media(screen,599){
-            font-size: 32px;
+            font-size: 28px;
           }
         }
         .place {
           display: flex;
           align-items: center;
-          font-family: 'Playfair Display', serif;
-          font-style: italic;
           font-weight: 300;
           font-size: 17px;
           height: 32px;
@@ -466,20 +465,30 @@
       left: 0;
       z-index: 20;
       .short-info-data {
-        height: 60px;
+        height: 90px;
         @include media(screen,599){
           height: 85px;
           .short-info-attributes .includes {display: none}
         }
       }
       .short-info-attributes {
-        max-width: calc(100% - 200px);
+        @include media(hover,1024){
+          width: calc(100% - 200px);
+        }
         .place {
           height: 0;
         }
         .item {
           .name {
-            font-size: 40px;
+            @include media(hover,1200){
+              font-size: 34px;
+            }
+            @include breakpoints(600,1199){
+              font-size: 26px;
+            }
+            @include media(screen,599){
+              font-size: 20px;
+            }
           }
         }
       }

@@ -1,35 +1,37 @@
 .includes {
   display: flex;
   align-items: center;
-  @include media(screen,1199){
-    .grid & {flex-direction: column;}
-  }
+  //@include media(screen,1200){
+  //  .grid & {flex-direction: column;}
+  //}
   & > span {
     display: flex;
     align-items: center;
     span {flex-shrink: 500;}
     .grid & {
-      @include media(hover,1600){
+      @include media(hover,1201){
         font-size: 15px;
         &:not(:last-child){
           margin-right: 30px;
         }
       }
-      @include breakpoints(1200,1599){
-        font-size: 13px;
+      //@include breakpoints(1200,1599){
+      //  font-size: 13px;
+      //  &:not(:last-child){
+      //    margin-right: 10px;
+      //  }
+      //}
+      @include media(screen,1200){
         &:not(:last-child){
-          margin-right: 10px;
+          margin-right: 15px;
         }
-      }
-      @include media(screen,1199){
-        margin-bottom: 5px;
       }
 
       i {
-        @include media(hover,1600){
+        @include media(hover,1201){
           margin-right: 10px;
         }
-        @include media(screen,1599){
+        @include media(screen,1200){
           margin-right: 7px;
         }
       }
@@ -69,11 +71,11 @@
   .bed {
     i {
       .grid & {
-        @include media(hover,1600){
+        @include media(hover,1201){
           width: 26px;
           height: 21px;
         }
-        @include media(screen,1599){
+        @include media(screen,1200){
           width: 20px;
           height: 16px;
         }
@@ -89,11 +91,11 @@
         }
       }
       .short-info & {
-        @include media(hover,1200){
+        @include media(hover,1201){
           width: 26px;
           height: 21px;
         }
-        @include media(screen,1199){
+        @include media(screen,1200){
           width: 20px;
           height: 16px;
         }
@@ -104,11 +106,11 @@
   .bath {
     i {
       .grid & {
-        @include media(hover,1600){
+        @include media(hover,1201){
           width: 32px;
           height: 28px;
         }
-        @include media(screen,1599){
+        @include media(screen,1200){
           width: 20px;
           height: 18px;
         }
@@ -124,11 +126,11 @@
         }
       }
       .short-info & {
-        @include media(hover,1200){
+        @include media(hover,1201){
           width: 32px;
           height: 28px;
         }
-        @include media(screen,1199){
+        @include media(screen,1200){
           width: 20px;
           height: 18px;
         }
@@ -138,11 +140,11 @@
   .sea {
     i {
       .grid & {
-        @include media(hover,1600){
+        @include media(hover,1201){
           width: 28px;
           height: 29px;
         }
-        @include media(screen,1599){
+        @include media(screen,1200){
           width: 20px;
           height: 20px;
         }
@@ -158,11 +160,11 @@
         }
       }
       .short-info & {
-        @include media(hover,1200){
+        @include media(hover,1201){
           width: 28px;
           height: 29px;
         }
-        @include media(screen,1199){
+        @include media(screen,1200){
           width: 20px;
           height: 20px;
         }

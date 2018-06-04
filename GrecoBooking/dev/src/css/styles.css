@@ -4644,16 +4644,6 @@ svg {
           align-items: center;
 }
 
-@media screen and (max-width: 1199px) {
-  .grid .includes {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
-                -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
 .includes > span {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4671,7 +4661,7 @@ svg {
           flex-shrink: 500;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1201px) {
   .grid .includes > span {
     font-size: 15px;
   }
@@ -4680,28 +4670,19 @@ svg {
   }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
-  .grid .includes > span {
-    font-size: 13px;
-  }
+@media screen and (max-width: 1200px) {
   .grid .includes > span:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 }
 
-@media screen and (max-width: 1199px) {
-  .grid .includes > span {
-    margin-bottom: 5px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1201px) {
   .grid .includes > span i {
     margin-right: 10px;
   }
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1200px) {
   .grid .includes > span i {
     margin-right: 7px;
   }
@@ -4746,14 +4727,14 @@ svg {
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1201px) {
   .grid .includes .bed i {
     width: 26px;
     height: 21px;
   }
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1200px) {
   .grid .includes .bed i {
     width: 20px;
     height: 16px;
@@ -4774,28 +4755,28 @@ svg {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   .short-info .includes .bed i {
     width: 26px;
     height: 21px;
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
   .short-info .includes .bed i {
     width: 20px;
     height: 16px;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1201px) {
   .grid .includes .bath i {
     width: 32px;
     height: 28px;
   }
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1200px) {
   .grid .includes .bath i {
     width: 20px;
     height: 18px;
@@ -4816,28 +4797,28 @@ svg {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   .short-info .includes .bath i {
     width: 32px;
     height: 28px;
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
   .short-info .includes .bath i {
     width: 20px;
     height: 18px;
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1201px) {
   .grid .includes .sea i {
     width: 28px;
     height: 29px;
   }
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1200px) {
   .grid .includes .sea i {
     width: 20px;
     height: 20px;
@@ -4858,14 +4839,14 @@ svg {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   .short-info .includes .sea i {
     width: 28px;
     height: 29px;
   }
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1200px) {
   .short-info .includes .sea i {
     width: 20px;
     height: 20px;
@@ -5180,6 +5161,7 @@ svg {
 
 .villa-item .includes {
   color: #30343f;
+  margin-top: auto;
   font-weight: 400;
 }
 
@@ -5226,6 +5208,18 @@ svg {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (min-width: 1025px) {
@@ -5419,9 +5413,7 @@ svg {
 }
 
 .villa-main .place {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
 }
 
@@ -8240,8 +8232,8 @@ svg {
 
 @media screen and (min-width: 1024px) {
   .villa-nav .short-info-attributes {
-    max-width: -webkit-calc(100% - 320px);
-    max-width: calc(100% - 320px);
+    width: -webkit-calc(100% - 320px);
+    width: calc(100% - 320px);
   }
 }
 
@@ -8261,6 +8253,7 @@ svg {
 
 .villa-nav .short-info-attributes .includes {
   white-space: nowrap;
+  margin-left: auto;
 }
 
 .villa-nav .short-info-attributes .item {
@@ -8281,19 +8274,19 @@ svg {
 
 @media screen and (min-width: 1200px) {
   .villa-nav .short-info-attributes .item .name {
-    font-size: 50px;
+    font-size: 42px;
   }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1199px) {
   .villa-nav .short-info-attributes .item .name {
-    font-size: 35px;
+    font-size: 32px;
   }
 }
 
 @media screen and (max-width: 599px) {
   .villa-nav .short-info-attributes .item .name {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
@@ -8306,8 +8299,6 @@ svg {
           -webkit-align-items: center;
               -ms-flex-align: center;
           align-items: center;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
   font-weight: 300;
   font-size: 17px;
   height: 32px;
@@ -8470,7 +8461,7 @@ svg {
 }
 
 .villa-nav .short-info.fixed .short-info-data, .villa-nav .short-info.absolute .short-info-data {
-  height: 60px;
+  height: 90px;
 }
 
 @media screen and (max-width: 599px) {
@@ -8482,17 +8473,33 @@ svg {
   }
 }
 
-.villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
-  max-width: -webkit-calc(100% - 200px);
-  max-width: calc(100% - 200px);
+@media screen and (min-width: 1024px) {
+  .villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
+    width: -webkit-calc(100% - 200px);
+    width: calc(100% - 200px);
+  }
 }
 
 .villa-nav .short-info.fixed .short-info-attributes .place, .villa-nav .short-info.absolute .short-info-attributes .place {
   height: 0;
 }
 
-.villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
-  font-size: 40px;
+@media screen and (min-width: 1200px) {
+  .villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
+    font-size: 20px;
+  }
 }
 
 .villa-nav .short-info.fixed .short-info-navigate, .villa-nav .short-info.absolute .short-info-navigate {
