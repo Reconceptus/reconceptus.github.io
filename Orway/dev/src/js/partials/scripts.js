@@ -2,10 +2,25 @@ $(document).ready(function () {
 
     /* ----------------------------------- variables ----------------------------------- */
 
-    var btn = $('#search_btn'),
-        nav = $('.nav');
+    var scrollTop,
+        $header = $('#header');
 
     /* ----------------------------------- functions ----------------------------------- */
+
+    /*
+     ============= header fixed
+    */
+
+    function headerFixed() {
+        scrollTop = $(window).scrollTop();
+        if(scrollTop > 0){
+            $header.addClass('minimized')
+        }
+        else {
+            $header.removeClass('minimized')
+        }
+    }
+
 
     /*
      ============= document click events
@@ -28,9 +43,12 @@ $(document).ready(function () {
     }
 
 
+
+
     /* --------------------------------- document load --------------------------------- */
 
     documentClick();
+    headerFixed();
 
     if($('select').length > 0){}
 
@@ -43,8 +61,7 @@ $(document).ready(function () {
     /* --------------------------------- document scroll --------------------------------- */
 
     $(window).scroll(function (e) {
-
-
+        headerFixed();
     });
 
 });

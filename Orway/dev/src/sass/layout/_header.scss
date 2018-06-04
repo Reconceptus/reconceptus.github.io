@@ -1,6 +1,11 @@
 .header {
   background-color: $dark;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  transition: all 0.2s;
   .logo {
     width: 154px;
     height: 35px;
@@ -74,12 +79,36 @@
       }
     }
   }
+  &.minimized {
+    transition: all 0.35s;
+    @include media(hover,681){
+      transform: translateY(-45px);
+    }
+    @include media(screen,680){
+      transform: translateY(-25px);
+    }
+  }
   &--main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include media(hover,681){height: 105px;}
-    @include media(screen,680){height: 85px;}
+    transition: all 0.2s;
+    box-sizing: border-box;
+    .minimized & {
+      transition: all 0.35s;
+    }
+    @include media(hover,681){
+      height: 105px;
+      .minimized & {
+        padding-top: 45px;
+      }
+    }
+    @include media(screen,680){
+      height: 85px;
+      .minimized & {
+        padding-top: 25px;
+      }
+    }
     @include media(screen,1024) {
       &:after {
         content: "";

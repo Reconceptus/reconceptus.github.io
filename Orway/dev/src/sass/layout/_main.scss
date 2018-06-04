@@ -30,8 +30,12 @@ svg {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-
-
+  @include media(hover,681){
+    padding-top: 105px;
+  }
+  @include media(screen,680){
+    padding-top: 85px;
+  }
 }
 #wrapper {
   display: flex;
