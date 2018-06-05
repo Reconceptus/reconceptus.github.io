@@ -8201,6 +8201,15 @@ svg {
 }
 
 @media screen and (max-width: 599px) {
+  .villa-nav .short-info-data .show-villa-form {
+    width: 100%;
+  }
+  .villa-nav .short-info-data .show-villa-form .btn_subm {
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 599px) {
   .villa-nav .short-info-data {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8212,7 +8221,7 @@ svg {
                 -ms-flex-align: start;
             align-items: flex-start;
     padding: 10px 0;
-    height: 170px;
+    height: 190px;
   }
 }
 
@@ -8269,7 +8278,7 @@ svg {
 .villa-nav .short-info-attributes .item .name {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
-  line-height: 0.85;
+  line-height: 0.95;
 }
 
 @media screen and (min-width: 1200px) {
@@ -8301,11 +8310,17 @@ svg {
           align-items: center;
   font-weight: 300;
   font-size: 17px;
-  height: 32px;
+  height: 22px;
   overflow: hidden;
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+@media screen and (max-width: 599px) {
+  .villa-nav .short-info-attributes .item .place {
+    margin-top: 8px;
+  }
 }
 
 .villa-nav .short-info-attributes .item .place i {
@@ -8473,6 +8488,10 @@ svg {
   }
 }
 
+.villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
+  width: 100%;
+}
+
 @media screen and (min-width: 1024px) {
   .villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
     width: -webkit-calc(100% - 200px);
@@ -8480,8 +8499,28 @@ svg {
   }
 }
 
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+  .villa-nav .short-info.fixed .short-info-attributes, .villa-nav .short-info.absolute .short-info-attributes {
+    width: -webkit-calc(100% - 280px);
+    width: calc(100% - 280px);
+  }
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .place, .villa-nav .short-info.absolute .short-info-attributes .place {
   height: 0;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item, .villa-nav .short-info.absolute .short-info-attributes .item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item .name, .villa-nav .short-info.absolute .short-info-attributes .item .name {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 @media screen and (min-width: 1200px) {

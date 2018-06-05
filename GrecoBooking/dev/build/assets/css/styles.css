@@ -5368,7 +5368,7 @@ svg {
 .villa-nav .short-info-attributes .item .name {
   text-transform: uppercase;
   font-family: Futuris, sans-serif;
-  line-height: 0.85;
+  line-height: 0.95;
 }
 
 .villa-nav .short-info-attributes .item .place {
@@ -5382,7 +5382,7 @@ svg {
   align-items: center;
   font-weight: 300;
   font-size: 17px;
-  height: 32px;
+  height: 22px;
   overflow: hidden;
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -5520,9 +5520,29 @@ svg {
   height: 90px;
 }
 
+.villa-nav .short-info.fixed .short-info-attributes,
+.villa-nav .short-info.absolute .short-info-attributes {
+  width: 100%;
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .place,
 .villa-nav .short-info.absolute .short-info-attributes .place {
   height: 0;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item,
+.villa-nav .short-info.absolute .short-info-attributes .item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.villa-nav .short-info.fixed .short-info-attributes .item .name,
+.villa-nav .short-info.absolute .short-info-attributes .item .name {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 .villa-nav .short-info.fixed .short-info-navigate,
@@ -8073,6 +8093,14 @@ svg {
     right: 20px;
   }
 
+  .villa-nav .short-info-data .show-villa-form {
+    width: 100%;
+  }
+
+  .villa-nav .short-info-data .show-villa-form .btn_subm {
+    margin-left: auto;
+  }
+
   .villa-nav .short-info-data {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8084,7 +8112,7 @@ svg {
     -ms-flex-align: start;
     align-items: flex-start;
     padding: 10px 0;
-    height: 170px;
+    height: 190px;
   }
 
   .villa-nav .short-info-attributes {
@@ -8101,6 +8129,10 @@ svg {
 
   .villa-nav .short-info-attributes .item .name {
     font-size: 28px;
+  }
+
+  .villa-nav .short-info-attributes .item .place {
+    margin-top: 8px;
   }
 
   .villa-nav .short-info-attributes .includes {
@@ -9161,6 +9193,12 @@ svg {
 
   .villa-nav .short-info-attributes .includes {
     display: none;
+  }
+
+  .villa-nav .short-info.fixed .short-info-attributes,
+  .villa-nav .short-info.absolute .short-info-attributes {
+    width: -webkit-calc(100% - 280px);
+    width: calc(100% - 280px);
   }
 
   .villa-nav .short-info .mobile-attributes {
