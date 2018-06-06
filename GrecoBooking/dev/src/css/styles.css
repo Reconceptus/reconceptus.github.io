@@ -627,17 +627,26 @@ textarea {
   .header .logo a {
     width: 250px;
   }
+  .ie .header .logo a {
+    height: 22px;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1599px) {
   .header .logo a {
     width: 200px;
   }
+  .ie .header .logo a {
+    height: 18px;
+  }
 }
 
 @media screen and (max-width: 1023px) {
   .header .logo a {
     width: 175px;
+  }
+  .ie .header .logo a {
+    height: 16px;
   }
 }
 

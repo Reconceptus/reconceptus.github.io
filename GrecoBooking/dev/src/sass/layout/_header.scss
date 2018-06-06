@@ -27,9 +27,18 @@
     a {
       display: block;
 
-      @include media(hover,1600){width: 250px;}
-      @include breakpoints(1024,1599){width: 200px;}
-      @include media(screen,1023){width: 175px;}
+      @include media(hover,1600){
+        width: 250px;
+        .ie & {height: 22px}
+      }
+      @include breakpoints(1024,1599){
+        width: 200px;
+        .ie & {height: 18px}
+      }
+      @include media(screen,1023){
+        width: 175px;
+        .ie & {height: 16px}
+      }
       svg {
         fill: $white;
         transition: all 0.3s;

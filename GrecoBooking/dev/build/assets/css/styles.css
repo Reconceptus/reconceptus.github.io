@@ -8307,6 +8307,10 @@ svg {
     width: 175px;
   }
 
+  .ie .header .logo a {
+    height: 16px;
+  }
+
   .header .elements .request {
     display: none;
   }
@@ -8983,6 +8987,10 @@ svg {
     width: 250px;
   }
 
+  .ie .header .logo a {
+    height: 22px;
+  }
+
   .header .elements {
     width: 335px;
   }
@@ -9092,6 +9100,10 @@ svg {
 @media screen and (min-width: 1024px) and (max-width: 1599px) {
   .header .logo a {
     width: 200px;
+  }
+
+  .ie .header .logo a {
+    height: 18px;
   }
 
   .blog-box .layout_sm li {
