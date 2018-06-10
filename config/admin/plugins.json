@@ -51,6 +51,7 @@
 		"name"       : "title",
 		"typeField"  : "input",
 		"nameText"   : "Title",
+		"classAttr"  : "border-green",
 		"nameAttr"   : "pl[title]",
 		"description": "Мета поле инпут для Title",
 		"idAttr"     : "inputTitle",
@@ -61,6 +62,7 @@
 		"name"        : "author",
 		"typeField"   : "input",
 		"nameText"    : "Author",
+		"classAttr"   : "border-green",
 		"nameAttr"    : "pl[author]",
 		"description" : "Мета поле инпут для Author",
 		"idAttr"      : "inputAuthor",
@@ -72,6 +74,7 @@
 		"name"       : "keywords",
 		"typeField"  : "textarea",
 		"nameText"   : "Keywords",
+		"classAttr"  : "border-green",
 		"nameAttr"   : "pl[keywords]",
 		"description": "Мета поле Keywords",
 		"idAttr"     : "textareaDescription",
@@ -82,6 +85,7 @@
 		"name"       : "description",
 		"typeField"  : "textarea",
 		"nameText"   : "Description",
+		"classAttr"  : "border-green",
 		"nameAttr"   : "pl[description]",
 		"description": "Мета поле Description",
 		"idAttr"     : "textareaDescription",
@@ -119,9 +123,8 @@
 		"nameAttr"    : "pl[order]",
 		"description" : "Текстовое поле инпут \"Порядок сортировки\"",
 		"idAttr"      : "inputOrder",
-		"showOnly"    : ["admin", "specialist"],
 		"sql_column"  : "order",
-		"translateKey ": "order"
+		"translateKey": "sorting"
 	},
 	{
 		"name"       : "class",
@@ -152,13 +155,14 @@
 		"sql_column" : "controller"
 	},
 	{
-		"name"       : "little_description",
-		"typeField"  : "textarea",
-		"nameText"   : "Сокращённый текст",
-		"nameAttr"   : "pl[little_description]",
-		"description": "Текстовое поле \"Little_description\"",
-		"idAttr"     : "textareaLittle_description",
-		"sql_column" : "little_description"
+		"name"        : "little_description",
+		"typeField"   : "textarea",
+		"nameText"    : "Сокращённый текст",
+		"nameAttr"    : "pl[little_description]",
+		"description" : "Текстовое поле \"Little_description\"",
+		"idAttr"      : "textareaLittle_description",
+		"sql_column"  : "little_description",
+		"translateKey": "little_description"
 	},
 	{
 		"name"        : "key_feature",
@@ -776,13 +780,14 @@
 		"sql_column" : "discount"
 	},
 	{
-		"name"       : "sort",
-		"typeField"  : "input",
-		"nameText"   : "Сортировка",
-		"nameAttr"   : "pl[sort]",
-		"description": "Текстовое поле инпут \"Сортировка(имя сортируемой таблицы)\"",
-		"idAttr"     : "inputSort",
-		"sql_column" : "sort"
+		"name"        : "sort",
+		"typeField"   : "input",
+		"nameText"    : "Сортировка",
+		"nameAttr"    : "pl[sort]",
+		"description" : "Текстовое поле инпут \"Сортировка(имя сортируемой таблицы)\"",
+		"idAttr"      : "inputSort",
+		"sql_column"  : "sort",
+		"translateKey": "sorting"
 	},
 	{
 		"name"       : "living_space",
@@ -1082,6 +1087,7 @@
 		"idAttr"          : "selectTags",
 		"sql_column"      : "tags",
 		"js_init_function": "tagsInit",
+		"translateKey"    : "tags",
 		"body"            : {
 			"text"    : "",
 			"type"    : "insert",
@@ -1097,7 +1103,6 @@
 		"description"     : "Текстовое поле селект \"booking_calendar\"",
 		"idAttr"          : "selectBooking_calendar",
 		"sql_column"      : "booking_calendar",
-		"showOnly"        : ["admin", "author", "specialist"],
 		"js_init_function": "bookingCalendarInit",
 		"tabs"            : "calendar",
 		"body"            : {
@@ -1173,7 +1178,6 @@
 		"description" : "Текстовое поле \"specialist_comment\"",
 		"idAttr"      : "inputSpecialist_comment",
 		"sql_column"  : "specialist_comment",
-		"showOnly"    : ["admin", "specialist"],
 		"translateKey": "specialist_comment"
 	},
 	{
@@ -1185,7 +1189,6 @@
 		"description" : "Селект \"specialist\"",
 		"idAttr"      : "selectSpecialist",
 		"sql_column"  : "specialist",
-		"showOnly"    : ["admin", "specialist"],
 		"translateKey": "specialist",
 		"body"        : {
 			"text": "<option value=\"0\">-</option>{-option-}",
@@ -1203,7 +1206,6 @@
 		"idAttr"         : "checkboxIs_hot",
 		"functionsBefore": "checkboxCheck",
 		"sql_column"     : "is_hot",
-		"showOnly"       : ["admin", "specialist"],
 		"translateKey"   : "is_hot_offer"
 	},
 	{
@@ -1217,7 +1219,6 @@
 		"idAttr"         : "checkboxVillas_by_the_seat",
 		"functionsBefore": "checkboxCheck",
 		"sql_column"     : "villas_by_the_sea",
-		"showOnly"       : ["admin", "specialist"],
 		"translateKey"   : "villas_by_the_sea"
 	},
 	{
@@ -1231,7 +1232,6 @@
 		"idAttr"         : "checkboxVillas_with_private_service",
 		"functionsBefore": "checkboxCheck",
 		"sql_column"     : "villas_with_private_service",
-		"showOnly"       : ["admin", "specialist"],
 		"translateKey"   : "villas_with_private_service"
 	},
 	{
@@ -1245,7 +1245,6 @@
 		"idAttr"         : "checkboxVacation_together",
 		"functionsBefore": "checkboxCheck",
 		"sql_column"     : "vacation_together",
-		"showOnly"       : ["admin", "specialist"],
 		"translateKey"   : "vacation_together"
 	},
 	{
@@ -1394,7 +1393,6 @@
 		"idAttr"         : "checkboxTo_main",
 		"sql_column"     : "to_main",
 		"functionsBefore": "checkboxCheck",
-		"showOnly"       : ["admin", "specialist"],
 		"translateKey"   : "to_main"
 	},
 	{

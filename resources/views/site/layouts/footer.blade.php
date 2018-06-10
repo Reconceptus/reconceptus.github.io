@@ -90,6 +90,7 @@
 <script>
 	formsFull.initSubscription();
 </script>
+{!! $langSt($params['metrika']['key']) !!}
 @stack('footer')
 </body>
 </html>

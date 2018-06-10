@@ -48,4 +48,7 @@ return [
 	'collections'                 => 'Image collections',
 	'main_img_small'              => 'First Screen(mobile)',
 	'guests_person'               => 'Number of Guests / Person',
+	'little_description'          => 'Short text',
+	'sorting'                     => 'Sorting',
+	'tags'                        => 'Tags',
 ];

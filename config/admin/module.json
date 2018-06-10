@@ -128,16 +128,30 @@
 				"table": "users",
 				"where": [["user_another_type", "=", "specialist"]]
 			},
-			"files": {
+			"files"     : {
 				"limit": 1
 			}
 		},
 		"idCatShow"       : {
 			"cat_location": 4
+		},
+		"showOnly"        : {
+			"title"                      : ["admin", "specialist"],
+			"author"                     : ["admin", "specialist"],
+			"keywords"                   : ["admin", "specialist"],
+			"description"                : ["admin", "specialist"],
+			"is_hot"                     : ["admin", "specialist"],
+			"to_main"                    : ["admin", "specialist"],
+			"villas_by_the_sea"          : ["admin", "specialist"],
+			"villas_with_private_service": ["admin", "specialist"],
+			"vacation_together"          : ["admin", "specialist"],
+			"specialist"                 : ["admin", "specialist"],
+			"specialist_comment"         : ["admin", "specialist"],
+			"order"                      : ["admin", "specialist"]
 		}
 	},
 	{
-		"id"              : "2",
+		"id": "2",
 		"active"          : true,
 		"big_height"      : "1200",
 		"big_width"       : "800",
@@ -418,7 +432,7 @@
 		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
-		"translate_key"   : "",
+		"translate_key"   : "lang",
 		"menu_table_name" : "params_lang"
 	},
 	{
@@ -446,7 +460,7 @@
 		"small_height"    : "350",
 		"sort"            : "1",
 		"views_module"    : "table",
-		"translate_key"   : "",
+		"translate_key"   : "tags",
 		"menu_table_name" : "tags"
 	},
 	{
@@ -523,8 +537,8 @@
 			"description",
 			"active"
 		],
-		"params": {
-			"files": {
+		"params"          : {
+			"files"         : {
 				"limit": 2
 			},
 			"main_img_small": {
@@ -579,7 +593,7 @@
 			"keywords",
 			"description"
 		],
-		"main_page": [
+		"main_page"       : [
 			"working_conditions",
 			"benefits",
 			"little_description",
@@ -587,7 +601,7 @@
 			"keywords",
 			"description"
 		],
-		"lang_main_page": [
+		"lang_main_page"  : [
 			"little_description",
 			"title",
 			"keywords",

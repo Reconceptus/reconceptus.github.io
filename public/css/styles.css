@@ -3576,6 +3576,7 @@ svg {
 
 .villa-item .includes {
 	color: #30343F;
+	margin-top: auto;
 	font-weight: 400;
 }
 
@@ -3590,6 +3591,18 @@ svg {
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 .villa-img {
@@ -3701,9 +3714,7 @@ svg {
 }
 
 .villa-main .place {
-	font-family: "Playfair Display", serif;
-	font-style: italic;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 14px;
 }
 
@@ -5347,6 +5358,7 @@ svg {
 
 .villa-nav .short-info-attributes .includes {
 	white-space: nowrap;
+	margin-left: auto;
 }
 
 .villa-nav .short-info-attributes .item {
@@ -5356,7 +5368,7 @@ svg {
 .villa-nav .short-info-attributes .item .name {
 	text-transform: uppercase;
 	font-family: Futuris, sans-serif;
-	line-height: 0.85;
+	line-height: 0.95;
 }
 
 .villa-nav .short-info-attributes .item .place {
@@ -5368,11 +5380,9 @@ svg {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	font-family: "Playfair Display", serif;
-	font-style: italic;
 	font-weight: 300;
 	font-size: 17px;
-	height: 32px;
+	height: 22px;
 	overflow: hidden;
 	-webkit-transition: all 0.2s;
 	-o-transition: all 0.2s;
@@ -5507,13 +5517,12 @@ svg {
 
 .villa-nav .short-info.fixed .short-info-data,
 .villa-nav .short-info.absolute .short-info-data {
-	height: 60px;
+	height: 90px;
 }
 
 .villa-nav .short-info.fixed .short-info-attributes,
 .villa-nav .short-info.absolute .short-info-attributes {
-	max-width: -webkit-calc(100% - 200px);
-	max-width: calc(100% - 200px);
+	width: 100%;
 }
 
 .villa-nav .short-info.fixed .short-info-attributes .place,
@@ -5521,9 +5530,19 @@ svg {
 	height: 0;
 }
 
+.villa-nav .short-info.fixed .short-info-attributes .item,
+.villa-nav .short-info.absolute .short-info-attributes .item {
+	width: 100%;
+	overflow: hidden;
+}
+
 .villa-nav .short-info.fixed .short-info-attributes .item .name,
 .villa-nav .short-info.absolute .short-info-attributes .item .name {
-	font-size: 40px;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 
 .villa-nav .short-info.fixed .short-info-navigate,
@@ -6871,21 +6890,6 @@ svg {
 		margin-bottom: 40px;
 	}
 
-	.short-info .includes .bed i {
-		width: 26px;
-		height: 21px;
-	}
-
-	.short-info .includes .bath i {
-		width: 32px;
-		height: 28px;
-	}
-
-	.short-info .includes .sea i {
-		width: 28px;
-		height: 29px;
-	}
-
 	.blog-box .layout_lg .article {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -6921,7 +6925,12 @@ svg {
 	}
 
 	.villa-nav .short-info-attributes .item .name {
-		font-size: 50px;
+		font-size: 42px;
+	}
+
+	.villa-nav .short-info.fixed .short-info-attributes .item .name,
+	.villa-nav .short-info.absolute .short-info-attributes .item .name {
+		font-size: 34px;
 	}
 
 	.vacancy-quotes .text {
@@ -7121,33 +7130,6 @@ svg {
 	.grid-list .price {
 		margin-top: 20px;
 		margin-bottom: 30px;
-	}
-
-	.grid .includes {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
-
-	.grid .includes > span {
-		margin-bottom: 5px;
-	}
-
-	.short-info .includes .bed i {
-		width: 20px;
-		height: 16px;
-	}
-
-	.short-info .includes .bath i {
-		width: 20px;
-		height: 18px;
-	}
-
-	.short-info .includes .sea i {
-		width: 20px;
-		height: 20px;
 	}
 
 	.blog-box .layout_lg .article {
@@ -7415,8 +7397,14 @@ svg {
 	}
 
 	.villa-nav .short-info-attributes {
-		max-width: -webkit-calc(100% - 320px);
-		max-width: calc(100% - 320px);
+		width: -webkit-calc(100% - 320px);
+		width: calc(100% - 320px);
+	}
+
+	.villa-nav .short-info.fixed .short-info-attributes,
+	.villa-nav .short-info.absolute .short-info-attributes {
+		width: -webkit-calc(100% - 200px);
+		width: calc(100% - 200px);
 	}
 
 	.villa-nav .short-info .mobile-attributes {
@@ -8105,6 +8093,14 @@ svg {
 		right: 20px;
 	}
 
+	.villa-nav .short-info-data .show-villa-form {
+		width: 100%;
+	}
+
+	.villa-nav .short-info-data .show-villa-form .btn_subm {
+		margin-left: auto;
+	}
+
 	.villa-nav .short-info-data {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
@@ -8116,7 +8112,7 @@ svg {
 		-ms-flex-align: start;
 		align-items: flex-start;
 		padding: 10px 0;
-		height: 170px;
+		height: 190px;
 	}
 
 	.villa-nav .short-info-attributes {
@@ -8132,7 +8128,11 @@ svg {
 	}
 
 	.villa-nav .short-info-attributes .item .name {
-		font-size: 32px;
+		font-size: 28px;
+	}
+
+	.villa-nav .short-info-attributes .item .place {
+		margin-top: 8px;
 	}
 
 	.villa-nav .short-info-attributes .includes {
@@ -8147,6 +8147,11 @@ svg {
 	.villa-nav .short-info.fixed .short-info-data .short-info-attributes .includes,
 	.villa-nav .short-info.absolute .short-info-data .short-info-attributes .includes {
 		display: none;
+	}
+
+	.villa-nav .short-info.fixed .short-info-attributes .item .name,
+	.villa-nav .short-info.absolute .short-info-attributes .item .name {
+		font-size: 20px;
 	}
 
 	.villa-nav .short-info .mobile-attributes {
@@ -8300,6 +8305,10 @@ svg {
 
 	.header .logo a {
 		width: 175px;
+	}
+
+	.ie .header .logo a {
+		height: 16px;
 	}
 
 	.header .elements .request {
@@ -8771,6 +8780,44 @@ svg {
 		display: none !important;
 	}
 
+	.grid .includes > span:not(:last-child) {
+		margin-right: 15px;
+	}
+
+	.grid .includes > span i {
+		margin-right: 7px;
+	}
+
+	.grid .includes .bed i {
+		width: 20px;
+		height: 16px;
+	}
+
+	.short-info .includes .bed i {
+		width: 20px;
+		height: 16px;
+	}
+
+	.grid .includes .bath i {
+		width: 20px;
+		height: 18px;
+	}
+
+	.short-info .includes .bath i {
+		width: 20px;
+		height: 18px;
+	}
+
+	.grid .includes .sea i {
+		width: 20px;
+		height: 20px;
+	}
+
+	.short-info .includes .sea i {
+		width: 20px;
+		height: 20px;
+	}
+
 	.villa-gallery .rsArrow {
 		display: none !important;
 	}
@@ -8940,6 +8987,10 @@ svg {
 		width: 250px;
 	}
 
+	.ie .header .logo a {
+		height: 22px;
+	}
+
 	.header .elements {
 		width: 335px;
 	}
@@ -8972,18 +9023,6 @@ svg {
 		padding: 20px;
 	}
 
-	.grid .includes > span {
-		font-size: 15px;
-	}
-
-	.grid .includes > span:not(:last-child) {
-		margin-right: 30px;
-	}
-
-	.grid .includes > span i {
-		margin-right: 10px;
-	}
-
 	.short-info .includes > span {
 		font-size: 15px;
 	}
@@ -8994,21 +9033,6 @@ svg {
 
 	.short-info .includes > span i {
 		margin-right: 10px;
-	}
-
-	.grid .includes .bed i {
-		width: 26px;
-		height: 21px;
-	}
-
-	.grid .includes .bath i {
-		width: 32px;
-		height: 28px;
-	}
-
-	.grid .includes .sea i {
-		width: 28px;
-		height: 29px;
 	}
 
 	.blog-box .layout_lg .article .head {
@@ -9063,14 +9087,6 @@ svg {
 		right: 280px;
 	}
 
-	.grid .includes > span {
-		font-size: 13px;
-	}
-
-	.grid .includes > span:not(:last-child) {
-		margin-right: 10px;
-	}
-
 	.blog-box .layout_lg .article .head {
 		padding: 22px;
 		width: 50%;
@@ -9084,6 +9100,10 @@ svg {
 @media screen and (min-width: 1024px) and (max-width: 1599px) {
 	.header .logo a {
 		width: 200px;
+	}
+
+	.ie .header .logo a {
+		height: 18px;
 	}
 
 	.blog-box .layout_sm li {
@@ -9185,6 +9205,12 @@ svg {
 
 	.villa-nav .short-info-attributes .includes {
 		display: none;
+	}
+
+	.villa-nav .short-info.fixed .short-info-attributes,
+	.villa-nav .short-info.absolute .short-info-attributes {
+		width: -webkit-calc(100% - 280px);
+		width: calc(100% - 280px);
 	}
 
 	.villa-nav .short-info .mobile-attributes {
@@ -9629,28 +9655,47 @@ svg {
 	}
 }
 
-@media screen and (max-width: 1599px) {
-	.grid .includes > span i {
-		margin-right: 7px;
+@media screen and (min-width: 1201px) {
+	.grid .includes > span {
+		font-size: 15px;
 	}
 
-	.short-info .includes > span i {
-		margin-right: 7px;
+	.grid .includes > span:not(:last-child) {
+		margin-right: 30px;
+	}
+
+	.grid .includes > span i {
+		margin-right: 10px;
 	}
 
 	.grid .includes .bed i {
-		width: 20px;
-		height: 16px;
+		width: 26px;
+		height: 21px;
+	}
+
+	.short-info .includes .bed i {
+		width: 26px;
+		height: 21px;
 	}
 
 	.grid .includes .bath i {
-		width: 20px;
-		height: 18px;
+		width: 32px;
+		height: 28px;
+	}
+
+	.short-info .includes .bath i {
+		width: 32px;
+		height: 28px;
 	}
 
 	.grid .includes .sea i {
-		width: 20px;
-		height: 20px;
+		width: 28px;
+		height: 29px;
+	}
+
+	.short-info .includes .sea i {
+		width: 28px;
+		height: 29px;
 	}
 }
 
@@ -9661,6 +9706,12 @@ svg {
 
 	.short-info .includes > span:not(:last-child) {
 		margin-right: 10px;
+	}
+}
+
+@media screen and (max-width: 1599px) {
+	.short-info .includes > span i {
+		margin-right: 7px;
 	}
 }
 
@@ -9768,7 +9819,12 @@ svg {
 
 @media screen and (min-width: 600px) and (max-width: 1199px) {
 	.villa-nav .short-info-attributes .item .name {
-		font-size: 35px;
+		font-size: 32px;
+	}
+
+	.villa-nav .short-info.fixed .short-info-attributes .item .name,
+	.villa-nav .short-info.absolute .short-info-attributes .item .name {
+		font-size: 26px;
 	}
 }
 

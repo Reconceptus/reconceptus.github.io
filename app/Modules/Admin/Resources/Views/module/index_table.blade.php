@@ -35,7 +35,7 @@
 							</div>
 
 							<script>
-								$('.sort').val({{ $cat }});
+                $('.sort').val({{ $cat }});
 							</script>
 						@endif
 
@@ -45,7 +45,7 @@
 
 						<script>
 							@foreach($where_get as $key => $v)
-							$('[name="pl[{{ $key }}]"]').val('{{ $v }}');
+              $('[name="pl[{{ $key }}]"]').val('{{ $v }}');
 							@endforeach
 						</script>
 
@@ -80,14 +80,14 @@
 <script src="{{ asset('/modules/js/datatables/dataTables.rowReorder.js') }}"></script>
 
 <style>
-	#table_id_wrapper .row{
+	#table_id_wrapper .row {
 		min-height: .01%;
 		overflow-x: auto;
 		width: 100%;
 	}
 
 	#table_id_wrapper .row table {
-		width: 100%!important;
+		width: 100% !important;
 	}
 
 	#table_id_wrapper .row .dataTables_filter {
@@ -113,57 +113,79 @@
 
 @push('footer')
 	<script>
-		var
-			table = $('#table_id').DataTable({
-//				rowReorder: {
-//					dataSrc: 'order',
-//					selector: 'tr',
-//					update: true,
-//				},
+    var
+      table = $('#table_id').DataTable({
+        //				rowReorder: {
+        //					dataSrc: 'order',
+        //					selector: 'tr',
+        //					update: true,
+        //				},
 
-				"bServerSide"   : true,
-				"aaSorting"     : [[0,'desc']],
-				"sAjaxSource"   : "/admin/getData/{{ $table }}?{!! $url !!}",
-				"sServerMethod" : "POST",
-				"iDisplayLength": '{{ $modules['count_module'] or 10 }}',
-				"sAjaxDataProp" : "data",
-				select: true,
-				columns: [
-					{data: 'id'},
+        language: {
+          oPaginate: {
+            sFirst   : "First",
+            sLast    : "Last",
+            sNext    : "@lang('admin::main.sNext')",
+            sPrevious: "@lang('admin::main.sPrevious')"
+          },
+
+          sEmptyTable    : "@lang('admin::main.sEmptyTable')",
+          sInfo          : "@lang('admin::main.sInfo')",
+          sInfoEmpty     : "@lang('admin::main.sInfoEmpty')",
+          sInfoFiltered  : "(filtered from _MAX_ total entries)",
+          sInfoPostFix   : "",
+          sDecimal       : "",
+          sThousands     : ",",
+          sLengthMenu    : "@lang('admin::main.sLengthMenu')",
+          sLoadingRecords: "Loading...",
+          sProcessing    : "Processing...",
+          sSearch        : "@lang('admin::main.sSearch'):",
+        },
+
+        bServerSide   : true,
+        aaSorting     : [[0, 'desc']],
+        sAjaxSource   : "/admin/getData/{{ $table }}?{!! $url !!}",
+        sServerMethod : "POST",
+        iDisplayLength: '{{ $modules['count_module'] or 10 }}',
+        sAjaxDataProp : "data",
+        select        : true,
+
+        columns: [
+          {data: 'id'},
 						@foreach($column as $v)
-					{
-						data: '{{ $v['name'] }}'
-					},
+          {
+            data: '{{ $v['name'] }}'
+          },
 						@endforeach
-					{
-						data: 'created_at'
-					}
-				],
-			});
+          {
+            data: 'created_at'
+          }
+        ],
+      });
 
 		{{--table.on('mousedown', 'tbody tr', function() {--}}
-				{{--@php($i = 1)--}}
-			{{--var order = parseInt(' @foreach($column as $v) @if($v['name'] == 'order'){{ $i }}@endif @php($i++) @endforeach');--}}
+		{{--@php($i = 1)--}}
+		{{--var order = parseInt(' @foreach($column as $v) @if($v['name'] == 'order'){{ $i }}@endif @php($i++) @endforeach');--}}
 
-			{{--$('body').mouseup(function() {--}}
-			{{--setTimeout(function() {--}}
-				{{--var--}}
-					{{--row = [],--}}
-					{{--tr = $('#table_id > tbody > tr');--}}
+		{{--$('body').mouseup(function() {--}}
+		{{--setTimeout(function() {--}}
+		{{--var--}}
+		{{--row = [],--}}
+		{{--tr = $('#table_id > tbody > tr');--}}
 
-				{{--console.log(tr)--}}
+		{{--console.log(tr)--}}
 
-				{{--for(var i = 0; tr.length > i; i++) {--}}
-					{{--tmp = tr[i];--}}
-					{{--row.push({--}}
-						{{--id   : $($(tr[i]).find('td')[0]).find('input').attr('id'),--}}
-						{{--order: $($(tr[i]).find('td')[order]).html() === '—' ? 0 : $($(tr[i]).find('td')[order]).html()--}}
-					{{--});--}}
-				{{--}--}}
-				{{--console.log(row)--}}
-			{{--}, 300)--}}
+		{{--for(var i = 0; tr.length > i; i++) {--}}
+		{{--tmp = tr[i];--}}
+		{{--row.push({--}}
+		{{--id   : $($(tr[i]).find('td')[0]).find('input').attr('id'),--}}
+		{{--order: $($(tr[i]).find('td')[order]).html() === '—' ? 0 : $($(tr[i]).find('td')[order]).html()--}}
+		{{--});--}}
+		{{--}--}}
+		{{--console.log(row)--}}
+		{{--}, 300)--}}
 
-			{{--})--}}
+		{{--})--}}
 		{{--});--}}
 	</script>
 @endpush

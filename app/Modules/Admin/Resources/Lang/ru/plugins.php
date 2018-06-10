@@ -47,4 +47,7 @@ return [
 	'collections'                 => 'Изображения подборок',
 	'main_img_small'              => 'Первый экран(mobile)',
 	'guests_person'               => 'Кол-во гостей/человек',
+	'little_description'          => 'Сокращённый текст',
+	'sorting'                     => 'Сортировка',
+	'tags'                        => 'Теги',
 ];

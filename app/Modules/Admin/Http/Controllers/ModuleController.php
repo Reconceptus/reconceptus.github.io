@@ -759,7 +759,10 @@ class ModuleController extends Controller
 					$plugins_sel[$k]['html_bottom'] = '';
 					$plugins_sel[$k]['html']        = ''; /* !!!!! */
 
-					$showOnly          = is_array($c['showOnly'] ?? false) ? $c['showOnly'] : [];
+					$showOnly = is_array($modules['showOnly'][$c['name']] ?? false)
+						? $modules['showOnly'][$c['name']]
+						: [];
+
 					$isUserType        = array_search($this->base->getUser('usertype'), $showOnly);
 					$isUserAnotherType = array_search($this->base->getUser('user_another_type'), $showOnly);
 
