@@ -143,6 +143,19 @@
             height: auto;
           }
         }
+        p {
+          line-height: 1.4;
+          margin-bottom: 20px;
+          @include media(hover,1024){
+            font-size: 18px;
+          }
+          @include breakpoints(680,1023){
+            font-size: 15px;
+          }
+          @include media(screen,679){
+            font-size: 13px;
+          }
+        }
       }
     }
     &-list {
