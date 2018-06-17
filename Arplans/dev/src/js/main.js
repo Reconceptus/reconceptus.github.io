@@ -10,8 +10,5 @@
 // touch-or-mouse
 //= vendor/touchOrMouse.min.js
 
-// jquery grid
-//= vendor/jquery.grid.js
-
 // scripts
 //= partials/scripts.js
