@@ -1,0 +1,25 @@
+body {
+  font-family: Arial;
+  background-color: #000;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+}
+
+#svg02 {
+  max-width: 680px;
+  margin: 0 auto;
+  stroke: #fff;
+  //display: none;
+}
+
+@import "../elements/lines";
+@import "../elements/points";
+@import "../elements/rads";
+
+.hand {
+  animation: hand 2s linear 9.5s alternate forwards;
+}
+
+@keyframes hand { to {  opacity: 0;  } }
