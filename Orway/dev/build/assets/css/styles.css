@@ -990,6 +990,11 @@ svg {
   height: auto;
 }
 
+.placeholder .company-main-info p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
 .placeholder .company-list li {
   padding-left: 20px;
   line-height: 1.4;
@@ -1955,6 +1960,10 @@ svg {
     width: 445px;
   }
 
+  .placeholder .company-main-info p {
+    font-size: 18px;
+  }
+
   .placeholder .company-list {
     padding-right: 230px;
     font-size: 18px;
@@ -2004,6 +2013,10 @@ svg {
 
   .placeholder .company-main-info .logo {
     width: 360px;
+  }
+
+  .placeholder .company-main-info p {
+    font-size: 15px;
   }
 
   .placeholder .company-list {
@@ -2068,6 +2081,10 @@ svg {
   .placeholder .company-main-info .logo {
     width: 250px;
     margin-bottom: 50px;
+  }
+
+  .placeholder .company-main-info p {
+    font-size: 13px;
   }
 
   .placeholder .company-list {
