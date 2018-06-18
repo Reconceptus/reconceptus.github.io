@@ -1,0 +1,41 @@
+.video-box {
+  position: relative;
+  &--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+    video {
+      position: absolute;
+      min-height: 100%;
+      min-width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+  &--wrap {
+    position: relative;
+    z-index: 3;
+    min-height: 420px;
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &--about {
+    width: 37.5%;
+    background-color: $link_hover;
+    color: $white;
+    section {
+      font-size: 4rem;
+    }
+    .title {
+      font-size: 8rem;
+      font-weight: 600;
+    }
+  }
+}

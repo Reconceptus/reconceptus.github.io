@@ -1,25 +1,27 @@
 html {
-
+  font-size: 4.2px;
   height: 100%;
   &.ovh {
     overflow: hidden;
   }
-  @include media(hover,1201){font-size: 14px;}
-  @include breakpoints(1025,1200){font-size: 13px;}
-  @include breakpoints(768,1024){font-size: 12px;}
-  @include media(screen,767){font-size: 11px;}
+  //@include media(hover,1201){font-size: 14px;}
+  //@include breakpoints(1025,1200){font-size: 13px;}
+  //@include breakpoints(768,1024){font-size: 12px;}
+  //@include media(screen,767){font-size: 11px;}
 }
 body {
   line-height: 1.4;
   font-weight: 400;
-  color: $black;
-  font-family: 'Noto', sans-serif;
+  color: $text;
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
+  font-size: 16px;
 }
 * {
   box-sizing: border-box;
 }
-a {
+a, button {
+  color: inherit;
   outline: none;
   transition: all 0.3s;
 }
@@ -32,7 +34,7 @@ svg {
 #main {
   position: relative;
   width: 100%;
-
+  padding-top: 140px;
 }
 #wrapper {
   display: flex;
