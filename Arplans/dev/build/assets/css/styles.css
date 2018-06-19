@@ -286,7 +286,7 @@ textarea {
 }
 
 .content--sm {
-  max-width: 980px;
+  max-width: 1020px;
 }
 
 .hide {
@@ -515,6 +515,97 @@ svg {
   width: 200px;
 }
 
+.footer {
+  background-color: #21202E;
+  color: #B2B9C1;
+}
+
+.footer-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.footer-top--order {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-top--share .ico {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.footer-main--nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.btn--lt {
+  background-color: #2196F3;
+  color: #FFF;
+}
+
+.btn--dk {
+  background-color: #346697;
+  color: #FFF;
+}
+
+/*******************************************/
+/*                VIDEO BOX                */
+/*******************************************/
 .video-box {
   position: relative;
 }
@@ -564,12 +655,30 @@ svg {
 
 .video-box--about section {
   font-size: 4rem;
+  font-weight: 300;
+  padding: 40px 30px 40px 60px;
 }
 
 .video-box--about .title {
   font-size: 8rem;
   font-weight: 600;
+  margin-bottom: 4rem;
 }
+
+.video-box--about .actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-box--about .actions .btn {
+  width: 50%;
+}
+
+/*******************************************/
+/*                VIDEO BOX                */
+/*******************************************/
 
 @media screen and (min-width: 1201px) {
   .desktop-hidden {

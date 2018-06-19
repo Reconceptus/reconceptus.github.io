@@ -1,3 +1,7 @@
+/*******************************************/
+/*                VIDEO BOX                */
+/*******************************************/
+
 .video-box {
   position: relative;
   &--bg {
@@ -32,10 +36,23 @@
     color: $white;
     section {
       font-size: 4rem;
+      font-weight: 300;
+      padding: 2*$padding_sm $padding_md 2*$padding_sm 2*$padding_md;
     }
     .title {
       font-size: 8rem;
       font-weight: 600;
+      margin-bottom: 4rem;
+    }
+    .actions {
+      display: flex;
+      .btn {
+        width: 50%;
+      }
     }
   }
 }
+
+/*******************************************/
+/*                VIDEO BOX                */
+/*******************************************/
