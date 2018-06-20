@@ -7,10 +7,10 @@
   font-weight: 600;
   font-size: 4rem;
   line-height: 1.2;
+  padding: 0 2*$padding_md;
   &--round {
     background-color: $link;
     color: $white;
-    padding: 0 2*$padding_md;
     border-radius: 60px;
   }
   &--lt {
@@ -22,5 +22,34 @@
     background-color: $link_dark;
     color: $white;
     text-transform: uppercase;
+  }
+
+  &-small {
+    color: $border;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    height: $padding_md;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    @include hover(){
+      color: $white;
+      background-color: $link_dark;
+      border-color: $link_dark;
+    }
+  }
+
+  &-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2*$padding_sm;
+    .btn {
+      min-width: 400px;
+    }
   }
 }
