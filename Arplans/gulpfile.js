@@ -72,12 +72,20 @@ gulp.task('browser-sync',function () {
 
 /* create svg sprite */
 
-gulp.task('svg', function(){
+gulp.task('svg-sprite', function(){
     gulp.src(path.src.svg + 'sprite/*.svg')
         .pipe(newer(path.build.svg))
         .pipe(svgstore())
         .pipe(gulp.dest(path.src.svg))
         .pipe(gulp.dest(path.build.svg));
+
+    gulp.src([path.src.svg + '**/*.svg','!' + path.src.svg + 'sprite.svg'])
+        .pipe(newer(path.build.svg))
+        .pipe(gulp.dest(path.build.svg));
+});
+
+
+gulp.task('svg', ['svg-sprite'], function(){
 
     gulp.src(path.src.svg + 'sprite-svg.html')
         .pipe(injectSvg({
@@ -85,9 +93,6 @@ gulp.task('svg', function(){
         }))
         .pipe(gulp.dest(path.src.html_templates));
 
-    gulp.src([path.src.svg + '**/*.svg','!' + path.src.svg + 'sprite.svg'])
-        .pipe(newer(path.build.svg))
-        .pipe(gulp.dest(path.build.svg));
 });
 
 /* minimize images */
@@ -175,7 +180,7 @@ gulp.task('builder:css', function () {
 gulp.task('watch', ['svg', 'builder:css', 'builder:html', 'builder:js', 'browser-sync'], function () {
     gulp.watch(path.watch.style,['builder:css']);
     gulp.watch(path.watch.html, ['builder:html']);
-    gulp.watch(path.watch.js + '**/*.js', ['builder:js']);
+    gulp.watch(path.watch.js, ['builder:js']);
 });
 
 /* dafault tasks */

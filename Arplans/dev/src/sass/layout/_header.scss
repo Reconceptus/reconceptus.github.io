@@ -15,15 +15,85 @@
     }
     &--telephone {
       color: $white;
+      font-size: 4rem;
+      margin-right: $padding_md;
     }
     &--nav {
       position: relative;
       display: flex;
       align-items: center;
+      font-size: 3.5rem;
       nav {
         ul {
           display: flex;
           align-items: center;
+        }
+        li {
+          margin-right: $padding_md;
+        }
+        a {
+          @include hover(){
+            color: $white;
+          }
+        }
+      }
+    }
+    &--search {
+      width: 16px;
+      height: 16px;
+      display: block;
+      margin: 0 10px;
+      .fieldset {
+        position: absolute;
+        left: -5px;
+        right: 0;
+        top: 50%;
+        height: 24px;
+        margin-top: -12px;
+        transition: all 0.3s;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .input {
+        width: 100%;
+        height: 100%;
+        background-color: $text;
+        color: $white;
+        border: 1px solid $border;
+        border-radius: 30px;
+        padding: 0 $padding_sm;
+        font-size: 3rem;
+        outline: none;
+
+      }
+      .label {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        cursor: pointer;
+        margin-top: -8px;
+      }
+      .submit {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -8px;
+        pointer-events: none;
+        opacity: 0;
+        background: transparent;
+        border: none;
+      }
+      .active-search {
+        .fieldset {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .submit {
+          pointer-events: auto;
         }
       }
     }
@@ -71,9 +141,47 @@
         display: flex;
         align-items: flex-start;
       }
+      li {
+        position: relative;
+        &:not(:last-child){
+          margin-right: 2*$padding_md;
+          &:after {
+            content: "";
+            left: 100%;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            height: $padding_sm;
+            background-color: $text_lt;
+            margin: auto;
+            margin-left: $padding_md;
+            position: absolute;
+          }
+        }
+      }
     }
     &--stats {
       width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .stats-likes,
+      .stats-prods {
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+        margin-left: $padding_md;
+      }
+      .icon-likes {
+        width: 20px;
+        height: 16px;
+        margin-left: 15px;
+      }
+      .icon-basket {
+        width: 19px;
+        height: 20px;
+        margin-left: 15px;
+      }
     }
   }
 

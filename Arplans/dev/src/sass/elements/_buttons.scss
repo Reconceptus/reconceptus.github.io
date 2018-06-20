@@ -3,16 +3,24 @@
   height: 60px;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 600;
   font-size: 4rem;
+  line-height: 1.2;
+  &--round {
+    background-color: $link;
+    color: $white;
+    padding: 0 2*$padding_md;
+    border-radius: 60px;
+  }
   &--lt {
     background-color: $link;
     color: $white;
+    text-transform: uppercase;
   }
   &--dk {
     background-color: $link_dark;
     color: $white;
+    text-transform: uppercase;
   }
 }

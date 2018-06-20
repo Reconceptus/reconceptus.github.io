@@ -17,7 +17,21 @@
                             <li><a href="#">Контакты</a></li>
                         </ul>
                     </nav>
-                    <div class="header-top--search"></div>
+                    <div class="header-top--search">
+                        <div id="searchForm">
+                            <form action="#">
+                                <div class="fieldset">
+                                    <input class="input" type="text" id="site-search">
+                                </div>
+                                <label class="label" for="site-search">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                    </svg>
+                                </label>
+                                <button class="submit" type="submit"></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,11 +59,19 @@
                 <div class="header-main--stats">
                     <a href="#" class="stats-likes">
                         <span>34</span>
-                        <i></i>
+                        <i class="icon-likes">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                            </svg>
+                        </i>
                     </a>
                     <a href="#" class="stats-prods">
                         <span>10</span>
-                        <i></i>
+                        <i class="icon-basket">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                            </svg>
+                        </i>
                     </a>
                 </div>
             </div>

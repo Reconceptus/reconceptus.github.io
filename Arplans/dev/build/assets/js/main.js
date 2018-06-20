@@ -68,7 +68,8 @@ $(document).ready(function () {
     /* ----------------------------------- variables ----------------------------------- */
 
     var scrollTop,
-        $header = $('#header');
+        $header = $('#header'),
+        $search = $('#searchForm');
 
     /* ----------------------------------- functions ----------------------------------- */
 
@@ -93,17 +94,16 @@ $(document).ready(function () {
 
     function documentClick() {
         $(document).click(function(e){
-            // var targ = $(e.target);
-            // if(targ.parents('#searchForm').length == 0){
-            //     if(targ.parents('#search_btn').length == 0){
-            //         search.removeClass('active');
-            //         nav.removeClass('hidden');
-            //     }
-            // }
-            //
-            // if(targ.parents('.language').length == 0){
-            //     lang.removeClass('show')
-            // }
+            var targ = $(e.target);
+            console.log(targ);
+
+            if(targ.parents('#searchForm').length == 0){
+                $search.removeClass('active-search');
+            }
+            else {
+                $search.addClass('active-search');
+            }
+
         })
     }
 
