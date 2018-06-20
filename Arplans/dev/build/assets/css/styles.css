@@ -398,6 +398,9 @@ svg {
   left: 0;
   right: 0;
   position: fixed;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .header-top {
@@ -541,6 +544,9 @@ svg {
 }
 
 .header-main--wrap {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   height: 100px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -651,6 +657,14 @@ svg {
   width: 19px;
   height: 20px;
   margin-left: 15px;
+}
+
+.header.minimized {
+  top: -40px;
+}
+
+.header.minimized .header-main--wrap {
+  height: 60px;
 }
 
 .footer {
@@ -933,7 +947,7 @@ svg {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -100px;
   overflow: hidden;
   z-index: 2;
 }
@@ -953,7 +967,8 @@ svg {
   position: relative;
   z-index: 3;
   min-height: 420px;
-  height: 75vh;
+  height: -webkit-calc(100vh - 240px);
+  height: calc(100vh - 240px);
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -974,7 +989,7 @@ svg {
 .video-box--about section {
   font-size: 4rem;
   font-weight: 300;
-  padding: 40px 30px 40px 60px;
+  padding: 40px 60px;
 }
 
 .video-box--about .title {
@@ -994,9 +1009,76 @@ svg {
   width: 50%;
 }
 
-/*******************************************/
-/*                VIDEO BOX                */
-/*******************************************/
+/***********************************************/
+/*                SITE INFO BOX                */
+/***********************************************/
+.site-info {
+  margin-bottom: 40px;
+}
+
+.site-info--wrap {
+  background-color: #FFF;
+  padding: 40px 60px;
+  -webkit-box-shadow: 0 30px 40px 5px RGBA(101, 116, 130, 0.16);
+  box-shadow: 0 30px 40px 5px RGBA(101, 116, 130, 0.16);
+  position: relative;
+  z-index: 2;
+}
+
+.site-info--wrap ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.site-info--wrap li {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.site-info--wrap li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.site-info--text {
+  width: 100%;
+  -webkit-flex-shrink: 500;
+  -ms-flex-negative: 500;
+  flex-shrink: 500;
+  font-size: 3.5rem;
+}
+
+.site-info .icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+}
+
+.site-info .title {
+  font-size: 5.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
 @media screen and (min-width: 1201px) {
   .desktop-hidden {

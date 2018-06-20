@@ -3,6 +3,7 @@ $(document).ready(function () {
     /* ----------------------------------- variables ----------------------------------- */
 
     var scrollTop,
+        scrollVar = 0,
         $header = $('#header'),
         $search = $('#searchForm');
 
@@ -14,11 +15,13 @@ $(document).ready(function () {
 
     function headerFixed() {
         scrollTop = $(window).scrollTop();
-        if(scrollTop > 0){
-            $header.addClass('minimized')
+        if(scrollTop > scrollVar){
+            $header.addClass('minimized');
+            scrollVar = scrollTop;
         }
         else {
-            $header.removeClass('minimized')
+            $header.removeClass('minimized');
+            scrollVar = scrollTop;
         }
     }
 
