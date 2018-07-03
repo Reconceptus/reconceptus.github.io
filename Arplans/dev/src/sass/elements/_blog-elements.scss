@@ -1,0 +1,11 @@
+.blog {
+  &-hashes {
+    display: flex;
+    .btn-small {
+      @include hover(){
+        background-color: $border;
+        border-color: $border;
+      }
+    }
+  }
+}

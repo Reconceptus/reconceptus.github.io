@@ -112,6 +112,34 @@ $(document).ready(function () {
 
 
 
+    /* ----------------------------------- plugins ----------------------------------- */
+
+    function blogCarousel() {
+        var $carouselBox = $('[data-owl="blog"]'),
+            $carousel = $('[data-owl="blog"]').find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                800: {
+                    items: 2,
+                    margin: 30
+                },
+                1200: {
+                    items: 3,
+                    margin: 50
+                }
+            }
+        })
+
+    }
+
+
 
     /* --------------------------------- document load --------------------------------- */
 
@@ -119,6 +147,9 @@ $(document).ready(function () {
     headerFixed();
 
     if($('select').length > 0){}
+    if($('[data-owl="blog"]').length > 0){
+        blogCarousel();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

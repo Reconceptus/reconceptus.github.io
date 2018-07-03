@@ -7,10 +7,14 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "jquery": "latest"
+    "jquery": "latest",
+    "owl.carousel": "^2.2.1"
   },
   "preen": {
     "jquery": [
+      "dist/*.js"
+    ],
+    "owl.carousel": [
       "dist/*.js"
     ]
   }
