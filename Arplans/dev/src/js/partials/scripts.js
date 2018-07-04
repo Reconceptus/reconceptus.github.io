@@ -51,11 +51,12 @@ $(document).ready(function () {
 
     function blogCarousel() {
         var $carouselBox = $('[data-owl="blog"]'),
-            $carousel = $('[data-owl="blog"]').find('.owl-carousel');
+            $carousel = $carouselBox.find('.owl-carousel');
 
         $carousel.owlCarousel({
             loop: true,
             nav: true,
+            navText: ['',''],
             dots: false,
             responsive: {
                 0: {
