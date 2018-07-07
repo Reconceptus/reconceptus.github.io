@@ -1,1 +1,57 @@
 @import "input-text";
+@import "textarea";
+@import "file";
+@import "check";
+@import "submit";
+@import "form-text";
+
+.custom-form {
+
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 -1*$padding_sm;
+  &.centered {
+    align-items: center;
+  }
+  &-col {
+    width: 100%;
+    padding: 0 $padding_sm;
+    &.col-66 {
+      max-width: 66.6666%;
+    }
+    &.col-50 {
+      max-width: 50%;
+    }
+    &.col-33 {
+      max-width: 33.3333%;
+    }
+  }
+  &-element {
+    .custom-form & {
+      padding: 0.5*$padding_sm 0;
+    }
+    .filter-form & {
+      padding: 0.5*$padding_sm 0 0;
+      &:last-child {
+        padding-bottom: 0.5*$padding_sm;
+      }
+    }
+  }
+  &-submit {
+
+  }
+}
+
+.form-title {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $border;
+  padding: 10px 0;
+  &:not(:first-child){
+    margin-top: $padding_sm;
+  }
+}

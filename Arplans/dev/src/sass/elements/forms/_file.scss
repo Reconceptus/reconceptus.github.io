@@ -1,0 +1,41 @@
+.file {
+  display: flex;
+  width: 100%;
+  position: relative;
+  color: $link_hover;
+
+  .custom-form & {
+
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }
+  label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    span {
+      font-size: 3.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+}
+

@@ -1,0 +1,518 @@
+<include src="../templates/head.html" title="Arplans"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html"></include>
+
+        <div id="main" class="main">
+
+            <div class="section request">
+                <div class="content content--lg">
+                    <div class="request--wrap">
+                        <div class="content content--sm">
+                            <h1 class="title">Запрос на добавление посёлка</h1>
+                            <h2 class="subtitle">Заполните форму и мы свяжемся с вами для обсуждения сотрудничества или же заполните <a href="#">короткую форму</a></h2>
+                        </div>
+                        <div class="content content--md">
+                            <div class="request-form">
+                                <form action="#">
+                                    <div class="request-form--main custom-form">
+                                        <div class="form-row">
+                                            <div class="form-row-col col-66">
+                                                <div class="form-row">
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Ваше имя">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Ваш телефон">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Ваш e-mail">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Название поселка">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Область">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="input">
+                                                                <input type="text" placeholder="*Ближайший город">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-row-col">
+                                                        <div class="form-row-element">
+                                                            <div class="textarea">
+                                                                <textarea cols="30" rows="3" placeholder="Опишите ваш поселок"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row-col col-33">
+                                                <div class="form-row-element">
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Телефон отдела продаж">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row-element">
+                                                    <div class="input">
+                                                        <input type="text" placeholder="Сайт отдела продаж">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row-element">
+                                                    <div class="file">
+                                                        <input type="file" id="fileUpload">
+                                                        <label for="fileUpload">
+                                                            <i class="icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-file-change"/>
+                                                                </svg>
+                                                            </i>
+                                                            <span id="fileName">Прикрепить файл</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row-element">
+                                                    <div class="check">
+                                                        <label>
+                                                            <input type="checkbox">
+                                                            <span>Хочу разместить каталог проектов АРПЛАНС на сайте поселка и зарабатывать на продаже проектов</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row-element">
+                                                    <div class="form-text">
+                                                        <p>*Обязательные поля</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter-form">
+                                        <div class="request-form--bottom">
+                                            <div class="request-form--checks">
+                                                <div class="form-row">
+                                                    <div class="form-row-col col-33">
+                                                        <div class="form-title">Инженерные сети</div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>электроснабжение</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>газоснабжение</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>водоснабжение</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>интернет</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-33">
+                                                        <div class="form-title">Инфраструктура</div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>магазины</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>детский клуб</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>спортивно-оздоровительный комплекс</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>спортивные площадки</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>гольф-клуб</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>пляж</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>службы быта</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-33">
+                                                        <div class="form-title">Безопасность</div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>охрана территории и подъездов</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>противопожарная сигнализация</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>охранная сигнализация</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-title">Экология</div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>лесозона</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>водоем</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="request-form--submit">
+                                                <div class="form-row centered">
+                                                    <div class="form-row-col col-33">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>Согласен на обработку персональных данных</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-66">
+                                                        <div class="form-row-submit">
+                                                            <div class="submit">
+                                                                <button class="btn btn--lt">Отправить</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="section projects-slider">
+                <div class="content content--lg">
+                    <div class="projects-slider--wrap">
+                        <h3 class="title">Недавно смотрели</h3>
+                        <div class="projects-slider--carousel" data-owl="projects">
+                            <ul class="owl-carousel">
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://pollio-studio.com.ua/uploads/projects/3/2/1/project/thumbs/3038fd870b9e57452e7975b7a17c10fcc3fac3ff.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like liked">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart-like"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://luxury-house.org/wp-content/uploads/Osobnyak-Wandana-Residence-s-vidom-na-gorod-v-Avstralii.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('https://s0.tchkcdn.com/g-nJkLaimqlo3zo43vOGtSVg/14/225065/660x480/f/0/02.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://image.glavred.info/images/608xX/Dec2017/506780.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://dobriiden.ru/sites/dobriiden.ru/files/beautiful_house_in_rsa_1_0.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('https://admin.sport.znaj.ua/sites/znaj.sport/files/media/news/2017/09/37/nintchdbpict000353409563.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('https://telegraf.com.ua/files/2018/03/rezidenciya-iz-kamnya-i-dereva-v-ssha-1.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://www.findermag.com/images/photos/catalog_nedv/Sitges2013/Mansion1_resize.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="projects-item">
+                                    <a href="#" class="projects-item--wrap">
+                                        <div class="projects-item--preview">
+                                            <div class="bg" style="background-image: url('http://www.orvas-hotels.com/orvas-hotels/4/84/25430/gallery5648/Orvas_villas_Villa_Violet_Sumartin_2__big.jpg')"></div>
+                                            <div class="data">
+                                                <span class="index">K-232</span>
+                                                <ul class="info">
+                                                    <li>
+                                                        <span>260 м<sup>2</sup></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="projects-item--actions">
+                                            <div class="price">32 000 &#8381;</div>
+                                            <div class="like">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+
+</body>
+</html>

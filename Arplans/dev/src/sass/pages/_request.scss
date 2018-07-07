@@ -1,0 +1,79 @@
+.request {
+  margin-bottom: 3*$padding_md;
+  &--wrap {
+    padding-top: 2*$padding_sm;
+    background: $link;
+    background: -moz-linear-gradient(left, $bg_blue_dark 0%, $link 100%);
+    background: -webkit-linear-gradient(left, $bg_blue_dark 0%,$link 100%);
+    background: linear-gradient(to right, $bg_blue_dark 0%,$link 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bg_blue_dark', endColorstr='$link',GradientType=1 );
+    .title {
+      text-align: center;
+      color: $white;
+      margin-bottom: 2*$padding_sm;
+    }
+    .subtitle {
+      font-style: italic;
+      font-size: 5.2rem;
+      color: $white;
+      font-family: 'Merriweather';
+      margin-bottom: 2*$padding_sm;
+      a {
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          left: 0;
+          right: 0;
+          bottom: 3px;
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+}
+
+.request-form {
+  &--main {
+    background-color: $white;
+    padding: 1.5*$padding_sm 2*$padding_sm;
+    position: relative;
+    z-index: 1;
+  }
+  &--checks {
+    background-color: $bg;
+    padding: 1.5*$padding_sm 2*$padding_sm;
+    position: relative;
+  }
+  &--submit {
+    background-color: $bg;
+    padding: 0 2*$padding_sm;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid $text_lt;
+    .form-row-submit {
+      margin-right: -2*$padding_sm - 1px;
+    }
+  }
+  &--bottom {
+    position: relative;
+    box-shadow: 0 30px 80px 0 rgba(26,26,26,0.2);
+  }
+  .filter-form {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50vw);
+      background-color: $white;
+    }
+  }
+}
