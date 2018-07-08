@@ -110,6 +110,59 @@ $(document).ready(function () {
         }
     }
 
+    /*
+     ============= show more
+    */
+
+    function showMore() {
+        var showMore = $('.show-more');
+
+        showMore.each(function () {
+            var $this = $(this),
+                $thisParent = $this.closest('.show-more-parent'),
+                $thisHideBlock = $thisParent.find('.show-more-hidden');
+
+            $this.click(function () {
+                $thisHideBlock.slideToggle(300);
+            })
+
+        })
+    }
+
+    /*
+     ============= counter
+    */
+
+    function counter() {
+        var counterBox = $('.counter');
+        counterBox.each(function () {
+            var $this = $(this),
+                $this_plus = $this.find('.plus'),
+                $this_minus = $this.find('.minus'),
+                $this_result = $this.find('.result'),
+                $this_value = $this_result.val();
+
+            $this_minus.click(function () {
+                if($this_value == 1){
+                    $this_value = $this_value - 1;
+                    $this_minus.addClass('disabled');
+                }
+                else if($this_value > 1) {
+                    $this_value = $this_value - 1;
+                }
+                $this_result.val($this_value);
+            });
+
+            $this_plus.click(function () {
+                $this_value = parseInt($this_value) + 1;
+                $this_minus.removeClass('disabled');
+                $this_result.val($this_value);
+            });
+
+
+        });
+    }
+
 
     /*
      ============= document click events
@@ -118,7 +171,7 @@ $(document).ready(function () {
     function documentClick() {
         $(document).click(function(e){
             var targ = $(e.target);
-            console.log(targ);
+            // console.log(targ);
 
             if(targ.parents('#searchForm').length == 0){
                 $search.removeClass('active-search');
@@ -201,6 +254,12 @@ $(document).ready(function () {
     }
     if($('input[type="file"]').length > 0){
         inputFile();
+    }
+    if($('.counter').length > 0){
+        counter();
+    }
+    if($('.show-more').length > 0){
+        showMore();
     }
 
     /* --------------------------------- document resize --------------------------------- */

@@ -19,13 +19,30 @@
       .part-project {
         justify-content: center;
       }
+      a {
+        color: $text_lt;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        @include hover(){
+          color: $white;
+        }
+      }
+    }
+    &--main {
+      user-select: none;
+      .part-count {
+        justify-content: center;
+      }
     }
     &--section {
       display: flex;
       width: 100%;
       background-color: $white;
-      margin-bottom: $padding_sm;
       transition: all 0.3s;
+      &:not(:last-child){
+        margin-bottom: $padding_sm;
+      }
       @include hover(){
         box-shadow: 0 0 40px 0 rgba($text,0.2);
       }
@@ -35,16 +52,13 @@
       align-items: center;
       width: 100%;
       padding: 0 $padding_sm;
-      a {
-        color: $text_lt;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-      }
       &.part-project {
         width: 200px;
         padding: 0 $padding_sm 0 0;
         flex-shrink: 0;
+      }
+      &.part-count {
+        min-width: 245px;
       }
     }
     .placeholder {
@@ -54,7 +68,7 @@
     }
   }
   &-sidebar {
-    padding-top: 2*$padding_sm;
+    padding: 2*$padding_sm 0;
     .order {
       display: flex;
       flex-direction: column;
