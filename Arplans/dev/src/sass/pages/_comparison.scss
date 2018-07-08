@@ -1,0 +1,137 @@
+/***********************************************/
+/*                compare table                */
+/***********************************************/
+
+.compare {
+  background-color: $bg;
+  padding: 2*$padding_sm 0 2*$padding_md 0;
+  .title {
+    margin-bottom: $padding_md;
+  }
+  &-table {
+    &--header {
+      display: flex;
+      width: 100%;
+      background-color: $text;
+      padding: 9px 0;
+      margin-bottom: $padding_sm;
+      .part-cost,
+      .part-project {
+        justify-content: center;
+      }
+    }
+    &--section {
+      display: flex;
+      width: 100%;
+      background-color: $white;
+      margin-bottom: $padding_sm;
+      transition: all 0.3s;
+      @include hover(){
+        box-shadow: 0 0 40px 0 rgba($text,0.2);
+      }
+    }
+    &--part {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 $padding_sm;
+      a {
+        color: $text_lt;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+      }
+      &.part-project {
+        width: 200px;
+        padding: 0 $padding_sm 0 0;
+        flex-shrink: 0;
+      }
+    }
+    .placeholder {
+      width: 50%;
+      font-size: 4rem;
+      line-height: 1.6;
+    }
+  }
+  &-sidebar {
+    padding-top: 2*$padding_sm;
+    .order {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: $padding_md;
+      .phone {
+        display: flex;
+        align-items: center;
+        font-size: 8.5rem;
+        font-weight: 600;
+        margin-bottom: $padding_sm;
+        white-space: nowrap;
+        line-height: 1;
+        .icon {
+          margin-right: $padding_sm;
+        }
+      }
+    }
+    &--info {
+      background:$hash;
+      font-size: 3.5rem;
+      line-height: 1.6;
+      padding: $padding_sm $padding_md;
+      background: linear-gradient(to right bottom, $hash 50%, $hash_lt 50%);
+      color: $white;
+      margin-bottom: $padding_md;
+      .info-title {
+        font-weight: 800;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &-list {
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      color: $border;
+      margin-right: $padding_sm;
+    }
+    &--text {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    &--title {
+      font-weight: 800;
+    }
+  }
+}
+
+/*******************************************/
+/*                ABOUT BOX                */
+/*******************************************/
+
+.compare-about {
+  padding: 4*$padding_sm;
+  .title {
+    font-size: 6.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: $padding_md;
+  }
+  &--text {
+    font-size: 3.5rem;
+    line-height: 1.5;
+    columns: 2 auto;
+    column-gap: 2*$padding_sm;
+    a {
+      color: $link_dark;
+    }
+    strong {
+      font-weight: 700;
+    }
+  }
+}

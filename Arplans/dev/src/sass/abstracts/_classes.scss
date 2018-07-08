@@ -32,6 +32,22 @@
   }
 }
 
+.custom-row {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 -1*$padding_sm;
+  &-col {
+    width: 100%;
+    padding: 0 $padding_sm;
+    &.col-elastic {
+      max-width: calc(100% - 420px);
+    }
+    &.col-sidebar {
+      width: 420px;
+    }
+  }
+}
+
 .hide {
   display: none !important;
 }

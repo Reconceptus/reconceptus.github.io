@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Запрос на добавление посёлка</title>
+    <title>Сравнение проектов</title>
     <meta name="author" content="enenkoff@mail.ru">
 
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -112,278 +112,133 @@
 
         <div id="main" class="main">
 
-            <div class="section request">
+            <div class="section compare">
                 <div class="content content--lg">
-                    <div class="request--wrap">
-                        <div class="content content--sm">
-                            <h1 class="title">Запрос на добавление посёлка</h1>
-                            <h2 class="subtitle">Заполните форму и мы свяжемся с вами для обсуждения сотрудничества или же заполните <a href="#">короткую форму</a></h2>
-                        </div>
-                        <div class="content content--md">
-                            <div class="request-form">
-                                <form action="#">
-                                    <div class="request-form--main custom-form">
-                                        <div class="form-row">
-                                            <div class="form-row-col col-66">
-                                                <div class="form-row">
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Ваше имя">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Ваш телефон">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Ваш e-mail">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Название поселка">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Область">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="input">
-                                                                <input type="text" placeholder="*Ближайший город">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="form-row-col">
-                                                        <div class="form-row-element">
-                                                            <div class="textarea">
-                                                                <textarea cols="30" rows="3" placeholder="Опишите ваш поселок"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-row-col col-33">
-                                                <div class="form-row-element">
-                                                    <div class="input">
-                                                        <input type="text" placeholder="Телефон отдела продаж">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row-element">
-                                                    <div class="input">
-                                                        <input type="text" placeholder="Сайт отдела продаж">
-                                                    </div>
-                                                </div>
-                                                <div class="form-row-element">
-                                                    <div class="file">
-                                                        <input type="file" id="fileUpload">
-                                                        <label for="fileUpload">
-                                                            <i class="icon">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-file-change"/>
-                                                                </svg>
-                                                            </i>
-                                                            <span id="fileName">Прикрепить файл</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row-element">
-                                                    <div class="check">
-                                                        <label>
-                                                            <input type="checkbox">
-                                                            <span>Хочу разместить каталог проектов АРПЛАНС на сайте поселка и зарабатывать на продаже проектов</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row-element">
-                                                    <div class="form-text">
-                                                        <p>*Обязательные поля</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <h1 class="title">Давайте сравним проекты</h1>
+                    <div class="custom-row">
+                        <div class="custom-row-col col-elastic">
+                            <div class="compare-table">
+                                <div class="compare-table--header">
+                                    <div class="compare-table--part part-project">
+                                        <a href="javascript:void(0);">
+                                            Проект
+                                        </a>
                                     </div>
-                                    <div class="filter-form">
-                                        <div class="request-form--bottom">
-                                            <div class="request-form--checks">
-                                                <div class="form-row">
-                                                    <div class="form-row-col col-33">
-                                                        <div class="form-title">Инженерные сети</div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>электроснабжение</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>газоснабжение</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>водоснабжение</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>интернет</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-33">
-                                                        <div class="form-title">Инфраструктура</div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>магазины</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>детский клуб</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>спортивно-оздоровительный комплекс</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>спортивные площадки</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>гольф-клуб</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>пляж</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>службы быта</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-33">
-                                                        <div class="form-title">Безопасность</div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>охрана территории и подъездов</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>противопожарная сигнализация</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>охранная сигнализация</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-title">Экология</div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>лесозона</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>водоем</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="request-form--submit">
-                                                <div class="form-row centered">
-                                                    <div class="form-row-col col-33">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>Согласен на обработку персональных данных</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-66">
-                                                        <div class="form-row-submit">
-                                                            <div class="submit">
-                                                                <button class="btn btn--lt">Отправить</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                    <div class="compare-table--part">
+                                        <a href="javascript:void(0);">
+                                            Площадь
+                                            <i></i>
+                                        </a>
                                     </div>
-
-                                </form>
+                                    <div class="compare-table--part">
+                                        <a href="javascript:void(0);">
+                                            Удобства
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="compare-table--part">
+                                        <a href="javascript:void(0);">
+                                            Этажи/комнаты
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="compare-table--part">
+                                        <a href="javascript:void(0);">
+                                            Тип строения
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="compare-table--part part-cost">
+                                        <a href="javascript:void(0);">
+                                            Стоимость
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="compare-table--main">
+                                    <p class="placeholder">Создайте свою подборку проектов и сравнивайте их по цене, материалам, габаритам и площади. Чтобы добавить понравившийся проект в подборку нажмите на сердечко возле цены.</p>
+                                </div>
                             </div>
                         </div>
+                        <div class="custom-row-col col-sidebar">
+                            <div class="compare-sidebar">
+                                <div class="order">
+                                    <a href="tel:88002001714" class="phone">
+                                        <i class="icon icon-phone">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-phone"/>
+                                            </svg>
+                                        </i>
+                                        8 800 200-17-14
+                                    </a>
+                                    <a href="#" class="btn-round-min">Консультация</a>
+                                </div>
+                                <div class="compare-sidebar--info">
+                                    <div class="info-title">*Замена материала бесплатно</div>
+                                    <p>Укажите в заказе, что требуется изменение материала, мы свяжемся и уточним.</p>
+                                </div>
+                                <div class="compare-list">
+                                    <ul>
+                                        <li>
+                                            <i class="icon icon-delivery">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-site-delivery"/>
+                                                </svg>
+                                            </i>
+                                            <div class="compare-list--text">
+                                                <h4 class="compare-list--title">Доставка в руки</h4>
+                                                <p>Доставка проекта курьером в руки через 3-5 дней</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon icon-changes">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-site-changes"/>
+                                                </svg>
+                                            </i>
+                                            <div class="compare-list--text">
+                                                <h4 class="compare-list--title">Изменения в проекте</h4>
+                                                <p>Бесплатная адаптация проектов под материалы, консультируем при строительстве</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon icon-documents">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-site-documents"/>
+                                                </svg>
+                                            </i>
+                                            <div class="compare-list--text">
+                                                <h4 class="compare-list--title">Документация</h4>
+                                                <p>Полный пакет документации для строительства</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <i class="icon icon-money">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-site-money"/>
+                                                </svg>
+                                            </i>
+                                            <div class="compare-list--text">
+                                                <h4 class="compare-list--title">Удобная оплата</h4>
+                                                <p>Безопасные виды оплаты и легкий возврат</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="section compare-about">
+                <div class="content content--md">
+                    <div class="compare-about--wrap">
+                        <h3 class="title">Как сравнивать проекты</h3>
+                        <div class="compare-about--text">
+                            <p>В этом блоке 3 стиля: основной, <a href="#">ссылка</a>, <strong>болд</strong>. Не обязательное поле для текстового описания. ARPLANS.RU — сервис готовых архитектурных проектов загородных домов, коттеджей, бань. По нашим проектам многократно производилось строительство, а качество чертежей проектной документации проверено временем и репутацией разработчиков. Все проекты созданы опытными и высококвалифицированны архитекторами и инженерами ARPLANS.</p>
+                            <p>Здесь рыба. Сервис готовых архитектурных проектов загородных домов, коттеджей, бань. По нашим проектам многократно производилось строительство, а качество чертежей проектной документации проверено временем и репутацией разработчиков. Все проекты созданы опытными и высококвалифицированны архитекторами и инженерами ARPLANS.</p>
+                        </div>
                     </div>
                 </div>
             </div>
