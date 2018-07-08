@@ -1,0 +1,48 @@
+.catalog {
+  &-header {
+    background-color: $bg;
+    color: $border;
+    margin-bottom: $padding_sm;
+  }
+  &-filters {
+    background-color: $bg;
+    padding: $padding_sm $padding_sm $padding_sm $padding_md;
+    &--head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .show-more {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 9px;
+          height: 9px;
+          border-color: $text_lt;
+          border-width: 2px;
+          border-style: solid solid none none;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          transform: rotate(135deg) translate(-2px,2px);
+          transition: all 0.3s;
+          .show & {
+            transform: rotate(315deg) translate(-2px,2px);
+          }
+        }
+      }
+    }
+    .reset {
+      button {
+        display: flex;
+        align-items: center;
+      }
+
+    }
+  }
+}

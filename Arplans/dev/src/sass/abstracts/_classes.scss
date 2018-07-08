@@ -57,6 +57,10 @@
   display: flex;
 }
 
+.show-more-hidden {
+  display: none;
+}
+
 
 .desktop-hidden {
   @include media(hover,1201){

@@ -16,6 +16,10 @@
     ],
     "owl.carousel": [
       "dist/*.js"
+    ],
+    "nouislider": [
+      "distribute/*.js",
+      "documentation/assets/*.js"
     ]
   }
 }
