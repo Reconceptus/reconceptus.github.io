@@ -1203,13 +1203,21 @@ svg {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.header-main--nav li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.header-main--nav li {
   position: relative;
 }
 
@@ -1228,6 +1236,45 @@ svg {
   margin: auto;
   margin-left: 30px;
   position: absolute;
+}
+
+.header-main--nav li a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.header-main--nav li a:after {
+  content: "";
+  height: 3px;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: #2196F3;
+  position: absolute;
+  margin-top: 5px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.header-main--nav li a.active:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .header-main--stats {
@@ -3638,6 +3685,13 @@ svg {
 @media screen and (min-width: 1025px) {
   .header-top--nav nav a:hover {
     color: #FFF;
+  }
+
+  .header-main--nav li a:hover:after {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .footer-main--nav .section a:hover {
