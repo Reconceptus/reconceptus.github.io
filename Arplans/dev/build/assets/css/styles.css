@@ -1308,14 +1308,10 @@ svg {
 }
 
 .header-main--stats .icon-likes {
-  width: 20px;
-  height: 16px;
   margin-left: 15px;
 }
 
 .header-main--stats .icon-basket {
-  width: 19px;
-  height: 20px;
   margin-left: 15px;
 }
 
@@ -1689,9 +1685,64 @@ svg {
   /*********************************************/
 }
 
+.icon-likes {
+  width: 20px;
+  height: 16px;
+}
+
+.icon-basket {
+  width: 19px;
+  height: 20px;
+}
+
 .icon-phone {
   width: 28px;
   height: 28px;
+}
+
+.icon-loadFile {
+  width: 24px;
+  height: 24px;
+}
+
+.site-info .icon-delivery {
+  width: 32px;
+  height: 23px;
+}
+
+.compare-list .icon-delivery {
+  width: 30px;
+  height: 21px;
+}
+
+.site-info .icon-changes {
+  width: 32px;
+  height: 32px;
+}
+
+.site-info .icon-documents {
+  width: 32px;
+  height: 34px;
+}
+
+.compare-list .icon-documents {
+  width: 30px;
+  height: 32px;
+}
+
+.site-info .icon-money {
+  width: 32px;
+  height: 32px;
+}
+
+.compare-list .icon-money {
+  width: 30px;
+  height: 30px;
+}
+
+.compare-list .icon-forrussia {
+  width: 30px;
+  height: 26px;
 }
 
 .blog-hashes {
@@ -1793,9 +1844,7 @@ svg {
   color: #2A7EC5;
 }
 
-.file .icon {
-  width: 24px;
-  height: 24px;
+.file .icon-loadFile {
   margin-right: 5px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -2934,9 +2983,11 @@ svg {
 }
 
 .site-info .icon {
-  width: 32px;
-  height: 32px;
   margin-right: 20px;
+}
+
+.site-info .icon-delivery {
+  margin-top: 4.5px;
 }
 
 .site-info .title {
@@ -3445,13 +3496,19 @@ svg {
 }
 
 .compare-list .icon {
-  width: 30px;
-  height: 30px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   color: #657482;
   margin-right: 20px;
+}
+
+.compare-list .icon-delivery {
+  margin-top: 4.5px;
+}
+
+.compare-list .icon-forrussia {
+  margin-top: 2px;
 }
 
 .compare-list--text {

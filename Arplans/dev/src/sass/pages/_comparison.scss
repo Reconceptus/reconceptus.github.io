@@ -108,11 +108,15 @@
       margin-bottom: 15px;
     }
     .icon {
-      width: 30px;
-      height: 30px;
       flex-shrink: 0;
       color: $border;
       margin-right: $padding_sm;
+      &-delivery {
+        margin-top: 4.5px;
+      }
+      &-forrussia {
+        margin-top: 2px;
+      }
     }
     &--text {
       font-size: 3.5rem;

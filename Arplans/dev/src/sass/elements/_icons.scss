@@ -1,6 +1,61 @@
 .icon {
+  &-likes {
+    width: 20px;
+    height: 16px;
+  }
+  &-basket {
+    width: 19px;
+    height: 20px;
+  }
   &-phone {
     width: 28px;
     height: 28px;
   }
+  &-loadFile {
+    width: 24px;
+    height: 24px;
+  }
+  &-delivery {
+    .site-info & {
+      width: 32px;
+      height: 23px;
+    }
+    .compare-list & {
+      width: 30px;
+      height: 21px;
+    }
+  }
+  &-changes {
+    .site-info & {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &-documents {
+    .site-info & {
+      width: 32px;
+      height: 34px;
+    }
+    .compare-list & {
+      width: 30px;
+      height: 32px;
+    }
+  }
+  &-money {
+    .site-info & {
+      width: 32px;
+      height: 32px;
+    }
+    .compare-list & {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &-forrussia {
+    .compare-list & {
+      width: 30px;
+      height: 26px;
+    }
+  }
+
 }

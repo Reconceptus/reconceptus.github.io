@@ -84,9 +84,10 @@
     font-size: 3.5rem;
   }
   .icon {
-    width: 32px;
-    height: 32px;
     margin-right: $padding_sm;
+    &-delivery {
+      margin-top: 4.5px;
+    }
   }
   .title {
     font-size: 5.2rem;
