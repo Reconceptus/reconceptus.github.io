@@ -1,0 +1,627 @@
+<include src="../templates/head.html" title="Каталог"></include>
+<div class="container">
+    <include src="../templates/header.html" navWood="active"></include>
+    <div id="main" class="main">
+        <div class="section bg-head">
+            <div class="content content--lg">
+                <div class="bg-head--main"><h1 class="title">Проекты деревянных домов</h1></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="content content--lg">
+                <div class="custom-row">
+                    <div class="custom-row-col col-sidebar">
+                        <div class="catalog-filters">
+                            <form action="#">
+                                <div class="filter-form">
+                                    <div class="catalog-filters--section show-more-parent">
+                                        <div class="catalog-filters--head"><h3 class="form-title">Материал стен</h3>
+                                            <span class="show-more"></span></div>
+                                        <div class="catalog-filters--main show-more-hidden">
+                                            <div class="form-row-element">
+                                                <div class="check"><label><input
+                                                        type="checkbox"><span>из бруса</span></label></div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="check"><label><input type="checkbox"><span>из бревна</span>
+                                                </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                        <div class="catalog-filters--head">
+                                            <h3 class="form-title">Общая площадь</h3>
+                                            <span class="show-more"></span>
+                                        </div>
+                                        <div class="catalog-filters--main show-more-hidden">
+                                            <div class="form-row-element">
+                                                <div class="range">
+                                                    <div id="keypress" class="range-field"></div>
+                                                    <div class="range-inputs">
+                                                        от
+                                                        <input type="text" id="input-with-keypress-0">
+                                                        до
+                                                        <input type="text" id="input-with-keypress-1">
+                                                        м<sup>2</sup>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                            <div class="catalog-filters--head">
+                                                <h3 class="form-title">Этажность</h3>
+                                                <span class="show-more"></span>
+                                            </div>
+                                            <div class="catalog-filters--main show-more-hidden">
+                                                <div class="form-row">
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>1-этажные</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>2-этажные</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>с мансардой</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>с цоколем</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>с подвалом</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                        <div class="catalog-filters--head">
+                                            <h3 class="form-title">Габариты</h3>
+                                            <span class="show-more"></span>
+                                        </div>
+                                        <div class="catalog-filters--main show-more-hidden">
+                                            <div class="form-row-element">
+                                                <div class="range-inputs">
+                                                    <span style="width: 75px;">Длина:</span>
+                                                    <input type="text">
+                                                    -
+                                                    <input type="text">
+                                                    м
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="range-inputs">
+                                                    <span style="width: 75px;">Ширина:</span>
+                                                    <input type="text">
+                                                    -
+                                                    <input type="text">
+                                                    м
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                        <div class="catalog-filters--head">
+                                            <h3 class="form-title">Количество комнат</h3>
+                                            <span class="show-more"></span>
+                                        </div>
+                                        <div class="catalog-filters--main show-more-hidden">
+                                            <div class="form-row-element">
+                                                <div class="radio-flex">
+                                                    <label>
+                                                        <input type="radio" name="rooms">
+                                                        <span>2</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="rooms">
+                                                        <span>3</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="rooms">
+                                                        <span>4</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="rooms">
+                                                        <span>5</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="rooms">
+                                                        <span>6+</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                            <div class="catalog-filters--head">
+                                                <h3 class="form-title">Удобства</h3>
+                                                <span class="show-more"></span>
+                                            </div>
+                                            <div class="catalog-filters--main show-more-hidden">
+                                                <div class="form-row">
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>гараж</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>гараж на 2 места</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>второй свет</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>сауна</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>навес</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>терасса</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>балкон</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>бассейн</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="catalog-filters--section show-more-parent">
+                                            <div class="catalog-filters--head">
+                                                <h3 class="form-title">Подборки</h3>
+                                                <span class="show-more"></span>
+                                            </div>
+                                            <div class="catalog-filters--main show-more-hidden">
+                                                <div class="form-row">
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>новинки</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>скидки</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row-col col-50">
+                                                        <div class="form-row-element">
+                                                            <div class="check">
+                                                                <label>
+                                                                    <input type="checkbox">
+                                                                    <span>бесплатно</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="reset">
+                                        <button type="reset">
+                                            <span>X</span>
+                                            сбросить фильтр
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="custom-row-col col-elastic">
+                        <div class="catalog">
+                            <div class="catalog-header">
+                                <a href="#" class="filter">С меньшей ценой вниз</a>
+                                <a href="#" class="filter">С большей площадью вверх</a>
+                                <a href="#" class="filter">Новинки вверх</a>
+                            </div>
+                            <div class="catalog-main">
+                                <div class="projects-list col-3">
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('http://pollio-studio.com.ua/uploads/projects/3/2/1/project/thumbs/3038fd870b9e57452e7975b7a17c10fcc3fac3ff.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="new">новинка</span>
+                                                </div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price old">32 000 &#8381;</div>
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart-like"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('http://luxury-house.org/wp-content/uploads/Osobnyak-Wandana-Residence-s-vidom-na-gorod-v-Avstralii.jpg')"></div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('https://s0.tchkcdn.com/g-nJkLaimqlo3zo43vOGtSVg/14/225065/660x480/f/0/02.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="sale">скидка</span>
+                                                </div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('http://image.glavred.info/images/608xX/Dec2017/506780.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="free">бесплатно</span>
+                                                </div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">0 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('http://dobriiden.ru/sites/dobriiden.ru/files/beautiful_house_in_rsa_1_0.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="new">новинка</span>
+                                                </div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price old">32 000 &#8381;</div>
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart-like"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('https://admin.sport.znaj.ua/sites/znaj.sport/files/media/news/2017/09/37/nintchdbpict000353409563.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="new">новинка</span>
+                                                </div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('https://telegraf.com.ua/files/2018/03/rezidenciya-iz-kamnya-i-dereva-v-ssha-1.jpg')"></div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">32 000 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projects-item">
+                                        <div class="projects-item--wrap">
+                                            <a href="#" class="projects-item--preview">
+                                                <div class="bg"
+                                                     style="background-image: url('http://www.findermag.com/images/photos/catalog_nedv/Sitges2013/Mansion1_resize.jpg')"></div>
+                                                <div class="data">
+                                                    <span class="index">K-232</span>
+                                                    <ul class="info">
+                                                        <li>
+                                                            <span class="head">Жилая</span>
+                                                            <span>82 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Полезная</span>
+                                                            <span>140 м<sup>2</sup></span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="head">Общая</span>
+                                                            <span>260 м<sup>2</sup></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                            <div class="projects-item--actions">
+                                                <div class="price">0 &#8381;</div>
+                                                <a href="#" class="like">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             xlink:href="#icon-heart"/>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-actions">
+                                <div class="pagination"></div>
+                                <div class="sharing"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <include src="../templates/info-box.html" title="Проекты Арпланс"></include>
+
+        <include src="../templates/projects-slider.html"></include>
+
+    </div>
+
+    <include src="../templates/footer.html"></include>
+
+</div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+
+</body>
+</html>
