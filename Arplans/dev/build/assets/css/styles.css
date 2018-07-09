@@ -1922,12 +1922,17 @@ svg {
 
 .check label > span:after {
   content: "";
-  width: 10px;
-  height: 10px;
-  background-color: #2A7EC5;
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%203.12%202.36%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23fff%3B%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Echeck%3C/title%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M.4%2C1l.65.65L2.73%2C0l.4.4L1.25%2C2.27a.27.27%2C0%2C0%2C1-.4%2C0L0%2C1.42Z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 12px auto;
+  background-size: 12px auto;
   position: absolute;
-  left: 5px;
-  top: 5px;
+  left: 0;
+  top: 0;
   opacity: 0;
 }
 
@@ -1937,7 +1942,7 @@ svg {
 }
 
 .check label > span.centered:after {
-  bottom: 5px;
+  bottom: 0;
   margin: auto;
 }
 
