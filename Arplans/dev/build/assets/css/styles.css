@@ -2204,6 +2204,36 @@ svg {
   margin-top: 20px;
 }
 
+.info-box {
+  padding: 80px;
+}
+
+.info-box .title {
+  font-size: 6.4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.info-box--text {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  -webkit-columns: 2 auto;
+  -moz-columns: 2 auto;
+  columns: 2 auto;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+}
+
+.info-box--text a {
+  color: #346697;
+}
+
+.info-box--text strong {
+  font-weight: 700;
+}
+
 .projects-filters {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3194,39 +3224,6 @@ svg {
   margin-bottom: 40px;
 }
 
-/************************************************/
-/*                READY PROJECTS                */
-/************************************************/
-.ready-projects {
-  padding: 80px;
-}
-
-.ready-projects .title {
-  font-size: 6.4rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
-.ready-projects--text {
-  font-size: 3.5rem;
-  line-height: 1.5;
-  -webkit-columns: 2 auto;
-  -moz-columns: 2 auto;
-  columns: 2 auto;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
-}
-
-.ready-projects--text a {
-  color: #346697;
-}
-
-.ready-projects--text strong {
-  font-weight: 700;
-}
-
 .request {
   margin-bottom: 90px;
 }
@@ -3518,39 +3515,6 @@ svg {
 
 .compare-list--title {
   font-weight: 800;
-}
-
-/*******************************************/
-/*                ABOUT BOX                */
-/*******************************************/
-.compare-about {
-  padding: 80px;
-}
-
-.compare-about .title {
-  font-size: 6.4rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
-.compare-about--text {
-  font-size: 3.5rem;
-  line-height: 1.5;
-  -webkit-columns: 2 auto;
-  -moz-columns: 2 auto;
-  columns: 2 auto;
-  -webkit-column-gap: 40px;
-  -moz-column-gap: 40px;
-  column-gap: 40px;
-}
-
-.compare-about--text a {
-  color: #346697;
-}
-
-.compare-about--text strong {
-  font-weight: 700;
 }
 
 .basket-order {

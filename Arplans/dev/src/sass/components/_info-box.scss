@@ -1,0 +1,22 @@
+.info-box {
+  padding: 4*$padding_sm;
+  .title {
+    font-size: 6.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: $padding_md;
+  }
+  &--text {
+    font-size: 3.5rem;
+    line-height: 1.5;
+    columns: 2 auto;
+    column-gap: 2*$padding_sm;
+    a {
+      color: $link_dark;
+    }
+    strong {
+      font-weight: 700;
+    }
+  }
+
+}
