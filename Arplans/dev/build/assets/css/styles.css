@@ -1685,6 +1685,11 @@ svg {
   /*********************************************/
 }
 
+.icon-like {
+  width: 20px;
+  height: 17px;
+}
+
 .icon-likes {
   width: 20px;
   height: 16px;
@@ -2643,14 +2648,12 @@ svg {
   color: inherit;
 }
 
-.projects-item--actions .like {
-  width: 20px;
-  height: 17px;
+.projects-item--actions .icon-like {
   color: #657482;
   margin-right: 20px;
 }
 
-.projects-item--actions .like.liked {
+.projects-item--actions .icon-like.liked {
   color: #2196F3;
 }
 
@@ -3761,7 +3764,7 @@ svg {
     opacity: 1;
   }
 
-  .projects-item--actions .like:hover {
+  .projects-item--actions .icon-like:hover {
     color: #346697;
   }
 
