@@ -3,6 +3,7 @@
   width: 100%;
   position: relative;
   color: $link_hover;
+  align-items: center;
   .icon-loadFile {
     margin-right: 5px;
     flex-shrink: 0;
@@ -12,13 +13,19 @@
     display: flex;
     align-items: center;
     max-width: 100%;
-
+    position: relative;
     span {
       font-size: 3.5rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
+  }
+  .remove {
+    margin-left: 5px;
+    font-style: normal;
+    cursor: pointer;
+    align-self: flex-start;
   }
   input {
     position: absolute;

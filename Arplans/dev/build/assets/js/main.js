@@ -96,17 +96,26 @@ $(document).ready(function () {
     */
 
     function inputFile() {
-        var input = document.getElementById( 'fileUpload' );
-        var infoArea = document.getElementById( 'fileName' );
+        var input = document.getElementById( 'fileUpload' ),
+            infoArea = document.getElementById( 'fileName' ),
+            infoDefault = infoArea.dataset.default,
+            removeFile = document.getElementById('fileRemove');
 
         input.addEventListener( 'change', showFileName );
+        removeFile.addEventListener('click', removingFile);
 
         function showFileName( event ) {
-
             var input = event.srcElement;
             var fileName = input.files[0].name;
 
             infoArea.textContent = fileName;
+            removeFile.classList.remove('hide');
+        }
+
+        function removingFile() {
+            input.value = '';
+            infoArea.textContent = infoDefault;
+            removeFile.classList.add('hide');
         }
     }
 

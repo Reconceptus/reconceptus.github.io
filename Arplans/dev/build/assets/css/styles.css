@@ -1842,6 +1842,10 @@ svg {
   width: 100%;
   position: relative;
   color: #2A7EC5;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .file .icon-loadFile {
@@ -1862,6 +1866,7 @@ svg {
   -ms-flex-align: center;
   align-items: center;
   max-width: 100%;
+  position: relative;
 }
 
 .file label span {
@@ -1870,6 +1875,15 @@ svg {
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+}
+
+.file .remove {
+  margin-left: 5px;
+  font-style: normal;
+  cursor: pointer;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .file input {
