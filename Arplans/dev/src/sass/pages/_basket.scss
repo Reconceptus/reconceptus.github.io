@@ -89,6 +89,33 @@
         border-top: 1px solid $text_lt;
         background-color: $bg_yellow;
         padding: $padding_sm 2*$padding_sm;
+        .form-title {
+          color: $text;
+          margin-bottom: 15px;
+        }
+        .form-row-submit {
+          margin-top: $padding_sm;
+          margin-bottom: 10px;
+        }
+        &--total {
+          font-size: 3.5rem;
+          line-height: 1.5;
+          .total-head {
+            font-weight: 600;
+            margin-bottom: 5px;
+          }
+        }
+        &--title {
+          font-weight: 600;
+          font-size: 5.2rem;
+          text-transform: uppercase;
+          padding-top: 10px;
+        }
+        &--subtitle {
+          font-weight: 600;
+          font-size: 5.2rem;
+        }
+
       }
     }
   }

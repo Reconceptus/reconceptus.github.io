@@ -8,6 +8,26 @@
   font-size: 4rem;
   line-height: 1.2;
   padding: 0 2*$padding_md;
+  .arrow {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-color: currentColor;
+      border-width: 2px;
+      border-style: solid solid none none;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      transform: rotate(45deg);
+    }
+  }
   &--round {
     background-color: $link;
     color: $white;
@@ -15,6 +35,12 @@
   }
   &--lt {
     background-color: $link;
+    color: $white;
+    text-transform: uppercase;
+    border: none;
+  }
+  &--og {
+    background-color: $hash;
     color: $white;
     text-transform: uppercase;
     border: none;

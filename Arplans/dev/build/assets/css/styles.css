@@ -1572,6 +1572,30 @@ svg {
   padding: 0 60px;
 }
 
+.btn .arrow {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.btn .arrow:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: currentColor;
+  border-width: 2px;
+  border-style: solid solid none none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 .btn--round {
   background-color: #2196F3;
   color: #FFF;
@@ -1581,6 +1605,13 @@ svg {
 
 .btn--lt {
   background-color: #2196F3;
+  color: #FFF;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn--og {
+  background-color: #EF6C00;
   color: #FFF;
   text-transform: uppercase;
   border: none;
@@ -3715,6 +3746,38 @@ svg {
   border-top: 1px solid #B2B9C1;
   background-color: #FFF9E1;
   padding: 20px 40px;
+}
+
+.basket-form--ordering .ordering-submit .form-title {
+  color: #21202E;
+  margin-bottom: 15px;
+}
+
+.basket-form--ordering .ordering-submit .form-row-submit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.basket-form--ordering .ordering-submit--total {
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.basket-form--ordering .ordering-submit--total .total-head {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.basket-form--ordering .ordering-submit--title {
+  font-weight: 600;
+  font-size: 5.2rem;
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+
+.basket-form--ordering .ordering-submit--subtitle {
+  font-weight: 600;
+  font-size: 5.2rem;
 }
 
 .catalog-header {
