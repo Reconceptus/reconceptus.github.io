@@ -24,6 +24,37 @@
         text-transform: uppercase;
         display: flex;
         align-items: center;
+        .arrow {
+          width: 30px;
+          height: 30px;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-color: currentColor;
+            border-width: 2px;
+            border-style: solid solid none none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            transform: rotate(135deg) translate(-2px,2px);
+            transition: transform 0.3s;
+          }
+        }
+        &.down {
+
+        }
+        &.up {
+          .arrow {
+            &:after {
+              transform: rotate(315deg) translate(-2px,2px);
+            }
+          }
+        }
         @include hover(){
           color: $white;
         }
@@ -36,6 +67,7 @@
       }
     }
     &--section {
+      position: relative;
       display: flex;
       width: 100%;
       background-color: $white;
@@ -45,6 +77,9 @@
       }
       @include hover(){
         box-shadow: 0 0 40px 0 rgba($text,0.2);
+        .compare-table--remove {
+          opacity: 1;
+        }
       }
     }
     &--part {
@@ -60,6 +95,19 @@
       &.part-count {
         min-width: 245px;
       }
+    }
+    &--remove {
+      position: absolute;
+      cursor: pointer;
+      width: 18px;
+      height: 19px;
+      border: none;
+      background-color: transparent;
+      top: 6px;
+      right: 6px;
+      color: $link_dark;
+      opacity: 0;
+      transition: all 0.3s;
     }
     .placeholder {
       width: 50%;

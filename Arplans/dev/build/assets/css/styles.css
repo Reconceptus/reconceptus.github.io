@@ -1710,6 +1710,11 @@ svg {
   height: 24px;
 }
 
+.icon-remove {
+  width: 18px;
+  height: 19px;
+}
+
 .site-info .icon-delivery {
   width: 32px;
   height: 23px;
@@ -2078,12 +2083,13 @@ svg {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  color: #346697;
 }
 
 .counter .minus.disabled,
 .counter .plus.disabled {
-  opacity: 0.5;
   pointer-events: none;
+  color: #657482;
 }
 
 .counter .result {
@@ -3377,6 +3383,41 @@ svg {
   align-items: center;
 }
 
+.compare-table--header a .arrow {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.compare-table--header a .arrow:after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: currentColor;
+  border-width: 2px;
+  border-style: solid solid none none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotate(135deg) translate(-2px, 2px);
+  -ms-transform: rotate(135deg) translate(-2px, 2px);
+  transform: rotate(135deg) translate(-2px, 2px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.compare-table--header a.up .arrow:after {
+  -webkit-transform: rotate(315deg) translate(-2px, 2px);
+  -ms-transform: rotate(315deg) translate(-2px, 2px);
+  transform: rotate(315deg) translate(-2px, 2px);
+}
+
 .compare-table--main {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3392,6 +3433,7 @@ svg {
 }
 
 .compare-table--section {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3430,6 +3472,22 @@ svg {
 
 .compare-table--part.part-count {
   min-width: 245px;
+}
+
+.compare-table--remove {
+  position: absolute;
+  cursor: pointer;
+  width: 18px;
+  height: 19px;
+  border: none;
+  background-color: transparent;
+  top: 6px;
+  right: 6px;
+  color: #346697;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .compare-table .placeholder {
@@ -3555,7 +3613,7 @@ svg {
   margin-bottom: 30px;
 }
 
-.basket-form--additional ul {
+.basket-form--additional .add-service--list {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3564,22 +3622,17 @@ svg {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
   margin: 0 -20px;
+}
+
+.basket-form--additional .add-service--part {
+  width: 50%;
 }
 
 .basket-form--additional .add-service {
   width: 100%;
-  max-width: 50%;
   padding: 0 20px;
-}
-
-.basket-form--additional .add-service:not(:nth-child(1)):not(:nth-child(2)) {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .basket-form--additional .add-service--header {
@@ -3602,11 +3655,33 @@ svg {
 .basket-form--additional .add-service--header .show-more {
   width: 40px;
   height: 40px;
-  border: 1px solid;
+  border: 1px solid #B2B9C1;
   cursor: pointer;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  position: relative;
+}
+
+.basket-form--additional .add-service--header .show-more:after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: #B2B9C1;
+  border-width: 2px;
+  border-style: solid solid none none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotate(135deg) translate(-2px, 2px);
+  -ms-transform: rotate(135deg) translate(-2px, 2px);
+  transform: rotate(135deg) translate(-2px, 2px);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .basket-form--additional .add-service--main {
@@ -3617,6 +3692,12 @@ svg {
 .basket-form--additional .add-service--main-text {
   border-top: 1px solid;
   padding: 30px 0;
+}
+
+.basket-form--additional .add-service.show .show-more:after {
+  -webkit-transform: rotate(315deg) translate(-2px, 2px);
+  -ms-transform: rotate(315deg) translate(-2px, 2px);
+  transform: rotate(315deg) translate(-2px, 2px);
 }
 
 .basket-form--ordering .ordering-data {
@@ -3795,5 +3876,9 @@ svg {
   .compare-table--section:hover {
     -webkit-box-shadow: 0 0 40px 0 RGBA(33, 32, 46, 0.2);
     box-shadow: 0 0 40px 0 RGBA(33, 32, 46, 0.2);
+  }
+
+  .compare-table--section:hover .compare-table--remove {
+    opacity: 1;
   }
 }
