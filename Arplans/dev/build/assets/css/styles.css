@@ -3389,7 +3389,7 @@ svg {
   display: flex;
   width: 100%;
   background-color: #21202E;
-  padding: 9px 0;
+  padding: 5px 0;
   margin-bottom: 20px;
 }
 
@@ -3412,6 +3412,7 @@ svg {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  height: 30px;
 }
 
 .compare-table--header a .arrow {
@@ -3784,6 +3785,63 @@ svg {
   background-color: #F0F1F3;
   color: #657482;
   margin-bottom: 20px;
+  padding: 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.catalog-header .filter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 30px;
+  margin: 0 0 0 20px;
+}
+
+.catalog-header .filter .arrow {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.catalog-header .filter .arrow:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: currentColor;
+  border-width: 2px;
+  border-style: solid solid none none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotate(135deg) translate(-1px, 1px);
+  -ms-transform: rotate(135deg) translate(-1px, 1px);
+  transform: rotate(135deg) translate(-1px, 1px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.catalog-header .filter.up .arrow:after {
+  -webkit-transform: rotate(315deg) translate(-3px, 3px);
+  -ms-transform: rotate(315deg) translate(-3px, 3px);
+  transform: rotate(315deg) translate(-3px, 3px);
 }
 
 .catalog-filters {

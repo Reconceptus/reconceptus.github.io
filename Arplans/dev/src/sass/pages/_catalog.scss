@@ -3,6 +3,43 @@
     background-color: $bg;
     color: $border;
     margin-bottom: $padding_sm;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    .filter {
+      display: flex;
+      align-items: center;
+      height: 30px;
+      margin: 0 0 0 $padding_sm;
+      .arrow {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-color: currentColor;
+          border-width: 2px;
+          border-style: solid solid none none;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          transform: rotate(135deg) translate(-1px,1px);
+          transition: transform 0.3s;
+        }
+      }
+      &.up {
+        .arrow {
+          &:after {
+            transform: rotate(315deg) translate(-3px,3px);
+          }
+        }
+      }
+    }
   }
   &-filters {
     background-color: $bg;
