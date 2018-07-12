@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Каталог</title>
+    <title>Компиляция</title>
     <meta name="author" content="enenkoff@mail.ru">
 
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -116,306 +116,37 @@
     <div id="main" class="main">
         <div class="section bg-head">
             <div class="content content--lg">
-                <div class="bg-head--main"><h1 class="title">Проекты деревянных домов</h1></div>
+                <div class="bg-head--main"><h1 class="title">Все проекты со скидкой</h1></div>
             </div>
         </div>
         <div class="section">
             <div class="content content--lg">
                 <div class="custom-row">
-                    <div class="custom-row-col col-sidebar">
-                        <div class="catalog-filters">
-                            <form action="#">
-                                <div class="filter-form">
-                                    <div class="catalog-filters--section show-more-parent">
-                                        <div class="catalog-filters--head"><h3 class="form-title">Материал стен</h3>
-                                            <span class="show-more"></span></div>
-                                        <div class="catalog-filters--main show-more-hidden">
-                                            <div class="form-row-element">
-                                                <div class="check"><label><input
-                                                        type="checkbox"><span>из бруса</span></label></div>
-                                            </div>
-                                            <div class="form-row-element">
-                                                <div class="check"><label><input type="checkbox"><span>из бревна</span>
-                                                </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                        <div class="catalog-filters--head">
-                                            <h3 class="form-title">Общая площадь</h3>
-                                            <span class="show-more"></span>
-                                        </div>
-                                        <div class="catalog-filters--main show-more-hidden">
-                                            <div class="form-row-element">
-                                                <div class="range">
-                                                    <div id="keypress" class="range-field"></div>
-                                                    <div class="range-inputs">
-                                                        от
-                                                        <input type="text" id="input-with-keypress-0">
-                                                        до
-                                                        <input type="text" id="input-with-keypress-1">
-                                                        м<sup>2</sup>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                            <div class="catalog-filters--head">
-                                                <h3 class="form-title">Этажность</h3>
-                                                <span class="show-more"></span>
-                                            </div>
-                                            <div class="catalog-filters--main show-more-hidden">
-                                                <div class="form-row">
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>1-этажные</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>2-этажные</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>с мансардой</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>с цоколем</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>с подвалом</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                        <div class="catalog-filters--head">
-                                            <h3 class="form-title">Габариты</h3>
-                                            <span class="show-more"></span>
-                                        </div>
-                                        <div class="catalog-filters--main show-more-hidden">
-                                            <div class="form-row-element">
-                                                <div class="range-inputs">
-                                                    <span style="width: 75px;">Длина:</span>
-                                                    <input type="text">
-                                                    -
-                                                    <input type="text">
-                                                    м
-                                                </div>
-                                            </div>
-                                            <div class="form-row-element">
-                                                <div class="range-inputs">
-                                                    <span style="width: 75px;">Ширина:</span>
-                                                    <input type="text">
-                                                    -
-                                                    <input type="text">
-                                                    м
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                        <div class="catalog-filters--head">
-                                            <h3 class="form-title">Количество комнат</h3>
-                                            <span class="show-more"></span>
-                                        </div>
-                                        <div class="catalog-filters--main show-more-hidden">
-                                            <div class="form-row-element">
-                                                <div class="radio-flex">
-                                                    <label>
-                                                        <input type="radio" name="rooms">
-                                                        <span>2</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" name="rooms">
-                                                        <span>3</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" name="rooms">
-                                                        <span>4</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" name="rooms">
-                                                        <span>5</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="radio" name="rooms">
-                                                        <span>6+</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                            <div class="catalog-filters--head">
-                                                <h3 class="form-title">Удобства</h3>
-                                                <span class="show-more"></span>
-                                            </div>
-                                            <div class="catalog-filters--main show-more-hidden">
-                                                <div class="form-row">
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>гараж</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>гараж на 2 места</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>второй свет</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>сауна</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>навес</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>терасса</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>балкон</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>бассейн</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="catalog-filters--section show-more-parent">
-                                            <div class="catalog-filters--head">
-                                                <h3 class="form-title">Подборки</h3>
-                                                <span class="show-more"></span>
-                                            </div>
-                                            <div class="catalog-filters--main show-more-hidden">
-                                                <div class="form-row">
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>новинки</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>скидки</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-row-col col-50">
-                                                        <div class="form-row-element">
-                                                            <div class="check">
-                                                                <label>
-                                                                    <input type="checkbox">
-                                                                    <span>бесплатно</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="reset">
-                                        <button type="reset">
-                                            <span>X</span>
-                                            сбросить фильтр
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="custom-row-col col-elastic">
+                    <div class="custom-row-col">
                         <div class="catalog">
                             <div class="catalog-header">
-                                <a href="#" class="filter">С меньшей ценой вниз</a>
-                                <a href="#" class="filter">С большей площадью вверх</a>
-                                <a href="#" class="filter">Новинки вверх</a>
+                                <a href="#" class="filter down">
+                                    С меньшей ценой вниз
+                                    <i class="arrow"></i>
+                                </a>
+                                <a href="#" class="filter up">
+                                    С большей площадью вверх
+                                    <i class="arrow"></i>
+                                </a>
+                                <a href="#" class="filter down">
+                                    Новинки вверх
+                                    <i class="arrow"></i>
+                                </a>
                             </div>
                             <div class="catalog-main">
-                                <div class="projects-list col-3">
+                                <div class="projects-list col-4">
                                     <div class="projects-item">
                                         <div class="projects-item--wrap">
                                             <a href="#" class="projects-item--preview">
                                                 <div class="bg"
                                                      style="background-image: url('http://pollio-studio.com.ua/uploads/projects/3/2/1/project/thumbs/3038fd870b9e57452e7975b7a17c10fcc3fac3ff.jpg')"></div>
                                                 <div class="hash">
-                                                    <span class="new">новинка</span>
+                                                    <span class="sale">скидка</span>
                                                 </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
@@ -438,7 +169,7 @@
                                             <div class="projects-item--actions">
                                                 <div class="price old">32 000 &#8381;</div>
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like liked">
+                                                <a href="#" class="icon-like liked">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart-like"/>
@@ -453,6 +184,9 @@
                                             <a href="#" class="projects-item--preview">
                                                 <div class="bg"
                                                      style="background-image: url('http://luxury-house.org/wp-content/uploads/Osobnyak-Wandana-Residence-s-vidom-na-gorod-v-Avstralii.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="sale">скидка</span>
+                                                </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
                                                     <ul class="info">
@@ -473,7 +207,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -511,7 +245,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -527,7 +261,7 @@
                                                 <div class="bg"
                                                      style="background-image: url('http://image.glavred.info/images/608xX/Dec2017/506780.jpg')"></div>
                                                 <div class="hash">
-                                                    <span class="free">бесплатно</span>
+                                                    <span class="sale">скидка</span>
                                                 </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
@@ -549,7 +283,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">0 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -565,7 +299,7 @@
                                                 <div class="bg"
                                                      style="background-image: url('http://dobriiden.ru/sites/dobriiden.ru/files/beautiful_house_in_rsa_1_0.jpg')"></div>
                                                 <div class="hash">
-                                                    <span class="new">новинка</span>
+                                                    <span class="sale">скидка</span>
                                                 </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
@@ -588,7 +322,7 @@
                                             <div class="projects-item--actions">
                                                 <div class="price old">32 000 &#8381;</div>
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like liked">
+                                                <a href="#" class="icon-like liked">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart-like"/>
@@ -604,7 +338,7 @@
                                                 <div class="bg"
                                                      style="background-image: url('https://admin.sport.znaj.ua/sites/znaj.sport/files/media/news/2017/09/37/nintchdbpict000353409563.jpg')"></div>
                                                 <div class="hash">
-                                                    <span class="new">новинка</span>
+                                                    <span class="sale">скидка</span>
                                                 </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
@@ -626,7 +360,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -641,6 +375,9 @@
                                             <a href="#" class="projects-item--preview">
                                                 <div class="bg"
                                                      style="background-image: url('https://telegraf.com.ua/files/2018/03/rezidenciya-iz-kamnya-i-dereva-v-ssha-1.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="sale">скидка</span>
+                                                </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
                                                     <ul class="info">
@@ -661,7 +398,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -676,6 +413,9 @@
                                             <a href="#" class="projects-item--preview">
                                                 <div class="bg"
                                                      style="background-image: url('http://www.findermag.com/images/photos/catalog_nedv/Sitges2013/Mansion1_resize.jpg')"></div>
+                                                <div class="hash">
+                                                    <span class="sale">скидка</span>
+                                                </div>
                                                 <div class="data">
                                                     <span class="index">K-232</span>
                                                     <ul class="info">
@@ -696,7 +436,7 @@
                                             </a>
                                             <div class="projects-item--actions">
                                                 <div class="price">0 &#8381;</div>
-                                                <a href="#" class="like">
+                                                <a href="#" class="icon-like">
                                                     <svg xmlns="http://www.w3.org/2000/svg">
                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink"
                                                              xlink:href="#icon-heart"/>
@@ -709,8 +449,51 @@
                                 </div>
                             </div>
                             <div class="catalog-actions">
-                                <div class="pagination"></div>
-                                <div class="sharing"></div>
+
+                                <div class="pagination">
+                                    <a href="#" class="prev">&laquo;</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <span class="current">6</span>
+                                    <a href="#">7</a>
+                                    <a href="#" class="next">&raquo;</a>
+                                    <div class="total">из 8</div>
+                                </div>
+
+                                <div class="sharing title-end">
+                                    <div class="title">Поделиться</div>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="ico ico-fb">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-fb"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ico ico-gg">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-gg"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ico ico-vk">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-vk"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="ico ico-ok">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-ok"/>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -721,7 +504,7 @@
         <div class="section info-box">
             <div class="content content--md">
                 <div class="ready-projects--info">
-                    <h3 class="title">Проекты Арпланс</h3>
+                    <h3 class="title">Проекты Арпланс со скидкой</h3>
                     <div class="info-box--text">
                         <p>В этом блоке 3 стиля: основной, <a href="#">ссылка</a>, <strong>болд</strong>. Не обязательное поле для текстового описания. ARPLANS.RU — сервис готовых архитектурных проектов загородных домов, коттеджей, бань. По нашим проектам многократно производилось строительство, а качество чертежей проектной документации проверено временем и репутацией разработчиков. Все проекты созданы опытными и высококвалифицированны архитекторами и инженерами ARPLANS.</p>
                         <p>Здесь рыба. Сервис готовых архитектурных проектов загородных домов, коттеджей, бань. По нашим проектам многократно производилось строительство, а качество чертежей проектной документации проверено временем и репутацией разработчиков. Все проекты созданы опытными и высококвалифицированны архитекторами и инженерами ARPLANS.</p>
