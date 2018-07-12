@@ -75,9 +75,23 @@
       }
     }
     .reset {
+      margin-top: 20px;
       button {
         display: flex;
         align-items: center;
+        background-color: transparent;
+        border: none;
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $border;
+        border-bottom: 1px solid currentColor;
+        line-height: 1;
+        span {
+          font-size: 5rem;
+          font-weight: 400;
+          margin-right: 5px;
+        }
       }
     }
   }

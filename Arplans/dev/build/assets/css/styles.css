@@ -4047,6 +4047,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   transform: rotate(315deg) translate(-2px, 2px);
 }
 
+.catalog-filters .reset {
+  margin-top: 20px;
+}
+
 .catalog-filters .reset button {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4056,6 +4060,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #657482;
+  border-bottom: 1px solid currentColor;
+  line-height: 1;
+}
+
+.catalog-filters .reset button span {
+  font-size: 5rem;
+  font-weight: 400;
+  margin-right: 5px;
 }
 
 .catalog-actions {
