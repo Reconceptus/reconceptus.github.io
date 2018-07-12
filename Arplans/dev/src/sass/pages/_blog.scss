@@ -1,3 +1,10 @@
-.blog {
-
+.blog-page {
+  .blog-hashes {
+    margin-bottom: $padding_sm;
+  }
+  &--actions {
+    margin: 0 0 2*$padding_sm;
+    display: flex;
+    justify-content: center;
+  }
 }
