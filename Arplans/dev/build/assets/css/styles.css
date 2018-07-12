@@ -1368,76 +1368,6 @@ svg {
   white-space: nowrap;
 }
 
-.footer-top--share {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.footer-top--share .title {
-  color: #657482;
-  text-transform: uppercase;
-  font-size: 3.5rem;
-}
-
-.footer-top--share ul {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.footer-top--share li {
-  margin-left: 20px;
-}
-
-.footer-top--share .ico {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  color: #FFF;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.footer-top--share .ico-fb {
-  background-color: #455896;
-  padding: 7px;
-}
-
-.footer-top--share .ico-gg {
-  background-color: #C14F44;
-  padding: 7px;
-}
-
-.footer-top--share .ico-vk {
-  background-color: #556F9C;
-  padding: 7px;
-}
-
-.footer-top--share .ico-ok {
-  background-color: #D3732F;
-  padding: 7px;
-}
-
 .footer-main {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2935,6 +2865,152 @@ svg {
   padding: 60px 20px;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 3.5rem;
+}
+
+.pagination a,
+.pagination span {
+  width: 40px;
+  height: 40px;
+  margin-right: 1px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 5px;
+  cursor: pointer;
+  color: #657482;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.pagination a.current,
+.pagination span.current {
+  background-color: #21202E;
+  color: #FFF;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pagination .prev,
+.pagination .next {
+  font-size: 7rem;
+  line-height: 1;
+  padding-bottom: 5px;
+}
+
+.pagination a {
+  background-color: #F0F1F3;
+}
+
+.pagination .total {
+  cursor: default;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 15px;
+  color: #657482;
+}
+
+.sharing {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.sharing.title-end {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.sharing.title-end li {
+  margin: 0 20px 0 0;
+}
+
+.sharing .title {
+  color: #657482;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
+.sharing ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.sharing li {
+  margin: 0 0 0 20px;
+}
+
+.sharing .ico {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.sharing .ico-fb {
+  background-color: #455896;
+  padding: 7px;
+}
+
+.sharing .ico-gg {
+  background-color: #C14F44;
+  padding: 7px;
+}
+
+.sharing .ico-vk {
+  background-color: #556F9C;
+  padding: 7px;
+}
+
+.sharing .ico-ok {
+  background-color: #D3732F;
+  padding: 7px;
+}
+
 /*******************************************/
 /*                VIDEO BOX                */
 /*******************************************/
@@ -3909,6 +3985,21 @@ svg {
   align-items: center;
 }
 
+.catalog-actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 1201px) {
   .desktop-hidden {
     display: none !important;
@@ -3980,6 +4071,12 @@ svg {
 
   .projects-item:hover .projects-item--preview .data .index {
     background-color: #346697;
+  }
+
+  .pagination a:hover,
+  .pagination span:hover {
+    background-color: #21202E;
+    color: #FFF;
   }
 
   .home-about-menu--item:hover {

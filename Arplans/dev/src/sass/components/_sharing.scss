@@ -1,0 +1,46 @@
+.sharing {
+  display: flex;
+  align-items: center;
+  &.title-end {
+    flex-direction: row-reverse;
+    li {
+      margin: 0 $padding_sm 0 0;
+    }
+  }
+  .title {
+    color: $border;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    margin: 0 0 0 $padding_sm;
+  }
+  .ico {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    color: $white;
+    align-items: center;
+    justify-content: center;
+    &-fb {
+      background-color: #455896;
+      padding: 7px;
+    }
+    &-gg {
+      background-color: #c14f44;
+      padding: 7px;
+    }
+    &-vk {
+      background-color: #556f9c;
+      padding: 7px;
+    }
+    &-ok {
+      background-color: #d3732f;
+      padding: 7px;
+    }
+  }
+}
