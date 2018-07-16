@@ -7,6 +7,7 @@
   font-weight: 600;
   font-size: 4rem;
   line-height: 1.2;
+  border: none;
   padding: 0 2*$padding_md;
   .arrow {
     width: 30px;
@@ -37,13 +38,12 @@
     background-color: $link;
     color: $white;
     text-transform: uppercase;
-    border: none;
+
   }
   &--og {
     background-color: $hash;
     color: $white;
     text-transform: uppercase;
-    border: none;
   }
   &--dk {
     background-color: $link_dark;
@@ -51,6 +51,21 @@
     text-transform: uppercase;
   }
 
+  &-square-min {
+    border: none;
+    background-color: $link;
+    color: $white;
+    line-height: 1.2;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 $padding_sm;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
   &-round-min {
     background-color: $link;
     color: $white;

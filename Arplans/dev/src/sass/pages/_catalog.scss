@@ -43,6 +43,7 @@
   }
   &-filters {
     background-color: $bg;
+    margin-bottom: $padding_sm;
     padding: $padding_sm $padding_sm $padding_sm $padding_md;
     &--head {
       display: flex;
@@ -93,6 +94,9 @@
           margin-right: 5px;
         }
       }
+    }
+    .submit {
+      margin-top: $padding_sm;
     }
   }
   &-actions {
