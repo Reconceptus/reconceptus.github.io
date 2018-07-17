@@ -43,7 +43,7 @@
   }
   &-filters {
     background-color: $bg;
-    margin-bottom: $padding_sm;
+    margin-bottom: 2*$padding_sm;
     padding: $padding_sm $padding_sm $padding_sm $padding_md;
     &--head {
       display: flex;

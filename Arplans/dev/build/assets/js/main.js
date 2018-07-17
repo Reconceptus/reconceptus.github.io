@@ -63,6 +63,47 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
 (function(e){"use strict";var t={ghostEventDelay:1e3};var n={init:function(n){var r=this;if(!r.data("touchOrMouse")){r.on("touchstart.touchOrMouse touchend.touchOrMouse",function(t){e(this).data("touchOrMouse").touchEventInProgress=t.type==="touchstart";e(this).data("touchOrMouse").lastTouchEventTimestamp=Date.now()}).data("touchOrMouse",{options:e.extend(t,n||{}),touchEventInProgress:false,lastTouchEventTimestamp:0})}return r},get:function(t){var n=this,r=n.data("touchOrMouse"),i=e(t.delegateTarget).data("touchOrMouse");if(!i){e(t.delegateTarget).data("touchOrMouse",i={})}var s=r.touchEventInProgress||r.lastTouchEventTimestamp>Date.now()-r.options.ghostEventDelay||t.type==="mouseleave"&&i.lastMouseEnterEventWasInvokedByTouch;if(t.type==="mouseenter"){i.lastMouseEnterEventWasInvokedByTouch=s}return s?"touch":"mouse"}};e.fn.touchOrMouse=function(e,t){return n[e].call(this,t)}})(jQuery);
 
 // scripts
+(function( $ ) {
+    $.fn.projectGallery = function() {
+
+        var $dataForClone = $(this).clone(),
+            $data = $dataForClone[0].children,
+            $elements = [];
+
+        for(var i = 0; i < $data.length; i++){
+            $elements[i] = $data[i];
+        }
+
+        $(this).html('<div class="gallery-main"></div><div class="gallery-list"></div>')
+
+        $('.gallery-list').append($elements);
+
+        function defaultActiveItem() {
+            $('.gallery-list .item').first().addClass('current');
+        }
+
+        function setActiveItem() {
+            var activeItem = $('.gallery-list .current').clone();
+            $('.gallery-main').empty().append(activeItem)
+        }
+
+        function clickItem(item) {
+            $('.gallery-list .current').removeClass('current');
+            item.addClass('current');
+            setActiveItem();
+        }
+
+
+
+        defaultActiveItem();
+        setActiveItem();
+        $('.gallery-list .item').click(function () {
+            clickItem($(this));
+        })
+    };
+})(jQuery);
+
+// scripts
 $(document).ready(function () {
 
     /* ----------------------------------- variables ----------------------------------- */
@@ -329,6 +370,9 @@ $(document).ready(function () {
     }
     if($('.range').length > 0){
         rangeInput();
+    }
+    if($('.project-gallery').length > 0){
+        $('.project-gallery').projectGallery();
     }
 
     /* --------------------------------- document resize --------------------------------- */

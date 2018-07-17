@@ -11,4 +11,7 @@
 //= vendor/touchOrMouse.min.js
 
 // scripts
+//= partials/project-gallery.js
+
+// scripts
 //= partials/scripts.js

@@ -265,6 +265,9 @@ $(document).ready(function () {
     if($('.range').length > 0){
         rangeInput();
     }
+    if($('.project-gallery').length > 0){
+        $('.project-gallery').projectGallery();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

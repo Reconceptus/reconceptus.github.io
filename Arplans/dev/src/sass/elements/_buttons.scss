@@ -51,6 +51,22 @@
     text-transform: uppercase;
   }
 
+  &-add {
+    border: 1px solid $border;
+    color: $border;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: 3rem;
+    font-weight: 700;
+    height: 30px;
+    padding: 0 $padding_sm;
+    &:before {
+      content: "+";
+      margin-right: 5px;
+    }
+  }
   &-square-min {
     border: none;
     background-color: $link;
