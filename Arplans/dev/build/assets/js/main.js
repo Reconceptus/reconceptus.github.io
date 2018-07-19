@@ -66,31 +66,85 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
 (function( $ ) {
     $.fn.projectGallery = function() {
 
-        var $dataForClone = $(this).clone(),
+        var $this = $(this),
+            $dataForClone = $('.gallery-list',this).clone(),
             $data = $dataForClone[0].children,
-            $elements = [];
+            $elements = [],
+            $current = 1,
+            $firstVisible = 1,
+            $lastVisible = 4,
+            $listMargin = 0;
 
         for(var i = 0; i < $data.length; i++){
             $elements[i] = $data[i];
         }
 
-        $(this).html('<div class="gallery-main"></div><div class="gallery-list"></div>')
+        $(this).prepend('<div class="gallery-main"></div>');
 
-        $('.gallery-list').append($elements);
+        $('.gallery-main').append($elements);
 
         function defaultActiveItem() {
             $('.gallery-list .item').first().addClass('current');
+            $('.gallery-main .item').first().addClass('current');
+            $('.gallery-list .item:nth-child(-n+4)').addClass('visible');
         }
 
         function setActiveItem() {
-            var activeItem = $('.gallery-list .current').clone();
-            $('.gallery-main').empty().append(activeItem)
+            showInList();
+            $('.current', $this).removeClass('current');
+            $('[data-num="'+$current+'"]', $this).addClass('current');
+            endAction();
         }
 
         function clickItem(item) {
-            $('.gallery-list .current').removeClass('current');
-            item.addClass('current');
+            $current = item.attr('data-num');
             setActiveItem();
+        }
+
+        function clickArrowLR(dir) {
+            $current = parseInt($current);
+            if(dir == 'next'){
+                $current = $current + 1;
+            }
+            if(dir == 'prev'){
+                $current = $current - 1;
+            }
+            setActiveItem();
+        }
+
+        function listMargin(dir) {
+            if(dir == 'up'){
+                $listMargin = $listMargin - 75;
+            }
+            if(dir == 'down'){
+                $listMargin = $listMargin + 75;
+            }
+            return $listMargin+'%';
+        }
+
+
+        function showInList() {
+            if($current > $lastVisible){
+                $('.gallery-list').css('margin-top',listMargin('up'));
+
+                $lastVisible = $lastVisible + 1;
+                $firstVisible = $firstVisible + 1;
+            }
+            if($current < $firstVisible){
+                $('.gallery-list').css('margin-top',listMargin('down'));
+                $lastVisible = $lastVisible - 1;
+                $firstVisible = $firstVisible - 1;
+            }
+        }
+
+        function endAction() {
+            $current == 1 ?
+                $('.buttons .back').addClass('hide') :
+                $('.buttons .back').removeClass('hide');
+
+            $current == $elements.length ?
+                $('.buttons .forw').addClass('hide') :
+                $('.buttons .forw').removeClass('hide');
         }
 
 
@@ -99,7 +153,13 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
         setActiveItem();
         $('.gallery-list .item').click(function () {
             clickItem($(this));
-        })
+        });
+        $('.prev').click(function () {
+            clickArrowLR('prev');
+        });
+        $('.next').click(function () {
+            clickArrowLR('next');
+        });
     };
 })(jQuery);
 

@@ -3077,14 +3077,33 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .project-gallery .gallery-main {
   width: 100%;
   margin-right: 5px;
+  position: relative;
 }
 
 .project-gallery .gallery-main .item {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.project-gallery .gallery-main .item:not(.current) {
+  opacity: 0;
 }
 
 .project-gallery .gallery-list {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.project-gallery .gallery-list-wrap {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -3108,6 +3127,35 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   bottom: 0;
   background-color: #FFF;
   opacity: 0.5;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.project-gallery .buttons button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
+.project-gallery .buttons .prev {
+  top: 50%;
+  left: 0;
+}
+
+.project-gallery .buttons .next {
+  top: 50%;
+  right: 20%;
+}
+
+.project-gallery .buttons .up {
+  top: 0;
+  right: 10%;
+}
+
+.project-gallery .buttons .down {
+  bottom: 0;
+  right: 10%;
 }
 
 .project-gallery .item {
