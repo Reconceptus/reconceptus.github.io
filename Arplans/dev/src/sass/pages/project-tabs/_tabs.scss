@@ -1,0 +1,101 @@
+@import "tab-main";
+@import "tab-cost";
+@import "tab-video";
+@import "tab-3d";
+@import "tab-objects";
+@import "tab-services";
+
+.project-page {
+  &--tabs {
+    position: relative;
+    margin-bottom: $padding_sm;
+    & > input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+      z-index: -2;
+    }
+  }
+  .tabs {
+    &-nav {
+      ul {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+      li {
+        transition: all 0.2s;
+        width: 100%;
+        color: $border;
+        white-space: nowrap;
+        border-width: 1px;
+        border-style: solid none solid solid;
+        border-color: $text_lt $text_lt $text;
+        &:last-child {
+          border-right: 1px solid $text_lt;
+        }
+        label {
+          width: 100%;
+          cursor: pointer;
+          text-align: center;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 $padding_sm;
+          text-transform: uppercase;
+          font-size: 3.5rem;
+          color: inherit;
+          font-weight: 600;
+        }
+      }
+    }
+    &-sections {
+      position: relative;
+      .tab-section {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        pointer-events: none;
+        padding: 2*$padding_sm 0;
+      }
+    }
+  }
+}
+
+
+/* tabs actives */
+
+.tab01:checked ~ nav .tab01,
+.tab02:checked ~ nav .tab02,
+.tab03:checked ~ nav .tab03,
+.tab04:checked ~ nav .tab04,
+.tab05:checked ~ nav .tab05,
+.tab06:checked ~ nav .tab06,
+.tab07:checked ~ nav .tab07,
+.tab08:checked ~ nav .tab08 {color: $text; border-color: $text $text transparent $text;}
+
+.tab01:checked ~ nav .tab02,
+.tab02:checked ~ nav .tab03,
+.tab03:checked ~ nav .tab04,
+.tab04:checked ~ nav .tab05,
+.tab05:checked ~ nav .tab06,
+.tab06:checked ~ nav .tab07,
+.tab07:checked ~ nav .tab08,
+.tab08:checked ~ nav .tab09 {border-left-color: $text;}
+
+.tab01:checked ~ .tabs-sections .tab01,
+.tab02:checked ~ .tabs-sections .tab02,
+.tab03:checked ~ .tabs-sections .tab03,
+.tab04:checked ~ .tabs-sections .tab04,
+.tab05:checked ~ .tabs-sections .tab05,
+.tab06:checked ~ .tabs-sections .tab06,
+.tab07:checked ~ .tabs-sections .tab07,
+.tab08:checked ~ .tabs-sections .tab08 {position: static; pointer-events: auto; opacity: 1;}

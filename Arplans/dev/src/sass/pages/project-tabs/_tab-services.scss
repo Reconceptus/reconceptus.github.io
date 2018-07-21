@@ -1,0 +1,23 @@
+.project-page {
+  .tab-services {
+    article {
+      font-size: 3.5rem;
+      line-height: 1.6;
+      &:not(:last-child){
+        margin-bottom: 2*$padding_sm;
+      }
+    }
+    .title {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: $padding_sm;
+    }
+    .text {
+      margin-bottom: $padding_sm;
+    }
+    .link {
+      color: $link_dark;
+    }
+  }
+}

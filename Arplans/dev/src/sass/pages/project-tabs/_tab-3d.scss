@@ -1,0 +1,16 @@
+.project-page {
+  .tab-3d {
+    .tour {
+      width: 100%;
+      padding-top: 50%;
+      position: relative;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

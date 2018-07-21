@@ -1,5 +1,8 @@
+@import "project-tabs/tabs";
+
 .project-page {
   padding: 2*$padding_sm 0 0;
+  margin-bottom: $padding_sm;
   &--head {
     align-items: stretch;
     margin-bottom: 2*$padding_sm;
@@ -91,20 +94,8 @@
       color: $text;
       font-size: 4rem;
       margin-bottom: $padding_md;
-      .ico {
-        font-style: normal;
+      .icon-sign {
         flex-shrink: 0;
-        width: 16px;
-        height: 16px;
-        color: $link_hover;
-        font-weight: 700;
-        font-size: 13px;
-        border: 1px solid $link_hover;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
         margin: 5px 0 0 0;
       }
       .text {
@@ -136,96 +127,54 @@
     padding-top: 60%;
     position: relative;
   }
-  &--tabs {
+  &--reviews {
     position: relative;
-    & > input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      pointer-events: none;
-      z-index: -2;
+    background-color: $link_hover;
+    color: $white;
+    min-height: 60px;
+    margin-bottom: 2*$padding_sm;
+    display: flex;
+    align-items: center;
+    padding: 0 $padding_sm;
+    .icon {
+      margin-right: $padding_sm;
+      transform: translateY(-30px);
+    }
+    .text {
+      font-family: 'Merriweather';
+      font-size: 5rem;
+      font-style: italic;
+      font-weight: 300;
+    }
+    .read {
+      background-color: $white;
+      color: $link_hover;
+      font-size: 4rem;
+      font-weight: 600;
+      padding: 8px $padding_md;
+      border-radius: 30px;
+      margin-left: 2*$padding_sm;
     }
   }
-  .tabs {
-    &-nav {
-      ul {
-        display: flex;
-        align-items: stretch;
-        justify-content: space-between;
-      }
-      li {
-        transition: all 0.2s;
-        width: 100%;
-        color: $border;
-        white-space: nowrap;
-        border-width: 1px;
-        border-style: solid none solid solid;
-        border-color: $text_lt $text_lt $text;
-        &:last-child {
-          border-right: 1px solid $text_lt;
-        }
-        label {
-          width: 100%;
-          cursor: pointer;
-          text-align: center;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 $padding_sm;
-          text-transform: uppercase;
-          font-size: 3.5rem;
-          color: inherit;
-          font-weight: 600;
-        }
+  &--about {
+    width: 100%;
+    max-width: 85%;
+    .title {
+      font-size: 6.4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: $padding_sm;
+    }
+    .text-box {
+      width: 80%;
+      margin-bottom: 4*$padding_sm;
+      figure {
+        margin-right: -25%;
       }
     }
-    &-sections {
-      position: relative;
-      .tab-section {
-        width: 100%;
-        display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        opacity: 0;
-        pointer-events: none;
-      }
-      .tab-main {
-        &-slider {
-
-        }
-      }
-      .tab-cost {
-
-      }
-    }
+  }
+  .catalog-actions {
+    max-width: 85%;
   }
 }
 
-/* tabs actives */
-
-.tab01:checked ~ nav .tab01,
-.tab02:checked ~ nav .tab02,
-.tab03:checked ~ nav .tab03,
-.tab04:checked ~ nav .tab04,
-.tab05:checked ~ nav .tab05,
-.tab06:checked ~ nav .tab06 {color: $text; border-color: $text $text transparent $text;}
-
-.tab01:checked ~ nav .tab02,
-.tab02:checked ~ nav .tab03,
-.tab03:checked ~ nav .tab04,
-.tab04:checked ~ nav .tab05,
-.tab05:checked ~ nav .tab06,
-.tab06:checked ~ nav .tab07 {border-left-color: $text;}
-
-.tab01:checked ~ .tabs-sections .tab01,
-.tab02:checked ~ .tabs-sections .tab02,
-.tab03:checked ~ .tabs-sections .tab03,
-.tab04:checked ~ .tabs-sections .tab04,
-.tab05:checked ~ .tabs-sections .tab05,
-.tab06:checked ~ .tabs-sections .tab06 {position: static; pointer-events: auto; opacity: 1;}

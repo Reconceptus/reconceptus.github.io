@@ -1,0 +1,29 @@
+.project-page {
+  .tab-cost {
+    .title {
+      font-size: 5.2rem;
+      font-weight: 600;
+      margin-bottom: $padding_sm;
+    }
+    p,li {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    li {
+      padding-left: 2*$padding_sm;
+      position: relative;
+      &:before {
+        content: "\2022";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+    a {
+      color: $link_dark;
+    }
+  }
+}

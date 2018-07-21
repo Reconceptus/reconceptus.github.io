@@ -73,5 +73,22 @@
       height: 26px;
     }
   }
-
+  &-vk-reviews {
+    width: 64px;
+    height: 54px;
+  }
+  &-sign {
+    font-style: normal;
+    width: 16px;
+    height: 16px;
+    color: $link_hover;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid $link_hover;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 }

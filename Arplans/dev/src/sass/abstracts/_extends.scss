@@ -9,7 +9,7 @@
 }
 %hover_underline {
   &:hover {
-    @include media(hover,960){
+    @include media(hover,1025){
       text-decoration: underline;
     }
   }

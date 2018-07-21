@@ -239,6 +239,57 @@ $(document).ready(function () {
         })
     }
 
+    function likesCarousel() {
+        var $carouselBox = $('[data-owl="likes"]'),
+            $carousel = $carouselBox.find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ['',''],
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                800: {
+                    items: 2,
+                    margin: 30
+                },
+                1200: {
+                    items: 4,
+                    margin: 40
+                }
+            }
+        })
+    }
+
+    function planCarousel() {
+        var $carouselBox = $('[data-owl="plans"]'),
+            $carousel = $carouselBox.find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ['',''],
+            dots: false,
+            items: 1
+        })
+    }
+
+    function objectCarousel() {
+        var $carouselBox = $('[data-owl="objects"]'),
+            $carousel = $carouselBox.find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ['',''],
+            dots: false,
+            items: 1
+        })
+    }
+
 
 
     /* --------------------------------- document load --------------------------------- */
@@ -252,6 +303,15 @@ $(document).ready(function () {
     }
     if($('[data-owl="projects"]').length > 0){
         projectsCarousel();
+    }
+    if($('[data-owl="likes"]').length > 0){
+        likesCarousel();
+    }
+    if($('[data-owl="plans"]').length > 0){
+        planCarousel();
+    }
+    if($('[data-owl="objects"]').length > 0){
+        objectCarousel();
     }
     if($('input[type="file"]').length > 0){
         inputFile();

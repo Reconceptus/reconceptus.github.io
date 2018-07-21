@@ -116,6 +116,13 @@ gulp.task('media', function(){
         .pipe(gulp.dest(path.build.media))
 });
 
+/* frames */
+
+gulp.task('frames', function(){
+    gulp.src(path.src.common + 'frames/**/*.*')
+        .pipe(gulp.dest(path.build.html + 'assets/frames'))
+});
+
 /* fonts */
 
 gulp.task('fonts', function(){

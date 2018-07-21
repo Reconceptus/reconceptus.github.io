@@ -45,11 +45,17 @@
     &.col-sidebar {
       width: 420px;
     }
+    &.col-50 {
+      width: 50%;
+      max-width: 50%;
+    }
     &.col-66 {
       width: 66.6667%;
+      max-width: 66.6667%;
     }
     &.col-33 {
       width: 33.3333%;
+      max-width: 33.3333%;
     }
   }
 }
