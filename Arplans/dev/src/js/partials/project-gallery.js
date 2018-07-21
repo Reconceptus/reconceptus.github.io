@@ -89,10 +89,10 @@
         $('.gallery-list .item').click(function () {
             clickItem($(this));
         });
-        $('.prev').click(function () {
+        $('.buttons .back').click(function () {
             clickArrowLR('prev');
         });
-        $('.next').click(function () {
+        $('.buttons .forw').click(function () {
             clickArrowLR('next');
         });
     };

@@ -61,22 +61,87 @@
       position: absolute;
       width: 30px;
       height: 30px;
+      background-color: transparent;
+      border: none;
+      &:before {
+        content: "";
+        background-repeat: no-repeat;
+
+        background-position: center center;
+        position: absolute;
+      }
     }
     .prev {
       top: 50%;
       left: 0;
+      width: 15px;
+      height: 60px;
+      margin-top: -30px;
+      margin-left: 10px;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%20339%20339%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m194%2039c2-5%207-6%2011-4%204%202%206%207%204%2011l-62%20124%2061%20123c2%204%201%209-4%2011-4%202-9%200-11-4l-63-126c-1-3-1-5%200-8l64-127%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E');
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 60px auto;
+      }
     }
     .next {
       top: 50%;
       right: 20%;
+      width: 15px;
+      height: 60px;
+      margin-top: -30px;
+      margin-right: 15px;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%20339%20339%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m145%2039c-2-5-7-6-11-4-4%202-6%207-4%2011l62%20124-62%20123c-2%204%200%209%204%2011%204%202%209%200%2012-4l63-126c1-3%201-5%200-8l-64-127%22%20fill%3D%22%23ffffff%22%20fill-rule%3D%22nonzero%22/%3E%3C/svg%3E');
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: 60px auto;
+      }
     }
     .up {
       top: 0;
       right: 10%;
+      width: 60px;
+      height: 30px;
+      background-color: $white;
+      margin-right: -30px;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%209.58%202.85%22%3E%3Ctitle%3E%u0420%u0435%u0441%u0443%u0440%u0441%201%3C/title%3E%3Cg%20id%3D%224ee261aa-05d4-4378-90df-99571c7b5284%22%20data-name%3D%22%u0421%u043B%u043E%u0439%202%22%3E%3Cg%20id%3D%22d8976aa5-b2f1-439e-960d-f1137bd051ab%22%20data-name%3D%22%u0421%u043B%u043E%u0439%201%22%3E%3Cpath%20d%3D%22M9.41%2C2.29a.27.27%2C0%2C0%2C1%2C.14.39.3.3%2C0%2C0%2C1-.39.14L4.77.63.42%2C2.79A.27.27%2C0%2C0%2C1%2C0%2C2.65a.3.3%2C0%2C0%2C1%2C.14-.39L4.63%2C0a.39.39%2C0%2C0%2C1%2C.28%2C0l4.5%2C2.27%22%20style%3D%22fill%3A%23657482%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        width: 30px;
+        height: 80px;
+        background-size: 30px auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
     .down {
       bottom: 0;
+      margin-right: -30px;
       right: 10%;
+      width: 60px;
+      height: 30px;
+      background-color: $white;
+      &:before {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%209.58%202.85%22%3E%3Ctitle%3E%u0420%u0435%u0441%u0443%u0440%u0441%202%3C/title%3E%3Cg%20id%3D%228c636082-4b47-48e7-aa12-525f62ef0b39%22%20data-name%3D%22%u0421%u043B%u043E%u0439%202%22%3E%3Cg%20id%3D%229217f6f7-0bc8-4979-9006-1714aca90def%22%20data-name%3D%22%u0421%u043B%u043E%u0439%201%22%3E%3Cpath%20d%3D%22M.18.56A.27.27%2C0%2C0%2C1%2C0%2C.17.3.3%2C0%2C0%2C1%2C.42%2C0L4.81%2C2.22%2C9.17.06A.27.27%2C0%2C0%2C1%2C9.56.2a.3.3%2C0%2C0%2C1-.14.39L5%2C2.82a.39.39%2C0%2C0%2C1-.28%2C0L.18.56%22%20style%3D%22fill%3A%23657482%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        width: 30px;
+        height: 80px;
+        background-size: 30px auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
   .item {

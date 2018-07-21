@@ -154,10 +154,10 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
         $('.gallery-list .item').click(function () {
             clickItem($(this));
         });
-        $('.prev').click(function () {
+        $('.buttons .back').click(function () {
             clickArrowLR('prev');
         });
-        $('.next').click(function () {
+        $('.buttons .forw').click(function () {
             clickArrowLR('next');
         });
     };
