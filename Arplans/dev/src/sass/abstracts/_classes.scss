@@ -42,8 +42,13 @@
     &.col-elastic {
       max-width: calc(100% - 420px);
     }
+    &.col-projects {
+      width: 230px;
+      flex-shrink: 0;
+    }
     &.col-sidebar {
       width: 420px;
+      flex-shrink: 0;
     }
     &.col-50 {
       width: 50%;
@@ -58,6 +63,10 @@
       max-width: 33.3333%;
     }
   }
+}
+
+.bg {
+  background-color: $bg;
 }
 
 .hide {

@@ -1,6 +1,10 @@
 .blog-slider {
-  background-color: $bg;
-  padding: 2*$padding_sm 0;
+  &.simple {
+    padding: 2*$padding_sm 0 $padding_sm;
+  }
+  &.full {
+    padding: 2*$padding_sm 0;
+  }
   .title {
     text-transform: uppercase;
     font-size: 4rem;

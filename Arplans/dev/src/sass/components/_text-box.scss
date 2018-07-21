@@ -9,8 +9,27 @@
   h1 { font-size: 7.2rem; }
   h2 { font-size: 6.8rem; }
   h3 { font-size: 6.4rem; }
-  p,li {
+  p,ul {
     margin-bottom: $padding_md;
+  }
+  li {
+    margin-bottom: 10px;
+    padding-left: 2*$padding_sm;
+    position: relative;
+    &:before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+  .right-align {
+    float: right;
+    margin-left: $padding_md;
+    margin-bottom: $padding_md;
+    margin-right: -25%;
   }
   figure {
     margin-bottom: $padding_md;
@@ -23,5 +42,22 @@
   a {
     color: $link_hover;
     @extend %hover_underline;
+  }
+  blockquote {
+    p {margin: 0;}
+    padding: 0 2*$padding_sm 0 4*$padding_sm;
+    position: relative;
+    font-family: 'Merriweather';
+    font-size: 5.2rem;
+    margin: 2*$padding_md 0;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 5px;
+      background-color: $link;
+    }
   }
 }

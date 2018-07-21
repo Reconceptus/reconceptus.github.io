@@ -1,0 +1,25 @@
+.page-back {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  & > a, & > span {
+    border: 1px solid $border;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: $border;
+    transition: all 0.3s;
+    @include hover(){
+      color: $text;
+      border-color: $text;
+    }
+  }
+  .text {
+    margin: 0 10px;
+  }
+}

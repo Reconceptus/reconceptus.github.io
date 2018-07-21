@@ -1,0 +1,56 @@
+.article-page {
+  padding: 2*$padding_sm 0 ;
+  &--header {
+    padding-right: 15%;
+    margin-bottom: 2*$padding_sm;
+    .title {
+      font-size: 10.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: $padding_md;
+    }
+    .auth {
+      display: flex;
+      align-items: center;
+      font-size: 3.5rem;
+      color: $border;
+      .ava {
+        width: 60px;
+        height: 60px;
+        margin-right: $padding_sm;
+        img {
+          @extend %fullBlock;
+          border-radius: 50%;
+        }
+      }
+      .name {
+        margin-right: $padding_md;
+      }
+    }
+  }
+  &--main {
+    width: 100%;
+    max-width: 80%;
+    padding-bottom: $padding_sm;
+    .text-box {
+      figure {
+        margin-right: -25%;
+      }
+    }
+  }
+  .catalog-actions {
+    max-width: 80%;
+  }
+  &--sidebar {
+    .title {
+      text-transform: uppercase;
+      font-size: 4rem;
+      color: $border;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+    .projects-item {
+      margin-bottom: 10px;
+    }
+  }
+}

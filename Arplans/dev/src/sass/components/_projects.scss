@@ -61,6 +61,7 @@
       .projects & {
         padding-top: 66.6667%;
       }
+      .article-page--sidebar &,
       .like-slider &,
       .catalog &,
       .projects-slider & {
@@ -151,6 +152,7 @@
             min-width: 60px;
             font-size: 4rem;
           }
+          .article-page--sidebar &,
           .projects-slider & {
             padding: 0 15px;
             width: 50%;
@@ -181,6 +183,7 @@
           font-size: 3rem;
           padding: 13px 0;
         }
+        .article-page--sidebar &,
         .projects-slider & {
           width: 50%;
           justify-content: center;
@@ -262,6 +265,9 @@
       .catalog &,
       .projects & {
         padding: $padding_sm 0;
+      }
+      .article-page--sidebar & {
+        padding: 15px 18px;
       }
       .projects-slider & {
         padding: 18px;
