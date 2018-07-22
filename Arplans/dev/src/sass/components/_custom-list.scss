@@ -5,10 +5,19 @@
     align-items: flex-start;
     flex-flow: row wrap;
     margin: 0 -1*$padding_sm;
+    &.col-2 {
+      li {
+        max-width: 50%;
+      }
+    }
+    &.col-3 {
+      li {
+        max-width: 33.3333%;
+      }
+    }
   }
   li {
     width: 100%;
-    max-width: 33.3333%;
     padding: 0 $padding_sm;
     padding-top: 55px;
     position: relative;
@@ -28,5 +37,31 @@
     font-size: 5.2rem;
     font-weight: 600;
     margin-bottom: 10px;
+  }
+  &--flexed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    ul {
+      width: 100%;
+      max-width: 66.6667%;
+      margin-right: 2*$padding_sm;
+    }
+  }
+  &--info {
+    width: 100%;
+    max-width: 33.3333%;
+    padding: 2*$padding_sm;
+    background-color: $bg_blue;
+    font-size: 4rem;
+    .price {
+      font-size: 8.5rem;
+      font-weight: 600;
+      margin-bottom: $padding_sm;
+    }
+    .order {
+      margin-top: $padding_sm;
+    }
   }
 }

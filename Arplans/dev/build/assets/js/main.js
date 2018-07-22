@@ -487,8 +487,12 @@ $(document).ready(function () {
             nav: true,
             navText: ['',''],
             dots: false,
-            items: 1
-        })
+            items: 1,
+            onTranslated: function (e) {
+                var currentNum = $carousel.find('.owl-item.active .object-item').attr('data-num');
+                $('#owlCurrent').text(currentNum)
+            }
+        });
     }
 
 
