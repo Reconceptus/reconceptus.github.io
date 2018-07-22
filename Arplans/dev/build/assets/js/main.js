@@ -495,6 +495,19 @@ $(document).ready(function () {
         });
     }
 
+    function partnerCarousel() {
+        var $carouselBox = $('[data-owl="partner"]'),
+            $carousel = $carouselBox.find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ['',''],
+            dots: true,
+            items: 1
+        });
+    }
+
 
 
     /* --------------------------------- document load --------------------------------- */
@@ -520,6 +533,9 @@ $(document).ready(function () {
     }
     if($('[data-owl="objects"]').length > 0){
         objectCarousel();
+    }
+    if($('[data-owl="partner"]').length > 0){
+        partnerCarousel();
     }
     if($('input[type="file"]').length > 0){
         inputFile();

@@ -60,4 +60,19 @@
       background-color: $link;
     }
   }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2*$padding_md;
+    tr {
+      border-top: 1px solid #e1e3e7;
+      &:last-child {
+        border-bottom: 1px solid #e1e3e7;
+      }
+    }
+    td {
+      padding: 5px $padding_md 5px 0;
+      width: 50%;
+    }
+  }
 }
