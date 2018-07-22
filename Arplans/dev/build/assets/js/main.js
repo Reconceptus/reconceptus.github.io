@@ -379,6 +379,41 @@ $(document).ready(function () {
         })
     }
 
+    function reviewCarousel() {
+        var $carouselBox = $('[data-owl="reviews"]'),
+            $carousel = $carouselBox.find('.owl-carousel');
+
+        $carousel.owlCarousel({
+            loop: true,
+            nav: true,
+            navText: ['',''],
+            dots: false,
+            navSpeed: 300,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                800: {
+                    items: 2,
+                    margin: 30
+                },
+                1200: {
+                    items: 4,
+                    mouseDrag: false,
+                    margin: 60
+                }
+            }
+        })
+
+        $('#t_prev').click(function () {
+            $carouselBox.find('.owl-prev').click()
+        })
+        $('#t_next').click(function () {
+            $carouselBox.find('.owl-next').click()
+        })
+        $('#t_prev').click();
+    }
+
 
     function projectsCarousel() {
         var $carouselBox = $('[data-owl="projects"]'),
@@ -466,6 +501,9 @@ $(document).ready(function () {
     if($('select').length > 0){}
     if($('[data-owl="blog"]').length > 0){
         blogCarousel();
+    }
+    if($('[data-owl="reviews"]').length > 0){
+        reviewCarousel();
     }
     if($('[data-owl="projects"]').length > 0){
         projectsCarousel();

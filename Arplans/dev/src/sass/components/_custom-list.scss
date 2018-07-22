@@ -1,0 +1,32 @@
+.custom-list {
+  margin-bottom: 2*$padding_sm;
+  ul {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    margin: 0 -1*$padding_sm;
+  }
+  li {
+    width: 100%;
+    max-width: 33.3333%;
+    padding: 0 $padding_sm;
+    padding-top: 55px;
+    position: relative;
+    margin: $padding_md 0;
+    font-size: 3.5rem;
+    &:before {
+      content: "";
+      top: 0;
+      left: $padding_sm;
+      width: 5px;
+      height: 40px;
+      background-color: $link;
+      position: absolute;
+    }
+  }
+  .title {
+    font-size: 5.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}

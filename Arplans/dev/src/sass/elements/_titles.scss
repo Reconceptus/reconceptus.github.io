@@ -4,6 +4,7 @@
   /*                H1 TITLE                */
   /******************************************/
 
+  .about--wrap &,
   .bg-head &,
   .request--wrap & {
     font-size: 10.5rem;
@@ -29,4 +30,20 @@
   /*********************************************/
 
 
+}
+
+.big-header {
+  .title {
+    height: 100px;
+    display: flex;
+    padding: 0 $padding_sm;
+    align-items: center;
+    justify-content: center;
+    color: $border;
+    font-size: 8.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: $bg;
+  }
+  margin-bottom: 2*$padding_md;
 }
