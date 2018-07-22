@@ -43,9 +43,14 @@
   }
 
   &--field {
+    position: relative;
     [data-map="offices-map"]{
       width: 100%;
       height: 500px;
+    }
+    [data-map="settlements-map"]{
+      width: 100%;
+      height: 780px;
     }
   }
 
@@ -54,4 +59,34 @@
     height: 100%;
   }
 
+}
+
+.view-box {
+  position: relative;
+  & > input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -2;
+  }
+}
+
+#view_map:checked ~ .custom-search .view-map,
+#view_list:checked ~ .custom-search .view-list {
+  background-color: $white;
+  color: $border;
+}
+#view_map:checked ~ .map-box--field .view-list,
+#view_list:checked ~ .map-box--field .view-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -3;
 }

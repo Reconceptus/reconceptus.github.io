@@ -796,7 +796,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .blog-slider--item-figure,
 .projects-slider--item-figure,
 .like-slider--item-figure,
-.project-gallery .item figure {
+.project-gallery .item figure,
+.partners-list--item .bg {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -1884,11 +1885,11 @@ svg {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #657482;
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  background-color: #657482;
   padding: 10px;
 }
 
@@ -1910,6 +1911,59 @@ svg {
   border: none;
   color: #FFF;
   padding: 10px;
+}
+
+.custom-search--inputs {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.custom-search--nav {
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.custom-search--nav .view {
+  padding: 0 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FFF;
+  height: 30px;
+  color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .blog-hashes {
@@ -4011,14 +4065,55 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: #346697;
 }
 
+.map-box--field {
+  position: relative;
+}
+
 .map-box--field [data-map="offices-map"] {
   width: 100%;
   height: 500px;
 }
 
+.map-box--field [data-map="settlements-map"] {
+  width: 100%;
+  height: 780px;
+}
+
 .map-box #map {
   width: 100%;
   height: 100%;
+}
+
+.view-box {
+  position: relative;
+}
+
+.view-box > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -2;
+}
+
+#view_map:checked ~ .custom-search .view-map,
+#view_list:checked ~ .custom-search .view-list {
+  background-color: #FFF;
+  color: #657482;
+}
+
+#view_map:checked ~ .map-box--field .view-list,
+#view_list:checked ~ .map-box--field .view-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -3;
 }
 
 .add-service {
@@ -4114,6 +4209,66 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-transform: rotate(315deg) translate(-2px, 2px);
   -ms-transform: rotate(315deg) translate(-2px, 2px);
   transform: rotate(315deg) translate(-2px, 2px);
+}
+
+.partners-list {
+  padding: 40px 0 0;
+}
+
+.partners-list ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: 0 -20px 20px;
+}
+
+.partners-list li {
+  width: 50%;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+
+.partners-list--item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.partners-list--item .bg {
+  width: 190px;
+  height: 190px;
+}
+
+.partners-list--data {
+  padding: 30px 40px;
+  font-size: 3.5rem;
+  line-height: 1.6;
+}
+
+.partners-list--data .name {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.partners-list--data .tel {
+  margin-top: 10px;
 }
 
 /*******************************************/
@@ -6390,6 +6545,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .page-back > span:hover {
     color: #21202E;
     border-color: #21202E;
+  }
+
+  .partners-list--item:hover {
+    -webkit-box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
+    box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
   }
 
   .home-about-menu--item:hover {
