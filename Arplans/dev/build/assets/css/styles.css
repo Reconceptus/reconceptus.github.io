@@ -2538,6 +2538,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   align-items: center;
 }
 
+.form-row.stretched {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
 .form-row-col {
   width: 100%;
   padding: 0 20px;
@@ -2565,6 +2572,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .filter-form .form-row-element:last-child {
   padding-bottom: 10px;
+}
+
+.form-row-element.to-stretch {
+  height: 100%;
+}
+
+.form-row-element.to-stretch * {
+  height: 100%;
 }
 
 .form-title {
@@ -6846,11 +6861,145 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin-bottom: 10px;
 }
 
+.contact-page {
+  margin-bottom: 60px;
+}
+
+.contact-page--wrap {
+  padding-top: 40px;
+  background: #FF6600;
+}
+
+.contact-page--wrap .title {
+  text-align: center;
+  color: #FFF;
+  margin-bottom: 40px;
+}
+
+.contact-page--data {
+  color: #FFF;
+  padding: 0 40px;
+  margin-bottom: 60px;
+}
+
+.contact-page--data .dd {
+  min-height: 60px;
+  margin-bottom: 5px;
+}
+
+.contact-page--data .dt {
+  font-size: 3.5rem;
+  font-family: "Merriweather";
+}
+
+.contact-page--data .list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.contact-page--data .list li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.contact-page--data .tel {
+  font-size: 8.5rem;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact-page--data .tel .icon {
+  margin-right: 20px;
+}
+
+.contact-page--data .socials {
+  text-transform: uppercase;
+}
+
+.contact-page--data .col-tel .dt {
+  padding-left: 48px;
+}
+
+.contact-page--partners {
+  margin-bottom: 60px;
+}
+
+.contact-page--partners ul {
+  -webkit-columns: 8 auto;
+  -moz-columns: 8 auto;
+  columns: 8 auto;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+}
+
+.contact-page--partners ul li {
+  padding: 5px 0;
+}
+
+.contact-form {
+  position: relative;
+}
+
+.contact-form:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  transform: translateX(-50vw);
+  background-color: #FFF;
+}
+
+.contact-form--wrap {
+  background-color: #FFF;
+  position: relative;
+  -webkit-box-shadow: 0 30px 80px 0 RGBA(26, 26, 26, 0.2);
+  box-shadow: 0 30px 80px 0 RGBA(26, 26, 26, 0.2);
+}
+
+.contact-form--main {
+  padding: 30px 40px 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form--submit {
+  padding: 0 40px;
+  position: relative;
+  border-top: 1px solid #B2B9C1;
+}
+
+.contact-form--submit .form-row-submit {
+  margin-right: -41px;
+}
+
 @media screen and (min-width: 1025px) {
   .text-box a:hover,
   .map-box--aside .item .on-map:hover,
   .add-service--main-text .link a:hover,
-  .partner-page--info-table .cell a:hover {
+  .partner-page--info-table .cell a:hover,
+  .contact-page--data .dd a:hover,
+  .contact-page--partners ul a:hover {
     text-decoration: underline;
   }
 
