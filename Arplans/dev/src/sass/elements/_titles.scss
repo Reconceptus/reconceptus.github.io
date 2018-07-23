@@ -4,20 +4,15 @@
   /*                H1 TITLE                */
   /******************************************/
 
-  .partner-page--wrap &,
-  .service--wrap &,
-  .about--wrap &,
-  .bg-head &,
-  .request--wrap & {
+  &.title-lg {
     font-size: 10.5rem;
     font-weight: 700;
   }
-  .video-box--about & {
+  &.title-md {
     font-size: 8rem;
     font-weight: 600;
   }
-  .basket-form--section &,
-  .compare & {
+  &.title-sm {
     font-size: 6.4rem;
     font-weight: 600;
   }

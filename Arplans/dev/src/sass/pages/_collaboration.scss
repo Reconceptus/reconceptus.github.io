@@ -1,0 +1,122 @@
+.collaborate {
+  &-head {
+    margin-bottom: 2*$padding_sm;
+    &--main {
+      padding: 2*$padding_md 0;
+      background: $link;
+      background: -moz-linear-gradient(left, $bg_blue_dark 0%, $link 100%);
+      background: -webkit-linear-gradient(left, $bg_blue_dark 0%,$link 100%);
+      background: linear-gradient(to right, $bg_blue_dark 0%,$link 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bg_blue_dark', endColorstr='$link',GradientType=1 );
+    }
+    .title {
+      text-align: center;
+      color: $white;
+      margin-bottom: 2*$padding_sm;
+    }
+    .subtitle {
+      font-style: italic;
+      font-size: 5.2rem;
+      color: $white;
+      font-family: 'Merriweather';
+      a {
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          left: 0;
+          right: 0;
+          bottom: 3px;
+          background-color: $white;
+        }
+      }
+    }
+  }
+  &-list {
+    &--items {
+      width: 100%;
+      max-width: 85%;
+    }
+    &--person {
+      padding: 0 $padding_sm 2*$padding_sm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &:before {
+        content: "";
+        top: 120px;
+        bottom: 0;
+        right: 50%;
+        width: 200%;
+        background-color: $hash;
+        position: absolute;
+      }
+      & > * {
+        position: relative;
+        z-index: 1;
+      }
+      .photo {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: $padding_sm;
+        img {
+          @extend %fullBlock;
+          border-radius: 50%;
+        }
+      }
+      .post {
+        width: 50%;
+        margin-left: 50%;
+        padding-left: 10px;
+        font-size: 3.5rem;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+    }
+    .item {
+      margin-bottom: 2*$padding_md;
+      figure {
+        width: 100%;
+        position: relative;
+        margin-bottom: $padding_sm;
+        img {
+          max-width: 100%;
+          display: block;
+        }
+        .num {
+          font-size: 81rem;
+          position: absolute;
+          line-height: 63rem;
+          left: 0;
+          bottom: 0;
+          color: $white;
+          font-weight: 700;
+        }
+      }
+      &-text {
+        width: 80%;
+        font-size: 4rem;
+        line-height: 1.6;
+        margin-bottom: $padding_md;
+      }
+      &-action {
+        width: 80%;
+        display: flex;
+        align-items: center;
+      }
+      .title {
+        font-size: 6.4rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
