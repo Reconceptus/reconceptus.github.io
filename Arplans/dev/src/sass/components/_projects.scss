@@ -15,6 +15,9 @@
       &:not(.current) {
         font-size: 4rem;
         border-bottom: 1px dotted currentColor;
+        @include hover(){
+          border-color: transparent;
+        }
       }
       &.current {
         font-size: 8.5rem;
@@ -50,6 +53,19 @@
     }
     &--wrap {
       width: 100%;
+      display: block;
+      transition: all 0.3s;
+      @include hover(){
+        box-shadow: 0 0 40px 0 rgba($text,0.2);
+        .projects-item--preview {
+          .data {
+            background-color: rgba($link_dark,0.7);
+            .index {
+              background-color: $link_dark;
+            }
+          }
+        }
+      }
     }
     &--preview {
       width: 100%;
@@ -264,7 +280,7 @@
       .like-slider &,
       .catalog &,
       .projects & {
-        padding: $padding_sm 0;
+        padding: $padding_sm;
       }
       .article-page--sidebar & {
         padding: 15px 18px;
@@ -333,16 +349,7 @@
         background-color: $link_dark;
       }
     }
-    @include hover(){
-      .projects-item--preview {
-        .data {
-          background-color: rgba($link_dark,0.7);
-          .index {
-            background-color: $link_dark;
-          }
-        }
-      }
-    }
+
   }
 
 

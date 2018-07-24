@@ -207,6 +207,9 @@
         display: flex;
         align-items: center;
         margin-left: $padding_md;
+        @include hover(){
+          color: $link_dark;
+        }
       }
       .icon-likes {
         margin-left: 15px;

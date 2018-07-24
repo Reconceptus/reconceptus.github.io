@@ -30,6 +30,12 @@
           right: 0;
           bottom: 3px;
           background-color: $white;
+          transition: all 0.3s;
+        }
+        @include hover(){
+          &:after {
+            background-color: transparent;
+          }
         }
       }
     }
@@ -74,6 +80,7 @@
       width: 100vw;
       transform: translateX(-50vw);
       background-color: $white;
+
     }
   }
 }

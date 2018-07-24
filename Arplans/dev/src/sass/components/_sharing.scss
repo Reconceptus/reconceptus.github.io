@@ -29,18 +29,30 @@
     &-fb {
       background-color: #455896;
       padding: 7px;
+      @include hover(){
+        background-color: #455896 * 0.9;
+      }
     }
     &-gg {
       background-color: #c14f44;
       padding: 7px;
+      @include hover(){
+        background-color: #c14f44 * 0.9;
+      }
     }
     &-vk {
       background-color: #556f9c;
       padding: 7px;
+      @include hover(){
+        background-color: #556f9c * 0.9;
+      }
     }
     &-ok {
       background-color: #d3732f;
       padding: 7px;
+      @include hover(){
+        background-color: #d3732f * 0.9;
+      }
     }
   }
 }

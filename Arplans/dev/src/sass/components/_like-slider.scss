@@ -1,13 +1,16 @@
 .like-slider {
-  padding: 2*$padding_md 0;
+  padding: 2*$padding_md 0 $padding_md;
   .title {
     text-transform: uppercase;
     font-size: 4rem;
     color: $border;
     font-weight: 600;
-    margin-bottom: 2*$padding_sm;
+    margin-bottom: $padding_sm;
   }
   &--carousel {
+    .owl-stage-outer {
+      padding: $padding_sm 0;
+    }
     .owl-prev,
     .owl-next {
       width: 60px;

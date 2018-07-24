@@ -27,6 +27,11 @@
   }
   &-item {
     padding: 0 $padding_sm;
+    @include hover(){
+      .blog-item--header {
+        box-shadow: 0 5px 20px 5px rgba($border,0.16);
+      }
+    }
     &--wrap {
       width: 100%;
       display: block;
@@ -41,7 +46,8 @@
       margin: -2*$padding_sm 2*$padding_sm 2*$padding_sm;
       border-left: 5px solid $link;
       padding: 0.5*$padding_md $padding_sm;
-      box-shadow: 0 5px 20px 5px rgba($border,0.16);
+      box-shadow: 0 2px 20px 5px rgba($border,0.1);
+      transition: all 0.3s;
     }
     &--date {
       color: $border;
@@ -54,6 +60,9 @@
       font-size: 4rem;
       font-weight: 600;
       text-transform: uppercase;
+      @include hover(){
+        color: $link_hover;
+      }
     }
   }
 }

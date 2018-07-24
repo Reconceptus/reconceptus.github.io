@@ -1,14 +1,17 @@
 .projects-slider {
   background-color: $bg;
-  padding: 2*$padding_sm 0;
+  padding: 2*$padding_sm 0 $padding_sm;
   .title {
     text-transform: uppercase;
     font-size: 4rem;
     color: $border;
     font-weight: 600;
-    margin-bottom: 2*$padding_sm;
+    margin-bottom: $padding_sm;
   }
   &--carousel {
+    .owl-stage-outer {
+      padding: $padding_sm 0;
+    }
     .owl-prev,
     .owl-next {
       width: 60px;
@@ -16,7 +19,7 @@
       background-color: $white;
       border-radius: 50%;
       border: none;
-      top: 50px;
+      top: 70px;
       position: absolute;
       box-shadow: 0 0 10px 5px rgba($border,0.16);
       transform: translateY(-50%);

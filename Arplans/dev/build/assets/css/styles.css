@@ -2021,8 +2021,11 @@ svg {
   margin: -40px 40px 40px;
   border-left: 5px solid #2196F3;
   padding: 15px 20px;
-  -webkit-box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
-  box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
+  -webkit-box-shadow: 0 2px 20px 5px RGBA(101, 116, 130, 0.1);
+  box-shadow: 0 2px 20px 5px RGBA(101, 116, 130, 0.1);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .blog-item--date {
@@ -2807,6 +2810,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .projects-item--wrap {
   width: 100%;
+  display: block;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .projects-item--preview {
@@ -3135,7 +3142,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .like-slider .projects-item--actions,
 .catalog .projects-item--actions,
 .projects .projects-item--actions {
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .article-page--sidebar .projects-item--actions {
@@ -3290,6 +3297,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   bottom: 0;
 }
 
+.blog-slider--item {
+  display: block;
+}
+
 .blog-slider--item-figure {
   height: 300px;
   width: 100%;
@@ -3300,8 +3311,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin: -40px 40px 40px;
   border-left: 5px solid #2196F3;
   padding: 15px 20px;
-  -webkit-box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
-  box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
+  -webkit-box-shadow: 0 2px 20px 5px RGBA(101, 116, 130, 0.1);
+  box-shadow: 0 2px 20px 5px RGBA(101, 116, 130, 0.1);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .blog-slider--item-date {
@@ -3320,7 +3334,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .projects-slider {
   background-color: #F0F1F3;
-  padding: 40px 0;
+  padding: 40px 0 20px;
 }
 
 .projects-slider .title {
@@ -3328,7 +3342,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   font-size: 4rem;
   color: #657482;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.projects-slider--carousel .owl-stage-outer {
+  padding: 20px 0;
 }
 
 .projects-slider--carousel .owl-prev,
@@ -3339,7 +3357,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: none;
-  top: 50px;
+  top: 70px;
   position: absolute;
   -webkit-box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
   box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
@@ -3413,7 +3431,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .like-slider {
-  padding: 60px 0;
+  padding: 60px 0 30px;
 }
 
 .like-slider .title {
@@ -3421,7 +3439,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   font-size: 4rem;
   color: #657482;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.like-slider--carousel .owl-stage-outer {
+  padding: 20px 0;
 }
 
 .like-slider--carousel .owl-prev,
@@ -4704,6 +4726,9 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   right: 0;
   bottom: 3px;
   background-color: #FFF;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .request-form--main {
@@ -7014,8 +7039,37 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     transform: translateY(0);
   }
 
+  .header-main--stats .stats-likes:hover,
+  .header-main--stats .stats-prods:hover {
+    color: #346697;
+  }
+
   .footer-main--nav .section a:hover {
     color: #FFF;
+  }
+
+  .btn--round:hover {
+    background-color: #1F8FE7;
+  }
+
+  .btn--lt:hover {
+    background-color: #1F8FE7;
+  }
+
+  .btn--og:hover {
+    background-color: #E36700;
+  }
+
+  .btn--dk:hover {
+    background-color: #31618F;
+  }
+
+  .btn-square-min:hover {
+    background-color: #1F8FE7;
+  }
+
+  .btn-round-min:hover {
+    background-color: #1F8FE7;
   }
 
   .btn-small:hover {
@@ -7027,6 +7081,32 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .blog-hashes .btn-small:hover {
     background-color: #657482;
     border-color: #657482;
+  }
+
+  .blog-item:hover .blog-item--header {
+    -webkit-box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
+    box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
+  }
+
+  .blog-item--title:hover {
+    color: #2A7EC5;
+  }
+
+  .projects-filters--item:not(.current):hover {
+    border-color: transparent;
+  }
+
+  .projects-item--wrap:hover {
+    -webkit-box-shadow: 0 0 40px 0 RGBA(33, 32, 46, 0.2);
+    box-shadow: 0 0 40px 0 RGBA(33, 32, 46, 0.2);
+  }
+
+  .projects-item--wrap:hover .projects-item--preview .data {
+    background-color: RGBA(52, 102, 151, 0.7);
+  }
+
+  .projects-item--wrap:hover .projects-item--preview .data .index {
+    background-color: #346697;
   }
 
   .part-project .projects-item--preview:hover .look-num {
@@ -7049,12 +7129,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #346697;
   }
 
-  .projects-item:hover .projects-item--preview .data {
-    background-color: RGBA(52, 102, 151, 0.7);
+  .blog-slider--item:hover .blog-slider--item-header {
+    -webkit-box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
+    box-shadow: 0 5px 20px 5px RGBA(101, 116, 130, 0.16);
   }
 
-  .projects-item:hover .projects-item--preview .data .index {
-    background-color: #346697;
+  .blog-slider--item-title:hover {
+    color: #2A7EC5;
   }
 
   .project-gallery .gallery-list .item:not(.current):hover:after {
@@ -7079,6 +7160,22 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     border-color: #21202E;
   }
 
+  .sharing .ico-fb:hover {
+    background-color: #3E4F87;
+  }
+
+  .sharing .ico-gg:hover {
+    background-color: #AE473D;
+  }
+
+  .sharing .ico-vk:hover {
+    background-color: #4D648C;
+  }
+
+  .sharing .ico-ok:hover {
+    background-color: #BE682A;
+  }
+
   .partners-list--item:hover {
     -webkit-box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
     box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
@@ -7090,6 +7187,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .home-about-menu--item:hover .read {
     opacity: 1;
+  }
+
+  .request--wrap .subtitle a:hover:after {
+    background-color: transparent;
   }
 
   .compare-table--header a:hover {
