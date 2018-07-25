@@ -3793,6 +3793,86 @@ svg {
   opacity: 1;
 }
 
+.checked {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: relative;
+  color: #657482;
+}
+
+.checked label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  font-size: 3.5rem;
+  line-height: 16px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checked label > span {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2px 0 2px 30px;
+}
+
+.checked label > span:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-width: 1px;
+  border-style: solid;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-color: transparent;
+}
+
+.checked label > span:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=US-ASCII, %20%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%203.12%202.36%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23657482%3B%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Echeck%3C/title%3E%3Cg%20id%3D%22Layer_2%22%20data-name%3D%22Layer%202%22%3E%3Cg%20id%3D%22Layer_1-2%22%20data-name%3D%22Layer%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M.4%2C1l.65.65L2.73%2C0l.4.4L1.25%2C2.27a.27.27%2C0%2C0%2C1-.4%2C0L0%2C1.42Z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 12px auto;
+  background-size: 12px auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.checked label > span.centered:before {
+  bottom: 0;
+  margin: auto;
+}
+
+.checked label > span.centered:after {
+  bottom: 0;
+  margin: auto;
+}
+
 .range {
   /* custom range-slider */
 }
