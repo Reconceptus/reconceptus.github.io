@@ -12,6 +12,8 @@
     width: 460px;
     flex-shrink: 0;
     background-color: $bg;
+    display: flex;
+    flex-direction: column;
     .head {
       height: 60px;
       display: flex;
@@ -21,9 +23,11 @@
       font-size: 4rem;
       color: $border;
       font-weight: 600;
+      flex-shrink: 0;
     }
     .addresses {
       padding: $padding_md;
+      height: 500px;
     }
     .item {
       font-size: 3.5rem;

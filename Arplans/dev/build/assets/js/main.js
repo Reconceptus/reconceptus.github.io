@@ -513,7 +513,14 @@ $(document).ready(function () {
         });
     }
 
-
+    function customScroll() {
+        $('.scrolled').each(function () {
+            var $this = $(this);
+            $this.mCustomScrollbar({
+                theme: 'minimal-dark'
+            });
+        });
+    }
 
     /* --------------------------------- document load --------------------------------- */
 
@@ -553,6 +560,9 @@ $(document).ready(function () {
     }
     if($('.range').length > 0){
         rangeInput();
+    }
+    if($('.scrolled').length > 0){
+        customScroll();
     }
     if($('.project-gallery').length > 0){
         $('.project-gallery').projectGallery();
