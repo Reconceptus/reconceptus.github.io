@@ -67,8 +67,13 @@ $(document).ready(function () {
                 $thisHideBlock = $thisParent.find('.show-more-hidden');
 
             $this.click(function () {
-                $thisParent.toggleClass('show');
                 $thisHideBlock.slideToggle(300);
+                if($thisParent.hasClass('show')){
+                    $thisParent.removeClass('show');
+                }
+                else {
+                    $thisParent.addClass('show');
+                }
             })
 
         })

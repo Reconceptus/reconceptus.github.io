@@ -75,8 +75,12 @@
 
 
 .show-more-hidden {
-  display: none;
+  .add-service & {
+    display: none;
+  }
+
 }
+
 
 
 .desktop-hidden {

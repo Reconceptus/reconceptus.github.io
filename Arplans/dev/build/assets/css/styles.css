@@ -911,7 +911,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   display: none !important;
 }
 
-.show-more-hidden {
+.add-service .show-more-hidden {
   display: none;
 }
 
