@@ -911,19 +911,6 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   display: none !important;
 }
 
-.invalid {
-  color: RGBA(255, 128, 124, 0.5);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.invalid input,
-.invalid textarea {
-  background-color: #FF807D;
-}
-
 .show-more-hidden {
   display: none;
 }
@@ -2522,6 +2509,29 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   justify-content: center;
 }
 
+.invalid .input,
+.invalid .textarea {
+  -webkit-box-shadow: 0 0 4px 1px #FF807D inset;
+  box-shadow: 0 0 4px 1px #FF807D inset;
+}
+
+.invalid .check label > span:before {
+  border-color: #FF807D;
+}
+
+.invalids {
+  color: RGBA(255, 128, 124, 0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.invalids input,
+.invalids textarea {
+  background-color: #FF807D;
+}
+
 .form-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3154,6 +3164,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .projects-item--actions .price {
+  white-space: nowrap;
   font-size: 4rem;
   color: #657482;
   font-weight: 700;
@@ -3209,6 +3220,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  white-space: nowrap;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;

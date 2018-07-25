@@ -178,24 +178,24 @@
                                                 <div class="form-row-col col-66">
                                                     <div class="form-row-element to-stretch">
                                                         <div class="textarea">
-                                                            <textarea cols="30" rows="3" placeholder="Ваш вопрос"></textarea>
+                                                            <textarea cols="30" rows="3" placeholder="Ваш вопрос" name="question"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-row-col col-33">
                                                     <div class="form-row-element">
                                                         <div class="input">
-                                                            <input type="text" placeholder="*Ваше имя">
+                                                            <input type="text" placeholder="*Ваше имя" name="name">
                                                         </div>
                                                     </div>
                                                     <div class="form-row-element">
                                                         <div class="input">
-                                                            <input type="text" placeholder="*Ваш телефон">
+                                                            <input type="text" placeholder="*Ваш телефон" name="phone">
                                                         </div>
                                                     </div>
                                                     <div class="form-row-element">
                                                         <div class="input">
-                                                            <input type="text" placeholder="*Ваш e-mail">
+                                                            <input type="text" placeholder="*Ваш e-mail" name="mail">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -232,7 +232,7 @@
                                                 <div class="form-row-element">
                                                     <div class="check">
                                                         <label>
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" name="processing_agree">
                                                             <span>Согласен на обработку персональных данных</span>
                                                         </label>
                                                     </div>
@@ -740,11 +740,49 @@
 <script type="text/javascript" src="assets/js/bower/nouislider/distribute/nouislider.min.js"></script>
 <!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>-->
 <!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
+<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="assets/js/main.min.js"></script>
 
 
 <!--script-->
+
+<script>
+
+    $('.contact-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            question: {required: true},
+            name: {required: true},
+            phone: {required: true},
+            mail: {required: true},
+            processing_agree: {required: true}
+        },
+        messages: {
+            question: {required: ""},
+            name: {required: ""},
+            phone: {required: ""},
+            mail: {required: ""},
+            processing_agree: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//            $('.contact-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
+</script>
 
 
 </body>

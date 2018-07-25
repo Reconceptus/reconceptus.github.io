@@ -8,8 +8,20 @@
 @import "form-text";
 @import "radio-flex";
 
-.custom-form {
-
+.invalid {
+  .input, .textarea {
+    box-shadow: 0 0 4px 1px rgba(255,128,125,1) inset;
+  }
+  .check {
+    label>span:before {
+      border-color: rgba(255,128,125,1);
+    }
+  }
+}
+.invalids {
+  color: rgba(255,128,124,.5);
+  input, textarea {background-color: rgba(255,128,125,1)}
+  display: flex;
 }
 
 .form-row {

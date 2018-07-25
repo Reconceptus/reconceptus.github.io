@@ -289,6 +289,7 @@
         padding: 18px;
       }
       .price {
+        white-space: nowrap;
         font-size: 4rem;
         color: $border;
         font-weight: 700;
@@ -336,6 +337,7 @@
     }
     &--articul {
       display: flex;
+      white-space: nowrap;
       align-items: center;
       justify-content: center;
       font-size: 8.5rem;
