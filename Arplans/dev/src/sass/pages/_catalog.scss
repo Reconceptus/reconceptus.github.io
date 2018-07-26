@@ -46,6 +46,18 @@
     //margin-bottom: 2*$padding_sm;
     padding: $padding_sm $padding_sm $padding_sm $padding_md;
     max-height: 100%;
+    &--btn {
+      flex-shrink: 0;
+    }
+    &--wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .catalog-filters {
+        max-height: calc(100% - 60px);
+      }
+    }
     &--head {
       display: flex;
       align-items: center;

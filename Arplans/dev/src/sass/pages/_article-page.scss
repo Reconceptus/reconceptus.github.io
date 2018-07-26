@@ -51,6 +51,13 @@
     }
     .projects-item {
       margin-bottom: 10px;
+      @media screen and (min-width: 661px) and (max-height: 880px) {
+        &:nth-child(3){display: none;}
+      }
+      @media screen and (max-height: 660px) {
+        &:nth-child(2),
+        &:nth-child(3){display: none;}
+      }
     }
   }
 }

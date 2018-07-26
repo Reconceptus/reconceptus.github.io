@@ -97,3 +97,9 @@
     display: none !important;
   }
 }
+
+/* vendor */
+
+.mCS-autoHide>.mCustomScrollBox[style*='none']~.mCSB_scrollTools {
+  //opacity: 0;
+}

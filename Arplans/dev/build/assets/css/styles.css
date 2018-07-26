@@ -2403,6 +2403,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   display: none;
 }
 
+/* vendor */
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: inherit;
@@ -5637,7 +5638,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin-top: 20px;
 }
 
-.map-box {
+.map-box:not(:last-child) {
   margin-bottom: 60px;
 }
 
@@ -5931,7 +5932,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .fixed-scrollbar.fixed .fixing {
-  position: relative;
+  position: fixed;
+}
+
+.col-sidebar .fixed-scrollbar.fixed .fixing {
+  width: 380px;
+}
+
+.col-projects .fixed-scrollbar.fixed .fixing {
+  width: 190px;
 }
 
 .fixed-scrollbar.bottom {
@@ -5943,13 +5952,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .fixed-scrollbar.bottom .fixing {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0 !important;
   top: auto !important;
 }
 
 .fixed-scrollbar .fixing {
-  height: 65vh;
   width: 100%;
+}
+
+.col-sidebar .fixed-scrollbar .fixing {
+  height: 65vh;
+}
+
+.partner-page--text .col-sidebar .fixed-scrollbar .fixing {
+  height: auto;
 }
 
 /*******************************************/
@@ -7305,6 +7321,31 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   background-color: #F0F1F3;
   padding: 20px 20px 20px 30px;
   max-height: 100%;
+}
+
+.catalog-filters--btn {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.catalog-filters--wrap {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.catalog-filters--wrap .catalog-filters {
+  max-height: -webkit-calc(100% - 60px);
+  max-height: calc(100% - 60px);
 }
 
 .catalog-filters--head {
@@ -8849,5 +8890,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 @media screen and (max-width: 767px) {
   .mobile-hidden {
     display: none !important;
+  }
+}
+
+@media screen and (min-width: 661px) and (max-height: 880px) {
+  .article-page--sidebar .projects-item:nth-child(3) {
+    display: none;
+  }
+}
+
+@media screen and (max-height: 660px) {
+  .article-page--sidebar .projects-item:nth-child(2),
+  .article-page--sidebar .projects-item:nth-child(3) {
+    display: none;
   }
 }

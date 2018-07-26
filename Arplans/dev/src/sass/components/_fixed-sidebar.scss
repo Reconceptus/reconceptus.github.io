@@ -5,7 +5,13 @@
     transition: all .2s;
     padding-top: 40px;
     .fixing {
-      position: relative;
+      position: fixed;
+      .col-sidebar & {
+        width: 380px;
+      }
+      .col-projects & {
+        width: 190px;
+      }
     }
   }
   &.bottom {
@@ -13,18 +19,17 @@
     .fixing {
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 0 !important;
       top: auto !important;
     }
   }
   .fixing {
-    height: 65vh;
     width: 100%;
-  }
-}
-
-.header:not(.minimized) ~ .main {
-  .fixed {
-
+    .col-sidebar & {
+      height: 65vh;
+      .partner-page--text & {
+        height: auto;
+      }
+    }
   }
 }

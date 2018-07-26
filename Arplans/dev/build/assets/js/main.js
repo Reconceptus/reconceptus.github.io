@@ -252,8 +252,9 @@ $(document).ready(function () {
     function fixedSidebar() {
         var $thisBar = $('.fixed-scrollbar'),
             $thisBox = $thisBar.find('.fixing'),
-            $headerHeight = 100,
+            $headerHeight = 180,
             $thisBarTopOffset,
+            $thisBarLeftOffset,
             $needBarTopOffset,
             $barPosition,
             $barHeight,
@@ -262,6 +263,7 @@ $(document).ready(function () {
 
         function setOffsets() {
             $thisBarTopOffset = $thisBar.offset().top;
+            $thisBarLeftOffset = $thisBar.offset().left;
             $barHeight = $thisBar.height();
             $barBoxHeight = $thisBox.height();
         }
@@ -277,7 +279,10 @@ $(document).ready(function () {
 
                     $thisBar.addClass('fixed');
                     $thisBar.removeClass('bottom');
-                    $thisBox.css('top',$barPosition+'px');
+                    $thisBox.css({
+                        'top':$headerHeight+'px',
+                        'left':$thisBarLeftOffset+'px'
+                    });
                 }
                 else {
                     $thisBar.addClass('bottom');
@@ -289,9 +294,6 @@ $(document).ready(function () {
                 $thisBar.removeClass('fixed');
             }
 
-            console.log('bar height = '+$barHeight);
-            console.log('bar position = '+$barPosition);
-            console.log('bar box height = '+$barBoxHeight);
         }
 
         setOffsets();
@@ -303,10 +305,9 @@ $(document).ready(function () {
         });
 
         $(window).scroll(function () {
+            setOffsets();
             setFixPosition();
         });
-
-
 
     }
 
