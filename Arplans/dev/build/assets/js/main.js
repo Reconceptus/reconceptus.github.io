@@ -246,6 +246,71 @@ $(document).ready(function () {
     }
 
     /*
+     ============= fixed sidebar
+    */
+
+    function fixedSidebar() {
+        var $thisBar = $('.fixed-scrollbar'),
+            $thisBox = $thisBar.find('.fixing'),
+            $headerHeight = 100,
+            $thisBarTopOffset,
+            $needBarTopOffset,
+            $barPosition,
+            $barHeight,
+            $barBoxHeight,
+            $winScroll;
+
+        function setOffsets() {
+            $thisBarTopOffset = $thisBar.offset().top;
+            $barHeight = $thisBar.height();
+            $barBoxHeight = $thisBox.height();
+        }
+
+        function setFixPosition() {
+            $winScroll = $(window).scrollTop();
+            $needBarTopOffset = $winScroll + $headerHeight;
+            $barPosition = $needBarTopOffset - $thisBarTopOffset;
+
+            if($needBarTopOffset >= $thisBarTopOffset){
+
+                if($barHeight > ($barBoxHeight + $barPosition)){
+
+                    $thisBar.addClass('fixed');
+                    $thisBar.removeClass('bottom');
+                    $thisBox.css('top',$barPosition+'px');
+                }
+                else {
+                    $thisBar.addClass('bottom');
+                    $thisBar.removeClass('fixed');
+                }
+
+            }
+            else {
+                $thisBar.removeClass('fixed');
+            }
+
+            console.log('bar height = '+$barHeight);
+            console.log('bar position = '+$barPosition);
+            console.log('bar box height = '+$barBoxHeight);
+        }
+
+        setOffsets();
+        setFixPosition();
+
+        $(window).resize(function () {
+            setOffsets();
+            setFixPosition();
+        });
+
+        $(window).scroll(function () {
+            setFixPosition();
+        });
+
+
+
+    }
+
+    /*
      ============= counter
     */
 
@@ -560,6 +625,9 @@ $(document).ready(function () {
     }
     if($('.range').length > 0){
         rangeInput();
+    }
+    if($('.fixed-scrollbar').length > 0){
+        fixedSidebar();
     }
     if($('.scrolled').length > 0){
         customScroll();

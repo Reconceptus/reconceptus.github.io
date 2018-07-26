@@ -1,0 +1,30 @@
+.fixed-scrollbar {
+  position: relative;
+  height: 100%;
+  &.fixed {
+    transition: all .2s;
+    padding-top: 40px;
+    .fixing {
+      position: relative;
+    }
+  }
+  &.bottom {
+    transition: all .2s;
+    .fixing {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: auto !important;
+    }
+  }
+  .fixing {
+    height: 65vh;
+    width: 100%;
+  }
+}
+
+.header:not(.minimized) ~ .main {
+  .fixed {
+
+  }
+}

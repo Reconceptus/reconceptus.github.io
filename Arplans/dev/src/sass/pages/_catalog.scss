@@ -43,8 +43,9 @@
   }
   &-filters {
     background-color: $bg;
-    margin-bottom: 2*$padding_sm;
+    //margin-bottom: 2*$padding_sm;
     padding: $padding_sm $padding_sm $padding_sm $padding_md;
+    max-height: 100%;
     &--head {
       display: flex;
       align-items: center;
