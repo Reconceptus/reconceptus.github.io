@@ -1,5 +1,6 @@
 html {
-  font-size: 4.2px;
+  @include media(hover,1367){font-size: 4.2px;}
+  @include media(screen,1366){font-size: 3.7px;}
   height: 100%;
   &.ovh {
     overflow: hidden;
@@ -35,7 +36,12 @@ svg {
 #main {
   position: relative;
   width: 100%;
-  padding-top: 140px;
+  @include media(hover,1201){
+    padding-top: 140px;
+  }
+  @include media(screen,1200){
+    padding-top: 60px;
+  }
 }
 #wrapper {
   display: flex;

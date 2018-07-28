@@ -469,11 +469,15 @@ $(document).ready(function () {
                 0: {
                     items: 1
                 },
-                800: {
+                768: {
                     items: 2,
+                    margin: 20
+                },
+                1201: {
+                    items: 3,
                     margin: 30
                 },
-                1200: {
+                1367: {
                     items: 3,
                     margin: 50
                 }

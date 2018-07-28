@@ -17,4 +17,31 @@ $padding_sm: 20px;
 $padding_md: 30px;
 
 
+/* breakpoints */
+/*
+@include media(hover,1601){}
+@include media(screen,1600){}
 
+@include breakpoints(1367,1600){}
+@include media(hover,1367){}
+@include media(screen,1366){}
+
+@include breakpoints(1201,1366){}
+@include media(hover,1201){}
+@include media(screen,1200){}
+
+@include breakpoints(1025,1200){}
+@include media(hover,1025){}
+@include media(screen,1024){}
+
+@include breakpoints(768,1024){}
+@include media(hover,768){}
+@include media(screen,767){}
+
+@include breakpoints(601,767){}
+@include media(hover,601){}
+@include media(screen,600){}
+
+@include breakpoints(481,600){}
+@include media(screen,480){}
+*/

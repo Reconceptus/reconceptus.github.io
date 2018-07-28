@@ -8,6 +8,9 @@
   &-top {
     background-color: $text;
     color: $text_lt;
+    @include media(screen,1200){
+      display: none;
+    }
     &--wrap {
       display: flex;
       justify-content: center;
@@ -116,14 +119,25 @@
     }
     &--wrap {
       transition: all 0.2s;
-      height: 100px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include media(hover,1201){
+        height: 100px;
+      }
+      @include media(screen,1200){
+        height: 60px;
+      }
     }
     &--logo {
-      height: 50px;
-      width: 200px;
+      @include media(hover,601){
+        height: 50px;
+        width: 200px;
+      }
+      @include media(screen,600){
+        height: 40px;
+        width: 152px;
+      }
       img {
         display: block;
         height: 100%;
@@ -132,12 +146,20 @@
     }
     &--nav {
       padding: 0 $padding_md;
+      @include media(screen,1200){
+        display: none;
+      }
       nav {
-        font-size: 3.5rem;
         text-transform: uppercase;
         font-weight: 600;
         text-align: center;
         line-height: 1.2;
+        @include media(hover,1601){
+          font-size: 3.5rem;
+        }
+        @include media(screen,1600){
+          font-size: 3.4rem;
+        }
       }
       ul {
         display: flex;
@@ -148,7 +170,12 @@
         align-items: center;
         position: relative;
         &:not(:last-child){
-          margin-right: 2*$padding_md;
+          @include media(hover,1601){
+            margin-right: 2*$padding_md;
+          }
+          @include media(screen,1600){
+            margin-right: 2*$padding_sm;
+          }
           &:after {
             content: "";
             left: 100%;
@@ -158,8 +185,13 @@
             height: $padding_sm;
             background-color: $text_lt;
             margin: auto;
-            margin-left: $padding_md;
             position: absolute;
+            @include media(hover,1601){
+              margin-left: $padding_md;
+            }
+            @include media(screen,1600){
+              margin-left: $padding_sm;
+            }
           }
         }
         a {
@@ -201,12 +233,20 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      .stats-likes,
+      .stats-likes {
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+        @include hover(){
+          color: $link_dark;
+        }
+      }
       .stats-prods {
         font-size: 3.5rem;
         display: flex;
         align-items: center;
-        margin-left: $padding_md;
+        @include media(hover,1367){margin-left: $padding_md;}
+        @include media(screen,1366){margin-left: $padding_sm;}
         @include hover(){
           color: $link_dark;
         }
@@ -220,7 +260,10 @@
     }
   }
   &.minimized {
-    top: -40px;
+
+    @include media(hover,1201){
+      top: -40px;
+    }
     .header-main--wrap {
       height: 60px;
     }

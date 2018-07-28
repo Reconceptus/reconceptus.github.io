@@ -7,11 +7,18 @@
     background-color: $bg;
     color: $border;
     padding: $padding_sm 0;
-    margin-bottom: 2*$padding_sm;
+    @include media(hover,601){
+      margin-bottom: 2*$padding_sm;
+    }
+    @include media(screen,600){
+      flex-direction: column;
+      margin-bottom: $padding_sm;
+    }
     &--item {
       text-transform: uppercase;
       margin: 0 $padding_sm;
       font-weight: 600;
+      text-align: center;
       &:not(.current) {
         font-size: 4rem;
         border-bottom: 1px dotted currentColor;
@@ -20,22 +27,46 @@
         }
       }
       &.current {
-        font-size: 8.5rem;
         cursor: default;
         pointer-events: none;
+        @include media(hover,768){
+          font-size: 8.5rem;
+        }
+        @include media(screen,767){
+          font-size: 7rem;
+        }
+        @include media(screen,600){
+          margin: 10px 0;
+        }
       }
     }
   }
 
   &-list {
-    margin: 0 -1*$padding_sm;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-flow: row wrap;
+    @include media(hover,1367){
+      margin: 0 -1*$padding_sm;
+    }
+    @include breakpoints(601,1366){
+      margin: 0 -10px;
+    }
     &.col-4 {
       .projects-item {
-        width: 25%;
+        @include media(hover,1201){
+          width: 25%;
+        }
+        @include breakpoints(1025,1200){
+          width: 33.3333%;
+        }
+        @include breakpoints(601,1024){
+          width: 50%;
+        }
+        @include media(screen,600){
+          width: 100%;
+        }
       }
     }
     &.col-3 {
@@ -48,8 +79,17 @@
   &-item {
     .catalog &,
     .projects & {
-      padding: 0 $padding_sm;
-      margin-bottom: 2*$padding_sm;
+      @include media(hover,1367){
+        padding: 0 $padding_sm;
+        margin-bottom: 2*$padding_sm;
+      }
+      @include breakpoints(601,1366){
+        padding: 0 10px;
+        margin-bottom: $padding_sm;
+      }
+      @include media(screen,600){
+        margin-bottom: $padding_sm;
+      }
     }
     &--wrap {
       width: 100%;
@@ -208,8 +248,13 @@
           white-space: nowrap;
         }
         li {
-          padding: 0 15px;
           position: relative;
+          @include media(hover,1367){
+            padding: 0 15px;
+          }
+          @include media(screen,1366){
+            padding: 0 10px;
+          }
           &:not(:last-child){
             &:after {
               content: "";
@@ -280,7 +325,12 @@
       .like-slider &,
       .catalog &,
       .projects & {
-        padding: $padding_sm;
+        @include media(hover,1367){
+          padding: $padding_sm;
+        }
+        @include media(screen,1366){
+          padding: 10px;
+        }
       }
       .article-page--sidebar & {
         padding: 15px 18px;
@@ -288,13 +338,25 @@
       .projects-slider & {
         padding: 18px;
       }
+      .prices {
+        display: flex;
+        align-items: center;
+        @include media(screen,1366){
+          flex-direction: column;
+        }
+      }
       .price {
         white-space: nowrap;
-        font-size: 4rem;
         color: $border;
         font-weight: 700;
         position: relative;
         margin-right: $padding_sm;
+        @include media(hover,1367){
+          font-size: 4rem;
+        }
+        @include media(screen,1366){
+          font-size: 3.5rem;
+        }
         &.old {
           font-weight: 500;
           &:after {
@@ -325,7 +387,6 @@
         }
       }
       .basket {
-        color: $border;
         .part-cost & {
           margin: $padding_sm 0 0;
         }

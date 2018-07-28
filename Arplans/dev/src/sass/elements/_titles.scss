@@ -9,8 +9,9 @@
     font-weight: 700;
   }
   &.title-md {
-    font-size: 8rem;
     font-weight: 600;
+    @include media(hover,601){font-size: 8rem;}
+    @include media(screen,600){font-size: 6rem;}
   }
   &.title-sm {
     font-size: 6.4rem;

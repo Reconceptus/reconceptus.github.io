@@ -1,5 +1,10 @@
 .info-box {
-  padding: 4*$padding_sm;
+  @include media(hover,1025){
+    padding: 4*$padding_sm;
+  }
+  @include media(screen,1024){
+    padding: 2*$padding_sm 0;
+  }
   .title {
     font-size: 6.4rem;
     text-transform: uppercase;
@@ -9,8 +14,10 @@
   &--text {
     font-size: 3.5rem;
     line-height: 1.5;
-    columns: 2 auto;
-    column-gap: 2*$padding_sm;
+    @include media(hover,768){
+      columns: 2 auto;
+      column-gap: 2*$padding_sm;
+    }
     a {
       color: $link_dark;
     }

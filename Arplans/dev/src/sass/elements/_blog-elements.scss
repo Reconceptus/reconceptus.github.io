@@ -1,7 +1,9 @@
 .blog {
   &-hashes {
     display: flex;
+    flex-flow: row wrap;
     .btn-small {
+      border-color: $text_lt;
       @include hover(){
         background-color: $border;
         border-color: $border;
