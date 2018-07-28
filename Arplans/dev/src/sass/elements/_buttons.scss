@@ -77,6 +77,10 @@
       content: "+";
       margin-right: 5px;
     }
+    @include hover(){
+      border-color: $text;
+      color: $text;
+    }
   }
   &-square-min {
     border: none;

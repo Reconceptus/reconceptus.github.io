@@ -67,6 +67,22 @@
 
 }
 
+.view-map {
+  position: relative;
+  .selected-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: 1;
+  }
+  .map-item {
+    &:not(.active) {
+      display: none;
+    }
+  }
+}
+
 .view-box {
   position: relative;
   & > input {

@@ -152,6 +152,7 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  outline: none;
 }
 
 optgroup {
@@ -3440,6 +3441,42 @@ svg {
   cursor: pointer;
 }
 
+.region-dropbox.active .regions-drop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.regions-drop {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 3.5rem;
+}
+
+.regions-drop ul {
+  background-color: #FFF;
+  -webkit-columns: 5 auto;
+  -moz-columns: 5 auto;
+  columns: 5 auto;
+  -webkit-box-shadow: 0 4px 10px 5px RGBA(101, 116, 130, 0.16);
+  box-shadow: 0 4px 10px 5px RGBA(101, 116, 130, 0.16);
+  padding: 10px 0;
+}
+
+.regions-drop ul li {
+  padding: 5px 20px;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
 .blog-hashes {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5732,6 +5769,22 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   height: 100%;
 }
 
+.view-map {
+  position: relative;
+}
+
+.view-map .selected-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  z-index: 1;
+}
+
+.view-map .map-item:not(.active) {
+  display: none;
+}
+
 .view-box {
   position: relative;
 }
@@ -5887,6 +5940,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .partners-list--item {
+  background-color: #FFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5895,11 +5949,41 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+  position: relative;
 }
 
 .partners-list--item .bg {
   width: 190px;
   height: 190px;
+}
+
+.view-map .partners-list--item {
+  -webkit-box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
+  box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
+}
+
+.partners-list--item .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #657482;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 24px;
+  line-height: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .partners-list--data {
@@ -8732,6 +8816,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #31618F;
   }
 
+  .btn-add:hover {
+    border-color: #21202E;
+    color: #21202E;
+  }
+
   .btn-square-min:hover {
     background-color: #1F8FE7;
   }
@@ -8744,6 +8833,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     color: #FFF;
     background-color: #346697;
     border-color: #346697;
+  }
+
+  .regions-drop ul a:hover {
+    font-weight: bold;
   }
 
   .blog-hashes .btn-small:hover {
@@ -8844,7 +8937,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #BE682A;
   }
 
-  .partners-list--item:hover {
+  .partners-list .partners-list--item:hover {
     -webkit-box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
     box-shadow: 0 0 10px 5px RGBA(101, 116, 130, 0.16);
   }
@@ -8872,6 +8965,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-table--section:hover .compare-table--remove {
     opacity: 1;
+  }
+
+  .project-page--reviews .read:hover {
+    color: #346697;
   }
 }
 

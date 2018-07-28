@@ -1,5 +1,4 @@
 .custom-search {
-
   &--field {
     height: 60px;
     display: flex;
@@ -49,6 +48,44 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+    }
+  }
+}
+
+
+.region-dropbox {
+  &.active {
+    .regions-drop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+.regions-drop {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  transition: all 0.2s;
+  font-size: 3.5rem;
+  ul {
+    background-color: $white;
+    columns: 5 auto;
+    box-shadow: 0 4px 10px 5px rgba($border,0.16);
+    padding: 10px 0;
+    li {
+      padding: 5px 20px;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    a {
+      @include hover(){
+        font-weight: bold;
+      }
     }
   }
 }

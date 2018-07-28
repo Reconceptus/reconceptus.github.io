@@ -246,6 +246,33 @@ $(document).ready(function () {
     }
 
     /*
+     ============= show region dropbox
+    */
+
+    function regionDropBox() {
+        var $dropBox = $('.region-dropbox'),
+            $dropInput = $dropBox.find('input'),
+            $dropLink = $dropBox.find('a');
+
+        $dropInput.focus(function () {
+            $dropBox.addClass('active')
+        });
+        $dropLink.click(function () {
+            $dropBox.removeClass('active')
+        });
+    }
+
+    /*
+     ============= close item on the map
+    */
+
+    function closeMapItem() {
+        $('.map-item .close').click(function () {
+            $(this).closest('.map-item').removeClass('active');
+        });
+    }
+
+    /*
      ============= fixed sidebar
     */
 
@@ -360,6 +387,10 @@ $(document).ready(function () {
             }
             else {
                 $search.addClass('active-search');
+            }
+
+            if(targ.parents('.region-dropbox').length == 0){
+                $('.region-dropbox').removeClass('active');
             }
 
         })
@@ -623,6 +654,12 @@ $(document).ready(function () {
     }
     if($('.show-more').length > 0){
         showMore();
+    }
+    if($('.map-item').length > 0){
+        closeMapItem();
+    }
+    if($('.region-dropbox').length > 0){
+        regionDropBox();
     }
     if($('.range').length > 0){
         rangeInput();
