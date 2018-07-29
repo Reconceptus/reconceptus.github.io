@@ -84,6 +84,7 @@
     font-weight: 700;
     height: 30px;
     padding: 0 $padding_sm;
+    white-space: nowrap;
     &:before {
       content: "+";
       margin-right: 5px;

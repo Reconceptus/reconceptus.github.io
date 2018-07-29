@@ -34,16 +34,36 @@
 
 .big-header {
   .title {
-    height: 100px;
+
     display: flex;
     padding: 0 $padding_sm;
     align-items: center;
     justify-content: center;
     color: $border;
-    font-size: 8.5rem;
     text-transform: uppercase;
     font-weight: 600;
     background-color: $bg;
+    @include media(hover,1025){
+      font-size: 8.5rem;
+    }
+    @include breakpoints(601,1024){
+      font-size: 7rem;
+    }
+    @include media(hover,601){
+      height: 100px;
+    }
+    @include media(screen,600){
+      font-size: 4.5rem;
+      padding: $padding_sm;
+    }
   }
-  margin-bottom: 2*$padding_md;
+
+  @include media(hover,1201){
+    margin-bottom: 2*$padding_md;
+  }
+  @include media(screen,1200){
+    margin-bottom: 2*$padding_sm;
+  }
+
+
 }
