@@ -6792,7 +6792,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .compare-table .placeholder {
-  width: 50%;
   font-size: 4rem;
   line-height: 1.6;
 }
@@ -8562,6 +8561,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     right: 6px;
   }
 
+  .compare-table .placeholder {
+    width: 50%;
+  }
+
   .compare-sidebar {
     padding: 40px 0;
   }
@@ -9249,14 +9252,17 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare .custom-row {
     display: block;
+    margin: 0;
   }
 
   .compare .custom-row .custom-row-col.col-elastic {
     max-width: none;
+    padding: 0;
   }
 
   .compare .custom-row .custom-row-col.col-sidebar {
     width: 100%;
+    padding: 0;
   }
 
   .compare-sidebar {
@@ -9436,6 +9442,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-table--remove {
     margin-left: auto;
+  }
+
+  .compare-table .placeholder {
+    padding: 0 10px;
   }
 
   .compare-sidebar {

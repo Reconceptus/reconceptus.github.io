@@ -16,11 +16,14 @@
   .custom-row {
     @include media(screen,1600){
       display: block;
+      margin: 0;
       .custom-row-col.col-elastic {
         max-width: none;
+        padding: 0;
       }
       .custom-row-col.col-sidebar {
         width: 100%;
+        padding: 0;
       }
     }
   }
@@ -229,13 +232,17 @@
       }
     }
     .placeholder {
-      width: 50%;
       font-size: 4rem;
       line-height: 1.6;
+      @include media(hover,1025){
+        width: 50%;
+      }
+      @include media(screen,1024){
+        padding: 0 10px;
+      }
     }
   }
   &-sidebar {
-
     @include media(screen,1600){
       display: flex;
       align-items: center;
