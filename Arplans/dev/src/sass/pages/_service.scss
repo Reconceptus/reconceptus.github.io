@@ -1,6 +1,11 @@
 .service {
   &--head {
-    margin-bottom: 2*$padding_sm;
+    @include media(hover,1025){
+      margin-bottom: 2*$padding_sm;
+    }
+    @include media(screen,1024){
+      margin-bottom: $padding_sm;
+    }
   }
   &--wrap {
     padding-top: 2*$padding_sm;
@@ -37,7 +42,7 @@
     }
   }
   &--profit {
-    max-width: 880px;
+    max-width: 1000px;
     margin: 0 auto 2*$padding_sm;
     .title {
       font-size: 6.4rem;
@@ -48,10 +53,23 @@
       display: flex;
       flex-flow: row wrap;
       align-items: flex-start;
-      margin: 0 -2*$padding_md;
+      @include media(hover,1025){
+        margin: 0 -2*$padding_md;
+      }
       li {
-        width: 50%;
-        padding: 10px 2*$padding_md;
+
+        @include media(hover,1025){
+          padding: 10px 2*$padding_md;
+        }
+        @include breakpoints(601,1024){
+          padding: 10px 2*$padding_sm 10px 0;
+        }
+        @include media(hover,601){
+          width: 50%;
+        }
+        @include media(screen,600){
+          padding: 10px 0;
+        }
       }
       a {
         font-size: 4rem;

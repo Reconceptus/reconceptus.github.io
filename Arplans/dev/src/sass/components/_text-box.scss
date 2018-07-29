@@ -14,8 +14,13 @@
   }
   li {
     margin-bottom: 10px;
-    padding-left: 2*$padding_sm;
     position: relative;
+    @include media(hover,601){
+      padding-left: 2*$padding_sm;
+    }
+    @include media(screen,600){
+      padding-left: 25px;
+    }
     &:before {
       content: "\2022";
       position: absolute;

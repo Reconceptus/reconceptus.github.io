@@ -14,8 +14,10 @@
     .add-service--header & {
       text-transform: uppercase;
       color: $text;
-      font-size: 4rem;
+
       font-weight: 600;
+      @include media(hover,601){font-size: 4rem;}
+      @include media(screen,600){font-size: 3.5rem;}
     }
     & > span {
       position: relative;

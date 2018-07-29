@@ -3742,7 +3742,6 @@ svg {
 .add-service--header .check label {
   text-transform: uppercase;
   color: #21202E;
-  font-size: 4rem;
   font-weight: 600;
 }
 
@@ -4244,7 +4243,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .text-box li {
   margin-bottom: 10px;
-  padding-left: 40px;
   position: relative;
 }
 
@@ -5387,11 +5385,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  margin: 0 -20px;
-}
-
-.custom-list ul.col-2 li {
-  max-width: 50%;
 }
 
 .custom-list ul.col-3 li {
@@ -5400,19 +5393,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .custom-list li {
   width: 100%;
-  padding: 0 20px;
-  padding-top: 55px;
   position: relative;
-  margin: 30px 0;
   font-size: 3.5rem;
 }
 
 .custom-list li:before {
   content: "";
   top: 0;
-  left: 20px;
-  width: 5px;
-  height: 40px;
   background-color: #2196F3;
   position: absolute;
 }
@@ -5441,14 +5428,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .custom-list--flexed ul {
   width: 100%;
-  max-width: 66.6667%;
-  margin-right: 40px;
 }
 
 .custom-list--info {
   width: 100%;
-  max-width: 33.3333%;
-  padding: 40px;
   background-color: #E6F7FE;
   font-size: 4rem;
 }
@@ -6398,10 +6381,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   background-position: center center;
 }
 
-.service--head {
-  margin-bottom: 40px;
-}
-
 .service--wrap {
   padding-top: 40px;
   background: #2196F3;
@@ -6443,7 +6422,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .service--profit {
-  max-width: 880px;
+  max-width: 1000px;
   margin: 0 auto 40px;
 }
 
@@ -6467,12 +6446,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin: 0 -60px;
-}
-
-.service--profit .examples li {
-  width: 50%;
-  padding: 10px 60px;
 }
 
 .service--profit .examples a {
@@ -8324,6 +8297,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #BE682A;
   }
 
+  .custom-list--flexed ul {
+    max-width: 66.6667%;
+    margin-right: 40px;
+  }
+
+  .custom-list--info {
+    max-width: 33.3333%;
+  }
+
   .add-service {
     padding: 0 20px;
   }
@@ -8391,6 +8373,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .request-form--submit .form-row-submit {
     margin-right: -41px;
+  }
+
+  .service--head {
+    margin-bottom: 40px;
+  }
+
+  .service--profit .examples {
+    margin: 0 -60px;
+  }
+
+  .service--profit .examples li {
+    padding: 10px 60px;
   }
 
   .compare-table--header {
@@ -8664,8 +8658,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-size: 20px auto;
   }
 
+  .add-service--header .check label {
+    font-size: 3.5rem;
+  }
+
   .range-inputs input {
     width: 70px;
+  }
+
+  .text-box li {
+    padding-left: 25px;
   }
 
   .text-box blockquote {
@@ -8735,6 +8737,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 34px;
   }
 
+  .custom-list li {
+    padding: 20px 0 0;
+  }
+
+  .custom-list li:before {
+    left: 0;
+    width: 40px;
+    height: 5px;
+  }
+
+  .custom-list--info {
+    padding: 20px;
+  }
+
   .video-box {
     margin-bottom: 20px;
   }
@@ -8771,6 +8787,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .request-form--submit {
     padding: 0 20px;
+  }
+
+  .service--profit .examples li {
+    padding: 10px 0;
   }
 
   .compare-sidebar .order {
@@ -9060,6 +9080,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 0 20px;
   }
 
+  .custom-list li {
+    margin: 30px 0;
+  }
+
   .fixed-scrollbar {
     position: relative;
     height: 100%;
@@ -9183,6 +9207,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .blog-slider--item-figure {
     padding-top: 60%;
     height: 0;
+  }
+
+  .custom-list li {
+    margin: 0 0 40px;
   }
 
   .modal-filter {
@@ -9335,6 +9363,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-size: 40px auto;
   }
 
+  .add-service--header .check label {
+    font-size: 4rem;
+  }
+
   .range-inputs input {
     width: 100px;
   }
@@ -9345,6 +9377,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .filter-form .form-row-element:last-child {
     padding-bottom: 10px;
+  }
+
+  .text-box li {
+    padding-left: 40px;
   }
 
   .text-box .right-align {
@@ -9387,8 +9423,34 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 40px;
   }
 
+  .custom-list ul {
+    margin: 0 -20px;
+  }
+
+  .custom-list ul.col-2 li {
+    max-width: 50%;
+  }
+
+  .custom-list li {
+    padding: 55px 20px 0;
+  }
+
+  .custom-list li:before {
+    left: 20px;
+    width: 5px;
+    height: 40px;
+  }
+
+  .custom-list--info {
+    padding: 40px;
+  }
+
   .site-info {
     margin-bottom: 40px;
+  }
+
+  .service--profit .examples li {
+    width: 50%;
   }
 }
 
@@ -9645,6 +9707,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-bottom: 10px;
   }
 
+  .custom-list--flexed {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
   .add-service--header {
     padding: 20px;
   }
@@ -9671,6 +9741,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .request-form--submit .form-row-submit {
     margin: 10px 0;
+  }
+
+  .service--head {
+    margin-bottom: 20px;
   }
 
   .compare-table--header .part-project {
@@ -10102,6 +10176,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .request-form--submit {
     padding: 0 30px;
+  }
+
+  .service--profit .examples li {
+    padding: 10px 40px 10px 0;
   }
 
   .compare-table--item {
