@@ -455,7 +455,6 @@ $(document).ready(function () {
         });
     }
 
-
     function blogCarousel() {
         var $carouselBox = $('[data-owl="blog"]'),
             $carousel = $carouselBox.find('.owl-carousel');
@@ -520,7 +519,6 @@ $(document).ready(function () {
         $('#t_prev').click();
     }
 
-
     function projectsCarousel() {
         var $carouselBox = $('[data-owl="projects"]'),
             $carousel = $carouselBox.find('.owl-carousel');
@@ -532,13 +530,30 @@ $(document).ready(function () {
             dots: false,
             responsive: {
                 0: {
-                    items: 1
-                },
-                800: {
                     items: 2,
+                    margin: 20
+                },
+                601: {
+                    items: 3,
+                    margin: 20
+                },
+                768: {
+                    items: 4,
+                    margin: 20
+                },
+                1025: {
+                    items: 5,
+                    margin: 20
+                },
+                1201: {
+                    items: 6,
                     margin: 30
                 },
-                1200: {
+                1367: {
+                    items: 7,
+                    margin: 30
+                },
+                1601: {
                     items: 8,
                     margin: 40
                 }

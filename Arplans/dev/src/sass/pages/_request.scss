@@ -1,5 +1,14 @@
 .request {
-  margin-bottom: 3*$padding_md;
+
+  @include media(hover,1025){
+    margin-bottom: 3*$padding_md;
+  }
+  @include breakpoints(601,1024){
+    margin-bottom: 2*$padding_md;
+  }
+  @include media(screen,600){
+    margin-bottom: 2*$padding_sm;
+  }
   &--wrap {
     padding-top: 2*$padding_sm;
     background: $link;
@@ -40,29 +49,59 @@
       }
     }
   }
-
 }
 
 .request-form {
   &--main {
     background-color: $white;
-    padding: 1.5*$padding_sm 2*$padding_sm;
     position: relative;
     z-index: 1;
+    @include media(hover,1025){
+      padding: $padding_md 2*$padding_sm;
+    }
+    @include breakpoints(601,1024){
+      padding: $padding_sm $padding_md;
+    }
+    @include media(screen,600){
+      padding: 10px $padding_sm;
+    }
   }
   &--checks {
     background-color: $bg;
-    padding: 1.5*$padding_sm 2*$padding_sm;
+    @include media(hover,1025){
+      padding: $padding_md 2*$padding_sm;
+    }
+    @include breakpoints(601,1024){
+      padding: $padding_sm $padding_md;
+    }
+    @include media(screen,600){
+      padding: 10px $padding_sm;
+    }
     position: relative;
+
   }
   &--submit {
     background-color: $bg;
-    padding: 0 2*$padding_sm;
+
     overflow: hidden;
     position: relative;
     border-top: 1px solid $text_lt;
+    @include media(hover,1025){
+      padding: 0 2*$padding_sm;
+    }
+    @include breakpoints(601,1024){
+      padding: 0 $padding_md;
+    }
+    @include media(screen,600){
+      padding: 0 $padding_sm;
+    }
     .form-row-submit {
-      margin-right: -2*$padding_sm - 1px;
+      @include media(hover,1025){
+        margin-right: -2*$padding_sm - 1px;
+      }
+      @include media(screen,1024){
+        margin: 10px 0;
+      }
     }
   }
   &--bottom {

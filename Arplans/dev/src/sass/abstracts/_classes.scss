@@ -32,6 +32,11 @@
   &--sm {
     max-width: 1020px;
   }
+  &.mobile-wide {
+    @include media(screen,767){
+      padding: 0;
+    }
+  }
 }
 
 .custom-row {

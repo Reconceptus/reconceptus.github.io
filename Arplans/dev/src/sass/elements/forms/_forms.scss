@@ -28,24 +28,51 @@
 .form-row {
   display: flex;
   align-items: flex-start;
-  margin: 0 -1*$padding_sm;
+  flex-flow: row wrap;
+  @include media(hover,1025){
+    margin: 0 -1*$padding_sm;
+  }
+  @include media(screen,1024){
+    margin: 0 -10px;
+  }
   &.centered {
     align-items: center;
   }
   &.stretched {
     align-items: stretch;
   }
+  &.nowrap-tablet {
+    @include breakpoints(601,1024){
+      flex-wrap: nowrap;
+      .form-row-col.col-66 {
+        .form-row-col.col-50 {
+          max-width: none;
+        }
+      }
+    }
+  }
   &-col {
     width: 100%;
-    padding: 0 $padding_sm;
+    @include media(hover,1025){
+      padding: 0 $padding_sm;
+    }
+    @include media(screen,1024){
+      padding: 0 10px;
+    }
     &.col-66 {
-      max-width: 66.6666%;
+      @include media(hover,1025){
+        max-width: 66.6666%;
+      }
     }
     &.col-50 {
-      max-width: 50%;
+      @include media(hover,601){
+        max-width: 50%;
+      }
     }
     &.col-33 {
-      max-width: 33.3333%;
+      @include media(hover,1025){
+        max-width: 33.3333%;
+      }
     }
   }
   &-element {
