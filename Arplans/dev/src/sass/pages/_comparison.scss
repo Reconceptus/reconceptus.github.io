@@ -4,20 +4,57 @@
 
 .compare {
   background-color: $bg;
-  padding: 2*$padding_sm 0 2*$padding_md 0;
+  @include media(hover,1601){
+    padding: 2*$padding_sm 0 2*$padding_md 0;
+  }
+  @include media(screen,1600){
+    padding: 2*$padding_sm 0;
+  }
   .title {
     margin-bottom: $padding_md;
   }
+  .custom-row {
+    @include media(screen,1600){
+      display: block;
+      .custom-row-col.col-elastic {
+        max-width: none;
+      }
+      .custom-row-col.col-sidebar {
+        width: 100%;
+      }
+    }
+  }
   &-table {
     &--header {
+      white-space: nowrap;
       display: flex;
       width: 100%;
       background-color: $text;
-      padding: 5px 0;
       margin-bottom: $padding_sm;
+      @include media(hover,1025){padding: 5px 0;}
+      @include breakpoints(768,1024){padding: 5px 10px;}
       .part-cost,
       .part-project {
-        justify-content: center;
+        @include media(hover,768){
+          justify-content: center;
+        }
+      }
+      .part-project {
+        @include media(screen,1024){
+          display: none;
+        }
+      }
+      .compare-table--part {
+        @include media(screen,1024){
+          padding: 0 10px;
+        }
+        @include media(screen,767){
+          &:last-child {
+            a {
+              border: none;
+            }
+          }
+        }
       }
       a {
         color: $text_lt;
@@ -59,12 +96,44 @@
         @include hover(){
           color: $white;
         }
+        @include media(screen,767){
+          width: 100%;
+          justify-content: space-between;
+          border-bottom: 1px solid $border;
+        }
+      }
+      @include breakpoints(1201,1366){
+        font-size: 3.5rem;
+      }
+      @include breakpoints(768,1200){
+        font-size: 3rem;
+      }
+      @include media(screen,767){
+        flex-direction: column;
+        font-size: 3.5rem;
       }
     }
     &--main {
       user-select: none;
       .part-count {
         justify-content: center;
+      }
+      @include media(screen,1024){
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+      }
+    }
+    &--item {
+      width: 100%;
+      &:not(:last-child){
+        margin-bottom: $padding_sm;
+      }
+      @include media(screen,1024){
+        padding: 0 10px;
+      }
+      @include breakpoints(601,1024){
+        max-width: 50%;
       }
     }
     &--section {
@@ -73,42 +142,91 @@
       width: 100%;
       background-color: $white;
       transition: all 0.3s;
-      &:not(:last-child){
-        margin-bottom: $padding_sm;
-      }
       @include hover(){
         box-shadow: 0 0 40px 0 rgba($text,0.2);
         .compare-table--remove {
           opacity: 1;
         }
       }
+      @include media(screen,1024){
+        flex-direction: column;
+        height: 100%;
+      }
     }
     &--part {
       display: flex;
       align-items: center;
-      width: 100%;
-      padding: 0 $padding_sm;
+      @include media(hover,1201){
+        padding: 0 $padding_sm;
+      }
+      @include breakpoints(1025,1200){
+        padding: 0 10px;
+      }
+      @include media(hover,1025){
+        width: 100%;
+      }
+      .compare-table--main & {
+        @include breakpoints(768,1024){
+          align-items: flex-start;
+          padding: 0 $padding_sm;
+          margin-bottom: $padding_sm;
+        }
+        @include media(screen,767){
+          flex-direction: column;
+          padding: 0 $padding_sm;
+          margin-bottom: $padding_sm;
+          align-items: flex-start;
+        }
+      }
       &.part-project {
-        width: 200px;
-        padding: 0 $padding_sm 0 0;
-        flex-shrink: 0;
+        @include media(hover,1025){
+          width: 200px;
+          flex-shrink: 0;
+          padding: 0 $padding_sm 0 0;
+        }
+        @include media(screen,1024){
+          margin: 0 -20px $padding_sm;
+        }
       }
       &.part-count {
         min-width: 245px;
       }
+      @include media(hover,1025){
+        .compare & {
+          &:not(.part-project){
+            width: calc(20% - 40px);
+            max-width: calc(20% - 40px);
+          }
+        }
+
+      }
+      .btns {
+        margin: $padding_sm 0 0;
+        @include media(screen,1024){
+          width: 100%;
+          display: flex;
+          align-items: center;
+
+        }
+      }
     }
     &--remove {
-      position: absolute;
       cursor: pointer;
       width: 18px;
       height: 19px;
       border: none;
       background-color: transparent;
-      top: 6px;
-      right: 6px;
       color: $link_dark;
-      opacity: 0;
       transition: all 0.3s;
+      @include media(hover,1025){
+        opacity: 0;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+      }
+      @include media(screen,1024){
+        margin-left: auto;
+      }
     }
     .placeholder {
       width: 50%;
@@ -117,20 +235,56 @@
     }
   }
   &-sidebar {
-    padding: 2*$padding_sm 0;
+
+    @include media(screen,1600){
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include media(hover,1025){
+      padding: 2*$padding_sm 0;
+    }
+    @include media(screen,1024){
+      padding: 2*$padding_sm 0 0;
+    }
     .order {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: $padding_md;
+      @include media(hover,1601){
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: $padding_md;
+      }
+      @include media(screen,1600){
+        align-items: center;
+      }
+      @include media(screen,1024){
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: $padding_md;
+      }
+      @include media(screen,600){
+        flex-direction: column;
+      }
       .phone {
         display: flex;
         align-items: center;
-        font-size: 8.5rem;
+
         font-weight: 600;
-        margin-bottom: $padding_sm;
         white-space: nowrap;
         line-height: 1;
+        @include media(hover,1601){
+          margin-bottom: $padding_sm;
+          font-size: 8.5rem;
+        }
+        @include breakpoints(601,1600){
+          margin-right: 2*$padding_sm;
+          font-size: 8.5rem;
+        }
+        @include media(screen,600){
+          margin-bottom: $padding_sm;
+          font-size: 8rem;
+        }
         .icon {
           margin-right: $padding_sm;
         }
@@ -143,7 +297,18 @@
       padding: $padding_sm $padding_md;
       background: linear-gradient(to right bottom, $hash 50%, $hash_lt 50%);
       color: $white;
-      margin-bottom: $padding_md;
+      @include media(hover,1601){
+        margin-bottom: $padding_md;
+      }
+      @include media(screen,1600){
+        width: 420px;
+      }
+      @include breakpoints(1025,1600){
+        margin-left: 2*$padding_sm;
+      }
+      @include media(screen,1024){
+        margin: 0 auto;
+      }
       .info-title {
         font-weight: 800;
         margin-bottom: 5px;
@@ -151,10 +316,37 @@
     }
   }
   &-list {
+    @include media(screen,1600){
+      margin-top: 2*$padding_sm;
+    }
+    ul {
+      @include media(screen,1600){
+        width: 100%;
+        display: flex;
+      }
+      @include media(screen,1024){
+        flex-wrap: wrap;
+      }
+    }
     li {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 15px;
+      @include media(hover,1601){
+        margin-bottom: 15px;
+      }
+      @include breakpoints(1025,1600){
+        &:not(:last-child){
+          margin-right: $padding_md;
+        }
+      }
+      @include breakpoints(601,1024){
+        padding: 0 $padding_sm;
+        max-width: 50%;
+        margin-bottom: $padding_sm;
+      }
+      @include media(screen,600){
+        margin-bottom: $padding_sm;
+      }
     }
     .icon {
       flex-shrink: 0;

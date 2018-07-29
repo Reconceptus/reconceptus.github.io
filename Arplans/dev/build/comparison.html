@@ -147,14 +147,16 @@
                                             <i class="arrow"></i>
                                         </a>
                                     </div>
-                                    <div class="compare-table--part">
-                                        <a href="javascript:void(0);">
+                                    <div class="compare-table--part part-rooms">
+                                        <a href="javascript:void(0);" class="down">
                                             Этажи/комнаты
+                                            <i class="arrow"></i>
                                         </a>
                                     </div>
                                     <div class="compare-table--part">
-                                        <a href="javascript:void(0);">
+                                        <a href="javascript:void(0);" class="down">
                                             Тип строения
+                                            <i class="arrow"></i>
                                         </a>
                                     </div>
                                     <div class="compare-table--part part-cost">
@@ -165,162 +167,197 @@
                                     </div>
                                 </div>
                                 <div class="compare-table--main">
-                                    <div class="compare-table--section">
-                                        <div class="compare-table--part part-project">
-                                            <a href="#" class="projects-item--preview">
-                                                <div class="bg" style="background-image: url('assets/images/items/item08.jpg')"></div>
-                                                <div class="hash">
-                                                    <span class="new">новинка</span>
-                                                </div>
-                                                <span class="look data">
+                                    <div class="compare-table--item">
+                                        <div class="compare-table--section">
+                                            <div class="compare-table--part part-project">
+                                                <a href="#" class="projects-item--preview">
+                                                    <div class="bg" style="background-image: url('assets/images/items/item08.jpg')"></div>
+                                                    <div class="hash">
+                                                        <span class="new">новинка</span>
+                                                    </div>
+                                                    <span class="look data">
                                                     <span class="look-num">K-232</span>
                                                     <span class="look-text">смотреть</span>
                                                 </span>
-                                            </a>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Жилая: 120</div>
-                                                <div>Полезная: 89</div>
-                                                <div>Общая: 140 м</div>
-                                                <div>10 на 10 метров</div>
+                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Гараж на 2 места</div>
-                                                <div>Сауна</div>
-                                                <div>Веранда</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>2 этажа/4 комнаты</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Каменный дом</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part part-cost">
-                                            <div class="projects-item--actions">
-                                                <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="basket btn-small">в корзину</a>
-                                            </div>
-                                        </div>
-                                        <button class="compare-table--remove">
-                                            <i class="icon-remove">
-                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
-                                                </svg>
-                                            </i>
-                                        </button>
-                                    </div>
-                                    <div class="compare-table--section">
-                                        <div class="compare-table--part part-project">
-                                            <a href="#" class="projects-item--preview">
-                                                <div class="bg" style="background-image: url('assets/images/items/item01.jpg')"></div>
-                                                <div class="hash">
-                                                    <span class="free">бесплатно</span>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Площадь</div>
+                                                <div class="projects-item--info">
+                                                    <div>Жилая: 120</div>
+                                                    <div>Полезная: 89</div>
+                                                    <div>Общая: 140 м</div>
+                                                    <div>10 на 10 метров</div>
                                                 </div>
-                                                <span class="look data">
+                                            </div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Удобства</div>
+                                                <div class="projects-item--info">
+                                                    <div>Гараж на 2 места</div>
+                                                    <div>Сауна</div>
+                                                    <div>Веранда</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part part-rooms">
+                                                <div class="projects-item--part-title">Этажи/комнаты</div>
+                                                <div class="projects-item--info">
+                                                    <div>2 этажа/4 комнаты</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Тип строения</div>
+                                                <div class="projects-item--info">
+                                                    <div>Каменный дом</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part part-cost">
+                                                <div class="projects-item--actions">
+                                                    <div class="price-box">
+                                                        <div class="projects-item--part-title">Стоимость</div>
+                                                        <div class="price">32 000 &#8381;</div>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="basket btn-small">в корзину</a>
+                                                        <button class="compare-table--remove">
+                                                            <i class="icon-remove">
+                                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
+                                                                </svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="compare-table--item">
+                                        <div class="compare-table--section">
+                                            <div class="compare-table--part part-project">
+                                                <a href="#" class="projects-item--preview">
+                                                    <div class="bg" style="background-image: url('assets/images/items/item01.jpg')"></div>
+                                                    <div class="hash">
+                                                        <span class="free">бесплатно</span>
+                                                    </div>
+                                                    <span class="look data">
                                                     <span class="look-num">K-434</span>
                                                     <span class="look-text">смотреть</span>
                                                 </span>
-                                            </a>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Жилая: 120</div>
-                                                <div>Полезная: 89</div>
-                                                <div>Общая: 140 м</div>
-                                                <div>7,5 на 3 метров</div>
+                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Гараж на 2 места</div>
-                                                <div>Сауна</div>
-                                                <div>Веранда</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>2 этажа/4 комнаты</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Деревянный дом</div>
-                                            </div>
-                                        </div>
-                                        <div class="compare-table--part part-cost">
-                                            <div class="projects-item--actions">
-                                                <div class="price">0 &#8381;</div>
-                                            </div>
-                                        </div>
-                                        <button class="compare-table--remove">
-                                            <i class="icon-remove">
-                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
-                                                </svg>
-                                            </i>
-                                        </button>
-                                    </div>
-                                    <div class="compare-table--section">
-                                        <div class="compare-table--part part-project">
-                                            <a href="#" class="projects-item--preview">
-                                                <div class="bg" style="background-image: url('assets/images/items/item02.jpg')"></div>
-                                                <div class="hash">
-                                                    <span class="sale">скидка</span>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Площадь</div>
+                                                <div class="projects-item--info">
+                                                    <div>Жилая: 120</div>
+                                                    <div>Полезная: 89</div>
+                                                    <div>Общая: 140 м</div>
+                                                    <div>7,5 на 3 метров</div>
                                                 </div>
-                                                <span class="look data">
+                                            </div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Удобства</div>
+                                                <div class="projects-item--info">
+                                                    <div>Гараж на 2 места</div>
+                                                    <div>Сауна</div>
+                                                    <div>Веранда</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Этажи/комнаты</div>
+                                                <div class="projects-item--info">
+                                                    <div>2 этажа/4 комнаты</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Тип строения</div>
+                                                <div class="projects-item--info">
+                                                    <div>Деревянный дом</div>
+                                                </div>
+                                            </div>
+                                            <div class="compare-table--part part-cost">
+                                                <div class="projects-item--actions">
+                                                    <div class="price-box">
+                                                        <div class="projects-item--part-title">Стоимость</div>
+                                                        <div class="price">0 &#8381;</div>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <button class="compare-table--remove">
+                                                            <i class="icon-remove">
+                                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
+                                                                </svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="compare-table--item">
+                                        <div class="compare-table--section">
+                                            <div class="compare-table--part part-project">
+                                                <a href="#" class="projects-item--preview">
+                                                    <div class="bg" style="background-image: url('assets/images/items/item02.jpg')"></div>
+                                                    <div class="hash">
+                                                        <span class="sale">скидка</span>
+                                                    </div>
+                                                    <span class="look data">
                                                     <span class="look-num">K-136</span>
                                                     <span class="look-text">смотреть</span>
                                                 </span>
-                                            </a>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Жилая: 120</div>
-                                                <div>Полезная: 89</div>
-                                                <div>Общая: 140 м</div>
-                                                <div>7,5 на 3 метров</div>
+                                                </a>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Гараж на 2 места</div>
-                                                <div>Сауна</div>
-                                                <div>Веранда</div>
-                                                <div>Навес</div>
-                                                <div>Летняя кухня</div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Площадь</div>
+                                                <div class="projects-item--info">
+                                                    <div>Жилая: 120</div>
+                                                    <div>Полезная: 89</div>
+                                                    <div>Общая: 140 м</div>
+                                                    <div>7,5 на 3 метров</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>2 этажа/4 комнаты</div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Удобства</div>
+                                                <div class="projects-item--info">
+                                                    <div>Гараж на 2 места</div>
+                                                    <div>Сауна</div>
+                                                    <div>Веранда</div>
+                                                    <div>Навес</div>
+                                                    <div>Летняя кухня</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part">
-                                            <div class="projects-item--info">
-                                                <div>Баня</div>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Этажи/комнаты</div>
+                                                <div class="projects-item--info">
+                                                    <div>2 этажа/4 комнаты</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="compare-table--part part-cost">
-                                            <div class="projects-item--actions">
-                                                <div class="price">32 000 &#8381;</div>
-                                                <a href="#" class="basket btn-small">в корзину</a>
+                                            <div class="compare-table--part">
+                                                <div class="projects-item--part-title">Тип строения</div>
+                                                <div class="projects-item--info">
+                                                    <div>Баня</div>
+                                                </div>
                                             </div>
+                                            <div class="compare-table--part part-cost">
+                                                <div class="projects-item--actions">
+                                                    <div class="price-box">
+                                                        <div class="projects-item--part-title">Стоимость</div>
+                                                        <div class="price">32 000 &#8381;</div>
+                                                    </div>
+                                                    <div class="btns">
+                                                        <a href="#" class="basket btn-small">в корзину</a>
+                                                        <button class="compare-table--remove">
+                                                            <i class="icon-remove">
+                                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
+                                                                </svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <button class="compare-table--remove">
-                                            <i class="icon-remove">
-                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
-                                                </svg>
-                                            </i>
-                                        </button>
                                     </div>
                                 </div>
                             </div>

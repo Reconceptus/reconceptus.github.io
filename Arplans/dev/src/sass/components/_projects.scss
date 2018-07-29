@@ -124,7 +124,12 @@
         padding-top: 75%;
       }
       .part-project & {
-        padding-top: 100%;
+        @include media(hover,1025){
+          padding-top: 100%;
+        }
+        @include media(screen,1024){
+          padding-top: 50%;
+        }
         @include hover(){
           .look-num {opacity: 0}
           .look-text {opacity: 1}
@@ -388,6 +393,16 @@
           color: inherit;
         }
       }
+      .price-box {
+        @include media(screen,1024){
+          display: flex;
+          width: 100%;
+        }
+        @include media(screen,767){
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
       .icon-like {
         color: $border;
         &:not(:last-child){
@@ -402,7 +417,7 @@
       }
       .basket {
         .part-cost & {
-          margin: $padding_sm 0 0;
+
         }
       }
     }
@@ -424,6 +439,22 @@
       padding: 0 $padding_sm;
       @include hover(){
         background-color: $link_dark;
+      }
+    }
+
+    &--part-title {
+      @include media(hover,1025){
+        display: none;
+      }
+      @include media(screen,1024){
+        font-size: 3.5rem;
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-bottom: 10px;
+      }
+      @include breakpoints(768,1024){
+        width: 120px;
+        margin-right: 10px;
       }
     }
 

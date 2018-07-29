@@ -233,6 +233,9 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @include media(screen,600){
+        display: none;
+      }
       .stats-likes {
         font-size: 3.5rem;
         display: flex;
