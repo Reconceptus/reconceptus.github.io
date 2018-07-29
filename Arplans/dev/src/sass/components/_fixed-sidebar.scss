@@ -24,7 +24,7 @@
         top: auto !important;
       }
     }
-    .bg {display: none;}
+    .modal-bg {display: none;}
     .fixing {
       width: 100%;
       .col-sidebar & {
@@ -51,7 +51,7 @@
       opacity: 1;
       pointer-events: auto;
     }
-    .bg {
+    .modal-bg {
       background-color: rgba($text,0.8);
       position: absolute;
       top: 0;

@@ -161,21 +161,12 @@
     .btn-box {display: none;}
   }
   @include media(screen,1200){
-    flex-direction: column;
-    margin: 0;
     .btn-box {
       margin: 0;
     }
     .custom-row-col.col-sidebar {
       width: 100%;
-      padding: 0;
       margin-bottom: $padding_sm;
-    }
-    .custom-row-col.col-elastic {
-      width: 100%;
-      padding: 0;
-      max-width: none;
-
     }
   }
 }

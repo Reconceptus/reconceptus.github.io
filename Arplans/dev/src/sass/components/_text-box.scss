@@ -26,10 +26,16 @@
     }
   }
   .right-align {
-    float: right;
-    margin-left: $padding_md;
     margin-bottom: $padding_md;
-    margin-right: -25%;
+    width: 100%;
+    @include media(hover,1025){
+      margin-right: -25%;
+    }
+    @include media(hover,601){
+      float: right;
+      margin-left: $padding_md;
+      max-width: 50%;
+    }
   }
   figure {
     margin-bottom: $padding_md;
@@ -45,11 +51,18 @@
   }
   blockquote {
     p {margin: 0;}
-    padding: 0 2*$padding_sm 0 4*$padding_sm;
     position: relative;
     font-family: 'Merriweather';
-    font-size: 5.2rem;
-    margin: 2*$padding_md 0;
+    @include media(hover,601){
+      margin: 2*$padding_md 0;
+      padding: 0 2*$padding_sm 0 4*$padding_sm;
+      font-size: 5.2rem;
+    }
+    @include media(screen,600){
+      font-size: 4.5rem;
+      margin: 2*$padding_sm 0;
+      padding: 0 $padding_sm 0 $padding_md;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -63,7 +76,13 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2*$padding_md;
+    @include media(hover,601){
+      margin-bottom: 2*$padding_md;
+    }
+    @include media(screen,600){
+      font-size: 3rem;
+      margin-bottom: 2*$padding_sm;
+    }
     tr {
       border-top: 1px solid #e1e3e7;
       &:last-child {
@@ -71,8 +90,13 @@
       }
     }
     td {
-      padding: 5px $padding_md 5px 0;
       width: 50%;
+      @include media(hover,601){
+        padding: 5px $padding_md 5px 0;
+      }
+      @include media(screen,600){
+        padding: 5px 10px 5px 0;
+      }
     }
   }
 }

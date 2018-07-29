@@ -1,13 +1,23 @@
 .article-page {
   padding: 2*$padding_sm 0 ;
   &--header {
-    padding-right: 15%;
     margin-bottom: 2*$padding_sm;
+    @include media(hover,1025){
+      padding-right: 15%;
+    }
     .title {
-      font-size: 10.5rem;
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: $padding_md;
+      @include media(hover,768){
+        font-size: 10.5rem;
+      }
+      @include breakpoints(601,767){
+        font-size: 8rem;
+      }
+      @include media(screen,600){
+        font-size: 6rem;
+      }
     }
     .auth {
       display: flex;
@@ -30,16 +40,20 @@
   }
   &--main {
     width: 100%;
-    max-width: 80%;
     padding-bottom: $padding_sm;
-    .text-box {
-      figure {
-        margin-right: -25%;
+    @include media(hover,1025){
+      max-width: 80%;
+      .text-box {
+        figure {
+          margin-right: -25%;
+        }
       }
     }
   }
   .catalog-actions {
-    max-width: 80%;
+    @include media(hover,1025){
+      max-width: 80%;
+    }
   }
   &--sidebar {
     .title {

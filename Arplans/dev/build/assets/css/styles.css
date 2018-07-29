@@ -2377,28 +2377,14 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -20px;
 }
 
 .custom-row-col {
   width: 100%;
-  padding: 0 20px;
-}
-
-.custom-row-col.col-elastic {
-  max-width: -webkit-calc(100% - 420px);
-  max-width: calc(100% - 420px);
 }
 
 .custom-row-col.col-projects {
   width: 230px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-}
-
-.custom-row-col.col-sidebar {
-  width: 420px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -4272,10 +4258,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .text-box .right-align {
-  float: right;
-  margin-left: 30px;
   margin-bottom: 30px;
-  margin-right: -25%;
+  width: 100%;
 }
 
 .text-box figure {
@@ -4293,11 +4277,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .text-box blockquote {
-  padding: 0 40px 0 80px;
   position: relative;
   font-family: "Merriweather";
-  font-size: 5.2rem;
-  margin: 60px 0;
 }
 
 .text-box blockquote p {
@@ -4317,7 +4298,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .text-box table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 60px;
 }
 
 .text-box table tr {
@@ -4329,7 +4309,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .text-box table td {
-  padding: 5px 30px 5px 0;
   width: 50%;
 }
 
@@ -7605,12 +7584,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .article-page--header {
-  padding-right: 15%;
   margin-bottom: 40px;
 }
 
 .article-page--header .title {
-  font-size: 10.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 30px;
@@ -7646,16 +7623,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .article-page--main {
   width: 100%;
-  max-width: 80%;
   padding-bottom: 20px;
-}
-
-.article-page--main .text-box figure {
-  margin-right: -25%;
-}
-
-.article-page .catalog-actions {
-  max-width: 80%;
 }
 
 .article-page--sidebar .title {
@@ -8256,6 +8224,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     max-width: 33.3333%;
   }
 
+  .text-box .right-align {
+    margin-right: -25%;
+  }
+
   .info-box {
     padding: 80px;
   }
@@ -8509,6 +8481,22 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .project-page--reviews .read:hover {
     color: #346697;
   }
+
+  .article-page--header {
+    padding-right: 15%;
+  }
+
+  .article-page--main {
+    max-width: 80%;
+  }
+
+  .article-page--main .text-box figure {
+    margin-right: -25%;
+  }
+
+  .article-page .catalog-actions {
+    max-width: 80%;
+  }
 }
 
 @media screen and (min-width: 1367px) {
@@ -8680,6 +8668,21 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 70px;
   }
 
+  .text-box blockquote {
+    font-size: 4.5rem;
+    margin: 40px 0;
+    padding: 0 20px 0 30px;
+  }
+
+  .text-box table {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+
+  .text-box table td {
+    padding: 5px 10px 5px 0;
+  }
+
   .info-box .title {
     font-size: 5.2rem;
     margin-bottom: 20px;
@@ -8785,6 +8788,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-list li {
     margin-bottom: 20px;
+  }
+
+  .article-page--header .title {
+    font-size: 6rem;
   }
 }
 
@@ -8995,6 +9002,26 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 @media screen and (min-width: 1201px) {
+  .custom-row {
+    margin: 0 -20px;
+  }
+
+  .custom-row-col {
+    padding: 0 20px;
+  }
+
+  .custom-row-col.col-elastic {
+    max-width: -webkit-calc(100% - 420px);
+    max-width: calc(100% - 420px);
+  }
+
+  .custom-row-col.col-sidebar {
+    width: 420px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
   .desktop-hidden {
     display: none !important;
   }
@@ -9070,7 +9097,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     top: auto !important;
   }
 
-  .fixed-scrollbar .bg {
+  .fixed-scrollbar .modal-bg {
     display: none;
   }
 
@@ -9116,6 +9143,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 @media screen and (max-width: 1200px) {
+  .custom-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .custom-row-col.col-projects {
+    display: none;
+  }
+
   .tablet-hidden {
     display: none !important;
   }
@@ -9165,7 +9204,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     pointer-events: auto;
   }
 
-  .modal-filter .bg {
+  .modal-filter .modal-bg {
     background-color: RGBA(33, 32, 46, 0.8);
     position: absolute;
     top: 0;
@@ -9202,29 +9241,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 4.5rem;
   }
 
-  .filter-row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: 0;
-  }
-
   .filter-row .btn-box {
     margin: 0;
   }
 
   .filter-row .custom-row-col.col-sidebar {
     width: 100%;
-    padding: 0;
     margin-bottom: 20px;
-  }
-
-  .filter-row .custom-row-col.col-elastic {
-    width: 100%;
-    padding: 0;
-    max-width: none;
   }
 }
 
@@ -9322,6 +9345,26 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .filter-form .form-row-element:last-child {
     padding-bottom: 10px;
+  }
+
+  .text-box .right-align {
+    float: right;
+    margin-left: 30px;
+    max-width: 50%;
+  }
+
+  .text-box blockquote {
+    margin: 60px 0;
+    padding: 0 40px 0 80px;
+    font-size: 5.2rem;
+  }
+
+  .text-box table {
+    margin-bottom: 60px;
+  }
+
+  .text-box table td {
+    padding: 5px 30px 5px 0;
   }
 
   .info-box .title {
@@ -9826,6 +9869,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-box-shadow: 0 0 40px 5px RGBA(101, 116, 130, 0.16);
     box-shadow: 0 0 40px 5px RGBA(101, 116, 130, 0.16);
   }
+
+  .article-page--header .title {
+    font-size: 8rem;
+  }
 }
 
 @media screen and (max-width: 601px) {
@@ -9983,6 +10030,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .catalog-header .filter {
     margin: 0 0 0 20px;
+  }
+
+  .article-page--header .title {
+    font-size: 10.5rem;
   }
 }
 

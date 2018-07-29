@@ -41,20 +41,35 @@
 
 .custom-row {
   display: flex;
-  margin: 0 -1*$padding_sm;
+
+  @include media(hover,1201){
+    margin: 0 -1*$padding_sm;
+  }
+  @include media(screen,1200){
+    flex-direction: column;
+  }
   &-col {
     width: 100%;
-    padding: 0 $padding_sm;
+    @include media(hover,1201){
+      padding: 0 $padding_sm;
+    }
     &.col-elastic {
-      max-width: calc(100% - 420px);
+      @include media(hover,1201){
+        max-width: calc(100% - 420px);
+      }
     }
     &.col-projects {
       width: 230px;
       flex-shrink: 0;
+      @include media(screen,1200){
+        display: none;
+      }
     }
     &.col-sidebar {
-      width: 420px;
-      flex-shrink: 0;
+      @include media(hover,1201){
+        width: 420px;
+        flex-shrink: 0;
+      }
     }
     &.col-50 {
       width: 50%;
