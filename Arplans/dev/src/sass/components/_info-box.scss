@@ -6,10 +6,16 @@
     padding: 2*$padding_sm 0;
   }
   .title {
-    font-size: 6.4rem;
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: $padding_md;
+    @include media(hover,601){
+      font-size: 6.4rem;
+      margin-bottom: $padding_md;
+    }
+    @include media(screen,600){
+      font-size: 5.2rem;
+      margin-bottom: $padding_sm;
+    }
   }
   &--text {
     font-size: 3.5rem;

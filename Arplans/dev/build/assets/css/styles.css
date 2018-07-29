@@ -3473,6 +3473,7 @@ svg {
 
 .blog-hashes .btn-small {
   border-color: #B2B9C1;
+  margin: 4px 0;
 }
 
 .blog-hashes .btn-small.active {
@@ -3502,10 +3503,6 @@ svg {
   flex-flow: row wrap;
 }
 
-.blog-list.col-3 .blog-item {
-  width: 33.3333%;
-}
-
 .blog-item {
   padding: 0 20px;
 }
@@ -3516,13 +3513,11 @@ svg {
 }
 
 .blog-item--figure {
-  height: 300px;
   width: 100%;
 }
 
 .blog-item--header {
   background-color: #FFF;
-  margin: -40px 40px 40px;
   border-left: 5px solid #2196F3;
   padding: 15px 20px;
   -webkit-box-shadow: 0 2px 20px 5px RGBA(101, 116, 130, 0.1);
@@ -4339,10 +4334,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .info-box .title {
-  font-size: 6.4rem;
   text-transform: uppercase;
   font-weight: 600;
-  margin-bottom: 30px;
 }
 
 .info-box--text {
@@ -8531,6 +8524,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-left: 30px;
   }
 
+  .blog-item--header {
+    margin: -40px 40px 40px;
+  }
+
   .projects-list {
     margin: 0 -20px;
   }
@@ -8683,6 +8680,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 70px;
   }
 
+  .info-box .title {
+    font-size: 5.2rem;
+    margin-bottom: 20px;
+  }
+
   .projects-filters {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8806,6 +8808,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .btn {
     height: 40px;
     padding: 0 25px;
+  }
+
+  .blog-list.col-3 .blog-item {
+    width: 100%;
   }
 
   .projects-filters--item.current {
@@ -9012,6 +9018,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .btn {
     height: 60px;
     padding: 0 60px;
+  }
+
+  .blog-list.col-3 .blog-item {
+    width: 33.3333%;
   }
 
   .projects-list.col-4 .projects-item {
@@ -9227,6 +9237,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-left: 20px;
   }
 
+  .blog-item--header {
+    margin: -40px 20px 30px;
+  }
+
   .projects-item--preview .info li {
     padding: 0 10px;
   }
@@ -9310,6 +9324,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding-bottom: 10px;
   }
 
+  .info-box .title {
+    font-size: 6.4rem;
+    margin-bottom: 30px;
+  }
+
   .projects-filters {
     margin-bottom: 40px;
   }
@@ -9341,6 +9360,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .header-main--nav li:not(:last-child):after {
     margin-left: 30px;
+  }
+
+  .blog-item--figure {
+    height: 300px;
   }
 
   .projects-list.col-3 .projects-item {
@@ -9423,6 +9446,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .header-main--nav li:not(:last-child):after {
     margin-left: 20px;
+  }
+
+  .blog-item--figure {
+    height: 0;
+    padding-top: 60%;
   }
 
   .site-info .title {
@@ -9962,6 +9990,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .btn {
     height: 50px;
     padding: 0 40px;
+  }
+
+  .blog-list.col-3 .blog-item {
+    width: 50%;
   }
 
   .video-box--about {
