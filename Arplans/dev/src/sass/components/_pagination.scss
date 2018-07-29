@@ -3,8 +3,6 @@
   align-items: center;
   font-size: 3.5rem;
   a, span {
-    width: 40px;
-    height: 40px;
     margin-right: 1px;
     display: flex;
     justify-content: center;
@@ -13,6 +11,14 @@
     cursor: pointer;
     color: $border;
     transition: all 0.3s;
+    @include media(hover,601){
+      width: 40px;
+      height: 40px;
+    }
+    @include media(screen,600){
+      width: 34px;
+      height: 34px;
+    }
     &.current {
       background-color: $text;
       color: $white;

@@ -71,7 +71,15 @@
     }
     &.col-3 {
       .projects-item {
-        width: 33.3333%;
+        @include media(hover,1601){
+          width: 33.3333%;
+        }
+        @include breakpoints(601,1600){
+          width: 50%;
+        }
+        @include media(screen,600){
+          width: 100%;
+        }
       }
     }
   }

@@ -9,12 +9,17 @@
     color: $border;
     input {
       color: $text;
-      width: 100px;
       height: 30px;
       border: 1px solid $text_lt;
       padding: 0 10px;
       margin: 0 5px;
       outline: none;
+      @include media(hover,601){
+        width: 100px;
+      }
+      @include media(screen,600){
+        width: 70px;
+      }
     }
   }
 

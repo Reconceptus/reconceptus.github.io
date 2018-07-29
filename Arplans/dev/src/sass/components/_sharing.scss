@@ -4,28 +4,44 @@
   &.title-end {
     flex-direction: row-reverse;
     li {
-      margin: 0 $padding_sm 0 0;
+      @include media(hover,768){
+        margin: 0 $padding_sm 0 0;
+      }
     }
   }
   .title {
     color: $border;
     text-transform: uppercase;
     font-size: 3.5rem;
+    @include media(screen,767){
+      display: none;
+    }
   }
   ul {
     display: flex;
     align-items: center;
   }
   li {
-    margin: 0 0 0 $padding_sm;
+    @include media(hover,768){
+      margin: 0 0 0 $padding_sm;
+    }
+    @include media(screen,767){
+      margin: 0 10px;
+    }
   }
   .ico {
     display: flex;
-    width: 40px;
-    height: 40px;
     color: $white;
     align-items: center;
     justify-content: center;
+    @include media(hover,601){
+      width: 40px;
+      height: 40px;
+    }
+    @include media(screen,600){
+      width: 34px;
+      height: 34px;
+    }
     &-fb {
       background-color: #455896;
       padding: 7px;

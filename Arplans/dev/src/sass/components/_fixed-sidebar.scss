@@ -1,35 +1,75 @@
-.fixed-scrollbar {
-  position: relative;
-  height: 100%;
-  &.fixed {
-    transition: all .2s;
-    padding-top: 40px;
-    .fixing {
-      position: fixed;
-      .col-sidebar & {
-        width: 380px;
+@include media(hover,1201){
+  .fixed-scrollbar {
+    position: relative;
+    height: 100%;
+    &.fixed {
+      transition: all .2s;
+      padding-top: 40px;
+      .fixing {
+        position: fixed;
+        .col-sidebar & {
+          width: 380px;
+        }
+        .col-projects & {
+          width: 190px;
+        }
       }
-      .col-projects & {
-        width: 190px;
+    }
+    &.bottom {
+      transition: all .2s;
+      .fixing {
+        position: absolute;
+        bottom: 0;
+        left: 0 !important;
+        top: auto !important;
+      }
+    }
+    .bg {display: none;}
+    .fixing {
+      width: 100%;
+      .col-sidebar & {
+        height: 65vh;
+        .partner-page--text & {
+          height: auto;
+        }
       }
     }
   }
-  &.bottom {
-    transition: all .2s;
-    .fixing {
+}
+@include media(screen,1200){
+  .modal-filter {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .bg {
+      background-color: rgba($text,0.8);
       position: absolute;
-      bottom: 0;
-      left: 0 !important;
-      top: auto !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
   .fixing {
-    width: 100%;
-    .col-sidebar & {
-      height: 65vh;
-      .partner-page--text & {
-        height: auto;
-      }
-    }
+    width: 90%;
+    max-width: 420px;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%);
+  }
+  .catalog-filters {
+    max-height: 75vh;
+    padding: $padding_sm;
   }
 }

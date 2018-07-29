@@ -170,6 +170,12 @@ $(document).ready(function () {
             setFixPosition();
         });
 
+        $('.show-modal-filter').click(function () {
+            $('.modal-filter').addClass('active');
+        });
+        $('.modal-filter .close').click(function () {
+            $('.modal-filter').removeClass('active');
+        });
     }
 
     /*

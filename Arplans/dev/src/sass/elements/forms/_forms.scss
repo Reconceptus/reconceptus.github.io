@@ -81,8 +81,10 @@
     }
     .filter-form & {
       padding: 0.5*$padding_sm 0 0;
-      &:last-child {
-        padding-bottom: 0.5*$padding_sm;
+      @include media(hover,601){
+        &:last-child {
+          padding-bottom: 0.5*$padding_sm;
+        }
       }
     }
     &.to-stretch {
@@ -91,6 +93,7 @@
         height: 100%;
       }
     }
+
   }
 }
 
