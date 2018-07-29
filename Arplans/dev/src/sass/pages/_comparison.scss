@@ -3,27 +3,29 @@
 /***********************************************/
 
 .compare {
-  background-color: $bg;
-  @include media(hover,1601){
-    padding: 2*$padding_sm 0 2*$padding_md 0;
-  }
-  @include media(screen,1600){
-    padding: 2*$padding_sm 0;
-  }
-  .title {
-    margin-bottom: $padding_md;
-  }
-  .custom-row {
+  &-page {
+    background-color: $bg;
+    @include media(hover,1601){
+      padding: 2*$padding_sm 0 2*$padding_md 0;
+    }
     @include media(screen,1600){
-      display: block;
-      margin: 0;
-      .custom-row-col.col-elastic {
-        max-width: none;
-        padding: 0;
-      }
-      .custom-row-col.col-sidebar {
-        width: 100%;
-        padding: 0;
+      padding: 2*$padding_sm 0;
+    }
+    .title {
+      margin-bottom: $padding_md;
+    }
+    .custom-row {
+      @include media(screen,1600){
+        display: block;
+        margin: 0;
+        .custom-row-col.col-elastic {
+          max-width: none;
+          padding: 0;
+        }
+        .custom-row-col.col-sidebar {
+          width: 100%;
+          padding: 0;
+        }
       }
     }
   }
@@ -118,8 +120,10 @@
     }
     &--main {
       user-select: none;
-      .part-count {
-        justify-content: center;
+      @include media(hover,1025){
+        .part-count {
+          justify-content: center;
+        }
       }
       @include media(screen,1024){
         display: flex;
@@ -129,11 +133,14 @@
     }
     &--item {
       width: 100%;
-      &:not(:last-child){
-        margin-bottom: $padding_sm;
+      @include media(hover,1025){
+        &:not(:last-child){
+          margin-bottom: $padding_sm;
+        }
       }
       @include media(screen,1024){
         padding: 0 10px;
+        margin-bottom: $padding_sm;
       }
       @include breakpoints(601,1024){
         max-width: 50%;
@@ -192,16 +199,23 @@
         }
       }
       &.part-count {
-        min-width: 245px;
+        @include media(hover,1025) {
+          min-width: 245px;
+        }
       }
       @include media(hover,1025){
-        .compare & {
+        .compare-page & {
           &:not(.part-project){
             width: calc(20% - 40px);
             max-width: calc(20% - 40px);
           }
         }
-
+        .basket-order & {
+          &:not(.part-project){
+            width: calc(25% - 111px);
+            max-width: calc(25% - 111px);
+          }
+        }
       }
       .btns {
         margin: $padding_sm 0 0;

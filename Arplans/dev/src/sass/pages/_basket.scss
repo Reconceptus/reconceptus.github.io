@@ -1,13 +1,25 @@
 .basket {
   &-order {
     background-color: $bg;
-    .compare {
-      background-color: transparent;
-      padding: 0;
+    .custom-row {
+      @include media(screen,1600){
+        display: block;
+        margin: 0;
+        .custom-row-col.col-elastic {
+          max-width: none;
+          padding: 0;
+        }
+        .custom-row-col.col-sidebar {
+          width: 100%;
+          padding: 0;
+        }
+      }
     }
   }
   &-form {
-    margin-bottom: 2*$padding_md;
+    @include media(hover,1601){
+      margin-bottom: 2*$padding_md;
+    }
     &--section {
       padding: 2*$padding_sm 0 0;
       .title {
@@ -20,17 +32,32 @@
     &--ordering {
       .ordering-data {
         background-color: $white;
-        padding: $padding_sm 2*$padding_sm;
+        @include media(hover,1025){
+          padding: $padding_sm 2*$padding_sm;
+        }
+        @include media(screen,1024){
+          padding: 10px $padding_sm;
+        }
       }
       .ordering-pays {
         border-top: 1px solid $text_lt;
         background-color: $bg_yellow;
-        padding: $padding_sm 2*$padding_sm;
+        @include media(hover,1025){
+          padding: $padding_sm 2*$padding_sm;
+        }
+        @include media(screen,1024){
+          padding: 10px $padding_sm;
+        }
       }
       .ordering-submit {
         border-top: 1px solid $text_lt;
         background-color: $bg_yellow;
-        padding: $padding_sm 2*$padding_sm;
+        @include media(hover,1025){
+          padding: $padding_sm 2*$padding_sm;
+        }
+        @include media(screen,1024){
+          padding: 10px $padding_sm;
+        }
         .form-title {
           color: $text;
           margin-bottom: 15px;

@@ -1,13 +1,24 @@
 .add-service {
   width: 100%;
-  padding: 0 $padding_sm;
   margin-bottom: $padding_sm;
+  @include media(hover,1025){
+    padding: 0 $padding_sm;
+  }
+  @include breakpoints(768,1024){
+    padding: 0 10px;
+  }
   &--header {
     background-color: $white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: $padding_sm $padding_sm $padding_sm 2*$padding_sm;
+
+    @include media(hover,1025){
+      padding: $padding_sm $padding_sm $padding_sm 2*$padding_sm;
+    }
+    @include media(screen,1024){
+      padding: $padding_sm;
+    }
     .show-more {
       width: 40px;
       height: 40px;
@@ -35,7 +46,12 @@
   }
   &--main {
     background-color: $white;
-    padding: 0 $padding_sm 0 2*$padding_sm;
+    @include media(hover,1025){
+      padding: 0 $padding_sm 0 2*$padding_sm;
+    }
+    @include media(screen,1024){
+      padding: 0 $padding_sm;
+    }
     &-text {
       border-top: 1px solid;
       padding: $padding_md 0;
@@ -51,10 +67,21 @@
   &--list {
     display: flex;
     align-items: flex-start;
-    margin: 0 -1*$padding_sm;
+    @include media(hover,1025){
+      margin: 0 -1*$padding_sm;
+    }
+    @include breakpoints(768,1024){
+      margin: 0 -10px;
+    }
+    @include media(screen,767){
+      flex-direction: column;
+    }
   }
   &--part {
-    width: 50%;
+    width: 100%;
+    @include media(hover,768){
+      max-width: 50%;
+    }
   }
   &.show {
     .show-more {

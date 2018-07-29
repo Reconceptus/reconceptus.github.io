@@ -424,21 +424,32 @@
     &--info {
       font-size: 3.5rem;
       line-height: 1.5;
+      @include media(screen,1024){
+        .album-head {
+          display: none;
+        }
+      }
     }
     &--articul {
       display: flex;
       white-space: nowrap;
       align-items: center;
       justify-content: center;
-      font-size: 8.5rem;
       font-weight: 600;
       line-height: 1.6;
       transition: all 0.2s;
       background-color: $text;
       color: $white;
-      padding: 0 $padding_sm;
       @include hover(){
         background-color: $link_dark;
+      }
+      @include media(hover,1201){
+        font-size: 8.5rem;
+        padding: 0 $padding_sm;
+      }
+      @include media(screen,1200){
+        font-size: 6rem;
+        padding: 0 15px;
       }
     }
 
