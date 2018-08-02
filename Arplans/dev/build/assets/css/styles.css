@@ -5193,6 +5193,49 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: #FFF;
 }
 
+.bg-head--error {
+  background: #2196F3;
+  background: -webkit-linear-gradient(left, #63B6F7 0%, #2196F3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#63B6F7), to(#2196F3));
+  background: -o-linear-gradient(left, #63B6F7 0%, #2196F3 100%);
+  background: linear-gradient(to right, #63B6F7 0%, #2196F3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$bg_blue_dark", endColorstr="$link", GradientType=1);
+  color: #FFF;
+  padding: 80px 20px;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.bg-head--error .title {
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.bg-head--error .subtitle {
+  font-size: 5rem;
+}
+
+.bg-head--error .subtitle a {
+  text-decoration: underline;
+}
+
 .pagination {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8340,6 +8383,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     opacity: 0.25;
   }
 
+  .bg-head--error .subtitle a:hover {
+    text-decoration: none;
+  }
+
   .pagination a:hover,
   .pagination span:hover {
     background-color: #21202E;
@@ -8816,6 +8863,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 40px 20px;
   }
 
+  .bg-head--error .title {
+    font-size: 32rem;
+  }
+
   .pagination a,
   .pagination span {
     width: 34px;
@@ -8963,6 +9014,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .blog-slider--carousel .owl-prev,
   .blog-slider--carousel .owl-next {
     top: 26vw;
+  }
+
+  .bg-head--error {
+    min-height: -webkit-calc(100vh - 175px);
+    min-height: calc(100vh - 175px);
   }
 
   .sharing .title {
@@ -9576,6 +9632,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .bg-head--text {
     padding: 80px 20px;
+  }
+
+  .bg-head--error .title {
+    font-size: 50rem;
   }
 
   .pagination a,
