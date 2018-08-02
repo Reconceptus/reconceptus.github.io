@@ -1,0 +1,19 @@
+.search-results {
+  &--field {
+    margin-bottom: 2*$padding_sm;
+  }
+  &--list {
+    margin-bottom: 2*$padding_md;
+    .title {
+      font-size: 6.4rem;
+      font-weight: 600;
+      margin-bottom: $padding_sm;
+      @include hover(){
+        color: $link_hover;
+      }
+    }
+    li {
+      margin-bottom: 2*$padding_sm;
+    }
+  }
+}

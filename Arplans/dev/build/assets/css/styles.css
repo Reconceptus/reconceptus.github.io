@@ -8039,6 +8039,24 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin-right: -41px;
 }
 
+.search-results--field {
+  margin-bottom: 40px;
+}
+
+.search-results--list {
+  margin-bottom: 60px;
+}
+
+.search-results--list .title {
+  font-size: 6.4rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.search-results--list li {
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 1025px) {
   .text-box a:hover,
   .map-box--aside .item .on-map:hover,
@@ -8473,6 +8491,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .article-page .catalog-actions {
     max-width: 80%;
+  }
+
+  .search-results--list .title:hover {
+    color: #2A7EC5;
   }
 }
 
