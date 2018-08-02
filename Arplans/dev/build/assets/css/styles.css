@@ -5183,6 +5183,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   padding: 60px 20px;
 }
 
+.bg-head--text {
+  background: #2196F3;
+  background: -webkit-linear-gradient(left, #63B6F7 0%, #2196F3 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#63B6F7), to(#2196F3));
+  background: -o-linear-gradient(left, #63B6F7 0%, #2196F3 100%);
+  background: linear-gradient(to right, #63B6F7 0%, #2196F3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$bg_blue_dark", endColorstr="$link", GradientType=1);
+  color: #FFF;
+}
+
 .pagination {
   display: -webkit-box;
   display: -webkit-flex;
@@ -8104,6 +8114,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin-bottom: 40px;
 }
 
+.text-section {
+  margin: 40px 0 60px;
+}
+
 @media screen and (min-width: 1025px) {
   .text-box a:hover,
   .map-box--aside .item .on-map:hover,
@@ -8796,6 +8810,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .article-page--sidebar .projects-item--preview .info,
   .projects-slider .projects-item--preview .info {
     font-size: 3vw;
+  }
+
+  .bg-head--text {
+    padding: 40px 20px;
   }
 
   .pagination a,
@@ -9554,6 +9572,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .projects-filters {
     margin-bottom: 40px;
+  }
+
+  .bg-head--text {
+    padding: 80px 20px;
   }
 
   .pagination a,

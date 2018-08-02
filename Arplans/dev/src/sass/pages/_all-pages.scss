@@ -12,3 +12,8 @@
 @import "collaboration";
 @import "contact-page";
 @import "search-page";
+
+
+.text-section {
+  margin: 2*$padding_sm 0 2*$padding_md;
+}
