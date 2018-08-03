@@ -146,6 +146,7 @@
   &-main {
     position: relative;
     background-color: $white;
+    z-index: 1;
     &:after {
       content: "";
       position: absolute;
@@ -176,8 +177,8 @@
         width: 200px;
       }
       @include media(screen,600){
-        height: 40px;
-        width: 152px;
+        height: 30px;
+        width: 115px;
       }
       img {
         display: block;
@@ -270,46 +271,250 @@
       }
     }
     &--stats {
-      width: 200px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @include media(hover,1201){
+        width: 200px;
+      }
       @include media(screen,600){
-        display: none;
+
+      }
+      .stats {
+        font-size: 3.5rem;
+        display: flex;
+        align-items: center;
+        @include hover(){
+          color: $link_dark;
+        }
+        @include media(screen,600){
+          position: relative;
+          flex-direction: column;
+          padding: 0 12px;
+          margin-left: 1px;
+          &:after {
+            content: "";
+            left: 100%;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            height: 20px;
+            background-color: #b2b9c1;
+            margin: auto;
+            position: absolute;
+          }
+          &:first-child {
+            &:before {
+              content: "";
+              right: 100%;
+              width: 1px;
+              top: 0;
+              bottom: 0;
+              height: 20px;
+              background-color: #b2b9c1;
+              margin: auto;
+              position: absolute;
+            }
+          }
+        }
       }
       .stats-likes {
-        font-size: 3.5rem;
-        display: flex;
-        align-items: center;
-        @include hover(){
-          color: $link_dark;
-        }
+
       }
       .stats-prods {
-        font-size: 3.5rem;
-        display: flex;
-        align-items: center;
         @include media(hover,1367){margin-left: $padding_md;}
-        @include media(screen,1366){margin-left: $padding_sm;}
-        @include hover(){
-          color: $link_dark;
+        @include breakpoints(601,1366){margin-left: $padding_sm;}
+      }
+      @include media(hover,601){
+        .icon-likes {
+          margin-left: 15px;
+        }
+        .icon-basket {
+          margin-left: 15px;
         }
       }
-      .icon-likes {
-        margin-left: 15px;
+
+    }
+  }
+  &-mobile {
+    @include media(screen,1200){
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.35s;
+      .is-open & {
+        opacity: 1;
+        pointer-events: auto;
       }
-      .icon-basket {
-        margin-left: 15px;
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba($text,0.8);
+      }
+      &--nav {
+        position: absolute;
+        background-color: $white;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(100%);
+        transition: all 0.4s;
+        line-height: 1.2;
+        font-size: 4rem;
+        font-weight: 600;
+        overflow: auto;
+        .is-open & {
+          transform: translateX(0);
+        }
+        @include media(hover,601){
+          padding: $padding_sm 2*$padding_sm;
+          width: 50%;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 100%;
+            bottom: 0;
+            width: 10px;
+            background: rgba($border,0.16);
+            background: -moz-linear-gradient(left, rgba($border,0) 0%, rgba($border,0.16) 100%);
+            background: -webkit-linear-gradient(left, rgba($border,0) 0%,rgba($border,0.16) 100%);
+            background: linear-gradient(to right, rgba($border,0) 0%,rgba($border,0.16) 100%);
+          }
+        }
+        @include media(screen,600){
+          padding: $padding_sm;
+          left: 0;
+        }
+        li {
+          padding: 10px 0;
+          ul {
+            padding-top: 10px;
+          }
+          & > span {
+            text-transform: uppercase;
+          }
+          .show-more {
+            display: flex;
+            align-items: center;
+            .tick {
+              width: 20px;
+              height: 20px;
+              flex-shrink: 0;
+              position: relative;
+              margin-left: 15px;
+              &:after {
+                content: "";
+                position: absolute;
+                width: 9px;
+                height: 9px;
+                border-color: $text_lt;
+                border-width: 2px;
+                border-style: solid solid none none;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                transform: rotate(135deg) translate(-2px,2px);
+                transition: all 0.3s;
+              }
+            }
+          }
+          &.show {
+            .show-more {
+              .tick {
+                &:after {
+                  transform: rotate(315deg) translate(-2px,2px);
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
   &.minimized {
-
     @include media(hover,1201){
       top: -40px;
     }
     .header-main--wrap {
       height: 60px;
+    }
+  }
+
+}
+
+@include media(screen,1200){
+  .burger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    @include media(hover,601){
+      margin-left: 40px;
+    }
+    @include media(screen,600){
+      margin-left: 15px;
+    }
+    span {
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: $text;
+      border-radius: 3px;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+      &:first-child {
+        .is-open & {
+          transform: rotate(45deg);
+        }
+      }
+      &:last-child {
+        .is-open & {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &:before,
+    &:after {
+      content: "";
+      left: 0;
+      right: 0;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      background-color: $text;
+      transition: .25s ease-in-out;
+      border-radius: 3px;
+    }
+    &:before {
+      top: 4px;
+      .is-open & {
+        top: 18px;
+        opacity: 0;
+        transform: scale(0.4);
+      }
+    }
+    &:after {
+      bottom: 4px;
+      .is-open & {
+        bottom: 18px;
+        opacity: 0;
+        transform: scale(0.4);
+      }
     }
   }
 }

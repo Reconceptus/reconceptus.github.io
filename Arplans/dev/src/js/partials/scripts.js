@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     var scrollTop,
         scrollVar = 0,
+        $html = $('html'),
         $header = $('#header'),
         $search = $('#searchForm');
 
@@ -24,6 +25,22 @@ $(document).ready(function () {
             scrollVar = scrollTop;
         }
     }
+
+
+    /*
+     ============= header burger
+    */
+
+    $('.burger').click(function () {
+        if($header.hasClass('is-open')){
+            $header.removeClass('is-open');
+            $html.removeClass('ovh');
+        }
+        else {
+            $header.addClass('is-open')
+            $html.addClass('ovh');
+        }
+    });
 
 
     /*

@@ -1,7 +1,9 @@
 html {
   @include media(hover,1367){font-size: 4.2px;}
   @include media(screen,1366){font-size: 3.7px;}
-  height: 100%;
+  @include media(hover,1201){
+    height: 100%;
+  }
   &.ovh {
     overflow: hidden;
   }
