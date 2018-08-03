@@ -1,6 +1,9 @@
 .sharing {
   display: flex;
   align-items: center;
+  @include media(screen,767){
+    display: none;
+  }
   &.title-end {
     flex-direction: row-reverse;
     li {

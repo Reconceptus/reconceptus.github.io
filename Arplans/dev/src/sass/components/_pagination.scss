@@ -2,6 +2,9 @@
   display: flex;
   align-items: center;
   font-size: 3.5rem;
+  @include media(screen,767){
+    margin-top: 10px;
+  }
   a, span {
     margin-right: 1px;
     display: flex;

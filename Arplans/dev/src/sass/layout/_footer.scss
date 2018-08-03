@@ -8,7 +8,7 @@
     padding: 2*$padding_sm 0;
   }
   @include media(screen,600){
-    padding: $padding_sm 0;
+    padding: $padding_md 0 25px;
   }
   &-top {
     display: flex;
@@ -27,7 +27,8 @@
         align-self: flex-start;
       }
       @include media(screen,767){
-        display: none;
+        margin-top: $padding_md;
+        display: flex;
       }
     }
     &--order {
@@ -62,7 +63,7 @@
           font-size: 5rem;
         }
         @include media(screen,601){
-          margin-bottom: $padding_sm;
+          margin-bottom: $padding_md;
           font-size: 4.5rem;
         }
         a {

@@ -5,12 +5,59 @@
   margin-bottom: $padding_sm;
   &--head {
     align-items: stretch;
-    margin-bottom: 2*$padding_sm;
+    @include media(hover,1601){
+      margin-bottom: 2*$padding_sm;
+    }
+    @include breakpoints(1367,1600){
+      margin-bottom: $padding_sm;
+      .custom-row-col.col-33 {
+        padding-left: 0;
+      }
+    }
+    @include media(screen,1366){
+      margin-bottom: 2*$padding_sm;
+    }
+    @include breakpoints(1201,1366){
+      flex-direction: column;
+      .custom-row-col.col-66,
+      .custom-row-col.col-33 {
+        max-width: none;
+        width: 100%;
+      }
+    }
   }
   &--info {
     display: flex;
     flex-direction: column;
     height: 100%;
+    &.temp {
+      @include media(hover,1601){
+        display: none;
+      }
+      @include breakpoints(1367,1600){
+        margin-bottom: 2*$padding_sm;
+        height: auto;
+        .data {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .info {
+          margin-bottom: 0;
+        }
+      }
+      @include media(screen,1366){
+        display: none;
+      }
+    }
+    &.static {
+      @include breakpoints(1367,1600){
+        .info,
+        .estimate {
+          display: none;
+        }
+      }
+    }
     .main-data {
       display: flex;
       align-items: center;
@@ -20,15 +67,21 @@
       .index {
         background-color: $text;
         color: $white;
-        font-size: 8.5rem;
         height: 80px;
-        padding: 0 2*$padding_sm;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 2*$padding_sm;
         width: 50%;
         white-space: nowrap;
+        @include media(hover,1601){
+          font-size: 8.5rem;
+          padding: 0 2*$padding_sm;
+          margin-right: 2*$padding_sm;
+        }
+        @include media(screen,1600){
+          font-size: 7rem;
+          padding: 0 10px;
+        }
       }
       .price {
         width: 50%;
@@ -36,10 +89,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include media(screen,1600){
+          padding: 0 10px;
+        }
       }
       .current-price {
-        font-size: 8.5rem;
         font-weight: 600;
+        white-space: nowrap;
+        @include media(hover,1601){
+          font-size: 8.5rem;
+        }
+        @include media(screen,1600){
+          font-size: 6rem;
+        }
       }
       .old-price {
         position: relative;
@@ -61,12 +123,23 @@
     .data {
       height: 100%;
       background-color: $bg_blue;
-      padding: $padding_md;
+      @include media(hover,1601){
+        padding: $padding_md;
+      }
+      @include media(screen,1600){
+        padding: $padding_sm;
+      }
       .actions {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2*$padding_sm;
+        @include media(hover,1601){margin-bottom: 2*$padding_sm;}
+        @include media(screen,1600){margin-bottom: $padding_sm;}
+        @include media(screen,1200){
+          max-width: 420px;
+          margin-left: auto;
+          margin-right: auto;
+        }
         .icon-liked {
           flex-shrink: 0;
           margin-left: $padding_md;
@@ -75,13 +148,21 @@
       .feature {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         text-transform: uppercase;
-        font-size: 3.3rem;
         border-top: 1px solid $border;
         border-bottom: 1px solid $border;
-        margin-bottom: $padding_md;
+
         padding: 8px 0;
+        @include media(hover,1601){  font-size: 3.3rem;}
+        @include media(screen,1600){  font-size: 3rem;}
+        @include media(hover,1367){
+          justify-content: space-between;
+          margin-bottom: $padding_md;
+        }
+        @include media(screen,1366){
+          justify-content: center;
+          margin-bottom: $padding_sm;
+        }
         .icon-feature {
           flex-shrink: 0;
           margin-right: 10px;
@@ -93,7 +174,13 @@
       align-items: flex-start;
       color: $text;
       font-size: 4rem;
-      margin-bottom: $padding_md;
+      @include media(hover,1367){
+        margin-bottom: $padding_md;
+      }
+      @include media(screen,1366){
+        justify-content: center;
+        margin-bottom: $padding_sm;
+      }
       .icon-sign {
         flex-shrink: 0;
         margin: 5px 0 0 0;
@@ -105,11 +192,12 @@
         display: flex;
         align-items: stretch;
         text-align: center;
-        width: 100%;
+        @include media(hover,1367){
+          width: 100%;
+        }
       }
       li {
         padding: 0 15px 10px;
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -120,12 +208,18 @@
     }
     .estimate {
       display: flex;
+      @include media(screen,1366){
+        justify-content: center;
+      }
     }
   }
   &--slider {
     width: 100%;
     padding-top: 60%;
     position: relative;
+    @include media(screen,1366){
+      margin-bottom:  $padding_sm;
+    }
   }
   &--reviews {
     position: relative;
@@ -161,7 +255,9 @@
   }
   &--about {
     width: 100%;
-    max-width: 85%;
+    @include media(hover,1025){
+      max-width: 85%;
+    }
     .title {
       font-size: 6.4rem;
       text-transform: uppercase;
@@ -169,15 +265,24 @@
       margin-bottom: $padding_sm;
     }
     .text-box {
-      width: 80%;
-      margin-bottom: 4*$padding_sm;
+      @include media(hover,1025){
+        width: 80%;
+        margin-bottom: 4*$padding_sm;
+      }
+      @include media(screen,1024){
+        margin-bottom: 2*$padding_md;
+      }
       figure {
-        margin-right: -25%;
+        @include media(hover,1025){
+          margin-right: -25%;
+        }
       }
     }
   }
   .catalog-actions {
-    max-width: 85%;
+    @include media(hover,1025){
+      max-width: 85%;
+    }
   }
 }
 

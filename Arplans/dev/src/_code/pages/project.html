@@ -5,10 +5,13 @@
 
         <div class="section project-page">
             <div class="content content--lg">
-                <div class="custom-row">
+                <div class="custom-row filter-row">
                     <div class="custom-row-col col-sidebar">
-
-                        <div class="fixed-scrollbar">
+                        <div class="btn-box">
+                            <button class="btn btn--lt show-modal-filter">показать фильтры</button>
+                        </div>
+                        <div class="fixed-scrollbar modal-filter">
+                            <div class="modal-bg close"></div>
                             <div class="fixing">
                                 <include src="../templates/filters-sidebar-project.html"></include>
                             </div>
@@ -41,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="custom-row-col col-33">
-                                <div class="project-page--info">
+                                <div class="project-page--info static">
                                     <div class="main-data">
                                         <div class="index">K-136</div>
                                         <div class="price">
@@ -89,6 +92,30 @@
                                             <a href="#" class="btn-add"><span>Получить точную смету</span></a>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-page--info temp">
+                            <div class="data">
+                                <div class="info">
+                                    <i class="icon-sign">i</i>
+                                    <ul>
+                                        <li>
+                                            <span class="head">Жилая:</span>
+                                            <span class="text">82 м<sup>2</sup></span>
+                                        </li>
+                                        <li>
+                                            <span class="head">Полезная:</span>
+                                            <span class="text">140 м<sup>2</sup></span>
+                                        </li>
+                                        <li>
+                                            <span class="head">Общая:</span>
+                                            <span class="text">160 м<sup>2</sup></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="estimate">
+                                    <a href="#" class="btn-add"><span>Получить точную смету</span></a>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,10 @@
 .article-page {
-  padding: 2*$padding_sm 0 ;
+  @include media(hover,768){
+    padding: 2*$padding_sm 0 ;
+  }
+  @include media(screen,767){
+    padding: 2*$padding_sm 0 $padding_sm;
+  }
   &--header {
     margin-bottom: 2*$padding_sm;
     @include media(hover,1025){

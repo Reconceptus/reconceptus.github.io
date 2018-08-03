@@ -43,15 +43,28 @@
   display: flex;
 
   @include media(hover,1201){
-    margin: 0 -1*$padding_sm;
+    margin-left: -1*$padding_sm;
+    margin-right: -1*$padding_sm;
   }
   @include media(screen,1200){
     flex-direction: column;
+  }
+  @include breakpoints(1025,1200){
+    .project-page--tabs & {
+      flex-direction: row;
+      margin-left: -1*$padding_sm;
+      margin-right: -1*$padding_sm;
+    }
   }
   &-col {
     width: 100%;
     @include media(hover,1201){
       padding: 0 $padding_sm;
+    }
+    @include breakpoints(1025,1200){
+      .project-page--tabs & {
+        padding: 0 $padding_sm;
+      }
     }
     &.col-elastic {
       @include media(hover,1201){
@@ -72,16 +85,33 @@
       }
     }
     &.col-50 {
-      width: 50%;
-      max-width: 50%;
+      @include media(hover,1201){
+        width: 50%;
+        max-width: 50%;
+      }
+      @include breakpoints(1025,1200){
+        .project-page--tabs & {
+          width: 50%;
+          max-width: 50%;
+        }
+      }
+      @include media(screen,1024){
+        &:last-child {
+          margin-top: $padding_sm;
+        }
+      }
     }
     &.col-66 {
-      width: 66.6667%;
-      max-width: 66.6667%;
+      @include media(hover,1201){
+        width: 66.6667%;
+        max-width: 66.6667%;
+      }
     }
     &.col-33 {
-      width: 33.3333%;
-      max-width: 33.3333%;
+      @include media(hover,1201) {
+        width: 33.3333%;
+        max-width: 33.3333%;
+      }
     }
   }
 }
