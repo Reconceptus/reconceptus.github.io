@@ -22,21 +22,92 @@
   }
   .tabs {
     &-nav {
+      position: relative;
+      .selected {
+        @include media(hover,768){
+          display: none;
+        }
+        @include media(screen,767){
+          font-size: 4rem;
+          padding: 0 40px 0 10px;
+          height: 40px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          color: inherit;
+          border: 1px solid $text;
+          font-weight: 600;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-color: $text;
+            border-width: 2px;
+            border-style: solid solid none none;
+            top: 0;
+            right: 14px;
+            bottom: 0;
+            margin: auto;
+            transform: rotate(135deg) translate(-2px,2px);
+            transition: all 0.3s;
+          }
+        }
+      }
       ul {
         display: flex;
-        align-items: stretch;
-        justify-content: space-between;
+        @include media(hover,768){
+          align-items: stretch;
+          justify-content: space-between;
+        }
+        @include media(screen,767){
+          opacity: 0;
+          pointer-events: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          border: 1px solid $text_lt;
+          left: 0;
+          right: 0;
+          z-index: 2;
+          background-color: $white;
+          margin-top: -10px;
+          transition: all 0.3s;
+        }
+      }
+      &.active {
+        @include media(screen,767){
+          ul {
+            opacity: 1;
+            pointer-events: auto;
+            margin-top: 0;
+          }
+          .selected {
+            &:after {
+              transform: rotate(315deg) translate(-2px,2px);
+            }
+          }
+        }
       }
       li {
         transition: all 0.2s;
         width: 100%;
         color: $border;
         white-space: nowrap;
-        border-width: 1px;
-        border-style: solid none solid solid;
-        border-color: $text_lt $text_lt $text;
-        &:last-child {
-          border-right: 1px solid $text_lt;
+        @include media(hover,768){
+          border-width: 1px;
+          border-style: solid none solid solid;
+          border-color: $text_lt $text_lt $text;
+          &:last-child {
+            border-right: 1px solid $text_lt;
+          }
+        }
+        @include media(screen,767){
+          &:not(:last-child) {
+            border-bottom: 1px solid $text_lt;
+          }
         }
         label {
           width: 100%;
@@ -53,10 +124,15 @@
             padding: 0 $padding_sm;
             height: 60px;
           }
-          @include media(screen,1600){
+          @include breakpoints(768,1600){
             font-size: 3rem;
             padding: 0 10px;
             height: 50px;
+          }
+          @include media(screen,767){
+            font-size: 4rem;
+            padding: 0 40px 0 10px;
+            height: 40px;
           }
         }
       }
@@ -71,7 +147,12 @@
         left: 0;
         opacity: 0;
         pointer-events: none;
-        padding: 2*$padding_sm 0;
+        @include media(hover,601){
+          padding: 2*$padding_sm 0;
+        }
+        @include media(screen,600){
+          padding: $padding_sm 0;
+        }
       }
     }
   }

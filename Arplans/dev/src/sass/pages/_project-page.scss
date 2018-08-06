@@ -67,7 +67,6 @@
       .index {
         background-color: $text;
         color: $white;
-        height: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -81,6 +80,12 @@
         @include media(screen,1600){
           font-size: 7rem;
           padding: 0 10px;
+        }
+        @include media(hover,601){
+          height: 80px;
+        }
+        @include media(screen,600){
+          height: 60px;
         }
       }
       .price {
@@ -197,12 +202,17 @@
         }
       }
       li {
-        padding: 0 15px 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         &:not(:last-child){
           border-right: 1px solid currentColor;
+        }
+        @include media(hover,601){
+          padding: 0 15px 10px;
+        }
+        @include media(screen,600){
+          padding: 0 10px 10px;
         }
       }
     }
@@ -230,9 +240,15 @@
     display: flex;
     align-items: center;
     padding: 0 $padding_sm;
+    @include media(screen,600){
+      flex-wrap: wrap;
+    }
     .icon {
       margin-right: $padding_sm;
       transform: translateY(-30px);
+      @include media(screen,600){
+        margin-bottom: -20px;
+      }
     }
     .text {
       font-family: 'Merriweather';
@@ -247,9 +263,14 @@
       font-weight: 600;
       padding: 8px $padding_md;
       border-radius: 30px;
-      margin-left: 2*$padding_sm;
       @include hover(){
         color: $link_dark;
+      }
+      @include media(hover,601){
+        margin-left: 2*$padding_sm;
+      }
+      @include media(screen,600){
+        margin: $padding_sm auto;
       }
     }
   }

@@ -114,6 +114,24 @@ $(document).ready(function () {
     }
 
     /*
+     ============= tabs dropbox
+    */
+
+    function tabsBox() {
+        var $dropBox = $('.tabs-nav'),
+            $dropInput = $dropBox.find('.selected'),
+            $dropLink = $dropBox.find('label');
+
+        $dropInput.click(function () {
+            $dropBox.toggleClass('active');
+        });
+        $dropLink.click(function () {
+            $dropBox.removeClass('active');
+            $dropInput.text($(this).text())
+        });
+    }
+
+    /*
      ============= close item on the map
     */
 
@@ -530,6 +548,9 @@ $(document).ready(function () {
     }
     if($('.show-more').length > 0){
         showMore();
+    }
+    if($('.tabs-nav').length > 0){
+        tabsBox();
     }
     if($('.map-item').length > 0){
         closeMapItem();

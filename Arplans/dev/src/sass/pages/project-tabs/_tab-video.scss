@@ -2,7 +2,9 @@
   .tab-video {
     .video {
       width: 100%;
-      max-width: 85%;
+      @include media(hover,1201){
+        max-width: 85%;
+      }
     }
     figure {
       position: relative;
