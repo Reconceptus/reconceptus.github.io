@@ -147,6 +147,11 @@
     display: none !important;
   }
 }
+.mobile-show {
+  @include media(hover,768){
+    display: none !important;
+  }
+}
 
 /* vendor */
 

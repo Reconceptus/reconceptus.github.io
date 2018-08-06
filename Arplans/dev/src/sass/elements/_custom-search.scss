@@ -38,6 +38,9 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-left: $padding_sm;
+    @include media(screen,767){
+      display: none;
+    }
     .view {
       padding: 0 $padding_sm;
       border-style: solid;
@@ -88,7 +91,7 @@
     @include breakpoints(1025,1200){
       columns: 3 auto;
     }
-    @include media(screen,1024){
+    @include breakpoints(601,1024){
       columns: 2 auto;
     }
     li {

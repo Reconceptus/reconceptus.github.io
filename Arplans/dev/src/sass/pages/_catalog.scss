@@ -83,8 +83,10 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      .catalog-filters {
-        max-height: calc(100% - 60px);
+      @include media(hover,1201){
+        .catalog-filters {
+          max-height: calc(100% - 60px);
+        }
       }
     }
     &--head {

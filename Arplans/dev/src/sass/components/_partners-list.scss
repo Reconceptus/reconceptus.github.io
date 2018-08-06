@@ -1,5 +1,10 @@
 .partners-list {
-  padding: 2*$padding_sm 0 0;
+  @include media(hover,768){
+    padding: 2*$padding_sm 0 0;
+  }
+  @include media(screen,767){
+    padding: $padding_sm 0 0;
+  }
   ul {
     display: flex;
     align-items: flex-start;
@@ -7,20 +12,57 @@
     margin: 0 -1*$padding_sm $padding_sm;
   }
   li {
-    width: 50%;
     padding: 0 $padding_sm;
-    margin-bottom: 2*$padding_sm;
+    @include media(hover,1367){
+      width: 50%;
+      margin-bottom: 2*$padding_sm;
+    }
+    @include breakpoints(1201,1366){
+      width: 100%;
+      margin-bottom: 2*$padding_sm;
+    }
+    @include breakpoints(1025,1200){
+      width: 50%;
+      margin-bottom: $padding_md;
+    }
+    @include breakpoints(768,1024){
+      width: 100%;
+      margin-bottom: $padding_md;
+    }
+    @include media(screen,767){
+      width: 100%;
+      margin-bottom: $padding_sm;
+    }
   }
   &--item {
     background-color: $white;
     display: flex;
     align-items: flex-start;
     position: relative;
+    transition: all 0.2s;
+    @include media(screen,600){
+      flex-direction: column;
+    }
     .bg {
-      width: 190px;
-      height: 190px;
       @extend %cover;
       flex-shrink: 0;
+      position: relative;
+      @include media(hover,601){
+        width: 190px;
+        height: 190px;
+      }
+      @include media(screen,600){
+        width: 100%;
+        height: 0;
+        padding-top: 60%;
+      }
+      a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
     .partners-list & {
       @include hover(){
@@ -46,17 +88,44 @@
     }
   }
   &--data {
-    padding: $padding_md 2*$padding_sm;
     font-size: 3.5rem;
     line-height: 1.6;
+    @include media(hover,1601){
+      padding: $padding_md 2*$padding_sm;
+    }
+    @include breakpoints(1201,1600){
+      padding: $padding_sm 0 $padding_sm 25px;
+    }
+    @include breakpoints(601,1200){
+      padding: $padding_sm 25px;
+    }
+    @include media(screen,600){
+      padding: $padding_sm 0;
+    }
     .name {
       text-transform: uppercase;
       font-size: 4rem;
       font-weight: 600;
       margin-bottom: 10px;
+      a {
+        color: inherit;
+        @include hover(){
+          color: $link_hover;
+        }
+      }
     }
     .tel {
       margin-top: 10px;
+    }
+    .on-map {
+      margin-top: 10px;
+      color: $link_hover;
+      @include media(hover,768){
+        display: none;
+      }
+      @include media(screen,767){
+        display: inline-block;
+      }
     }
   }
 }
