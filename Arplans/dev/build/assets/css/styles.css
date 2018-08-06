@@ -7634,7 +7634,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 30px;
   width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -7643,7 +7642,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .partner-page--info-table .cell {
-  padding: 10px 20px;
   font-size: 3.5rem;
   line-height: 1.6;
 }
@@ -7656,32 +7654,23 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  width: 180px;
+  text-align: center;
 }
 
 .partner-page--info-table .cell-logo a {
-  max-width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: inline-block;
 }
 
 .partner-page--info-table .cell-logo a img {
   display: block;
-  max-width: 100%;
+}
+
+.partner-page--info-table .cell-contacts {
+  white-space: nowrap;
 }
 
 .partner-page--text {
   margin-bottom: 60px;
-}
-
-.partner-page--text .catalog-actions {
-  max-width: 85%;
 }
 
 .collaborate-head {
@@ -8485,6 +8474,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     max-width: 80%;
   }
 
+  .partner-page--info-table {
+    padding: 30px;
+  }
+
+  .partner-page--text .catalog-actions {
+    max-width: 85%;
+  }
+
   .search-results--list .title:hover {
     color: #2A7EC5;
   }
@@ -8847,10 +8844,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 34px;
   }
 
-  .custom-list {
-    margin-bottom: 20px;
-  }
-
   .custom-list li {
     padding: 20px 0 0;
   }
@@ -8998,6 +8991,23 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .article-page--header .title {
     font-size: 6rem;
+  }
+
+  .partner-page--info-table .cell {
+    padding: 10px 0;
+  }
+
+  .partner-page--info-table .cell-logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .partner-page--info-table .cell-location {
+    width: 100%;
+  }
+
+  .partner-page--info-table .cell-contacts {
+    width: 100%;
   }
 
   .collaborate-head .subtitle {
@@ -9467,6 +9477,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 0 20px;
   }
 
+  .custom-list {
+    margin-bottom: 40px;
+  }
+
   .custom-list li {
     margin: 30px 0;
   }
@@ -9571,6 +9585,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .project-page .tab-video .video {
     max-width: 85%;
+  }
+
+  .partner-page--info-table .cell-logo {
+    width: 180px;
+  }
+
+  .partner-page--info-table .cell-logo a img {
+    max-width: 180px;
+    max-height: 100px;
   }
 
   .collaborate-list--items {
@@ -9838,6 +9861,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 0;
   }
 
+  .custom-list {
+    margin-bottom: 20px;
+  }
+
   .custom-list li {
     margin: 0 0 40px;
   }
@@ -9917,6 +9944,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-right: auto;
   }
 
+  .partner-page--info-table .cell-logo a img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
   .collaborate-list .col-sidebar {
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
@@ -9989,6 +10021,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-table--part {
     padding: 0 10px;
+  }
+
+  .partner-page--info-table .cell-logo {
+    width: 120px;
   }
 }
 
@@ -10218,6 +10254,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .project-page--about .text-box {
     margin-bottom: 60px;
+  }
+
+  .partner-page--info-table {
+    padding: 20px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
@@ -10667,10 +10710,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 40px;
   }
 
-  .custom-list {
-    margin-bottom: 40px;
-  }
-
   .custom-list ul {
     margin: 0 -20px;
   }
@@ -10747,6 +10786,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .project-page--reviews .read {
     margin-left: 40px;
+  }
+
+  .partner-page--info-table .cell {
+    padding: 10px 20px;
   }
 
   .collaborate-head .subtitle {
@@ -11314,6 +11357,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 0 20px;
     max-width: 50%;
     margin-bottom: 20px;
+  }
+
+  .partner-page--info-table .cell-logo {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+
+  .partner-page--info-table .cell-location {
+    width: 70%;
   }
 }
 

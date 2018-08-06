@@ -1,8 +1,8 @@
 .custom-list {
-  @include media(hover,601){
+  @include media(hover,1201){
     margin-bottom: 2*$padding_sm;
   }
-  @include media(screen,600){
+  @include media(screen,1200){
     margin-bottom: $padding_sm;
   }
   ul {
