@@ -1,5 +1,10 @@
 .custom-list {
-  margin-bottom: 2*$padding_sm;
+  @include media(hover,601){
+    margin-bottom: 2*$padding_sm;
+  }
+  @include media(screen,600){
+    margin-bottom: $padding_sm;
+  }
   ul {
     display: flex;
     align-items: flex-start;
@@ -16,7 +21,12 @@
     }
     &.col-3 {
       li {
-        max-width: 33.3333%;
+        @include media(hover,1025){
+          max-width: 33.3333%;
+        }
+        @include breakpoints(601,1024){
+          max-width: 50%;
+        }
       }
     }
   }

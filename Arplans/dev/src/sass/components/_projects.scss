@@ -262,6 +262,7 @@
             }
             @include breakpoints(601,767){
               padding: 0 $padding_sm;
+              font-size: 4rem;
             }
             @include media(screen,600){
               font-size: 3rem;

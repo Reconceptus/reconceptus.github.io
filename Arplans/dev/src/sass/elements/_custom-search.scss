@@ -71,16 +71,36 @@
   z-index: 3;
   transition: all 0.2s;
   font-size: 3.5rem;
+  background-color: $white;
+  box-shadow: 0 4px 10px 5px rgba($border,0.16);
+  @include media(screen,1024){
+    max-height: 500px;
+    overflow: auto;
+  }
   ul {
-    background-color: $white;
-    columns: 5 auto;
-    box-shadow: 0 4px 10px 5px rgba($border,0.16);
     padding: 10px 0;
+    @include media(hover,1367){
+      columns: 5 auto;
+    }
+    @include breakpoints(1201,1366){
+      columns: 4 auto;
+    }
+    @include breakpoints(1025,1200){
+      columns: 3 auto;
+    }
+    @include media(screen,1024){
+      columns: 2 auto;
+    }
     li {
-      padding: 5px 20px;
       -webkit-column-break-inside: avoid;
       page-break-inside: avoid;
       break-inside: avoid;
+      @include media(hover,1367){
+        padding: 5px 20px;
+      }
+      @include media(screen,1366){
+        padding: 5px 10px 5px 20px;
+      }
     }
     a {
       @include hover(){

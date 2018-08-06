@@ -537,13 +537,18 @@ $(document).ready(function () {
             navSpeed: 300,
             responsive: {
                 0: {
-                    items: 1
+                    items: 1,
+                    margin: 20
                 },
-                800: {
-                    items: 2,
+                601: {
+                    items: 4,
                     margin: 30
                 },
-                1200: {
+                1025: {
+                    items: 4,
+                    margin: 40
+                },
+                1201: {
                     items: 4,
                     mouseDrag: false,
                     margin: 60

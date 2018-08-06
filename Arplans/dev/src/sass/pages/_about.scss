@@ -42,12 +42,17 @@
     &:before {
       content: "";
       position: absolute;
-      top: 200px;
       bottom: 0;
       left: 50%;
       width: 100vw;
       transform: translateX(-50vw);
       background-color: $white;
+      @include media(hover,601){
+        top: 200px;
+      }
+      @include media(screen,600){
+        top: 75%;
+      }
     }
     figure {
       position: relative;
@@ -65,24 +70,56 @@
       position: absolute;
       right: -61px;
       bottom: -60px;
-      width: 375px;
       height: auto;
+      @include media(hover,1201){
+        width: 375px;
+      }
+      @include breakpoints(1025,1200){
+        width: 325px;
+      }
+      @include media(screen,1024){
+        width: 250px;
+      }
+      @include media(screen,767){
+        display: none;
+      }
     }
   }
 }
 
 .our-projects {
   position: relative;
-  margin-bottom: 2*$padding_md;
+  @include media(hover,601){
+    margin-bottom: 2*$padding_md;
+  }
+  @include media(screen,600){
+    margin-bottom: 2*$padding_sm;
+  }
   .img-branch {
     position: absolute;
     bottom: 160px;
     left: 0;
-    width: 500px;
     height: auto;
+    @include media(hover,1367){
+      width: 500px;
+    }
+    @include breakpoints(1025,1366){
+      width: 400px;
+    }
+    @include media(screen,1024){
+      width: 270px;
+    }
+    @include media(screen,767){
+      display: none;
+    }
   }
   &-slider {
-    margin-bottom: 2*$padding_md;
+    @include media(hover,601){
+      margin-bottom: 2*$padding_md;
+    }
+    @include media(screen,600){
+      margin-bottom: 2*$padding_sm;
+    }
     .owl-prev,
     .owl-next {
       top: 50%;
@@ -95,43 +132,73 @@
   background-color: $bg_blue_dark;
   overflow: hidden;
   position: relative;
-  margin-bottom: 2*$padding_md;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 25%;
-    background-color: $white;
+  @include media(hover,601){
+    margin-bottom: 2*$padding_md;
+  }
+  @include media(screen,600){
+    margin-bottom: 2*$padding_sm;
+  }
+  @include media(hover,1025){
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 25%;
+      background-color: $white;
+    }
   }
   &-carousel {
-    transform: translateX(-25%);
-    margin-left: -10px;
+    @include media(hover,1025){
+      transform: translateX(-25%);
+      margin-left: -10px;
+    }
+    @include breakpoints(601,1024){
+      transform: translateX(-25%);
+      margin-left: -5px;
+    }
     &--box {
       position: relative;
       z-index: 1;
+      @include media(screen,600){
+        margin: 0 -20px;
+      }
     }
     &--wrap {
-      margin-right: -80%;
+      @include media(hover,1025){
+        margin-right: -80%;
+      }
+      @include breakpoints(601,1024){
+        margin-right: -140%;
+      }
     }
     .owl-stage-outer {
-      padding: 2*$padding_sm 0;
+      @include media(hover,1025){
+        padding: 2*$padding_sm 0;
+      }
+      @include media(screen,1024){
+        padding: 0 0 2*$padding_sm 0;
+      }
     }
     .owl-stage {
       display: flex;
       align-items: stretch;
     }
     .owl-item {
-      &:not(.active){
-        & + .active {
-          .item {
-            transform: translateX(-100%);
-            opacity: 0;
+      @include media(hover,601){
+        &:not(.active){
+          & + .active {
+            .item {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
           }
         }
       }
-
+      @include media(screen,600){
+        padding: 0 20px;
+      }
     }
   }
   .review-header {
@@ -163,7 +230,12 @@
     border-top: 5px solid $link;
     user-select: none;
     box-shadow: 0 5px 15px 5px rgba($border,0.2);
-    padding: $padding_md 2*$padding_sm 2*$padding_md;
+    @include media(hover,1201){
+      padding: $padding_md 2*$padding_sm 2*$padding_md;
+    }
+    @include media(screen,1200){
+      padding: 25px $padding_md 2*$padding_sm;
+    }
   }
   .owl-nav {
     display: none;

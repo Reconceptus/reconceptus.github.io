@@ -4,6 +4,9 @@
   }
   &--wrap {
     display: flex;
+    @include media(screen,767){
+      flex-direction: column;
+    }
   }
 
   &--main {
@@ -11,25 +14,51 @@
   }
 
   &--aside {
-    width: 460px;
     flex-shrink: 0;
     background-color: $bg;
     display: flex;
     flex-direction: column;
+    @include media(hover,1201){
+      width: 460px;
+    }
+    @include breakpoints(1025,1200){
+      width: 360px;
+    }
+    @include breakpoints(768,1024){
+      width: 45%;
+    }
+    @include media(screen,767){
+      width: 100%;
+    }
     .head {
-      height: 60px;
       display: flex;
       align-items: center;
-      padding: 0 $padding_md;
       border-bottom: 1px solid $text_lt;
       font-size: 4rem;
       color: $border;
       font-weight: 600;
       flex-shrink: 0;
+      @include media(hover,768){
+        height: 60px;
+        padding: 0 $padding_md;
+      }
+      @include media(screen,767){
+        padding: 10px $padding_sm;
+      }
     }
     .addresses {
-      padding: $padding_md;
-      height: 500px;
+      @include media(hover,768){
+        height: 500px;
+      }
+      @include media(screen,767){
+        max-height: 500px;
+      }
+      @include media(hover,601){
+        padding: $padding_md;
+      }
+      @include media(screen,600){
+        padding: $padding_sm;
+      }
     }
     .item {
       font-size: 3.5rem;
@@ -57,6 +86,9 @@
     [data-map="settlements-map"]{
       width: 100%;
       height: 780px;
+    }
+    @include media(screen,767){
+      display: none;
     }
   }
 
