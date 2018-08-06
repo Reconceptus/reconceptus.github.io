@@ -6172,6 +6172,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .about--head {
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 .about--wrap {
@@ -6234,7 +6235,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .about--image figure {
   position: relative;
   z-index: 1;
-  margin: 0 -40px;
 }
 
 .about--image figure img {
@@ -6388,14 +6388,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .reviews .temp-nav {
   background-color: #21202E;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 60px;
-  height: 60px;
-  right: 50%;
-  margin: auto 669px auto 0;
-  padding: 0 10px;
   z-index: 2;
   display: -webkit-box;
   display: -webkit-flex;
@@ -6420,13 +6412,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .reviews .temp-nav button {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
-  -webkit-background-size: 30px 30px;
-  background-size: 30px 30px;
+  -webkit-background-size: 25px 25px;
+  background-size: 25px 25px;
   background-position: center center;
 }
 
@@ -10401,6 +10393,21 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 6.4rem;
   }
 
+  .about--image figure {
+    margin: 0 -40px;
+  }
+
+  .reviews .temp-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 60px;
+    height: 60px;
+    right: 50%;
+    margin: auto 669px auto 0;
+    padding: 0 8px;
+  }
+
   .compare-page {
     padding: 40px 0 60px 0;
   }
@@ -10492,6 +10499,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .site-info .title {
     font-size: 4.8rem;
+  }
+
+  .reviews .temp-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
   }
 
   .compare-page {
