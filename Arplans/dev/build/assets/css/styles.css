@@ -4759,7 +4759,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .projects-item--actions .icon-like {
-  color: #657482;
+  color: transparent;
 }
 
 .projects-item--actions .icon-like:not(:last-child) {

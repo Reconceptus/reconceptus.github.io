@@ -444,7 +444,7 @@
         }
       }
       .icon-like {
-        color: $border;
+        color: transparent;
         &:not(:last-child){
           margin-right: $padding_sm;
         }
