@@ -4354,7 +4354,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   align-items: center;
   background-color: #F0F1F3;
   color: #657482;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .projects-filters--item {
@@ -8862,7 +8862,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .projects-filters--item.current {
-    margin: 10px 0;
+    font-size: 4.5rem;
   }
 
   .projects-list.col-4 .projects-item {
@@ -9171,10 +9171,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .blog-list.col-3 .blog-item {
     width: 100%;
-  }
-
-  .projects-filters--item.current {
-    font-size: 7rem;
   }
 
   .part-cost .projects-item--actions .price {
@@ -11489,6 +11485,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .footer-top--order .order {
     margin-right: 30px;
     font-size: 5rem;
+  }
+
+  .projects-filters--item.current {
+    font-size: 7rem;
   }
 
   .article-page--sidebar .projects-item--preview .data .index,

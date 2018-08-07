@@ -6,7 +6,7 @@
     align-items: center;
     background-color: $bg;
     color: $border;
-    padding: $padding_sm 0;
+    padding: $padding_sm;
     @include media(hover,601){
       margin-bottom: 2*$padding_sm;
     }
@@ -32,11 +32,11 @@
         @include media(hover,768){
           font-size: 8.5rem;
         }
-        @include media(screen,767){
+        @include breakpoints(601,767){
           font-size: 7rem;
         }
         @include media(screen,600){
-          margin: 10px 0;
+          font-size: 4.5rem;
         }
       }
     }
