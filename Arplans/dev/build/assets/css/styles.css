@@ -6498,6 +6498,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .services-slider {
@@ -8387,6 +8393,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 10px 60px;
   }
 
+  .service--profit .examples a:hover {
+    color: #2A5279;
+  }
+
+  .service--profit .examples a:hover .icon-pdf {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
   .compare-table--header {
     padding: 5px 0;
   }
@@ -9160,6 +9176,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .projects-filters--item.current {
     font-size: 7rem;
+  }
+
+  .part-cost .projects-item--actions .price {
+    font-size: 5rem;
   }
 
   .projects-item--actions .price-box {
@@ -10285,6 +10305,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .service--head {
     margin-bottom: 20px;
+  }
+
+  .compare-table--header {
+    display: none;
   }
 
   .compare-table--header .part-project {

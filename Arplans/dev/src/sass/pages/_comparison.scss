@@ -38,6 +38,9 @@
       margin-bottom: $padding_sm;
       @include media(hover,1025){padding: 5px 0;}
       @include breakpoints(768,1024){padding: 5px 10px;}
+      @include media(screen,1024){
+        display: none;
+      }
       .part-cost,
       .part-project {
         @include media(hover,768){

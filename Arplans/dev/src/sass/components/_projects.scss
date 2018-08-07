@@ -428,6 +428,9 @@
         .part-cost & {
           margin: 0;
           color: inherit;
+          @include media(screen,767){
+            font-size: 5rem;
+          }
         }
       }
       .price-box {

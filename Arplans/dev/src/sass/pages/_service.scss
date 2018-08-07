@@ -76,10 +76,18 @@
         display: flex;
         align-items: center;
         color: $link_dark;
+        @include hover(){
+          color: $link_dark * 0.8;
+          .icon-pdf {
+            transform: scale(1);
+          }
+        }
       }
       .icon-pdf {
         margin-right: 10px;
         flex-shrink: 0;
+        transform: scale(0.95);
+        transition: all 0.2s;
       }
     }
   }
