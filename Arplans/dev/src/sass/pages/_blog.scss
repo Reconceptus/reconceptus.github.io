@@ -2,9 +2,51 @@
   .blog-hashes {
     margin-bottom: $padding_sm;
   }
+  .show-more-hidden {
+    @include media(hover,768){
+      display: block !important;
+    }
+    @include media(screen,767){
+      display: none;
+    }
+  }
   &--actions {
     margin: 0 0 2*$padding_sm;
     display: flex;
     justify-content: center;
+  }
+}
+
+.blog-hashes {
+  &--title {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 20px;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    position: relative;
+    .show-more {
+      padding-right: 30px;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border-color: $text;
+        border-width: 2px;
+        border-style: solid solid none none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform: rotate(135deg) translate(-2px,2px);
+        transition: all 0.3s;
+        .show & {
+          transform: rotate(315deg) translate(-2px,2px);
+        }
+      }
+    }
   }
 }
