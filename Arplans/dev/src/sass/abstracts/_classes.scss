@@ -153,6 +153,38 @@
   }
 }
 
+@keyframes anim_bg {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.gradient {
+  overflow: hidden;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400%;
+    background: $link;
+    background: -moz-linear-gradient(left, $bg_blue_dark 0%, $link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
+    background: -webkit-linear-gradient(left, $bg_blue_dark 0%,$link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
+    background: linear-gradient(to right, $bg_blue_dark 0%,$link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
+    animation: anim_bg 8s infinite linear;
+  }
+  & > * {
+    //position: relative;
+    //z-index: 1;
+  }
+}
+
 /* vendor */
 
 .mCS-autoHide>.mCustomScrollBox[style*='none']~.mCSB_scrollTools {
