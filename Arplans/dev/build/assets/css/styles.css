@@ -5834,7 +5834,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .video-box--wrap {
   z-index: 3;
-  width: 100%;
 }
 
 .video-box--about {
@@ -7829,10 +7828,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   line-height: 1.6;
 }
 
-.collaborate-list .item {
-  margin-bottom: 60px;
-}
-
 .collaborate-list .item figure {
   width: 100%;
   position: relative;
@@ -9103,6 +9098,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 4.2rem;
   }
 
+  .collaborate-list .item {
+    margin-bottom: 40px;
+  }
+
   .collaborate-list .item figure .num {
     font-size: 32rem;
     line-height: 25rem;
@@ -9284,9 +9283,9 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .video-box--wrap {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
   }
 
   .video-box--about {
@@ -9294,7 +9293,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .video-box--about .actions .btn {
-    width: 100%;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+
+  .video-box--about .actions {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0 20px 20px;
   }
 
   .video-box--about .actions .btn--lt {
@@ -9523,6 +9531,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .article-page {
     padding: 40px 0 20px;
+  }
+
+  .collaborate-list .item-action .btn-add {
+    margin: 3px 0;
   }
 
   .contact-page {
@@ -10583,6 +10595,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    width: 100%;
   }
 
   .video-box--about .actions .btn {
@@ -11036,6 +11049,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .collaborate-head .subtitle {
     font-size: 5.2rem;
+  }
+
+  .collaborate-list .item {
+    margin-bottom: 60px;
   }
 
   .collaborate-list .item .title {
