@@ -5,7 +5,7 @@
 .video-box {
   position: relative;
   @include media(screen,767){
-    height: calc(100vh - 60px);
+    //height: calc(100vh - 60px);
   }
   @include breakpoints(601,767){
     margin-bottom: 2*$padding_sm;

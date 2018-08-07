@@ -9,6 +9,10 @@
       font-size: 3.5rem;
       margin-bottom: 10px;
       line-height: 1.6;
+      a {
+        color: $link_dark;
+        @extend %hover_underline;
+      }
     }
     li {
       padding-left: 2*$padding_sm;
@@ -22,8 +26,15 @@
         line-height: 24px;
       }
     }
-    a {
-      color: $link_dark;
+
+    .estimate {
+      display: flex;
+      @include media(hover,601){
+        margin-top: $padding_md;
+      }
+      @include media(screen,600){
+        margin-top: $padding_sm;
+      }
     }
   }
 }

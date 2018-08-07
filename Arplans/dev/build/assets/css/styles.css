@@ -4964,7 +4964,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .project-gallery .gallery-main {
   width: 100%;
-  margin-right: 5px;
   position: relative;
 }
 
@@ -5056,7 +5055,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .project-gallery .buttons .next {
   top: 50%;
-  right: 20%;
   width: 15px;
   height: 60px;
   margin-top: -30px;
@@ -7070,6 +7068,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   line-height: 1.6;
 }
 
+.project-page .tab-cost p a,
+.project-page .tab-cost li a {
+  color: #346697;
+}
+
 .project-page .tab-cost li {
   padding-left: 40px;
   position: relative;
@@ -7084,8 +7087,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   line-height: 24px;
 }
 
-.project-page .tab-cost a {
-  color: #346697;
+.project-page .tab-cost .estimate {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .project-page .tab-video .video {
@@ -8009,6 +8015,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .text-box a:hover,
   .map-box--aside .item .on-map:hover,
   .add-service--main-text .link a:hover,
+  .project-page .tab-cost p a:hover,
+  .project-page .tab-cost li a:hover,
   .partner-page--info-table .cell a:hover,
   .contact-page--data .dd a:hover,
   .contact-page--partners ul a:hover {
@@ -8796,6 +8804,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-bottom: 20px;
   }
 
+  .custom-search--field input {
+    font-size: 3rem;
+    padding: 0 10px;
+  }
+
   .owl-carousel .owl-prev,
   .owl-carousel .owl-next {
     width: 40px;
@@ -8909,6 +8922,22 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 3vw;
   }
 
+  .project-gallery .gallery-list-wrap {
+    display: none;
+  }
+
+  .project-gallery .buttons .next {
+    right: 0;
+  }
+
+  .project-gallery .buttons .up {
+    display: none;
+  }
+
+  .project-gallery .buttons .down {
+    display: none;
+  }
+
   .bg-head--text {
     padding: 40px 20px;
   }
@@ -8999,7 +9028,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .request-form--submit {
-    padding: 0 20px;
+    padding: 5px 20px 10px;
   }
 
   .about--image:before {
@@ -9045,6 +9074,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-list li {
     margin-bottom: 20px;
+  }
+
+  .project-page .tab-cost .estimate {
+    margin-top: 20px;
   }
 
   .project-page .tabs-sections .tab-section {
@@ -9112,7 +9145,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .contact-page--data .tel {
-    font-size: 5rem;
+    font-size: 7rem;
+  }
+
+  .contact-page--data .tel .icon {
+    display: none;
   }
 
   .contact-page--partners ul {
@@ -9129,7 +9166,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .contact-form--submit {
-    padding: 0 20px;
+    padding: 5px 20px 10px;
   }
 }
 
@@ -9167,6 +9204,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .custom-search--nav {
     display: none;
+  }
+
+  .regions-drop {
+    max-height: 50vh;
+    overflow: auto;
   }
 
   .blog-list.col-3 .blog-item {
@@ -9266,11 +9308,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .partners-list--data .on-map {
     display: inline-block;
-  }
-
-  .video-box {
-    height: -webkit-calc(100vh - 60px);
-    height: calc(100vh - 60px);
   }
 
   .video-box--bg {
@@ -9523,6 +9560,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 4rem;
     padding: 0 40px 0 10px;
     height: 40px;
+  }
+
+  .project-page--info .data .feature {
+    margin-bottom: 20px;
   }
 
   .article-page {
@@ -10086,11 +10127,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin: 0;
   }
 
-  .filter-row .custom-row-col.col-sidebar {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
   .project-page--info .data .actions {
     max-width: 420px;
     margin-left: auto;
@@ -10219,11 +10255,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .footer-main--logo {
     display: none;
-  }
-
-  .regions-drop {
-    max-height: 500px;
-    overflow: auto;
   }
 
   .form-row {
@@ -10430,11 +10461,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     flex-wrap: wrap;
   }
 
+  .contact-page--data .dd {
+    font-size: 5rem;
+  }
+
   .contact-page--data .dt {
-    -webkit-box-ordinal-group: 0;
-    -webkit-order: -1;
-    -ms-flex-order: -1;
-    order: -1;
+    margin-top: 5px;
   }
 
   .contact-page--data .list {
@@ -10474,11 +10506,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
     margin-bottom: 15px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .contact-form--submit .form-row-submit {
@@ -10803,7 +10836,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-bottom: 20px;
   }
 
   .project-page--info .info {
@@ -10942,6 +10974,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 0 20px;
   }
 
+  .project-gallery .gallery-main {
+    margin-right: 5px;
+  }
+
+  .project-gallery .buttons .next {
+    right: 20%;
+  }
+
   .bg-head--text {
     padding: 80px 20px;
   }
@@ -11021,6 +11061,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .service--profit .examples li {
     width: 50%;
+  }
+
+  .project-page .tab-cost .estimate {
+    margin-top: 30px;
   }
 
   .project-page .tabs-sections .tab-section {
@@ -11408,6 +11452,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     min-width: 250px;
   }
 
+  .regions-drop {
+    max-height: 500px;
+    overflow: auto;
+  }
+
   .article-page--sidebar .projects-item--preview .data .index,
   .projects-slider .projects-item--preview .data .index {
     font-size: 1.8vw;
@@ -11552,6 +11601,30 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-table--header {
     font-size: 3rem;
+  }
+
+  .project-page--info .data {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .project-page--info .data-col {
+    max-width: 50%;
+    width: 50%;
+  }
+
+  .project-page--info .data-col:first-child {
+    padding-left: 10px;
+  }
+
+  .project-page--info .data-col:last-child {
+    padding-right: 10px;
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
   }
 }
 
@@ -11698,6 +11771,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .project-page--head .custom-row-col.col-33 {
     max-width: none;
     width: 100%;
+  }
+
+  .project-page--info .data .feature {
+    margin-bottom: 20px;
   }
 
   .contact-page--partners ul {

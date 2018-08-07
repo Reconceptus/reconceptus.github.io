@@ -12,6 +12,10 @@
       border: 1px solid transparent;
       background-color: $white;
       padding: 0 $padding_sm;
+      @include media(screen,600){
+        font-size: 3rem;
+        padding: 0 10px;
+      }
     }
     .submit {
       width: 40px;
@@ -76,8 +80,12 @@
   font-size: 3.5rem;
   background-color: $white;
   box-shadow: 0 4px 10px 5px rgba($border,0.16);
-  @include media(screen,1024){
+  @include breakpoints(768,1024){
     max-height: 500px;
+    overflow: auto;
+  }
+  @include media(screen,767){
+    max-height: 50vh;
     overflow: auto;
   }
   ul {

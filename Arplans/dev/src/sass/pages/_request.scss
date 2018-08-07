@@ -93,7 +93,7 @@
       padding: 0 $padding_md;
     }
     @include media(screen,600){
-      padding: 0 $padding_sm;
+      padding: 5px $padding_sm 10px;
     }
     .form-row-submit {
       @include media(hover,1025){

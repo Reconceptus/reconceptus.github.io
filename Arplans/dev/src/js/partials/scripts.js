@@ -26,7 +26,6 @@ $(document).ready(function () {
         }
     }
 
-
     /*
      ============= header burger
     */
@@ -41,6 +40,34 @@ $(document).ready(function () {
             $html.addClass('ovh');
         }
     });
+
+    /*
+     ============= home video height
+    */
+
+    function videoBoxHeight(){
+        var $videoBox = $('.video-box'),
+            $winHeight, $winWidth;
+
+        function setMinHeight(){
+            $winWidth = $(window).width();
+            $winHeight = $(window).height();
+            $winHeight = $winHeight - 60;
+            if($winWidth <= 767){
+                $videoBox.css('min-height',$winHeight+'px');
+            }
+            else {
+                $videoBox.css('min-height',0);
+            }
+        }
+
+        setMinHeight();
+
+        $(window).resize(function () {
+            setMinHeight();
+        });
+
+    };
 
 
     /*
@@ -547,6 +574,9 @@ $(document).ready(function () {
     }
     if($('input[type="file"]').length > 0){
         inputFile();
+    }
+    if($('.video-box').length > 0){
+        videoBoxHeight();
     }
     if($('.counter').length > 0){
         counter();

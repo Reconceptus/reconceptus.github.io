@@ -134,6 +134,20 @@
       @include media(screen,1600){
         padding: $padding_sm;
       }
+      @include breakpoints(768,1200){
+        display: flex;
+        &-col {
+          max-width: 50%;
+          width: 50%;
+          &:first-child {
+            padding-left: 10px;
+          }
+          &:last-child {
+            padding-right: 10px;
+            order: -1;
+          }
+        }
+      }
       .actions {
         display: flex;
         align-items: center;
@@ -166,6 +180,11 @@
         }
         @include media(screen,1366){
           justify-content: center;
+        }
+        @include breakpoints(1201,1366){
+          margin-bottom: $padding_sm;
+        }
+        @include media(scree, 767){
           margin-bottom: $padding_sm;
         }
         .icon-feature {
