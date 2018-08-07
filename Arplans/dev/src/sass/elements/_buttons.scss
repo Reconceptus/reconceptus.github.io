@@ -18,7 +18,7 @@
   }
   @include media(screen,767){
     height: 40px;
-    padding: 0 25px;
+    padding: 0 20px;
   }
   .arrow {
     width: 30px;
@@ -54,6 +54,36 @@
     text-transform: uppercase;
     @include hover(){
       background-color: $link * 0.95;
+    }
+  }
+  &--sort {
+    background-color: $link;
+    color: $white;
+    text-transform: uppercase;
+    @include hover(){
+      background-color: $link * 0.95;
+    }
+    span {
+      position: relative;
+      //padding-right: 20px;
+      //&:after {
+      //  content: "";
+      //  position: absolute;
+      //  width: 9px;
+      //  height: 9px;
+      //  border-color: $white;
+      //  border-width: 2px;
+      //  border-style: solid solid none none;
+      //  top: 0;
+      //  right: 0;
+      //  bottom: 0;
+      //  margin: auto;
+      //  transform: rotate(135deg) translate(-2px,2px);
+      //  transition: all 0.3s;
+      //  .show & {
+      //    transform: rotate(315deg) translate(-2px,2px);
+      //  }
+      //}
     }
   }
   &--og {
@@ -158,6 +188,26 @@
       }
       @include media(screen,600){
         width: 100%;
+      }
+      & + .btn {
+        @include media(hover,601){
+          margin-left: 20px;
+        }
+        @include media(screen,600){
+          margin-left: 10px;
+        }
+      }
+    }
+    &.multiple {
+      .btn {
+        @include breakpoints(768,1024){
+          min-width: 250px;
+        }
+        @include media(screen,767){
+          min-width: 0;
+          width: 100%;
+          font-size: 3rem;
+        }
       }
     }
   }

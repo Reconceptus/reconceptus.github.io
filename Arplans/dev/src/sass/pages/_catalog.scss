@@ -3,13 +3,19 @@
     background-color: $bg;
     color: $border;
     margin-bottom: $padding_sm;
-    display: flex;
     align-items: center;
+    display: flex;
     @include media(hover,768){
       padding: 5px 0;
+      &.show-more-hidden {
+        display: flex !important;
+      }
     }
     @include media(screen,767){
       padding: 0 10px;
+      &.show-more-hidden {
+        display: none;
+      }
     }
     .filter {
       display: flex;
@@ -154,6 +160,14 @@
           margin-bottom: $padding_sm;
         }
       }
+    }
+  }
+  .btn-box {
+    @include media(hover,768){
+      margin-bottom: 0;
+    }
+    @include media(screen,767){
+      margin-bottom: $padding_sm;
     }
   }
 }
