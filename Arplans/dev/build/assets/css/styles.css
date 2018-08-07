@@ -10068,47 +10068,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .modal-filter {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 4;
-    opacity: 0;
-    pointer-events: none;
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
   }
 
-  .modal-filter.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .modal-filter .modal-bg {
-    background-color: RGBA(33, 32, 46, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  .modal-filter.active .fixing {
+    display: block;
   }
 
   .fixing {
-    width: 90%;
-    max-width: 420px;
-    position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  .catalog-filters {
-    max-height: 75vh;
-    padding: 20px;
+    padding-top: 20px;
+    display: none;
   }
 
   .home-about-menu--item .title {
@@ -10129,6 +10100,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .filter-row .btn-box {
     margin: 0;
+  }
+
+  .filter-row .custom-row-col.col-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .project-page--info .data .actions {
