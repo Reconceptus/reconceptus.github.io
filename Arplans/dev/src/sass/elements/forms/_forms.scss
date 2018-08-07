@@ -79,6 +79,7 @@
     .custom-form & {
       padding: 0.5*$padding_sm 0;
     }
+    .contact-form--submit &,
     .filter-form & {
       padding: 0.5*$padding_sm 0 0;
       @include media(hover,601){

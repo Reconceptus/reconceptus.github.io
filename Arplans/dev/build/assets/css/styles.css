@@ -4184,6 +4184,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   padding: 10px 0;
 }
 
+.contact-form--submit .form-row-element,
 .filter-form .form-row-element {
   padding: 10px 0 0;
 }
@@ -5481,10 +5482,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .custom-list--info .order {
   margin-top: 20px;
-}
-
-.map-box:not(:last-child) {
-  margin-bottom: 60px;
 }
 
 .map-box--wrap {
@@ -7815,10 +7812,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   line-height: 1.3;
 }
 
-.contact-page {
-  margin-bottom: 60px;
-}
-
 .contact-page--wrap {
   padding-top: 40px;
   background: #FF6600;
@@ -7832,12 +7825,9 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .contact-page--data {
   color: #FFF;
-  padding: 0 40px;
-  margin-bottom: 60px;
 }
 
 .contact-page--data .dd {
-  min-height: 60px;
   margin-bottom: 5px;
 }
 
@@ -7861,12 +7851,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   justify-content: space-between;
 }
 
-.contact-page--data .list li:not(:last-child) {
-  margin-right: 20px;
-}
-
 .contact-page--data .tel {
-  font-size: 8.5rem;
   font-weight: 600;
   display: -webkit-box;
   display: -webkit-flex;
@@ -7876,6 +7861,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  white-space: nowrap;
 }
 
 .contact-page--data .tel .icon {
@@ -7886,18 +7872,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   text-transform: uppercase;
 }
 
-.contact-page--data .col-tel .dt {
-  padding-left: 48px;
-}
-
 .contact-page--partners {
   margin-bottom: 60px;
 }
 
 .contact-page--partners ul {
-  -webkit-columns: 8 auto;
-  -moz-columns: 8 auto;
-  columns: 8 auto;
   -webkit-column-gap: 40px;
   -moz-column-gap: 40px;
   column-gap: 40px;
@@ -7905,6 +7884,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .contact-page--partners ul li {
   padding: 5px 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .contact-form {
@@ -7932,19 +7913,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .contact-form--main {
-  padding: 30px 40px 10px;
   position: relative;
   z-index: 1;
 }
 
 .contact-form--submit {
-  padding: 0 40px;
   position: relative;
   border-top: 1px solid #B2B9C1;
-}
-
-.contact-form--submit .form-row-submit {
-  margin-right: -41px;
 }
 
 .search-results--field {
@@ -8482,6 +8457,30 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     max-width: 85%;
   }
 
+  .contact-page--data .dd {
+    min-height: 60px;
+  }
+
+  .contact-page--data .list li:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  .contact-page--data .col-tel .dt {
+    padding-left: 48px;
+  }
+
+  .contact-form--main {
+    padding: 30px 40px 10px;
+  }
+
+  .contact-form--submit {
+    padding: 0 40px;
+  }
+
+  .contact-form--submit .form-row-submit {
+    margin-right: -41px;
+  }
+
   .search-results--list .title:hover {
     color: #2A7EC5;
   }
@@ -8588,6 +8587,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .project-page--info .info ul {
     width: 100%;
+  }
+
+  .contact-page--partners ul {
+    -webkit-columns: 8 auto;
+    -moz-columns: 8 auto;
+    columns: 8 auto;
   }
 }
 
@@ -9022,6 +9027,27 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .collaborate-list .item .title {
     font-size: 5.2rem;
   }
+
+  .contact-page--data .tel {
+    font-size: 5rem;
+  }
+
+  .contact-page--partners ul {
+    -webkit-columns: 2 auto;
+    -moz-columns: 2 auto;
+    columns: 2 auto;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .contact-form--main {
+    padding: 10px 20px;
+  }
+
+  .contact-form--submit {
+    padding: 0 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -9098,6 +9124,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .sharing li {
     margin: 0 10px;
+  }
+
+  .map-box:not(:last-child) {
+    margin-bottom: 40px;
   }
 
   .map-box--wrap {
@@ -9388,6 +9418,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .article-page {
     padding: 40px 0 20px;
   }
+
+  .contact-page {
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
@@ -9625,6 +9659,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .collaborate-list .item-action {
     width: 80%;
+  }
+
+  .contact-page--data {
+    padding: 0 40px;
+    margin-bottom: 60px;
   }
 }
 
@@ -9964,6 +10003,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin: 0 auto;
     text-align: center;
   }
+
+  .contact-page--data {
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -10025,6 +10068,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .partner-page--info-table .cell-logo {
     width: 120px;
+  }
+
+  .contact-page--partners ul {
+    -webkit-columns: 5 auto;
+    -moz-columns: 5 auto;
+    columns: 5 auto;
   }
 }
 
@@ -10262,6 +10311,61 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
+
+  .contact-page--data .dt {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
+  .contact-page--data .list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .contact-page--data .list li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .contact-page--data .list li .dt {
+    margin-bottom: 5px;
+  }
+
+  .contact-page--data .list li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .contact-page--data .col-tel .dt {
+    margin-right: 30px;
+  }
+
+  .contact-page--data .col-tel {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .contact-form--submit .form-row-submit {
+    margin: 10px 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -10308,6 +10412,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .sharing li {
     margin: 0 0 0 20px;
+  }
+
+  .map-box:not(:last-child) {
+    margin-bottom: 60px;
   }
 
   .map-box--aside .head {
@@ -10497,6 +10605,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 81rem;
     line-height: 63rem;
   }
+
+  .contact-page {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (max-width: 1366px) {
@@ -10642,6 +10754,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     max-width: 50%;
   }
 
+  .contact-form--submit .form-row-element:last-child,
   .filter-form .form-row-element:last-child {
     padding-bottom: 10px;
   }
@@ -10798,6 +10911,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .collaborate-list .item .title {
     font-size: 6.4rem;
+  }
+
+  .contact-page--data .tel {
+    font-size: 8.5rem;
   }
 }
 
@@ -11210,6 +11327,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .catalog-header {
     font-size: 3rem;
   }
+
+  .contact-page--partners ul {
+    -webkit-columns: 4 auto;
+    -moz-columns: 4 auto;
+    columns: 4 auto;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 767px) {
@@ -11250,6 +11373,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .collaborate-list .item figure .num {
     font-size: 60rem;
     line-height: 46rem;
+  }
+
+  .contact-page--partners ul {
+    -webkit-columns: 3 auto;
+    -moz-columns: 3 auto;
+    columns: 3 auto;
   }
 }
 
@@ -11367,6 +11496,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .partner-page--info-table .cell-location {
     width: 70%;
   }
+
+  .contact-form--main {
+    padding: 20px 30px;
+  }
+
+  .contact-form--submit {
+    padding: 0 30px;
+  }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1366px) {
@@ -11411,6 +11548,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .project-page--head .custom-row-col.col-33 {
     max-width: none;
     width: 100%;
+  }
+
+  .contact-page--partners ul {
+    -webkit-columns: 6 auto;
+    -moz-columns: 6 auto;
+    columns: 6 auto;
   }
 }
 

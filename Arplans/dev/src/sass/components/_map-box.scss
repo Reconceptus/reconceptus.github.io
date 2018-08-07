@@ -1,6 +1,11 @@
 .map-box {
   &:not(:last-child){
-    margin-bottom: 2*$padding_md;
+    @include media(hover,768){
+      margin-bottom: 2*$padding_md;
+    }
+    @include media(screen,767){
+      margin-bottom: 2*$padding_sm;
+    }
   }
   &--wrap {
     display: flex;
