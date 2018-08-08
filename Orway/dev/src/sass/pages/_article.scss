@@ -6,19 +6,29 @@
       padding-right: 0.66*$padding;
       padding-bottom: 2.5rem;
       &:before {
-        content: "";
-        position: absolute;
-        bottom: 4px;
-        left: 0.5rem;
-        top: 3.5rem;
-        width: 1px;
-        background-color: $border;
+        //content: "";
+        //position: absolute;
+        //bottom: 4px;
+        //left: 0.5rem;
+        //top: 3.5rem;
+        //width: 1px;
+        //background-color: $border;
       }
     }
     @include media(screen,680){
       margin-bottom: 2rem;
     }
-
+  }
+  &--figure {
+    margin-bottom: 2.5rem;
+    @include media(hover,681){
+      padding: 0 0.66*$padding;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
   &--date {
     white-space: nowrap;

@@ -1576,6 +1576,16 @@ svg {
   position: relative;
 }
 
+.single-article--figure {
+  margin-bottom: 2.5rem;
+}
+
+.single-article--figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .single-article--date {
   white-space: nowrap;
   color: #A4A4A4;
@@ -2130,14 +2140,8 @@ svg {
     padding-bottom: 2.5rem;
   }
 
-  .single-article--data:before {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 0.5rem;
-    top: 3.5rem;
-    width: 1px;
-    background-color: #A4A4A4;
+  .single-article--figure {
+    padding: 0 33px;
   }
 
   .single-article--date {
