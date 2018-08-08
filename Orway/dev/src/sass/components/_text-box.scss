@@ -16,6 +16,42 @@
     margin-bottom: 2rem;
     min-height: 1px;
   }
+  ul {
+    margin-bottom: 2rem;
+    li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      padding-left: 20px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0.85rem;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $dark;
+      }
+    }
+  }
+  ol {
+    margin-bottom: 2rem;
+    counter-reset: item;
+    li {
+      position: relative;
+      margin-bottom: 0.5rem;
+      padding-left: 20px;
+      &:before {
+        position: absolute;
+        top: 0.2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        left: 0;
+        content: counter(item, decimal)'.';
+        counter-increment: item;
+      }
+    }
+  }
   img {
     display: block;
     max-width: 100%;
@@ -43,6 +79,9 @@
   h6 {font-size: 1.2rem;}
   strong, b {
     font-weight: 700;
+  }
+  em, i {
+    font-style: italic;
   }
   a {
     color: inherit;

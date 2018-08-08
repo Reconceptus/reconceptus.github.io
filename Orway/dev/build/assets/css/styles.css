@@ -128,8 +128,6 @@ caption,
 cite,
 code,
 dfn,
-em,
-strong,
 th,
 var {
   font-weight: normal;
@@ -1067,6 +1065,49 @@ svg {
   min-height: 1px;
 }
 
+.text-box ul {
+  margin-bottom: 2rem;
+}
+
+.text-box ul li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 20px;
+}
+
+.text-box ul li:before {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #17191F;
+}
+
+.text-box ol {
+  margin-bottom: 2rem;
+  counter-reset: item;
+}
+
+.text-box ol li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 20px;
+}
+
+.text-box ol li:before {
+  position: absolute;
+  top: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  left: 0;
+  content: counter(item, decimal) ".";
+  counter-increment: item;
+}
+
 .text-box img {
   display: block;
   max-width: 100%;
@@ -1123,6 +1164,11 @@ svg {
 .text-box strong,
 .text-box b {
   font-weight: 700;
+}
+
+.text-box em,
+.text-box i {
+  font-style: italic;
 }
 
 .text-box a {
