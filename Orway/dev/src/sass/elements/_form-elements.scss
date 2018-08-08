@@ -1,0 +1,138 @@
+.form--field {
+  .request-form & {
+    margin-bottom: 25px;
+  }
+  .add-comment & {
+    margin-bottom: 15px;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.86rem;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+    .request-form & {
+      color: $white;
+    }
+    .add-comment & {
+      color: $black;
+    }
+  }
+  .input {
+    input,
+    textarea {
+      outline: none;
+      display: block;
+      width: 100%;
+      resize: none;
+      background-color: transparent;
+      border: 1px solid rgba(113,115,120,0.6);
+      font-size: 1rem;
+      padding: 12px 15px;
+      .request-form & {
+        color: $white;
+      }
+      .add-comment & {
+        color: $black;
+      }
+      &:focus {
+        border-color: rgba(113,115,120,1);
+      }
+    }
+  }
+  .submit {
+    text-align: center;
+  }
+  .check {
+    position: relative;
+    margin-bottom: 15px;
+    transition: all 0.2s;
+    .request-form & {
+      color: rgba(255,255,255,0.5);
+    }
+    .add-comment & {
+      color: rgba(0,0,0,0.5);
+    }
+    label {
+      position: relative;
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      &:checked ~ .check-text {
+        .request-form & {
+          color: $white;
+        }
+        .add-comment & {
+          color: $black;
+        }
+        &:before {
+          .request-form & {
+            border-color: $white;
+          }
+          .add-comment & {
+            border-color: $black;
+          }
+        }
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    &-text {
+      position: relative;
+      padding-left: 24px;
+      display: inline-block;
+      &:before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        top: 0;
+        position: absolute;
+        left: 0;
+        .request-form & {
+          border: 1px solid rgba(255,255,255,0.5);
+        }
+        .add-comment & {
+          border: 1px solid rgba(0,0,0,0.5);
+        }
+      }
+      &:after {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-style: none solid solid none;
+        border-width: 1px;
+        top: 2px;
+        position: absolute;
+        left: 5px;
+        transform: rotate(45deg);
+        opacity: 0;
+        .request-form & {
+          border-color: rgba(255,255,255,1);
+        }
+        .add-comment & {
+          border-color: rgba(0,0,0,1);
+        }
+      }
+    }
+    &:hover {
+      @include media(hover,1025){
+        .request-form & {
+          color: $white;
+        }
+        .add-comment & {
+          color: $black;
+        }
+      }
+    }
+  }
+}

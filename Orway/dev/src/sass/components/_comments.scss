@@ -1,0 +1,113 @@
+.comments-section {
+  margin-top: 3rem;
+  @include media(hover,681){
+    padding: 0 0.66*$padding;
+  }
+  .comments {
+    & > .comment {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+    }
+    &-form {
+      display: flex;
+      align-items: stretch;
+      @include media(hover,681){
+        margin: 0 -15px 20px;
+      }
+      @include media(screen,680){
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+      &-col {
+        width: 100%;
+        @include media(hover,681){
+          padding: 0 15px;
+          &.col-60 {
+            max-width: 60%;
+            label {
+              display: flex;
+              height: 100%;
+              flex-direction: column;
+            }
+            .input,
+            .form--field {
+              height: 100%;
+            }
+            textarea {
+              min-height: 100%;
+            }
+          }
+          &.col-40 {
+            max-width: 40%;
+            .form--field:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+  .comment {
+    .comment {
+      padding-left: 60px;
+      padding-top: 30px;
+      position: relative;
+      &:before {
+        content: "";
+        width: 30px;
+        height: 35px;
+        left: 15px;
+        top: 15px;
+        border-style: none none solid solid;
+        border-width: 1px;
+        border-color: #CCC;
+        position: absolute;
+      }
+    }
+    &-head {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-name {
+      color: $text;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    &-date {
+      font-size: 0.86rem;
+      color: #b6b6b6;
+      margin-bottom: 5px;
+    }
+    &-text {
+      margin-top: 15px;
+      color: $text;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    &-reply {
+      font-size: 1rem;
+      text-transform: uppercase;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+  .add-comment {
+    .control-label {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .submit {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}
