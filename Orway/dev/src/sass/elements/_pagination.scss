@@ -1,0 +1,80 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  a {
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    position: relative;
+    margin: 0 5px;
+  }
+  span {
+    font-size: 20px;
+    min-width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+  .page {
+    border: 1px solid $border;
+    border-radius: 50%;
+    color: $black;
+    &.current {
+      border-color: $black;
+      background-color: $black;
+      color: $white;
+    }
+    @include media(hover,1025){
+      &:hover {
+        border-color: $black;
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+  .next,
+  .prev {
+    width: 30px;
+    height: 30px;
+    color: $text;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-color: currentColor;
+      border-width: 2px;
+      border-style: solid solid none none;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    @include media(hover,1025){
+      &:hover {
+        color: $black;
+      }
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  .prev {
+    &:before {
+      transform: rotate(-135deg);
+    }
+  }
+  .next {
+    &:before {
+      transform: rotate(45deg);
+    }
+  }
+}

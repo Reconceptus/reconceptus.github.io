@@ -147,7 +147,6 @@ fieldset {
   border: 0;
 }
 legend {
-  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -159,7 +158,6 @@ textarea {
 }
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
   padding: 0;
 }
 [type="number"]::-webkit-inner-spin-button,

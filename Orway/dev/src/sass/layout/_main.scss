@@ -29,7 +29,6 @@ svg {
 #main {
   position: relative;
   width: 100%;
-  box-sizing: border-box;
   @include media(hover,681){
     padding-top: 105px;
   }
@@ -42,7 +41,6 @@ svg {
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  box-sizing: border-box;
   min-height: 100vh;
   &.flexible {
 

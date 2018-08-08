@@ -1,7 +1,6 @@
 .nav {
   display: flex;
   align-items: center;
-  box-sizing: border-box;
   .header & {
     @include media(screen,1024) {
       position: absolute;

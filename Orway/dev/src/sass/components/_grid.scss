@@ -10,7 +10,6 @@
   width: 100%;
   & > div {
     width: 100%;
-    box-sizing: border-box;
     @include media(hover,681){
       padding: 0 0.8*$padding;
     }

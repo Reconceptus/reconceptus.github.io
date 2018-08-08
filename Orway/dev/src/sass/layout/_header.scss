@@ -93,7 +93,6 @@
     align-items: center;
     justify-content: space-between;
     transition: all 0.2s;
-    box-sizing: border-box;
     .minimized & {
       transition: all 0.35s;
     }
