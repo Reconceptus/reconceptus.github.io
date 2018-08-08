@@ -21,6 +21,20 @@ $(document).ready(function () {
         }
     }
 
+    /*
+    ============= open modal
+   */
+
+    $('.show-modal').click(function (e) {
+        e.preventDefault();
+        var $thisModal = $(this).attr('data-modal');
+        $('.modal[data-modal="'+$thisModal+'"]').addClass('active');
+    });
+
+    $('.modal .close').click(function () {
+        $('.modal').removeClass('active');
+    });
+
 
     /*
      ============= document click events

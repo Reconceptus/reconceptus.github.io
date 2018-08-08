@@ -45,7 +45,7 @@
                             <li><a href="#">about</a></li>
                         </ul>
                         <div class="request">
-                            <button class="btn btn--light" type="button">request</button>
+                            <button class="btn btn--light show-modal" data-modal="request" type="button">request</button>
                         </div>
                     </nav>
                 </div>
@@ -201,13 +201,67 @@
 
 </div>
 
+<div class="modal" data-modal="request">
+    <div class="bg close"></div>
+    <div class="modal-wrap">
+        <span class="close">&times;</span>
+        <div class="content content--xs">
+            <div class="request-form">
+                <h3 class="request-form--title">Request</h3>
+                <form action="#">
+                    <div class="request-form--fieldset">
+                        <div class="request-form--field">
+                            <label>
+                                <div class="label">Message</div>
+                                <div class="input">
+                                    <textarea rows="3" placeholder="Type your message"></textarea>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="request-form--field">
+                            <label>
+                                <div class="label">Contact info (email or phone number)</div>
+                                <div class="input">
+                                    <input type="text">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="request-form--field">
+                            <label>
+                                <div class="label">Name</div>
+                                <div class="input">
+                                    <input type="text">
+                                </div>
+                            </label>
+                        </div>
+                        <div class="request-form--field">
+                            <div class="check">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="check-text">I have read and agree to the Terms&Conditions and Privacy Policy.</span>
+                                </label>
+                            </div>
+                            <div class="check">
+                                <label>
+                                    <input type="checkbox">
+                                    <span class="check-text">I agree to receive latest news via emails.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="request-form--field">
+                            <div class="submit">
+                                <button type="submit" class="btn btn--square-dark">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
-<!--<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
 <script src="assets/js/main.min.js"></script>
 
 
