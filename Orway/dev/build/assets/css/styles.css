@@ -1019,9 +1019,7 @@ svg {
   font-weight: 500;
 }
 
-.pagination a {
-  min-width: 30px;
-  height: 30px;
+.pagination li {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1034,9 +1032,14 @@ svg {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 5px;
   position: relative;
   margin: 0 5px;
+}
+
+.pagination li.current .page {
+  border-color: #000;
+  background-color: #000;
+  color: #FFF;
 }
 
 .pagination span {
@@ -1063,12 +1066,22 @@ svg {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   color: #000;
-}
-
-.pagination .page.current {
-  border-color: #000;
-  background-color: #000;
-  color: #FFF;
+  position: relative;
+  padding: 0 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
 }
 
 .pagination .next,
@@ -1078,8 +1091,15 @@ svg {
   color: #4D4C4C;
 }
 
-.pagination .next:before,
-.pagination .prev:before {
+.pagination .next .page,
+.pagination .prev .page {
+  overflow: hidden;
+  text-indent: 999px;
+  white-space: nowrap;
+}
+
+.pagination .next .page:before,
+.pagination .prev .page:before {
   content: "";
   position: absolute;
   width: 6px;
@@ -1098,13 +1118,15 @@ svg {
   pointer-events: none;
 }
 
-.pagination .prev:before {
+.pagination .prev .page:before {
+  right: 9px;
   -webkit-transform: rotate(-135deg);
   -ms-transform: rotate(-135deg);
   transform: rotate(-135deg);
 }
 
-.pagination .next:before {
+.pagination .next .page:before {
+  left: 9px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -2049,9 +2071,9 @@ svg {
     color: #FFF;
   }
 
-  .pagination .next:hover,
-  .pagination .prev:hover {
-    color: #000;
+  .pagination .next:hover .page,
+  .pagination .prev:hover .page {
+    color: #FFF;
   }
 
   .section {
