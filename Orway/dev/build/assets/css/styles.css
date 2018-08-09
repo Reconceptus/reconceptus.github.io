@@ -1132,6 +1132,18 @@ svg {
   transform: rotate(45deg);
 }
 
+.section--blog {
+  padding-bottom: 40px;
+}
+
+.section--article {
+  margin-bottom: 3rem;
+}
+
+.section--article + .section--blog {
+  padding-top: 30px;
+}
+
 .article--data {
   position: relative;
   padding-left: 33px;
@@ -1371,6 +1383,24 @@ svg {
   border-bottom: 1px solid;
 }
 
+.text-box .iframe {
+  position: relative;
+  padding-top: 60%;
+  margin-bottom: 2rem;
+}
+
+.text-box .iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-box iframe {
+  width: 100%;
+}
+
 .text-box blockquote {
   position: relative;
   padding: 3rem 0;
@@ -1407,6 +1437,7 @@ svg {
 
 .comments-section {
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .comments-section .comments > .comment {
@@ -1829,10 +1860,6 @@ svg {
   flex-flow: row wrap;
 }
 
-.blog--articles.more {
-  margin-bottom: 40px;
-}
-
 .blog--articles.more .grid {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1882,6 +1909,10 @@ svg {
   line-height: 1.5;
 }
 
+.single-article--tag a {
+  color: inherit;
+}
+
 .single-article--title {
   color: #17191F;
   font-weight: 700;
@@ -1910,6 +1941,7 @@ svg {
   -ms-flex-align: center;
   align-items: center;
   padding: 20px 0;
+  margin-bottom: 3rem;
 }
 
 .single-article--actions .prev-page,
@@ -2065,6 +2097,10 @@ svg {
     color: #000;
   }
 
+  .pagination {
+    margin-bottom: 60px;
+  }
+
   .pagination .page:hover {
     border-color: #000;
     background-color: #000;
@@ -2108,10 +2144,6 @@ svg {
     margin-left: 25px;
   }
 
-  .blog--articles:not(.more) {
-    margin-bottom: 100px;
-  }
-
   .blog--articles .grid {
     margin: 0 -40px;
   }
@@ -2140,6 +2172,10 @@ svg {
     font-size: 3.5rem;
   }
 
+  .pagination {
+    margin-bottom: 2rem;
+  }
+
   .section {
     padding-top: 57.5px;
   }
@@ -2154,10 +2190,6 @@ svg {
 
   .blog--tags {
     margin-bottom: 50px;
-  }
-
-  .blog--articles:not(.more) {
-    margin-bottom: 5rem;
   }
 
   .blog--articles .grid {
@@ -2222,6 +2254,10 @@ svg {
     font-size: 2.5rem;
   }
 
+  .pagination {
+    margin-bottom: 1rem;
+  }
+
   .section {
     padding-top: 50px;
   }
@@ -2272,10 +2308,6 @@ svg {
 
   .blog--search {
     width: 100%;
-  }
-
-  .blog--articles:not(.more) {
-    margin-bottom: 3rem;
   }
 
   .single-article--data {

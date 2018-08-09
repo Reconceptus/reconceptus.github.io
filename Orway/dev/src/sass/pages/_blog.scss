@@ -126,17 +126,6 @@
     }
   }
   &--articles {
-    &:not(.more){
-      @include media(hover,1025){
-        margin-bottom: 100px;
-      }
-      @include breakpoints(681,1024){
-        margin-bottom: 5rem;
-      }
-      @include media(screen,680){
-        margin-bottom: 3rem;
-      }
-    }
     .grid {
       position: relative;
       flex-flow: row wrap;
@@ -145,11 +134,9 @@
       }
       @include breakpoints(681,1024){
         margin: 0 -0.65*$padding;
-
       }
     }
     &.more {
-      margin-bottom: 40px;
       .grid {
         display: flex;
         align-items: flex-start;

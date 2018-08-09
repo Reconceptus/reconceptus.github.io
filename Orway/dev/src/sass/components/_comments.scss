@@ -1,5 +1,6 @@
 .comments-section {
   margin-top: 3rem;
+  margin-bottom: 3rem;
   @include media(hover,681){
     padding: 0 0.66*$padding;
   }

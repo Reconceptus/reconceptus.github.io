@@ -59,6 +59,9 @@
     text-transform: uppercase;
     display: block;
     line-height: 1.5;
+    a {
+      color: inherit;
+    }
   }
   &--title {
     color: $dark;
@@ -79,12 +82,12 @@
     }
   }
   &--actions {
-
     border-top: 1px solid $dk_border;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    margin-bottom: 3rem;
     @include media(hover,681){
       margin-left: 0.66*$padding;
       margin-right: 0.66*$padding;
