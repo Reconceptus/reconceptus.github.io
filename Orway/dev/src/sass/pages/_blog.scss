@@ -79,6 +79,9 @@
         line-height: 1;
         padding: 8px 50px 8px 20px;
         color: $dark;
+        .has-text & {
+          padding-right: 70px;
+        }
       }
       .submit {
         position: absolute;
@@ -96,6 +99,29 @@
         height: calc(1rem + 20px);
         color: $dark;
         padding: 3px 10px 3px 3px;
+      }
+      .reset {
+        position: absolute;
+        background: transparent;
+        border: none;
+        right: calc(1rem + 30px);
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        width: 25px;
+        height: 25px;
+        line-height: 22px;
+        font-size: 2.2rem;
+        color: $text;
+        opacity: 0;
+        outline: none;
+        pointer-events: none;
+      }
+      .has-text & {
+        .reset {
+          opacity: 1;
+          pointer-events: auto;
+        }
       }
     }
   }

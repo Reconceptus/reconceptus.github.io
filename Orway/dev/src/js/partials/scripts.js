@@ -22,6 +22,29 @@ $(document).ready(function () {
     }
 
     /*
+    ============= show reset form
+   */
+
+    function showResetForm(){
+        var $thisBox = $('.blog--search'),
+            $thisInput = $thisBox.find('input'),
+            $thisReset = $thisBox.find('.reset');
+
+        $thisInput.keyup(function () {
+            if($thisInput.val().trim() != ''){
+                $thisBox.addClass('has-text')
+            }
+            else{
+                $thisBox.removeClass('has-text')
+            }
+        });
+
+        $thisReset.click(function () {
+            $thisBox.removeClass('has-text');
+        });
+    }
+
+    /*
     ============= open modal
    */
 
@@ -64,7 +87,7 @@ $(document).ready(function () {
     documentClick();
     headerFixed();
 
-    if($('select').length > 0){}
+    if($('.blog--search').length > 0){showResetForm()}
 
     /* --------------------------------- document resize --------------------------------- */
 
