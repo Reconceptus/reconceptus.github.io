@@ -1,0 +1,122 @@
+.custom-search {
+  &--field {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: $border;
+    padding: 10px;
+    input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid transparent;
+      background-color: $white;
+      padding: 0 $padding_sm;
+      @include media(screen,600){
+        font-size: 3rem;
+        padding: 0 10px;
+      }
+    }
+    .submit {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background-color: $link;
+      border: none;
+      color: $white;
+      padding: 10px;
+    }
+  }
+  &--inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &--nav {
+    white-space: nowrap;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: $padding_sm;
+    @include media(screen,767){
+      display: none;
+    }
+    .view {
+      padding: 0 $padding_sm;
+      border-style: solid;
+      border-width: 1px;
+      border-color: $white;
+      height: 30px;
+      color: $white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.region-dropbox {
+  &.active {
+    .regions-drop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+.regions-drop {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  transition: all 0.2s;
+  font-size: 3.5rem;
+  background-color: $white;
+  box-shadow: 0 4px 10px 5px rgba($border,0.16);
+  @include breakpoints(768,1024){
+    max-height: 500px;
+    overflow: auto;
+  }
+  @include media(screen,767){
+    max-height: 50vh;
+    overflow: auto;
+  }
+  ul {
+    padding: 10px 0;
+    @include media(hover,1367){
+      columns: 5 auto;
+    }
+    @include breakpoints(1201,1366){
+      columns: 4 auto;
+    }
+    @include breakpoints(1025,1200){
+      columns: 3 auto;
+    }
+    @include breakpoints(601,1024){
+      columns: 2 auto;
+    }
+    li {
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      @include media(hover,1367){
+        padding: 5px 20px;
+      }
+      @include media(screen,1366){
+        padding: 5px 10px 5px 20px;
+      }
+    }
+    a {
+      @include hover(){
+        font-weight: bold;
+      }
+    }
+  }
+}
