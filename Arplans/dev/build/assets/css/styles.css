@@ -3533,7 +3533,6 @@ svg {
   font-size: 5.2rem;
   text-align: center;
   font-weight: 600;
-  padding: 40px 100px 20px 100px;
 }
 
 .modal-thanks {
@@ -3556,7 +3555,6 @@ svg {
   flex-direction: column;
   line-height: 1.6;
   background-color: #FFF;
-  padding: 30px 100px;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -3585,32 +3583,19 @@ svg {
 
 .modal-box {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   max-width: 600px;
   width: 100%;
   background-color: #FFF;
 }
 
 .modal-box .close {
-  width: 30px;
-  height: 30px;
   position: absolute;
   top: 10px;
   right: 12px;
   color: #657482;
-  font-size: 60px;
   font-weight: 100;
-  line-height: 30px;
   cursor: pointer;
   z-index: 3;
-}
-
-.modal-form--fields {
-  padding: 0 100px 30px;
 }
 
 .modal-form--submit .btn {
@@ -3919,10 +3904,6 @@ svg {
 
 .check label > span {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -8934,6 +8915,36 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 0 10px;
   }
 
+  .modal-title {
+    padding: 40px 20px 20px;
+  }
+
+  .modal-thanks {
+    padding: 30px 20px;
+  }
+
+  .modal-box {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .modal-box .close {
+    width: 25px;
+    height: 25px;
+    font-size: 45px;
+    line-height: 25px;
+  }
+
+  .modal-form--fields {
+    padding: 0 20px 30px;
+  }
+
+  .modal-form--submit {
+    padding: 0 20px;
+  }
+
   .owl-carousel .owl-prev,
   .owl-carousel .owl-next {
     width: 40px;
@@ -10987,6 +10998,33 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .big-header .title {
     height: 100px;
+  }
+
+  .modal-title {
+    padding: 40px 100px 20px 100px;
+  }
+
+  .modal-thanks {
+    padding: 30px 100px;
+  }
+
+  .modal-box {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-box .close {
+    width: 30px;
+    height: 30px;
+    font-size: 60px;
+    line-height: 30px;
+  }
+
+  .modal-form--fields {
+    padding: 0 100px 30px;
   }
 
   .owl-carousel .owl-prev,

@@ -24,7 +24,12 @@
     font-size: 5.2rem;
     text-align: center;
     font-weight: 600;
-    padding: 2*$padding_sm 100px $padding_sm 100px;
+    @include media(hover,601){
+      padding: 2*$padding_sm 100px $padding_sm 100px;
+    }
+    @include media(screen,600){
+      padding: 2*$padding_sm $padding_sm $padding_sm;
+    }
   }
   &-thanks {
     opacity: 0;
@@ -39,12 +44,17 @@
     flex-direction: column;
     line-height: 1.6;
     background-color: $white;
-    padding: $padding_md 100px;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 4rem;
     transition: all 0.2s;
+    @include media(hover,601){
+      padding: $padding_md 100px;
+    }
+    @include media(screen,600){
+      padding: $padding_md $padding_sm;
+    }
     &--title {
       font-size: 6.4rem;
       font-weight: 600;
@@ -57,31 +67,56 @@
   }
   &-box {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
     max-width: 600px;
     width: 100%;
     background-color: $white;
+    @include media(hover,601){
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    @include media(screen,600){
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
     .close {
-      width: 30px;
-      height: 30px;
       position: absolute;
       top: 10px;
       right: 12px;
       color: $border;
-      font-size: 60px;
       font-weight: 100;
-      line-height: 30px;
       cursor: pointer;
       z-index: 3;
+      @include media(hover,601){
+        width: 30px;
+        height: 30px;
+        font-size: 60px;
+        line-height: 30px;
+      }
+      @include media(screen,600){
+        width: 25px;
+        height: 25px;
+        font-size: 45px;
+        line-height: 25px;
+      }
     }
   }
   &-form {
     &--fields {
-      padding: 0 100px $padding_md;
+
+      @include media(hover,601){
+        padding: 0 100px $padding_md;
+      }
+      @include media(screen,600){
+        padding: 0 $padding_sm $padding_md;
+      }
     }
     &--submit {
+      @include media(screen,600){
+        padding: 0 $padding_sm;
+      }
       .btn {
         width: 100%;
       }
