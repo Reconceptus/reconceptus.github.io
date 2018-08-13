@@ -124,6 +124,21 @@ $(document).ready(function () {
     }
 
     /*
+     ============= modals open/close
+    */
+
+    $('.show-modal').click(function (e) {
+        e.preventDefault();
+        var $thisData = $(this).attr('data-modal');
+        $('.modal[data-modal="'+$thisData+'"]').addClass('active')
+    });
+
+    $('.modal .close').click(function (e) {
+        e.preventDefault();
+        $('.modal').removeClass('active successful');
+    });
+
+    /*
      ============= show region dropbox
     */
 

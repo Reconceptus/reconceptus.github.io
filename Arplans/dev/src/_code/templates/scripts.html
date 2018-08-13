@@ -1,3 +1,4 @@
+<include src="../templates/modal-consultation.html"></include>
 
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
@@ -6,3 +7,35 @@
 <script type="text/javascript" src="assets/js/bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="assets/js/main.min.js"></script>
+
+<script>
+
+    $('[data-modal="consultation"] form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            name: {required: true},
+            message: {required: true}
+        },
+        messages: {
+            name: {required: ""},
+            message: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+            $('[data-modal="consultation"]').addClass('successful');
+            // if (form.valid()){
+            //     form.submit();
+            // }
+            return false;
+        }
+    })
+
+</script>

@@ -1,14 +1,6 @@
 .request {
 
-  @include media(hover,1025){
-    margin-bottom: 3*$padding_md;
-  }
-  @include breakpoints(601,1024){
-    margin-bottom: 2*$padding_md;
-  }
-  @include media(screen,600){
-    margin-bottom: 2*$padding_sm;
-  }
+
   &--wrap {
     padding-top: 2*$padding_sm;
     .title {
@@ -105,6 +97,15 @@
   }
   .filter-form {
     position: relative;
+    @include media(hover,1025){
+      padding-bottom: 3*$padding_md;
+    }
+    @include breakpoints(601,1024){
+      padding-bottom: 2*$padding_md;
+    }
+    @include media(screen,600){
+      padding-bottom: 2*$padding_sm;
+    }
     &:before {
       content: "";
       position: absolute;
