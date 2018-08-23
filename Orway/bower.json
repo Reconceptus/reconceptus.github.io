@@ -7,11 +7,19 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "jquery": "latest"
+    "jquery": "latest",
+    "imagesloaded": "^4.1.4",
+    "jquery-mousewheel": "^3.1.13"
   },
   "preen": {
     "jquery": [
       "dist/*.js"
+    ],
+    "imagesloaded": [
+      "*.js"
+    ],
+    "jquery-mousewheel": [
+      "*.js"
     ]
   }
 }

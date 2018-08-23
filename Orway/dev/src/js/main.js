@@ -13,5 +13,8 @@
 // jquery grid
 //= vendor/jquery.grid.js
 
+// jquery slider
+//= vendor/jquery.slides.js
+
 // scripts
 //= partials/scripts.js

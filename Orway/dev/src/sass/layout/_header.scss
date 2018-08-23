@@ -6,6 +6,9 @@
   right: 0;
   z-index: 40;
   transition: all 0.2s;
+  &.no-bg {
+    background-color: transparent;
+  }
   .logo {
     width: 154px;
     height: 35px;

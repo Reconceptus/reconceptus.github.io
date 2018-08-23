@@ -1,0 +1,128 @@
+<include src="../templates/head.html" title="Orway"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-for-landing.html"></include>
+
+        <div class="loader show">
+            <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                <g fill="none" fill-rule="evenodd" stroke-width="2">
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r"
+                                 begin="0s" dur="2.2s"
+                                 values="1; 20"
+                                 calcMode="spline"
+                                 keyTimes="0; 1"
+                                 keySplines="0.165, 0.84, 0.44, 1"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity"
+                                 begin="0s" dur="2.2s"
+                                 values="1; 0"
+                                 calcMode="spline"
+                                 keyTimes="0; 1"
+                                 keySplines="0.3, 0.61, 0.355, 1"
+                                 repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r"
+                                 begin="-1.1s" dur="2.2s"
+                                 values="1; 20"
+                                 calcMode="spline"
+                                 keyTimes="0; 1"
+                                 keySplines="0.165, 0.84, 0.44, 1"
+                                 repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity"
+                                 begin="-1.1" dur="2.2s"
+                                 values="1; 0"
+                                 calcMode="spline"
+                                 keyTimes="0; 1"
+                                 keySplines="0.3, 0.61, 0.355, 1"
+                                 repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </svg>
+        </div>
+
+        <div id="main" class="main">
+
+            <div class="landing">
+                <div class="elements">
+                    <div class="el current" data-elements="1">
+                        <div class="switch-box">
+                            <div class="light"></div>
+                            <div class="switcher">
+                                <img src="assets/images/landing/switcher.png" alt="switcher">
+                            </div>
+                            <div class="finger">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.05 131.19">
+                                    <path id="finger" d="M68.93,131.15q-5.47-14.84-12.41-41.1A78.8,78.8,0,0,0,30.1,93.82c-1.76.57-2.47-.51-.48-1.42,7.07-3.22,15.83-5.2,25.83-7.14l-.75-3.79Q39,80,29.9,82.75c-1.34.25-1.53-.6-.32-1.2,5.74-2.8,14.37-4.22,24.3-5.09a161.56,161.56,0,0,0-1.74-18.21Q49.64,40,47.42,30.54c-.8-2.61-1.37-1.76-1.38.32C46,50.14,32.51,57.84,22.6,44c-4.68-6.52-6.28-18.52-5.66-35.38.79-2.53,1.27-3.93,1.34-4Q28.73-3.66,39.64,3.28q5.27,18.06,5.64,23c-3.33,29-34,18.31-30.52-16.1C-4.91,16.47-.63,81.43,4.1,101.21c1,9.22,1.52,14.43,1.51,21.45" fill="none" stroke="#fff" stroke-width=".24" stroke-miterlimit="22.926"/>
+                                </svg>
+                            </div>
+                            <div class="key">
+                                <img src="assets/svg/landing/key.svg" alt="key">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="slide current" data-slide="1">
+                    <div class="slide-left"></div>
+                    <div class="slide-right">
+                        <div class="head">
+                            <h1 class="title">
+                                <span class="part1">RFA-Technology</span>
+                                <span class="part2">Absolute human</span>
+                                <span class="part3">Identification</span>
+                            </h1>
+                            <div class="subtitle">The world's first and the only biometric technology that can <br>COMPLETELY eliminate passwords.</div>
+                        </div>
+                    </div>
+                    <div class="word">identification</div>
+                </section>
+                <section class="slide" data-slide="2">
+                    <div class="slide-left"></div>
+                    <div class="slide-right">
+                        <div class="head">
+                            <h1 class="title">
+                                <span class="part1">RFA-Technology</span>
+                                <span class="part2">Absolute human</span>
+                                <span class="part3">Identification</span>
+                            </h1>
+                            <div class="subtitle">The world's first and the only biometric technology that can <br>COMPLETELY eliminate passwords.</div>
+                        </div>
+                    </div>
+                    <div class="word">identification</div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <!--<include src="../templates/footer.html"></include>-->
+
+    </div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<script type="text/javascript" src="assets/js/bower/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+<!--script-->
+
+<script>
+
+    $('.landing').imagesLoaded( function() {
+        $('.loader').removeClass('show');
+        $('.landing').addClass('begin');
+        setTimeout(function () {
+            // $('[data-elements="1"]').addClass('current');
+            // $('[data-slide="1"]').addClass('current');
+            $('.landing').startSliding('.article');
+        },3500);
+
+    });
+
+</script>
+
+</body>
+</html>
