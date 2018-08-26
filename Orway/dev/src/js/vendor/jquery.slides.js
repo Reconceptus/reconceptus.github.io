@@ -8,6 +8,7 @@
 (function( $ ){
 
     var $landingBox,
+        $slidesCount,
         $canSlide = true;
 
     function slidePage(n,delta){
@@ -15,26 +16,46 @@
         var cur, next;
         cur = parseInt(n);
 
+        function deformate() {
+            $('.slide').removeClass('current');
+            $('.slide[data-slide='+next+']', $landingBox).addClass('current');
+
+            $landingBox.attr('data-current',next);
+
+            setTimeout(function () {
+                $canSlide = true;
+            },1000);
+        }
+
         if(cur == 1){
             if(delta == '-1'){
+                $canSlide = false;
                 next = cur + 1;
+                deformate();
+            }
+        }
+        else if(cur == $slidesCount){
+            if(delta == '1'){
+                $canSlide = false;
+                next = cur - 1;
+                deformate();
             }
         }
         else if(cur > 1){
-            delta === '-1' ? next = ++cur : next = --cur;
+            if(delta == '-1'){
+                $canSlide = false;
+                next = cur + 1;
+                deformate();
+            }
+            else {
+                $canSlide = false;
+                next = cur - 1;
+                deformate();
+            }
         }
 
 
-        $('.el').removeClass('passed');
-        $('.el.current').addClass('passed');
-        $('.el').removeClass('current');
-        $('.el[data-slide='+next+']', $landingBox).addClass('current');
 
-
-        $('.slide').removeClass('passed');
-        $('.slide.current').addClass('passed');
-        $('.slide').removeClass('current');
-        $('.slide[data-slide='+next+']', $landingBox).addClass('current');
 
     }
 
@@ -42,11 +63,10 @@
     $.fn.startSliding = function () {
 
         $landingBox = this;
+        $slidesCount = $landingBox.find('.slide').length;
         $landingBox.on('mousewheel', function(event) {
             if($canSlide === true){
-                $canSlide = false;
-                var cur = $('.el.current').attr('data-elements');
-
+                var cur = $('.slide.current').attr('data-slide');
                 slidePage(cur,event.deltaY);
             }
             // -1 down

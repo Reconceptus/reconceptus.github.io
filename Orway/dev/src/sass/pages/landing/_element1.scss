@@ -1,0 +1,156 @@
+[data-elements="1"]{
+  position: absolute;
+  left: 4.6%;
+  top: 0;
+  width: 50%;
+  bottom: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .switch-box {
+    position: relative;
+    [data-current="2"] & {
+      transition: 1.2s ease 0.2s;
+    }
+    [data-current="3"] &,
+    [data-current="4"] &,
+    [data-current="5"] &,
+    [data-current="6"] &,
+    [data-current="7"] &,
+    [data-current="8"] &,
+    [data-current="9"] &,
+    [data-current="10"] & {
+      transition: 0.2s ease;
+      opacity: 0;
+    }
+  }
+  .switcher {
+    position: relative;
+    transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
+    transform: translate(0,0);
+    opacity: 1;
+    .begin & {
+      transform: translate(-10%,-7%);
+      opacity: 0;
+    }
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 20vw;
+      max-height: 60vh;
+    }
+  }
+  .key {
+    position: absolute;
+    left: -27%;
+    top: -5%;
+    width: 43%;
+    padding-top: 103.2%;
+    transition: opacity 1.4s ease 1.2s, transform 2.7s ease 0.6s;
+    transform: translate(0,0);
+    opacity: 1;
+    .begin & {
+      transform: translate(-19%,-9%);
+      opacity: 0;
+    }
+    [data-current="1"] & {
+      transition: opacity 1.4s ease, transform 1.4s;
+    }
+    [data-current="2"] & {
+      transition: opacity 1.4s ease, transform 1.4s;
+      transform: translate(-19%,-9%);
+      opacity: 0;
+    }
+    [data-current="3"] &,
+    [data-current="4"] &,
+    [data-current="5"] &,
+    [data-current="6"] &,
+    [data-current="7"] &,
+    [data-current="8"] &,
+    [data-current="9"] &,
+    [data-current="10"] & {
+      opacity: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .light {
+    left: 27%;
+    top: 34%;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #b3b4b6;
+    transition: box-shadow 0.5s ease, opacity 1.4s ease 0.5s;
+    will-change: transform;
+    opacity: 1;
+    box-shadow: 0 0 30vh 20vh rgba(179,180,182,0.6);
+    animation: light 10s infinite 0.5s alternate forwards;
+    .begin & {
+      opacity: 0;
+      box-shadow: 0 0 20vh 10vh rgba(179,180,182,0.6);
+      animation: none;
+    }
+  }
+  .finger {
+    position: absolute;
+    left: 44%;
+    top: 11%;
+    width: 76%;
+    padding-top: 141.2%;
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    [data-current="3"] &,
+    [data-current="4"] &,
+    [data-current="5"] &,
+    [data-current="6"] &,
+    [data-current="7"] &,
+    [data-current="8"] &,
+    [data-current="9"] &,
+    [data-current="10"] & {
+      transition: 0.2s ease;
+      opacity: 0;
+    }
+  }
+  #finger {
+    stroke-dasharray: 516.1923;
+    stroke-dashoffset: 0;
+    transition: all 1.8s linear 0.5s;
+    .begin & {
+      stroke-dashoffset: 516.1923;
+    }
+    [data-current="1"] & {
+      transition: all 1.3s linear;
+    }
+    [data-current="2"] & {
+      transition: all 1.3s linear;
+      stroke-dashoffset: 516.1923;
+    }
+    [data-current="3"] & {
+      stroke-dashoffset: 516.1923;
+    }
+  }
+}
+
+@keyframes light {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}

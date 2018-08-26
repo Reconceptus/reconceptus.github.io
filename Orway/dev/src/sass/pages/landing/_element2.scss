@@ -1,0 +1,262 @@
+[data-elements="2"]{
+  position: absolute;
+  left: 12.7%;
+  top: 3%;
+  width: 39%;
+  bottom: 9%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .people-box {
+    width: 80%;
+    position: relative;
+  }
+  .part {
+    width: 100%;
+    padding-top: 92.476%;
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &.absolute {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  .cassette {
+    opacity: 0;
+    .part {
+      //transform: translate(-1%,-3%);
+    }
+    [data-current="2"] & {
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      opacity: 1;
+      transition: opacity 0.2s linear 0.5s;
+    }
+    [data-current="4"] & {
+      opacity: 1;
+    }
+  }
+  .icons {
+    .part {
+      transform-origin: 50% 50%;
+      [data-current="1"] & {
+        opacity: 0;
+      }
+      [data-current="2"] & {
+        transition: opacity 0.2s linear, transform 0.1s ease 0.3s;
+        opacity: 0;
+      }
+      [data-current="3"] & {
+        opacity: 1;
+        transform: rotate(-10deg);
+        transition: transform 0.4s linear 1s, opacity 0.2s linear 0.2s;
+      }
+      [data-current="4"] & {
+
+      }
+      &-icon {
+        opacity: 0;
+        [data-current="3"] & {
+          opacity: 1;
+        }
+      }
+      #icon01_1,
+      #icon01_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.3s;
+        }
+      }
+      #icon02_1,
+      #icon02_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.4s;
+        }
+      }
+      #icon03_1,
+      #icon03_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.5s;
+        }
+      }
+      #icon04_1,
+      #icon04_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.6s;
+        }
+      }
+      #icon05_1,
+      #icon05_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.7s;
+        }
+      }
+      #icon06_1,
+      #icon06_2 {
+        [data-current="3"] & {
+          transition: opacity 0.4s ease 0.8s;
+        }
+      }
+    }
+  }
+  #man_left_body {
+    stroke-dasharray: 209.985;
+    stroke-dashoffset: -209.985;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.5s linear 0.2s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 209.985;
+    }
+  }
+  #man_left_face {
+    stroke-dasharray: 36.757;
+    stroke-dashoffset: 36.757;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.2s linear 0.3s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_left_hand_01 {
+    stroke-dasharray: 209.153;
+    stroke-dashoffset: 209.153;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.5s linear 0.2s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_glass {
+    stroke-dasharray: 27.7802;
+    stroke-dashoffset: 27.7802;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.1s linear 0.6s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_hat {
+    stroke-dasharray: 166.1476;
+    stroke-dashoffset: 166.1476;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.3s linear 0.6s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_hand_01 {
+    stroke-dasharray: 106.7926;
+    stroke-dashoffset: 106.7926;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.3s linear 0.8s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_hand_02 {
+    stroke-dasharray: 96.5929;
+    stroke-dashoffset: 96.5929;
+
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.2s linear 0.9s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_hand_03 {
+    stroke-dasharray: 220.2593;
+    stroke-dashoffset: 220.2593;
+
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.3s linear 0.9s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #man_right_hand_04 {
+    stroke-dasharray: 92.5027;
+    stroke-dashoffset: 92.5027;
+
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.1s linear 1.1s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+  #line01 {
+    stroke-dasharray: 56.845;
+    stroke-dashoffset: 56.845;
+    [data-current="2"] & {
+      opacity: 0;
+      transition: all 0.2s linear;
+    }
+    [data-current="3"] & {
+      transition: stroke-dashoffset 0.4s linear 0.8s;
+      stroke-dashoffset: 0;
+    }
+    [data-current="4"] & {
+      stroke-dashoffset: 0;
+    }
+  }
+}
