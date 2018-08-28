@@ -1,0 +1,86 @@
+[data-elements="3"]{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  .line {
+    height: 0;
+    width: 1px;
+    background-color: rgba($white, 0.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 105vh;
+    [data-current="1"] & {
+      top: 105vh;
+      height: 0;
+      transition: top 0.7s linear, height 0.1s ease 1.3s;
+    }
+    [data-current="2"] & {
+      top: 33vh;
+      height: 100vh;
+      transform: translateY(0);
+      transition: height 0.4s ease 1.1s, transform 1.1s ease;
+    }
+    [data-current="3"] & {
+      height: 100vh;
+      top: 33vh;
+      transform: translateY(-33vh);
+      transition: transform 1.1s ease;
+    }
+    [data-current="4"] & {
+      height: 100vh;
+      top: 33vh;
+      transform: translateY(-33vh);
+    }
+    [data-current="5"] & {
+      height: 100vh;
+      top: 33vh;
+      transform: translateY(-33vh);
+    }
+  }
+  .light {
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 0 80px 7px rgba($white,0.95);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 33vh;
+    margin: -5px auto 0;
+    animation: small_light 2s infinite linear alternate;
+    [data-current="1"] & {
+      top: 105vh;
+      transition: top 0.7s linear, opacity 0.1s ease 1.3s;
+    }
+    [data-current="2"] & {
+      opacity: 1;
+      transition: opacity 1s ease 1s;
+    }
+    [data-current="3"] & {
+      opacity: 1;
+    }
+    [data-current="4"] & {
+      opacity: 1;
+    }
+    [data-current="5"] & {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes small_light {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}

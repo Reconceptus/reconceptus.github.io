@@ -3,7 +3,7 @@
   left: 4.6%;
   top: 0;
   width: 50%;
-  bottom: 4%;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,13 @@
       transition: 1.2s ease 0.2s;
     }
     [data-current="3"] &,
-    [data-current="4"] &,
-    [data-current="5"] &,
+    [data-current="4"] & {
+      transition: 0.2s ease;
+      opacity: 0;
+    }
+    [data-current="5"] & {
+      opacity: 1;
+    }
     [data-current="6"] &,
     [data-current="7"] &,
     [data-current="8"] &,
@@ -98,6 +103,9 @@
       opacity: 0;
       box-shadow: 0 0 20vh 10vh rgba(179,180,182,0.6);
       animation: none;
+    }
+    [data-current="5"] & {
+      opacity: 0;
     }
   }
   .finger {
