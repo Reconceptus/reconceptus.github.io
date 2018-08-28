@@ -196,7 +196,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
 
             setTimeout(function () {
                 $canSlide = true;
-            },1000);
+            },1400);
         }
 
         if(cur == 1){

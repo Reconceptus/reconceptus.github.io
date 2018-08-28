@@ -75,6 +75,10 @@
     [data-current="5"] & {
       transition: all 0.8s ease 0.6s;
     }
+    [data-current="6"] & {
+      transition: transform 1.2s ease;
+      transform: translateY(8vh);
+    }
   }
   .list {
     color: #bebebf;
@@ -84,6 +88,10 @@
     max-width: 70%;
     margin-top: 2vh;
     margin-left: -35px;
+    [data-current="6"] & {
+      transition: transform 1.2s ease;
+      transform: translateY(8vh);
+    }
     li {
       margin: 0.5rem 0;
       position: relative;

@@ -1,0 +1,271 @@
+[data-slide='6'] {
+  transform: translateY(100%);
+  [data-current="6"] & {
+    transform: translateY(0);
+  }
+  [data-current="7"] &,
+  [data-current="8"] &,
+  [data-current="9"] &,
+  [data-current="10"] & {
+    transform: translateY(-100%);
+  }
+  .slide-right {
+    display: flex;
+    align-items: center;
+    padding-left: 75px;
+  }
+  .head {
+    width: 40%;
+    left: 50%;
+    padding-left: 75px;
+    padding-right: 25px;
+    margin-bottom: 3vh;
+    position: absolute;
+    bottom: 80vh;
+  }
+  .title {
+    text-transform: uppercase;
+    color: $white;
+    font-size: 6.2vh;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  .boxes {
+    position: absolute;
+    top: 20vh;
+    left: 50px;
+    right: 50px;
+    bottom: 16vh;
+    background-color: $dark;
+    [data-current="5"] & {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .box1 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 50%;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: solid solid none solid;
+      border-color: RGBA($white,.2);
+      border-radius: 250px 250px 0 0;
+    }
+    .box2 {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      right: 75%;
+      bottom: 0;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: none none solid solid;
+      border-color: RGBA($white,.2);
+      border-radius: 0 0 0 250px;
+    }
+    .box3 {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      left: 75%;
+      bottom: 0;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: none solid solid none;
+      border-color: RGBA($white,.2);
+      border-radius: 0 0 250px 0;
+    }
+    .box4 {
+      position: absolute;
+      right: 50%;
+      top: 100%;
+      left: 25%;
+      height: 100px;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: solid solid none none;
+      border-color: RGBA($white,.2);
+      border-radius: 0 100px 0 0;
+      margin-top: -1px;
+      margin-right: -0.5px;
+    }
+    .box5 {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      right: 25%;
+      height: 100px;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: solid none none solid;
+      border-color: RGBA($white,.2);
+      border-radius: 100px 0 0 0;
+      margin-top: -1px;
+      margin-left: -0.5px;
+    }
+  }
+  .gates {
+    position: absolute;
+    top: 20vh;
+    left: 50px;
+    right: 50px;
+    bottom: 16vh;
+    [data-current="5"] & {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .gate1 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 0;
+      width: calc(50% - 32vh);
+      height: 1vh;
+      left: 32vh;
+      [data-current="6"] & {
+        width: 0;
+        transition: width 0.05s linear 1.4s;
+      }
+    }
+    .gate2 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 0;
+      width: calc(50% - 32vh);
+      height: 1vh;
+      right: 32vh;
+      [data-current="6"] & {
+        width: 0;
+        transition: width 0.05s linear 1.4s;
+      }
+    }
+    .gate3 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 0;
+      height: 32vh;
+      width: 32vh;
+      left: 0;
+      transform-origin: right bottom;
+      [data-current="6"] & {
+        transform: rotate(-90deg);
+        opacity: 0;
+        transition: transform 0.05s linear 1.45s, opacity 0.05s linear 1.46s;
+      }
+    }
+    .gate4 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 0;
+      height: 32vh;
+      width: 32vh;
+      right: 0;
+      transform-origin: left bottom;
+      [data-current="6"] & {
+        transform: rotate(90deg);
+        opacity: 0;
+        transition: transform 0.05s linear 1.45s, opacity 0.05s linear 1.46s;
+      }
+    }
+    .gate5 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 32vh;
+      height: 32vh;
+      width: 32vh;
+      left: 0;
+      transform-origin: right top;
+      [data-current="6"] & {
+        transform: rotate(-90deg);
+        opacity: 0;
+        transition: transform 0.05s linear 1.5s, opacity 0.05s linear 1.51s;
+      }
+    }
+    .gate6 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      top: 32vh;
+      height: 32vh;
+      width: 32vh;
+      right: 0;
+      transform-origin: right top;
+      [data-current="6"] & {
+        transform: rotate(90deg);
+        opacity: 0;
+        transition: transform 0.05s linear 1.5s, opacity 0.05s linear 1.51s;
+      }
+    }
+    .gate7 {
+      position: absolute;
+      background-color: rgba($dark,1);
+      bottom: -17vh;
+      margin-bottom: 2px;
+      left: 32vh;
+      right: 32vh;
+      height: 17vh;
+      [data-current="6"] & {
+        height: 0;
+        opacity: 0;
+        transition: height 0.05s linear 1.55s, opacity 0.05s linear 1.51s;
+      }
+    }
+  }
+  .items-box {
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    bottom: 50px;
+    left: 3vw;
+    right: 3vw;
+    display: flex;
+    align-items: center;
+  }
+  .items {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .item {
+      width: 100%;
+      max-width: 33.3333%;
+      padding: 25px 3vw;
+      transform: translateY(30%);
+      [data-current="5"] & {
+        transition: transform 0.1s ease 1.3s;
+        opacity: 0;
+      }
+      [data-current="6"] & {
+        opacity: 1;
+        transform: translateY(0);
+        &:nth-child(1){
+          transition: transform 0.7s ease 0.8s, opacity 0.4s ease 0.7s;
+        }
+        &:nth-child(2){
+          transition: transform 0.7s ease 0.9s, opacity 0.4s ease 0.8s;
+        }
+        &:nth-child(3){
+          transition: transform 0.7s ease 1s, opacity 0.4s ease 0.9s;
+        }
+      }
+      &-title {
+        font-weight: 700;
+        color: $white;
+        font-size: 3.2vh;
+        margin-bottom: 1.6vh;
+      }
+      &-subtitle {
+        color: #bebebf;
+        font-size: 1.1rem;
+        line-height: 1.9;
+        opacity: 0.8;
+      }
+    }
+    img {
+      height: 20vh;
+      width: auto;
+      display: block;
+      margin-bottom: 3vh;
+    }
+  }
+}

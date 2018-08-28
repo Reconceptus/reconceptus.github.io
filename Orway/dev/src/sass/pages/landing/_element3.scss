@@ -41,6 +41,12 @@
       height: 100vh;
       top: 33vh;
       transform: translateY(-33vh);
+      transition: all 0.2s ease-in;
+    }
+    [data-current="6"] & {
+      top: 0;
+      height: 50vh;
+      transition: all 1.4s ease-in;
     }
   }
   .light {
@@ -54,6 +60,7 @@
     left: 0;
     right: 0;
     top: 33vh;
+    z-index: 1;
     margin: -5px auto 0;
     animation: small_light 2s infinite linear alternate;
     [data-current="1"] & {
@@ -72,6 +79,12 @@
     }
     [data-current="5"] & {
       opacity: 1;
+      transition: top 1s ease;
+    }
+    [data-current="6"] & {
+      opacity: 1;
+      top: 20vh;
+      transition: top 1s ease;
     }
   }
 }

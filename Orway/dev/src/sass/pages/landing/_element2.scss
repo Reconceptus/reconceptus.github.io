@@ -7,6 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  [data-current="6"] & {
+    transform: translateY(-100vh);
+    transition: transform 1.2s cubic-bezier(.6,.68,1,.21);
+  }
   .people-box {
     width: 80%;
     position: relative;
@@ -75,6 +79,11 @@
         transform: rotate(20deg);
         transition: transform 0.4s linear 0.9s, opacity 0.2s linear 0.2s;
       }
+      [data-current="6"] & {
+        opacity: 1;
+        transform: rotate(20deg);
+      }
+
       &-icon {
         opacity: 0;
         [data-current="3"] & {
@@ -84,6 +93,9 @@
           opacity: 1;
         }
         [data-current="5"] & {
+          opacity: 1;
+        }
+        [data-current="6"] & {
           opacity: 1;
         }
       }
@@ -187,6 +199,9 @@
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
       }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
+      }
     }
     #keypath2 {
       stroke-dasharray: 66.565;
@@ -194,6 +209,9 @@
       [data-current="5"] & {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
       }
     }
     #keypath3 {
@@ -203,6 +221,9 @@
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
       }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
+      }
     }
     #keypath4 {
       stroke-dasharray: 20.219;
@@ -210,6 +231,9 @@
       [data-current="5"] & {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
       }
     }
     #keypath5 {
@@ -219,6 +243,9 @@
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
       }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
+      }
     }
     #keypath6 {
       stroke-dasharray: 28.155;
@@ -226,6 +253,9 @@
       [data-current="5"] & {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
       }
     }
   }
@@ -239,6 +269,9 @@
     [data-current="5"] & {
       opacity: 1;
       transition: all 0.4s ease 0.6s;
+    }
+    [data-current="6"] & {
+      opacity: 1;
     }
   }
   .right-man {
@@ -343,14 +376,7 @@
       }
     }
 
-    #man_right_fingers {
-      stroke-dasharray: 68.8853;
-      stroke-dashoffset: -68.8853;
-      [data-current="5"] & {
-        stroke-dashoffset: 0;
-        transition: stroke-dashoffset 0.2s linear 0.8s;
-      }
-    }
+
   }
   .left-man {
     #man_left_body {
@@ -368,6 +394,9 @@
         stroke-dashoffset: 0;
       }
       [data-current="5"] & {
+        stroke-dashoffset: 0;
+      }
+      [data-current="6"] & {
         stroke-dashoffset: 0;
       }
     }
@@ -388,6 +417,9 @@
       }
       [data-current="5"] & {
         transition: stroke-dashoffset 0.2s linear 0.3s;
+        stroke-dashoffset: 5;
+      }
+      [data-current="6"] & {
         stroke-dashoffset: 5;
       }
     }
@@ -426,7 +458,7 @@
         transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
       }
     }
-    #man_left_fingers {
+    #man_left_fingers01 {
       stroke-dasharray: 9.252;
       stroke-dashoffset: 9.252;
       [data-current="3"] & {
@@ -434,6 +466,17 @@
       }
       [data-current="4"] & {
         transition: stroke-dashoffset 0.1s linear 0.5s;
+        stroke-dashoffset: 0;
+      }
+    }
+    #man_left_fingers02 {
+      stroke-dasharray: 68.8853;
+      stroke-dashoffset: -68.8853;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.2s linear 0.8s;
+      }
+      [data-current="6"] & {
         stroke-dashoffset: 0;
       }
     }
@@ -447,6 +490,9 @@
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.5s linear 0.4s;
       }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
+      }
     }
     #man_left_hand_04 {
       stroke-dasharray: 211.3337;
@@ -457,6 +503,9 @@
       [data-current="5"] & {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 0.5s linear 0.2s;
+      }
+      [data-current="6"] & {
+        stroke-dashoffset: 0;
       }
     }
   }
@@ -544,6 +593,9 @@
       stroke-dashoffset: 0;
       transition: stroke-dashoffset 0.1s linear 0.7s;
     }
+    [data-current="6"] & {
+      stroke-dashoffset: 0;
+    }
   }
   #line03 {
     stroke-dasharray: 80.455;
@@ -551,6 +603,9 @@
     [data-current="5"] & {
       stroke-dashoffset: 0;
       transition: stroke-dashoffset 0.4s linear 1s;
+    }
+    [data-current="6"] & {
+      stroke-dashoffset: 0;
     }
   }
 }

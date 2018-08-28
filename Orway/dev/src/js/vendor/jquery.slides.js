@@ -24,7 +24,7 @@
 
             setTimeout(function () {
                 $canSlide = true;
-            },1000);
+            },1400);
         }
 
         if(cur == 1){
