@@ -2166,17 +2166,8 @@ svg {
 }
 
 [data-current="3"] [data-elements="1"] .switch-box,
-[data-current="4"] [data-elements="1"] .switch-box {
-  -webkit-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
-  opacity: 0;
-}
-
-[data-current="5"] [data-elements="1"] .switch-box {
-  opacity: 1;
-}
-
+[data-current="4"] [data-elements="1"] .switch-box,
+[data-current="5"] [data-elements="1"] .switch-box,
 [data-current="6"] [data-elements="1"] .switch-box,
 [data-current="7"] [data-elements="1"] .switch-box,
 [data-current="8"] [data-elements="1"] .switch-box,
@@ -2214,6 +2205,58 @@ svg {
   height: auto;
   max-width: 20vw;
   max-height: 60vh;
+}
+
+[data-elements="1"] .switcher-mini {
+  position: absolute;
+  left: 30%;
+  top: 23%;
+  opacity: 0;
+  -webkit-transform: scale(0.66) translate(-140%, -2%);
+  -ms-transform: scale(0.66) translate(-140%, -2%);
+  transform: scale(0.66) translate(-140%, -2%);
+}
+
+[data-elements="1"] .switcher-mini:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #17191F;
+  -webkit-box-shadow: 2vw 0 7vw 4vw #17191F;
+  box-shadow: 2vw 0 7vw 4vw #17191F;
+}
+
+[data-elements="1"] .switcher-mini img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 20vw;
+  max-height: 60vh;
+}
+
+[data-current="4"] [data-elements="1"] .switcher-mini {
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+  -o-transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+[data-current="5"] [data-elements="1"] .switcher-mini {
+  opacity: 0.3;
+  -webkit-transition: opacity 0.9s ease 0.5s, -webkit-transform 0.9s ease 0.5s;
+  transition: opacity 0.9s ease 0.5s, -webkit-transform 0.9s ease 0.5s;
+  -o-transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s;
+  transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s;
+  transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s, -webkit-transform 0.9s ease 0.5s;
+  -webkit-transform: scale(0.66) translate(-135%, 2%);
+  -ms-transform: scale(0.66) translate(-135%, 2%);
+  transform: scale(0.66) translate(-135%, 2%);
 }
 
 [data-elements="1"] .key {
@@ -3076,6 +3119,12 @@ svg {
 [data-elements="2"] .left-man #man_left_hand_03 {
   stroke-dasharray: 196.3367;
   stroke-dashoffset: 196.3367;
+}
+
+[data-current="4"] [data-elements="2"] .left-man #man_left_hand_03 {
+  -webkit-transition: stroke-dashoffset 0.2s linear;
+  -o-transition: stroke-dashoffset 0.2s linear;
+  transition: stroke-dashoffset 0.2s linear;
 }
 
 [data-current="5"] [data-elements="2"] .left-man #man_left_hand_03 {

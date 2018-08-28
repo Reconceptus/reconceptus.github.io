@@ -441,7 +441,7 @@
       stroke-dasharray: 196.3367;
       stroke-dashoffset: 196.3367;
       [data-current="4"] & {
-
+        transition: stroke-dashoffset 0.2s linear;
       }
       [data-current="5"] & {
         stroke-dashoffset: 0;
