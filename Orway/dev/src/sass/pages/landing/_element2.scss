@@ -53,8 +53,9 @@
   .icons {
     .group {
       transform-origin: 50% 50%;
+      opacity: 0;
       [data-current="1"] & {
-        opacity: 0;
+
       }
       [data-current="2"] & {
         transition: opacity 0.2s linear, transform 0.1s ease 0.3s;
@@ -66,7 +67,13 @@
         transition: transform 0.4s linear 1s, opacity 0.2s linear 0.2s;
       }
       [data-current="4"] & {
+        opacity: 1;
         transition: transform 0.2s linear 1.2s;
+      }
+      [data-current="5"] & {
+        opacity: 1;
+        transform: rotate(20deg);
+        transition: transform 0.4s linear 0.9s, opacity 0.2s linear 0.2s;
       }
       &-icon {
         opacity: 0;
@@ -74,6 +81,9 @@
           opacity: 1;
         }
         [data-current="4"] & {
+          opacity: 1;
+        }
+        [data-current="5"] & {
           opacity: 1;
         }
       }
@@ -163,6 +173,72 @@
         transition: stroke-dashoffset 0.3s linear 0.6s;
         stroke-dashoffset: 0;
       }
+    }
+  }
+  .key {
+    [data-current="4"] & {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    #keypath1 {
+      stroke-dasharray: 110.257;
+      stroke-dashoffset: 110.257;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+    #keypath2 {
+      stroke-dasharray: 66.565;
+      stroke-dashoffset: 66.565;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+    #keypath3 {
+      stroke-dasharray: 53.532;
+      stroke-dashoffset: 53.532;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+    #keypath4 {
+      stroke-dasharray: 20.219;
+      stroke-dashoffset: 20.219;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+    #keypath5 {
+      stroke-dasharray: 47.874;
+      stroke-dashoffset: 47.874;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+    #keypath6 {
+      stroke-dasharray: 28.155;
+      stroke-dashoffset: 28.155;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.3s linear 0.7s;
+      }
+    }
+  }
+  .gadget {
+    opacity: 0;
+    transform-origin: center 0;
+    [data-current="4"] & {
+      transition: opacity 0.2s ease, transform 0.1s ease 0.3s;
+      transform: scale(0.3);
+    }
+    [data-current="5"] & {
+      opacity: 1;
+      transition: all 0.4s ease 0.6s;
     }
   }
   .right-man {
@@ -266,6 +342,15 @@
         transition: stroke-dashoffset 0.1s linear 1s;
       }
     }
+
+    #man_right_fingers {
+      stroke-dasharray: 68.8853;
+      stroke-dashoffset: -68.8853;
+      [data-current="5"] & {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 0.2s linear 0.8s;
+      }
+    }
   }
   .left-man {
     #man_left_body {
@@ -319,10 +404,11 @@
       }
       [data-current="4"] & {
         stroke-dashoffset: 0;
+        transition: opacity 0.4s ease;
       }
       [data-current="5"] & {
         opacity: 0;
-        transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
+        transition: opacity 0.2s ease 0.4s, stroke-dashoffset 0.1s linear 1s;
       }
     }
     #man_left_hand_02 {
@@ -337,7 +423,7 @@
       }
       [data-current="5"] & {
         opacity: 0;
-        transition: opacity 0.2s ease 0.2s, stroke-dashoffset 0.1s linear 1s;
+        transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
       }
     }
     #man_left_fingers {
@@ -359,7 +445,7 @@
       }
       [data-current="5"] & {
         stroke-dashoffset: 0;
-        transition: stroke-dashoffset 0.5s linear 0.2s;
+        transition: stroke-dashoffset 0.5s linear 0.4s;
       }
     }
     #man_left_hand_04 {
@@ -370,7 +456,7 @@
       }
       [data-current="5"] & {
         stroke-dashoffset: 0;
-        transition: stroke-dashoffset 0.5s linear 0.4s;
+        transition: stroke-dashoffset 0.5s linear 0.2s;
       }
     }
   }
@@ -449,6 +535,22 @@
     [data-current="4"] & {
       transition: stroke-dashoffset 0.2s linear 1.2s;
       stroke-dashoffset: 16;
+    }
+  }
+  #line02 {
+    stroke-dasharray: 30.347;
+    stroke-dashoffset: -30.347;
+    [data-current="5"] & {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.1s linear 0.7s;
+    }
+  }
+  #line03 {
+    stroke-dasharray: 80.455;
+    stroke-dashoffset: 80.455;
+    [data-current="5"] & {
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.4s linear 1s;
     }
   }
 }

@@ -2220,9 +2220,6 @@ svg {
   -webkit-transform-origin: 50% 50%;
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
-}
-
-[data-current="1"] [data-elements="2"] .icons .group {
   opacity: 0;
 }
 
@@ -2248,11 +2245,24 @@ svg {
 }
 
 [data-current="4"] [data-elements="2"] .icons .group {
+  opacity: 1;
   -webkit-transition: -webkit-transform 0.2s linear 1.2s;
   transition: -webkit-transform 0.2s linear 1.2s;
   -o-transition: transform 0.2s linear 1.2s;
   transition: transform 0.2s linear 1.2s;
   transition: transform 0.2s linear 1.2s, -webkit-transform 0.2s linear 1.2s;
+}
+
+[data-current="5"] [data-elements="2"] .icons .group {
+  opacity: 1;
+  -webkit-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+  -webkit-transition: opacity 0.2s linear 0.2s, -webkit-transform 0.4s linear 0.9s;
+  transition: opacity 0.2s linear 0.2s, -webkit-transform 0.4s linear 0.9s;
+  -o-transition: transform 0.4s linear 0.9s, opacity 0.2s linear 0.2s;
+  transition: transform 0.4s linear 0.9s, opacity 0.2s linear 0.2s;
+  transition: transform 0.4s linear 0.9s, opacity 0.2s linear 0.2s, -webkit-transform 0.4s linear 0.9s;
 }
 
 [data-elements="2"] .icons .group-icon {
@@ -2264,6 +2274,10 @@ svg {
 }
 
 [data-current="4"] [data-elements="2"] .icons .group-icon {
+  opacity: 1;
+}
+
+[data-current="5"] [data-elements="2"] .icons .group-icon {
   opacity: 1;
 }
 
@@ -2379,6 +2393,110 @@ svg {
   -o-transition: stroke-dashoffset 0.3s linear 0.6s;
   transition: stroke-dashoffset 0.3s linear 0.6s;
   stroke-dashoffset: 0;
+}
+
+[data-current="4"] [data-elements="2"] .key {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+[data-elements="2"] .key #keypath1 {
+  stroke-dasharray: 110.257;
+  stroke-dashoffset: 110.257;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath1 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .key #keypath2 {
+  stroke-dasharray: 66.565;
+  stroke-dashoffset: 66.565;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath2 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .key #keypath3 {
+  stroke-dasharray: 53.532;
+  stroke-dashoffset: 53.532;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath3 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .key #keypath4 {
+  stroke-dasharray: 20.219;
+  stroke-dashoffset: 20.219;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath4 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .key #keypath5 {
+  stroke-dasharray: 47.874;
+  stroke-dashoffset: 47.874;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath5 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .key #keypath6 {
+  stroke-dasharray: 28.155;
+  stroke-dashoffset: 28.155;
+}
+
+[data-current="5"] [data-elements="2"] .key #keypath6 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.3s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.3s linear 0.7s;
+  transition: stroke-dashoffset 0.3s linear 0.7s;
+}
+
+[data-elements="2"] .gadget {
+  opacity: 0;
+  -webkit-transform-origin: center 0;
+  -ms-transform-origin: center 0;
+  transform-origin: center 0;
+}
+
+[data-current="4"] [data-elements="2"] .gadget {
+  -webkit-transition: opacity 0.2s ease, -webkit-transform 0.1s ease 0.3s;
+  transition: opacity 0.2s ease, -webkit-transform 0.1s ease 0.3s;
+  -o-transition: opacity 0.2s ease, transform 0.1s ease 0.3s;
+  transition: opacity 0.2s ease, transform 0.1s ease 0.3s;
+  transition: opacity 0.2s ease, transform 0.1s ease 0.3s, -webkit-transform 0.1s ease 0.3s;
+  -webkit-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  transform: scale(0.3);
+}
+
+[data-current="5"] [data-elements="2"] .gadget {
+  opacity: 1;
+  -webkit-transition: all 0.4s ease 0.6s;
+  -o-transition: all 0.4s ease 0.6s;
+  transition: all 0.4s ease 0.6s;
 }
 
 [data-current="3"] [data-elements="2"] .right-man {
@@ -2544,6 +2662,18 @@ svg {
   transition: stroke-dashoffset 0.1s linear 1s;
 }
 
+[data-elements="2"] .right-man #man_right_fingers {
+  stroke-dasharray: 68.8853;
+  stroke-dashoffset: -68.8853;
+}
+
+[data-current="5"] [data-elements="2"] .right-man #man_right_fingers {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.2s linear 0.8s;
+  -o-transition: stroke-dashoffset 0.2s linear 0.8s;
+  transition: stroke-dashoffset 0.2s linear 0.8s;
+}
+
 [data-elements="2"] .left-man #man_left_body {
   stroke-dasharray: 209.985;
   stroke-dashoffset: -209.985;
@@ -2625,13 +2755,16 @@ svg {
 
 [data-current="4"] [data-elements="2"] .left-man #man_left_hand_01 {
   stroke-dashoffset: 0;
+  -webkit-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 [data-current="5"] [data-elements="2"] .left-man #man_left_hand_01 {
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
-  -o-transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
-  transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
+  -webkit-transition: opacity 0.2s ease 0.4s, stroke-dashoffset 0.1s linear 1s;
+  -o-transition: opacity 0.2s ease 0.4s, stroke-dashoffset 0.1s linear 1s;
+  transition: opacity 0.2s ease 0.4s, stroke-dashoffset 0.1s linear 1s;
 }
 
 [data-elements="2"] .left-man #man_left_hand_02 {
@@ -2654,9 +2787,9 @@ svg {
 
 [data-current="5"] [data-elements="2"] .left-man #man_left_hand_02 {
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease 0.2s, stroke-dashoffset 0.1s linear 1s;
-  -o-transition: opacity 0.2s ease 0.2s, stroke-dashoffset 0.1s linear 1s;
-  transition: opacity 0.2s ease 0.2s, stroke-dashoffset 0.1s linear 1s;
+  -webkit-transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
+  -o-transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
+  transition: opacity 0.2s ease, stroke-dashoffset 0.1s linear 1s;
 }
 
 [data-elements="2"] .left-man #man_left_fingers {
@@ -2684,9 +2817,9 @@ svg {
 
 [data-current="5"] [data-elements="2"] .left-man #man_left_hand_03 {
   stroke-dashoffset: 0;
-  -webkit-transition: stroke-dashoffset 0.5s linear 0.2s;
-  -o-transition: stroke-dashoffset 0.5s linear 0.2s;
-  transition: stroke-dashoffset 0.5s linear 0.2s;
+  -webkit-transition: stroke-dashoffset 0.5s linear 0.4s;
+  -o-transition: stroke-dashoffset 0.5s linear 0.4s;
+  transition: stroke-dashoffset 0.5s linear 0.4s;
 }
 
 [data-elements="2"] .left-man #man_left_hand_04 {
@@ -2696,9 +2829,9 @@ svg {
 
 [data-current="5"] [data-elements="2"] .left-man #man_left_hand_04 {
   stroke-dashoffset: 0;
-  -webkit-transition: stroke-dashoffset 0.5s linear 0.4s;
-  -o-transition: stroke-dashoffset 0.5s linear 0.4s;
-  transition: stroke-dashoffset 0.5s linear 0.4s;
+  -webkit-transition: stroke-dashoffset 0.5s linear 0.2s;
+  -o-transition: stroke-dashoffset 0.5s linear 0.2s;
+  transition: stroke-dashoffset 0.5s linear 0.2s;
 }
 
 [data-elements="2"] .sms .text1 {
@@ -2814,6 +2947,30 @@ svg {
   -o-transition: stroke-dashoffset 0.2s linear 1.2s;
   transition: stroke-dashoffset 0.2s linear 1.2s;
   stroke-dashoffset: 16;
+}
+
+[data-elements="2"] #line02 {
+  stroke-dasharray: 30.347;
+  stroke-dashoffset: -30.347;
+}
+
+[data-current="5"] [data-elements="2"] #line02 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.1s linear 0.7s;
+  -o-transition: stroke-dashoffset 0.1s linear 0.7s;
+  transition: stroke-dashoffset 0.1s linear 0.7s;
+}
+
+[data-elements="2"] #line03 {
+  stroke-dasharray: 80.455;
+  stroke-dashoffset: 80.455;
+}
+
+[data-current="5"] [data-elements="2"] #line03 {
+  stroke-dashoffset: 0;
+  -webkit-transition: stroke-dashoffset 0.4s linear 1s;
+  -o-transition: stroke-dashoffset 0.4s linear 1s;
+  transition: stroke-dashoffset 0.4s linear 1s;
 }
 
 @-webkit-keyframes calc_press {
