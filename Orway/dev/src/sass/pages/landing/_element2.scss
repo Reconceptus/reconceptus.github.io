@@ -7,9 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  [data-current="5"] & {
+    transition: transform 1.2s ease-in-out;
+  }
   [data-current="6"] & {
     transform: translateY(-100vh);
-    transition: transform 1.2s cubic-bezier(.6,.68,1,.21);
+    transition: transform 1.2s cubic-bezier(.4,.5,0.7,.21), opacity 0.1s ease 1.4s;
+  }
+  [data-current="7"] & {
+    opacity: 0;
   }
   .people-box {
     width: 80%;

@@ -1,0 +1,106 @@
+[data-slide='8'] {
+  transform: translateY(100%);
+  [data-current="8"] & {
+    transform: translateY(0);
+    transition: transform 1.2s ease-in-out 0.1s;
+  }
+  [data-current="9"] &,
+  [data-current="10"] & {
+    transform: translateY(-100%);
+  }
+  .head {
+    width: 40%;
+    left: 50%;
+    padding-left: 75px;
+    padding-right: 25px;
+    margin-bottom: 3vh;
+    position: absolute;
+    bottom: 80vh;
+  }
+  .title {
+    text-transform: uppercase;
+    color: $white;
+    font-size: 6.2vh;
+    line-height: 1.3;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    transform: translateY(100%);
+    [data-current="7"] & {
+      transition: transform 0.1s ease 1.3s;
+    }
+    [data-current="8"] & {
+      transform: translateY(0);
+      transition: transform 0.8s ease 0.4s;
+    }
+    [data-current="9"] & {
+      transition: transform 0.4s ease 0.4s;
+    }
+  }
+  .items-box {
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    bottom: 50px;
+    left: 3vw;
+    right: 3vw;
+    display: flex;
+    align-items: center;
+
+  }
+  .items {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .item {
+      width: 100%;
+      max-width: 33.3333%;
+      padding: 25px 3vw;
+      transform: translateY(30%);
+      opacity: 0;
+      [data-current="7"] & {
+        &:nth-child(1){
+          transition: transform 0.8s ease, opacity 0.1s ease 1.3s;
+        }
+        &:nth-child(2){
+          transition: transform 0.8s ease 0.1s, opacity 0.1s ease 1.3s;
+        }
+        &:nth-child(3){
+          transition: transform 0.8s ease 0.2s, opacity 0.1s ease 1.3s;
+        }
+      }
+      [data-current="8"] & {
+        opacity: 1;
+        transform: translateY(0);
+        &:nth-child(1){
+          transition: transform 0.7s ease 0.8s, opacity 0.4s ease 0.7s;
+        }
+        &:nth-child(2){
+          transition: transform 0.7s ease 0.9s, opacity 0.4s ease 0.8s;
+        }
+        &:nth-child(3){
+          transition: transform 0.7s ease 1s, opacity 0.4s ease 0.9s;
+        }
+      }
+      &-title {
+        font-weight: 700;
+        color: $white;
+        font-size: 3.2vh;
+        margin-bottom: 1.6vh;
+      }
+      &-subtitle {
+        color: #bebebf;
+        font-size: 1.1rem;
+        line-height: 1.9;
+        opacity: 0.8;
+      }
+    }
+    img {
+      height: 20vh;
+      width: auto;
+      display: block;
+      margin-bottom: 3vh;
+    }
+  }
+}
