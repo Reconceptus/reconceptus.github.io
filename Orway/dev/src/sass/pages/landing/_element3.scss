@@ -57,7 +57,7 @@
       bottom: 0;
       height: 100vh;
       transform: translateY(100vh);
-      transition: transform 1.4s ease-in-out;
+      transition: transform 1.4s ease-in-out, opacity 0.01s ease 1.3s;
     }
     [data-current="9"] & {
       top: auto;
@@ -508,13 +508,14 @@
     .box3 {
       position: absolute;
       left: 50%;
-      right: 0;
+      right: -1px;
       top: 100%;
       height: 20vh;
       border-width: 1px;
       border-style: solid none none solid;
       border-color: rgba($white,.2);
       border-radius: 100px 0 0 0;
+      margin-left: -0.5px;
       .gate3 {
         position: absolute;
         background-color: rgba($dark,1);

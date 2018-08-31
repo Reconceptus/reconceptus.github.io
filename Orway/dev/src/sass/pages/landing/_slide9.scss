@@ -35,6 +35,58 @@
       transition: transform 0.4s ease 0.4s;
     }
   }
+  .brands {
+    position: absolute;
+    top: 20vh;
+    bottom: 10vh;
+    left: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 5vw;
+    .brand {
+      width: 25%;
+      max-width: 25%;
+      padding: 0 25px;
+      display: flex;
+      justify-content: center;
+      transform: translateY(50%);
+      opacity: 0;
+      [data-current="8"] & {
+        transition: all 0.01s ease 1.4s;
+      }
+      [data-current="9"] & {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      img {
+        max-width: 100%;
+        height: 22vh;
+        width: auto;
+      }
+      &:nth-child(1){
+        [data-current="9"] & {
+          transition: all 0.5s ease 0.8s;
+        }
+      }
+      &:nth-child(2){
+        [data-current="9"] & {
+          transition: all 0.5s ease 0.85s;
+        }
+      }
+      &:nth-child(3){
+        [data-current="9"] & {
+          transition: all 0.5s ease 0.9s;
+        }
+      }
+      &:nth-child(4){
+        [data-current="9"] & {
+          transition: all 0.5s ease 0.95s;
+        }
+      }
+    }
+  }
 
 
 }
