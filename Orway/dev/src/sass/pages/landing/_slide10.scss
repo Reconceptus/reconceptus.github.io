@@ -1,0 +1,19 @@
+[data-slide='10'] {
+  transform: translateY(100%);
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  [data-current="10"] & {
+    transform: translateY(0);
+  }
+  .tech {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20vh;
+    bottom: 20vh;
+    display: flex;
+    align-items: center;
+  }
+
+}
