@@ -10,10 +10,13 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 20vh;
+    top: 10vh;
     bottom: 20vh;
     display: flex;
     align-items: center;
+  }
+  .section {
+    margin: 0 auto;
   }
 
 }

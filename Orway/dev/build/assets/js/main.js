@@ -181,6 +181,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
 
     var $landingBox,
         $slidesCount,
+        $wrapper,
         $canSlide = true;
 
     function slidePage(n,delta){
@@ -192,7 +193,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
             $('.slide').removeClass('current');
             $('.slide[data-slide='+next+']', $landingBox).addClass('current');
 
-            $landingBox.attr('data-current',next);
+            $wrapper.attr('data-current',next);
 
             setTimeout(function () {
                 $canSlide = true;
@@ -225,16 +226,13 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
                 deformate();
             }
         }
-
-
-
-
     }
 
 
-    $.fn.startSliding = function () {
+    $.fn.startSliding = function (wrapper) {
 
         $landingBox = this;
+        $wrapper = $(wrapper);
         $slidesCount = $landingBox.find('.slide').length;
         $landingBox.on('mousewheel', function(event) {
             if($canSlide === true){

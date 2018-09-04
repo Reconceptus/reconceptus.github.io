@@ -9,6 +9,13 @@
   &.no-bg {
     background-color: transparent;
   }
+  [data-current="9"] & {
+    transition: 1s ease-in-out;
+  }
+  [data-current="10"] & {
+    transform: translateY(-100%);
+    transition: 1s ease-in-out;
+  }
   .logo {
     width: 154px;
     height: 35px;

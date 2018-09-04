@@ -831,6 +831,70 @@
       }
     }
   }
+
+  .boxes4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 1.4s ease-in-out;
+    z-index: 1;
+    [data-current="10"] & {
+      transform: translateY(-100vh);
+    }
+  }
+  .boxes-rounds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 175px;
+    background-color: $white;
+    transform: translateY(100%);
+    z-index: 3;
+
+    [data-current="9"] & {
+      transform: translateY(150px);
+      transition: 1s ease-in-out;
+    }
+    [data-current="10"] & {
+      transform: translateY(25px);
+      transition: 1s ease-in-out;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 75px;
+      margin: auto;
+      width: 1px;
+      background-color: rgba($white, 0.2);
+      z-index: 1;
+    }
+    .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 50%;
+      height: 125px;
+      background-color: $dark;
+      border-radius: 0 0 75px 0;
+      margin: 0 -0.5px 0 0;
+    }
+    .right {
+      position: absolute;
+      right: -1px;
+      top: 0;
+      left: 50%;
+      height: 125px;
+      background-color: $dark;
+      border-radius: 0 0 0 75px;
+      margin: 0 0 0 -0.5px;
+    }
+  }
 }
 
 @keyframes small_light {
