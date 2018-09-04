@@ -1,7 +1,6 @@
 @import "base/normalize";
 /*---libs---*/
-//@import "../css/libs/owl.carousel.min";
-//@import "../css/libs/animate.min";
+@import "vendors/owl.carousel.min";
 /*---styles---*/
 @import "abstracts/general";
 @import "base/typography";

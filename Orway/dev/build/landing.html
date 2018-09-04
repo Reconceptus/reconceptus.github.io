@@ -424,6 +424,42 @@
                     <div class="head">
                         <h1 class="title">history</h1>
                     </div>
+                    <div class="carousel">
+                        <div class="owl-carousel">
+                            <div class="item">
+                                <div class="date">2017</div>
+                                <div class="item-dot"></div>
+                                <div class="text">R&D completed. Prototype’s documentation prepared. 1st Round of Venture Capital Financing</div>
+                            </div>
+                            <div class="item">
+                                <div class="date"></div>
+                                <div class="item-dot"></div>
+                                <div class="text">Patents application</div>
+                            </div>
+                            <div class="item hard">
+                                <div class="date">Jun-Aug 2018</div>
+                                <div class="item-img">
+                                    <img src="assets/images/landing/scanner.png" alt="scanner">
+                                </div>
+                                <div class="text">Functional prototype of the RFA-Scanner module</div>
+                            </div>
+                            <div class="item">
+                                <div class="date">Jun-Sep 2018</div>
+                                <div class="item-dot"></div>
+                                <div class="text">2nd Round of Fund Raising</div>
+                            </div>
+                            <div class="item">
+                                <div class="date">Sep-Oct 2018</div>
+                                <div class="item-dot"></div>
+                                <div class="text">Start of certifications and 3d parties” tests</div>
+                            </div>
+                            <div class="item">
+                                <div class="date">Nov-Dec 2018</div>
+                                <div class="item-dot"></div>
+                                <div class="text">Patents application</div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section class="slide" data-slide="8">
                     <div class="head">
@@ -566,8 +602,9 @@
 <script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
 <script src="assets/js/main.min.js"></script>
 
-
+<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
 
 <!--script-->
 
@@ -577,11 +614,27 @@
         $('.loader').removeClass('show');
         $('.landing').removeClass('begin');
         setTimeout(function () {
-            // $('[data-elements="1"]').addClass('current');
-            // $('[data-slide="1"]').addClass('current');
+            $('.owl-carousel').owlCarousel({
+                loop:false,
+                margin:10,
+                nav:false,
+                dots:false,
+                mouseDrag:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
+                }
+            });
             $('.landing').startSliding('#wrapper');
-        },3500);
 
+        },2000);
     });
 
 </script>

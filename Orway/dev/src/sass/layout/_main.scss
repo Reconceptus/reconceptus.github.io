@@ -42,8 +42,12 @@ svg {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  &.flexible {
-
+  &.no-transition {
+    .elements {
+      * {
+        transition: none !important;
+      }
+    }
   }
 }
 

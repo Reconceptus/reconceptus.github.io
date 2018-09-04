@@ -9,7 +9,8 @@
   "dependencies": {
     "jquery": "latest",
     "imagesloaded": "^4.1.4",
-    "jquery-mousewheel": "^3.1.13"
+    "jquery-mousewheel": "^3.1.13",
+    "owl.carousel": "^2.3.4"
   },
   "preen": {
     "jquery": [
@@ -20,6 +21,9 @@
     ],
     "jquery-mousewheel": [
       "*.js"
+    ],
+    "owl.carousel": [
+      "dist/*.js"
     ]
   }
 }

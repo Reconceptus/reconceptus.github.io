@@ -24,6 +24,7 @@
             $wrapper.attr('data-current',next);
 
             setTimeout(function () {
+                $wrapper.addClass('no-transition');
                 $canSlide = true;
             },1400);
         }
@@ -64,6 +65,7 @@
         $slidesCount = $landingBox.find('.slide').length;
         $landingBox.on('mousewheel', function(event) {
             if($canSlide === true){
+                $wrapper.removeClass('no-transition');
                 var cur = $('.slide.current').attr('data-slide');
                 slidePage(cur,event.deltaY);
             }
