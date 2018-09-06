@@ -141,6 +141,18 @@
     bottom: 16vh;
     background-color: $dark;
     opacity: 0;
+    &:after {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 100%;
+      transform: translateY(16vh);
+      height: 20vh;
+      width: 1px;
+      background-color: rgba($white,.2);
+      margin: auto;
+      position: absolute;
+    }
     [data-current="5"] & {
       transition: opacity 0.3s ease;
     }
@@ -446,35 +458,33 @@
     right: 0;
     bottom: 20vh;
     opacity: 0;
-
-    &:after {
+    z-index: 1;
+    &:before {
       content: "";
       left: 0;
       right: 0;
-      top: 100%;
-      transform: translateY(20vh);
+      bottom: 100%;
       height: 20vh;
-      width: 1px;
-      background-color: rgba($white,.2);
+      background-color: $dark;
       margin: auto;
       position: absolute;
     }
-    [data-current="6"] & {
+    [data-current="7"] & {
       opacity: 1;
       transform: translateY(100vh);
       transition: transform 1.2s ease-in-out, opacity 0.1s ease 1.3s;
     }
-    [data-current="7"] & {
+    [data-current="8"] & {
       opacity: 1;
       transition: transform 1.4s ease-in-out;
     }
-    [data-current="8"] & {
+    [data-current="9"] & {
       z-index: 1;
       opacity: 1;
       transform: translateY(-100vh);
       transition: transform 1.4s ease-in-out, opacity 0.1s ease-in-out 1.3s;
     }
-    [data-current="9"] & {
+    [data-current="10"] & {
       opacity: 0;
       transform: translateY(-100vh);
       transition: opacity 0.6s ease-in-out 0.4s;
@@ -499,15 +509,15 @@
         width: 21vh;
         right: -1vh;
         transform-origin: left top;
-        [data-current="6"] & {
+        [data-current="7"] & {
           transition: all 0.01s linear 1.4s;
         }
-        [data-current="7"] & {
+        [data-current="8"] & {
           transform: rotate(90deg);
           opacity: 0;
           transition: transform 0.5s linear 0.2s, opacity 0.01s ease 0.7s;
         }
-        [data-current="8"] & {
+        [data-current="9"] & {
           transform: rotate(90deg);
           opacity: 0;
         }
@@ -519,15 +529,15 @@
         height: 2vh;
         left: 0;
         width: calc(100% - 20vh);
-        [data-current="6"] & {
+        [data-current="7"] & {
           transition: all 0.01s linear 1.4s;
         }
-        [data-current="7"] & {
+        [data-current="8"] & {
           width: 0;
           opacity: 0;
           transition: width 0.2s linear 0.7s, opacity 0.01s ease 1.3s;
         }
-        [data-current="8"] & {
+        [data-current="9"] & {
           width: 0;
           opacity: 0;
         }
@@ -549,14 +559,14 @@
         height: 1px;
         margin: auto;
         background-color: rgba($white,.2);
-        [data-current="6"] & {
+        [data-current="7"] & {
           transition: all 0.01s linear 1.4s;
         }
-        [data-current="7"] & {
+        [data-current="8"] & {
           width: 100%;
           transition: width 0.3s linear 0.9s;
         }
-        [data-current="8"] & {
+        [data-current="9"] & {
           width: 100%;
         }
       }
@@ -579,15 +589,15 @@
         height: 2vh;
         left: 20vh;
         width: calc(100% - 20vh);
-        [data-current="6"] & {
+        [data-current="7"] & {
           transition: all 0.01s linear 1.4s;
         }
-        [data-current="7"] & {
+        [data-current="8"] & {
           width: 0;
           opacity: 0;
           transition: width 0.2s linear 1.2s, opacity 0.01s ease 1.4s;
         }
-        [data-current="8"] & {
+        [data-current="9"] & {
           width: 0;
           opacity: 0;
         }
@@ -600,15 +610,15 @@
         width: 21vh;
         left: -1vh;
         transform-origin: right bottom;
-        [data-current="6"] & {
+        [data-current="7"] & {
           transition: all 0.01s linear 1.4s;
         }
-        [data-current="7"] & {
+        [data-current="8"] & {
           transform: rotate(-90deg);
           opacity: 0;
           transition: transform 0.1s linear 1.4s, opacity 0.01s ease 1.5s;
         }
-        [data-current="8"] & {
+        [data-current="9"] & {
           transform: rotate(-90deg);
           opacity: 0;
         }
@@ -626,20 +636,20 @@
     background-color: $dark;
     opacity: 0;
 
-    [data-current="6"] & {
+    [data-current="5"] & {
       opacity: 1;
       transform: translateY(100vh);
     }
-    [data-current="7"] & {
+    [data-current="6"] & {
       transition: opacity 0.3s ease, transform 1.4s ease-in-out;
       opacity: 1;
       transform: translateY(100vh);
     }
-    [data-current="8"] & {
+    [data-current="7"] & {
       opacity: 1;
       transition: opacity 0.01s ease 0.9s, transform 1.4s ease-in-out;
     }
-    [data-current="9"] & {
+    [data-current="8"] & {
       opacity: 1;
       transform: translateY(-100vh);
       transition: transform 1.4s ease-in-out, opacity 0.05s ease 1.3s;
@@ -719,7 +729,8 @@
       margin-top: -1px;
       &:before {
         content: "";
-        top: 100%;
+        //top: 100%;
+        top: 100px;
         left: 0;
         right: 0;
         margin: auto;
@@ -728,17 +739,19 @@
         position: absolute;
         height: 0;
         opacity: 0;
-        [data-current="7"] & {
+        [data-current="6"] & {
           transition: height 0.1s ease 1s, opacity 0.3s ease;
+        }
+        [data-current="7"] & {
+          opacity: 1;
+          //height: calc(16vh - 100px);
+          height: 25vh;
+          transition: height 0.2s ease 1.4s;
         }
         [data-current="8"] & {
           opacity: 1;
-          height: calc(16vh - 100px);
-          transition: height 0.2s ease 1.4s;
-        }
-        [data-current="9"] & {
-          opacity: 1;
-          height: calc(16vh - 100px);
+          //height: calc(16vh - 100px);
+          height: 25vh;
         }
       }
     }
@@ -750,14 +763,14 @@
       width: calc(50% - 32vh);
       height: 1vh;
       left: 32vh;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         width: 0;
         transition: width 0.15s linear 0.8s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -768,14 +781,14 @@
       width: calc(50% - 32vh);
       height: 1vh;
       right: 32vh;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         width: 0;
         transition: width 0.15s linear 0.8s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -787,15 +800,15 @@
       width: 32vh;
       left: 0;
       transform-origin: right bottom;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         transform: rotate(-90deg);
         opacity: 0;
         transition: transform 0.1s linear 0.95s, opacity 0.05s linear 1.05s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -807,15 +820,15 @@
       width: 32vh;
       right: 0;
       transform-origin: left bottom;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         transform: rotate(90deg);
         opacity: 0;
         transition: transform 0.1s linear 0.95s, opacity 0.05s linear 1.05s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -827,15 +840,15 @@
       width: 32vh;
       left: 0;
       transform-origin: right top;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         transform: rotate(-90deg);
         opacity: 0;
         transition: transform 0.1s linear 1.05s, opacity 0.05s linear 1.15s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -847,15 +860,15 @@
       width: 32vh;
       right: 0;
       transform-origin: right top;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         transform: rotate(90deg);
         opacity: 0;
         transition: transform 0.1s linear 1.05s, opacity 0.05s linear 1.15s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -867,15 +880,15 @@
       left: 32vh;
       right: 32vh;
       height: 17vh;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.01s linear 1.4s;
       }
-      [data-current="8"] & {
+      [data-current="7"] & {
         height: 0;
         opacity: 0;
         transition: height 0.2s linear 1.15s, opacity 0.05s linear 1.35s;
       }
-      [data-current="9"] & {
+      [data-current="8"] & {
         opacity: 0;
       }
     }
@@ -894,38 +907,43 @@
       top: 0;
       margin: -5px 0 0;
       z-index: 2;
-      [data-current="7"] & {
+      [data-current="6"] & {
         transition: all 0.1s ease 1.4s;
       }
-      [data-current="8"] &,
-      [data-current="9"] & {
+      [data-current="7"] &,
+      [data-current="8"] & {
         opacity: 1;
       }
     }
     .light0 {
       left: 50%;
       margin-left: -5px;
-      [data-current="7"] & {
+      [data-current="6"] & {
         opacity: 1;
       }
     }
     .light1 {
       left: 50%;
       margin-left: -5px;
-      [data-current="8"] &,
-      [data-current="9"] & {
+      [data-current="7"] & {
         left: 18vw;
         transition: opacity 0.4s ease 0.8s, left 0.1s linear 0.8s;
+      }
+      [data-current="8"] & {
+        transition: opacity 0.1s ease 1.3s, left 0.1s linear 1.3s;
       }
     }
     .light2 {
       right: 50%;
       margin-right: -5px;
-      [data-current="8"] &,
-      [data-current="9"] & {
+      [data-current="7"] & {
         right: 18vw;
         transition: opacity 0.4s ease 0.8s, right 0.1s linear 0.8s;
       }
+      [data-current="8"] & {
+        transition: opacity 0.1s ease 1.3s, right 0.1s linear 1.3s;
+      }
+
     }
   }
 
