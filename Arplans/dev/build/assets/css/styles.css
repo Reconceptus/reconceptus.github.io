@@ -4503,6 +4503,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   background-color: #F0F1F3;
   color: #657482;
   padding: 20px;
+  min-height: 22.7rem;
 }
 
 .projects-filters--item {
@@ -9376,6 +9377,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 100%;
   }
 
+  .projects .projects-item:nth-child(n + 5) {
+    display: none;
+  }
+
   .part-cost .projects-item--actions .price {
     font-size: 5rem;
   }
@@ -10692,6 +10697,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .object-item .projects-item--preview .data .cost {
     padding: 0 40px;
+  }
+
+  [data-filter-box]:not(.active) {
+    display: none;
   }
 
   .sharing.title-end li {

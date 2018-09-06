@@ -7,6 +7,7 @@
     background-color: $bg;
     color: $border;
     padding: $padding_sm;
+    min-height: 22.7rem;
     @include media(hover,601){
       margin-bottom: 2*$padding_sm;
     }
@@ -114,6 +115,13 @@
       }
       @include media(screen,600){
         margin-bottom: $padding_sm;
+      }
+    }
+    .projects & {
+      @include media(screen,767){
+        &:nth-child(n + 5){
+          display: none;
+        }
       }
     }
     &--wrap {
@@ -529,4 +537,10 @@
   }
 
 
+}
+
+@include media(hover,768){
+  [data-filter-box]{
+    &:not(.active){display: none;}
+  }
 }

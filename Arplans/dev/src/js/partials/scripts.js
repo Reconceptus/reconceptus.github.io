@@ -71,6 +71,22 @@ $(document).ready(function () {
 
 
     /*
+     ============= home tabs
+    */
+
+    function homeTabs(){
+        $('[data-filter]').click(function () {
+            var num = $(this).attr('data-filter');
+            $('[data-filter-box]').removeClass('active');
+            $('[data-filter]').removeClass('current');
+
+            $('[data-filter-box='+num+']').addClass('active');
+            $('[data-filter='+num+']').addClass('current');
+        });
+    }
+
+
+    /*
      ============= file input
     */
 
@@ -552,6 +568,9 @@ $(document).ready(function () {
     }
     if($('.show-more').length > 0){
         showMore();
+    }
+    if($('.projects-filters').length > 0){
+        homeTabs();
     }
     if($('.tabs-nav').length > 0){
         tabsBox();
