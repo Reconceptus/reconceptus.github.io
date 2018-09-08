@@ -8,6 +8,19 @@
   transition: all 0.2s;
   &.no-bg {
     background-color: transparent;
+    @include media(screen,1200){
+      transform: translateY(-45px);
+      .header--main {
+        padding-top: 45px;
+        &:after {
+          background-color: transparent;
+        }
+      }
+    }
+    [data-current="10"] & {
+      transform: translateY(-100%);
+      transition: 1s ease-in-out;
+    }
   }
   [data-current="9"] & {
     transition: 1s ease-in-out;

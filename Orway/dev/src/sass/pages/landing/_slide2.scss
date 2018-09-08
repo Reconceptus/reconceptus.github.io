@@ -20,24 +20,13 @@
   }
   .list {
     color: #bebebf;
-    font-size: 1.1rem;
-    line-height: 1.9;
-    opacity: 0.8;
-    max-width: 65%;
-    margin-bottom: 14vh;
-    li {
-      margin: 0.5rem 0;
-      position: relative;
-      padding-left: 35px;
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 22px;
-        height: 1px;
-        top: 1rem;
-        background-color: #bebebf;
-      }
+    @include media(hover,1481){
+      margin-bottom: 14vh;
+      max-width: 65%;
+    }
+    @include breakpoints(1201,1480){
+      margin-bottom: 8vh;
+      max-width: 75%;
     }
   }
 }

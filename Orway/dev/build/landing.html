@@ -254,7 +254,7 @@
                     <div class="el" data-elements="3">
                         <div class="line"></div>
                         <div class="light"></div>
-                        <div class="boxes1">
+                        <div class="boxes_application">
                             <div class="box1"></div>
                             <div class="box2"></div>
                             <div class="box3"></div>
@@ -264,7 +264,7 @@
                             <div class="light1"></div>
                             <div class="light2"></div>
                         </div>
-                        <div class="gates1">
+                        <div class="gates_application">
                             <div class="gate1"></div>
                             <div class="gate2"></div>
                             <div class="gate3"></div>
@@ -273,18 +273,7 @@
                             <div class="gate6"></div>
                             <div class="gate7"></div>
                         </div>
-                        <div class="boxes2">
-                            <div class="box1">
-                                <div class="gate1"></div>
-                                <div class="gate2"></div>
-                            </div>
-                            <div class="box2"></div>
-                            <div class="box3">
-                                <div class="gate3"></div>
-                                <div class="gate4"></div>
-                            </div>
-                        </div>
-                        <div class="boxes3">
+                        <div class="boxes_offer">
                             <div class="box1"></div>
                             <div class="box2"></div>
                             <div class="box3"></div>
@@ -304,7 +293,19 @@
                             <div class="light1"></div>
                             <div class="light2"></div>
                         </div>
-                        <div class="boxes4">
+                        <div class="boxes_timeline">
+                            <div class="light0"></div>
+                            <div class="box1">
+                                <div class="gate1"></div>
+                                <div class="gate2"></div>
+                            </div>
+                            <div class="box2"></div>
+                            <div class="box3">
+                                <div class="gate3"></div>
+                                <div class="gate4"></div>
+                            </div>
+                        </div>
+                        <div class="boxes_before_footer">
                             <div class="boxes-rounds">
                                 <div class="left"></div>
                                 <div class="right"></div>
@@ -636,7 +637,12 @@
                     }
                 }
             });
-            $('.landing').startSliding('#wrapper');
+            if($('html').hasClass('desktop')){
+                $('.landing').startSliding('#wrapper','desktop');
+            }
+            if($('html').hasClass('tablet landscape')){
+                $('.landing').startSliding('#wrapper','tablet');
+            }
 
         },2000);
     });

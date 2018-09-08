@@ -123,17 +123,17 @@
     [data-current="9"] & {
       opacity: 1;
       top: 13vh;
-      transition: top 0.9s ease-in-out 0.3s;
+      transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
     }
     [data-current="10"] & {
       z-index: 2;
-      opacity: 1;
+      opacity: 0;
       top: 20vh;
-      transition: top 0.9s ease-in-out 0.1s;
+      transition: top 0.9s ease-in-out 0.1s, opacity 0.1s ease 0.8s;
     }
   }
 
-  .boxes1 {
+  .boxes_application {
     position: absolute;
     top: 20vh;
     left: 50px;
@@ -178,7 +178,12 @@
       border-width: 1px;
       border-style: solid solid none solid;
       border-color: rgba($white,.2);
-      border-radius: 250px 250px 0 0;
+      @include media(hover,1201){
+        border-radius: 250px 250px 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 160px 160px 0 0;
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -194,7 +199,12 @@
       border-width: 1px;
       border-style: none none solid solid;
       border-color: rgba($white,.2);
-      border-radius: 0 0 0 250px;
+      @include media(hover,1201){
+        border-radius: 0 0 0 250px;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 0 160px;
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -210,7 +220,12 @@
       border-width: 1px;
       border-style: none solid solid none;
       border-color: rgba($white,.2);
-      border-radius: 0 0 250px 0;
+      @include media(hover,1201){
+        border-radius: 0 0 250px 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 160px 0;
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -226,7 +241,12 @@
       border-width: 1px;
       border-style: solid solid none none;
       border-color: rgba($white,.2);
-      border-radius: 0 100px 0 0;
+      @include media(hover,1201){
+        border-radius: 0 100px 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 50px 0 0;
+      }
       margin-top: -1px;
       margin-right: -0.5px;
       [data-current="5"] & {
@@ -244,9 +264,14 @@
       border-width: 1px;
       border-style: solid none none solid;
       border-color: rgba($white,.2);
-      border-radius: 100px 0 0 0;
       margin-top: -1px;
       margin-left: -0.5px;
+      @include media(hover,1201){
+        border-radius: 100px 0 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 50px 0 0 0;
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -320,14 +345,13 @@
       }
     }
   }
-  .gates1 {
+  .gates_application {
     position: absolute;
     top: 20vh;
     left: 50px;
     right: 50px;
     bottom: 16vh;
     opacity: 0;
-
     [data-current="6"] & {
       opacity: 1;
       transition: opacity 0.01s ease 0.9s;
@@ -451,183 +475,7 @@
       }
     }
   }
-  .boxes2 {
-    position: absolute;
-    top: 20vh;
-    left: 0;
-    right: 0;
-    bottom: 20vh;
-    opacity: 0;
-    z-index: 1;
-    &:before {
-      content: "";
-      left: 0;
-      right: 0;
-      bottom: 100%;
-      height: 20vh;
-      background-color: $dark;
-      margin: auto;
-      position: absolute;
-    }
-    [data-current="7"] & {
-      opacity: 1;
-      transform: translateY(100vh);
-      transition: transform 1.2s ease-in-out, opacity 0.1s ease 1.3s;
-    }
-    [data-current="8"] & {
-      opacity: 1;
-      transition: transform 1.4s ease-in-out;
-    }
-    [data-current="9"] & {
-      z-index: 1;
-      opacity: 1;
-      transform: translateY(-100vh);
-      transition: transform 1.4s ease-in-out, opacity 0.1s ease-in-out 1.3s;
-    }
-    [data-current="10"] & {
-      opacity: 0;
-      transform: translateY(-100vh);
-      transition: opacity 0.6s ease-in-out 0.4s;
-    }
-    .box1 {
-      position: absolute;
-      left: -1px;
-      margin-right: -0.5px;
-      right: 50%;
-      bottom: 100%;
-      height: 20vh;
-      background-color: $dark;
-      border-width: 1px;
-      border-style: none solid solid none;
-      border-color: rgba($white,.2);
-      border-radius: 0 0 100px 0;
-      .gate1 {
-        position: absolute;
-        background-color: rgba($dark,1);
-        top: 0;
-        height: 21vh;
-        width: 21vh;
-        right: -1vh;
-        transform-origin: left top;
-        [data-current="7"] & {
-          transition: all 0.01s linear 1.4s;
-        }
-        [data-current="8"] & {
-          transform: rotate(90deg);
-          opacity: 0;
-          transition: transform 0.5s linear 0.2s, opacity 0.01s ease 0.7s;
-        }
-        [data-current="9"] & {
-          transform: rotate(90deg);
-          opacity: 0;
-        }
-      }
-      .gate2 {
-        position: absolute;
-        background-color: rgba($dark,1);
-        bottom: -1vh;
-        height: 2vh;
-        left: 0;
-        width: calc(100% - 20vh);
-        [data-current="7"] & {
-          transition: all 0.01s linear 1.4s;
-        }
-        [data-current="8"] & {
-          width: 0;
-          opacity: 0;
-          transition: width 0.2s linear 0.7s, opacity 0.01s ease 1.3s;
-        }
-        [data-current="9"] & {
-          width: 0;
-          opacity: 0;
-        }
-      }
-    }
-    .box2 {
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 1px;
-        margin: auto;
-        background-color: rgba($white,.2);
-        [data-current="7"] & {
-          transition: all 0.01s linear 1.4s;
-        }
-        [data-current="8"] & {
-          width: 100%;
-          transition: width 0.3s linear 0.9s;
-        }
-        [data-current="9"] & {
-          width: 100%;
-        }
-      }
-    }
-    .box3 {
-      position: absolute;
-      left: 50%;
-      right: -1px;
-      top: 100%;
-      height: 20vh;
-      border-width: 1px;
-      border-style: solid none none solid;
-      border-color: rgba($white,.2);
-      border-radius: 100px 0 0 0;
-      margin-left: -0.5px;
-      .gate3 {
-        position: absolute;
-        background-color: rgba($dark,1);
-        top: -1vh;
-        height: 2vh;
-        left: 20vh;
-        width: calc(100% - 20vh);
-        [data-current="7"] & {
-          transition: all 0.01s linear 1.4s;
-        }
-        [data-current="8"] & {
-          width: 0;
-          opacity: 0;
-          transition: width 0.2s linear 1.2s, opacity 0.01s ease 1.4s;
-        }
-        [data-current="9"] & {
-          width: 0;
-          opacity: 0;
-        }
-      }
-      .gate4 {
-        position: absolute;
-        background-color: rgba($dark,1);
-        top: -1vh;
-        height: 21vh;
-        width: 21vh;
-        left: -1vh;
-        transform-origin: right bottom;
-        [data-current="7"] & {
-          transition: all 0.01s linear 1.4s;
-        }
-        [data-current="8"] & {
-          transform: rotate(-90deg);
-          opacity: 0;
-          transition: transform 0.1s linear 1.4s, opacity 0.01s ease 1.5s;
-        }
-        [data-current="9"] & {
-          transform: rotate(-90deg);
-          opacity: 0;
-        }
-      }
-
-    }
-  }
-
-  .boxes3 {
+  .boxes_offer {
     position: absolute;
     top: 20vh;
     left: 50px;
@@ -665,7 +513,12 @@
       border-width: 1px;
       border-style: solid solid none solid;
       border-color: rgba($white,.2);
-      border-radius: 250px 250px 0 0;
+      @include media(hover,1201){
+        border-radius: 250px 250px 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 160px 160px 0 0;
+      }
     }
     .box2 {
       position: absolute;
@@ -677,7 +530,12 @@
       border-width: 1px;
       border-style: none none solid solid;
       border-color: rgba($white,.2);
-      border-radius: 0 0 0 250px;
+      @include media(hover,1201){
+        border-radius: 0 0 0 250px;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 0 160px;
+      }
     }
     .box3 {
       position: absolute;
@@ -689,7 +547,12 @@
       border-width: 1px;
       border-style: none solid solid none;
       border-color: rgba($white,.2);
-      border-radius: 0 0 250px 0;
+      @include media(hover,1201){
+        border-radius: 0 0 250px 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 160px 0;
+      }
     }
     .box4 {
       position: absolute;
@@ -701,7 +564,12 @@
       border-width: 1px;
       border-style: solid solid none none;
       border-color: rgba($white,.2);
-      border-radius: 0 100px 0 0;
+      @include media(hover,1201){
+        border-radius: 0 100px 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 50px 0 0;
+      }
       margin-top: -1px;
       margin-right: -0.5px;
     }
@@ -715,9 +583,14 @@
       border-width: 1px;
       border-style: solid none none solid;
       border-color: rgba($white,.2);
-      border-radius: 100px 0 0 0;
       margin-top: -1px;
       margin-left: -0.5px;
+      @include media(hover,1201){
+        border-radius: 100px 0 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 50px 0 0 0;
+      }
     }
     .box6 {
       position: absolute;
@@ -745,16 +618,17 @@
         [data-current="7"] & {
           opacity: 1;
           //height: calc(16vh - 100px);
-          height: 25vh;
+          height: 20vh;
           transition: height 0.2s ease 1.4s;
         }
         [data-current="8"] & {
           opacity: 1;
           //height: calc(16vh - 100px);
-          height: 25vh;
+          height: 19vh;
         }
       }
     }
+
 
     .gate1 {
       position: absolute;
@@ -946,8 +820,211 @@
 
     }
   }
+  .boxes_timeline {
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    right: 0;
+    bottom: 20vh;
+    opacity: 0;
+    z-index: 1;
+    &:before {
+      content: "";
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 20vh;
+      background-color: $dark;
+      margin: auto;
+      position: absolute;
+    }
+    [data-current="7"] & {
+      opacity: 1;
+      transform: translateY(100vh);
+      transition: transform 1.2s ease-in-out, opacity 0.1s ease 1.3s;
+    }
+    [data-current="8"] & {
+      opacity: 1;
+      transition: transform 1.4s ease-in-out;
+    }
+    [data-current="9"] & {
+      z-index: 1;
+      opacity: 1;
+      transform: translateY(-100vh);
+      transition: transform 1.4s ease-in-out, opacity 0.1s ease-in-out 1.3s;
+    }
+    [data-current="10"] & {
+      opacity: 0;
+      transform: translateY(-100vh);
+      transition: opacity 0.6s ease-in-out 0.4s;
+    }
+    .box1 {
+      position: absolute;
+      left: -1px;
+      margin-right: -0.5px;
+      right: 50%;
+      bottom: 100%;
+      height: 20vh;
+      background-color: $dark;
+      border-width: 1px;
+      border-style: none solid solid none;
+      border-color: rgba($white,.2);
+      @include media(hover,1201){
+        border-radius: 0 0 100px 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 50px 0;
+      }
+      .gate1 {
+        position: absolute;
+        background-color: rgba($dark,1);
+        top: 0;
+        height: 21vh;
+        width: 21vh;
+        right: -1vh;
+        transform-origin: left top;
+        [data-current="7"] & {
+          transition: all 0.01s linear 1.4s;
+        }
+        [data-current="8"] & {
+          transform: rotate(90deg);
+          opacity: 0;
+          transition: transform 0.5s linear 0.2s, opacity 0.01s ease 0.7s;
+        }
+        [data-current="9"] & {
+          transform: rotate(90deg);
+          opacity: 0;
+        }
+      }
+      .gate2 {
+        position: absolute;
+        background-color: rgba($dark,1);
+        bottom: -1vh;
+        height: 2vh;
+        left: 0;
+        width: calc(100% - 20vh);
+        [data-current="7"] & {
+          transition: all 0.01s linear 1.4s;
+        }
+        [data-current="8"] & {
+          width: 0;
+          opacity: 0;
+          transition: width 0.2s linear 0.7s, opacity 0.01s ease 1.3s;
+        }
+        [data-current="9"] & {
+          width: 0;
+          opacity: 0;
+        }
+      }
+    }
+    .box2 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        margin: auto;
+        background-color: rgba($white,.2);
+        [data-current="7"] & {
+          transition: all 0.01s linear 1.4s;
+        }
+        [data-current="8"] & {
+          width: 100%;
+          transition: width 0.3s linear 0.9s;
+        }
+        [data-current="9"] & {
+          width: 100%;
+        }
+      }
+    }
+    .box3 {
+      position: absolute;
+      left: 50%;
+      right: -1px;
+      top: 100%;
+      height: 20vh;
+      border-width: 1px;
+      border-style: solid none none solid;
+      border-color: rgba($white,.2);
+      margin-left: -0.5px;
+      @include media(hover,1201){
+        border-radius: 100px 0 0 0;
+      }
+      @include media(screen,1200){
+        border-radius: 50px 0 0 0;
+      }
+      .gate3 {
+        position: absolute;
+        background-color: rgba($dark,1);
+        top: -1vh;
+        height: 2vh;
+        left: 20vh;
+        width: calc(100% - 20vh);
+        [data-current="7"] & {
+          transition: all 0.01s linear 1.4s;
+        }
+        [data-current="8"] & {
+          width: 0;
+          opacity: 0;
+          transition: width 0.2s linear 1.2s, opacity 0.01s ease 1.4s;
+        }
+        [data-current="9"] & {
+          width: 0;
+          opacity: 0;
+        }
+      }
+      .gate4 {
+        position: absolute;
+        background-color: rgba($dark,1);
+        top: -1vh;
+        height: 21vh;
+        width: 21vh;
+        left: -1vh;
+        transform-origin: right bottom;
+        [data-current="7"] & {
+          transition: all 0.01s linear 1.4s;
+        }
+        [data-current="8"] & {
+          transform: rotate(-90deg);
+          opacity: 0;
+          transition: transform 0.1s linear 1.4s, opacity 0.01s ease 1.5s;
+        }
+        [data-current="9"] & {
+          transform: rotate(-90deg);
+          opacity: 0;
+        }
+      }
 
-  .boxes4 {
+    }
+    .light0 {
+      opacity: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 0 80px 7px rgba($white,0.95);
+      position: absolute;
+      animation: small_light 2s infinite linear alternate;
+      top: -11vh;
+      z-index: 2;
+      left: 50%;
+      margin-left: -5px;
+      [data-current="7"] &,
+      [data-current="8"] &,
+      [data-current="9"] & {
+        opacity: 1;
+      }
+    }
+  }
+  .boxes_before_footer {
     position: absolute;
     top: 0;
     left: 0;
@@ -996,8 +1073,13 @@
       right: 50%;
       height: 125px;
       background-color: $dark;
-      border-radius: 0 0 75px 0;
       margin: 0 -0.5px 0 0;
+      @include media(hover,1201){
+        border-radius: 0 0 75px 0;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 50px 0;
+      }
     }
     .right {
       position: absolute;
@@ -1006,8 +1088,13 @@
       left: 50%;
       height: 125px;
       background-color: $dark;
-      border-radius: 0 0 0 75px;
       margin: 0 0 0 -0.5px;
+      @include media(hover,1201){
+        border-radius: 0 0 0 75px;
+      }
+      @include media(screen,1200){
+        border-radius: 0 0 0 50px;
+      }
     }
   }
 }
