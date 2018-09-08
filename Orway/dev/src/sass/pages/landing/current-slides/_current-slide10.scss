@@ -1,0 +1,27 @@
+.desktop,
+.tablet.landscape {
+
+  [data-current="10"] {
+
+    //===== slide 9
+
+    [data-slide='9'] {
+      .title {
+        transition: transform 0.4s ease 0.4s;
+      }
+      .brands {
+        .brand {
+          opacity: 1;
+          transition: all 0.01s ease 1.4s;
+        }
+      }
+    }
+
+    //===== slide 10
+
+    [data-slide='10'] {
+      transform: translateY(0);
+    }
+
+  }
+}

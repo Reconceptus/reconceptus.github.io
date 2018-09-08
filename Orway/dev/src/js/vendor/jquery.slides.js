@@ -84,20 +84,23 @@
         if(device == 'tablet'){
             $landingBox.swipe({
                 swipe:function (event, direction) {
-                    if(direction == 'down' ){
-                        if($canSlide === true){
-                            $wrapper.removeClass('no-transition');
-                            var cur = $('.slide.current').attr('data-slide');
-                            slidePage(cur,1);
-                        }
-                    };
-                    if(direction == 'up' ){
-                        if($canSlide === true){
-                            $wrapper.removeClass('no-transition');
-                            var cur = $('.slide.current').attr('data-slide');
-                            slidePage(cur,-1);
-                        }
-                    };
+                    if($('html').hasClass('landscape')){
+                        if(direction == 'down' ){
+                            if($canSlide === true){
+                                $wrapper.removeClass('no-transition');
+                                var cur = $('.slide.current').attr('data-slide');
+                                slidePage(cur,1);
+                            }
+                        };
+                        if(direction == 'up' ){
+                            if($canSlide === true){
+                                $wrapper.removeClass('no-transition');
+                                var cur = $('.slide.current').attr('data-slide');
+                                slidePage(cur,-1);
+                            }
+                        };
+                    }
+
                 }
             });
 

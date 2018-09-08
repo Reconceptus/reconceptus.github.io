@@ -8,12 +8,30 @@
   transition: all 0.2s;
   &.no-bg {
     background-color: transparent;
-    @include media(screen,1200){
+    & ~ #main {
+      padding-top: 0;
+    }
+    @include breakpoints(681,1200){
       transform: translateY(-45px);
       .header--main {
         padding-top: 45px;
         &:after {
-          background-color: transparent;
+          .desktop &,
+          .tablet.landscape & {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    @include media(screen,680){
+      transform: translateY(-25px);
+      .header--main {
+        padding-top: 25px;
+        &:after {
+          .desktop &,
+          .tablet.landscape & {
+            background-color: transparent;
+          }
         }
       }
     }

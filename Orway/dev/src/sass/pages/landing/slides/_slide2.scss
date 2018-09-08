@@ -1,0 +1,33 @@
+.desktop,
+.tablet.landscape {
+  [data-slide='2'] {
+    transform: translateY(100%);
+    .slide-right {
+      display: flex;
+      align-items: center;
+      padding-left: 50px;
+    }
+    .list {
+      color: #bebebf;
+      @include media(hover,1481){
+        margin-bottom: 14vh;
+        max-width: 65%;
+      }
+      @include breakpoints(1201,1480){
+        margin-bottom: 8vh;
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+.mobile,
+.tablet.portrait {
+  [data-slide='2'] {
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+    .list {
+      color: #bebebf;
+    }
+  }
+}

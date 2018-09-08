@@ -1,0 +1,27 @@
+.desktop,
+.tablet.landscape {
+  [data-current="2"],
+  [data-current="3"],
+  [data-current="4"],
+  [data-current="5"],
+  [data-current="6"],
+  [data-current="7"],
+  [data-current="8"],
+  [data-current="9"],
+  [data-current="10"] {
+    [data-slide='1'] {
+      transform: translateY(-100%);
+    }
+  }
+
+  [data-current="1"] {
+    [data-slide='1'] {
+      .title {
+        transition: transform 1.2s ease;
+      }
+      .subtitle {
+        transition: transform 1.2s ease;
+      }
+    }
+  }
+}

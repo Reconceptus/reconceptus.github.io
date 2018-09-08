@@ -1,0 +1,35 @@
+.desktop,
+.tablet.landscape {
+  .begin {
+    [data-slide='1'] {
+      .title {
+        .part1 {
+          transform: translateX(4vw);
+          opacity: 0;
+        }
+        .part2 {
+          transform: translateX(4.2vw);
+          opacity: 0;
+        }
+        .part3 {
+          transform: translateX(4.4vw);
+          opacity: 0;
+        }
+      }
+      .subtitle {
+        opacity: 0;
+        transform: translateY(90%);
+      }
+      .word {
+        opacity: 0;
+        transform: translateY(80%);
+      }
+      .brands {
+        .brand {
+          transform: translateY(50%);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

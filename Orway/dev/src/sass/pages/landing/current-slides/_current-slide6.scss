@@ -1,0 +1,79 @@
+.desktop,
+.tablet.landscape {
+
+  [data-current="8"],
+  [data-current="9"],
+  [data-current="10"] {
+    [data-slide='6'] {
+      transform: translateY(-100%);
+    }
+  }
+
+  [data-current="6"] {
+
+    //===== slide 5
+
+    [data-slide='5'] {
+      .title {
+        transition: transform 1.2s ease;
+        transform: translateY(8vh);
+      }
+      .subtitle {
+        transition: transform 1.2s ease;
+        transform: translateY(8vh);
+      }
+      .list {
+        transition: transform 1.2s ease;
+        transform: translateY(8vh);
+      }
+    }
+
+    //===== slide 6
+
+    [data-slide='6'] {
+      transform: translateY(0);
+      transition: transform 1.2s ease-in-out;
+      .title {
+        transform: translateY(0);
+        transition: transform 0.8s ease 0.4s;
+      }
+      .items {
+        .item {
+          opacity: 1;
+          transform: translateY(0);
+          &:nth-child(1){
+            transition: transform 0.7s ease 0.8s, opacity 0.4s ease 0.7s;
+          }
+          &:nth-child(2){
+            transition: transform 0.7s ease 0.9s, opacity 0.4s ease 0.8s;
+          }
+          &:nth-child(3){
+            transition: transform 0.7s ease 1s, opacity 0.4s ease 0.9s;
+          }
+        }
+      }
+    }
+
+    //===== slide 7
+
+    [data-slide='7'] {
+      .title {
+        transition: transform 0.1s ease 1.3s;
+      }
+      .items {
+        .item {
+          &:nth-child(1){
+            transition: transform 0.8s ease, opacity 0.1s ease 1.3s;
+          }
+          &:nth-child(2){
+            transition: transform 0.8s ease 0.1s, opacity 0.1s ease 1.3s;
+          }
+          &:nth-child(3){
+            transition: transform 0.8s ease 0.2s, opacity 0.1s ease 1.3s;
+          }
+        }
+      }
+    }
+
+  }
+}

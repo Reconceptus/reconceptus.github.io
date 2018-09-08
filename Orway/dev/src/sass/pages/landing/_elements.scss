@@ -1,11 +1,17 @@
 .elements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  .desktop &,
+  .tablet.landscape & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .mobile &,
+  .tablet.portrait & {
+    display: none;
+  }
 }
 @import "element1";
 @import "element2";
 @import "element3";
-

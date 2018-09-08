@@ -1,0 +1,116 @@
+.desktop,
+.tablet.landscape {
+  [data-slide='4'] {
+    transform: translateY(100%);
+    .slide-right {
+      display: flex;
+      align-items: center;
+      padding-left: 75px;
+    }
+    .head {
+      width: 80%;
+      margin-bottom: 2vh;
+    }
+    .title {
+      color: $white;
+      span {
+        display: block;
+      }
+      .part1 {
+        color: #b3b3b3;
+      }
+      .part2 {
+        color: #b3b3b3;
+      }
+      .part3 {
+
+      }
+    }
+    .subtitle {
+      color: #bebebf;
+      opacity: 0.8;
+      @include media(hover,1481){
+        max-width: 70%;
+      }
+      @include breakpoints(1201,1480){
+        max-width: 90%;
+      }
+    }
+    .word {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 16%;
+      transform: translateY(0);
+    }
+    .slide-img {
+      display: none;
+    }
+  }
+}
+
+.mobile,
+.tablet.portrait {
+  [data-slide='4'] {
+    padding: 20px;
+    margin-bottom: 20px;
+    .title {
+      color: $white;
+      span {
+        display: block;
+      }
+      .part1 {
+        color: #b3b3b3;
+      }
+      .part2 {
+        color: #b3b3b3;
+      }
+    }
+    .subtitle {
+      color: #bebebf;
+    }
+    .slide-img {
+      padding: 2% 0 10% 0;
+      display: flex;
+      justify-content: center;
+      .people-box {
+        width: 90%;
+        position: relative;
+      }
+      .part {
+        width: 100%;
+        padding-top: 92.476%;
+        svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &.absolute {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .cassette {
+        .group {
+          transform: translate(-1%,-3%);
+        }
+      }
+      .icons {
+        .group {
+          transform-origin: 50% 50%;
+          transform: rotate(10deg);
+        }
+      }
+      .lines {
+        .line01 {
+          stroke-dasharray: 56.845;
+          stroke-dashoffset: 16;
+        }
+      }
+    }
+  }
+}

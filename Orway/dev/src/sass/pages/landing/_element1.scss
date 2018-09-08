@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
   .switch-box {
     position: relative;
     [data-current="2"] & {

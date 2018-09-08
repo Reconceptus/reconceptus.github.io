@@ -17,8 +17,11 @@
     @include breakpoints(1201,1480){
       font-size: 5vh;
     }
-    @include media(screen,1200){
+    @include breakpoints(768,1200){
       font-size: 4vh;
+    }
+    @include media(screen,767){
+      font-size: 7vw;
     }
   }
 }
@@ -34,9 +37,16 @@
     @include breakpoints(1201,1480){
       font-size: 1rem;
     }
-    @include media(screen,1200){
+    @include breakpoints(768,1200){
       font-size: 0.9rem;
       line-height: 1.7;
+    }
+    @include media(screen,767){
+      font-size: 3.8vw;
+      line-height: 1.7;
+      br {
+        display: none;
+      }
     }
   }
 }
@@ -58,6 +68,10 @@
       font-size: 10vh;
     }
   }
+  .mobile &,
+  .tablet.portrait & {
+    display: none;
+  }
 }
 .list {
   [data-slide='2'] &,
@@ -66,27 +80,44 @@
     opacity: 0.8;
     @include media(hover,1481){
       font-size: 1.1rem;
+      max-width: 80%;
     }
     @include breakpoints(1201,1480){
       font-size: 1rem;
+      max-width: 80%;
     }
-    @include media(screen,1200){
+    @include breakpoints(768,1200){
       font-size: 0.9rem;
       line-height: 1.7;
       max-width: 80%;
     }
+    @include media(screen,767){
+      font-size: 3.8vw;
+      line-height: 1.7;
+    }
     li {
       margin: 0.5rem 0;
       position: relative;
-      padding-left: 35px;
       &:before {
         content: "";
         position: absolute;
         left: 0;
-        width: 22px;
         height: 1px;
-        top: 1rem;
         background-color: #bebebf;
+      }
+      @include media(hover,768){
+        padding-left: 35px;
+        &:before {
+          width: 22px;
+          top: 1rem;
+        }
+      }
+      @include media(screen,767){
+        padding-left: 20px;
+        &:before {
+          width: 15px;
+          top: 3vw;
+        }
       }
     }
   }

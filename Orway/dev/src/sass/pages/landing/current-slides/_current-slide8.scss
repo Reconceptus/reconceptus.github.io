@@ -1,0 +1,77 @@
+.desktop,
+.tablet.landscape {
+
+  [data-current="9"],
+  [data-current="10"] {
+    [data-slide='8'] {
+      transform: translateY(-100%);
+    }
+  }
+
+  [data-current="8"] {
+
+    //===== slide 7
+
+    [data-slide='7'] {
+      .title {
+        transition: transform 0.4s ease 0.4s;
+      }
+      .items {
+        .item {
+          opacity: 1;
+          transition: transform 0.6s ease-in;
+          @include media(hover,1201){
+            transform: translateY(20%);
+          }
+          @include media(screen,1200){
+            transform: translateY(10%);
+          }
+        }
+      }
+    }
+
+    //===== slide 8
+
+    [data-slide='8'] {
+      transform: translateY(0);
+      transition: transform 1.4s ease-in-out;
+      .title {
+        transform: translateY(0);
+        transition: transform 0.8s ease 0.4s;
+      }
+      .carousel {
+        .owl-item {
+          &.active {
+            transition: opacity 0.4s ease 1s;
+            & + .active {
+              transition: opacity 0.4s ease 1.05s;
+              & + .active {
+                transition: opacity 0.4s ease 1.1s;
+                & + .active {
+                  transition: opacity 0.4s ease 1.15s;
+                  & + .active {
+                    transition: opacity 0.4s ease 1.2s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //===== slide 9
+
+    [data-slide='9'] {
+      .title {
+        transition: transform 0.1s ease 1.3s;
+      }
+      .brands {
+        .brand {
+          transition: all 0.01s ease 1.4s;
+        }
+      }
+    }
+
+  }
+}

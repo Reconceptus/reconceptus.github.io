@@ -1,0 +1,64 @@
+.desktop,
+.tablet.landscape {
+  [data-slide='10'] {
+    transform: translateY(100%);
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    .tech {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 10vh;
+      bottom: 20vh;
+      display: flex;
+      align-items: center;
+    }
+    .section {
+      margin: 0 auto;
+      @include media(screen,1200){
+        padding-top: 40px;
+      }
+    }
+    .page-title {
+      @include media(hover,1481){
+        font-size: 6.2vh;
+      }
+      @include breakpoints(1201,1480){
+        font-size: 5vh;
+      }
+      @include media(screen,1200){
+        font-size: 4vh;
+      }
+    }
+    .article--title {
+      @include media(hover,1481){
+        font-size: 3.2vh;
+      }
+      @include breakpoints(1201,1480){
+        font-size: 2.4vh;
+      }
+      @include media(screen,1200){
+        font-size: 2.2vh;
+      }
+    }
+    .article--descr {
+      @include media(screen,1200){
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+    }
+    .footer--main {
+      @include media(screen,1200){
+        min-height: 80px;
+      }
+    }
+  }
+}
+
+.mobile,
+.tablet.portrait {
+  [data-slide='10'] {
+    background-color: $white;
+  }
+}
