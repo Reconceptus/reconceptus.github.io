@@ -31,5 +31,16 @@
         }
       }
     }
+    [data-slide='2'],
+    [data-slide='3'],
+    [data-slide='4'],
+    [data-slide='5'],
+    [data-slide='6'],
+    [data-slide='7'],
+    [data-slide='8'],
+    [data-slide='9'],
+    [data-slide='10'] {
+      display: none;
+    }
   }
 }
