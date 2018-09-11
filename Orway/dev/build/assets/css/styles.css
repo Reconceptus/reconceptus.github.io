@@ -6273,7 +6273,7 @@ svg {
 
 .desktop [data-slide='6'] .title,
 .tablet.landscape [data-slide='6'] .title {
-  color: #24262F;
+  color: #FFF;
   position: relative;
   z-index: 2;
   -webkit-transform: translateY(100%);
@@ -6412,7 +6412,7 @@ svg {
 
 .desktop [data-slide='7'] .title,
 .tablet.landscape [data-slide='7'] .title {
-  color: #24262F;
+  color: #FFF;
   position: relative;
   z-index: 2;
   -webkit-transform: translateY(100%);
@@ -6545,7 +6545,7 @@ svg {
 
 .desktop [data-slide='8'] .title,
 .tablet.landscape [data-slide='8'] .title {
-  color: #24262F;
+  color: #FFF;
   position: relative;
   z-index: 2;
   -webkit-transform: translateY(100%);
@@ -6857,7 +6857,7 @@ svg {
 
 .desktop [data-slide='9'] .title,
 .tablet.landscape [data-slide='9'] .title {
-  color: #24262F;
+  color: #FFF;
   position: relative;
   z-index: 2;
   -webkit-transform: translateY(100%);
