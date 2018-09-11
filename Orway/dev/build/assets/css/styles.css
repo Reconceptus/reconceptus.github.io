@@ -2428,7 +2428,7 @@ svg {
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  opacity: 0.1;
+  opacity: 0.15;
 }
 
 .mobile .word,
@@ -2713,12 +2713,6 @@ svg {
 
 .begin [data-elements="1"] .key-digits {
   opacity: 0;
-}
-
-[data-current="1"] [data-elements="1"] .key-digits {
-  -webkit-transition: opacity 1.4s ease;
-  -o-transition: opacity 1.4s ease;
-  transition: opacity 1.4s ease;
 }
 
 [data-current="2"] [data-elements="1"] .key-digits {
@@ -5593,7 +5587,11 @@ svg {
 .mobile [data-slide='1'] .switch-box .switcher,
 .tablet.portrait [data-slide='1'] .switch-box .switcher {
   position: relative;
-  opacity: 1;
+  -webkit-transition: opacity 2s ease 0.4s, -webkit-transform 2.5s ease 0.4s;
+  transition: opacity 2s ease 0.4s, -webkit-transform 2.5s ease 0.4s;
+  -o-transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
+  transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
+  transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s, -webkit-transform 2.5s ease 0.4s;
 }
 
 .mobile [data-slide='1'] .switch-box .switcher img,
@@ -5602,25 +5600,6 @@ svg {
   width: auto;
   height: auto;
   max-width: 50vw;
-}
-
-.mobile [data-slide='1'] .switch-box .key,
-.tablet.portrait [data-slide='1'] .switch-box .key {
-  position: absolute;
-  left: -27%;
-  top: -5%;
-  width: 43%;
-  padding-top: 103.2%;
-}
-
-.mobile [data-slide='1'] .switch-box .key img,
-.tablet.portrait [data-slide='1'] .switch-box .key img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .mobile [data-slide='1'] .switch-box .light,
@@ -5633,17 +5612,126 @@ svg {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   background-color: #B3B4B6;
-  -webkit-transition: opacity 1.4s ease 0.5s, -webkit-box-shadow 0.5s ease;
-  transition: opacity 1.4s ease 0.5s, -webkit-box-shadow 0.5s ease;
-  -o-transition: box-shadow 0.5s ease, opacity 1.4s ease 0.5s;
-  transition: box-shadow 0.5s ease, opacity 1.4s ease 0.5s;
-  transition: box-shadow 0.5s ease, opacity 1.4s ease 0.5s, -webkit-box-shadow 0.5s ease;
+  -webkit-transition: opacity 2s ease 0.5s, -webkit-box-shadow 0.5s ease;
+  transition: opacity 2s ease 0.5s, -webkit-box-shadow 0.5s ease;
+  -o-transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
+  transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
+  transition: box-shadow 0.5s ease, opacity 2s ease 0.5s, -webkit-box-shadow 0.5s ease;
   will-change: transform;
-  opacity: 1;
   -webkit-box-shadow: 0 0 30vh 20vh RGBA(179, 180, 182, 0.6);
   box-shadow: 0 0 30vh 20vh RGBA(179, 180, 182, 0.6);
   -webkit-animation: light 10s infinite 0.5s alternate forwards;
   animation: light 10s infinite 0.5s alternate forwards;
+}
+
+.mobile [data-slide='1'] .switch-box .key,
+.mobile [data-slide='1'] .switch-box .key-digits,
+.tablet.portrait [data-slide='1'] .switch-box .key,
+.tablet.portrait [data-slide='1'] .switch-box .key-digits {
+  position: absolute;
+  left: -27%;
+  top: -5%;
+  width: 43%;
+  padding-top: 103.2%;
+}
+
+.mobile [data-slide='1'] .switch-box .key img,
+.mobile [data-slide='1'] .switch-box .key svg,
+.mobile [data-slide='1'] .switch-box .key-digits img,
+.mobile [data-slide='1'] .switch-box .key-digits svg,
+.tablet.portrait [data-slide='1'] .switch-box .key img,
+.tablet.portrait [data-slide='1'] .switch-box .key svg,
+.tablet.portrait [data-slide='1'] .switch-box .key-digits img,
+.tablet.portrait [data-slide='1'] .switch-box .key-digits svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mobile [data-slide='1'] .switch-box .key,
+.tablet.portrait [data-slide='1'] .switch-box .key {
+  -webkit-transition: opacity 1.4s ease, -webkit-transform 1.4s ease 0.5s;
+  transition: opacity 1.4s ease, -webkit-transform 1.4s ease 0.5s;
+  -o-transition: opacity 1.4s ease, transform 1.4s ease 0.5s;
+  transition: opacity 1.4s ease, transform 1.4s ease 0.5s;
+  transition: opacity 1.4s ease, transform 1.4s ease 0.5s, -webkit-transform 1.4s ease 0.5s;
+}
+
+.mobile [data-slide='1'] .switch-box .key .key-lines,
+.tablet.portrait [data-slide='1'] .switch-box .key .key-lines {
+  -webkit-transition: opacity 1s ease 1s;
+  -o-transition: opacity 1s ease 1s;
+  transition: opacity 1s ease 1s;
+}
+
+.mobile [data-slide='1'] .switch-box .key-digits,
+.tablet.portrait [data-slide='1'] .switch-box .key-digits {
+  -webkit-transition: opacity 1.4s ease 0.5s;
+  -o-transition: opacity 1.4s ease 0.5s;
+  transition: opacity 1.4s ease 0.5s;
+}
+
+.mobile [data-slide='1'] .switch-box #key_mobile_line1,
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line1 {
+  stroke-dasharray: 102.4447;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s linear 0.5s;
+  -o-transition: all 1s linear 0.5s;
+  transition: all 1s linear 0.5s;
+}
+
+.begin .mobile [data-slide='1'] .switch-box #key_mobile_line1,
+.begin
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line1 {
+  stroke-dashoffset: 102.4447;
+}
+
+.mobile [data-slide='1'] .switch-box #key_mobile_line2,
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line2 {
+  stroke-dasharray: 142.1125;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s linear 0.5s;
+  -o-transition: all 1s linear 0.5s;
+  transition: all 1s linear 0.5s;
+}
+
+.begin .mobile [data-slide='1'] .switch-box #key_mobile_line2,
+.begin
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line2 {
+  stroke-dashoffset: 142.1125;
+}
+
+.mobile [data-slide='1'] .switch-box #key_mobile_line3,
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line3 {
+  stroke-dasharray: 199.2661;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s linear 0.5s;
+  -o-transition: all 1s linear 0.5s;
+  transition: all 1s linear 0.5s;
+}
+
+.begin .mobile [data-slide='1'] .switch-box #key_mobile_line3,
+.begin
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line3 {
+  stroke-dashoffset: 199.2661;
+}
+
+.mobile [data-slide='1'] .switch-box #key_mobile_line4,
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line4 {
+  stroke-dasharray: 134.7162;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s linear 0.5s;
+  -o-transition: all 1s linear 0.5s;
+  transition: all 1s linear 0.5s;
+}
+
+.begin .mobile [data-slide='1'] .switch-box #key_mobile_line4,
+.begin
+.tablet.portrait [data-slide='1'] .switch-box #key_mobile_line4 {
+  stroke-dashoffset: 134.7162;
 }
 
 .mobile [data-slide='1'] .switch-box .finger,
@@ -5663,6 +5751,15 @@ svg {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.mobile [data-slide='1'] .switch-box #finger-mobile,
+.tablet.portrait [data-slide='1'] .switch-box #finger-mobile {
+  stroke-dasharray: 516.1923;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1.3s linear 0.5s;
+  -o-transition: all 1.3s linear 0.5s;
+  transition: all 1.3s linear 0.5s;
 }
 
 .desktop [data-slide='2'],
@@ -6967,6 +7064,66 @@ svg {
 .tablet.landscape .begin [data-slide='9'],
 .tablet.landscape .begin [data-slide='10'] {
   display: none;
+}
+
+.mobile .begin [data-slide='1'] #finger-mobile,
+.tablet.portrait .begin [data-slide='1'] #finger-mobile {
+  stroke-dashoffset: 516.1923;
+}
+
+.mobile .begin [data-slide='1'] .switcher,
+.tablet.portrait .begin [data-slide='1'] .switcher {
+  -webkit-transform: translate(-10%, -7%);
+  -ms-transform: translate(-10%, -7%);
+  transform: translate(-10%, -7%);
+  opacity: 0;
+}
+
+.mobile .begin [data-slide='1'] .light,
+.tablet.portrait .begin [data-slide='1'] .light {
+  opacity: 0;
+  -webkit-box-shadow: 0 0 20vh 10vh RGBA(179, 180, 182, 0.6);
+  box-shadow: 0 0 20vh 10vh RGBA(179, 180, 182, 0.6);
+  -webkit-animation: none;
+  animation: none;
+}
+
+.mobile .begin [data-slide='1'] .key,
+.tablet.portrait .begin [data-slide='1'] .key {
+  -webkit-transform: translate(-19%, -9%);
+  -ms-transform: translate(-19%, -9%);
+  transform: translate(-19%, -9%);
+  opacity: 0;
+}
+
+.mobile .begin [data-slide='1'] .key .key-lines,
+.tablet.portrait .begin [data-slide='1'] .key .key-lines {
+  opacity: 0;
+}
+
+.mobile .begin [data-slide='1'] .key-digits,
+.tablet.portrait .begin [data-slide='1'] .key-digits {
+  opacity: 0;
+}
+
+.mobile .begin [data-slide='1'] #key_mobile_line1,
+.tablet.portrait .begin [data-slide='1'] #key_mobile_line1 {
+  stroke-dashoffset: 102.4447;
+}
+
+.mobile .begin [data-slide='1'] #key_mobile_line2,
+.tablet.portrait .begin [data-slide='1'] #key_mobile_line2 {
+  stroke-dashoffset: 142.1125;
+}
+
+.mobile .begin [data-slide='1'] #key_mobile_line3,
+.tablet.portrait .begin [data-slide='1'] #key_mobile_line3 {
+  stroke-dashoffset: 199.2661;
+}
+
+.mobile .begin [data-slide='1'] #key_mobile_line4,
+.tablet.portrait .begin [data-slide='1'] #key_mobile_line4 {
+  stroke-dashoffset: 134.7162;
 }
 
 .desktop [data-current="2"] [data-slide='1'],

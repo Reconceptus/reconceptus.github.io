@@ -44,3 +44,45 @@
     }
   }
 }
+
+.mobile,
+.tablet.portrait {
+  .begin {
+    [data-slide='1'] {
+      #finger-mobile {
+        stroke-dashoffset: 516.1923;
+      }
+      .switcher {
+        transform: translate(-10%,-7%);
+        opacity: 0;
+      }
+      .light {
+        opacity: 0;
+        box-shadow: 0 0 20vh 10vh rgba(179,180,182,0.6);
+        animation: none;
+      }
+      .key {
+        transform: translate(-19%,-9%);
+        opacity: 0;
+        .key-lines {
+          opacity: 0;
+        }
+      }
+      .key-digits {
+        opacity: 0;
+      }
+      #key_mobile_line1 {
+        stroke-dashoffset: 102.4447;
+      }
+      #key_mobile_line2 {
+        stroke-dashoffset: 142.1125;
+      }
+      #key_mobile_line3 {
+        stroke-dashoffset: 199.2661;
+      }
+      #key_mobile_line4 {
+        stroke-dashoffset: 134.7162;
+      }
+    }
+  }
+}

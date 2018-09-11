@@ -117,7 +117,7 @@
       align-items: center;
       .switcher {
         position: relative;
-        opacity: 1;
+        transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
         img {
           display: block;
           width: auto;
@@ -125,21 +125,7 @@
           max-width: 50vw;
         }
       }
-      .key {
-        position: absolute;
-        left: -27%;
-        top: -5%;
-        width: 43%;
-        padding-top: 103.2%;
-        img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-      }
+
       .light {
         left: 27%;
         top: 34%;
@@ -148,11 +134,67 @@
         height: 2px;
         border-radius: 50%;
         background-color: #b3b4b6;
-        transition: box-shadow 0.5s ease, opacity 1.4s ease 0.5s;
+        transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
         will-change: transform;
-        opacity: 1;
         box-shadow: 0 0 30vh 20vh rgba(179,180,182,0.6);
         animation: light 10s infinite 0.5s alternate forwards;
+      }
+      .key,
+      .key-digits {
+        position: absolute;
+        left: -27%;
+        top: -5%;
+        width: 43%;
+        padding-top: 103.2%;
+        img, svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .key {
+        transition: opacity 1.4s ease, transform 1.4s ease 0.5s;
+        .key-lines {
+          transition: opacity 1s ease 1s;
+        }
+      }
+      .key-digits {
+        transition: opacity 1.4s ease 0.5s;
+      }
+      #key_mobile_line1 {
+        stroke-dasharray: 102.4447;
+        stroke-dashoffset: 0;
+        transition: all 1s linear 0.5s;
+        .begin & {
+          stroke-dashoffset: 102.4447;
+        }
+      }
+      #key_mobile_line2 {
+        stroke-dasharray: 142.1125;
+        stroke-dashoffset: 0;
+        transition: all 1s linear 0.5s;
+        .begin & {
+          stroke-dashoffset: 142.1125;
+        }
+      }
+      #key_mobile_line3 {
+        stroke-dasharray: 199.2661;
+        stroke-dashoffset: 0;
+        transition: all 1s linear 0.5s;
+        .begin & {
+          stroke-dashoffset: 199.2661;
+        }
+      }
+      #key_mobile_line4 {
+        stroke-dasharray: 134.7162;
+        stroke-dashoffset: 0;
+        transition: all 1s linear 0.5s;
+        .begin & {
+          stroke-dashoffset: 134.7162;
+        }
       }
       .finger {
         position: absolute;
@@ -168,6 +210,12 @@
           top: 0;
           left: 0;
         }
+      }
+      #finger-mobile {
+        stroke-dasharray: 516.1923;
+        stroke-dashoffset: 0;
+        transition: all 1.3s linear 0.5s;
+
       }
     }
   }
