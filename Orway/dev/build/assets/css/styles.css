@@ -6814,6 +6814,32 @@ svg {
   justify-content: center;
 }
 
+.desktop [data-slide='8'] .carousel .mouse-scroll,
+.tablet.landscape [data-slide='8'] .carousel .mouse-scroll {
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  width: 75px;
+  max-width: 8vw;
+}
+
+.desktop [data-slide='8'] .carousel .mouse-scroll svg,
+.tablet.landscape [data-slide='8'] .carousel .mouse-scroll svg {
+  width: 100%;
+  fill: #FFF;
+}
+
+.desktop [data-slide='8'] .carousel .mouse-group,
+.tablet.landscape [data-slide='8'] .carousel .mouse-group {
+  -webkit-animation: mouse_move 0.75s linear infinite alternate forwards;
+  animation: mouse_move 0.75s linear infinite alternate forwards;
+}
+
+.desktop [data-slide='8'] .carousel .mouse-click,
+.tablet.landscape [data-slide='8'] .carousel .mouse-click {
+  opacity: 0.4;
+}
+
 .mobile [data-slide='8'],
 .tablet.portrait [data-slide='8'] {
   padding: 20px 0;
@@ -6968,6 +6994,35 @@ svg {
 .mobile [data-slide='8'] .carousel .item.hard .text,
 .tablet.portrait [data-slide='8'] .carousel .item.hard .text {
   padding: 10px 0;
+}
+
+.mobile [data-slide='8'] .carousel .mouse-scroll,
+.tablet.portrait [data-slide='8'] .carousel .mouse-scroll {
+  display: none;
+}
+
+@-webkit-keyframes mouse_move {
+  0% {
+    -webkit-transform: translateX(-3%);
+    transform: translateX(-3%);
+  }
+
+  100% {
+    -webkit-transform: translateX(3%);
+    transform: translateX(3%);
+  }
+}
+
+@keyframes mouse_move {
+  0% {
+    -webkit-transform: translateX(-3%);
+    transform: translateX(-3%);
+  }
+
+  100% {
+    -webkit-transform: translateX(3%);
+    transform: translateX(3%);
+  }
 }
 
 .desktop [data-slide='9'],

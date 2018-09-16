@@ -94,6 +94,23 @@
           justify-content: center;
         }
       }
+      .mouse-scroll {
+        position: absolute;
+        top: 100%;
+        left: 25%;
+        width: 75px;
+        max-width: 8vw;
+        svg {
+          width: 100%;
+          fill: $white;
+        }
+      }
+      .mouse-group {
+        animation: mouse_move 0.75s linear infinite alternate forwards;
+      }
+      .mouse-click {
+        opacity: 0.4;
+      }
     }
   }
 }
@@ -196,6 +213,18 @@
           justify-content: center;
         }
       }
+      .mouse-scroll {
+        display: none;
+      }
     }
+  }
+}
+
+@keyframes mouse_move {
+  0% {
+    transform: translateX(-3%);
+  }
+  100% {
+    transform: translateX(3%);
   }
 }
