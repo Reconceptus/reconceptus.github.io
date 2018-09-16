@@ -19,11 +19,17 @@
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
+      margin: auto;
       width: 100%;
+      max-width: 1920px;
       height: 100%;
       overflow: hidden;
       display: flex;
       transition: transform 1.4s ease-in-out;
+      &[data-slide='10'] {
+        max-width: none;
+      }
       &-left {
         width: 50%;
         height: 100%;
@@ -32,7 +38,7 @@
       &-right {
         width: 50%;
         height: 100%;
-        padding: 25px;
+        padding: 1.4vw;
       }
     }
   }
