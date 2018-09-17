@@ -45,7 +45,7 @@
     }
     [data-current="6"] & {
       top: 0;
-      height: 20vh;
+      height: 24vh;
       opacity: 1;
       transition: all 0.8s ease-in, opacity 0.1s ease 0.8s;
     }
@@ -105,12 +105,12 @@
     }
     [data-current="6"] & {
       opacity: 1;
-      top: 20vh;
+      top: 24vh;
       transition: top 0.5s ease, opacity 0.2s ease 1s;
     }
     [data-current="7"] & {
       opacity: 0;
-      top: 20vh;
+      top: 24vh;
       margin-top: -10vh;
       transition: opacity 0.2s ease, margin-top 0.65s ease;
     }
@@ -122,7 +122,7 @@
     }
     [data-current="9"] & {
       opacity: 1;
-      top: 13vh;
+      top: 20vh;
       transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
     }
     [data-current="10"] & {
@@ -135,7 +135,7 @@
 
   .boxes_application {
     position: absolute;
-    top: 20vh;
+    top: 24vh;
     left: 50px;
     right: 50px;
     bottom: 16vh;
@@ -147,7 +147,7 @@
       right: 0;
       top: 100%;
       transform: translateY(16vh);
-      height: 20vh;
+      height: 24vh;
       width: 1px;
       background-color: rgba($white,.2);
       margin: auto;
@@ -347,7 +347,7 @@
   }
   .gates_application {
     position: absolute;
-    top: 20vh;
+    top: 24vh;
     left: 50px;
     right: 50px;
     bottom: 16vh;
@@ -477,7 +477,7 @@
   }
   .boxes_offer {
     position: absolute;
-    top: 20vh;
+    top: 24vh;
     left: 50px;
     right: 50px;
     bottom: 16vh;
@@ -822,10 +822,10 @@
   }
   .boxes_timeline {
     position: absolute;
-    top: 20vh;
+    top: 24vh;
     left: 0;
     right: 0;
-    bottom: 20vh;
+    bottom: 16vh;
     opacity: 0;
     z-index: 1;
     &:before {
@@ -833,7 +833,7 @@
       left: 0;
       right: 0;
       bottom: 100%;
-      height: 20vh;
+      height: 24vh;
       background-color: $dark;
       margin: auto;
       position: absolute;
@@ -864,7 +864,7 @@
       margin-right: -0.5px;
       right: 50%;
       bottom: 100%;
-      height: 20vh;
+      height: 24vh;
       background-color: $dark;
       border-width: 1px;
       border-style: none solid solid none;

@@ -10,10 +10,10 @@
     .head {
       width: 80%;
       @include media(hover,1481){
-        margin-bottom: 8vh;
+        margin-bottom: 4vh;
       }
       @include breakpoints(1201,1480){
-        margin-bottom: 6vh;
+        margin-bottom: 3vh;
       }
     }
     .title {
@@ -39,7 +39,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 17%;
+      bottom: 12%;
       transform: translateY(0);
     }
     .slide-img {

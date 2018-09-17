@@ -10,11 +10,11 @@
     .list {
       color: #bebebf;
       @include media(hover,1481){
-        margin-bottom: 14vh;
+        margin-bottom: 7vh;
         max-width: 65%;
       }
       @include breakpoints(1201,1480){
-        margin-bottom: 8vh;
+        margin-bottom: 4vh;
         max-width: 75%;
       }
     }

@@ -8,10 +8,10 @@
     .head {
       width: 80%;
       @include media(hover,1481){
-        margin-bottom: 11vh;
+        margin-bottom: 5vh;
       }
       @include breakpoints(1201,1480){
-        margin-bottom: 6vh;
+        margin-bottom: 3vh;
       }
     }
     .title {
@@ -45,7 +45,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 21%;
+      bottom: 16%;
       transition: transform 3s, opacity 3.5s ease-in 0.1s;
       transform: translateY(0);
     }

@@ -1,7 +1,7 @@
 [data-elements="2"]{
   position: absolute;
   left: 12.7%;
-  top: 3%;
+  top: 7%;
   width: 39%;
   bottom: 4%;
   display: flex;
@@ -575,7 +575,45 @@
       }
     }
   }
+  .switcher-mini {
+    position: absolute;
+    left: 10%;
+    top: 7%;
+    opacity: 0;
+    transform: scale(0.66) translate(-140%,-2%);
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      border-radius: 10px;
+      background-color: $dark;
+      box-shadow: 2vw 0 7vw 4vw $dark;
+    }
+    img {
+      display: block;
+      width: 100vw;
+      height: auto;
+      max-width: 20vw;
+      max-height: 60vh;
+    }
+    [data-current="4"] & {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-current="5"] & {
+      opacity: 0.3;
+      transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s;
+      transform: scale(0.66) translate(-135%,2%);
+    }
+    [data-current="6"] & {
+      opacity: 0;
+      transform: scale(0.66) translate(-140%,-2%);
+      transition: opacity 0.4s ease 0.1s, transform 0.1s ease 1.4s;
+    }
 
+  }
   #line01 {
     stroke-dasharray: 56.845;
     stroke-dashoffset: 56.845;

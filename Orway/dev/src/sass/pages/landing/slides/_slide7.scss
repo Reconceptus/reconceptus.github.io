@@ -9,7 +9,7 @@
       padding-right: 25px;
       margin-bottom: 3vh;
       position: absolute;
-      bottom: 80vh;
+      bottom: 72vh;
     }
     .title {
       color: $white;
@@ -26,7 +26,7 @@
       @include media(hover,1481){
         left: 3vw;
         right: 3vw;
-        top: 50px;
+        top: 100px;
       }
       @include breakpoints(1201,1480){
         left: 8vw;
@@ -51,18 +51,18 @@
         opacity: 0;
         text-align: center;
         @include media(hover,1201){
-          transform: translateY(30%);
+          transform: translateY(20%);
         }
         @include media(screen,1200){
           transform: translateY(20%);
         }
       }
       img {
-        max-height: 20vh;
+        height: auto;
         width: 100%;
         display: block;
         margin: 0 auto 3vh;
-        max-width: 80%;
+        max-width: 70%;
       }
     }
   }
