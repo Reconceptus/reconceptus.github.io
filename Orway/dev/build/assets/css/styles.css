@@ -6615,8 +6615,8 @@ svg {
 
 .desktop [data-slide='7'] .items img,
 .tablet.landscape [data-slide='7'] .items img {
-  height: 20vh;
-  width: auto;
+  max-height: 20vh;
+  width: 100%;
   display: block;
   margin: 0 auto 3vh;
   max-width: 80%;
@@ -9987,6 +9987,104 @@ svg {
   [data-slide='5'] .list {
     line-height: 1.7;
     max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 1921px) {
+  .desktop [data-slide='1'] .title,
+.desktop
+[data-slide='3'] .title,
+.desktop
+[data-slide='4'] .title,
+.desktop
+[data-slide='5'] .title,
+.desktop
+[data-slide='6'] .title,
+.desktop
+[data-slide='7'] .title,
+.desktop
+[data-slide='8'] .title,
+.desktop
+[data-slide='9'] .title {
+    font-size: 58px;
+    margin-bottom: 35px;
+  }
+
+  .desktop [data-slide='1'] .subtitle,
+.desktop
+[data-slide='3'] .subtitle,
+.desktop
+[data-slide='4'] .subtitle,
+.desktop
+[data-slide='5'] .subtitle {
+    font-size: 20px;
+  }
+
+  .desktop [data-slide='1'] .word,
+.desktop
+[data-slide='3'] .word,
+.desktop
+[data-slide='4'] .word {
+    font-size: 180px;
+  }
+
+  .desktop [data-slide='2'] .list,
+.desktop
+[data-slide='5'] .list {
+    font-size: 20px;
+  }
+
+  .desktop [data-slide='2'] .list li,
+.desktop
+[data-slide='5'] .list li {
+    margin: 10px 0;
+    padding-left: 40px;
+  }
+
+  .desktop [data-slide='2'] .list li:before,
+.desktop
+[data-slide='5'] .list li:before {
+    width: 30px;
+    top: 16px;
+  }
+
+  .desktop .item-title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .desktop .item-subtitle {
+    font-size: 20px;
+  }
+
+  .desktop [data-slide='1'] .brands,
+  .tablet.landscape [data-slide='1'] .brands {
+    right: 1vw;
+  }
+
+  .desktop [data-slide='8'] .carousel .item,
+  .tablet.landscape [data-slide='8'] .carousel .item {
+    padding: 0 20px;
+  }
+
+  .desktop [data-slide='8'] .carousel .item .date,
+  .tablet.landscape [data-slide='8'] .carousel .item .date {
+    font-size: 32px;
+  }
+
+  .desktop [data-slide='8'] .carousel .item .text,
+  .tablet.landscape [data-slide='8'] .carousel .item .text {
+    font-size: 24px;
+  }
+
+  .desktop [data-slide='10'] .page-title,
+  .tablet.landscape [data-slide='10'] .page-title {
+    font-size: 4.3rem;
+  }
+
+  .desktop [data-slide='10'] .article--title,
+  .tablet.landscape [data-slide='10'] .article--title {
+    font-size: 3rem;
   }
 }
 

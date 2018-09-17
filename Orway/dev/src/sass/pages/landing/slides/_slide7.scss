@@ -58,8 +58,8 @@
         }
       }
       img {
-        height: 20vh;
-        width: auto;
+        max-height: 20vh;
+        width: 100%;
         display: block;
         margin: 0 auto 3vh;
         max-width: 80%;

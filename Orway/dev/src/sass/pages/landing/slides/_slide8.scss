@@ -41,17 +41,26 @@
         position: relative;
         text-align: center;
         padding: 0 2.2vw;
+        @media screen and (min-width: 1921px){
+          padding: 0 20px;
+        }
         .date {
           font-size: 2.5vh;
           font-weight: 500;
           color: rgba($white,.65);
           padding: 15px 0;
+          @media screen and (min-width: 1921px){
+            font-size: 32px;
+          }
         }
         .text {
           font-size: 2vh;
           font-weight: 500;
           color: #fff;
           padding: 20px 0;
+          @media screen and (min-width: 1921px){
+            font-size: 24px;
+          }
         }
         &-img {
           margin-bottom: 20px;

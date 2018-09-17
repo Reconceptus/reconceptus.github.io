@@ -58,6 +58,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @media screen and (min-width: 1921px){
+        right: 1vw;
+      }
       .brand {
         display: flex;
         align-items: center;

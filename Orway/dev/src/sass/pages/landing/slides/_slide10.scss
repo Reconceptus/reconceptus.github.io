@@ -30,6 +30,9 @@
       @include media(screen,1200){
         font-size: 4vh;
       }
+      @media screen and (min-width: 1921px){
+        font-size: 4.3rem;
+      }
     }
     .article--title {
       @include media(hover,1481){
@@ -40,6 +43,9 @@
       }
       @include media(screen,1200){
         font-size: 2.2vh;
+      }
+      @media screen and (min-width: 1921px){
+        font-size: 3rem;
       }
     }
     .article--descr {
