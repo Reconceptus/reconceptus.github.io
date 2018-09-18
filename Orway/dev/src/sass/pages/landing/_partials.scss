@@ -111,7 +111,7 @@
   [data-slide='2'] &,
   [data-slide='5'] & {
     line-height: 1.9;
-    opacity: 0.8;
+    //opacity: 0.8;
     .mobile &,
     .tablet & {
       @include media(hover,1481){

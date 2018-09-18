@@ -1,62 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Orway</title>
-    <meta name="author" content="enenkoff@mail.ru">
-
-    <link rel="icon" href="favicon.ico" sizes="32x32">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-    <link href="assets/css/styles.min.css" rel="stylesheet">
-    <link href="assets/css/common.css" rel="stylesheet">
-
-
-</head>
-<body>
-<div class="hide">
-
-    <svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-search" viewBox="0 0 32 32">
-    <g fill-rule="evenodd">
-        <path d="m19.427 20.427c-1.39.99-3.09 1.573-4.927 1.573-4.694 0-8.5-3.806-8.5-8.5 0-4.694 3.806-8.5 8.5-8.5 4.694 0 8.5 3.806 8.5 8.5 0 2.347-.951 4.472-2.49 6.01l5.997 5.997c.275.275.268.716-.008.992-.278.278-.72.28-.992.008l-6.081-6.081m-4.927.573c4.142 0 7.5-3.358 7.5-7.5 0-4.142-3.358-7.5-7.5-7.5-4.142 0-7.5 3.358-7.5 7.5 0 4.142 3.358 7.5 7.5 7.5"/>
-    </g>
-</symbol><symbol id="icon-share-facebook" viewBox="0 0 56.693 56.693"><path d="m40.43 21.739h-7.645v-5.01c0-1.883 1.248-2.322 2.127-2.322.877 0 5.395 0 5.395 0v-8.278l-7.43-.029c-8.248 0-10.125 6.174-10.125 10.125v5.518h-4.77v8.53h4.77c0 10.947 0 24.14 0 24.14h10.03c0 0 0-13.32 0-24.14h6.77l.875-8.53"/></symbol><symbol id="icon-share-linkedin" viewBox="0 0 24 24"><path d="m8 19h-3v-10h3v10m11 0h-3v-5.342c0-1.392-.496-2.085-1.479-2.085-.779 0-1.273.388-1.521 1.165 0 1.262 0 6.262 0 6.262h-3c0 0 .04-9 0-10h2.368l.183 2h.062c.615-1 1.598-1.678 2.946-1.678 1.025 0 1.854.285 2.487 1 .637.717.954 1.679.954 3.03v5.647"/><ellipse cx="6.5" cy="6.5" rx="1.55" ry="1.5"/></symbol><symbol id="icon-share-twitter" viewBox="0 0 56.693 56.693"><path d="m52.837 15.06c-1.811.805-3.76 1.348-5.805 1.591 2.088-1.25 3.689-3.23 4.444-5.592-1.953 1.159-4.115 2-6.418 2.454-1.843-1.964-4.47-3.192-7.377-3.192-5.581 0-10.11 4.525-10.11 10.11 0 .791.089 1.562.262 2.303-8.4-.422-15.848-4.445-20.833-10.56-.87 1.492-1.368 3.228-1.368 5.082 0 3.506 1.784 6.6 4.496 8.412-1.656-.053-3.215-.508-4.578-1.265-.0001.042-.0001.085-.0001.128 0 4.896 3.484 8.98 8.108 9.91-.848.23-1.741.354-2.663.354-.652 0-1.285-.063-1.902-.182 1.287 4.02 5.02 6.938 9.441 7.02-3.459 2.711-7.816 4.327-12.552 4.327-.815 0-1.62-.048-2.411-.142 4.474 2.869 9.786 4.541 15.493 4.541 18.591 0 28.756-15.4 28.756-28.756 0-.438-.009-.875-.028-1.309 1.974-1.422 3.688-3.203 5.04-5.23"/></symbol></svg>
-
-</div>
-<div id="wrapper">
+<include src="../templates/head.html" title="Orway"></include>
 
     <div class="container">
 
-        <header id="header" class="header no-bg">
-            <div class="content">
-                <div class="header--main">
-                    <input type="checkbox" class="hide burger--check" id="burgerMenu">
-                    <a href="#" class="logo">
-                        <img src="assets/svg/icons/logo-light.svg" alt="ORWAY" width="154" height="35">
-                    </a>
-                    <label for="burgerMenu" class="burger">
-                        <span></span>
-                    </label>
-                    <nav class="nav" id="nav">
-                        <ul class="nav--menu">
-                            <li><a href="#">technology</a></li>
-                            <li><a href="#">events</a></li>
-                            <li><a href="#">products</a></li>
-                            <li><a href="#">about</a></li>
-                        </ul>
-                        <div class="lang">
-                            <div class="lang-sign">en</div>
-                            <div class="lang-select">
-                                <a href="#" class="current">En</a>
-                                <a href="#">Es</a>
-                                <a href="#">De</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
+        <include src="../templates/header-for-landing.html"></include>
 
         <div class="loader show">
             <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
@@ -296,8 +242,19 @@
                             <div class="box6"></div>
                             <div class="box4"></div>
                             <div class="box5"></div>
-                            <div class="light1"></div>
-                            <div class="light2"></div>
+                            <div class="light1_block">
+                                <div class="lighter"></div>
+                            </div>
+                            <div class="light1_block_part2">
+                                <div class="lighter"></div>
+                            </div>
+                            <div class="light2_block">
+                                <div class="lighter"></div>
+                            </div>
+                            <div class="light2_block_part2">
+                                <div class="lighter"></div>
+                            </div>
+
                         </div>
                         <div class="gates_application">
                             <div class="gate1"></div>
@@ -913,34 +870,7 @@
                         </div>
                     </div>
 
-                    <footer class="footer">
-                        <div class="content">
-                            <div class="footer--main">
-                                <div class="footer--links">
-                                    <ul>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Privacy & Cookies</a></li>
-                                        <li><a href="#">TDS explained</a></li>
-                                    </ul>
-                                </div>
-                                <nav class="nav">
-                                    <ul class="nav--menu">
-                                        <li><a href="#">technology</a></li>
-                                        <li><a href="#">events</a></li>
-                                        <li><a href="#">products</a></li>
-                                        <li><a href="#">about</a></li>
-                                    </ul>
-                                    <div class="request">
-                                        <button class="btn btn--dark" type="button">request</button>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-                    </footer>
-
-
-
-
+                    <include src="../templates/footer-for-landing.html"></include>
                 </section>
             </div>
 
@@ -952,10 +882,7 @@
 
 </div>
 
-
-<script type="text/javascript" src="assets/js/bower/jquery/dist/jquery.min.js"></script>
-<script src="assets/js/main.min.js"></script>
-
+<include src="../templates/scripts.html"></include>
 <script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
