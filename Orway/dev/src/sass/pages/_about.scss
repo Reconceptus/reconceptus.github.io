@@ -1,0 +1,72 @@
+.about {
+  background-color: $dark;
+  background-attachment: fixed;
+  background-image: url('../images/about/about-bg.png');
+  background-position: center 20rem;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+
+  &-head {
+    position: relative;
+    @include media(hover,1025){
+      margin-bottom: 10rem;
+    }
+    @include media(screen,1024){
+      margin-bottom: 5rem;
+    }
+    .page-title {
+      color: $white;
+    }
+    .bg-word {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba($white,0.05);
+      line-height: 1;
+      transform: translateY(-45%);
+      @include media(hover,1025){
+        font-size: 13rem;
+      }
+      @include breakpoints(681,1024){
+        font-size: 8rem;
+      }
+      @include media(screen,680){
+        font-size: 6rem;
+      }
+    }
+  }
+  &-text {
+    font-size: 1.6rem;
+    line-height: 2;
+    @include media(hover,1025){
+      margin-bottom: 14rem;
+    }
+    @include media(screen,1024){
+      margin-bottom: 7rem;
+    }
+    .content {
+      position: relative;
+      max-width: 680px;
+      color: rgba($white,0.8);
+      @include media(hover,768){
+        padding-right: 0;
+      }
+    }
+    .fingerprint {
+      position: absolute;
+      opacity: 0.6;
+      right: 101%;
+      top: 5rem;
+      bottom: 0;
+      margin: auto;
+      height: 22.5rem;
+      width: auto;
+    }
+    p {
+      margin-bottom: 3rem;
+    }
+  }
+}

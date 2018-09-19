@@ -6,6 +6,9 @@
     align-items: center;
     @include media(hover,1025){
       min-height: 160px;
+      &.right-align {
+        justify-content: flex-end;
+      }
     }
     @include media(screen,1024){
       flex-direction: column;

@@ -876,6 +876,10 @@ svg {
   margin-right: 38px;
 }
 
+.nav--menu:last-child li:last-child {
+  margin-right: 0;
+}
+
 .nav--menu a {
   text-transform: uppercase;
   font-size: 1rem;
@@ -2205,6 +2209,64 @@ svg {
 
 .blog--articles.more .article {
   margin-bottom: 45px;
+}
+
+.about {
+  background-color: #17191F;
+  background-attachment: fixed;
+  background-image: url("../images/about/about-bg.png");
+  background-position: center 20rem;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.about-head {
+  position: relative;
+}
+
+.about-head .page-title {
+  color: #FFF;
+}
+
+.about-head .bg-word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: RGBA(255, 255, 255, 0.05);
+  line-height: 1;
+  -webkit-transform: translateY(-45%);
+  -ms-transform: translateY(-45%);
+  transform: translateY(-45%);
+}
+
+.about-text {
+  font-size: 1.6rem;
+  line-height: 2;
+}
+
+.about-text .content {
+  position: relative;
+  max-width: 680px;
+  color: RGBA(255, 255, 255, 0.8);
+}
+
+.about-text .fingerprint {
+  position: absolute;
+  opacity: 0.6;
+  right: 101%;
+  top: 5rem;
+  bottom: 0;
+  margin: auto;
+  height: 22.5rem;
+  width: auto;
+}
+
+.about-text p {
+  margin-bottom: 3rem;
 }
 
 .single-article--data {
@@ -8763,6 +8825,13 @@ svg {
     min-height: 160px;
   }
 
+  .footer--main.right-align {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+
   .footer--links a:hover {
     color: #4D4C4C;
   }
@@ -8852,6 +8921,18 @@ svg {
     margin: 0 -40px;
   }
 
+  .about-head {
+    margin-bottom: 10rem;
+  }
+
+  .about-head .bg-word {
+    font-size: 13rem;
+  }
+
+  .about-text {
+    margin-bottom: 14rem;
+  }
+
   .single-article--title {
     font-size: 4.3rem;
   }
@@ -8898,6 +8979,10 @@ svg {
 
   .blog--articles .grid {
     margin: 0 -32.5px;
+  }
+
+  .about-head .bg-word {
+    font-size: 8rem;
   }
 
   .single-article--title {
@@ -9024,6 +9109,10 @@ svg {
     width: 100%;
   }
 
+  .about-head .bg-word {
+    font-size: 6rem;
+  }
+
   .single-article--data {
     margin-bottom: 2rem;
   }
@@ -9042,6 +9131,10 @@ svg {
 @media screen and (min-width: 768px) {
   .desktop-hidden {
     display: none !important;
+  }
+
+  .about-text .content {
+    padding-right: 0;
   }
 
   .mobile [data-slide='2'] .list li,
@@ -9810,6 +9903,14 @@ svg {
   .blog--search {
     margin-bottom: 25px;
     margin-left: auto;
+  }
+
+  .about-head {
+    margin-bottom: 5rem;
+  }
+
+  .about-text {
+    margin-bottom: 7rem;
   }
 }
 
