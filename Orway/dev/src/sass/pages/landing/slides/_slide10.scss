@@ -5,6 +5,7 @@
     background-color: $white;
     display: flex;
     flex-direction: column;
+    z-index: 2;
     .content--md {
       @include media(hover,1921){
         max-width: 90%;

@@ -7592,6 +7592,7 @@ svg {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  z-index: 2;
 }
 
 .desktop [data-slide='10'] .tech,
