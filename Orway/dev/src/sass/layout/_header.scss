@@ -9,6 +9,12 @@
   &.no-bg {
     .desktop & {
       background-color: transparent;
+      @include media(hover,1201){
+        .logo {
+          transform-origin: left center;
+          transform: scale(1.5);
+        }
+      }
     }
     [data-current="1"] & {
       .desktop & {
@@ -29,6 +35,9 @@
           background-color: $black;
           .header--main {
             height: 60px;
+          }
+          .logo {
+            transform: scale(1);
           }
         }
         @include media(screen,1200){

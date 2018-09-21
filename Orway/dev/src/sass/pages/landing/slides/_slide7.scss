@@ -23,31 +23,35 @@
       bottom: 50px;
       display: flex;
       align-items: center;
+      justify-content: center;
       @include media(hover,1481){
         left: 3vw;
         right: 3vw;
         top: 100px;
       }
       @include breakpoints(1201,1480){
-        left: 8vw;
-        right: 8vw;
-        top: 50px;
+        left: 3vw;
+        right: 3vw;
+        top: 100px;
       }
       @include media(screen,1200){
-        left: 10vw;
-        right: 10vw;
+        left: 4vw;
+        right: 4vw;
         top: 10vh;
       }
     }
     .items {
-      width: 100%;
+      width: 94%;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+      @include media(hover,1921){
+        width: 98%;
+      }
       .item {
         width: 100%;
         max-width: 33.3333%;
-        padding: 25px 3vw;
+        padding: 25px 4vw;
         opacity: 0;
         text-align: center;
         @include media(hover,1201){

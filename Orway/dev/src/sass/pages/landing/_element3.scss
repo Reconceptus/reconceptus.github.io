@@ -184,6 +184,11 @@
       @include media(screen,1200){
         border-radius: 16vh 16vh 0 0;
       }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 10vh 10vh 0 0;
+        }
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -205,6 +210,11 @@
       @include media(screen,1200){
         border-radius: 0 0 0 16vh;
       }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 0 0 0 10vh;
+        }
+      }
       [data-current="5"] & {
         opacity: 0;
         transition: opacity 0.3s;
@@ -225,6 +235,11 @@
       }
       @include media(screen,1200){
         border-radius: 0 0 16vh 0;
+      }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 0 0 10vh 0;
+        }
       }
       [data-current="5"] & {
         opacity: 0;
@@ -673,6 +688,11 @@
       @include media(screen,1200){
         border-radius: 16vh 16vh 0 0;
       }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 10vh 10vh 0 0;
+        }
+      }
     }
     .box2 {
       position: absolute;
@@ -690,6 +710,11 @@
       @include media(screen,1200){
         border-radius: 0 0 0 16vh;
       }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 0 0 0 10vh;
+        }
+      }
     }
     .box3 {
       position: absolute;
@@ -706,6 +731,11 @@
       }
       @include media(screen,1200){
         border-radius: 0 0 16vh 0;
+      }
+      @include media(hover,1921){
+        .portrait & {
+          border-radius: 0 0 10vh 0;
+        }
       }
     }
     .box4 {
