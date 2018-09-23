@@ -22,24 +22,24 @@
       .part1 {
         transition: transform 1.7s ease 1s, opacity 1.7s ease 1.1s;
         opacity: 1;
-        transform: translateX(0);
+        transform: translate3d(0,0,0);
       }
       .part2 {
         transition: transform 2s ease 1.3s, opacity 1.7s ease 1.4s;
         opacity: 1;
-        transform: translateX(0);
+        transform: translate3d(0,0,0);
       }
       .part3 {
         transition: transform 2.3s ease 1.6s, opacity 1.7s ease 1.7s;
         opacity: 1;
-        transform: translateX(0);
+        transform: translate3d(0,0,0);
       }
     }
     .subtitle {
       color: #bebebf;
       transition: transform 2s ease 1.5s, opacity 1.5s ease-in 2s;
       opacity: 0.8;
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
     }
     .word {
       position: absolute;
@@ -47,7 +47,7 @@
       right: 0;
       bottom: 16%;
       transition: transform 3s, opacity 3.5s ease-in 0.1s;
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
     }
     .brands {
       position: absolute;
@@ -66,7 +66,7 @@
         align-items: center;
         margin-bottom: 1vh;
         opacity: 0.3;
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
         img {
           max-width: 100%;
           width: 7vw;

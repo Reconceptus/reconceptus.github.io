@@ -1,7 +1,7 @@
 .desktop,
 .tablet.landscape {
   [data-slide='2'] {
-    transform: translateY(100%);
+    transform: translate3d(0,100%,0);
     .slide-right {
       display: flex;
       align-items: center;

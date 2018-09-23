@@ -5,7 +5,7 @@
   [data-current="9"],
   [data-current="10"] {
     [data-slide='6'] {
-      transform: translateY(-100%);
+      transform: translate3d(0,-100%,0);
     }
   }
 
@@ -16,31 +16,31 @@
     [data-slide='5'] {
       .title {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
       .subtitle {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
       .list {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
     }
 
     //===== slide 6
 
     [data-slide='6'] {
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
       transition: transform 1.2s ease-in-out;
       .title {
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
         transition: transform 0.8s ease 0.4s;
       }
       .items {
         .item {
           opacity: 1;
-          transform: translateY(0);
+          transform: translate3d(0,0,0);
           &:nth-child(1){
             transition: transform 0.7s ease 0.8s, opacity 0.4s ease 0.7s;
           }

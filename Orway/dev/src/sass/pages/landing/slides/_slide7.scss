@@ -1,7 +1,7 @@
 .desktop,
 .tablet.landscape {
   [data-slide='7'] {
-    transform: translateY(100%);
+    transform: translate3d(0,100%,0);
     .head {
       width: 40%;
       left: 50%;
@@ -15,7 +15,7 @@
       color: $white;
       position: relative;
       z-index: 2;
-      transform: translateY(100%);
+      transform: translate3d(0,100%,0);
     }
     .items-box {
       position: absolute;
@@ -55,10 +55,10 @@
         opacity: 0;
         text-align: center;
         @include media(hover,1201){
-          transform: translateY(20%);
+          transform: translate3d(0,20%,0);
         }
         @include media(screen,1200){
-          transform: translateY(20%);
+          transform: translate3d(0,20%,0);
         }
       }
       img {

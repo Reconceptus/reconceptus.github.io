@@ -7,7 +7,7 @@
   [data-current="9"],
   [data-current="10"] {
     [data-slide='5'] {
-      transform: translateY(-100%);
+      transform: translate3d(0,-100%,0);
     }
   }
 
@@ -18,18 +18,18 @@
     [data-slide='4'] {
       .title {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
       .subtitle {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
     }
 
     //===== slide 5
 
     [data-slide='5'] {
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
       .title {
         transition: transform 1.2s ease;
         .part1 {

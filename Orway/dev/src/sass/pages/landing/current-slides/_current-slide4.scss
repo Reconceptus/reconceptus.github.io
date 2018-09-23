@@ -8,7 +8,7 @@
   [data-current="9"],
   [data-current="10"] {
     [data-slide='4'] {
-      transform: translateY(-100%);
+      transform: translate3d(0,-100%,0);
     }
   }
 
@@ -19,18 +19,18 @@
     [data-slide='3'] {
       .title {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
       .subtitle {
         transition: transform 1.2s ease;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
       }
     }
 
     //===== slide 4
 
     [data-slide='4'] {
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
       .title {
         transition: transform 1.2s ease;
         .part1 {
@@ -56,26 +56,26 @@
     [data-slide='5']{
       .title {
         transition: transform 1.2s ease;
-        transform: translateY(-8vh);
+        transform: translate3d(0,-8vh,0);
         .part1 {
           transition: all 0.2s ease 1.2s;
-          transform: translateY(8vh);
+          transform: translate3d(0,8vh,0);
           opacity: 0;
         }
         .part2 {
           transition: all 0.2s ease 1.2s;
-          transform: translateY(8vh);
+          transform: translate3d(0,8vh,0);
           opacity: 0;
         }
       }
       .subtitle {
         transition: all 0.2s ease 1.2s;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
         opacity: 0;
       }
       .list {
         transition: all 0.2s ease 1.2s;
-        transform: translateY(8vh);
+        transform: translate3d(0,8vh,0);
         opacity: 0;
       }
     }

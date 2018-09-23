@@ -10,7 +10,7 @@
   [data-current="9"],
   [data-current="10"] {
     [data-slide='1'] {
-      transform: translateY(-100%);
+      transform: translate3d(0,-100%,0);
     }
   }
 

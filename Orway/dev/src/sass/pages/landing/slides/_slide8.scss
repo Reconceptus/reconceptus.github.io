@@ -1,7 +1,7 @@
 .desktop,
 .tablet.landscape {
   [data-slide='8'] {
-    transform: translateY(100%);
+    transform: translate3d(0,100%,0);
     z-index: 2;
     .head {
       width: 40%;
@@ -16,7 +16,7 @@
       color: $white;
       position: relative;
       z-index: 2;
-      transform: translateY(100%);
+      transform: translate3d(0,100%,0);
     }
     .carousel {
       position: absolute;
@@ -222,9 +222,9 @@
 
 @keyframes mouse_move {
   0% {
-    transform: translateX(-3%);
+    transform: translate3d(-3%,0,0);
   }
   100% {
-    transform: translateX(3%);
+    transform: translate3d(3%,0,0);
   }
 }

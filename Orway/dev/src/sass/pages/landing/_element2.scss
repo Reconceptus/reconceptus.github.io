@@ -11,7 +11,7 @@
     transition: transform 1.2s ease-in-out;
   }
   [data-current="6"] & {
-    transform: translateY(-100vh);
+    transform: translate3d(0,-100vh,0);
     transition: transform 1.2s cubic-bezier(.4,.5,0.7,.21), opacity 0.1s ease 1.4s;
   }
   [data-current="7"] & {
@@ -46,7 +46,7 @@
       }
       [data-current="4"] & {
         transition: all 1s linear;
-        transform: translate(-1%,-3%);
+        transform: translate3d(-1%,-3%,0);
       }
     }
     [data-current="2"] & {
@@ -580,7 +580,7 @@
     left: 10%;
     top: 7%;
     opacity: 0;
-    transform: scale(0.66) translate(-140%,-2%);
+    transform: scale(0.66) translate3d(-140%,-2%,0);
     &:before {
       content: "";
       position: absolute;
@@ -605,11 +605,11 @@
     [data-current="5"] & {
       opacity: 0.3;
       transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s;
-      transform: scale(0.66) translate(-135%,2%);
+      transform: scale(0.66) translate3d(-135%,2%,0);
     }
     [data-current="6"] & {
       opacity: 0;
-      transform: scale(0.66) translate(-140%,-2%);
+      transform: scale(0.66) translate3d(-140%,-2%,0);
       transition: opacity 0.4s ease 0.1s, transform 0.1s ease 1.4s;
     }
 

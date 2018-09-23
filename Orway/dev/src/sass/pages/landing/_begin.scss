@@ -4,29 +4,29 @@
     [data-slide='1'] {
       .title {
         .part1 {
-          transform: translateX(4vw);
+          transform: translate3d(4vw,0,0);
           opacity: 0;
         }
         .part2 {
-          transform: translateX(4.2vw);
+          transform: translate3d(4.2vw,0,0);
           opacity: 0;
         }
         .part3 {
-          transform: translateX(4.4vw);
+          transform: translate3d(4.4vw,0,0);
           opacity: 0;
         }
       }
       .subtitle {
         opacity: 0;
-        transform: translateY(90%);
+        transform: translate3d(0,90%,0);
       }
       .word {
         opacity: 0;
-        transform: translateY(80%);
+        transform: translate3d(0,80%,0);
       }
       .brands {
         .brand {
-          transform: translateY(50%);
+          transform: translate3d(0,50%,0);
           opacity: 0;
         }
       }
@@ -53,7 +53,7 @@
         stroke-dashoffset: 516.1923;
       }
       .switcher {
-        transform: translate(-10%,-7%);
+        transform: translate3d(-10%,-7%,0);
         opacity: 0;
       }
       .light {
@@ -62,7 +62,7 @@
         animation: none;
       }
       .key {
-        transform: translate(-19%,-9%);
+        transform: translate3d(-19%,-9%,0);
         opacity: 0;
         .key-lines {
           opacity: 0;

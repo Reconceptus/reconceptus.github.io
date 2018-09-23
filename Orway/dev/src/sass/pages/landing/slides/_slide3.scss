@@ -1,7 +1,7 @@
 .desktop,
 .tablet.landscape {
   [data-slide='3'] {
-    transform: translateY(100%);
+    transform: translate3d(0,100%,0);
     .slide-right {
       display: flex;
       align-items: center;
@@ -40,7 +40,7 @@
       left: 0;
       right: 0;
       bottom: 12%;
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
     }
     .slide-img {
       display: none;

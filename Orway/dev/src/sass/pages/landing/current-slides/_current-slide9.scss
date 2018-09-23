@@ -3,7 +3,7 @@
 
   [data-current="10"] {
     [data-slide='9'] {
-      transform: translateY(-100%);
+      transform: translate3d(0,-100%,0);
     }
   }
 
@@ -21,14 +21,14 @@
     //===== slide 9
 
     [data-slide='9'] {
-      transform: translateY(0);
+      transform: translate3d(0,0,0);
       .title {
-        transform: translateY(0);
+        transform: translate3d(0,0,0);
         transition: transform 0.8s ease 0.4s;
       }
       .brands {
         .brand {
-          transform: translateY(0);
+          transform: translate3d(0,0,0);
           opacity: 1;
           &:nth-child(1){
             transition: all 0.5s ease 0.8s;

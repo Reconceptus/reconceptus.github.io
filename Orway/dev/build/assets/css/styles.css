@@ -1337,25 +1337,7 @@ svg {
   color: #FFF;
 }
 
-.pagination span {
-  font-size: 20px;
-  min-width: 30px;
-  height: 20px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0 5px;
-}
-
+.pagination span,
 .pagination .page {
   border: 1px solid #A4A4A4;
   -webkit-border-radius: 50%;
@@ -1386,14 +1368,18 @@ svg {
   color: #4D4C4C;
 }
 
+.pagination .next span,
 .pagination .next .page,
+.pagination .prev span,
 .pagination .prev .page {
   overflow: hidden;
   text-indent: 999px;
   white-space: nowrap;
 }
 
+.pagination .next span:before,
 .pagination .next .page:before,
+.pagination .prev span:before,
 .pagination .prev .page:before {
   content: "";
   position: absolute;
@@ -1413,6 +1399,7 @@ svg {
   pointer-events: none;
 }
 
+.pagination .prev span:before,
 .pagination .prev .page:before {
   right: 9px;
   -webkit-transform: rotate(-135deg);
@@ -1420,6 +1407,7 @@ svg {
   transform: rotate(-135deg);
 }
 
+.pagination .next span:before,
 .pagination .next .page:before {
   left: 9px;
   -webkit-transform: rotate(45deg);
@@ -8879,6 +8867,7 @@ svg {
     margin-bottom: 60px;
   }
 
+  .pagination span:hover,
   .pagination .page:hover {
     border-color: #000;
     background-color: #000;

@@ -27,15 +27,7 @@
       }
     }
   }
-  span {
-    font-size: 20px;
-    min-width: 30px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 5px;
-  }
+  span,
   .page {
     border: 1px solid $border;
     border-radius: 50%;
@@ -61,6 +53,7 @@
     width: 30px;
     height: 30px;
     color: $text;
+    span,
     .page {
       overflow: hidden;
       text-indent: 999px;
@@ -91,6 +84,7 @@
     }
   }
   .prev {
+    span,
     .page {
       &:before {
         right: 9px;
@@ -99,6 +93,7 @@
     }
   }
   .next {
+    span,
     .page {
       &:before {
         left: 9px;
