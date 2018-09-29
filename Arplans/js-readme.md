@@ -1,28 +1,64 @@
-/*--- instructions ---*/
+# Функции
 
-npm install
-npm install stylefmt
-npm install css-mqpacker
+Ниже предоставлено описание используемых функций на проекте и способ их вызова
 
-/*--- bower ---*/
+**Все функции вызываются по document.ready и отрабатывают по условию наличия элементов для этих функций. Но они также могут быть отдельно вызваны (например после подгрузки контента Аяксом, либо коллбэком к какому-нибудь стороннему скрипту)**
 
-npm i -g bower
-npm i -g preen
+### Скрипт для хэдера
 
-bower install --S <pk>  install bower packages(pk) -> look in bower.json
-preen               remove unneeded plugin's files
+Скрипт для изменения отображения хэдера в зависимости от скролла страницы
 
-/*--- one-use commands ---*/
-gulp svg            compile svg sprite (after in sprite.svg reformat code)
-gulp img            images optimization
-gulp media          copy media files from src to build
-gulp fonts          copy fonts files from src to build
+```
+project.headerFixed();
+```
+*Отрабатывает по всему сайту*
+### Блок с видео
 
-/*--- build commands ---*/
-gulp builder:html   compile html from templates
-gulp builder:js     compile js file from vendors
-gulp builder:css    compile css file from sass
+Скрипт для регулирования размеров блока с видео и корректного его позиционирования
 
-/*--- watcher ---*/
-gulp                run watch with all builders
+```
+project.videoBoxHeight();
+```
+*Отрабатывает на главной странице*
+### Табуляция проектов
 
+Скрипт для табуляции категорий проектов
+
+```
+project.homeTabs();
+```
+*Отрабатывает на главной странице*
+### Кастомный input[type=file]
+
+Скрипт для кастомизации input[type=file]
+
+```
+project.inputFile();
+```
+*Отрабатывает в местах наличия элемента (напр. страница Запроса на добавление посёлка)*
+### Show more
+
+Сингл-аккордеон для отображения/скрытия части информации
+
+```
+project.showMore();
+```
+*Отрабатывает в местах наличия элемента (напр. страница Корзины)*
+
+### Дропбокс для карты
+
+Вызов выпадающего дропбокса по клику на поле
+
+```
+project.regionDropBox();
+```
+*Отрабатывает в местах наличия карты (напр. страница Контактов)*
+
+### Табы для страницы проекта
+
+Табуляция разделов описания товара
+
+```
+project.tabsBox();
+```
+*Отрабатывает на странице Проекта*
