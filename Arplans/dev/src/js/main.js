@@ -13,5 +13,8 @@
 // scripts
 //= partials/project-gallery.js
 
+// functions
+//= partials/functions.js
+
 // scripts
 //= partials/scripts.js

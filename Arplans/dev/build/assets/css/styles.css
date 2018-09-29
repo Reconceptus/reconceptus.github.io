@@ -3911,6 +3911,13 @@ svg {
   padding: 2px 0 2px 30px;
 }
 
+.ordering-pays .check label > span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .check label > span .ico {
   margin-left: 5px;
 }

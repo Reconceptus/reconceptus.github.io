@@ -21,9 +21,11 @@
     }
     & > span {
       position: relative;
-      //display: flex;
       align-items: center;
       padding: 2px 0 2px 30px;
+      .ordering-pays & {
+        display: flex;
+      }
       .ico {
         margin-left: 5px;
         img {
