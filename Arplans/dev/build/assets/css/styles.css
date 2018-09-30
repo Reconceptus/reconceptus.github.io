@@ -4643,6 +4643,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #FFF;
+  background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%0A%20%3Cg%3E%0A%20%20%3Ctitle%3Ebackground%3C/title%3E%0A%20%20%3Crect%20fill%3D%22none%22%20id%3D%22canvas_background%22%20height%3D%22402%22%20width%3D%22582%22%20y%3D%22-1%22%20x%3D%22-1%22/%3E%0A%20%3C/g%3E%0A%20%3Cg%3E%0A%20%20%3Ctitle%3ELayer%201%3C/title%3E%0A%20%20%3Cpath%20fill%3D%22%23f0f1f3%22%20stroke%3D%22null%22%20id%3D%22svg_1%22%20d%3D%22m11.40404%2C5.804286l-0.662531%2C-0.662074l0%2C-1.622516c0%2C-0.251305%20-0.205613%2C-0.456918%20-0.456918%2C-0.456918l-0.456918%2C0c-0.251305%2C0%20-0.456918%2C0.205613%20-0.456918%2C0.456918l0%2C0.252676l-0.913836%2C-0.912922c-0.124739%2C-0.117885%20-0.238968%2C-0.25359%20-0.456918%2C-0.25359s-0.332179%2C0.135705%20-0.456918%2C0.25359l-2.947122%2C2.944837c-0.142558%2C0.148498%20-0.251305%2C0.256788%20-0.251305%2C0.456918c0%2C0.257245%200.197389%2C0.456918%200.456918%2C0.456918l0.456918%2C0l0%2C2.741509c0%2C0.251305%200.205613%2C0.456918%200.456918%2C0.456918l1.370754%2C0l0%2C-2.284591c0%2C-0.251305%200.205613%2C-0.456918%200.456918%2C-0.456918l0.913836%2C0c0.251305%2C0%200.456918%2C0.205613%200.456918%2C0.456918l0%2C2.284591l1.370754%2C0c0.251305%2C0%200.456918%2C-0.205613%200.456918%2C-0.456918l0%2C-2.741509l0.456918%2C0c0.259529%2C0%200.456918%2C-0.199673%200.456918%2C-0.456918c0%2C-0.20013%20-0.108747%2C-0.30842%20-0.251305%2C-0.456918z%22/%3E%0A%20%3C/g%3E%0A%3C/svg%3E");
 }
 
 .projects-item--preview .hash {
@@ -4652,6 +4654,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .projects-item--preview .hash span {
@@ -4684,6 +4690,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 .projects-item--preview .hash span.free {
   color: #FFF;
   background-color: #000;
+}
+
+.projects-item--preview .hash span + span {
+  margin-left: 5px;
 }
 
 .part-project .projects-item--preview .hash {
