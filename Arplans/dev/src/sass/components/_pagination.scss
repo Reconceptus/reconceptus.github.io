@@ -39,6 +39,70 @@
     line-height: 1;
     padding-bottom: 5px;
   }
+  li.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  li.current {
+    a,span {
+      background-color: $text;
+      color: $white;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+  li.prev,
+  li.next {
+    display: flex;
+    margin-right: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: $bg;
+    padding: 0;
+    a, span {
+      padding-bottom: 5px;
+      position: relative;
+      color: transparent;
+      &:before {
+        position: absolute;
+        color: $border;
+        left: 0;
+        top: 0;
+        width: 100%;
+        bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @include hover(){
+        &:before {
+          color: $white;
+        }
+      }
+    }
+    @include media(hover,601){
+      width: 40px;
+      height: 40px;
+    }
+    @include media(screen,600){
+      width: 34px;
+      height: 34px;
+    }
+  }
+  li.prev {
+    a, span {
+      &:before {
+        content: '\00AB';
+      }
+    }
+  }
+  li.next {
+    a, span {
+      &:before {
+        content: '\00BB';
+      }
+    }
+  }
   a {
     background-color: $bg;
   }

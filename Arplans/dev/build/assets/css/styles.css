@@ -5454,6 +5454,77 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   padding-bottom: 5px;
 }
 
+.pagination li.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.pagination li.current a,
+.pagination li.current span {
+  background-color: #21202E;
+  color: #FFF;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pagination li.prev,
+.pagination li.next {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: #F0F1F3;
+  padding: 0;
+}
+
+.pagination li.prev a,
+.pagination li.prev span,
+.pagination li.next a,
+.pagination li.next span {
+  padding-bottom: 5px;
+  position: relative;
+  color: transparent;
+}
+
+.pagination li.prev a:before,
+.pagination li.prev span:before,
+.pagination li.next a:before,
+.pagination li.next span:before {
+  position: absolute;
+  color: #657482;
+  left: 0;
+  top: 0;
+  width: 100%;
+  bottom: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.pagination li.prev a:before,
+.pagination li.prev span:before {
+  content: "\00AB";
+}
+
+.pagination li.next a:before,
+.pagination li.next span:before {
+  content: "\00BB";
+}
+
 .pagination a {
   background-color: #F0F1F3;
 }
@@ -8434,6 +8505,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     color: #FFF;
   }
 
+  .pagination li.prev a:hover:before,
+  .pagination li.prev span:hover:before,
+  .pagination li.next a:hover:before,
+  .pagination li.next span:hover:before {
+    color: #FFF;
+  }
+
   .page-arrows > a:hover,
   .page-arrows > span:hover {
     color: #21202E;
@@ -9167,6 +9245,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .pagination a,
   .pagination span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pagination li.prev,
+  .pagination li.next {
     width: 34px;
     height: 34px;
   }
@@ -11230,6 +11314,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .pagination a,
   .pagination span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pagination li.prev,
+  .pagination li.next {
     width: 40px;
     height: 40px;
   }
