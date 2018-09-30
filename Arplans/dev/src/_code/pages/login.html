@@ -1,0 +1,101 @@
+<include src="../templates/head.html" title="Войти"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-unregistered.html"></include>
+
+        <div id="main" class="main">
+
+            <div class="section site-login">
+                <div class="content content--lg mobile-wide">
+                    <div class="request--wrap gradient">
+                        <div class="content content--xs">
+                            <h1 class="title title-lg">Login</h1>
+                            <h2 class="subtitle align-center">Please fill out the following fields to login:</h2>
+                            <div class="login-form">
+                                <form id="login-form" action="/site/login" method="post">
+                                    <div class="login-form--wrap">
+                                        <div class="request-form--main custom-form">
+                                            <div class="form-row-element">
+                                                <div class="input">
+                                                    <input type="text" name="username" placeholder="*Username">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="input">
+                                                    <input type="password" placeholder="*Password" name="password">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="check">
+                                                    <label>
+                                                        <input type="checkbox">
+                                                        <span>Remember Me</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="form-text">
+                                                    <p>If you forgot your password you can <a href="/site/request-password-reset">reset it</a>.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row-submit">
+                                            <div class="submit">
+                                                <button type="submit" class="btn btn--lt" name="login-button">Login</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+<script>
+
+    $('.login-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            username: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            username: {required: ""},
+            password: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+//            $('.contact-form').addClass('successful');
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
+</script>
+
+</body>
+</html>

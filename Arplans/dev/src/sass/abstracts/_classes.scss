@@ -1,4 +1,7 @@
 .clearfix:after {content: ""; display: block; clear: both;}
+.align-center {
+  text-align: center;
+}
 .tableBox {
   position: absolute;
   width: 100%;
@@ -31,6 +34,9 @@
   }
   &--sm {
     max-width: 1020px;
+  }
+  &--xs {
+    max-width: 800px;
   }
   &.mobile-wide {
     @include media(screen,767){
@@ -179,14 +185,7 @@
     background: linear-gradient(to right, $bg_blue_dark 0%,$link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
     animation: anim_bg 8s infinite linear;
   }
-  & > * {
-    //position: relative;
-    //z-index: 1;
-  }
 }
 
 /* vendor */
 
-.mCS-autoHide>.mCustomScrollBox[style*='none']~.mCSB_scrollTools {
-  //opacity: 0;
-}

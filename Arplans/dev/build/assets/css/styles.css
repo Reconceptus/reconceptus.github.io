@@ -2333,6 +2333,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   clear: both;
 }
 
+.align-center {
+  text-align: center;
+}
+
 .tableBox {
   position: absolute;
   width: 100%;
@@ -2370,6 +2374,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .content--sm {
   max-width: 1020px;
+}
+
+.content--xs {
+  max-width: 800px;
 }
 
 .custom-row {
@@ -4235,6 +4243,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: #657482;
 }
 
+.form-text a {
+  color: #2A7EC5;
+}
+
 .radio-flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4372,6 +4384,30 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .form-title:not(:first-child) {
   margin-top: 20px;
+}
+
+.login-form {
+  position: relative;
+}
+
+.login-form:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  transform: translateX(-50vw);
+  background-color: #FFF;
+}
+
+.login-form--wrap {
+  background-color: #FFF;
+  position: relative;
+  -webkit-box-shadow: 0 30px 80px 0 RGBA(26, 26, 26, 0.2);
+  box-shadow: 0 30px 80px 0 RGBA(26, 26, 26, 0.2);
 }
 
 .text-box {
@@ -8292,6 +8328,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     color: #2A7EC5;
   }
 
+  .form-text a:hover {
+    color: #346697;
+  }
+
   .form-row {
     margin: 0 -20px;
   }
@@ -9382,6 +9422,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .blog-list.col-3 .blog-item {
     width: 100%;
+  }
+
+  .login-form {
+    padding-bottom: 40px;
   }
 
   .projects .projects-item:nth-child(n + 5) {
@@ -10683,6 +10727,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin-bottom: 40px;
+  }
+
+  .login-form {
+    padding-bottom: 60px;
   }
 
   .info-box--text {

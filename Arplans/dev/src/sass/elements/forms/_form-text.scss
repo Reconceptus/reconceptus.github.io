@@ -4,5 +4,11 @@
   font-size: 3.5rem;
   line-height: 1.2;
   color: $border;
+  a {
+    color: $link_hover;
+    @include hover(){
+      color: $link_dark;
+    }
+  }
 }
 

@@ -284,7 +284,7 @@ project.blogCarousel = function() {
             }
         }
     })
-}
+};
 
 project.reviewCarousel = function() {
     var $carouselBox = $('[data-owl="reviews"]'),
@@ -324,7 +324,7 @@ project.reviewCarousel = function() {
         $carouselBox.find('.owl-next').click()
     })
     $('#t_prev').click();
-}
+};
 
 project.projectsCarousel = function() {
     var $carouselBox = $('[data-owl="projects"]'),
@@ -366,7 +366,7 @@ project.projectsCarousel = function() {
             }
         }
     })
-}
+};
 
 project.likesCarousel = function() {
     var $carouselBox = $('[data-owl="likes"]'),
@@ -391,7 +391,7 @@ project.likesCarousel = function() {
             }
         }
     })
-}
+};
 
 project.planCarousel = function() {
     var $carouselBox = $('[data-owl="plans"]'),
@@ -404,7 +404,7 @@ project.planCarousel = function() {
         dots: false,
         items: 1
     })
-}
+};
 
 project.objectCarousel = function() {
     var $carouselBox = $('[data-owl="objects"]'),
@@ -421,7 +421,7 @@ project.objectCarousel = function() {
             $('#owlCurrent').text(currentNum)
         }
     });
-}
+};
 
 project.partnerCarousel = function() {
     var $carouselBox = $('[data-owl="partner"]'),
@@ -434,7 +434,7 @@ project.partnerCarousel = function() {
         dots: true,
         items: 1
     });
-}
+};
 
 project.customScroll = function() {
     $('.scrolled').each(function () {
@@ -453,7 +453,7 @@ project.customScroll = function() {
         }
 
     });
-}
+};
 
 project.initProjectGallery = function () {
     $('.project-gallery').projectGallery();
