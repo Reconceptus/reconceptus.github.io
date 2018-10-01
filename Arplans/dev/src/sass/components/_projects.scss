@@ -100,6 +100,19 @@
         }
       }
     }
+    .empty {
+      @include media(hover,1367){
+        padding: 0 $padding_sm;
+        margin-bottom: 2*$padding_sm;
+      }
+      @include breakpoints(601,1366){
+        padding: 0 10px;
+        margin-bottom: $padding_sm;
+      }
+      @include media(screen,600){
+        margin-bottom: $padding_sm;
+      }
+    }
   }
 
   &-item {

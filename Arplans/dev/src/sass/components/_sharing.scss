@@ -6,6 +6,7 @@
   }
   &.title-end {
     flex-direction: row-reverse;
+    margin-left: auto;
     li {
       @include media(hover,768){
         margin: 0 $padding_sm 0 0;

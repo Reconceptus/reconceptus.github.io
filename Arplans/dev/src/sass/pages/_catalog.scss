@@ -71,6 +71,11 @@
       font-size: 3.5rem;
     }
   }
+  &-main {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+  }
   &-filters {
     background-color: $bg;
     //margin-bottom: 2*$padding_sm;

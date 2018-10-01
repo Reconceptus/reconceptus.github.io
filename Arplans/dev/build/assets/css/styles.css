@@ -5655,6 +5655,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+  margin-left: auto;
 }
 
 .sharing .title {
@@ -6774,6 +6775,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   transition: all 0.2s;
 }
 
+.service--profit .text-box {
+  margin-bottom: 30px;
+}
+
 .services-slider {
   position: relative;
 }
@@ -7151,6 +7156,19 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-transform: rotate(315deg) translate(-3px, 3px);
   -ms-transform: rotate(315deg) translate(-3px, 3px);
   transform: rotate(315deg) translate(-3px, 3px);
+}
+
+.catalog-main {
+  min-height: 65vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .catalog-filters {
@@ -8876,6 +8894,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin: 0 -20px;
   }
 
+  .projects-list .empty {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
   .catalog .projects-item,
   .projects .projects-item {
     padding: 0 20px;
@@ -8966,6 +8989,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .projects-list {
     margin: 0 -10px;
+  }
+
+  .projects-list .empty {
+    padding: 0 10px;
+    margin-bottom: 20px;
   }
 
   .catalog .projects-item,
@@ -9190,6 +9218,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .projects-list.col-3 .projects-item {
     width: 100%;
+  }
+
+  .projects-list .empty {
+    margin-bottom: 20px;
   }
 
   .catalog .projects-item,
