@@ -1190,6 +1190,7 @@ svg {
 .request-form
 .form--field .input textarea {
   color: #FFF;
+  margin: 0;
 }
 
 .add-comment .form--field .input input,
@@ -1667,7 +1668,7 @@ svg {
 }
 
 .text-box img:not(.right-align):not(.left-align) {
-  width: 100%;
+  width: auto;
   height: auto;
   margin: 0 auto 2rem;
 }
@@ -1797,6 +1798,32 @@ svg {
 
 .comments-section .comments-form-col {
   width: 100%;
+}
+
+.comments-section .comments-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  background-color: #F5F5F5;
+  padding: 1rem 1.5rem;
+}
+
+.comments-section .comments-title a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .comments-section .comment .comment {

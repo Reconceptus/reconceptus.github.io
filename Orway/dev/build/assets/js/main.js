@@ -310,6 +310,23 @@ $(document).ready(function () {
     }
 
     /*
+     ============= parse text elements
+    */
+
+    function textParsing() {
+        $('.text-box img').each(function () {
+            var $thisIMG = $(this);
+            if($thisIMG.css('float') == 'left'){
+                $thisIMG.addClass('left-align');
+            }
+            if($thisIMG.css('float') == 'right'){
+                $thisIMG.addClass('right-align');
+            }
+            $thisIMG.attr('style','');
+        });
+    }
+
+    /*
     ============= show reset form
    */
 
@@ -376,6 +393,7 @@ $(document).ready(function () {
     headerFixed();
 
     if($('.blog--search').length > 0){showResetForm()}
+    if($('.text-box').length > 0){textParsing()}
 
     /* --------------------------------- document resize --------------------------------- */
 
