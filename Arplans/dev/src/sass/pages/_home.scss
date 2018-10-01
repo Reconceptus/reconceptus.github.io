@@ -40,7 +40,7 @@
     @include media(hover,768){
       position: relative;
       min-height: 420px;
-      height: calc(100vh - 240px);
+      height: calc(100vh - 320px);
       display: flex;
       align-items: center;
       width: 100%;

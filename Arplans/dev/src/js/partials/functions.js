@@ -262,7 +262,7 @@ project.blogCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         navText: ['',''],
         dots: false,
@@ -291,7 +291,7 @@ project.reviewCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         navText: ['',''],
         dots: false,
@@ -398,7 +398,7 @@ project.planCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         navText: ['',''],
         dots: false,

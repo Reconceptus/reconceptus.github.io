@@ -1,6 +1,12 @@
 .projects-slider {
   background-color: $bg;
   padding: 2*$padding_sm 0 $padding_sm;
+  @include media(hover,768){
+    margin-top: 2*$padding_md;
+  }
+  @include media(screen,767){
+    margin-top: 2*$padding_sm;
+  }
   .title {
     text-transform: uppercase;
     font-size: 4rem;
@@ -42,5 +48,16 @@
       font-weight: 600;
       text-transform: uppercase;
     }
+  }
+}
+
+.blog-slider.simple,
+.like-slider,
+.basket-order,
+.compare-page,
+.request,
+.info-box {
+  & + .projects-slider {
+    margin-top: 0;
   }
 }

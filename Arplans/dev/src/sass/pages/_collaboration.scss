@@ -102,10 +102,14 @@
     }
     .item {
       @include media(hover,601){
-        margin-bottom: 2*$padding_md;
+        &:not(:last-child){
+          margin-bottom: 2*$padding_md;
+        }
       }
       @include media(screen,600){
-        margin-bottom: 2*$padding_sm;
+        &:not(:last-child) {
+          margin-bottom: 2*$padding_sm;
+        }
       }
       figure {
         width: 100%;
