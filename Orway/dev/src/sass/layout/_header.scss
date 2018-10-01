@@ -99,6 +99,10 @@
     img {
       @extend %fullBlock;
     }
+    @include media(hover,1201){
+      transform-origin: left center;
+      transform: scale(1.5);
+    }
   }
   .burger {
     width: 40px;
@@ -171,6 +175,11 @@
     }
     @include media(screen,680){
       transform: translateY(-25px);
+    }
+    @include media(hover,1201){
+      .logo {
+        transform: scale(1);
+      }
     }
   }
   &--main {

@@ -1,7 +1,7 @@
 .about {
   background-color: $dark;
   background-attachment: fixed;
-  background-image: url('../images/about/about-bg.png');
+  //background-image: url('../images/about/about-bg.png');
   background-position: center 20rem;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -49,19 +49,14 @@
     }
     .content {
       position: relative;
-      max-width: 680px;
+      max-width: 720px;
       color: rgba($white,0.8);
-      @include media(hover,768){
-        padding-right: 0;
-      }
     }
     .fingerprint {
       position: absolute;
       opacity: 0.6;
       right: 101%;
       top: 5rem;
-      bottom: 0;
-      margin: auto;
       height: 22.5rem;
       width: auto;
     }
