@@ -1,4 +1,5 @@
 .form--field {
+  .login-form &,
   .request-form & {
     margin-bottom: 25px;
   }
@@ -11,6 +12,7 @@
     font-size: 0.86rem;
     margin-bottom: 5px;
     flex-shrink: 0;
+    .login-form &,
     .request-form & {
       color: $white;
     }
@@ -29,6 +31,7 @@
       border: 1px solid rgba(113,115,120,0.6);
       font-size: 1rem;
       padding: 12px 15px;
+      .login-form &,
       .request-form & {
         color: $white;
       }
@@ -131,6 +134,20 @@
         }
         .add-comment & {
           color: $black;
+        }
+      }
+    }
+  }
+  .txt {
+    .login-form & {
+      color: rgba($white, 0.7);
+    }
+    a {
+      color: inherit;
+      border-bottom: 1px solid;
+      @include media(hover,1025){
+        &:hover {
+          border-bottom-width: 2px;
         }
       }
     }

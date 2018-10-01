@@ -59,5 +59,7 @@ svg {
   .footer {
     margin-top: auto;
   }
-
+  &.dark-theme {
+    background-color: $dark;
+  }
 }

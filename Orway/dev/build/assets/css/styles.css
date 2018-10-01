@@ -657,6 +657,10 @@ svg {
   margin-top: auto;
 }
 
+.container.dark-theme {
+  background-color: #17191F;
+}
+
 .header {
   background-color: #17191F;
   position: fixed;
@@ -1140,6 +1144,7 @@ svg {
   transform: translate3d(0, 0, 0);
 }
 
+.login-form .form--field,
 .request-form .form--field {
   margin-bottom: 25px;
 }
@@ -1157,6 +1162,7 @@ svg {
   flex-shrink: 0;
 }
 
+.login-form .form--field .label,
 .request-form .form--field .label {
   color: #FFF;
 }
@@ -1177,7 +1183,10 @@ svg {
   padding: 12px 15px;
 }
 
+.login-form .form--field .input input,
 .request-form .form--field .input input,
+.login-form
+.form--field .input textarea,
 .request-form
 .form--field .input textarea {
   color: #FFF;
@@ -1295,6 +1304,15 @@ svg {
 
 .add-comment .form--field .check-text:after {
   border-color: BLACK;
+}
+
+.login-form .form--field .txt {
+  color: RGBA(255, 255, 255, 0.7);
+}
+
+.form--field .txt a {
+  color: inherit;
+  border-bottom: 1px solid;
 }
 
 .pagination {
@@ -1868,6 +1886,25 @@ svg {
 }
 
 .request-form .submit {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.login-form--title {
+  color: #FFF;
+  font-size: 2.56rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-form .submit {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8747,6 +8784,10 @@ svg {
 
   .add-comment .form--field .check:hover {
     color: #000;
+  }
+
+  .form--field .txt a:hover {
+    border-bottom-width: 2px;
   }
 
   .pagination {
