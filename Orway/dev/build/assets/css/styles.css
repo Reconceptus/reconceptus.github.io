@@ -2625,6 +2625,43 @@ svg {
   margin-bottom: 2vw;
 }
 
+.mobile [data-slide='3'] .title,
+.mobile
+[data-slide='4'] .title,
+.mobile
+[data-slide='5'] .title,
+.mobile
+[data-slide='6'] .title,
+.mobile
+[data-slide='7'] .title,
+.mobile
+[data-slide='8'] .title,
+.mobile
+[data-slide='9'] .title {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.mobile [data-slide='3'] .title:not(.active),
+.mobile
+[data-slide='4'] .title:not(.active),
+.mobile
+[data-slide='5'] .title:not(.active),
+.mobile
+[data-slide='6'] .title:not(.active),
+.mobile
+[data-slide='7'] .title:not(.active),
+.mobile
+[data-slide='8'] .title:not(.active),
+.mobile
+[data-slide='9'] .title:not(.active) {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
 [data-slide='1'] .subtitle,
 [data-slide='3'] .subtitle,
 [data-slide='4'] .subtitle,

@@ -36,6 +36,21 @@
 
     }
   }
+  [data-slide='3'] &,
+  [data-slide='4'] &,
+  [data-slide='5'] &,
+  [data-slide='6'] &,
+  [data-slide='7'] &,
+  [data-slide='8'] &,
+  [data-slide='9'] & {
+    .mobile & {
+      transition: all 0.5s;
+      &:not(.active) {
+        opacity: 0;
+        transform: translateY(50%);
+      }
+    }
+  }
 }
 .subtitle {
   [data-slide='1'] &,

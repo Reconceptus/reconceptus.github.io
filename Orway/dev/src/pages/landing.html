@@ -884,6 +884,11 @@
         $('.loader').removeClass('show');
         setTimeout(function () {
             $('.landing').removeClass('begin');
+            if($('html').hasClass('mobile')){
+                var slidesWithTitles = [3,4,5,6,7,8,9],
+                    slidesWithAnimImg = [3,4,5];
+                $('.landing').mobileSliding(slidesWithTitles,slidesWithAnimImg);
+            }
         },200);
         setTimeout(function () {
             $('.owl-carousel').owlCarousel({
@@ -918,10 +923,6 @@
             if($('html').hasClass('tablet')){
                 $('.landing').startSliding('#wrapper','tablet');
             }
-            if($('html').hasClass('mobile')){
-                $('.landing').mobileSliding();
-            }
-
         },2000);
     });
 
