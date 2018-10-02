@@ -52,7 +52,7 @@
 .tablet.portrait {
   [data-slide='3'] {
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     .title {
       color: $white;
       span {
@@ -67,7 +67,6 @@
     }
     .subtitle {
       color: #bebebf;
-      margin-bottom: 4vh;
     }
     .slide-img {
       padding: 2% 0 10% 0;
@@ -99,6 +98,9 @@
           transform-origin: 50% 50%;
         }
       }
+    }
+    &:after {
+      content: "";
     }
   }
 }

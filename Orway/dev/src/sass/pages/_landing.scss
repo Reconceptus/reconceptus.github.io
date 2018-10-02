@@ -40,5 +40,18 @@
         padding: 1.4vw;
       }
     }
+    .mobile &,
+    .tablet.portrait & {
+      position: relative;
+      &:after {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 100%;
+        margin-top: 15px;
+        height: 1px;
+        background-color: rgba($white,0.1);
+      }
+    }
   }
 }

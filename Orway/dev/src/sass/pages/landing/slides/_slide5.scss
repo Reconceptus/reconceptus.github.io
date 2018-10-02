@@ -52,7 +52,10 @@
 .tablet.portrait {
   [data-slide='5'] {
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    &:after {
+      content: "";
+    }
     .title {
       color: $white;
       span {

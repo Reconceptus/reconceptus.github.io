@@ -52,7 +52,7 @@
 .tablet.portrait {
   [data-slide='4'] {
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     .title {
       color: $white;
       span {
@@ -110,6 +110,9 @@
           stroke-dashoffset: 16;
         }
       }
+    }
+    &:after {
+      content: "";
     }
   }
 }

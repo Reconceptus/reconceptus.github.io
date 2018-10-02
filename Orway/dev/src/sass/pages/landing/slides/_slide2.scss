@@ -25,9 +25,12 @@
 .tablet.portrait {
   [data-slide='2'] {
     padding: 0 20px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     .list {
       color: #bebebf;
+    }
+    &:after {
+      content: "";
     }
   }
 }

@@ -106,8 +106,28 @@
 
         }
 
+    };
 
-    }
+    $.fn.mobileSliding = function () {
+
+        $landingBox = this;
+        var slidesOffset = [];
+
+        $('.slide', $landingBox).each(function () {
+            var $thisSlide = $(this),
+                $thisSlideData = $thisSlide.attr('data-slide'),
+                $thisSlideTitle = $thisSlide.find('.title');
+                $thisSlideTitleTop = $thisSlideTitle.offsetTop,
+                $thisSlideImg = $thisSlide.find('.slide-img');
+
+            slidesOffset[$thisSlideData] = {
+                'titleOffsetTop': $thisSlideTitleTop,
+                'titleHeight': $thisSlideTitle.height(),
+                'imgOffsetTop': $thisSlideImg.offsetTop
+            }
+        });
+        console.log(slidesOffset)
+    };
 
 })( jQuery );
 
