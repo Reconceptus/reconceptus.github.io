@@ -104,3 +104,81 @@
     }
   }
 }
+
+.mobile {
+  [data-slide='3'] {
+    .man_left_p1,
+    .man_left_p2,
+    .man_left_p3,
+    .man_right_p1,
+    .man_right_p2,
+    .man_right_p3,
+    .man_right_p4,
+    .man_right_p5,
+    .man_right_p6 {
+      transition: stroke-dashoffset 0.5s linear;
+    }
+    .lines,
+    .icons,
+    .cassette {
+      opacity: 0;
+      transition: opacity 0.5s linear;
+    }
+
+    .man_left_p1 {
+      stroke-dasharray: 209.985;
+      stroke-dashoffset: -209.985;
+    }
+    .man_left_p2 {
+      stroke-dasharray: 41.6786;
+      stroke-dashoffset: 41.6786;
+    }
+    .man_left_p3 {
+      stroke-dasharray: 209.153;
+      stroke-dashoffset: 209.153;
+    }
+    .man_right_p1 {
+      stroke-dasharray: 92.503;
+      stroke-dashoffset: 92.503;
+    }
+    .man_right_p2 {
+      stroke-dasharray: 27.780;
+      stroke-dashoffset: 27.780;
+    }
+    .man_right_p3 {
+      stroke-dasharray: 96.592;
+      stroke-dashoffset: 96.592;
+    }
+    .man_right_p4 {
+      stroke-dasharray: 106.792;
+      stroke-dashoffset: 106.792;
+    }
+    .man_right_p5 {
+      stroke-dasharray: 166.147;
+      stroke-dashoffset: 166.147;
+    }
+    .man_right_p6 {
+      stroke-dasharray: 220.259;
+      stroke-dashoffset: 220.259;
+    }
+
+    .slide-img.active {
+      .man_left_p2,
+      .man_left_p1,
+      .man_left_p3,
+      .man_right_p1,
+      .man_right_p2,
+      .man_right_p3,
+      .man_right_p4,
+      .man_right_p5,
+      .man_right_p6 {
+        stroke-dashoffset: 0;
+      }
+      .lines,
+      .icons,
+      .cassette {
+        opacity: 1;
+      }
+    }
+  }
+}

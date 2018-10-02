@@ -289,6 +289,13 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
             winHeight = $(window).height(),
             needStartScroll = scrollTop + winHeight;
 
+
+        $(window).scroll(function () {
+            scrollTop = $(window).scrollTop();
+            winHeight = $(window).height();
+            needStartScroll = scrollTop + winHeight;
+        });
+
         function showActiveTitle(element,ourScroll) {
             if(needStartScroll >= ourScroll){
                 element.addClass('active');
@@ -320,7 +327,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
             if($thisSlide.hasClass('for-title-scroll')){
 
                 var $thisSlideTitle = $thisSlide.find('.title'),
-                    $offsetForActivation = $thisSlideTitle.offset().top + $thisSlideTitle.height();
+                    $offsetForActivation = $thisSlideTitle.offset().top + 0.5*$thisSlideTitle.height();
 
                 showActiveTitle($thisSlideTitle,$offsetForActivation);
                 $(window).scroll(function () {
@@ -331,7 +338,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
             if($thisSlide.hasClass('for-img-scroll')){
 
                 var $thisSlideImg = $thisSlide.find('.slide-img'),
-                    $offsetForActivation = $thisSlideImg.offset().top + $thisSlideImg.height();
+                    $offsetForActivation = $thisSlideImg.offset().top + 0.5*$thisSlideImg.height();
 
                 showActiveImg($thisSlideImg,$offsetForActivation);
                 $(window).scroll(function () {
@@ -339,12 +346,6 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
                 });
             };
 
-        });
-
-        $(window).scroll(function () {
-            scrollTop = $(window).scrollTop();
-            winHeight = $(window).height();
-            needStartScroll = scrollTop + winHeight;
         });
 
     };

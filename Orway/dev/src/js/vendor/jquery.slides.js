@@ -115,6 +115,13 @@
             winHeight = $(window).height(),
             needStartScroll = scrollTop + winHeight;
 
+
+        $(window).scroll(function () {
+            scrollTop = $(window).scrollTop();
+            winHeight = $(window).height();
+            needStartScroll = scrollTop + winHeight;
+        });
+
         function showActiveTitle(element,ourScroll) {
             if(needStartScroll >= ourScroll){
                 element.addClass('active');
@@ -146,7 +153,7 @@
             if($thisSlide.hasClass('for-title-scroll')){
 
                 var $thisSlideTitle = $thisSlide.find('.title'),
-                    $offsetForActivation = $thisSlideTitle.offset().top + $thisSlideTitle.height();
+                    $offsetForActivation = $thisSlideTitle.offset().top + 0.5*$thisSlideTitle.height();
 
                 showActiveTitle($thisSlideTitle,$offsetForActivation);
                 $(window).scroll(function () {
@@ -157,7 +164,7 @@
             if($thisSlide.hasClass('for-img-scroll')){
 
                 var $thisSlideImg = $thisSlide.find('.slide-img'),
-                    $offsetForActivation = $thisSlideImg.offset().top + $thisSlideImg.height();
+                    $offsetForActivation = $thisSlideImg.offset().top + 0.5*$thisSlideImg.height();
 
                 showActiveImg($thisSlideImg,$offsetForActivation);
                 $(window).scroll(function () {
@@ -165,12 +172,6 @@
                 });
             };
 
-        });
-
-        $(window).scroll(function () {
-            scrollTop = $(window).scrollTop();
-            winHeight = $(window).height();
-            needStartScroll = scrollTop + winHeight;
         });
 
     };
