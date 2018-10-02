@@ -39,6 +39,14 @@
       font-size: 40px;
       font-weight: 300;
       cursor: pointer;
+      .mobile & {
+        top: 5px;
+        right: 5px;
+      }
+    }
+    .mobile & {
+      align-items: flex-start;
+      overflow: auto;
     }
   }
   &[data-modal="request"]{

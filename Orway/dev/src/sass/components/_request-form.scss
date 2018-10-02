@@ -1,4 +1,8 @@
 .request-form {
+  position: relative;
+  .mobile & {
+    padding: 20px 0;
+  }
   &--title {
     color: $white;
     font-size: 2.56rem;
@@ -8,6 +12,57 @@
   }
   .submit {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    @include media(screen,480){
+      flex-direction: column;
+    }
+    .captcha {
+      overflow: hidden;
+      @include media(hover,481){
+        width: 230px;
+        height: 60px;
+      }
+      @include media(screen,480){
+        margin-bottom: 10px;
+        width: 280px;
+      }
+    }
+    .g-recaptcha {
+      @include media(hover,481){
+        transform-origin: left top;
+        transform: scale(0.75);
+      }
+      @include media(screen,480){
+        transform: scale(0.9);
+        transform-origin: left center;
+      }
+    }
+  }
+  .thanks-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #24262f;
+    .txt {
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: $white;
+      font-size: 2.56rem;
+      font-weight: 600;
+    }
+  }
+  &.success {
+    .thanks-box {
+      display: block;
+    }
   }
 }

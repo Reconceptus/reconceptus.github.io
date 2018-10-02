@@ -282,7 +282,13 @@
                             </div>
                         </div>
                         <div class="submit">
+                            <div class="captcha">
+                                <div class="g-recaptcha" data-sitekey="6LfhMXMUAAAAAHbaxsd-KdSQfIE9YuLYfU0aHl8K"></div>
+                            </div>
                             <button type="submit" class="btn btn--square-light">Send</button>
+                        </div>
+                        <div class="thanks-box">
+                            <div class="txt">Thank You!</div>
                         </div>
                     </div>
                 </form>
@@ -302,7 +308,16 @@
 
     $('.grid').grid('.article');
 
+    // temporary script for show success message
+
+    $('.request-form .btn').click(function (e) {
+        e.preventDefault();
+        $('.request-form').addClass('success')
+    })
+
+
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 </body>
 </html>
