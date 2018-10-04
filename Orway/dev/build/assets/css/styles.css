@@ -613,6 +613,8 @@ svg {
 #main {
   position: relative;
   width: 100%;
+  display: table-row;
+  height: 100%;
 }
 
 #wrapper {
@@ -641,23 +643,15 @@ svg {
 
 .container {
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  display: table;
   min-height: 100vh;
 }
 
 .container .footer {
-  margin-top: auto;
+  display: table-footer-group;
 }
 
-.container.dark-theme {
+.dark-theme {
   background-color: #17191F;
 }
 
@@ -2620,7 +2614,7 @@ svg {
   left: 20px;
   right: 20px;
   top: 100%;
-  margin-top: 15px;
+  margin-top: 30px;
   height: 1px;
   background-color: RGBA(255, 255, 255, 0.1);
 }
@@ -6532,7 +6526,7 @@ svg {
 .mobile [data-slide='2'],
 .tablet.portrait [data-slide='2'] {
   padding: 0 20px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='2'] .list,
@@ -6613,7 +6607,7 @@ svg {
 .mobile [data-slide='3'],
 .tablet.portrait [data-slide='3'] {
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='3'] .title,
@@ -6849,7 +6843,7 @@ svg {
 .mobile [data-slide='4'],
 .tablet.portrait [data-slide='4'] {
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='4'] .title,
@@ -7067,7 +7061,7 @@ svg {
 .mobile [data-slide='5'],
 .tablet.portrait [data-slide='5'] {
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='5']:after,
@@ -7337,7 +7331,7 @@ svg {
 .mobile [data-slide='6'],
 .tablet.portrait [data-slide='6'] {
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='6']:after,
@@ -7456,7 +7450,7 @@ svg {
 .mobile [data-slide='7'],
 .tablet.portrait [data-slide='7'] {
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='7']:after,
@@ -7677,7 +7671,7 @@ svg {
 .mobile [data-slide='8'],
 .tablet.portrait [data-slide='8'] {
   padding: 20px 0;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .mobile [data-slide='8']:after,
@@ -9347,7 +9341,7 @@ svg {
     font-size: 11px;
   }
 
-  #main {
+  .container {
     padding-top: 85px;
   }
 
@@ -9974,7 +9968,7 @@ svg {
 }
 
 @media screen and (min-width: 681px) {
-  #main {
+  .container {
     padding-top: 105px;
   }
 
