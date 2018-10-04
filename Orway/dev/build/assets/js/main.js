@@ -391,6 +391,10 @@ $(document).ready(function () {
             }
             $thisIMG.attr('style','');
         });
+        $('.text-box iframe').each(function () {
+            var $thisIframe = $(this);
+            $thisIframe.wrap('<div class="iframe"></div>');
+        });
     }
 
     /*

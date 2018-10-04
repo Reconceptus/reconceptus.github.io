@@ -92,12 +92,18 @@
       margin-left: 0.66*$padding;
       margin-right: 0.66*$padding;
     }
+    @include media(screen,680){
+      flex-wrap: wrap;
+    }
     .prev-page,
     .next-page {
-      width: 150px;
       text-transform: uppercase;
+      @include media(hover,481){
+        width: 150px;
+      }
       @include media(screen,480){
         font-size: 0.8rem;
+        width: 100px;
       }
       a {
         color: $text;
@@ -139,6 +145,12 @@
     .socials {
       display: flex;
       align-items: center;
+      @include media(screen,680){
+        order: 1;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+      }
       li {
         margin: 0 5px;
       }
