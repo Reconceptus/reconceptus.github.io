@@ -1,5 +1,8 @@
 .footer {
   background-color: $light;
+  .landing & {
+    margin-top: auto;
+  }
   &--main {
     display: flex;
     justify-content: space-between;

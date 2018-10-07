@@ -130,6 +130,7 @@
       color: $white;
     }
     .carousel {
+      max-width: 100vw;
       .owl-stage {
         display: flex;
         align-items: stretch;

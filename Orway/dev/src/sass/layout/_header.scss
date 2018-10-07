@@ -49,11 +49,22 @@
     .tablet &,
     .mobile & {
       background-color: rgba($dark,0.65);
-      box-shadow: 0 2px 15px 0 rgba($black,0.5);background-color: rgba($dark,0.65);
       box-shadow: 0 2px 15px 0 rgba($black,0.5);
     }
-    & ~ #main {
-      padding-top: 0;
+    & ~ .main {
+      & >:first-child {
+        margin-top: 0;
+      }
+      .landing {
+        .mobile & {
+          @include media(hover,1201){
+            padding-top: 140px;
+          }
+          @include media(screen,1200){
+            padding-top: 80px;
+          }
+        }
+      }
     }
     @include breakpoints(681,1200){
       transform: translateY(-45px);
@@ -66,6 +77,7 @@
         //  }
         //}
       }
+
     }
     @include media(screen,680){
       transform: translateY(-25px);
