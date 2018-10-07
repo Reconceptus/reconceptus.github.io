@@ -1,0 +1,82 @@
+.error {
+  &-logo {
+    margin: 0 auto 2rem;
+    @include media(hover,681){
+      width: 300px;
+      height: 141px;
+    }
+    @include media(screen,680){
+      width: 220px;
+      height: 103px;
+    }
+  }
+  &-text {
+    text-align: center;
+    color: $white;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+  }
+  &-link {
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+}
+
+.right-digit {
+  stroke-dasharray: 131.384;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: right_digit 4s linear 2s infinite;
+}
+.left-digit {
+  stroke-dasharray: 85.507;
+  stroke-dashoffset: 0;
+  animation: left_digit 4s linear infinite;
+}
+.left-digit-in {
+  opacity: 0;
+  animation: left_digit_in 4s linear infinite;
+}
+.ltr-string {
+  animation: ltr_line 4s linear infinite;
+  stroke-dasharray: 42.389;
+  stroke-dashoffset: 0;
+}
+.rtl-string {
+  animation: rtl_line 4s linear 2s infinite;
+  stroke-dasharray: 49.511;
+  stroke-dashoffset: 0;
+  opacity: 0;
+}
+
+@keyframes ltr_line {
+  0% {stroke-dashoffset: 42.389;}
+  25% {stroke-dashoffset: 0;}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+@keyframes left_digit {
+  0% {stroke-dashoffset: 85.507;}
+  25% {stroke-dashoffset: 85.507;}
+  50% {stroke-dashoffset: 0;}
+  100% {opacity: 0}
+}
+@keyframes left_digit_in {
+  0% {opacity: 0;}
+  30% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0}
+}
+
+@keyframes rtl_line {
+  0% {stroke-dashoffset: 49.511; opacity: 1;}
+  25% {stroke-dashoffset: 0; opacity: 1;}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+@keyframes right_digit {
+  0% {stroke-dashoffset: 131.384; opacity: 1;}
+  25% {stroke-dashoffset: 131.384;  opacity: 1;}
+  50% {stroke-dashoffset: 0;  opacity: 1;}
+  100% {opacity: 0}
+}
