@@ -27,6 +27,9 @@
         margin-bottom: 10px;
         width: 280px;
       }
+      .control-label {
+        display: none;
+      }
     }
     .g-recaptcha {
       @include media(hover,481){
