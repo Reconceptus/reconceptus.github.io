@@ -44,6 +44,12 @@
         font-size: 6rem;
       }
     }
+    .moving-word {
+      transition: opacity 0.6s ease;
+      &.opacity {
+        opacity: 0;
+      }
+    }
   }
   &-text {
     font-size: 1.6rem;
@@ -72,6 +78,7 @@
     }
   }
   &-team {
+    position: relative;
     &--list {
       display: flex;
       align-items: flex-start;

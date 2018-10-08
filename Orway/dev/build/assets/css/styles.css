@@ -2359,6 +2359,16 @@ svg {
   transform: translateY(-45%);
 }
 
+.about-head .moving-word {
+  -webkit-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+
+.about-head .moving-word.opacity {
+  opacity: 0;
+}
+
 .about-text {
   font-size: 1.6rem;
   line-height: 2;
@@ -2381,6 +2391,10 @@ svg {
 
 .about-text p {
   margin-bottom: 3rem;
+}
+
+.about-team {
+  position: relative;
 }
 
 .about-team--list {

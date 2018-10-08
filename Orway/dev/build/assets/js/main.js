@@ -377,6 +377,31 @@ $(document).ready(function () {
     }
 
     /*
+     ============= move words
+    */
+
+    function wordsMoving() {
+
+        $('.moving-word').each(function () {
+            var $thisWord = $(this),
+                $thisOffset = $thisWord.offset().top;
+
+            $(window).scroll(function () {
+                var needOffset = scrollTop + 50;
+                if(needOffset > $thisOffset){
+                    $thisWord.css('margin-top',needOffset-$thisOffset + 'px');
+                    $thisWord.addClass('opacity');
+                }
+                else {
+                    $thisWord.css('margin-top',0);
+                    $thisWord.removeClass('opacity');
+                }
+            });
+
+        });
+    }
+
+    /*
      ============= parse text elements
     */
 
@@ -465,6 +490,7 @@ $(document).ready(function () {
 
     if($('.blog--search').length > 0){showResetForm()}
     if($('.text-box').length > 0){textParsing()}
+    if($('.moving-word').length > 0){wordsMoving()}
 
     /* --------------------------------- document resize --------------------------------- */
 
