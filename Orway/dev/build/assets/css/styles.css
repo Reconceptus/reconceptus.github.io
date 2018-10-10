@@ -4650,6 +4650,12 @@ svg {
   transition: transform 1.4s ease-in-out, opacity 0.01s ease 1.3s, -webkit-transform 1.4s ease-in-out;
 }
 
+[data-current="8"] [data-elements="3"] .line.not-complited {
+  top: 0;
+  bottom: auto;
+  height: 20vh;
+}
+
 [data-current="9"] [data-elements="3"] .line {
   top: auto;
   bottom: 0;
@@ -4659,6 +4665,12 @@ svg {
   -o-transition: transform 1.4s ease-in-out;
   transition: transform 1.4s ease-in-out;
   transition: transform 1.4s ease-in-out, -webkit-transform 1.4s ease-in-out;
+}
+
+[data-current="9"] [data-elements="3"] .line.not-complited {
+  top: 0;
+  bottom: auto;
+  height: 20vh;
 }
 
 [data-current="10"] [data-elements="3"] .line {
@@ -4741,12 +4753,23 @@ svg {
   transition: opacity 0.1s ease 0.3s, margin-top 0.65s ease, top 0.1s ease 1.4s;
 }
 
+[data-current="8"] [data-elements="3"] .light.not-complited {
+  top: 20vh;
+}
+
 [data-current="9"] [data-elements="3"] .light {
   opacity: 1;
   top: 20vh;
   -webkit-transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
   -o-transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
   transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
+}
+
+[data-current="9"] [data-elements="3"] .light.not-complited {
+  top: 20vh;
+  -webkit-transition: opacity 0.1s ease 0.8s, margin-top 0.65s ease, top 0.1s ease 1.4s;
+  -o-transition: opacity 0.1s ease 0.8s, margin-top 0.65s ease, top 0.1s ease 1.4s;
+  transition: opacity 0.1s ease 0.8s, margin-top 0.65s ease, top 0.1s ease 1.4s;
 }
 
 [data-current="10"] [data-elements="3"] .light {

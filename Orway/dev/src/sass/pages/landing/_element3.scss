@@ -58,12 +58,22 @@
       height: 100vh;
       transform: translate3d(0,100vh,0);
       transition: transform 1.4s ease-in-out, opacity 0.01s ease 1.3s;
+      &.not-complited {
+        top: 0;
+        bottom: auto;
+        height: 20vh;
+      }
     }
     [data-current="9"] & {
       top: auto;
       bottom: 0;
       height: 100vh;
       transition: transform 1.4s ease-in-out;
+      &.not-complited {
+        top: 0;
+        bottom: auto;
+        height: 20vh;
+      }
     }
     [data-current="10"] & {
       top: auto;
@@ -119,11 +129,18 @@
       top: 120vh;
       margin-top: -10vh;
       transition: opacity 0.1s ease 0.3s, margin-top 0.65s ease, top 0.1s ease 1.4s;
+      &.not-complited {
+        top: 20vh;
+      }
     }
     [data-current="9"] & {
       opacity: 1;
       top: 20vh;
       transition: top 0.9s ease-in-out 0.3s, opacity 0.1s ease 0.1s;
+      &.not-complited {
+        top: 20vh;
+        transition: opacity 0.1s ease 0.8s, margin-top 0.65s ease, top 0.1s ease 1.4s;
+      }
     }
     [data-current="10"] & {
       z-index: 2;
