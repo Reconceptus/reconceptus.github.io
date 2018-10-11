@@ -816,6 +816,7 @@ svg {
 
 .landing .footer {
   margin-top: auto;
+  width: 100%;
 }
 
 .footer--main {
@@ -8218,9 +8219,9 @@ svg {
 .tablet.landscape [data-slide='9'] .brands {
   position: absolute;
   top: 20vh;
-  bottom: 5vh;
   left: 50px;
   right: 50px;
+  bottom: 20vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8265,6 +8266,22 @@ svg {
 .tablet.portrait [data-slide='9'] {
   padding: 20px;
   margin-bottom: 20px;
+}
+
+.mobile [data-slide='9'].has-footer,
+.tablet.portrait [data-slide='9'].has-footer {
+  padding: 0;
+  margin: 0;
+}
+
+.mobile [data-slide='9'].has-footer .title,
+.tablet.portrait [data-slide='9'].has-footer .title {
+  padding: 20px 20px 0;
+}
+
+.mobile [data-slide='9'].has-footer .brands,
+.tablet.portrait [data-slide='9'].has-footer .brands {
+  padding: 0 20px 40px;
 }
 
 .mobile [data-slide='9'] .title,
@@ -10484,6 +10501,10 @@ svg {
 
   .comments-section .comments-form-col.col-60 textarea {
     min-height: 100%;
+  }
+
+  .comments-section .comments-form-col.col-60 .form--field:last-child {
+    margin-bottom: 0;
   }
 
   .comments-section .comments-form-col.col-40 {

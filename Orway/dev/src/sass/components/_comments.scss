@@ -39,6 +39,9 @@
             textarea {
               min-height: 100%;
             }
+            .form--field:last-child {
+              margin-bottom: 0;
+            }
           }
           &.col-40 {
             max-width: 40%;

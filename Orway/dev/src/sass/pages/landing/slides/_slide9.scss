@@ -19,9 +19,9 @@
     .brands {
       position: absolute;
       top: 20vh;
-      bottom: 5vh;
       left: 50px;
       right: 50px;
+      bottom: 20vh;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -50,6 +50,16 @@
   [data-slide='9'] {
     padding: 20px;
     margin-bottom: 20px;
+    &.has-footer {
+      padding: 0;
+      margin: 0;
+      .title {
+        padding: 20px 20px 0;
+      }
+      .brands {
+        padding: 0 20px 40px;
+      }
+    }
     .title {
       color: $white;
     }
