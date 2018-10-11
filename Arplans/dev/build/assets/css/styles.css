@@ -3606,6 +3606,31 @@ svg {
   z-index: 3;
 }
 
+.modal-content .links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal-content .link {
+  color: #346697;
+  margin: 0 10px;
+}
+
+.modal-content .btn-square-min {
+  width: auto;
+  margin: 0 10px;
+}
+
 .modal-form--submit .btn {
   width: 100%;
 }
@@ -8295,6 +8320,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 @media screen and (min-width: 1025px) {
+  .modal-content .link:hover,
   .text-box a:hover,
   .map-box--aside .item .on-map:hover,
   .add-service--main-text .link a:hover,
@@ -8420,6 +8446,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .regions-drop ul a:hover {
     font-weight: bold;
+  }
+
+  .modal-content .link:hover {
+    color: #2A5279;
   }
 
   .blog-hashes .btn-small:hover {
@@ -9133,6 +9163,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 25px;
     font-size: 45px;
     line-height: 25px;
+  }
+
+  .modal-content .links {
+    padding: 20px 20px 40px;
   }
 
   .modal-form--fields {
@@ -11253,6 +11287,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     height: 30px;
     font-size: 60px;
     line-height: 30px;
+  }
+
+  .modal-content .links {
+    padding: 30px 50px 50px 50px;
   }
 
   .modal-form--fields {

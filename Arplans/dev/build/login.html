@@ -359,7 +359,18 @@
     </div>
 
 </div>
-
+<div class="modal" data-modal="loginSuccess">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Успешная регистрация</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Перейти в личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal" data-modal="consultation">
     <div class="bg close"></div>
     <div class="modal-box">
@@ -413,6 +424,21 @@
         <div class="modal-thanks">
             <h4 class="modal-thanks--title">Спасибо!</h4>
             <p>На указанную Вами почту строители-патртнеры АРПЛАНС вышлют сметы на строительство выбранного вами дома. </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" data-modal="addToBasket">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Проект добавлен в корзину!</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Продолжить покупки</a>
+                <a href="#" class="btn-square-min">Оформить заказ</a>
+            </div>
         </div>
     </div>
 </div>
@@ -484,7 +510,10 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//            $('.contact-form').addClass('successful');
+
+            $('.modal[data-modal="loginSuccess"]').addClass('active');
+
+
 //            if (form.valid()){
 //                form.submit();
 //            }

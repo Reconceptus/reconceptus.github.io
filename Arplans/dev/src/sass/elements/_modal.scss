@@ -103,6 +103,31 @@
       }
     }
   }
+  &-content {
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include media(hover,601){
+        padding: 1.5*$padding_sm 50px 2.5*$padding_sm 50px;
+      }
+      @include media(screen,600){
+        padding: $padding_sm $padding_sm 2*$padding_sm;
+      }
+    }
+    .link {
+      color: $link_dark;
+      @extend %hover_underline;
+      margin: 0 10px;
+      @include hover() {
+        color: $link_dark * 0.8;
+      }
+    }
+    .btn-square-min {
+      width: auto;
+      margin: 0 10px;
+    }
+  }
   &-form {
     &--fields {
 

@@ -60,7 +60,18 @@
     </div>
 
 </div>
-
+<div class="modal" data-modal="loginSuccess">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Успешная регистрация</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Перейти в личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>
 <include src="../templates/scripts.html"></include>
 
 <!--script-->
@@ -87,7 +98,10 @@
         },
         errorPlacement: $.noop,
         submitHandler:function (form) {
-//            $('.contact-form').addClass('successful');
+
+            $('.modal[data-modal="loginSuccess"]').addClass('active');
+
+
 //            if (form.valid()){
 //                form.submit();
 //            }
