@@ -8196,6 +8196,11 @@ svg {
   transform: translate3d(0, 100%, 0);
 }
 
+.desktop [data-slide='9'].has-footer,
+.tablet.landscape [data-slide='9'].has-footer {
+  z-index: 1;
+}
+
 .desktop [data-slide='9'] .head,
 .tablet.landscape [data-slide='9'] .head {
   width: 40%;
