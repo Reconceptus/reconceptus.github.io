@@ -179,9 +179,11 @@ var project = {},
 
 project.headerFixed = function(){
     scrollTop = $(window).scrollTop();
+
     if(scrollTop > scrollVar){
         $header.addClass('minimized');
         scrollVar = scrollTop;
+        console.log(scrollVar)
     }
     else {
         $header.removeClass('minimized');
@@ -344,7 +346,7 @@ project.fixedSidebar = function() {
     }
 
     function setFixPosition() {
-        $winScroll = $(window).scrollTop();
+        $winScroll = scrollTop;
         $needBarTopOffset = $winScroll + $headerHeight;
         $barPosition = $needBarTopOffset - $thisBarTopOffset;
 

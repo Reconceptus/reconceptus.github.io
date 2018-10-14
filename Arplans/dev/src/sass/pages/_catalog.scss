@@ -79,15 +79,54 @@
   &-filters {
     background-color: $bg;
     //margin-bottom: 2*$padding_sm;
-    padding: $padding_sm $padding_sm $padding_sm $padding_md;
+    //padding: $padding_sm $padding_sm $padding_sm $padding_md;
     @include media(hover,1201){
-      max-height: 100%;
+      //max-height: 100%;
+      &.dynamic {
+        //max-height: none;
+        transition: all 0.2s;
+        height: calc(100vh - 220px);
+        .header.minimized ~ .main & {
+          transform: translate3d(0,-40px,0);
+          //height: calc(100vh - 140px);
+        }
+        .header.minimized ~ .main .bottom & {
+          transform: translate3d(0,0,0);
+        }
+      }
     }
     @include media(screen,1200){
 
     }
     &--btn {
       flex-shrink: 0;
+    }
+    &--container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding-left: $padding_sm;
+
+      &[data-catalog="project"]{
+        padding-top: $padding_sm;
+        padding-bottom: 2*$padding_md;
+        .actions {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+    form {
+      height: 100%;
+      width: 100%;
+    }
+    &--form {
+      padding-right: $padding_sm;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
     }
     &--wrap {
       height: 100%;
@@ -131,27 +170,13 @@
       }
     }
     .reset {
-      margin-top: 20px;
-      button {
-        display: flex;
-        align-items: center;
-        background-color: transparent;
-        border: none;
-        font-size: 3rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $border;
-        border-bottom: 1px solid currentColor;
-        line-height: 1;
-        span {
-          font-size: 5rem;
-          font-weight: 400;
-          margin-right: 5px;
-        }
-      }
+      width: 50%;
     }
     .submit {
-      margin-top: $padding_sm;
+      width: 50%;
+    }
+    .actions {
+      display: flex;
     }
   }
   &-actions {
