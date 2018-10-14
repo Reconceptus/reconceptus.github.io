@@ -12,6 +12,7 @@
       border: 1px solid transparent;
       background-color: $white;
       padding: 0 $padding_sm;
+      border-radius: 0;
       @include media(screen,600){
         font-size: 3rem;
         padding: 0 10px;

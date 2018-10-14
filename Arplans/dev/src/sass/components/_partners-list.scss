@@ -11,6 +11,9 @@
     flex-flow: row wrap;
     margin: 0 -1*$padding_sm $padding_sm;
   }
+  .empty {
+    padding: 0 $padding_sm;
+  }
   li {
     padding: 0 $padding_sm;
     @include media(hover,1367){

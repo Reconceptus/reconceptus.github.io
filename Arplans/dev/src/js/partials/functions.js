@@ -250,7 +250,7 @@ project.counter = function() {
         });
 
         $this_plus.click(function () {
-            $this_value = parseInt($this_value) + 1;
+            $this_value = +$this_value + 1;
             $this_minus.removeClass('disabled');
             $this_result.val($this_value);
         });
@@ -293,7 +293,7 @@ project.reviewCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: false,
+        loop: true,
         nav: true,
         navText: ['',''],
         dots: false,
@@ -333,7 +333,7 @@ project.projectsCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         navText: ['',''],
         dots: false,
@@ -375,7 +375,7 @@ project.likesCarousel = function() {
         $carousel = $carouselBox.find('.owl-carousel');
 
     $carousel.owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         navText: ['',''],
         dots: false,

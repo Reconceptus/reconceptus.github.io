@@ -3442,6 +3442,8 @@ svg {
   border: 1px solid transparent;
   background-color: #FFF;
   padding: 0 20px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 
 .custom-search--field .submit {
@@ -6065,6 +6067,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin: 0 -20px 20px;
 }
 
+.partners-list .empty {
+  padding: 0 20px;
+}
+
 .partners-list li {
   padding: 0 20px;
 }
@@ -8597,6 +8603,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .part-project .projects-item--preview:hover .look-alone {
     opacity: 1;
+  }
+
+  .part-project .projects-item--preview .hash {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .part-project .projects-item--preview .hash span + span {
+    margin: 3px 0 0 0;
   }
 
   .projects-item--actions .icon-like:hover {
@@ -11559,6 +11577,13 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .reviews-carousel .owl-item:not(.active) + .active .item {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  .reviews-carousel .owl-item.active:first-child .item {
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);

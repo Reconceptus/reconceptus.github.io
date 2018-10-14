@@ -37,7 +37,7 @@
         }
 
         function clickArrowLR(dir) {
-            $current = parseInt($current);
+            $current = +$current;
             if(dir == 'next'){
                 $current = $current + 1;
             }
