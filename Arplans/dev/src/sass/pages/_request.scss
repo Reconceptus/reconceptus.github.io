@@ -1,6 +1,4 @@
 .request {
-
-
   &--wrap {
     padding-top: 2*$padding_sm;
     .title {
@@ -33,6 +31,20 @@
             background-color: transparent;
           }
         }
+      }
+      .successful & {
+        display: none;
+      }
+    }
+    .success-text {
+      font-style: italic;
+      font-size: 5.2rem;
+      color: $white;
+      font-family: 'Merriweather';
+      margin-bottom: 2*$padding_sm;
+      display: none;
+      .successful & {
+        display: block;
       }
     }
   }

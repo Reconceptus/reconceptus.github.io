@@ -21,6 +21,9 @@
     position: relative;
     box-shadow: 0 30px 80px 0 rgba(26,26,26,0.2);
   }
+  .successful & {
+    display: none;
+  }
 }
 
 .site-login {
