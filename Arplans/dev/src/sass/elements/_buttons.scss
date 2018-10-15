@@ -166,6 +166,10 @@
     @include hover(){
       background-color: $link * 0.95;
     }
+    &.incart {
+      background-color: $link_dark;
+      pointer-events: none;
+    }
   }
   &-round-min {
     background-color: $link;
@@ -199,6 +203,10 @@
       color: $white;
       background-color: $link_dark;
       border-color: $link_dark;
+    }
+    &.incart {
+      background-color: $link_dark;
+      pointer-events: none;
     }
   }
 

@@ -190,12 +190,6 @@
             }
           }
         }
-        &.active:first-child {
-          .item {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-        }
       }
       @include media(screen,600){
         padding: 0 20px;

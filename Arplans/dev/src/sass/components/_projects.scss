@@ -21,6 +21,8 @@
       font-weight: 600;
       text-align: center;
       order: 3;
+      background: none;
+      border: none;
       &:nth-child(1){
         order: 1;
       }
@@ -499,6 +501,7 @@
       }
       .icon-like {
         color: transparent;
+        flex-shrink: 0;
         &:not(:last-child){
           margin-right: $padding_sm;
         }

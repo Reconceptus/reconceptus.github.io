@@ -18,6 +18,13 @@
 
         $('.gallery-main').append($elements);
 
+        function itemLength() {
+            if($('.gallery-list .item').length < 5){
+                $('.buttons .up').hide();
+                $('.buttons .down').hide();
+            }
+        }
+
         function defaultActiveItem() {
             $('.gallery-list .item').first().addClass('current');
             $('.gallery-main .item').first().addClass('current');
@@ -83,7 +90,7 @@
         }
 
 
-
+        itemLength();
         defaultActiveItem();
         setActiveItem();
         $('.gallery-list .item').click(function () {

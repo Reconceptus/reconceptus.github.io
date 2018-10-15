@@ -249,8 +249,12 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        @include media(hover,1601){
+        @include media(hover,1721){
           padding: 23% $padding_sm 0;
+          justify-content: flex-start;
+        }
+        @include breakpoints(1601,1720){
+          padding: 15% $padding_sm 0;
           justify-content: flex-start;
         }
         @include breakpoints(768,1600){

@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     /* ----------------------------------- variables ----------------------------------- */
 
+    $win = $(window);
     $html = $('html');
     $header = $('#header');
     $search = $('#searchForm');

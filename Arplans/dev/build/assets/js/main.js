@@ -83,6 +83,13 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
 
         $('.gallery-main').append($elements);
 
+        function itemLength() {
+            if($('.gallery-list .item').length < 5){
+                $('.buttons .up').hide();
+                $('.buttons .down').hide();
+            }
+        }
+
         function defaultActiveItem() {
             $('.gallery-list .item').first().addClass('current');
             $('.gallery-main .item').first().addClass('current');
@@ -148,7 +155,7 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
         }
 
 
-
+        itemLength();
         defaultActiveItem();
         setActiveItem();
         $('.gallery-list .item').click(function () {
@@ -183,7 +190,6 @@ project.headerFixed = function(){
     if(scrollTop > scrollVar){
         $header.addClass('minimized');
         scrollVar = scrollTop;
-        console.log(scrollVar)
     }
     else {
         $header.removeClass('minimized');
@@ -632,6 +638,7 @@ $(document).ready(function () {
 
     /* ----------------------------------- variables ----------------------------------- */
 
+    $win = $(window);
     $html = $('html');
     $header = $('#header');
     $search = $('#searchForm');

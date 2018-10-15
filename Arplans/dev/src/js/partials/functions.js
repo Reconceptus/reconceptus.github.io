@@ -17,7 +17,6 @@ project.headerFixed = function(){
     if(scrollTop > scrollVar){
         $header.addClass('minimized');
         scrollVar = scrollTop;
-        console.log(scrollVar)
     }
     else {
         $header.removeClass('minimized');

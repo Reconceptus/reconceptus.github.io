@@ -3193,6 +3193,11 @@ svg {
   width: 100%;
 }
 
+.btn-square-min.incart {
+  background-color: #346697;
+  pointer-events: none;
+}
+
 .btn-round-min {
   background-color: #2196F3;
   color: #FFF;
@@ -3235,6 +3240,11 @@ svg {
   -ms-flex-pack: center;
   justify-content: center;
   background-color: transparent;
+}
+
+.btn-small.incart {
+  background-color: #346697;
+  pointer-events: none;
 }
 
 .btn-box {
@@ -4621,6 +4631,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
+  background: none;
+  border: none;
 }
 
 .projects-filters--item:nth-child(1) {
@@ -5050,6 +5062,9 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .projects-item--actions .icon-like {
   color: transparent;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 .projects-item--actions .icon-like:not(:last-child) {
@@ -11583,13 +11598,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     opacity: 0;
   }
 
-  .reviews-carousel .owl-item.active:first-child .item {
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
   .service--profit .examples li {
     width: 50%;
   }
@@ -11676,14 +11684,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .site-info .title {
     font-size: 5.2rem;
-  }
-
-  .home-about-menu--item article {
-    padding: 23% 20px 0;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
   }
 
   .home-about-menu--item .title {
@@ -12419,6 +12419,26 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .compare-list li:not(:last-child) {
     margin-right: 30px;
+  }
+}
+
+@media screen and (min-width: 1721px) {
+  .home-about-menu--item article {
+    padding: 23% 20px 0;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1720px) {
+  .home-about-menu--item article {
+    padding: 15% 20px 0;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
 }
 
