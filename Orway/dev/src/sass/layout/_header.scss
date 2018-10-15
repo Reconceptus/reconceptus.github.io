@@ -17,7 +17,8 @@
       }
     }
     [data-current="1"] & {
-      .desktop & {
+      .desktop &,
+      .tablet.landscape & {
         background-color: transparent;
       }
     }
@@ -30,9 +31,10 @@
     [data-current="8"] &,
     [data-current="9"] &,
     [data-current="10"] & {
-      .desktop & {
+      .desktop &,
+      .tablet.landscape & {
+        background-color: $black;
         @include media(hover,1201){
-          background-color: $black;
           .header--main {
             height: 60px;
           }
@@ -41,14 +43,13 @@
           }
         }
         @include media(screen,1200){
-          background-color: rgba($dark,0.65);
           box-shadow: 0 2px 15px 0 rgba($black,0.5);
         }
       }
     }
-    .tablet &,
+    .tablet.portrait &,
     .mobile & {
-      background-color: rgba($dark,0.65);
+      background-color: $black;
       box-shadow: 0 2px 15px 0 rgba($black,0.5);
     }
     & ~ .main {

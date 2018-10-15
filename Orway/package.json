@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "bower": "^1.8.4",
-    "css-mqpacker": "^6.0.1",
-    "stylefmt": "^6.0.0"
+    "css-mqpacker": "^6.0.2",
+    "stylefmt": "^6.0.2"
   }
 }

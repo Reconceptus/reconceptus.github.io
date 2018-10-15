@@ -108,6 +108,9 @@
       .mouse-group {
         animation: mouse_move 0.75s linear infinite alternate forwards;
       }
+      .finger-group {
+        display: none;
+      }
       .mouse-click {
         opacity: 0.4;
       }
@@ -218,7 +221,22 @@
         }
       }
       .mouse-scroll {
+        width: 60px;
+        height: 30px;
+        margin: 40px auto 0;
+        svg {
+          width: 100%;
+          fill: $white;
+        }
+      }
+      .mouse-group {
         display: none;
+      }
+      .finger-group {
+        animation: mouse_move 0.75s linear infinite alternate forwards;
+      }
+      .mouse-click {
+        opacity: 0.4;
       }
     }
   }
