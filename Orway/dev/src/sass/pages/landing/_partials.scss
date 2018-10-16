@@ -163,8 +163,8 @@
     }
     li {
       position: relative;
-      .mobile &,
-      .tablet & {
+      .tablet.portrait &,
+      .mobile & {
         margin: 0.5rem 0;
         @include media(hover,768){
           padding-left: 35px;
@@ -178,6 +178,22 @@
           &:before {
             width: 15px;
             top: 3vw;
+          }
+        }
+      }
+      .tablet.landscape & {
+        margin: 0.55vw 0;
+        padding-left: 1vw;
+        &:before {
+          width: 0.3vw;
+          top: .75vw;
+          height: 0.3vw;
+          border-radius: 50%;
+        }
+        @media screen and (max-height: 46vw) {
+          margin: 1.2vh 0;
+          &:before {
+            top: 1.5vh;
           }
         }
       }

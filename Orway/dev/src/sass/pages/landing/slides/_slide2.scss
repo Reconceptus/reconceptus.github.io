@@ -1,7 +1,100 @@
-.desktop,
-.tablet.landscape {
+.desktop {
   [data-slide='2'] {
     transform: translate3d(0,100%,0);
+    .slide-right {
+      display: flex;
+      align-items: center;
+      padding-left: 50px;
+    }
+    .list {
+      color: #bebebf;
+      @include media(hover,1481){
+        margin-bottom: 7vh;
+        max-width: 65%;
+      }
+      @include breakpoints(1201,1480){
+        margin-bottom: 4vh;
+        max-width: 75%;
+      }
+    }
+  }
+}
+
+.desktop {
+  [data-slide='2'] {
+    .tablet-light,
+    .tab-lines,
+    .slide-img {
+      display: none;
+    }
+  }
+}
+
+.tablet.landscape {
+  [data-slide='2'] {
+    padding: 26vh 0;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 10vh;
+      width: 1px;
+      background-color: $white;
+      opacity: 0.2;
+      left: 50%;
+    }
+    .tablet-light {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 0 80px 7px rgba($white,0.95);
+      position: absolute;
+      left: 1px;
+      right: 0;
+      top: 10vh;
+      z-index: 1;
+      margin: -4px auto 0;
+      animation: small_light 2s infinite linear alternate;
+    }
+    .slide-img {
+      position: absolute;
+      left: 2%;
+      top: 9%;
+      width: 50%;
+      bottom: 4%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .switch-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+      .switcher {
+        position: relative;
+        transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
+        img {
+          display: block;
+          width: auto;
+          height: auto;
+          max-width: 30vw;
+        }
+      }
+      .light {
+        left: 27%;
+        top: 34%;
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #b3b4b6;
+        transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
+        will-change: transform;
+        box-shadow: 0 0 30vh 20vh rgba(179,180,182,0.6);
+        animation: light 10s infinite 0.5s alternate forwards;
+      }
+    }
     .slide-right {
       display: flex;
       align-items: center;
@@ -28,6 +121,11 @@
     margin-bottom: 60px;
     .list {
       color: #bebebf;
+    }
+    .tablet-light,
+    .tab-lines,
+    .slide-img {
+      display: none;
     }
     &:after {
       content: "";

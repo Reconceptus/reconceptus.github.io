@@ -360,7 +360,16 @@
                     </div>
                 </section>
                 <section class="slide" data-slide="2">
-                    <div class="slide-left"></div>
+                    <div class="slide-left">
+                        <div class="slide-img">
+                            <div class="switch-box">
+                                <div class="light"></div>
+                                <div class="switcher">
+                                    <img src="assets/images/landing/switcher.png" alt="switcher">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="slide-right">
                         <div class="list">
                             <ul>
@@ -372,6 +381,7 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="tablet-light"></div>
                 </section>
                 <section class="slide" data-slide="3">
                     <div class="slide-left"></div>
@@ -791,6 +801,7 @@
                             </svg>
                         </div>
                     </div>
+                    <div class="tablet-light"></div>
                 </section>
 
                 <section class="slide" data-slide="9">
@@ -811,6 +822,7 @@
                             <img src="assets/svg/landing/partner_4.svg" alt="manganorobot">
                         </div>
                     </div>
+                    <div class="tablet-light"></div>
                 </section>
                 <section class="slide" data-slide="10">
 
@@ -924,9 +936,6 @@
             });
             if($('html').hasClass('desktop')){
                 $('.landing').startSliding('#wrapper','desktop');
-            }
-            if($('html').hasClass('tablet landscape')){
-                $('.landing').startSliding('#wrapper','tablet');
             }
         },2000);
     });

@@ -1,5 +1,4 @@
-.desktop,
-.tablet.landscape {
+.desktop {
   [data-slide='6'] {
     transform: translate3d(0,100%,0);
     .head {
@@ -67,6 +66,71 @@
         margin: 0 auto 3vh;
         max-width: 80%;
       }
+    }
+  }
+}
+
+.tablet.landscape {
+  [data-slide='6'] {
+    padding: 5vh 0 15vh;
+    flex-direction: column;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      width: 1px;
+      background-color: $white;
+      left: 50%;
+      opacity: 0.2;
+    }
+    .head {
+      width: 40%;
+      left: 50%;
+      padding-left: 75px;
+      padding-right: 25px;
+      position: relative;
+    }
+    .title {
+      color: $white;
+      position: relative;
+      z-index: 2;
+    }
+    .items-box {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 5vw;
+      background-color: $dark;
+    }
+    .items {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border: 1px solid rgba($white,0.2);
+      border-radius: 80px;
+      .item {
+        width: 100%;
+        max-width: 33.3333%;
+        padding: 25px 3vw 40px;
+        text-align: center;
+        &-subtitle {
+          opacity: 0.8;
+        }
+      }
+      img {
+        height: 20vh;
+        width: auto;
+        display: block;
+        margin: 0 auto 3vh;
+        max-width: 80%;
+      }
+    }
+    .tab-lines {
+
     }
   }
 }

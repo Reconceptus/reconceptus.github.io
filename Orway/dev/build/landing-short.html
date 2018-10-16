@@ -412,7 +412,16 @@
                 </div>
             </section>
             <section class="slide" data-slide="2">
-                <div class="slide-left"></div>
+                <div class="slide-left">
+                    <div class="slide-img">
+                        <div class="switch-box">
+                            <div class="light"></div>
+                            <div class="switcher">
+                                <img src="assets/images/landing/switcher.png" alt="switcher">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="slide-right">
                     <div class="list">
                         <ul>
@@ -424,6 +433,7 @@
                         </ul>
                     </div>
                 </div>
+                <div class="tablet-light"></div>
             </section>
             <section class="slide" data-slide="3">
                 <div class="slide-left"></div>
@@ -831,13 +841,19 @@
                                 <path class="mouse-click" d="M10.73,5.1V4.28A4.3,4.3,0,0,1,15,0h.85V5.1H10.73"/>
                                 <path d="M16.43,5.1V0h.89A4.3,4.3,0,0,1,21.6,4.28V5.1H16.43"/>
                             </g>
-                            <g>
-                                <path d="m24.28 5.84h2.55v-2.58l5.45 5-5.45 5v-2.57h-2.55"/>
-                                <path d="M8,10.69H5.42v2.55L0,8.25l5.42-5V5.84H8Z"/>
+                            <g class="finger-group">
+                                <path d="M15.89,5.88l1.62-4.29A1.16,1.16,0,1,0,15.35.76L12.43,8.31Z"/>
+                                <path d="M15.89,5.88a3.93,3.93,0,0,0-.44,0,5.06,5.06,0,0,0-5.1,5,5,5,0,0,0,5.1,5,5,5,0,0,0,4.66-2.94h0v0a5.66,5.66,0,0,0,.22-.54l.87-2.38c.37-1-1.23-2-1.77-.71l.5-1.2a1.13,1.13,0,0,0-2.1-.85L18.32,6a1.14,1.14,0,0,0-2.11-.87l-.31.73Z"/>
                             </g>
+                            <g>
+                                <path d="M26.17,6.4h2v-2l4.17,3.82-4.17,3.82v-2h-2"/>
+                                <path d="M6.13,10.13h-2v2L0,8.26,4.15,4.43v2h2Z"/>
+                            </g>
+
                         </svg>
                     </div>
                 </div>
+                <div class="tablet-light"></div>
             </section>
 
             <section class="slide has-footer" data-slide="9">
@@ -858,6 +874,7 @@
                         <img src="assets/svg/landing/partner_4.svg" alt="manganorobot">
                     </div>
                 </div>
+                <div class="tablet-light"></div>
                 <footer class="footer">
                     <div class="content">
                         <div class="footer--main">
@@ -949,9 +966,6 @@
             });
             if($('html').hasClass('desktop')){
                 $('.landing').startSliding('#wrapper','desktop');
-            }
-            if($('html').hasClass('tablet')){
-                $('.landing').startSliding('#wrapper','tablet');
             }
         },2000);
     });

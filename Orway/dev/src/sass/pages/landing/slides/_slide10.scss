@@ -1,5 +1,4 @@
-.desktop,
-.tablet.landscape {
+.desktop {
   [data-slide='10'] {
     transform: translate3d(0,100%,0);
     background-color: $white;
@@ -62,6 +61,20 @@
     .footer--main {
       @include media(screen,1200){
         min-height: 80px;
+      }
+    }
+  }
+}
+
+.tablet.landscape {
+  [data-slide='10'] {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    .content--md {
+      @include media(hover,1921){
+        max-width: 90%;
       }
     }
   }

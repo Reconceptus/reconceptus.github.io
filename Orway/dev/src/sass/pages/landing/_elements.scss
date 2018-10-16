@@ -1,6 +1,5 @@
 .elements {
-  .desktop &,
-  .tablet.landscape & {
+  .desktop & {
     position: absolute;
     top: 0;
     left: 0;
@@ -10,13 +9,12 @@
     margin: auto;
   }
   .mobile &,
-  .tablet.portrait & {
+  .tablet & {
     display: none;
   }
 }
 .elements-fullwidth {
-  .desktop &,
-  .tablet.landscape & {
+  .desktop & {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,7 +23,7 @@
     margin: auto;
   }
   .mobile &,
-  .tablet.portrait & {
+  .tablet & {
     display: none;
   }
 }
