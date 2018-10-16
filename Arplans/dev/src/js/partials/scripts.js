@@ -103,7 +103,9 @@ $(document).ready(function () {
         project.partnerCarousel();
     }
     if($('input[type="file"]').length > 0){
-        project.inputFile();
+        if($('#supportFileUpload').length > 0){project.supportInputFile();}
+        if($('#customFileUpload').length > 0){project.customInputFile();}
+
     }
     if($('.video-box').length > 0){
         project.videoBoxHeight();

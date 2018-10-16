@@ -241,14 +241,42 @@ project.homeTabs = function(){
 };
 
     /*
-     ============= file input
+     ============= file input in support
     */
 
-project.inputFile = function() {
-    var input = document.getElementById( 'fileUpload' ),
-        infoArea = document.getElementById( 'fileName' ),
+project.supportInputFile = function() {
+    var input = document.getElementById( 'supportFileUpload' ),
+        infoArea = document.getElementById( 'supportFileName' ),
         infoDefault = infoArea.dataset.default,
-        removeFile = document.getElementById('fileRemove');
+        removeFile = document.getElementById('supportFileRemove');
+
+    input.addEventListener( 'change', showFileName );
+    removeFile.addEventListener('click', removingFile);
+
+    function showFileName( event ) {
+        var input = event.srcElement;
+        var fileName = input.files[0].name;
+
+        infoArea.textContent = fileName;
+        removeFile.classList.remove('hide');
+    }
+
+    function removingFile() {
+        input.value = '';
+        infoArea.textContent = infoDefault;
+        removeFile.classList.add('hide');
+    }
+};
+
+    /*
+     ============= file input in contacts
+    */
+
+project.customInputFile = function() {
+    var input = document.getElementById( 'customFileUpload' ),
+        infoArea = document.getElementById( 'customFileName' ),
+        infoDefault = infoArea.dataset.default,
+        removeFile = document.getElementById('customFileRemove');
 
     input.addEventListener( 'change', showFileName );
     removeFile.addEventListener('click', removingFile);
@@ -739,7 +767,9 @@ $(document).ready(function () {
         project.partnerCarousel();
     }
     if($('input[type="file"]').length > 0){
-        project.inputFile();
+        if($('#supportFileUpload').length > 0){project.supportInputFile();}
+        if($('#customFileUpload').length > 0){project.customInputFile();}
+
     }
     if($('.video-box').length > 0){
         project.videoBoxHeight();

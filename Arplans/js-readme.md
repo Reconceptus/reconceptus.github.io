@@ -33,7 +33,8 @@ project.homeTabs();
 Скрипт для кастомизации input[type=file]
 
 ```
-project.inputFile();
+project.supportInputFile();    // для формы в модалке
+project.customInputFile();     // для формы в контактах и др.
 ```
 *Отрабатывает в местах наличия элемента (напр. страница Запроса на добавление посёлка)*
 ## Show more
