@@ -90,9 +90,8 @@
         border-radius: 50%;
         background-color: #b3b4b6;
         transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
-        will-change: transform;
+        will-change: box-shadow;
         box-shadow: 0 0 30vh 20vh rgba(179,180,182,0.6);
-        animation: light 10s infinite 0.5s alternate forwards;
       }
     }
     .slide-right {

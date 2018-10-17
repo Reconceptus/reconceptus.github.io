@@ -255,30 +255,6 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
                 // -1 down
             });
         }
-        if(device == 'tablet'){
-            $landingBox.swipe({
-                swipe:function (event, direction) {
-                    if($('html').hasClass('landscape')){
-                        if(direction == 'down' ){
-                            if($canSlide === true){
-                                $wrapper.removeClass('no-transition');
-                                var cur = $('.slide.current').attr('data-slide');
-                                slidePage(cur,1);
-                            }
-                        };
-                        if(direction == 'up' ){
-                            if($canSlide === true){
-                                $wrapper.removeClass('no-transition');
-                                var cur = $('.slide.current').attr('data-slide');
-                                slidePage(cur,-1);
-                            }
-                        };
-                    }
-
-                }
-            });
-
-        }
 
     };
 

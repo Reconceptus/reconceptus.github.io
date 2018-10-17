@@ -16,6 +16,17 @@
         }
       }
     }
+    .tablet & {
+      &:not(.minimized) {
+        background-color: transparent;
+        .header--main:after {
+          background-color: transparent;
+        }
+        .nav {
+          background-color: transparent;
+        }
+      }
+    }
     [data-current="1"] & {
       .desktop &,
       .tablet.landscape & {

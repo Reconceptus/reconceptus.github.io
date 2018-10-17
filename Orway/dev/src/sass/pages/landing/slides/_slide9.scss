@@ -67,6 +67,7 @@
     &.has-footer {
       z-index: 1;
       padding-bottom: 0;
+      flex-direction: column;
       .brands {
         margin-bottom: 5vh;
       }

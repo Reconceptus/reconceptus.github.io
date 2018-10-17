@@ -43,6 +43,7 @@
   [data-slide='7'] &,
   [data-slide='8'] &,
   [data-slide='9'] & {
+    .tablet &,
     .mobile & {
       transition: all 0.5s;
       &:not(.active) {
