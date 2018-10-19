@@ -671,6 +671,10 @@ svg {
   background-color: transparent;
 }
 
+.tablet .header.no-bg {
+  background-color: #000;
+}
+
 .tablet .header.no-bg:not(.minimized) {
   background-color: transparent;
 }
