@@ -122,9 +122,9 @@
         transition: opacity 2s ease 0.4s, transform 2.5s ease 0.4s;
         img {
           display: block;
-          width: auto;
           height: auto;
-          max-width: 30vw;
+          width: 30vw;
+          max-width: 45vh;
         }
       }
       .light {
@@ -138,6 +138,7 @@
         transition: box-shadow 0.5s ease, opacity 2s ease 0.5s;
         will-change: transform;
         box-shadow: 0 0 30vh 20vh rgba(179,180,182,0.6);
+
       }
       .key,
       .key-digits {
@@ -216,6 +217,16 @@
         stroke-dashoffset: 0;
         transition: all 1.3s linear 0.5s;
 
+      }
+    }
+  }
+}
+
+.tablet {
+  [data-slide='1'] {
+    .switch-box {
+      .light {
+        display: none;
       }
     }
   }
