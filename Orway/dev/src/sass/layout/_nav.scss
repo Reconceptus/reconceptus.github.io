@@ -9,10 +9,24 @@
       left: 0;
       right: 0;
       background-color: $black;
-      transform: translate3d(0,-100%,0);
-      transition: transform .2s cubic-bezier(.215, .61, .355, 1) .22s;
+      transform: translate3d(0,-130%,0);
+      transition: transform .2s cubic-bezier(.215, .61, .355, 1) .22s, background-color .2s ease 0.2s;
       flex-direction: column;
       padding: 5rem 0.65*$padding;
+      .tablet & {
+        &:before {
+          opacity: 0;
+          transition: all 0.2s ease 0.2s;
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          right: 0;
+          height: 120px;
+          background-color: #000;
+          z-index: 1;
+        }
+      }
     }
   }
   .footer & {

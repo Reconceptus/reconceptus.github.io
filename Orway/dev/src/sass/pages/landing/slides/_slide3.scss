@@ -41,6 +41,7 @@
       bottom: 12%;
       transform: translate3d(0,0,0);
     }
+    .tablet-light,
     .slide-img {
       display: none;
     }
@@ -59,6 +60,20 @@
       background-color: $white;
       left: 50%;
       opacity: 0.2;
+    }
+    .tablet-light {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 0 80px 7px rgba($white,0.95);
+      position: absolute;
+      left: 1px;
+      right: 0;
+      top: 20vh;
+      z-index: 1;
+      margin: -4px auto 0;
+      animation: small_light 2s infinite linear alternate;
     }
     .slide-right {
       display: flex;
@@ -142,7 +157,7 @@
 .tablet.portrait {
   [data-slide='3'] {
     padding: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
     .title {
       color: $white;
       span {
@@ -157,6 +172,9 @@
     }
     .subtitle {
       color: #bebebf;
+    }
+    .tablet-light {
+      display: none;
     }
     .slide-img {
       padding: 2% 0 10% 0;

@@ -26,6 +26,11 @@
         font-size: 7.8vw;
       }
     }
+    .tablet & {
+      @include media(screen,767){
+        font-size: 5.4vw;
+      }
+    }
     .desktop & {
       font-size: 3vw;
       margin-bottom: 2vw;
@@ -72,6 +77,11 @@
       }
       @include media(screen,767){
         font-size: 3.8vw;
+      }
+    }
+    .tablet.portrait & {
+      @include media(screen,767){
+        font-size: 3vw;
       }
     }
     .desktop & {
@@ -143,6 +153,11 @@
         font-size: 3.8vw;
       }
     }
+    .tablet.portrait & {
+      @include media(screen,767){
+        font-size: 3vw;
+      }
+    }
     .desktop & {
       font-size: 0.85vw;
       @media screen and (max-height: 46vw) {
@@ -164,7 +179,23 @@
     }
     li {
       position: relative;
-      .tablet.portrait &,
+      .tablet.portrait & {
+        margin: 0.5rem 0;
+        @include media(hover,768){
+          padding-left: 35px;
+          &:before {
+            width: 22px;
+            top: 1rem;
+          }
+        }
+        @include media(screen,767){
+          padding-left: 20px;
+          &:before {
+            width: 15px;
+            top: 2.5vw;
+          }
+        }
+      }
       .mobile & {
         margin: 0.5rem 0;
         @include media(hover,768){

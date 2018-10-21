@@ -67,6 +67,9 @@
         max-width: 80%;
       }
     }
+    .tablet-light {
+      display: none;
+    }
   }
 }
 
@@ -104,6 +107,20 @@
       justify-content: center;
       padding: 0 5vw;
       background-color: $dark;
+      .tablet-light {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $white;
+        box-shadow: 0 0 80px 7px rgba($white,0.95);
+        position: absolute;
+        left: 1px;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        margin: -4px auto 0;
+        animation: small_light 2s infinite linear alternate;
+      }
     }
     .items {
       width: 100%;
@@ -139,7 +156,7 @@
 .tablet.portrait {
   [data-slide='6'] {
     padding: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
     &:after {
       content: "";
     }
@@ -152,11 +169,17 @@
       width: 100%;
       padding: 5% 0;
       text-align: center;
+      &:not(:last-child){
+        margin-bottom: 50px;
+      }
       img {
         width: 70vw;
         height: auto;
         margin: 0 auto 6vw;
       }
+    }
+    .tablet-light {
+      display: none;
     }
   }
 }

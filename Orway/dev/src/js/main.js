@@ -18,3 +18,5 @@
 
 // scripts
 //= partials/scripts.js
+
+// android tablet landscape
