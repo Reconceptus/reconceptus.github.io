@@ -481,5 +481,3 @@ $(document).ready(function () {
     });
 
 });
-
-// android tablet landscape

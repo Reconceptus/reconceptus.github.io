@@ -17,6 +17,7 @@
       }
     }
     .tablet & {
+      background-color: $black;
       &:not(.minimized) {
         background-color: transparent;
         .header--main {
