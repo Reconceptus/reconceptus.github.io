@@ -3225,7 +3225,7 @@ svg {
 .tablet.landscape
 [data-slide='5'] .list li:before {
   width: 0.3vw;
-  top: 0.75vw;
+  top: 1.5vh;
   height: 0.3vw;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -11371,7 +11371,7 @@ svg {
 .tablet.portrait
 [data-slide='5'] .list li:before {
     width: 22px;
-    top: 1rem;
+    top: 1.4vh;
   }
 
   .mobile [data-slide='2'] .list li,
@@ -11384,7 +11384,7 @@ svg {
 .mobile
 [data-slide='5'] .list li:before {
     width: 22px;
-    top: 1rem;
+    top: 1vh;
   }
 }
 
@@ -11460,7 +11460,7 @@ svg {
   }
 
   .tablet.landscape .item-subtitle {
-    font-size: 0.9rem;
+    font-size: 1.7vh;
     line-height: 1.7;
   }
 
@@ -12675,7 +12675,7 @@ svg {
 [data-slide='5'] .subtitle,
   .tablet
 [data-slide='5'] .subtitle {
-    font-size: 0.9rem;
+    font-size: 1.7vh;
   }
 
   .mobile [data-slide='2'] .list,
@@ -12684,7 +12684,7 @@ svg {
 [data-slide='5'] .list,
   .tablet
 [data-slide='5'] .list {
-    font-size: 0.9rem;
+    font-size: 1.7vh;
   }
 
   [data-slide='2'] .list,
@@ -12742,7 +12742,7 @@ svg {
 [data-slide='5'] .subtitle,
   .tablet
 [data-slide='5'] .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.7vh;
   }
 
   .mobile [data-slide='1'] .word,
@@ -12764,7 +12764,7 @@ svg {
 [data-slide='5'] .list,
   .tablet
 [data-slide='5'] .list {
-    font-size: 1.1rem;
+    font-size: 1.7vh;
   }
 
   [data-slide='2'] .list,
@@ -12777,7 +12777,7 @@ svg {
   }
 
   .tablet.landscape .item-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.7vh;
   }
 
   .desktop [data-slide='1'] .head,
@@ -12888,7 +12888,7 @@ svg {
 [data-slide='5'] .subtitle,
   .tablet
 [data-slide='5'] .subtitle {
-    font-size: 1rem;
+    font-size: 1.7vh;
   }
 
   .mobile [data-slide='1'] .word,
@@ -12910,7 +12910,7 @@ svg {
 [data-slide='5'] .list,
   .tablet
 [data-slide='5'] .list {
-    font-size: 1rem;
+    font-size: 1.7vh;
   }
 
   [data-slide='2'] .list,
@@ -12923,7 +12923,7 @@ svg {
   }
 
   .tablet.landscape .item-subtitle {
-    font-size: 1rem;
+    font-size: 1.7vh;
   }
 
   .desktop [data-slide='1'] .head,
