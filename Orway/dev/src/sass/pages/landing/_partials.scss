@@ -62,13 +62,13 @@
     .mobile &,
     .tablet & {
       @include media(hover,1481){
-        font-size: 1.1rem;
+        font-size: 1.78vh;
       }
       @include breakpoints(1201,1480){
-        font-size: 1rem;
+        font-size: 1.42vh;
       }
       @include breakpoints(768,1200){
-        font-size: 0.9rem;
+        font-size: 1.14vh;
       }
       @include media(screen,767){
         font-size: 3.8vw;
