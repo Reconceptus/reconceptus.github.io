@@ -20,11 +20,18 @@
       background-color: $black;
       &:not(.minimized) {
         background-color: transparent;
+        .header--main {
+          height: 120px;
+        }
         .header--main:after {
           background-color: transparent;
         }
         .nav {
           background-color: transparent;
+        }
+        .logo {
+          transform-origin: left center;
+          transform: scale(1.5);
         }
       }
     }
@@ -188,6 +195,12 @@
           }
           & ~ .nav {
             transform: translate3d(0,0,0);
+            .tablet & {
+              background-color: #000;
+              &:before {
+                opacity: 1;
+              }
+            }
           }
         }
       }
