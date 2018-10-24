@@ -5942,6 +5942,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   height: 100%;
 }
 
+.map-box img[src*=custom] {
+  min-width: 36px;
+  min-height: 41px;
+}
+
+.map-box .scaled {
+  z-index: 10000 !important;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 .view-map {
   position: relative;
 }
@@ -9261,6 +9273,8 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     top: 0;
     bottom: 0;
     right: 0;
+    padding-bottom: 20px;
+    overflow: auto;
   }
 
   .modal-box .close {
@@ -11404,6 +11418,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+
+  .modal .modal-box {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    overflow: auto;
   }
 
   .modal-box .close {

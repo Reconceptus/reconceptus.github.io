@@ -715,6 +715,21 @@ $(document).ready(function () {
         $(this).closest('.map-item').removeClass('active');
     });
 
+    /*
+     ============= map item click
+    */
+
+    $('.map-box').on('click','.on-map',function () {
+        var thisLink = $(this),
+            thisMarker = thisLink.attr('data-map-object');
+        if(thisMarker != undefined){
+            $('.map-box .scaled').removeClass('scaled');
+            $('.map-box img[src*='+thisMarker+']')
+                .parent()
+                .addClass('scaled');
+        }
+    });
+
 
     /*
      ============= document click events
