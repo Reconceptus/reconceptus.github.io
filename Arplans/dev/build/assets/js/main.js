@@ -322,6 +322,22 @@ project.showMore = function() {
 };
 
     /*
+      ============= alert message
+    */
+
+project.alertMessage = function(title,text) {
+    var $customModal = $('.modal[data-modal="custom"]');
+    bodyScrollLock.disableBodyScroll();
+    if(title){
+        $customModal.find('.modal-custom--title').html(title)
+    }
+    if(text){
+        $customModal.find('.modal-custom--text').html(text)
+    }
+    $customModal.addClass('active');
+};
+
+    /*
      ============= show region dropbox
     */
 
@@ -705,6 +721,12 @@ $(document).ready(function () {
         e.preventDefault();
         bodyScrollLock.enableBodyScroll();
         $('.modal').removeClass('active successful');
+    });
+
+    $('.modal[data-modal="custom"] .close').click(function (e) {
+        var $customModal = $('.modal[data-modal="custom"]');
+        $customModal.find('.modal-custom--title').html('');
+        $customModal.find('.modal-custom--text').html('');
     });
 
     /*

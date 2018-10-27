@@ -206,7 +206,9 @@
     }
     &.incart {
       background-color: $link_dark;
+      border-color: $link_dark;
       pointer-events: none;
+      color: $white;
     }
   }
 

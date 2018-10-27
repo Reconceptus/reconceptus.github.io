@@ -3244,7 +3244,9 @@ svg {
 
 .btn-small.incart {
   background-color: #346697;
+  border-color: #346697;
   pointer-events: none;
+  color: #FFF;
 }
 
 .btn-box {
@@ -3587,6 +3589,40 @@ svg {
   font-weight: 600;
 }
 
+.modal-custom {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  line-height: 1.6;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 4rem;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  min-height: 250px;
+}
+
+.modal-custom--title {
+  font-size: 6.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .modal-thanks {
   opacity: 0;
   pointer-events: none;
@@ -3638,6 +3674,8 @@ svg {
   max-width: 600px;
   width: 100%;
   background-color: #FFF;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .modal-box .close {
@@ -3816,6 +3854,26 @@ svg {
 }
 
 .custom-form .input input {
+  background-color: transparent;
+  height: 40px;
+  line-height: 40px;
+  color: #657482;
+  font-size: 3.5rem;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+}
+
+.input select {
+  display: block;
+  width: 100%;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.custom-form .input select {
   background-color: transparent;
   height: 40px;
   line-height: 40px;
@@ -7807,6 +7865,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -ms-flex-negative: 0;
   flex-shrink: 0;
   margin-left: 30px;
+  color: transparent;
+}
+
+.project-page--info .data .actions .icon-liked.js-favor {
+  color: #346697;
 }
 
 .project-page--info .data .feature {
@@ -8936,6 +8999,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     margin-bottom: 40px;
   }
 
+  .project-page--info .data .actions .icon-liked:hover {
+    color: #2196F3;
+  }
+
   .project-page--reviews .read:hover {
     color: #346697;
   }
@@ -9262,6 +9329,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .modal-title {
     padding: 40px 20px 20px;
+  }
+
+  .modal-custom {
+    padding: 30px 20px;
   }
 
   .modal-thanks {
@@ -11408,6 +11479,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 40px 100px 20px 100px;
   }
 
+  .modal-custom {
+    padding: 30px 100px;
+  }
+
   .modal-thanks {
     padding: 30px 100px;
   }
@@ -11420,16 +11495,14 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     transform: translate(-50%, -50%);
   }
 
-  .modal .modal-box {
+  .mobile .modal-box {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
     left: 0;
     top: 0;
-    bottom: 0;
     right: 0;
     margin: auto;
-    overflow: auto;
   }
 
   .modal-box .close {

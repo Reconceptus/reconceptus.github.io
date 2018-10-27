@@ -149,6 +149,22 @@ project.showMore = function() {
 };
 
     /*
+      ============= alert message
+    */
+
+project.alertMessage = function(title,text) {
+    var $customModal = $('.modal[data-modal="custom"]');
+    bodyScrollLock.disableBodyScroll();
+    if(title){
+        $customModal.find('.modal-custom--title').html(title)
+    }
+    if(text){
+        $customModal.find('.modal-custom--text').html(text)
+    }
+    $customModal.addClass('active');
+};
+
+    /*
      ============= show region dropbox
     */
 

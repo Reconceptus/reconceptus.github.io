@@ -31,6 +31,30 @@
       padding: 2*$padding_sm $padding_sm $padding_sm;
     }
   }
+  &-custom {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    transition: all 0.2s;
+    min-height: 250px;
+    @include media(hover,601){
+      padding: $padding_md 100px;
+    }
+    @include media(screen,600){
+      padding: $padding_md $padding_sm;
+    }
+    &--title {
+      font-size: 6.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+
   &-thanks {
     opacity: 0;
     pointer-events: none;
@@ -70,6 +94,8 @@
     max-width: 600px;
     width: 100%;
     background-color: $white;
+    max-height: 100vh;
+    overflow: auto;
     @include media(hover,601){
       left: 50%;
       top: 50%;
@@ -83,15 +109,13 @@
       padding-bottom: 20px;
       overflow: auto;
     }
-    .modal & {
+    .mobile & {
       @include media(hover,601){
         transform: translate(0,0);
         left: 0;
         top: 0;
-        bottom: 0;
         right: 0;
         margin: auto;
-        overflow: auto;
       }
     }
     .close {

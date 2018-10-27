@@ -20,6 +20,22 @@
       outline: none;
     }
   }
+  select {
+    display: block;
+    width: 100%;
+    position: relative;
+    appearance: none;
+    .custom-form & {
+      background-color: transparent;
+      height: 40px;
+      line-height: 40px;
+      color: $border;
+      font-size: 3.5rem;
+      padding: 0 20px;
+      border: none;
+      outline: none;
+    }
+  }
   .custom-form & {
     &:before {
       content: "";

@@ -162,6 +162,13 @@
         .icon-liked {
           flex-shrink: 0;
           margin-left: $padding_md;
+          color: transparent;
+          @include hover(){
+            color: $link;
+          }
+          &.js-favor {
+            color: $link_dark;
+          }
         }
       }
       .feature {

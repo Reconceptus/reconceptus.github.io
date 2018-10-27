@@ -43,6 +43,12 @@ $(document).ready(function () {
         $('.modal').removeClass('active successful');
     });
 
+    $('.modal[data-modal="custom"] .close').click(function (e) {
+        var $customModal = $('.modal[data-modal="custom"]');
+        $customModal.find('.modal-custom--title').html('');
+        $customModal.find('.modal-custom--text').html('');
+    });
+
     /*
      ============= close item on the map
     */

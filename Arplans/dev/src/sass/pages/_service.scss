@@ -51,8 +51,10 @@
       @include media(hover,1025){
         margin: 0 -2*$padding_md;
       }
-      li {
+      &-box {
 
+      }
+      li {
         @include media(hover,1025){
           padding: 10px 2*$padding_md;
         }
