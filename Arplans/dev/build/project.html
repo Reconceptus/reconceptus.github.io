@@ -768,12 +768,12 @@
                                     <div class="project-gallery">
                                         <div class="gallery-list-wrap">
                                             <div class="gallery-list">
-                                                <div class="item" data-num="1"><figure style="background-image: url('assets/images/items/item01.jpg')"></figure></div>
-                                                <div class="item" data-num="2"><figure style="background-image: url('assets/images/items/item02.jpg')"></figure></div>
-                                                <div class="item" data-num="3"><figure style="background-image: url('assets/images/items/item03.jpg')"></figure></div>
-                                                <!--<div class="item" data-num="4"><figure style="background-image: url('assets/images/items/item04.jpg')"></figure></div>-->
-                                                <!--<div class="item" data-num="5"><figure style="background-image: url('assets/images/items/item05.jpg')"></figure></div>-->
-                                                <!--<div class="item" data-num="6"><figure style="background-image: url('assets/images/items/item06.jpg')"></figure></div>-->
+                                                <div class="item" data-num="1"><figure style="background-image: url('assets/images/items/item01.jpg')" data-url-fancybox="assets/images/items/item01.jpg"></figure></div>
+                                                <div class="item" data-num="2"><figure style="background-image: url('assets/images/items/item02.jpg')" data-url-fancybox="assets/images/items/item02.jpg"></figure></div>
+                                                <div class="item" data-num="3"><figure style="background-image: url('assets/images/items/item03.jpg')" data-url-fancybox="assets/images/items/item03.jpg"></figure></div>
+                                                <!--<div class="item" data-num="4"><figure style="background-image: url('assets/images/items/item04.jpg')" data-url-fancybox="assets/images/items/item04.jpg"></figure></div>-->
+                                                <!--<div class="item" data-num="5"><figure style="background-image: url('assets/images/items/item05.jpg')" data-url-fancybox="assets/images/items/item05.jpg"></figure></div>-->
+                                                <!--<div class="item" data-num="6"><figure style="background-image: url('assets/images/items/item06.jpg')" data-url-fancybox="assets/images/items/item06.jpg"></figure></div>-->
                                             </div>
                                         </div>
                                         <div class="buttons">
@@ -894,12 +894,16 @@
                                             <div class="tab-main-slider" data-owl="plans">
                                                 <ul class="owl-carousel">
                                                     <li class="plan-item">
-                                                        <img src="assets/images/plans/plan01.png" alt="plan">
+                                                        <img data-plan="1" src="assets/images/plans/plan01.png" alt="plan">
                                                     </li>
                                                     <li class="plan-item">
-                                                        <img src="assets/images/plans/plan02.jpg" alt="plan">
+                                                        <img data-plan="2" src="assets/images/plans/plan02.jpg" alt="plan">
                                                     </li>
                                                 </ul>
+                                                <div class="gallery-items">
+                                                    <a data-plan="1" href="assets/images/plans/plan01.png" data-fancybox="plans"></a>
+                                                    <a data-plan="2" href="assets/images/plans/plan02.jpg" data-fancybox="plans"></a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="custom-row-col col-50">
@@ -1858,6 +1862,7 @@
 <script type="text/javascript" src="assets/js/bower/nouislider/documentation/assets/wNumb.js"></script>
 <script type="text/javascript" src="assets/js/bower/nouislider/distribute/nouislider.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="assets/js/bower/fancybox/dist/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="assets/js/main.min.js"></script>
 

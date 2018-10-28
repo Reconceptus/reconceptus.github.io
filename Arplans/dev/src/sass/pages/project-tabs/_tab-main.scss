@@ -5,6 +5,13 @@
       .owl-next {
         top: 50%;
       }
+      .plan-item {
+        cursor: zoom-in;
+      }
+      .gallery-items {
+        display: none;
+        pointer-events: none;
+      }
     }
     &-table {
       font-size: 3.5rem;

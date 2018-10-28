@@ -10,7 +10,8 @@
     "jquery": "latest",
     "owl.carousel": "^2.2.1",
     "jquery-validation": "^1.17.0",
-    "malihu-custom-scrollbar-plugin": "^3.1.5"
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "fancybox": "fancyBox#^3.5.2"
   },
   "preen": {
     "jquery": [
@@ -28,6 +29,9 @@
     ],
     "malihu-custom-scrollbar-plugin": [
       "*.js"
+    ],
+    "fancybox": [
+      "dist/*.js"
     ]
   }
 }

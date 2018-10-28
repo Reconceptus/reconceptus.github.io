@@ -448,6 +448,11 @@ project.planCarousel = function() {
         navText: ['',''],
         dots: false,
         items: 1
+    });
+
+    $('.plan-item [data-plan]').click(function () {
+        var $thisPlan = $(this).data('plan');
+        $('.gallery-items [data-plan='+$thisPlan+']').click();
     })
 };
 

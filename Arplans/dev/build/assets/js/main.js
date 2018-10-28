@@ -154,10 +154,21 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
                 $('.buttons .forw').removeClass('hide');
         }
 
+        function addFancyBox() {
+            var $item = $('.gallery-main .item'),
+                $itemsCount = $('.gallery-main .item').length;
+
+            for(var i = 0; i < $itemsCount; i++){
+                var $itemAddress = $('figure',$item[i]).data('url-fancybox');
+                var $galleryLink = '<a href="'+$itemAddress+'" data-fancybox="gallery"></a>';
+                $('figure',$item[i]).append($galleryLink);
+            }
+        }
 
         itemLength();
         defaultActiveItem();
         setActiveItem();
+        addFancyBox();
         $('.gallery-list .item').click(function () {
             clickItem($(this));
         });
@@ -621,6 +632,11 @@ project.planCarousel = function() {
         navText: ['',''],
         dots: false,
         items: 1
+    });
+
+    $('.plan-item [data-plan]').click(function () {
+        var $thisPlan = $(this).data('plan');
+        $('.gallery-items [data-plan='+$thisPlan+']').click();
     })
 };
 

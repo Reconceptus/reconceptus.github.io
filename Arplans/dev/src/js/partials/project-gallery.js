@@ -89,10 +89,21 @@
                 $('.buttons .forw').removeClass('hide');
         }
 
+        function addFancyBox() {
+            var $item = $('.gallery-main .item'),
+                $itemsCount = $('.gallery-main .item').length;
+
+            for(var i = 0; i < $itemsCount; i++){
+                var $itemAddress = $('figure',$item[i]).data('url-fancybox');
+                var $galleryLink = '<a href="'+$itemAddress+'" data-fancybox="gallery"></a>';
+                $('figure',$item[i]).append($galleryLink);
+            }
+        }
 
         itemLength();
         defaultActiveItem();
         setActiveItem();
+        addFancyBox();
         $('.gallery-list .item').click(function () {
             clickItem($(this));
         });
