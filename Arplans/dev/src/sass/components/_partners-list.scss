@@ -1,4 +1,13 @@
 .partners-list {
+  @include media(hover,1201){
+    min-height: 67vh;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .catalog-actions {
+      margin-top: auto;
+    }
+  }
   @include media(hover,768){
     padding: 2*$padding_sm 0 0;
   }

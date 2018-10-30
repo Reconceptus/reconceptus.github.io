@@ -11289,6 +11289,24 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 460px;
   }
 
+  .partners-list {
+    min-height: 67vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .partners-list .catalog-actions {
+    margin-top: auto;
+  }
+
   .fixed-scrollbar {
     position: relative;
     height: 100%;
