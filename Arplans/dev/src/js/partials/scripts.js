@@ -32,15 +32,15 @@ $(document).ready(function () {
 
     $('.show-modal').click(function (e) {
         e.preventDefault();
-        bodyScrollLock.disableBodyScroll();
         var $thisData = $(this).attr('data-modal');
         $('.modal[data-modal="'+$thisData+'"]').addClass('active')
+        bodyScrollLock.disableBodyScroll();
     });
 
     $('.modal .close').click(function (e) {
         e.preventDefault();
-        bodyScrollLock.enableBodyScroll();
         $('.modal').removeClass('active successful');
+        bodyScrollLock.enableBodyScroll();
     });
 
     $('.modal[data-modal="custom"] .close').click(function (e) {
