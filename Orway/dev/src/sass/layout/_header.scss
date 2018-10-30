@@ -208,6 +208,7 @@
   }
   &.minimized {
     transition: all 0.35s;
+    background-color: $black;
     @include media(hover,681){
       transform: translateY(-45px);
     }

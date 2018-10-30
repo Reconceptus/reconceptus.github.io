@@ -851,6 +851,7 @@ svg {
   -webkit-transition: all 0.35s;
   -o-transition: all 0.35s;
   transition: all 0.35s;
+  background-color: #000;
 }
 
 .header--main {
