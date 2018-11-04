@@ -11290,7 +11290,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .partners-list {
-    min-height: 67vh;
+    min-height: 70vh;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -12767,10 +12767,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .fancybox-navigation .fancybox-button {
-    width: 60px;
-    height: 60px;
-    top: -webkit-calc(50% - 30px);
-    top: calc(50% - 30px);
+    width: 70px;
+    height: 70px;
+    top: -webkit-calc(50% - 35px);
+    top: calc(50% - 35px);
   }
 
   .fancybox-navigation .fancybox-button--arrow_right {
