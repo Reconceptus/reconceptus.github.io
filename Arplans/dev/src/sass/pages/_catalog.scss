@@ -83,6 +83,9 @@
       &.scrolled {
         padding: $padding_sm $padding_sm $padding_sm $padding_md;
         max-height: 100%;
+        @include media(screen,1200){
+
+        }
       }
       &.dynamic {
         //max-height: none;
@@ -97,9 +100,7 @@
         }
       }
     }
-    @include media(screen,1200){
 
-    }
     &--btn {
       position: absolute;
       top: 0;
@@ -142,7 +143,18 @@
       padding-right: $padding_sm;
       height: 100%;
       width: 100%;
-      overflow: hidden;
+      @include media(hover,1201){
+        overflow: hidden;
+      }
+      @include media(screen,1200){
+        overflow: auto;
+        .portrait & {
+          max-height: 50vh;
+        }
+        .landscape & {
+          max-height: 80vh;
+        }
+      }
     }
     /*&--wrap {
       height: 100%;

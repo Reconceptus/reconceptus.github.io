@@ -490,7 +490,7 @@ project.partnerCarousel = function() {
 project.customScroll = function() {
     $('.scrolled').each(function () {
         var $this = $(this);
-        if($this.hasClass('catalog-filters')){
+        if($this.hasClass('catalog-filters') || $this.hasClass('catalog-filters--form')){
             if($(window).width() > 1200){
                 $this.mCustomScrollbar({
                     theme: 'minimal-dark'

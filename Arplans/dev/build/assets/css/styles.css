@@ -8288,7 +8288,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   padding-right: 20px;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .catalog-filters--head {
@@ -10352,7 +10351,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .modal-box {
     left: 0;
     top: 0;
-    bottom: 0;
     right: 0;
     padding-bottom: 20px;
     overflow: auto;
@@ -10808,6 +10806,32 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .blog-list.col-3 .blog-item {
     width: 100%;
+  }
+
+  .form-row.col-lg-2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-2 .form-row-element {
+    width: 100%;
+    max-width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .form-row.col-lg-3 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-3 .form-row-element {
+    width: 100%;
+    max-width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .login-form {
@@ -11268,6 +11292,32 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 33.3333%;
   }
 
+  .form-row.col-lg-2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-2 .form-row-element {
+    width: 100%;
+    max-width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .form-row.col-lg-3 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-3 .form-row-element {
+    width: 100%;
+    max-width: 33.3333%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .projects-list.col-4 .projects-item {
     width: 25%;
   }
@@ -11410,6 +11460,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .catalog-filters--container[data-catalog="partners"] {
     padding-top: 80px;
+  }
+
+  .catalog-filters--form {
+    overflow: hidden;
   }
 
   .filter-row .btn-box {
@@ -11738,6 +11792,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding: 25px 30px 40px;
   }
 
+  .catalog-filters--form {
+    overflow: auto;
+  }
+
+  .portrait .catalog-filters--form {
+    max-height: 50vh;
+  }
+
+  .landscape .catalog-filters--form {
+    max-height: 80vh;
+  }
+
   .filter-row .btn-box {
     margin: 0;
   }
@@ -11803,6 +11869,32 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-columns: 3 auto;
     -moz-columns: 3 auto;
     columns: 3 auto;
+  }
+
+  .form-row.col-lg-2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-2 .form-row-element {
+    width: 100%;
+    max-width: 25%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .form-row.col-lg-3 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-3 .form-row-element {
+    width: 100%;
+    max-width: 20%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .projects-list.col-4 .projects-item {
@@ -13155,6 +13247,32 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .regions-drop {
     max-height: 500px;
     overflow: auto;
+  }
+
+  .form-row.col-lg-2 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-2 .form-row-element {
+    width: 100%;
+    max-width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .form-row.col-lg-3 {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .form-row.col-lg-3 .form-row-element {
+    width: 100%;
+    max-width: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .article-page--sidebar .projects-item--preview .data .index,

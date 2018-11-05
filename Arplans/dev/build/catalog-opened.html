@@ -220,37 +220,39 @@
                         <div class="fixed-scrollbar modal-filter">
                             <div class="modal-bg close"></div>
                             <div class="fixing">
-                                <div class="catalog-filters scrolled">
+                                <div class="catalog-filters dynamic">
+                                    <div class="catalog-filters--container" data-catalog="project">
+
                                     <form action="#">
-                                        <div class="filter-form">
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Общая площадь</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row-element">
-                                                        <div class="range">
-                                                            <div id="keypress" class="range-field"></div>
-                                                            <div class="range-inputs">
-                                                                от
-                                                                <input type="text" id="input-with-keypress-0">
-                                                                до
-                                                                <input type="text" id="input-with-keypress-1">
-                                                                м<sup>2</sup>
+                                        <div class="catalog-filters--form scrolled">
+                                            <div class="filter-form">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Общая площадь</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row-element">
+                                                            <div class="range">
+                                                                <div id="keypress" class="range-field"></div>
+                                                                <div class="range-inputs">
+                                                                    от
+                                                                    <input type="text" id="input-with-keypress-0">
+                                                                    до
+                                                                    <input type="text" id="input-with-keypress-1">
+                                                                    м<sup>2</sup>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Этажность</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row">
-                                                        <div class="form-row-col col-50">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Этажность</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row col-lg-2">
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -275,8 +277,6 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-50">
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -296,47 +296,46 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Количество комнат</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row-element">
-                                                        <div class="radio-flex">
-                                                            <label>
-                                                                <input type="checkbox" name="rooms">
-                                                                <span>2</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="checkbox" name="rooms">
-                                                                <span>3</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="checkbox" name="rooms">
-                                                                <span>4</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="checkbox" name="rooms">
-                                                                <span>5</span>
-                                                            </label>
-                                                            <label>
-                                                                <input type="checkbox" name="rooms">
-                                                                <span>6+</span>
-                                                            </label>
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Количество комнат</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row-element">
+                                                            <div class="radio-flex">
+                                                                <label>
+                                                                    <input type="checkbox" name="rooms">
+                                                                    <span>2</span>
+                                                                </label>
+                                                                <label>
+                                                                    <input type="checkbox" name="rooms">
+                                                                    <span>3</span>
+                                                                </label>
+                                                                <label>
+                                                                    <input type="checkbox" name="rooms">
+                                                                    <span>4</span>
+                                                                </label>
+                                                                <label>
+                                                                    <input type="checkbox" name="rooms">
+                                                                    <span>5</span>
+                                                                </label>
+                                                                <label>
+                                                                    <input type="checkbox" name="rooms">
+                                                                    <span>6+</span>
+                                                                </label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Удобства</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row">
-                                                        <div class="form-row-col col-50">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Удобства</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row col-lg-2">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -369,8 +368,7 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-50">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -403,40 +401,38 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head"><h3 class="form-title">Материал стен</h3>
-                                                    <span class="show-more"></span></div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row">
-                                                        <div class="form-row-col col-50">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head"><h3 class="form-title">Материал стен</h3>
+                                                        <span class="show-more"></span></div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row col-lg-2">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label><input type="checkbox"><span>из бруса</span></label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-50">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label><input type="checkbox"><span>из бревна</span></label>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Габариты</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row">
-                                                        <div class="form-row-col col-33">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Габариты</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row col-lg-3">
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -525,8 +521,7 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-33">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -615,8 +610,7 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-33">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -708,15 +702,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="catalog-filters--section show-more-parent show">
-                                                <div class="catalog-filters--head">
-                                                    <h3 class="form-title">Подборки</h3>
-                                                    <span class="show-more"></span>
-                                                </div>
-                                                <div class="catalog-filters--main show-more-hidden" style="display: block;">
-                                                    <div class="form-row">
-                                                        <div class="form-row-col col-50">
+                                                <div class="catalog-filters--section show-more-parent show">
+                                                    <div class="catalog-filters--head">
+                                                        <h3 class="form-title">Подборки</h3>
+                                                        <span class="show-more"></span>
+                                                    </div>
+                                                    <div class="catalog-filters--main show-more-hidden" style="display: block;">
+                                                        <div class="form-row col-lg-3">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -733,8 +726,7 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="form-row-col col-50">
+
                                                             <div class="form-row-element">
                                                                 <div class="check">
                                                                     <label>
@@ -744,12 +736,16 @@
                                                                 </div>
                                                             </div>
 
+
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
+                                        </div>
+                                        <div class="actions">
                                             <div class="reset">
-                                                <button type="reset">
+                                                <button type="reset" class="btn-reset">
                                                     <span>&times;</span>
                                                     сбросить фильтр
                                                 </button>
@@ -759,6 +755,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
