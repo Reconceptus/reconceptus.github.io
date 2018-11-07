@@ -4,6 +4,7 @@
     overflow: hidden;
   }
   &--wrap {
+    position: relative;
     padding-top: 2*$padding_sm;
     .title {
       text-align: center;
