@@ -354,6 +354,11 @@
           }
         }
       }
+      .stats-enter {
+        @include media(screen,1200){
+          display: none;
+        }
+      }
       .stats-profile {
         cursor: default;
         position: relative;

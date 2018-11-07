@@ -11893,6 +11893,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     display: none;
   }
 
+  .header-main--stats .stats-enter {
+    display: none;
+  }
+
   .header-main--stats .stats-profile {
     display: none;
   }
