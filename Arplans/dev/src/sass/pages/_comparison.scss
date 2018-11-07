@@ -30,6 +30,18 @@
     }
   }
   &-table {
+    .profile-orders & {
+      background-color: $white;
+      position: relative;
+      &:not(:last-child){
+        @include media(hover,768){
+          margin-bottom: 50px;
+        }
+        @include media(screen,767){
+          margin-bottom: 30px;
+        }
+      }
+    }
     &--header {
       white-space: nowrap;
       display: flex;
@@ -42,6 +54,7 @@
         display: none;
       }
       .part-cost,
+      .part-total-cost,
       .part-project {
         @include media(hover,768){
           justify-content: center;
@@ -121,9 +134,118 @@
         font-size: 3.5rem;
       }
     }
+    &--total {
+      white-space: nowrap;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      border-bottom: 1px solid $text_lt;
+      .part-cost,
+      .part-total-cost,
+      .part-project {
+        @include media(hover,768){
+          justify-content: center;
+        }
+      }
+      .part-project {
+        @include media(screen,1024){
+          display: none;
+        }
+      }
+      .compare-table--part {
+        @include media(screen,1024){
+          padding: 0 10px;
+        }
+        @include media(screen,767){
+          &:last-child {
+            a {
+              border: none;
+            }
+          }
+        }
+      }
+      dl {
+        font-size: 3.5rem;
+        line-height: 1.5;
+        @include media(screen,767){
+          padding: 5px 0;
+          text-align: center;
+        }
+        dt {
+          font-weight: 700;
+        }
+        .sended {
+          color: #009788;
+        }
+      }
+      a {
+        color: $text_lt;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        .arrow {
+          width: 30px;
+          height: 30px;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-color: currentColor;
+            border-width: 2px;
+            border-style: solid solid none none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            transform: rotate(135deg) translate(-2px,2px);
+            transition: transform 0.3s;
+          }
+        }
+        &.down {
+
+        }
+        &.up {
+          .arrow {
+            &:after {
+              transform: rotate(315deg) translate(-2px,2px);
+            }
+          }
+        }
+        @include hover(){
+          color: $white;
+        }
+        @include media(screen,767){
+          width: 100%;
+          justify-content: space-between;
+          border-bottom: 1px solid $border;
+        }
+      }
+      @include breakpoints(1201,1366){
+        font-size: 3.5rem;
+      }
+      @include breakpoints(768,1200){
+        font-size: 3rem;
+      }
+      @include breakpoints(768,1024){
+        padding: 0 10px;
+      }
+      @include media(hover,768){
+        height: 80px;
+      }
+      @include media(screen,767){
+        flex-direction: column;
+        font-size: 3.5rem;
+        padding: 10px;
+      }
+    }
     &--main {
       user-select: none;
       @include media(hover,1025){
+        .part-total-count,
         .part-count {
           justify-content: center;
         }
@@ -133,12 +255,32 @@
         flex-wrap: wrap;
         margin: 0 -10px;
       }
+      @include breakpoints(601,1024){
+        .profile-orders & {
+          margin: 0;
+          padding: 20px 10px;
+        }
+      }
+    }
+    &--addition {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      min-height: 80px;
+      border-top: 1px solid $text_lt;
+      padding: 10px $padding_sm;
+      font-size: 3.5rem;
+      line-height: 1.5;
     }
     &--item {
       width: 100%;
       @include media(hover,1025){
         &:not(:last-child){
           margin-bottom: $padding_sm;
+          .profile-orders & {
+            margin-bottom: 0;
+            border-bottom: 1px solid $text_lt;
+          }
         }
       }
       @include media(screen,1024){
@@ -157,6 +299,7 @@
       transition: all 0.3s;
       @include hover(){
         box-shadow: 0 0 40px 0 rgba($text,0.2);
+        z-index: 1;
         .compare-table--remove {
           opacity: 1;
         }
@@ -177,6 +320,9 @@
       }
       @include media(hover,1025){
         width: 100%;
+        &.part-total {
+          width: 16.5%;
+        }
       }
       .compare-table--main & {
         @include breakpoints(768,1024){
@@ -201,9 +347,29 @@
           margin: 0 -20px $padding_sm;
         }
       }
+      &.part-number {
+        @include media(hover,1025){
+          width: 200px;
+          flex-shrink: 0;
+          padding: 0 $padding_sm 0 $padding_md;
+        }
+      }
       &.part-count {
         @include media(hover,1025) {
           min-width: 245px;
+        }
+      }
+      &.part-total-count {
+        @include media(hover,1201) {
+          min-width: 245px;
+        }
+        @include breakpoints(1025,1200){
+          min-width: 180px;
+        }
+      }
+      &.part-total-cost {
+        @include breakpoints(1025,1366) {
+          width: 80%;
         }
       }
       @include media(hover,1025){
@@ -227,6 +393,15 @@
           display: flex;
           align-items: center;
 
+        }
+      }
+      .no-form-element {
+        pointer-events: none;
+        @include media(hover,601){
+          padding: 10px 0;
+        }
+        @include media(screen,600){
+          padding-top: 10px;
         }
       }
     }

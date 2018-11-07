@@ -31,4 +31,23 @@
       box-shadow: 0 30px 80px 0 rgba(26,26,26,0.2);
     }
   }
+  &-orders {
+    position: relative;
+    @include media(hover,768){
+      padding-bottom: 2*$padding_md;
+    }
+    @include media(screen,767){
+      padding-bottom: 2*$padding_sm;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 80px;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50vw);
+      background-color: $bg;
+    }
+  }
 }

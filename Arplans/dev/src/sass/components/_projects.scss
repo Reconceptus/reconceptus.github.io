@@ -428,6 +428,7 @@
       display: flex;
       align-items: center;
       background-color: $white;
+      .part-total-cost &,
       .part-cost & {
         flex-direction: column;
         width: 100%;
@@ -481,6 +482,7 @@
             margin: auto;
           }
         }
+        .part-total-cost &,
         .part-cost & {
           margin: 0;
           color: inherit;
