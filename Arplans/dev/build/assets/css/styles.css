@@ -10365,11 +10365,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     font-size: 4.2px;
   }
 
-  .header-main--stats .stats-profile {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
   .regions-drop ul {
     -webkit-columns: 5 auto;
     -moz-columns: 5 auto;
@@ -10475,10 +10470,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 @media screen and (min-width: 601px) and (max-width: 1366px) {
   .content {
     padding: 0 40px;
-  }
-
-  .header-main--stats .stats-profile {
-    margin-right: 20px;
   }
 
   .projects-list {
@@ -11607,6 +11598,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     width: 200px;
   }
 
+  .header-main--stats .stats-profile {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
   .header.minimized {
     top: -40px;
   }
@@ -11897,6 +11893,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     display: none;
   }
 
+  .header-main--stats .stats-profile {
+    display: none;
+  }
+
   .header-mobile {
     position: fixed;
     top: 60px;
@@ -12006,6 +12006,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-transform: rotate(315deg) translate(-2px, 2px);
     -ms-transform: rotate(315deg) translate(-2px, 2px);
     transform: rotate(315deg) translate(-2px, 2px);
+  }
+
+  .header-mobile--nav .profile-menu {
+    margin-top: 30px;
   }
 
   .burger {

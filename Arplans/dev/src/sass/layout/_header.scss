@@ -357,12 +357,12 @@
       .stats-profile {
         cursor: default;
         position: relative;
-        @include media(hover,1367){
+        @include media(hover,1201){
           margin-right: $padding_sm;
           margin-left: $padding_sm;
         }
-        @include breakpoints(601,1366){
-          margin-right: $padding_sm;
+        @include media(screen,1200){
+          display: none;
         }
       }
       .stats-prods {
@@ -489,6 +489,9 @@
               }
             }
           }
+        }
+        .profile-menu {
+          margin-top: 30px;
         }
       }
     }
