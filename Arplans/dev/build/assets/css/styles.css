@@ -9670,6 +9670,56 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   background-color: #F0F1F3;
 }
 
+.profile-sales {
+  position: relative;
+}
+
+.profile-sales:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 40px;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  transform: translateX(-50vw);
+  background-color: #F0F1F3;
+}
+
+.profile-sales table {
+  position: relative;
+  border-collapse: collapse;
+  background-color: #FFF;
+  width: 100%;
+  text-align: left;
+}
+
+.profile-sales table thead {
+  background-color: #21202E;
+}
+
+.profile-sales table tbody tr {
+  border-bottom: 1px solid #B2B9C1;
+}
+
+.profile-sales table th {
+  height: 40px;
+  color: #B2B9C1;
+  text-transform: uppercase;
+}
+
+.profile-sales table td {
+  font-size: 3.5rem;
+  text-transform: none;
+  color: #21202E;
+  font-weight: 600;
+}
+
+.profile-sales table td .done {
+  color: #009788;
+}
+
 .text-section {
   margin: 40px 0 60px;
 }
@@ -10465,6 +10515,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -moz-columns: 8 auto;
     columns: 8 auto;
   }
+
+  .profile-sales table th {
+    font-size: 3.8rem;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1366px) {
@@ -11027,6 +11081,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .contact-form--submit {
     padding: 5px 20px 10px;
   }
+
+  .profile-sales .table {
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .profile-sales table {
+    width: 600px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -11539,6 +11602,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .profile-orders {
     padding-bottom: 40px;
   }
+
+  .profile-sales {
+    padding-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 1201px) {
@@ -11857,6 +11924,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .profile-form:before {
     height: 120px;
+  }
+
+  .profile-sales table th {
+    padding: 5px 40px;
+  }
+
+  .profile-sales table td {
+    padding: 5px 40px;
+    height: 60px;
   }
 }
 
@@ -12194,6 +12270,19 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .contact-page--data {
     margin-bottom: 40px;
+  }
+
+  .profile-sales table th {
+    padding: 5px 20px;
+  }
+
+  .profile-sales table th {
+    font-size: 3rem;
+  }
+
+  .profile-sales table td {
+    padding: 5px 20px;
+    height: 40px;
   }
 }
 
@@ -12888,6 +12977,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .profile-orders {
+    padding-bottom: 60px;
+  }
+
+  .profile-sales {
     padding-bottom: 60px;
   }
 }
@@ -14027,6 +14120,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-columns: 6 auto;
     -moz-columns: 6 auto;
     columns: 6 auto;
+  }
+
+  .profile-sales table th {
+    font-size: 3.5rem;
   }
 }
 

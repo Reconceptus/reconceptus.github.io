@@ -50,4 +50,84 @@
       background-color: $bg;
     }
   }
+  &-sales {
+    position: relative;
+    @include media(hover,768){
+      padding-bottom: 2*$padding_md;
+    }
+    @include media(screen,767){
+      padding-bottom: 2*$padding_sm;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 40px;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50vw);
+      background-color: $bg;
+    }
+    .table {
+      @include media(screen,600){
+        max-width: 100%;
+        overflow: auto;
+      }
+    }
+    table {
+      position: relative;
+      border-collapse: collapse;
+      background-color: $white;
+      width: 100%;
+      text-align: left;
+      @include media(screen,600){
+        width: 600px;
+      }
+      thead {
+        background-color: $text;
+      }
+      tbody {
+        tr {
+          border-bottom: 1px solid $text_lt;
+        }
+      }
+      th {
+        height: 40px;
+        color: $text_lt;
+        text-transform: uppercase;
+        @include media(hover,1367){
+          font-size: 3.8rem;
+        }
+        @include breakpoints(1201,1366){
+          font-size: 3.5rem;
+        }
+        @include media(hover,1201){
+          padding: 5px 2*$padding_sm;
+        }
+        @include media(screen,1200){
+          padding: 5px 20px;
+        }
+        @include media(screen,1200){
+          font-size: 3rem;
+        }
+      }
+      td {
+        font-size: 3.5rem;
+        text-transform: none;
+        color: $text;
+        font-weight: 600;
+        @include media(hover,1201){
+          padding: 5px 2*$padding_sm;
+          height: 60px;
+        }
+        @include media(screen,1200){
+          padding: 5px 20px;
+          height: 40px;
+        }
+        .done {
+          color: #009788;
+        }
+      }
+    }
+  }
 }

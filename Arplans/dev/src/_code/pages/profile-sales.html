@@ -1,0 +1,133 @@
+<include src="../templates/head.html" title="Мои продажи"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-registered.html" sales="active"></include>
+
+        <div id="main" class="main">
+
+            <div class="section site-profile">
+                <div class="content content--lg mobile-wide">
+                    <div class="request--wrap gradient">
+                        <div class="content content--md">
+                            <h1 class="title title-lg">Мои продажи с сайта reconcept_vlg.ru</h1>
+                            <div class="profile-sales">
+                                <div class="table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Дата</th>
+                                                <th>№ ЗАКАЗА</th>
+                                                <th>Сумма заказ</th>
+                                                <th>Отчисления</th>
+                                                <th>Статус отчислений</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>5679900</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                                <td>Не оплачено</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>5679900</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                                <td>Не оплачено</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>5679900</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                                <td><span class="done">Оплачено</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>5679900</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                                <td>Не оплачено</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+<div class="modal" data-modal="loginSuccess">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Успешная регистрация</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Перейти в личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+<script>
+
+    $('.profile-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            profile_mail: {required: true},
+            profile_surname: {required: true},
+            profile_name: {required: true},
+            profile_patron: {required: true},
+            telephone: {required: true},
+            country: {required: true},
+            city: {required: true},
+            address: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            profile_mail: {required: ""},
+            profile_surname: {required: ""},
+            profile_name: {required: ""},
+            profile_patron: {required: ""},
+            telephone: {required: ""},
+            country: {required: ""},
+            city: {required: ""},
+            address: {required: ""},
+            password: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+
+            $('.modal[data-modal="loginSuccess"]').addClass('active');
+
+            return false;
+        }
+    })
+
+</script>
+
+</body>
+</html>
