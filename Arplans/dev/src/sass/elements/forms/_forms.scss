@@ -170,7 +170,32 @@
         height: 100%;
       }
     }
-
+    &.has-label {
+      display: flex;
+      align-items: center;
+      @include media(screen,767){
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .label {
+        flex-shrink: 0;
+        font-size: 3.5rem;
+        @include media(hover,1025){
+          width: 190px;
+          padding-right: 2*$padding_sm;
+        }
+        @include breakpoints(768,1024){
+          width: 150px;
+          padding-right: $padding_sm;
+        }
+        @include media(screen,767){
+          margin-bottom: 5px;
+        }
+      }
+      input {
+        color: $text;
+      }
+    }
   }
 }
 

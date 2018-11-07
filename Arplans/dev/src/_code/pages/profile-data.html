@@ -1,0 +1,164 @@
+<include src="../templates/head.html" title="Мои данные"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-registered.html" data="active"></include>
+
+        <div id="main" class="main">
+
+            <div class="section site-profile">
+                <div class="content content--lg mobile-wide">
+                    <div class="request--wrap gradient">
+                        <div class="content content--sm">
+                            <h1 class="title title-lg">Мои данные</h1>
+                            <h2 class="subtitle">Внимательно заполните данные вашего профиля. На указанные данные мы вышлем проект.</h2>
+                            <div class="profile-form">
+                                <form id="profile-form" action="#" method="post">
+                                    <div class="profile-form--wrap">
+                                        <div class="request-form--main custom-form">
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Ваш e-mail</label>
+                                                <div class="input">
+                                                    <input type="text" name="profile_mail" placeholder="e-mail">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Фамилия</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Фамилия" name="profile_surname">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Имя</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Имя" name="profile_name">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Отчество</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Отчество" name="profile_patron">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Номер телефона</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Номер телефона" name="telephone">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Страна</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Страна" name="country">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Город</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Город" name="city">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Адрес</label>
+                                                <div class="input">
+                                                    <input type="text" placeholder="Адрес" name="address">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element has-label">
+                                                <label class="label">Пароль</label>
+                                                <div class="input">
+                                                    <input type="password" placeholder="Изменить пароль" name="password">
+                                                </div>
+                                            </div>
+                                            <div class="form-row-element">
+                                                <div class="check">
+                                                    <label>
+                                                        <input type="checkbox">
+                                                        <span>Согласен на обработку персональных данных</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row-submit">
+                                            <div class="submit">
+                                                <button type="submit" class="btn btn--lt" name="login-button">Сохранить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+<div class="modal" data-modal="loginSuccess">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Успешная регистрация</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Перейти в личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+<script>
+
+    $('.profile-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            profile_mail: {required: true},
+            profile_surname: {required: true},
+            profile_name: {required: true},
+            profile_patron: {required: true},
+            telephone: {required: true},
+            country: {required: true},
+            city: {required: true},
+            address: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            profile_mail: {required: ""},
+            profile_surname: {required: ""},
+            profile_name: {required: ""},
+            profile_patron: {required: ""},
+            telephone: {required: ""},
+            country: {required: ""},
+            city: {required: ""},
+            address: {required: ""},
+            password: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+
+            $('.modal[data-modal="loginSuccess"]').addClass('active');
+
+            return false;
+        }
+    })
+
+</script>
+
+</body>
+</html>

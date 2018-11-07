@@ -270,6 +270,42 @@
         }
       }
     }
+    &--drop {
+      margin-top: 0;
+      transition: all 0.2s;
+      pointer-events: none;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      background-color: $white;
+      box-shadow: 0 10px 20px 0 rgba(26,26,26,0.2);
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      padding: 10px $padding_sm;
+      transform: translateX(-50%);
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        height: 10px;
+      }
+      a {
+        padding: 8px;
+        color: $text;
+        &.active {
+          color: $link_dark;
+        }
+        @include hover(){
+          color: $link_dark;
+        }
+      }
+    }
     &--stats {
       display: flex;
       align-items: center;
@@ -318,12 +354,19 @@
           }
         }
       }
-      .stats-likes {
-
+      .stats-profile {
+        cursor: default;
+        position: relative;
+        @include media(hover,1367){
+          margin-right: $padding_sm;
+          margin-left: $padding_sm;
+        }
+        @include breakpoints(601,1366){
+          margin-right: $padding_sm;
+        }
       }
       .stats-prods {
-        @include media(hover,1367){margin-left: $padding_md;}
-        @include breakpoints(601,1366){margin-left: $padding_sm;}
+        @include media(hover,601){margin-left: $padding_sm;}
       }
       @include media(hover,601){
         .icon-likes {
@@ -334,6 +377,15 @@
         }
       }
 
+    }
+    .has-drop {
+      @include hover(){
+        .header-main--drop {
+          opacity: 1;
+          pointer-events: auto;
+          margin-top: 10px;
+        }
+      }
     }
   }
   &-mobile {
