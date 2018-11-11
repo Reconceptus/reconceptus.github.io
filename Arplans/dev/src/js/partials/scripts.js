@@ -65,6 +65,8 @@ $(document).ready(function () {
         var thisLink = $(this),
             thisMarker = thisLink.attr('data-map-object');
         if(thisMarker != undefined){
+            $('.map-box .item').removeClass('current');
+            thisLink.closest('.item').addClass('current');
             $('.map-box .scaled').removeClass('scaled');
             $('.map-box img[src*='+thisMarker+']')
                 .parent()

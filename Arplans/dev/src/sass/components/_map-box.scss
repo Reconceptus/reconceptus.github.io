@@ -79,6 +79,16 @@
         color: $link_dark;
         @extend %hover_underline;
       }
+      &.current {
+        @include media(hover,768){
+          .name {
+            color: $link;
+          }
+        }
+      }
+    }
+    .mCS-autoHide>.mCustomScrollBox~.mCSB_scrollTools {
+      opacity: 1;
     }
   }
 
@@ -112,8 +122,9 @@
   }
 
   .scaled {
+    transition: all 0.12s;
     z-index: 10000 !important;
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 
 }
