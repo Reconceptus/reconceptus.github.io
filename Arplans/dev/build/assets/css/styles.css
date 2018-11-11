@@ -4836,6 +4836,19 @@ svg {
   outline: none;
 }
 
+.input .error-text {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #FF807C;
+  font-size: 12px;
+  width: 100%;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .custom-form .input:before {
   content: "";
   position: absolute;
@@ -8970,7 +8983,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: transparent;
 }
 
-.project-page--info .data .actions .icon-liked.js-favor {
+.project-page--info .data .actions .icon-liked.liked {
   color: #346697;
 }
 

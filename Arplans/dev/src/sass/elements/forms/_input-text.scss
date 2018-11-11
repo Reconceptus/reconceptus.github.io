@@ -36,6 +36,17 @@
       outline: none;
     }
   }
+  .error-text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: rgba(255,128,124,1);
+    font-size: 12px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
   .custom-form & {
     &:before {
       content: "";

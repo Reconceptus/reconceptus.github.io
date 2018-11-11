@@ -33,6 +33,9 @@ function detectIE() {
 }
 
 if (version){
+    if(version < 11){
+        document.getElementById('wrapper').innerHTML = 'This version is not supported';
+    };
     document.getElementById('wrapper').classList.add('ie');
 }
 
