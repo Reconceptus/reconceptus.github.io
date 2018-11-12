@@ -3285,6 +3285,10 @@ body.compensate-for-scrollbar {
   flex-shrink: 0;
 }
 
+.pt-sans {
+  font-family: "PT Sans", sans-serif;
+}
+
 .bg {
   background-color: #F0F1F3;
 }
@@ -6078,6 +6082,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .projects-item--actions .price {
+  font-family: "PT Sans", sans-serif;
   white-space: nowrap;
   color: #657482;
   font-weight: 700;
@@ -8940,6 +8945,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .project-page--info .main-data .current-price {
+  font-family: "PT Sans", sans-serif;
   font-weight: 600;
   white-space: nowrap;
 }

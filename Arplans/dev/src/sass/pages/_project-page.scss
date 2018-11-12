@@ -99,6 +99,7 @@
         }
       }
       .current-price {
+        font-family: 'PT Sans', sans-serif;
         font-weight: 600;
         white-space: nowrap;
         @include media(hover,1601){
