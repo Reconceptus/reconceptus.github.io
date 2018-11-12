@@ -87,8 +87,29 @@
         }
       }
     }
+    .show-all {
+      display: none;
+      .btn {
+        height: 50px;
+        padding: 0 40px;
+      }
+    }
     .mCS-autoHide>.mCustomScrollBox~.mCSB_scrollTools {
       opacity: 1;
+    }
+    @include media(hover,768){
+      &.short {
+        .show-all {
+          display: flex;
+          justify-content: center;
+        }
+        .item {
+          display: none;
+          &.current {
+            display: block;
+          }
+        }
+      }
     }
   }
 

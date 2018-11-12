@@ -6977,6 +6977,15 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: #346697;
 }
 
+.map-box--aside .show-all {
+  display: none;
+}
+
+.map-box--aside .show-all .btn {
+  height: 50px;
+  padding: 0 40px;
+}
+
 .map-box--aside .mCS-autoHide > .mCustomScrollBox ~ .mCSB_scrollTools {
   opacity: 1;
 }
@@ -12811,6 +12820,25 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .map-box--aside .item.current .name {
     color: #2196F3;
+  }
+
+  .map-box--aside.short .show-all {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .map-box--aside.short .item {
+    display: none;
+  }
+
+  .map-box--aside.short .item.current {
+    display: block;
   }
 
   #view_map:checked ~ .custom-search .view-map,

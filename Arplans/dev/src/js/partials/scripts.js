@@ -74,6 +74,28 @@ $(document).ready(function () {
         }
     });
 
+    $('.map-box').on('click','img[src*=custom_marker]',function () {
+
+        $('.map-box img[src*=custom_marker]').parent().removeClass('scaled');
+
+        var thisSrc = $(this).attr('src'),
+            thisMarker = thisSrc.split('custom_')[1];
+
+        $('.map-box img[src*='+thisMarker+']').parent().addClass('scaled');
+
+        $('.map-box .item').removeClass('current');
+        $('[data-map-object='+thisMarker+']').closest('.item').addClass('current');
+
+        $('.map-box--aside').addClass('short');
+
+    });
+
+    $('.map-box').on('click','.show-all-btn',function () {
+
+        $('.map-box--aside').removeClass('short');
+
+    });
+
 
     /*
      ============= document click events
