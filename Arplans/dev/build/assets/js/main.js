@@ -453,6 +453,11 @@ project.fixedSidebar = function() {
         setFixPosition();
     });
 
+    setTimeout(function () {
+        setOffsets();
+        setFixPosition();
+    },500);
+
     $('.show-modal-filter').click(function () {
         $('.fixing').slideToggle(300);
     });
@@ -732,10 +737,10 @@ $(document).ready(function () {
      ============= modals open/close
     */
 
-    $('.show-modal').click(function (e) {
+    $(document).on('click','.show-modal',function (e) {
         e.preventDefault();
         var $thisData = $(this).attr('data-modal');
-        $('.modal[data-modal="'+$thisData+'"]').addClass('active')
+        $('.modal[data-modal="'+$thisData+'"]').addClass('active');
         bodyScrollLock.disableBodyScroll();
     });
 

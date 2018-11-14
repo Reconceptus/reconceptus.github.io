@@ -264,6 +264,11 @@ project.fixedSidebar = function() {
         setFixPosition();
     });
 
+    setTimeout(function () {
+        setOffsets();
+        setFixPosition();
+    },500);
+
     $('.show-modal-filter').click(function () {
         $('.fixing').slideToggle(300);
     });
