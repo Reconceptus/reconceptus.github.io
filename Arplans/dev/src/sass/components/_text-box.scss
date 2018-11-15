@@ -51,8 +51,18 @@
     }
   }
   a {
-    color: $link_hover;
-    @extend %hover_underline;
+    color: inherit;
+    background: linear-gradient(to bottom, $link 0%, $link 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 2px;
+    padding: 0 1px;
+    &:hover {
+      @include media(hover,1025){
+        color: $white;
+        background-size: 1px 100%;
+      }
+    }
   }
   blockquote {
     p {margin: 0;}

@@ -5595,7 +5595,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .text-box a {
-  color: #2A7EC5;
+  color: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2196F3), to(#2196F3));
+  background: -webkit-linear-gradient(top, #2196F3 0%, #2196F3 100%);
+  background: -o-linear-gradient(top, #2196F3 0%, #2196F3 100%);
+  background: linear-gradient(to bottom, #2196F3 0%, #2196F3 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  -webkit-background-size: 1px 2px;
+  background-size: 1px 2px;
+  padding: 0 1px;
 }
 
 .text-box blockquote {
@@ -9806,7 +9815,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 @media screen and (min-width: 1025px) {
   .modal-content .link:hover,
-  .text-box a:hover,
   .map-box--aside .item .on-map:hover,
   .add-service--main-text .link a:hover,
   .project-page .tab-cost p a:hover,
@@ -9993,6 +10001,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .text-box .right-align {
     margin-right: -25%;
+  }
+
+  .text-box a:hover {
+    color: #FFF;
+    -webkit-background-size: 1px 100%;
+    background-size: 1px 100%;
   }
 
   .info-box {
