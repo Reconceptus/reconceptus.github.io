@@ -5579,9 +5579,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   line-height: 24px;
 }
 
+.text-box .left-align {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
 .text-box .right-align {
   margin-bottom: 30px;
   width: 100%;
+}
+
+.text-box img {
+  display: block;
+  max-width: 100%;
+  height: auto !important;
 }
 
 .text-box figure {
@@ -5589,9 +5600,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .text-box figure img {
-  display: block;
   width: 100%;
-  height: auto;
 }
 
 .text-box a {
@@ -9999,6 +10008,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     padding-right: 40px;
   }
 
+  .text-box .left-align {
+    margin-right: -25%;
+  }
+
   .text-box .right-align {
     margin-right: -25%;
   }
@@ -13293,6 +13306,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .text-box li {
     padding-left: 40px;
+  }
+
+  .text-box .left-align {
+    float: left;
+    margin-right: 30px;
+    max-width: 50%;
   }
 
   .text-box .right-align {

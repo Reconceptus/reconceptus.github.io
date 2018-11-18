@@ -150,7 +150,9 @@ $(document).ready(function () {
     if($('input[type="file"]').length > 0){
         if($('#supportFileUpload').length > 0){project.supportInputFile();}
         if($('#customFileUpload').length > 0){project.customInputFile();}
-
+    }
+    if($('.text-box').length > 0){
+        project.textImagesParcing();
     }
     if($('.video-box').length > 0){
         project.videoBoxHeight();

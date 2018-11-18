@@ -464,6 +464,26 @@ project.fixedSidebar = function() {
 };
 
     /*
+    ============= parsing text elements
+   */
+
+project.textImagesParcing = function () {
+    $('.text-box img').each(function () {
+        var $thisIMG = $(this);
+        if($thisIMG.css('float') == 'left'){
+            $thisIMG.addClass('left-align');
+            $thisIMG.attr('style','');
+        }
+        if($thisIMG.css('float') == 'right'){
+            $thisIMG.addClass('right-align');
+            $thisIMG.attr('style','');
+        }
+
+    });
+};
+
+
+    /*
     ============= counter
    */
 
@@ -857,7 +877,9 @@ $(document).ready(function () {
     if($('input[type="file"]').length > 0){
         if($('#supportFileUpload').length > 0){project.supportInputFile();}
         if($('#customFileUpload').length > 0){project.customInputFile();}
-
+    }
+    if($('.text-box').length > 0){
+        project.textImagesParcing();
     }
     if($('.video-box').length > 0){
         project.videoBoxHeight();

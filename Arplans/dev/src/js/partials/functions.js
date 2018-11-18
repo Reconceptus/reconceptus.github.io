@@ -275,6 +275,26 @@ project.fixedSidebar = function() {
 };
 
     /*
+    ============= parsing text elements
+   */
+
+project.textImagesParcing = function () {
+    $('.text-box img').each(function () {
+        var $thisIMG = $(this);
+        if($thisIMG.css('float') == 'left'){
+            $thisIMG.addClass('left-align');
+            $thisIMG.attr('style','');
+        }
+        if($thisIMG.css('float') == 'right'){
+            $thisIMG.addClass('right-align');
+            $thisIMG.attr('style','');
+        }
+
+    });
+};
+
+
+    /*
     ============= counter
    */
 

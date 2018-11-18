@@ -30,6 +30,18 @@
       line-height: 24px;
     }
   }
+  .left-align {
+    margin-bottom: $padding_md;
+    width: 100%;
+    @include media(hover,1025){
+      margin-right: -25%;
+    }
+    @include media(hover,601){
+      float: left;
+      margin-right: $padding_md;
+      max-width: 50%;
+    }
+  }
   .right-align {
     margin-bottom: $padding_md;
     width: 100%;
@@ -42,12 +54,15 @@
       max-width: 50%;
     }
   }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+  }
   figure {
     margin-bottom: $padding_md;
     img {
-      display: block;
       width: 100%;
-      height: auto;
     }
   }
   a {
