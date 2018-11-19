@@ -6131,6 +6131,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 }
 
 .projects-item--actions .icon-like {
+  cursor: pointer;
   color: transparent;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;

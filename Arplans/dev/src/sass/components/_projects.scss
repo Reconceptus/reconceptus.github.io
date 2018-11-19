@@ -503,6 +503,7 @@
         }
       }
       .icon-like {
+        cursor: pointer;
         color: transparent;
         flex-shrink: 0;
         &:not(:last-child){
