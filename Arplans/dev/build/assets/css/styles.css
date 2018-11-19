@@ -9015,6 +9015,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   flex-shrink: 0;
   margin-left: 30px;
   color: transparent;
+  cursor: pointer;
 }
 
 .project-page--info .data .actions .icon-liked.liked {

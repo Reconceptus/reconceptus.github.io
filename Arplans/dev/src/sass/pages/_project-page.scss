@@ -164,6 +164,7 @@
           flex-shrink: 0;
           margin-left: $padding_md;
           color: transparent;
+          cursor: pointer;
           @include hover(){
             color: $link;
           }
