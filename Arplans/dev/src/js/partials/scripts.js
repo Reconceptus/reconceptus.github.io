@@ -58,46 +58,6 @@ $(document).ready(function () {
     });
 
     /*
-     ============= map item click
-    */
-
-    $('.map-box').on('click','.on-map',function () {
-        var thisLink = $(this),
-            thisMarker = thisLink.attr('data-map-object');
-        if(thisMarker != undefined){
-            $('.map-box .item').removeClass('current');
-            thisLink.closest('.item').addClass('current');
-            $('.map-box .scaled').removeClass('scaled');
-            $('.map-box img[src*='+thisMarker+']')
-                .parent()
-                .addClass('scaled');
-        }
-    });
-
-    $('.map-box').on('click','img[src*=custom_marker]',function () {
-
-        $('.map-box img[src*=custom_marker]').parent().removeClass('scaled');
-
-        var thisSrc = $(this).attr('src'),
-            thisMarker = thisSrc.split('custom_')[1];
-
-        $('.map-box img[src*='+thisMarker+']').parent().addClass('scaled');
-
-        $('.map-box .item').removeClass('current');
-        $('[data-map-object='+thisMarker+']').closest('.item').addClass('current');
-
-        $('.map-box--aside').addClass('short');
-
-    });
-
-    $('.map-box').on('click','.show-all-btn',function () {
-
-        $('.map-box--aside').removeClass('short');
-
-    });
-
-
-    /*
      ============= document click events
     */
 
@@ -171,6 +131,9 @@ $(document).ready(function () {
     }
     if($('.region-dropbox').length > 0){
         project.regionDropBox();
+    }
+    if($('.map-box').length > 0){
+        project.mapMarkers();
     }
     if($('.fixed-scrollbar').length > 0){
         project.fixedSidebar();
