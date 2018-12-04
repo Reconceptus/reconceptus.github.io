@@ -32,6 +32,17 @@
       @include media(screen,600){
         font-size: 32rem;
       }
+      &-sm {
+        font-weight: 700;
+        @include media(hover,601){
+          font-size: 20rem;
+          margin-bottom: 8rem;
+        }
+        @include media(screen,600){
+          font-size: 10rem;
+          margin-bottom: 4rem;
+        }
+      }
     }
     .subtitle {
       font-size: 5rem;
@@ -40,6 +51,24 @@
         @include hover(){
           text-decoration: none;
         };
+      }
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      @include media(screen,600){
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        border: 2px solid $white;
+        @include hover(){
+          background-color: $white;
+          color: $link_hover;
+        }
+        @include media(screen,600){
+          margin-top: 3rem;
+        }
       }
     }
     @include media(screen,767){

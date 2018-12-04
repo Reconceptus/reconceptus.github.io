@@ -6563,12 +6563,31 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   margin-bottom: 20px;
 }
 
+.bg-head--error .title-sm {
+  font-weight: 700;
+}
+
 .bg-head--error .subtitle {
   font-size: 5rem;
 }
 
 .bg-head--error .subtitle a {
   text-decoration: underline;
+}
+
+.bg-head--error .actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.bg-head--error .actions .btn {
+  border: 2px solid #FFF;
 }
 
 .pagination {
@@ -10109,6 +10128,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     text-decoration: none;
   }
 
+  .bg-head--error .actions .btn:hover {
+    background-color: #FFF;
+    color: #2A7EC5;
+  }
+
   .pagination a:hover,
   .pagination span:hover {
     background-color: #21202E;
@@ -10901,6 +10925,27 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .bg-head--error .title {
     font-size: 32rem;
+  }
+
+  .bg-head--error .title-sm {
+    font-size: 10rem;
+    margin-bottom: 4rem;
+  }
+
+  .bg-head--error .actions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+
+  .bg-head--error .actions .btn {
+    margin-top: 3rem;
   }
 
   .pagination a,
@@ -13378,6 +13423,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .bg-head--error .title {
     font-size: 50rem;
+  }
+
+  .bg-head--error .title-sm {
+    font-size: 20rem;
+    margin-bottom: 8rem;
   }
 
   .pagination a,
