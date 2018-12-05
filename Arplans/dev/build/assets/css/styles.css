@@ -6565,6 +6565,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .bg-head--error .title-sm {
   font-weight: 700;
+  line-height: 1;
 }
 
 .bg-head--error .subtitle {
@@ -10929,7 +10930,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .bg-head--error .title-sm {
     font-size: 10rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .bg-head--error .actions {
@@ -10942,6 +10943,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+    margin-top: 5rem;
   }
 
   .bg-head--error .actions .btn {
@@ -13427,7 +13429,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .bg-head--error .title-sm {
     font-size: 20rem;
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  .bg-head--error .actions {
+    margin-top: 10rem;
   }
 
   .pagination a,
