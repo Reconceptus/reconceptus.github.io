@@ -1,0 +1,49 @@
+$white: #fff;
+$black: #000;
+
+$violet_dark: #1e1435;
+$violet: #564e67;
+$violet_light: #8e899a;
+$violet_extralight: #fff;
+$blue: #192476;
+$pink: #932064;
+$yellow: #f9c582;
+$grey: #efeeee;
+$grey_light: #f6f6f6;
+
+$text: $violet_dark;
+$link: $blue;
+$hover: $pink;
+
+$px: 0.277;
+$padding: 25px;
+
+/* breakpoints */
+/*
+@include media(hover,1601){}
+@include media(screen,1600){}
+
+@include breakpoints(1367,1600){}
+@include media(hover,1367){}
+@include media(screen,1366){}
+
+@include breakpoints(1201,1366){}
+@include media(hover,1201){}
+@include media(screen,1200){}
+
+@include breakpoints(1025,1200){}
+@include media(hover,1025){}
+@include media(screen,1024){}
+
+@include breakpoints(768,1024){}
+@include media(hover,768){}
+@include media(screen,767){}
+
+@include breakpoints(601,767){}
+@include media(hover,601){}
+@include media(screen,600){}
+
+@include breakpoints(481,600){}
+@include media(screen,480){}
+*/
+

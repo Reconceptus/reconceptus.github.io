@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  width: 1750px;
+  height: 80px;
+  transform: translateX(-875px);
+  z-index: 5;
+  &:before {
+    content: "";
+    transition: all 0.4s;
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    top: 0;
+    bottom: 0;
+    width: 200vw;
+    background: $white;
+    background: -moz-linear-gradient(left, $white 50%, transparent 100%);
+    background: -webkit-linear-gradient(left, $white 50%,transparent 100%);
+    background: linear-gradient(to right, $white 50%,transparent 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='transparent',GradientType=1 );
+  }
+  &.simple-header {
+    width: 370px;
+    transition: width 0.1s ease 0.4s;
+    &:before {
+      transition: all 0.35s ease 0.15s;
+      transform: translateX(-100%);
+    }
+  }
+  &--main {
+    display: flex;
+    height: 80px;
+    position: relative;
+  }
+  .logo {
+    width: 264px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $yellow;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    @include hover(){
+      background-color: darken($yellow,5);
+    }
+    img {
+      width: 195px;
+      height: auto;
+    }
+  }
+}
