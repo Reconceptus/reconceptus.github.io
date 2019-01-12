@@ -1,3 +1,55 @@
 .footer {
-
+  padding-top: 140px;
+  &-main {
+    width: 100%;
+    display: flex;
+    margin-bottom: $padding;
+  }
+  &-section {
+    display: flex;
+    width: 100%;
+    &:not(:last-child){
+      margin-right: $padding;
+    }
+    &--part {
+      width: 100%;
+      color: #362d4a;
+    }
+    header {
+      border-bottom: 1px solid currentColor;
+      padding: 8px 0;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-weight: 600;
+      font-size: $px*3.36rem;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+    }
+    .menu {
+      font-size: $px*3.36rem;
+      color: $violet;
+      &.has-columns {
+        columns: 2 auto;
+        column-gap: 40px;
+      }
+      li {
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        padding: 5px $padding 5px 0;
+      }
+      a {
+        color: inherit;
+        @include hover(){
+          color: $hover;
+        }
+      }
+    }
+  }
+  &-copyright {
+    font-size: $px*3.36rem;
+    text-align: center;
+    padding: 30px 0;
+  }
 }
