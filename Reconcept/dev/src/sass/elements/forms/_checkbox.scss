@@ -1,0 +1,50 @@
+.checkbox {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    &:checked {
+      & ~ .checkbox-mark {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-mark {
+    width: 32px;
+    height: 32px;
+    background-color: $violet;
+    flex-shrink: 0;
+    margin-right: 15px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.15s;
+      opacity: 0;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%224.8%22%20height%3D%224.8%22%20viewBox%3D%220%200%20135.46%20135.46%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%238e899a%22%20stroke-width%3D%2216.93%22%20stroke-miterlimit%3D%2222.926%22%20d%3D%22m8.46%2059.26l50.8%2067.73%2067.73-110.06%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px auto;
+    }
+  }
+  &-text {
+    font-size: $px*2.88rem;
+    color: $violet_light;
+    align-self: center;
+    line-height: 1.3;
+  }
+}

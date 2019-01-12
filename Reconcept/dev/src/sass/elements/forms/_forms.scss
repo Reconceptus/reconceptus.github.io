@@ -1,1 +1,11 @@
 @import "input-text";
+@import "checkbox";
+@import "submit";
+
+.input-box {
+  display: flex;
+  width: 100%;
+  &:not(:last-child){
+    margin-bottom: 20px;
+  }
+}

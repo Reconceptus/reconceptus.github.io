@@ -10,15 +10,8 @@ $(document).ready(function () {
      ============= header burger
     */
 
-    $('.burger').click(function () {
-        // if($header.hasClass('is-open')){
-        //     $header.removeClass('is-open');
-        //     $html.removeClass('ovh');
-        // }
-        // else {
-        //     $header.addClass('is-open');
-        //     $html.addClass('ovh');
-        // }
+    $('#burger').click(function () {
+        $header.removeClass('simple-header');
     });
 
     /*

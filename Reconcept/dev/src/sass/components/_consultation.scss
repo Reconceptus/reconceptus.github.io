@@ -1,0 +1,30 @@
+.consultation {
+  position: relative;
+  background: #241d3d url("../images/consultation-bg.jpg") no-repeat center;
+  background-size: cover;
+  padding: 75px 0 105px;
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid solid none;
+    border-width: 30px 25px;
+    border-color: $white transparent;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+  .title {
+    text-align: center;
+    color: $white;
+    font-size: $px*48rem;
+    font-family: $font-yeseva;
+    margin-bottom: $padding;
+  }
+  .text {
+    color: $white;
+    font-size: $px*4.32rem;
+    margin-bottom: 40px;
+  }
+}

@@ -51,7 +51,8 @@ var path = {
     watch: {
         html: 'dev/src/_code/**/*.html',                    /* path for watch html files */
         js: 'dev/src/js/**/*.js',                           /* path for watch js files */
-        style: 'dev/src/sass/**/*.scss'                     /* path for watch sass files */
+        style: 'dev/src/sass/**/*.scss',                    /* path for watch sass files */
+        img: 'dev/src/images/**/*.(jpg|jpeg|png|gif)'       /* path for watch img files */
     },
     clean: 'dev/build'                                      /* path for browsersync directory */
 };
@@ -177,10 +178,11 @@ gulp.task('builder:css', function () {
 
 /* watch changes */
 
-gulp.task('watch', ['svg', 'builder:css', 'builder:html', 'builder:js', 'browser-sync'], function () {
+gulp.task('watch', ['svg', 'img', 'builder:css', 'builder:html', 'builder:js', 'browser-sync'], function () {
     gulp.watch(path.watch.style,['builder:css']);
     gulp.watch(path.watch.html, ['builder:html']);
     gulp.watch(path.watch.js, ['builder:js']);
+    gulp.watch(path.watch.img, ['img']);
 });
 
 /* dafault tasks */

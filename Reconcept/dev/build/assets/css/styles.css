@@ -301,6 +301,10 @@ textarea {
   max-width: 980px;
 }
 
+.content--xs {
+  max-width: 650px;
+}
+
 .hide {
   display: none !important;
 }
@@ -418,6 +422,10 @@ svg {
   min-height: 100vh;
 }
 
+.page {
+  padding: 80px 0;
+}
+
 .header {
   position: fixed;
   left: 50%;
@@ -457,9 +465,11 @@ svg {
 }
 
 .header.simple-header:before {
-  -webkit-transition: all 0.35s ease 0.15s;
-  -o-transition: all 0.35s ease 0.15s;
-  transition: all 0.35s ease 0.15s;
+  -webkit-transition: -webkit-transform 0.4s linear 0.15s;
+  transition: -webkit-transform 0.4s linear 0.15s;
+  -o-transition: transform 0.4s linear 0.15s;
+  transition: transform 0.4s linear 0.15s;
+  transition: transform 0.4s linear 0.15s, -webkit-transform 0.4s linear 0.15s;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -503,7 +513,7 @@ svg {
 }
 
 .footer {
-  padding-top: 140px;
+  padding-top: 70px;
 }
 
 .footer-main {
@@ -877,6 +887,155 @@ svg {
   opacity: 0;
 }
 
+input[type="text"] {
+  width: 100%;
+  border: none;
+  height: 55px;
+  line-height: 55px;
+  padding: 0 25px;
+  font-size: 0.93072rem;
+}
+
+.checkbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.checkbox input:checked ~ .checkbox-mark:before {
+  opacity: 1;
+}
+
+.checkbox-mark {
+  width: 32px;
+  height: 32px;
+  background-color: #564E67;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 15px;
+  position: relative;
+}
+
+.checkbox-mark:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  transition: all 0.15s;
+  opacity: 0;
+  background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%224.8%22%20height%3D%224.8%22%20viewBox%3D%220%200%20135.46%20135.46%22%20shape-rendering%3D%22geometricPrecision%22%20image-rendering%3D%22optimizeQuality%22%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%238e899a%22%20stroke-width%3D%2216.93%22%20stroke-miterlimit%3D%2222.926%22%20d%3D%22m8.46%2059.26l50.8%2067.73%2067.73-110.06%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 16px auto;
+  background-size: 16px auto;
+}
+
+.checkbox-text {
+  font-size: 0.79776rem;
+  color: #8E899A;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  line-height: 1.3;
+}
+
+.submit {
+  white-space: nowrap;
+  border: none;
+  height: 55px;
+  line-height: 55px;
+  padding: 0 25px;
+  position: relative;
+  background-color: #192476;
+  color: #FFF;
+  font-size: 0.93072rem;
+}
+
+.submit:before {
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #932064;
+  width: 16px;
+  position: absolute;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.submit span {
+  position: relative;
+}
+
+.input-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.input-box:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.consultation {
+  position: relative;
+  background: #241D3D url("../images/consultation-bg.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 75px 0 105px;
+}
+
+.consultation:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid solid none;
+  border-width: 30px 25px;
+  border-color: #FFF transparent;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.consultation .title {
+  text-align: center;
+  color: #FFF;
+  font-size: 13.296rem;
+  font-family: "Yeseva One", cursive;
+  margin-bottom: 25px;
+}
+
+.consultation .text {
+  color: #FFF;
+  font-size: 1.19664rem;
+  margin-bottom: 40px;
+}
+
 @media screen and (min-width: 1025px) {
   .content {
     padding: 0 25px;
@@ -907,6 +1066,10 @@ svg {
 
   .nav .support .questions:hover {
     color: #932064;
+  }
+
+  .submit:hover:before {
+    width: 100%;
   }
 }
 
