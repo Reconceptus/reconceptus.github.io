@@ -27,3 +27,43 @@
     }
   }
 }
+
+.submit-btn {
+  width: 128px;
+  height: 128px;
+  position: relative;
+  background-color: $blue;
+  border: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $hover;
+    width: 10px;
+    position: absolute;
+    transition: all 0.25s;
+  }
+  .ico {
+    transition: all 0.25s;
+    position: relative;
+    width: 75px;
+    height: 45px;
+    transform: translateX(-20px);
+    svg {
+      fill: $white
+    }
+  }
+  @include hover(){
+    &:before {
+      width: 100%;
+    }
+    .ico {
+      transform: translateX(0);
+    }
+  }
+}

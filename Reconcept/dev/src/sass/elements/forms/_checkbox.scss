@@ -22,10 +22,13 @@
   &-mark {
     width: 32px;
     height: 32px;
-    background-color: $violet;
+    border: 1px solid $violet;
     flex-shrink: 0;
     margin-right: 15px;
     position: relative;
+    .consultation-form & {
+      background-color: $violet;
+    }
     &:before {
       content: "";
       position: absolute;

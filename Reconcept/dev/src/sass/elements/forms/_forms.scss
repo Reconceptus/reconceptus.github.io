@@ -5,7 +5,13 @@
 .input-box {
   display: flex;
   width: 100%;
+  &.centered {
+    justify-content: center;
+  }
   &:not(:last-child){
     margin-bottom: 20px;
+    .subscription-form & {
+      margin-bottom: 30px;
+    }
   }
 }

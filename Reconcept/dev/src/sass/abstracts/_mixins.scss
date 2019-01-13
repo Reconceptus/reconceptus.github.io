@@ -19,6 +19,24 @@
 @mixin breakpoints($from,$to){
   @media screen and (min-width:$from+'px') and (max-width:$to+'px'){@content;}
 }
+@mixin placeholder($ph){
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: inherit;
+    opacity: $ph;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: inherit;
+    opacity: $ph;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: inherit;
+    opacity: $ph;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: inherit;
+    opacity: $ph;
+  }
+}
 @mixin hover(){
   @include media(hover,1025){
     &:hover {

@@ -52,6 +52,9 @@
       @include hover(){
         color: $hover;
       }
+      &.active {
+        color: $hover;
+      }
     }
   }
 }

@@ -1,8 +1,20 @@
 input[type="text"] {
   width: 100%;
   border: none;
-  height: 55px;
-  line-height: 55px;
-  padding: 0 $padding;
-  font-size: $px*3.36rem;
+  background-color: $white;
+  .consultation-form & {
+    height: 55px;
+    line-height: 55px;
+    padding: 0 $padding;
+    font-size: $px*3.36rem;
+  }
+  .subscription-form & {
+    text-align: center;
+    height: 128px;
+    line-height: 128px;
+    border-bottom: 3px solid $violet;
+    font-size: $px*11.52rem;
+    font-family: $font-yeseva;
+    padding: 0 $padding 0 $padding+128px;
+  }
 }
