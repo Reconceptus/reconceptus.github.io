@@ -1,3 +1,22 @@
-.title {
-
+.page-title {
+  max-width: 1410px;
+  margin: 0 auto;
+  padding: 115px 0 70px;
+  line-height: 1.2;
+  &--text {
+    font-size: $px*11.52rem;
+    font-family: $font-yeseva;
+    padding: 0 0 0 20%;
+    position: relative;
+    font-weight: 500;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 2rem;
+      left: 10%;
+      width: calc(10% - 25px);
+      height: 4px;
+      background-color: currentColor;
+    }
+  }
 }

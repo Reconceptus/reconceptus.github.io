@@ -973,6 +973,31 @@ svg {
   width: 100%;
 }
 
+.page-title {
+  max-width: 1410px;
+  margin: 0 auto;
+  padding: 115px 0 70px;
+  line-height: 1.2;
+}
+
+.page-title--text {
+  font-size: 3.19104rem;
+  font-family: "Yeseva One", cursive;
+  padding: 0 0 0 20%;
+  position: relative;
+  font-weight: 500;
+}
+
+.page-title--text:before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 10%;
+  width: calc(10% - 25px);
+  height: 4px;
+  background-color: currentColor;
+}
+
 input[type="text"] {
   width: 100%;
   border: none;
@@ -1460,6 +1485,158 @@ input[type="text"] {
   margin-top: 20px;
 }
 
+.portfolio-section {
+  margin-bottom: 55px;
+}
+
+.portfolio-categories {
+  font-size: 0.93072rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.portfolio-categories ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.portfolio-categories li {
+  margin-right: 25px;
+}
+
+.portfolio-categories a {
+  color: currentColor;
+}
+
+.portfolio-categories a.active {
+  color: #932064;
+}
+
+.portfolio-grid ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -12.5px;
+}
+
+.portfolio-grid li {
+  width: 33.3333%;
+  padding: 0 12.5px;
+  margin-bottom: 25px;
+}
+
+.portfolio .pagination {
+  padding: 25px 0;
+}
+
+.portfolio .item {
+  width: 100%;
+  display: block;
+}
+
+.portfolio .item-img {
+  width: 100%;
+  padding-bottom: 66.67%;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .item-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  will-change: transform;
+}
+
+.portfolio .item-brief {
+  background-color: #A17C78;
+  color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-height: 64px;
+  overflow: hidden;
+}
+
+.portfolio .item-data {
+  padding: 0 15px 0 25px;
+}
+
+.portfolio .item-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.93072rem;
+}
+
+.portfolio .item-subtitle {
+  font-weight: 400;
+  font-size: 0.93072rem;
+  max-height: 40px;
+  overflow: hidden;
+}
+
+.portfolio .item-btn {
+  width: 64px;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: #2C2341;
+  position: relative;
+  padding: 17px;
+}
+
+.portfolio .item-btn:before {
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #932064;
+  width: 10px;
+  position: absolute;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.portfolio .item-btn .ico {
+  -webkit-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+  fill: #FFF;
+  position: relative;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
 @media screen and (min-width: 1025px) {
   .content {
     padding: 0 25px;
@@ -1533,6 +1710,26 @@ input[type="text"] {
 
   .blog .item:hover .item-title {
     color: #932064;
+  }
+
+  .portfolio-categories a:hover {
+    color: #932064;
+  }
+
+  .portfolio .item:hover .item-img img {
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+  }
+
+  .portfolio .item:hover .item-btn:before {
+    width: 100%;
+  }
+
+  .portfolio .item:hover .item-btn .ico {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
