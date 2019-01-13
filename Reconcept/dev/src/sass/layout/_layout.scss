@@ -2,3 +2,19 @@
 @import "header";
 @import "footer";
 @import "nav";
+@import "sidebar";
+
+
+.page {
+  padding: 80px 0;
+  &-layout {
+    display: flex;
+  }
+  &-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+  }
+  &-main-part {
+    width: 100%;
+  }
+}

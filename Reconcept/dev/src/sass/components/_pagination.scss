@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  a,span {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:not(.current){
+      color: $text;
+      background-color: $grey;
+      @include hover(){
+        background-color: $text;
+        color: $white;
+      }
+    }
+    &.current{
+      background-color: $text;
+      color: $white;
+      pointer-events: none;
+    }
+  }
+}
