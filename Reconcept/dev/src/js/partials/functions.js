@@ -2,7 +2,8 @@ var project = {},
     scrollTop,
     scrollVar = 0,
     winWidth,
-    $html,
+    $search, $searchModal,
+    $html = document.getElementsByTagName('html'),
     $header;
 
 /* ----------------------------------- functions ----------------------------------- */
@@ -25,6 +26,50 @@ project.headerFixed = function(){
         $header.removeClass('simple-header');
         scrollVar = scrollTop;
     }
+};
+
+    /*
+     ============= page overflow
+    */
+
+project.ovhEnable = function(){
+    $html[0].classList.add('ovh');
+};
+project.ovhDisable = function(){
+    $html[0].classList.remove('ovh');
+};
+
+    /*
+     ============= search modal reset
+    */
+
+project.searchReset = function(){
+    var $searchForm = $('.search-form'),
+        $searcCloneText = $searchForm.find('.clone-text .text'),
+        $searcCloneBox = $searchForm.find('.input-dublicate'),
+        $searcReset = $searchForm.find('.reset'),
+        $searchInput = $('.search-input');
+
+    function visibleReset(value){
+        var inputValue = value;
+        if(inputValue == ''){
+            $searcCloneBox.removeClass('visible');
+        }
+        else {
+            $searcCloneBox.addClass('visible');
+        }
+    }
+
+    $searchInput.keyup(function (e) {
+        var _thisVal = $(this).val();
+        $searcCloneText.text(_thisVal);
+        visibleReset(_thisVal);
+    });
+
+    $searcReset.click(function () {
+        $searcCloneText.text('');
+        visibleReset('');
+    });
 };
 
 

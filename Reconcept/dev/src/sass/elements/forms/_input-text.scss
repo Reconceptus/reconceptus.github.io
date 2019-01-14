@@ -1,12 +1,12 @@
 input[type="text"] {
   width: 100%;
   border: none;
-  background-color: $white;
   .consultation-form & {
     height: 55px;
     line-height: 55px;
     padding: 0 $padding;
     font-size: $px*3.36rem;
+    background-color: $white;
   }
   .subscription-form & {
     text-align: center;
@@ -16,5 +16,17 @@ input[type="text"] {
     font-size: $px*11.52rem;
     font-family: $font-yeseva;
     padding: 0 $padding 0 $padding+128px;
+    background: transparent;
+  }
+  .search-form & {
+    text-align: center;
+    background: transparent;
+    height: 128px;
+    line-height: 128px;
+    border-bottom: 3px solid $white;
+    font-size: $px*11.52rem;
+    font-family: $font-yeseva;
+    padding: 0 3*$padding 0 3*$padding+128px;
+    color: $white;
   }
 }

@@ -87,7 +87,8 @@ var project = {},
     scrollTop,
     scrollVar = 0,
     winWidth,
-    $html,
+    $search, $searchModal,
+    $html = document.getElementsByTagName('html'),
     $header;
 
 /* ----------------------------------- functions ----------------------------------- */
@@ -110,6 +111,50 @@ project.headerFixed = function(){
         $header.removeClass('simple-header');
         scrollVar = scrollTop;
     }
+};
+
+    /*
+     ============= page overflow
+    */
+
+project.ovhEnable = function(){
+    $html[0].classList.add('ovh');
+};
+project.ovhDisable = function(){
+    $html[0].classList.remove('ovh');
+};
+
+    /*
+     ============= search modal reset
+    */
+
+project.searchReset = function(){
+    var $searchForm = $('.search-form'),
+        $searcCloneText = $searchForm.find('.clone-text .text'),
+        $searcCloneBox = $searchForm.find('.input-dublicate'),
+        $searcReset = $searchForm.find('.reset'),
+        $searchInput = $('.search-input');
+
+    function visibleReset(value){
+        var inputValue = value;
+        if(inputValue == ''){
+            $searcCloneBox.removeClass('visible');
+        }
+        else {
+            $searcCloneBox.addClass('visible');
+        }
+    }
+
+    $searchInput.keyup(function (e) {
+        var _thisVal = $(this).val();
+        $searcCloneText.text(_thisVal);
+        visibleReset(_thisVal);
+    });
+
+    $searcReset.click(function () {
+        $searcCloneText.text('');
+        visibleReset('');
+    });
 };
 
 
@@ -150,6 +195,9 @@ $(document).ready(function () {
     /* ----------------------------------- variables ----------------------------------- */
 
     $header = $('#header');
+    $search = document.getElementById('showSearch');
+    $searchModal = document.getElementById('searchModal');
+
 
     /* ----------------------------------- functions ----------------------------------- */
 
@@ -159,6 +207,21 @@ $(document).ready(function () {
 
     $('#burger').click(function () {
         $header.removeClass('simple-header');
+    });
+
+    /*
+     ============= search modal
+    */
+
+    $search.addEventListener('click',function () {
+        project.ovhEnable();
+        $header.removeClass('simple-header');
+        $searchModal.classList.add('active');
+    });
+
+    document.getElementById('closeModal').addEventListener('click',function () {
+        project.ovhDisable();
+        $searchModal.classList.remove('active');
     });
 
     /*
@@ -188,6 +251,9 @@ $(document).ready(function () {
 
     documentClick();
     project.headerFixed();
+    if($('.search-form').length > 0){
+        project.searchReset();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */

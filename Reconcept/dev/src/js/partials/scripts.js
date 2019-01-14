@@ -3,6 +3,9 @@ $(document).ready(function () {
     /* ----------------------------------- variables ----------------------------------- */
 
     $header = $('#header');
+    $search = document.getElementById('showSearch');
+    $searchModal = document.getElementById('searchModal');
+
 
     /* ----------------------------------- functions ----------------------------------- */
 
@@ -12,6 +15,21 @@ $(document).ready(function () {
 
     $('#burger').click(function () {
         $header.removeClass('simple-header');
+    });
+
+    /*
+     ============= search modal
+    */
+
+    $search.addEventListener('click',function () {
+        project.ovhEnable();
+        $header.removeClass('simple-header');
+        $searchModal.classList.add('active');
+    });
+
+    document.getElementById('closeModal').addEventListener('click',function () {
+        project.ovhDisable();
+        $searchModal.classList.remove('active');
     });
 
     /*
@@ -41,6 +59,9 @@ $(document).ready(function () {
 
     documentClick();
     project.headerFixed();
+    if($('.search-form').length > 0){
+        project.searchReset();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */

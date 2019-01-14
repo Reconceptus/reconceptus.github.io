@@ -7,7 +7,7 @@
     <meta name="author" content="enenkoff@mail.ru">
 
     <link rel="icon" href="favicon.ico" sizes="32x32">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Yeseva+One&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700|Yeseva+One&amp;subset=cyrillic-ext" rel="stylesheet">
     <link href="assets/css/styles.min.css" rel="stylesheet">
     <link href="assets/css/common.css" rel="stylesheet">
 
@@ -71,7 +71,7 @@
                             <aside class="page-sidebar sidebar">
                                 <h1 class="title">Блог</h1>
                                 <div class="search">
-                                    <button type="button" class="search-btn">
+                                    <button type="button" class="search-btn" id="showSearch">
                                         <i class="ico">
                                             <svg xmlns="http://www.w3.org/2000/svg">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
@@ -293,7 +293,7 @@
                                     </div>
                                     <div class="input-box">
                                         <label class="checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" checked>
                                             <span class="checkbox-mark"></span>
                                             <span class="checkbox-text">
                                                 Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
@@ -392,6 +392,43 @@
 
     </div>
 
+</div>
+
+<div class="search-modal" id="searchModal">
+    <div class="search-header">
+        <div class="content content--lg">
+            <div class="search-header--actions">
+                <a href="/" class="logo">
+                    <img src="assets/svg/logo.svg" alt="ReConcept">
+                </a>
+                <button class="close" id="closeModal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="search-form">
+        <div class="content content--md">
+            <form action="/">
+                <div class="input-box">
+                    <input class="search-input" type="text" placeholder="Поиск по статьям">
+                    <div class="input-dublicate">
+                        <span class="clone-text">
+                            <span class="text"></span>
+                            <button class="reset" type="reset">&times;</button>
+                        </span>
+                    </div>
+                    <button class="submit-btn">
+                        <i class="ico">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right-long"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 
