@@ -10,6 +10,9 @@
 // touch-or-mouse
 //= vendor/touchOrMouse.min.js
 
+// custom-cursor
+//= vendor/customCursor.js
+
 // functions
 //= partials/functions.js
 

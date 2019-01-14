@@ -1,0 +1,28 @@
+html, a, button, input, label, select {
+    cursor: none !important;
+}
+
+.cursor {
+    z-index: 10000000000000;
+    position: fixed;
+    background-color: #f9c582;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+.overlink {
+    width: 32px;
+    height: 32px;
+    background-color: #f9c582 !important;
+}
+
+/*.overtext {*/
+    /*background-color: rgba(100, 100, 255, 0.25) !important;*/
+    /*border: 1px solid rgba(0, 0, 100, 0.25) !important;*/
+/*}*/

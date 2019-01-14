@@ -151,11 +151,6 @@ input {
 }
 
 button,
-select {
-  cursor: pointer;
-}
-
-button,
 html [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -227,7 +222,45 @@ textarea {
   font: inherit;
 }
 
-/*---libs---*/
+/*---vendors---*/
+html,
+a,
+button,
+input,
+label,
+select {
+  cursor: none !important;
+}
+
+.cursor {
+  z-index: 10000000000000;
+  position: fixed;
+  background-color: #F9C582;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  -webkit-transition: width 0.15s ease, height 0.15s ease;
+  -o-transition: width 0.15s ease, height 0.15s ease;
+  transition: width 0.15s ease, height 0.15s ease;
+}
+
+.overlink {
+  width: 32px;
+  height: 32px;
+  background-color: #F9C582 !important;
+}
+
+/*.overtext {*/
+/*background-color: rgba(100, 100, 255, 0.25) !important;*/
+/*border: 1px solid rgba(0, 0, 100, 0.25) !important;*/
+/*}*/
 /*---styles---*/
 /* breakpoints */
 /*
@@ -725,7 +758,6 @@ svg {
 
 .simple-header .nav-burger {
   pointer-events: auto;
-  cursor: pointer;
   background-color: #FFF;
   -webkit-box-shadow: 0 0 0 2px #F9C582 inset;
   box-shadow: 0 0 0 2px #F9C582 inset;
@@ -1027,7 +1059,6 @@ input[type="text"] {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  cursor: pointer;
 }
 
 .checkbox input {

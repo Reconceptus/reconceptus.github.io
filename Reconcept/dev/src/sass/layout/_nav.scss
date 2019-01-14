@@ -53,7 +53,7 @@
     transition: background-color 0.4s, box-shadow 0.3s;
     .simple-header & {
       pointer-events: auto;
-      cursor: pointer;
+      //cursor: pointer;
       background-color: $white;
       box-shadow: 0 0 0 2px $yellow inset;
       transition: background-color 0.4s, box-shadow 0.4s ease 0.35s;
