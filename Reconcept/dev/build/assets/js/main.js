@@ -195,8 +195,8 @@ $(document).ready(function () {
     /* ----------------------------------- variables ----------------------------------- */
 
     $header = $('#header');
-    $search = document.getElementById('showSearch');
-    $searchModal = document.getElementById('searchModal');
+    $search = $('#showSearch');
+    $searchModal = $('#searchModal');
 
 
     /* ----------------------------------- functions ----------------------------------- */
@@ -213,15 +213,15 @@ $(document).ready(function () {
      ============= search modal
     */
 
-    $search.addEventListener('click',function () {
+    $search.on('click',function () {
         project.ovhEnable();
         $header.removeClass('simple-header');
-        $searchModal.classList.add('active');
+        $searchModal.addClass('active');
     });
 
-    document.getElementById('closeModal').addEventListener('click',function () {
+    $searchModal.find('.close').on('click',function () {
         project.ovhDisable();
-        $searchModal.classList.remove('active');
+        $searchModal.removeClass('active');
     });
 
     /*

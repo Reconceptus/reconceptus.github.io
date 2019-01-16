@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReConcept Project</title>
+    <meta name="author" content="enenkoff@mail.ru">
+
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700|Yeseva+One&amp;subset=cyrillic-ext" rel="stylesheet">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="hide">
+
+    <svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arrow-right-long" viewBox="0 0 32 19.41"><g><path d="M22.71,19.41,21.29,18l8.29-8.29L21.29,1.41,22.71,0l9,9a1,1,0,0,1,0,1.41Z"/><path d="m0 8.71h31v2h-31z"/></g></symbol><symbol id="icon-arrow-right" viewBox="0 0 96 96"><path d="m12 52h62.34l-21.456 21.456c-1.562 1.562-1.562 4.095-.0001 5.656 1.562 1.562 4.096 1.562 5.658 0l28.28-28.28c.186-.186.352-.391.498-.609.067-.101.114-.21.172-.315.066-.124.142-.242.195-.373.057-.135.089-.275.129-.415.033-.111.076-.217.099-.331.052-.26.079-.522.079-.785 0-.003-.0001-.006-.0001-.009-.0001-.259-.027-.519-.078-.774-.024-.12-.069-.231-.104-.349-.039-.133-.069-.268-.123-.397-.058-.139-.136-.265-.208-.396-.054-.098-.097-.198-.159-.292-.146-.221-.314-.427-.501-.614l-28.28-28.28c-1.562-1.562-4.095-1.562-5.657-.0001-1.562 1.562-1.562 4.095 0 5.658l21.456 21.455h-62.34c-2.209 0-4 1.791-4 4 0 2.209 1.791 4 4 4"/></symbol><symbol id="icon-comment" viewBox="0 0 64.83 68.07"><g><path d="M26.94,68.07,10,54.67a10.61,10.61,0,0,1-7.39-3A7.86,7.86,0,0,1,.25,46.11l.06-20c0-5.18,5-8.28,9.69-8.28H45.28c5.19,0,8.4,5.13,8.4,9.88V46.57c0,4.81-3.3,7.92-8.4,7.92H26.94ZM10,24.5c-1.39,0-3,.71-3,1.64l-.06,20a1.14,1.14,0,0,0,.42.85A4,4,0,0,0,10,48h2.4l7.86,6.25V47.83h25c1.73,0,1.73-.47,1.73-1.25V27.72c0-1.66-1-3.21-1.73-3.21Z"/></g></symbol><symbol id="icon-eye" viewBox="0 0 54.87 53.33"><g><path d="M27.44,37.77a11.11,11.11,0,0,0,11.1-11.11v-.14a4.61,4.61,0,1,1-3.35-7.8,11.11,11.11,0,1,0-7.75,19.05Z"/><path d="M48.92 29.37A24.07 24.07 0 0 0 27.43 16.71 24.07 24.07 0 0 0 5.95 29.37L0 26.27A30.72 30.72 0 0 1 27.43 10 30.72 30.72 0 0 1 54.83 26.27"/><path d="M27.43 46.66A30.49 30.49 0 0 1 0 29.29l6-2.94a23.68 23.68 0 0 0 42.89 0l6 2.94A30.49 30.49 0 0 1 27.43 46.66"/></g></symbol><symbol id="icon-favorite" viewBox="0 0 135.46 135.46"><path stroke-width="16.93" stroke-miterlimit="22.926" d="m33.86 8.46h67.73v110.07l-33.86-25.4-33.87 25.4z"/></symbol><symbol id="icon-search" viewBox="0 0 139 139">
+<path d="m127.56 111.96l-27.309-27.311c4.64-7.387 7.333-16.12 7.333-25.488 0-26.509-21.49-47.996-47.998-47.996-26.508 0-47.996 21.487-47.996 47.996 0 26.51 21.487 47.995 47.996 47.995 10.197 0 19.642-3.188 27.414-8.605l26.984 26.986c1.875 1.873 4.333 2.806 6.788 2.806 2.458 0 4.913-.933 6.791-2.806 3.747-3.751 3.747-9.827-.003-13.577m-67.974-20.354c-17.917 0-32.443-14.525-32.443-32.443s14.526-32.444 32.443-32.444c17.918 0 32.443 14.526 32.443 32.444s-14.525 32.443-32.443 32.443"/>
+</symbol></svg>
+
+</div>
+<div id="wrapper">
+
+    <div class="container">
+
+        <header id="header" class="header">
+            <div class="content content--lg">
+                <div class="header-main">
+                    <a href="/" class="logo">
+                        <img src="assets/svg/logo.svg" alt="ReConcept">
+                    </a>
+                    <nav class="nav">
+                        <div class="elements">
+                            <a href="/" class="slogan">
+                                сайты 5-го поколения
+                            </a>
+                            <label class="nav-burger" id="burger">
+                                <span></span>
+                            </label>
+                        </div>
+                        <ul class="nav-menu">
+                            <li><a href="portfolio.html" class="active">Портфолио</a></li>
+                            <li><a href="web-development.html" class="">Веб-разработка+</a></li>
+                            <li><a href="advertising.html" class="">Реклама+</a></li>
+                            <li><a href="branding.html" class="">Брендирование+</a></li>
+                            <li><a href="blog-listing.html" class="">Блог</a></li>
+                            <li><a href="about-us.html" class="">Мы</a></li>
+                            <li><a href="contacts.html" class="">Контакты</a></li>
+                        </ul>
+                        <div class="support">
+                            <a class="favorites" href="favorites.html">
+                                12
+                                <i class="ico"></i>
+                            </a>
+                            <a href="#" class="questions">Есть вопрос?</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+        <div id="main" class="main">
+
+            <div class="text-section">
+                <div class="content content--lg">
+                    <div class="text-section--main">
+                        <div class="page-title">
+                            <h1 class="page-title--text">Редизайн корпоративного сайта для геодезической компании</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-main-preview" style="background-color: #494a4f">
+                <div class="content content--lg">
+                    <div class="figure">
+                        <img src="assets/images/portfolio/project_orway/preview-main.jpg"
+                             alt="orway">
+                    </div>
+                </div>
+            </div>
+            <div class="text-section">
+                <div class="content content--lg">
+                    <div class="text-section--main">
+                        <div class="text-box--wrap">
+                            <div class="content content--md">
+                                <div class="text-box--layout first-info">
+                                    <aside class="text-box--aside">
+                                        <figure class="person">
+                                            <img src="assets/images/photo/person01.jpg" alt="Azaliya">
+                                            <figcaption>
+                                                <p>Азалия Аманова,</p>
+                                                <p>должность</p>
+                                                <p>+7 902 651-11-15</p>
+                                            </figcaption>
+                                        </figure>
+                                    </aside>
+                                    <div class="text-box--main">
+                                        <div class="text-box">
+                                            <blockquote>
+                                                <p>
+                                                    Выделение, типа цитаты. Различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену. Обычный абзац. Учёные неплохо изучили покупающий мозг. Различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое. Выделение, типа цитаты. Различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену. Обычный абзац. Учёные неплохо изучили покупающий мозг.
+                                                </p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-box--layout">
+                                    <aside class="text-box--aside">
+                                        <div class="sharing"></div>
+                                    </aside>
+                                    <div class="text-box--main">
+                                        <div class="text-box">
+                                            <h2>ЗАГОЛОВОК H2</h2>
+                                            <h3>Трафик сайта H3</h3>
+                                            <p>
+                                                <a href="#">Ссылки на сайте</a>, это ховер. Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
+                                            </p>
+                                            <h3>ТЕКСТОВЫЙ РЕДАКТОР КАК В БЛОГЕ H3</h3>
+                                            <p>
+                                                Обычный абзац. Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-previews">
+                <div class="project-preview" style="background-color: #494a4f">
+                    <div class="content content--lg">
+                        <div class="figure">
+                            <img src="assets/images/portfolio/project_orway/preview-01.jpg"
+                                 alt="orway">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-preview" style="background-color: #494a4f">
+                    <div class="content content--lg">
+                        <div class="figure">
+                            <img src="assets/images/portfolio/project_orway/preview-02.jpg"
+                                 alt="orway">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-section">
+                <div class="content content--lg">
+                    <div class="text-section--main">
+                        <div class="text-box--wrap">
+                            <div class="content content--md">
+                                <div class="text-box--layout">
+                                    <aside class="text-box--aside">
+
+                                    </aside>
+                                    <div class="text-box--main">
+                                        <div class="text-box">
+                                            <p>
+                                                Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-box--images">
+                            <div class="figure" style="background-color: #494a4f">
+                                <img src="assets/images/portfolio/project_orway/preview-01.jpg"
+                                     alt="orway">
+                            </div>
+                            <div class="figure" style="background-color: #494a4f">
+                                <img src="assets/images/portfolio/project_orway/preview-01.jpg"
+                                     alt="orway">
+                            </div>
+                            <div class="figure" style="background-color: #494a4f">
+                                <img src="assets/images/portfolio/project_orway/preview-01.jpg"
+                                     alt="orway">
+                            </div>
+                            <div class="figure" style="background-color: #494a4f">
+                                <img src="assets/images/portfolio/project_orway/preview-01.jpg"
+                                     alt="orway">
+                            </div>
+                        </div>
+                        <div class="text-box--wrap">
+                            <div class="content content--md">
+                                <div class="text-box--layout">
+                                    <aside class="text-box--aside">
+
+                                    </aside>
+                                    <div class="text-box--main">
+                                        <div class="text-box">
+                                            <p>
+                                                Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются <a href="#">различия между тем</a>, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-box--wrap">
+                            <div class="content content--md">
+                                <div class="text-box--link">
+                                    <a href="https://reconcept.ru/" class="link">
+                                        <div class="link-full">
+                                            <span>h</span>
+                                            <span>t</span>
+                                            <span>t</span>
+                                            <span>p</span>
+                                            <span>s</span>
+                                            <span>://</span>
+                                            <span>r</span>
+                                            <span>e</span>
+                                            <span>c</span>
+                                            <span>o</span>
+                                            <span>n</span>
+                                            <span>c</span>
+                                            <span>e</span>
+                                            <span>p</span>
+                                            <span>t.</span>
+                                            <span>r</span>
+                                            <span>u</span>
+                                        </div>
+                                        <div class="link-parts">
+                                            <span>h</span>
+                                            <span>t</span>
+                                            <span>t</span>
+                                            <span>p</span>
+                                            <span>s</span>
+                                            <span>://</span>
+                                            <span>r</span>
+                                            <span>e</span>
+                                            <span>c</span>
+                                            <span>o</span>
+                                            <span>n</span>
+                                            <span>c</span>
+                                            <span>e</span>
+                                            <span>p</span>
+                                            <span>t.</span>
+                                            <span>r</span>
+                                            <span>u</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page">
+                <div class="content content--lg">
+                    <div class="consultation">
+                        <div class="content">
+                            <div class="title">Действуй!</div>
+                        </div>
+                        <div class="content content--xs">
+                            <div class="consultation-form">
+                                <div class="text">
+                                    Таким образом реализация намеченных плановых заданий играет важную роль в формировании существенных финансовых и административных условий.
+                                </div>
+                                <form action="/">
+                                    <div class="input-box">
+                                        <input type="text" placeholder="Оставьте телефон или мейл">
+                                        <button class="submit"><span>Заказать консультацию</span></button>
+                                    </div>
+                                    <div class="input-box">
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkbox-mark"></span>
+                                            <span class="checkbox-text">
+                                                Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                                            </span>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subscription">
+                        <h3 class="title">
+                            Рассылка Reconcept, подпишитесь на наш полезный <a href="blog-listing.html">блог</a>
+                        </h3>
+                        <div class="subscription-form">
+                            <div class="content content--md">
+                                <form action="/">
+                                    <div class="input-box">
+                                        <input type="text" placeholder="Оставьте ваш email">
+                                        <button class="submit-btn">
+                                            <i class="ico">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right-long"/>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                    <div class="input-box centered">
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkbox-mark"></span>
+                                            <span class="checkbox-text">
+                                            Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                                        </span>
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer" id="footer">
+            <div class="content content--lg">
+                <div class="footer-main">
+                    <section class="footer-section">
+                        <div class="footer-section--part">
+                            <header><h5 class="title">Услуги</h5></header>
+                            <ul class="menu has-columns">
+                                <li><a href="#">Сайты под ключ</a></li>
+                                <li><a href="#">Лендинги</a></li>
+                                <li><a href="#">Быстрые сайты</a></li>
+                                <li><a href="#">Любая услуга <strong>NEW</strong></a></li>
+                                <li><a href="#">Корпоративные сайты</a></li>
+                                <li><a href="#">Каталоги</a></li>
+                                <li><a href="#">Интернет-магазины</a></li>
+                                <li><a href="#">Дизайн сайтов</a></li>
+                                <li><a href="#">Верстка</a></li>
+                                <li><a href="#">Программирование</a></li>
+                                <li><a href="#">Сайты под ключ</a></li>
+                                <li><a href="#">Лендинги</a></li>
+                                <li><a href="#">Быстрые сайты <strong>NEW</strong></a></li>
+                                <li><a href="#">Любая услуга</a></li>
+                                <li><a href="#">Корпоративные сайты</a></li>
+                                <li><a href="#">Каталоги</a></li>
+                                <li><a href="#">Интернет-магазины</a></li>
+                                <li><a href="#">Дизайн сайтов</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="footer-section">
+                        <div class="footer-section--part">
+                            <header><h5 class="title">Портфолио</h5></header>
+                            <ul class="menu has-columns">
+                                <li><a href="#">Сайт Горный Аудит</a></li>
+                                <li><a href="#">Название, подпись</a></li>
+                                <li><a href="#">Orway, промо-сайт</a></li>
+                                <li><a href="#">Логофолио</a></li>
+                                <li><a href="#">Сайт название</a></li>
+                                <li><a href="#">Сайт название</a></li>
+                                <li><a href="#">Что-то еще</a></li>
+                                <li><a href="#">Сайт Длинное название</a></li>
+                                <li><a href="#">Название, подпись</a></li>
+                                <li><a href="#">Orway, промо-сайт</a></li>
+                                <li><a href="#">Логофолио</a></li>
+                                <li><a href="#">Сайт название</a></li>
+                                <li><a href="#">Сайт название</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="footer-section">
+                        <div class="footer-section--part">
+                            <header><h5 class="title">Студия</h5></header>
+                            <ul class="menu">
+                                <li><a href="#">Блог</a></li>
+                                <li><a href="#">Портфолио</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакты</a></li>
+                                <li><a href="#">Политика конфиденциальности</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section--part">
+                            <header><h5 class="title">Страницы</h5></header>
+                            <ul class="menu">
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">YouTube</a></li>
+                                <li><a href="#">Канал в телеграм</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <div class="footer-copyright">
+                    &copy; 2010-2019 ReConcept
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
+<script src="assets/js/main.min.js"></script>
+
+
+<!--script-->
+
+
+</body>
+</html>
