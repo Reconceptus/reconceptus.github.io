@@ -19,4 +19,15 @@
       background-color: currentColor;
     }
   }
+  .article-info {
+    color: $violet;
+    font-size: $px*3.36rem;
+    padding: 0 0 0 20%;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    .item-date {
+      margin-right: $padding;
+    }
+  }
 }

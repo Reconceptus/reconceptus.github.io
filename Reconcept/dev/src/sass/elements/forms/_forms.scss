@@ -1,4 +1,5 @@
 @import "input-text";
+@import "textarea";
 @import "checkbox";
 @import "submit";
 
@@ -12,6 +13,18 @@
     margin-bottom: 20px;
     .subscription-form & {
       margin-bottom: 30px;
+    }
+  }
+
+  .col-50 {
+    width: 50%;
+    &:not(:last-child){
+      margin-right: $padding;
+    }
+  }
+  .stretched {
+    .label {
+      height: 100%;
     }
   }
 }

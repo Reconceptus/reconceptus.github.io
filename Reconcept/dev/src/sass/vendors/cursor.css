@@ -1,4 +1,4 @@
-html, a, button, input, label, select {
+html, a, button, input, textarea, label, select {
     cursor: none !important;
 }
 

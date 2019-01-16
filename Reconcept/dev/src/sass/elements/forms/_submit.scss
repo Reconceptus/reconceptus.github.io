@@ -28,6 +28,39 @@
   }
 }
 
+.submit-sm {
+  white-space: nowrap;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 $padding;
+  position: relative;
+  background-color: $blue;
+  color: $white;
+  font-size: $px*3.36rem;
+  &:before {
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $hover;
+    width: 12px;
+    position: absolute;
+    transition: all 0.25s;
+  }
+  &:not(:first-child){
+    margin-left: $padding;
+  }
+  span {
+    position: relative;
+  }
+  @include hover(){
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
 .submit-btn {
   width: 128px;
   height: 128px;

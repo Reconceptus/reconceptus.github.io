@@ -1,0 +1,24 @@
+.comment-box {
+  &--main {
+    background-color: $grey;
+    padding: 65px 0 45px;
+  }
+  &--title {
+    text-transform: uppercase;
+    font-size: $px*3.36rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+
+}
+
+.comment-content {
+  width: 890px;
+  margin: 0 auto;
+  .label {
+    display: block;
+    &:not(:last-child){
+      margin-bottom: $padding;
+    }
+  }
+}

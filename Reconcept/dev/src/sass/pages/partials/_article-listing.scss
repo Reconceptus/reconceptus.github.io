@@ -1,25 +1,28 @@
-@import "partials/article-listing";
-
-.blog {
-  &-section {
+.article-listing {
+  padding: 80px 0;
+  .title {
+    font-size: $px*3.36rem;
+    text-transform: uppercase;
+    text-align: center;
     margin-bottom: 80px;
+    font-weight: 700;
   }
-  &-grid {
+  .listing {
     ul {
       display: flex;
-      margin: 0 -1*$padding/2;
       flex-wrap: wrap;
+      margin: 0 -1*$padding/2;
     }
     li {
-      width: 50%;
+      width: 25%;
       padding: 0 $padding/2;
-      margin-bottom: 30px;
     }
   }
-
   .item {
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     @include hover(){
       .item-img img {
         transform: scale(1.05);
@@ -48,51 +51,24 @@
     &-brief {
       width: 100%;
       color: $violet;
-      padding: 28px 0 30px 20%;
-    }
-    &-data {
-      font-size: $px*3.36rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      white-space: nowrap;
-      margin-bottom: 15px;
-    }
-    &-tag {
-      margin-right: 20px;
-      position: relative;
-      &:after {
-        content: "";
-        top: 50%;
-        position: absolute;
-        height: 13px;
-        width: 2px;
-        background-color: currentColor;
-        right: -13px;
-        transform: translateY(-50%);
-      }
+      padding: $padding;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     &-title {
-      font-size: $px*5.76rem;
+      font-size: $px*3.84rem;
       color: $text;
       line-height: 1.25;
       margin-bottom: 18px;
       transition: all 0.25s;
       position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        top: 1rem;
-        right: 100%;
-        margin-right: $padding;
-        width: calc(25% - 25px);
-        background-color: $text;
-        height: 2px;
-      }
     }
     &-info {
       font-size: $px*3.36rem;
       display: flex;
       align-items: center;
+      margin-top: auto;
       span {
         display: inline-flex;
         align-items: center;
@@ -134,8 +110,4 @@
       }
     }
   }
-  .pagination {
-    margin-top: 20px;
-  }
 }
-

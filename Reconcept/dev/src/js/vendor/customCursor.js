@@ -8,7 +8,7 @@ $(document).scroll(function (e) {
     scrollX = $(window).scrollLeft();
 });
 setInterval(function(){scroll = $(window).scrollTop();}, 500);
-$("a, button, input, select, label").hover(function (e) {
+$("a, button, input, textarea, select, label").hover(function (e) {
     $(this).addClass("msty_cur");
     $(".cursor").addClass("overlink");
 }, function (e) {

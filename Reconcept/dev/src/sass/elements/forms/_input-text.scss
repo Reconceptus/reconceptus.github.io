@@ -8,6 +8,14 @@ input[type="text"] {
     font-size: $px*3.36rem;
     background-color: $white;
   }
+  .article-subscribe & {
+    height: 55px;
+    line-height: 55px;
+    padding: 0 $padding;
+    font-size: $px*3.36rem;
+    background-color: $white;
+    border: 9px solid $hover;
+  }
   .subscription-form & {
     text-align: center;
     height: 128px;
@@ -28,5 +36,11 @@ input[type="text"] {
     font-family: $font-yeseva;
     padding: 0 3*$padding 0 3*$padding+128px;
     color: $white;
+  }
+  .comment-content & {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 $padding;
+    border-bottom: 1px solid currentColor;
   }
 }
