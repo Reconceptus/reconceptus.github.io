@@ -1,0 +1,57 @@
+.sharing {
+  padding: 110px 0;
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  li {
+    margin: 8px 0;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    color: $violet;
+    font-size: $px*3.36rem;
+    font-weight: 700;
+    @include hover(){
+      .ico {
+        color: inherit;
+      }
+    }
+    &--tw {
+      @include hover(){
+        color: #00aaef;
+      }
+    }
+    &--fb {
+      @include hover(){
+        color: #455896;
+      }
+    }
+    &--gp {
+      @include hover(){
+        color: #C14F44;
+      }
+    }
+    &--vk {
+      @include hover(){
+        color: #556F9C;
+      }
+    }
+    &--ok {
+      @include hover(){
+        color: #d3732f;
+      }
+    }
+  }
+  svg {
+    fill: currentColor;
+  }
+  .ico {
+    color: $text;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}

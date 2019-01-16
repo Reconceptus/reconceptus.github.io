@@ -1,3 +1,5 @@
+@import "partials/project-listing";
+
 .project {
   &-main-preview {
     padding: 220px 0;
@@ -25,6 +27,85 @@
       height: auto;
       box-shadow: 0 0 10rem 0 rgba($black,0.6);
       margin-bottom: $padding;
+    }
+  }
+}
+
+
+@keyframes aitf {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+.text-box--link {
+  display: flex;
+  justify-content: center;
+  font-family: $font-yeseva;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+  .link {
+    position: relative;
+    &:hover {
+      span {
+        animation: bounce .6s;
+        color: $hover;
+      }
+      .link-full {
+        background: none;
+      }
+    }
+  }
+  .link-full {
+    display: flex;
+    background: url('../images/animated_text_fill.jpg') repeat-y;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    transition: all 0.6s;
+  }
+  .link-parts {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 0;
+    transform: translateX(-50%);
+    display: flex;
+    span {
+      color: transparent;
+      transition: opacity 0.6s;
+      font-size: 5rem;
+      &:nth-child(2){animation-delay:.05s;}
+      &:nth-child(3){animation-delay:.1s;}
+      &:nth-child(4){animation-delay:.15s;}
+      &:nth-child(5){animation-delay:.2s;}
+      &:nth-child(6){animation-delay:.25s;}
+      &:nth-child(7){animation-delay:.3s;}
+      &:nth-child(8){animation-delay:.35s;}
+      &:nth-child(9){animation-delay:.4s;}
+      &:nth-child(10){animation-delay:.45s;}
+      &:nth-child(11){animation-delay:.5s;}
+      &:nth-child(12){animation-delay:.55s;}
+      &:nth-child(13){animation-delay:.6s;}
+      &:nth-child(14){animation-delay:.65s;}
+      &:nth-child(15){animation-delay:.7s;}
+      &:nth-child(16){animation-delay:.75s;}
+      &:nth-child(17){animation-delay:.8s;}
+      &:nth-child(18){animation-delay:.85s;}
+      &:nth-child(19){animation-delay:.9s;}
+      &:nth-child(20){animation-delay:.95s;}
     }
   }
 }

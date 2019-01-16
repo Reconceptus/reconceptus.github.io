@@ -16,6 +16,11 @@ html, a, button, input, label, select {
     transition: width 0.15s ease, height 0.15s ease;
 }
 
+.mobile .cursor,
+.tablet .cursor {
+    display: none !important;
+}
+
 .overlink {
     width: 32px;
     height: 32px;
