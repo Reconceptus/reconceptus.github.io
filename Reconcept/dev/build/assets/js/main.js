@@ -87,6 +87,7 @@ var project = {},
     scrollTop,
     scrollVar = 0,
     winWidth,
+    winHeight,
     $search, $searchModal,
     $html = document.getElementsByTagName('html'),
     $header;
@@ -98,7 +99,7 @@ var project = {},
     */
 
 project.headerFixed = function(){
-    scrollTop = $(window).scrollTop();
+
     if(scrollTop <= 80){
         $header.removeClass('simple-header');
         scrollVar = 0;
@@ -157,6 +158,42 @@ project.searchReset = function(){
     });
 };
 
+    /*
+     ============= sticky sharing
+    */
+
+project.fixingSharing = function(share,box,boxHeight){
+
+    var $shareBoxOffset = box.offset().top,
+        $shareHeight = share.height(),
+        maxShareScroll = $shareBoxOffset + boxHeight - $shareHeight;
+
+    if(scrollTop < $shareBoxOffset){
+        share.removeClass('fixed bottom');
+    }
+    else if(scrollTop > maxShareScroll){
+        share.removeClass('fixed');
+        share.addClass('bottom');
+    }
+    else {
+        share.addClass('fixed');
+        share.removeClass('bottom');
+    }
+
+};
+
+project.stickySharing = function(){
+    var $sharing = $('.sharing'),
+        $shareBox = $sharing.closest('.text-box--layout'),
+        $shareBoxHeight = $shareBox.height();
+
+    project.fixingSharing($sharing,$shareBox,$shareBoxHeight);
+    $(window).scroll(function (e) {
+        project.fixingSharing($sharing,$shareBox,$shareBoxHeight);
+    });
+
+};
+
 
 /* ----------------------------------- plugins ----------------------------------- */
 
@@ -198,6 +235,13 @@ $(document).ready(function () {
     $search = $('#showSearch');
     $searchModal = $('#searchModal');
 
+    /* ------------------------------- get window values ------------------------------- */
+
+    scrollTop = $(window).scrollTop();
+    function getWindowSizes() {
+        winWidth = $(window).width();
+        winHeight = $(window).height();
+    }
 
     /* ----------------------------------- functions ----------------------------------- */
 
@@ -251,20 +295,25 @@ $(document).ready(function () {
 
     documentClick();
     project.headerFixed();
+    getWindowSizes();
     if($('.search-form').length > 0){
         project.searchReset();
+    }
+    if($('.sharing').length > 0){
+        project.stickySharing();
     }
 
 
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(function () {
-
+        getWindowSizes();
     });
 
     /* --------------------------------- document scroll --------------------------------- */
 
     $(window).scroll(function (e) {
+        scrollTop = $(window).scrollTop();
         project.headerFixed();
     });
 

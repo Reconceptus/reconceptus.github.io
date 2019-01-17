@@ -1,6 +1,17 @@
 .sharing {
-  padding: 110px 0;
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-705px);
+  }
+  &.bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
   ul {
+    padding: 110px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

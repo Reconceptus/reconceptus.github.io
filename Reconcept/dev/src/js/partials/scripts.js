@@ -6,6 +6,13 @@ $(document).ready(function () {
     $search = $('#showSearch');
     $searchModal = $('#searchModal');
 
+    /* ------------------------------- get window values ------------------------------- */
+
+    scrollTop = $(window).scrollTop();
+    function getWindowSizes() {
+        winWidth = $(window).width();
+        winHeight = $(window).height();
+    }
 
     /* ----------------------------------- functions ----------------------------------- */
 
@@ -59,20 +66,25 @@ $(document).ready(function () {
 
     documentClick();
     project.headerFixed();
+    getWindowSizes();
     if($('.search-form').length > 0){
         project.searchReset();
+    }
+    if($('.sharing').length > 0){
+        project.stickySharing();
     }
 
 
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(function () {
-
+        getWindowSizes();
     });
 
     /* --------------------------------- document scroll --------------------------------- */
 
     $(window).scroll(function (e) {
+        scrollTop = $(window).scrollTop();
         project.headerFixed();
     });
 

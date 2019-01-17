@@ -15,6 +15,7 @@
 .comment-content {
   width: 890px;
   margin: 0 auto;
+  padding: 0 $padding;
   .label {
     display: block;
     &:not(:last-child){
