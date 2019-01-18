@@ -233,7 +233,8 @@ $(document).ready(function () {
 
     $header = $('#header');
     $search = $('#showSearch');
-    $searchModal = $('#searchModal');
+    $support = $('#showSupport');
+    $modal = $('.modal');
 
     /* ------------------------------- get window values ------------------------------- */
 
@@ -254,18 +255,24 @@ $(document).ready(function () {
     });
 
     /*
-     ============= search modal
+     ============= modals
     */
 
     $search.on('click',function () {
         project.ovhEnable();
         $header.removeClass('simple-header');
-        $searchModal.addClass('active');
+        $('.search-modal').addClass('active');
     });
 
-    $searchModal.find('.close').on('click',function () {
+    $support.on('click',function () {
+        project.ovhEnable();
+        $header.removeClass('simple-header');
+        $('.support-modal').addClass('active');
+    });
+
+    $modal.find('.close').on('click',function () {
         project.ovhDisable();
-        $searchModal.removeClass('active');
+        $modal.removeClass('active');
     });
 
     /*

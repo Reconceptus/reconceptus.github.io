@@ -909,6 +909,8 @@ svg {
   font-size: 1.06368rem;
   color: #192476;
   font-weight: 600;
+  background: none;
+  border: none;
 }
 
 .simple-header .nav .support {
@@ -1497,112 +1499,7 @@ textarea {
 }
 
 .search-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  padding: 80px 0;
-  -webkit-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  transition: all 0.25s;
   background-color: RGBA(25, 36, 118, 0.95);
-}
-
-.search-modal:not(.active) {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.search-modal:not(.active) .search-form {
-  -webkit-transform: scale(1.15);
-  -ms-transform: scale(1.15);
-  transform: scale(1.15);
-}
-
-.search-modal .search-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.search-modal .search-header--actions {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.search-modal .search-header .logo {
-  width: 264px;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-color: #F9C582;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.search-modal .search-header .logo img {
-  width: 195px;
-  height: auto;
-}
-
-.search-modal .search-header .close {
-  color: #FFF;
-  font-size: 1.06368rem;
-  background-color: transparent;
-  border: none;
-  margin: 0 25px;
-  width: 110px;
-  -webkit-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  transition: all 0.25s;
-  text-align: center;
-}
-
-.search-modal .search-form {
-  -webkit-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  transition: all 0.25s;
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.search-modal .search-form--fields {
-  padding: 0 10%;
 }
 
 .search-modal .search-form .input-box {
@@ -1666,6 +1563,184 @@ textarea {
   font-size: 5rem;
   color: #FFF;
   font-weight: 100;
+}
+
+.support-modal {
+  background-color: RGBA(197, 195, 203, 0.95);
+}
+
+.support-modal .search-form .input-box {
+  position: relative;
+}
+
+.support-modal .search-form .input-box input {
+  position: relative;
+  z-index: 1;
+}
+
+.support-modal .search-form .input-dublicate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 203px;
+  right: 203px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: none;
+}
+
+.support-modal .search-form .input-dublicate.visible {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.support-modal .search-form .clone-text {
+  position: relative;
+  max-width: 100%;
+}
+
+.support-modal .search-form .clone-text .text {
+  font-size: 3.19104rem;
+  font-family: "Yeseva One", cursive;
+  opacity: 0;
+  pointer-events: none;
+  white-space: pre-wrap;
+}
+
+.support-modal .search-form .clone-text .reset {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  line-height: 45px;
+  font-size: 5rem;
+  color: #FFF;
+  font-weight: 100;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  padding: 80px 0;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.modal:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal:not(.active) .search-form {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.modal-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-header--actions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal-header .logo {
+  width: 264px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #F9C582;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-header .logo img {
+  width: 195px;
+  height: auto;
+}
+
+.modal-header .close {
+  font-size: 1.06368rem;
+  background-color: transparent;
+  border: none;
+  margin: 0 25px;
+  width: 110px;
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  text-align: center;
+}
+
+.search-modal .modal-header .close {
+  color: #FFF;
+}
+
+.support-modal .modal-header .close {
+  color: #1E1435;
+}
+
+.modal-form {
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .text-box {
@@ -2944,11 +3019,11 @@ textarea {
     color: #FFF;
   }
 
-  .search-modal .search-header .logo:hover {
+  .modal-header .logo:hover {
     background-color: #F8BA6A;
   }
 
-  .search-modal .search-header .close:hover {
+  .modal-header .close:hover {
     color: #932064;
   }
 

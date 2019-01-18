@@ -152,6 +152,8 @@
       font-size: $px*3.84rem;
       color: $link;
       font-weight: 600;
+      background: none;
+      border: none;
       @include hover(){
         color: $hover;
       }

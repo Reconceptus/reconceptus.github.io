@@ -54,7 +54,7 @@
                                 12
                                 <i class="ico"></i>
                             </a>
-                            <a href="#" class="questions">Есть вопрос?</a>
+                            <button type="button" id="showSupport" class="questions">Есть вопрос?</button>
                         </div>
                     </nav>
                 </div>
@@ -594,7 +594,60 @@
 
 </div>
 
-
+<div class="modal support-modal">
+    <div class="modal-header">
+        <div class="content content--lg">
+            <div class="modal-header--actions">
+                <a href="/" class="logo">
+                    <img src="assets/svg/logo.svg" alt="ReConcept">
+                </a>
+                <button class="close">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="support-form modal-form">
+        <div class="content content--md">
+            <h4 class="title">Задайте ваш вопрос</h4>
+            <div class="text-box--layout">
+                <div class="text-box--aside">
+                    <a href="#" class="load">скачать бриф на сайт</a>
+                    <a href="#" class="load">скачать бриф на сайт</a>
+                </div>
+                <div class="text-box--main">
+                    <form action="/">
+                        <div class="input-box">
+                            <input type="text" placeholder="Представьтесь">
+                        </div>
+                        <div class="input-box">
+                            <input type="text" placeholder="Как с вами связаться?">
+                        </div>
+                        <div class="input-box">
+                            <textarea placeholder="Расскажите о вашем проекте"></textarea>
+                        </div>
+                        <div class="input-box">
+                            <label class="file">
+                                <input type="file">
+                                <span class="file-text">
+                                    Прикрепить файл
+                                </span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" checked="">
+                                <span class="checkbox-mark"></span>
+                                <span class="checkbox-text">
+                                    Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+                                </span>
+                            </label>
+                            <button class="submit-sm"><span>Опубликовать</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!--<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>-->
 <!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
