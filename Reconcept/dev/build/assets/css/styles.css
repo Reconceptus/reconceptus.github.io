@@ -1849,6 +1849,12 @@ textarea {
   position: relative;
 }
 
+.text-box--image img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
 .text-box--images {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2793,8 +2799,13 @@ textarea {
   transition: all 0.25s;
 }
 
-.project-main-preview {
+.project-main-preview:not(.full-width) {
   padding: 220px 0;
+}
+
+.project-main-preview:not(.full-width) img {
+  -webkit-box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
+  box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
 }
 
 .project-main-preview .figure {
@@ -2805,12 +2816,15 @@ textarea {
   width: 100%;
   display: block;
   height: auto;
-  -webkit-box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
-  box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
 }
 
-.project-preview {
+.project-preview:not(.full-width) {
   padding: 220px 0;
+}
+
+.project-preview:not(.full-width) img {
+  -webkit-box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
+  box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
 }
 
 .project-preview:not(:last-child) {
@@ -2825,9 +2839,6 @@ textarea {
   width: 100%;
   display: block;
   height: auto;
-  -webkit-box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
-  box-shadow: 0 0 10rem 0 RGBA(0, 0, 0, 0.6);
-  margin-bottom: 25px;
 }
 
 @-webkit-keyframes aitf {

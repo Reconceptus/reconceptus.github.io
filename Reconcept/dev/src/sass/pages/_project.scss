@@ -2,7 +2,12 @@
 
 .project {
   &-main-preview {
-    padding: 220px 0;
+    &:not(.full-width){
+      padding: 220px 0;
+      img {
+        box-shadow: 0 0 10rem 0 rgba($black,0.6);
+      }
+    }
     .figure {
       width: 100%;
     }
@@ -10,11 +15,15 @@
       width: 100%;
       display: block;
       height: auto;
-      box-shadow: 0 0 10rem 0 rgba($black,0.6);
     }
   }
   &-preview {
-    padding: 220px 0;
+    &:not(.full-width){
+      padding: 220px 0;
+      img {
+        box-shadow: 0 0 10rem 0 rgba($black,0.6);
+      }
+    }
     &:not(:last-child){
       margin-bottom: $padding;
     }
@@ -25,8 +34,6 @@
       width: 100%;
       display: block;
       height: auto;
-      box-shadow: 0 0 10rem 0 rgba($black,0.6);
-      margin-bottom: $padding;
     }
   }
 }
