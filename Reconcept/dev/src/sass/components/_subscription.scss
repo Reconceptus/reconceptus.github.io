@@ -1,12 +1,28 @@
 .subscription {
   @include placeholder(0.3);
-  padding: 90px 0 70px;
+  @include media(hover,1025){
+    padding: 90px 0 70px;
+  }
+  @include breakpoints(768,1024){
+    padding: 60px 0;
+  }
+  @include media(screen,767){
+    padding: 40px 0;
+  }
   .title {
     text-align: center;
     text-transform: uppercase;
     font-size: $px*3.35rem;
     letter-spacing: 2.4px;
-    margin-bottom: 90px;
+    @include media(hover,1025){
+      margin-bottom: 90px;
+    }
+    @include breakpoints(768,1024){
+      margin-bottom: 60px;
+    }
+    @include media(screen,767){
+      margin-bottom: 40px;
+    }
     a {
       color: $hover;
       position: relative;

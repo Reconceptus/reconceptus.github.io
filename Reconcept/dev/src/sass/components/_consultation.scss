@@ -2,8 +2,19 @@
   position: relative;
   background: #241d3d url("../images/consultation-bg.jpg") no-repeat center;
   background-size: cover;
-  padding: 75px 0 105px;
-  margin-bottom: 70px;
+  @include media(hover,1025){
+    padding: 75px 0 105px;
+    margin-bottom: 70px;
+  }
+  @include breakpoints(768,1024){
+    padding: 60px 0 80px;
+    margin-bottom: 60px;
+  }
+
+  @include media(screen,767){
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
   &:before {
     content: "";
     width: 0;
@@ -19,10 +30,20 @@
   .title {
     text-align: center;
     color: $white;
-    font-size: $px*48rem;
+
     font-family: $font-yeseva;
     margin-bottom: $padding;
     letter-spacing: 0.025em;
+    @include media(hover,1025){
+      font-size: $px*48rem;
+    }
+    @include breakpoints(768,1024){
+      font-size: $px*25rem;
+    }
+
+    @include media(screen,767){
+      font-size: $px*15rem;
+    }
   }
   .text {
     color: $white;

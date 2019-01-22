@@ -62,14 +62,25 @@
 }
 
 .submit-btn {
-  width: 128px;
-  height: 128px;
+
   position: relative;
   border: none;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include media(hover,1025){
+    width: 128px;
+    height: 128px;
+  }
+  @include breakpoints(768,1024){
+    width: 80px;
+    height: 80px;
+  }
+  @include media(screen,767){
+    width: 40px;
+    height: 40px;
+  }
   .subscription-form & {
     background-color: $blue;
   }

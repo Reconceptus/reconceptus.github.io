@@ -26,13 +26,29 @@ input[type="text"] {
   }
   .subscription-form & {
     text-align: center;
-    height: 128px;
-    line-height: 128px;
     border-bottom: 3px solid $violet;
-    font-size: $px*11.52rem;
+
     font-family: $font-yeseva;
-    padding: 0 $padding 0 $padding+128px;
+
     background: transparent;
+    @include media(hover,1025){
+      line-height: 128px;
+      height: 128px;
+      padding: 0 $padding 0 $padding+128px;
+      font-size: $px*11.52rem;
+    }
+    @include breakpoints(768,1024){
+      line-height: 80px;
+      height: 80px;
+      padding: 0 $padding;
+      font-size: $px*8rem;
+    }
+    @include media(screen,767){
+      line-height: 40px;
+      height: 40px;
+      padding: 0 15px;
+      font-size: $px*5rem;
+    }
   }
   .search-form & {
     text-align: center;

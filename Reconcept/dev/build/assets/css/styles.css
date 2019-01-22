@@ -875,14 +875,11 @@ svg {
 .page-title {
   max-width: 1410px;
   margin: 0 auto;
-  padding: 115px 0 70px;
   line-height: 1.2;
 }
 
 .page-title--text {
-  font-size: 3.19104rem;
   font-family: "Yeseva One", cursive;
-  padding: 0 0 0 20%;
   position: relative;
   font-weight: 500;
 }
@@ -890,7 +887,6 @@ svg {
 .page-title--text:before {
   content: "";
   position: absolute;
-  top: 2rem;
   left: 10%;
   width: calc(10% - 25px);
   height: 4px;
@@ -967,12 +963,8 @@ input[type="text"] {
 
 .subscription-form input[type="text"] {
   text-align: center;
-  height: 128px;
-  line-height: 128px;
   border-bottom: 3px solid #564E67;
-  font-size: 3.19104rem;
   font-family: "Yeseva One", cursive;
-  padding: 0 25px 0 153px;
   background: transparent;
 }
 
@@ -1216,8 +1208,6 @@ textarea {
 }
 
 .submit-btn {
-  width: 128px;
-  height: 128px;
   position: relative;
   border: none;
   -webkit-flex-shrink: 0;
@@ -1321,8 +1311,6 @@ textarea {
   background: #241D3D url("../images/consultation-bg.jpg") no-repeat center;
   -webkit-background-size: cover;
   background-size: cover;
-  padding: 75px 0 105px;
-  margin-bottom: 70px;
 }
 
 .consultation:before {
@@ -1343,7 +1331,6 @@ textarea {
 .consultation .title {
   text-align: center;
   color: #FFF;
-  font-size: 13.296rem;
   font-family: "Yeseva One", cursive;
   margin-bottom: 25px;
   letter-spacing: 0.025em;
@@ -1353,10 +1340,6 @@ textarea {
   color: #FFF;
   font-size: 1.19664rem;
   margin-bottom: 40px;
-}
-
-.subscription {
-  padding: 90px 0 70px;
 }
 
 .subscription ::-webkit-input-placeholder {
@@ -1388,7 +1371,6 @@ textarea {
   text-transform: uppercase;
   font-size: 0.92795rem;
   letter-spacing: 2.4px;
-  margin-bottom: 90px;
 }
 
 .subscription .title a {
@@ -1419,8 +1401,6 @@ textarea {
 
 .pagination a,
 .pagination span {
-  width: 64px;
-  height: 64px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -2404,10 +2384,6 @@ textarea {
   object-fit: cover;
 }
 
-.portfolio {
-  padding-bottom: 80px;
-}
-
 .portfolio-section {
   margin-bottom: 55px;
 }
@@ -2449,17 +2425,6 @@ textarea {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: 0 -12.5px;
-}
-
-.portfolio-grid li {
-  width: 50%;
-  padding: 0 12.5px;
-  margin-bottom: 25px;
-}
-
-.portfolio .pagination {
-  padding: 44px 0 10px;
 }
 
 .portfolio .item {
@@ -2511,10 +2476,6 @@ textarea {
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-.portfolio .item-data {
-  padding: 0 15px 0 25px;
 }
 
 .portfolio .item-title {
@@ -3015,6 +2976,27 @@ textarea {
     color: #932064;
   }
 
+  .page-title {
+    padding: 115px 0 70px;
+  }
+
+  .page-title--text {
+    font-size: 3.19104rem;
+    padding: 0 0 0 20%;
+  }
+
+  .page-title--text:before {
+    left: 10%;
+    top: 2rem;
+  }
+
+  .subscription-form input[type="text"] {
+    line-height: 128px;
+    height: 128px;
+    padding: 0 25px 0 153px;
+    font-size: 3.19104rem;
+  }
+
   .file:not(.has-file):hover {
     color: #932064;
   }
@@ -3027,6 +3009,11 @@ textarea {
     width: 100%;
   }
 
+  .submit-btn {
+    width: 128px;
+    height: 128px;
+  }
+
   .submit-btn:hover:before {
     width: 100%;
   }
@@ -3035,6 +3022,23 @@ textarea {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0);
+  }
+
+  .consultation {
+    padding: 75px 0 105px;
+    margin-bottom: 70px;
+  }
+
+  .consultation .title {
+    font-size: 13.296rem;
+  }
+
+  .subscription {
+    padding: 90px 0 70px;
+  }
+
+  .subscription .title {
+    margin-bottom: 90px;
   }
 
   .pagination a:not(.current):hover,
@@ -3113,6 +3117,10 @@ textarea {
     color: #932064;
   }
 
+  .portfolio {
+    padding-bottom: 80px;
+  }
+
   .portfolio-categories a:hover {
     color: #932064;
   }
@@ -3158,7 +3166,7 @@ textarea {
 
 @media screen and (max-width: 680px) {
   .content {
-    padding: 0 10px;
+    padding: 0 15px;
   }
 }
 
@@ -3546,6 +3554,67 @@ textarea {
     -webkit-transform: translate3d(10px, 0, 0);
     transform: translate3d(10px, 0, 0);
   }
+
+  .page-title {
+    padding: 40px 0;
+  }
+
+  .page-title--text:before {
+    display: none;
+  }
+
+  .subscription-form input[type="text"] {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 1.385rem;
+  }
+
+  .submit-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .consultation {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+
+  .consultation .title {
+    font-size: 4.155rem;
+  }
+
+  .subscription {
+    padding: 40px 0;
+  }
+
+  .subscription .title {
+    margin-bottom: 40px;
+  }
+
+  .pagination a,
+  .pagination span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-categories {
+    white-space: nowrap;
+    overflow: auto;
+  }
+
+  .portfolio-grid li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .portfolio .pagination {
+    padding: 28px 0 0;
+  }
+
+  .portfolio .item-data {
+    padding: 0 15px;
+  }
 }
 
 @media screen and (min-width: 1751px) {
@@ -3792,6 +3861,10 @@ textarea {
   .footer-main {
     display: none;
   }
+
+  .portfolio {
+    padding-bottom: 40px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) and (min-height: 681px) {
@@ -3815,5 +3888,76 @@ textarea {
 @media screen and (max-width: 767px) and (max-height: 520px) {
   .nav {
     font-size: 4.4vh;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .page-title {
+    padding: 60px 0;
+  }
+
+  .page-title--text {
+    font-size: 2.216rem;
+    padding: 0 0 0 15%;
+  }
+
+  .page-title--text:before {
+    left: 5%;
+    top: 1.25rem;
+  }
+
+  .subscription-form input[type="text"] {
+    line-height: 80px;
+    height: 80px;
+    padding: 0 25px;
+    font-size: 2.216rem;
+  }
+
+  .submit-btn {
+    width: 80px;
+    height: 80px;
+  }
+
+  .consultation {
+    padding: 60px 0 80px;
+    margin-bottom: 60px;
+  }
+
+  .consultation .title {
+    font-size: 6.925rem;
+  }
+
+  .subscription {
+    padding: 60px 0;
+  }
+
+  .subscription .title {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pagination a,
+  .pagination span {
+    width: 64px;
+    height: 64px;
+  }
+
+  .portfolio-grid ul {
+    margin: 0 -12.5px;
+  }
+
+  .portfolio-grid li {
+    width: 50%;
+    padding: 0 12.5px;
+    margin-bottom: 25px;
+  }
+
+  .portfolio .pagination {
+    padding: 44px 0 10px;
+  }
+
+  .portfolio .item-data {
+    padding: 0 15px 0 25px;
   }
 }

@@ -1,5 +1,10 @@
 .portfolio {
-  padding-bottom: 80px;
+  @include media(hover,1025){
+    padding-bottom: 80px;
+  }
+  @include media(screen,1024){
+    padding-bottom: 40px;
+  }
   &-section {
     margin-bottom: 55px;
   }
@@ -7,6 +12,10 @@
     font-size: $px*3.36rem;
     font-weight: 600;
     margin-bottom: 40px;
+    @include media(screen,767){
+      white-space: nowrap;
+      overflow: auto;
+    }
     ul {
       display: flex;
       align-items: center;
@@ -28,17 +37,30 @@
     ul {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 -1*$padding/2;
+      @include media(hover,768){
+        margin: 0 -1*$padding/2;
+      }
     }
     li {
-      width: 50%;
-      padding: 0 $padding/2;
-      margin-bottom: $padding;
+      @include media(hover,768){
+        width: 50%;
+        padding: 0 $padding/2;
+        margin-bottom: $padding;
+      }
+      @include media(screen,767){
+        width: 100%;
+        margin-bottom: 15px;
+      }
     }
   }
 
   .pagination {
-    padding: 44px 0 10px;
+    @include media(hover,768){
+      padding: 44px 0 10px;
+    }
+    @include media(screen,767){
+      padding: 28px 0 0;
+    }
   }
   .item {
     width: 100%;
@@ -88,7 +110,12 @@
       right: 0;
     }
     &-data {
-      padding: 0 15px 0 25px;
+      @include media(hover,768){
+        padding: 0 15px 0 25px;
+      }
+      @include media(screen,767){
+        padding: 0 15px;
+      }
     }
     &-title {
       text-transform: uppercase;
