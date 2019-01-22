@@ -1,50 +1,41 @@
 .support-modal {
   background-color: rgba(197,195,203,0.95);
-  .search-form {
-    .input-box {
-      position: relative;
-      input {
-        position: relative;
-        z-index: 1;
-      }
+  .title {
+    text-transform: uppercase;
+    font-size: $px*3.35rem;
+    letter-spacing: 1px;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+.support-form {
+  .load {
+    font-size: $px*3.36rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: $padding;
+    &:before {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: #808080;
+      margin-right: 15px;
+      flex-shrink: 0;
     }
-    .input-dublicate {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 3*$padding+128px;
-      right: 3*$padding+128px;
-      align-items: center;
-      justify-content: center;
-      display: none;
-      &.visible {
-        display: flex;
-      }
+    @include hover(){
+      color: $hover;
     }
-    .clone-text {
-      position: relative;
-      max-width: 100%;
-      .text {
-        font-size: $px*11.52rem;
-        font-family: $font-yeseva;
-        opacity: 0;
-        pointer-events: none;
-        white-space: pre-wrap;
-      }
-      .reset {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        transform: translateY(-50%);
-        z-index: 2;
-        margin-left: 20px;
-        background: none;
-        border:none;
-        line-height: 45px;
-        font-size: 5rem;
-        color: $white;
-        font-weight: 100;
-      }
-    }
+  }
+  .file,
+  .checkbox {
+    width: 30%;
+    flex-shrink: 0;
+    margin-right: $padding;
+    align-self: flex-start;
+  }
+  .submit {
+    width: 100%;
   }
 }

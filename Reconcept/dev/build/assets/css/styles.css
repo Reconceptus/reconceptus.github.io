@@ -1085,6 +1085,15 @@ input[type="text"] {
   background-color: #FFF;
 }
 
+.support-form input[type="text"] {
+  height: 55px;
+  line-height: 55px;
+  padding: 0 25px;
+  font-size: 0.93072rem;
+  background-color: #FFF;
+  border-bottom: 1px solid currentColor;
+}
+
 .article-subscribe input[type="text"] {
   height: 55px;
   line-height: 55px;
@@ -1136,6 +1145,80 @@ textarea {
   line-height: 1.5;
   padding: 10px 25px;
   border-bottom: 1px solid currentColor;
+}
+
+.support-form textarea {
+  min-height: 55px;
+  line-height: 1.5;
+  padding: 10px 25px;
+  font-size: 0.93072rem;
+  background-color: #FFF;
+  border-bottom: 1px solid currentColor;
+}
+
+.file {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.file.has-file .reset {
+  display: block;
+}
+
+.file input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.file .reset {
+  border: none;
+  background: none;
+  width: 20px;
+  height: 20px;
+  line-height: 22px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-size: 30px;
+  display: none;
+}
+
+.file-mark {
+  width: 40px;
+  height: 40px;
+  background-color: #808080;
+  margin-right: 15px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.file-text {
+  font-size: 0.93072rem;
+  font-weight: 600;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  max-width: 100%;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .checkbox {
@@ -1202,6 +1285,10 @@ textarea {
   -ms-flex-item-align: center;
   align-self: center;
   line-height: 1.3;
+}
+
+.support-form .checkbox-text {
+  color: #564E67;
 }
 
 .submit {
@@ -1569,67 +1656,54 @@ textarea {
   background-color: RGBA(197, 195, 203, 0.95);
 }
 
-.support-modal .search-form .input-box {
-  position: relative;
+.support-modal .title {
+  text-transform: uppercase;
+  font-size: 0.92795rem;
+  letter-spacing: 1px;
+  margin-bottom: 80px;
+  text-align: center;
 }
 
-.support-modal .search-form .input-box input {
-  position: relative;
-  z-index: 1;
-}
-
-.support-modal .search-form .input-dublicate {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 203px;
-  right: 203px;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  display: none;
-}
-
-.support-modal .search-form .input-dublicate.visible {
+.support-form .load {
+  font-size: 0.93072rem;
+  color: inherit;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
-.support-modal .search-form .clone-text {
-  position: relative;
-  max-width: 100%;
+.support-form .load:before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #808080;
+  margin-right: 15px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.support-modal .search-form .clone-text .text {
-  font-size: 3.19104rem;
-  font-family: "Yeseva One", cursive;
-  opacity: 0;
-  pointer-events: none;
-  white-space: pre-wrap;
+.support-form .file,
+.support-form .checkbox {
+  width: 30%;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 25px;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
-.support-modal .search-form .clone-text .reset {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 2;
-  margin-left: 20px;
-  background: none;
-  border: none;
-  line-height: 45px;
-  font-size: 5rem;
-  color: #FFF;
-  font-weight: 100;
+.support-form .submit {
+  width: 100%;
 }
 
 .modal {
@@ -1976,6 +2050,38 @@ textarea {
   width: 32px;
   height: 1px;
   background-color: currentColor;
+}
+
+.form-box--layout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.form-box--aside {
+  width: 20%;
+  min-width: 260px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.form-box--main {
+  width: 100%;
+  padding: 0 10% 0 25px;
+  position: relative;
 }
 
 .sharing.fixed {
@@ -2995,6 +3101,10 @@ textarea {
     color: #932064;
   }
 
+  .file:not(.has-file):hover {
+    color: #932064;
+  }
+
   .submit:hover:before {
     width: 100%;
   }
@@ -3017,6 +3127,10 @@ textarea {
   .pagination span:not(.current):hover {
     background-color: #1E1435;
     color: #FFF;
+  }
+
+  .support-form .load:hover {
+    color: #932064;
   }
 
   .modal-header .logo:hover {

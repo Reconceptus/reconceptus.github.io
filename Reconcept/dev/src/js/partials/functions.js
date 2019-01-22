@@ -30,6 +30,36 @@ project.headerFixed = function(){
 };
 
     /*
+     ============= file input
+    */
+
+project.fileInput = function(){
+
+    var inputVox = $('.file');
+    inputVox.each(function () {
+        var _this = $(this),
+            inputEl = _this.find('input[type="file"]'),
+            infoArea = _this.find('.file-text'),
+            resetBtn = _this.find('.reset'),
+            fileNameDefault = infoArea.attr('data-default-text');
+
+        inputEl.change(function (e) {
+            var fileName = e.target.files[0].name;
+            infoArea.text(fileName);
+            _this.addClass('has-file');
+        });
+
+        resetBtn.click(function () {
+            inputEl.val('');
+            infoArea.text(fileNameDefault);
+            _this.removeClass('has-file');
+        });
+
+    });
+
+};
+
+    /*
      ============= page overflow
     */
 

@@ -1,0 +1,18 @@
+.form-box {
+  &--layout {
+    display: flex;
+    width: 100%;
+  }
+  &--aside {
+    width: 20%;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &--main {
+    width: 100%;
+    padding: 0 10% 0 $padding;
+    position: relative;
+  }
+}

@@ -9,4 +9,12 @@ textarea {
     padding: 10px $padding;
     border-bottom: 1px solid currentColor;
   }
+  .support-form & {
+    min-height: 55px;
+    line-height: 1.5;
+    padding: 10px $padding;
+    font-size: $px*3.36rem;
+    background-color: $white;
+    border-bottom: 1px solid currentColor;
+  }
 }

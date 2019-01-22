@@ -80,6 +80,9 @@ $(document).ready(function () {
     if($('.sharing').length > 0){
         project.stickySharing();
     }
+    if($('.file').length > 0){
+        project.fileInput();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */

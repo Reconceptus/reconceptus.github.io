@@ -1,0 +1,53 @@
+.file {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  &.has-file {
+    .reset {
+      display: block;
+    }
+  }
+  &:not(.has-file) {
+    @include hover(){
+      color: $hover;
+    }
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .reset {
+    border: none;
+    background: none;
+    width: 20px;
+    height: 20px;
+    line-height: 22px;
+    flex-shrink: 0;
+    margin-left: 10px;
+    font-size: 30px;
+    display: none;
+  }
+  &-mark {
+    width: 40px;
+    height: 40px;
+    background-color: #808080;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  &-text {
+    font-size: $px*3.36rem;
+    font-weight: 600;
+    align-self: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
