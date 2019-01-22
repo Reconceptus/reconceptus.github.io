@@ -24,11 +24,23 @@
     right: 0;
     &--actions {
       display: flex;
-      height: 80px;
       align-items: center;
+      @include media(hover,1381){
+        height: 80px;
+      }
+      @include breakpoints(768,1380){
+        height: 60px;
+      }
+      @include media(screen,767){
+        height: 44px;
+      }
+    }
+    .content {
+      @include media(screen,1200){
+        padding: 0;
+      }
     }
     .logo {
-      width: 264px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -40,9 +52,26 @@
       @include hover(){
         background-color: darken($yellow,5);
       }
+      @include media(hover,1381){
+        width: 264px;
+      }
+      @include breakpoints(768,1380){
+        width: 220px;
+      }
+      @include media(screen,767){
+        width: 140px;
+      }
       img {
-        width: 195px;
         height: auto;
+        @include media(hover,1381){
+          width: 195px;
+        }
+        @include breakpoints(768,1380){
+          width: 160px;
+        }
+        @include media(screen,767){
+          width: 115px;
+        }
       }
     }
     .close {
@@ -56,11 +85,20 @@
       background-color: transparent;
       border: none;
       margin: 0 $padding;
-      width: 110px;
+
       transition: all 0.25s;
       text-align: center;
       @include hover(){
         color: $hover;
+      }
+      @include media(hover,1751){
+        width: 110px;
+      }
+      @include breakpoints(1381,1750){
+        width: 90px;
+      }
+      @include breakpoints(1201,1380){
+        width: 75px;
       }
     }
   }

@@ -16,16 +16,17 @@
     align-items: center;
     font-weight: 600;
     margin-bottom: $padding;
-    &:before {
-      content: "";
-      width: 40px;
-      height: 40px;
-      background-color: #808080;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
     @include hover(){
       color: $hover;
+    }
+    .ico {
+      width: 38px;
+      height: 40px;
+      margin-right: 15px;
+      flex-shrink: 0;
+      svg {
+        fill: currentColor;
+      }
     }
   }
   .file,

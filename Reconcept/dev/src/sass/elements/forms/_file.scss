@@ -35,11 +35,13 @@
     display: none;
   }
   &-mark {
-    width: 40px;
+    width: 29px;
     height: 40px;
-    background-color: #808080;
     margin-right: 15px;
     flex-shrink: 0;
+    svg {
+      fill: currentColor;
+    }
   }
   &-text {
     font-size: $px*3.36rem;
