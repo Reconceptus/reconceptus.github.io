@@ -1,8 +1,13 @@
 .footer {
   &-main {
-    width: 100%;
-    display: flex;
-    margin-bottom: $padding;
+    @include media(hover,1025){
+      width: 100%;
+      display: flex;
+      margin-bottom: $padding;
+    }
+    @include media(screen,1024){
+      display: none;
+    }
   }
   &-section {
     display: flex;

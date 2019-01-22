@@ -25,6 +25,14 @@ $(document).ready(function () {
         $header.removeClass('simple-header');
     });
 
+    $('#mobileBurger').click(function () {
+        $header.toggleClass('is-active');
+    });
+
+    $('.close-mobile-nav').click(function () {
+        $header.removeClass('is-active');
+    });
+
     /*
      ============= modals
     */

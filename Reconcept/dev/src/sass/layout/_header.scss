@@ -1,41 +1,66 @@
 .header {
   position: fixed;
-  left: 50%;
   top: 0;
-  width: 1750px;
-  height: 80px;
-  transform: translateX(-875px);
   z-index: 5;
-  &:before {
-    content: "";
-    transition: all 0.4s;
-    position: absolute;
+  @include media(hover,1751){
+    width: 1750px;
+    transform: translateX(-875px);
     left: 50%;
-    margin-left: -50vw;
-    top: 0;
-    bottom: 0;
-    width: 200vw;
-    background: $white;
-    background: -moz-linear-gradient(left, $white 50%, transparent 100%);
-    background: -webkit-linear-gradient(left, $white 50%,transparent 100%);
-    background: linear-gradient(to right, $white 50%,transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='transparent',GradientType=1 );
   }
-  &.simple-header {
-    width: 370px;
-    transition: width 0.1s ease 0.4s;
-    &:before {
-      transition: transform 0.4s linear 0.15s;
-      transform: translateX(-100%);
+  @include media(screen,1750){
+    width: 100%;
+    left: 0;
+  }
+  @include media(screen,1200){
+    background-color: $text;
+  }
+  @include media(hover,1381){
+    height: 80px;
+  }
+  @include breakpoints(768,1380){
+    height: 60px;
+  }
+  @include media(screen,767){
+    height: 44px;
+  }
+  &:before {
+    @include media(hover,1201){
+      content: "";
+      transition: all 0.4s;
+      position: absolute;
+      left: 50%;
+      margin-left: -50vw;
+      top: 0;
+      bottom: 0;
+      width: 200vw;
+      background: $white;
+      background: -moz-linear-gradient(left, $white 50%, transparent 100%);
+      background: -webkit-linear-gradient(left, $white 50%,transparent 100%);
+      background: linear-gradient(to right, $white 50%,transparent 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='transparent',GradientType=1 );
     }
   }
+
   &-main {
     display: flex;
-    height: 80px;
     position: relative;
+    @include media(hover,1381){
+      height: 80px;
+    }
+    @include breakpoints(768,1380){
+      height: 60px;
+    }
+    @include media(screen,767){
+      height: 44px;
+    }
+  }
+  .content {
+    @include media(screen,1200){
+      padding: 0;
+    }
   }
   .logo {
-    width: 264px;
+
     height: 100%;
     display: flex;
     align-items: center;
@@ -47,9 +72,153 @@
     @include hover(){
       background-color: darken($yellow,5);
     }
+    @include media(hover,1381){
+      width: 264px;
+    }
+    @include breakpoints(768,1380){
+      width: 220px;
+    }
+    @include media(screen,767){
+      width: 140px;
+    }
     img {
-      width: 195px;
+
       height: auto;
+      @include media(hover,1381){
+        width: 195px;
+      }
+      @include breakpoints(768,1380){
+        width: 160px;
+      }
+      @include media(screen,767){
+        width: 115px;
+      }
+    }
+  }
+  .close-mobile-nav {
+    @include media(hover,1201){
+      display: none !important;
+    }
+    @include media(screen,1200){
+      cursor: pointer;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($text,0.6);
+      opacity: 0;
+      transition: all 0.3s;
+      pointer-events: none;
+    }
+    @include breakpoints(768,1200){
+      top: 60px;
+    }
+    @include media(screen,767){
+      top: 44px;
+    }
+  }
+  .mobile-elements {
+    @include media(hover,1201){
+      display: none !important;
+    }
+    @include media(screen,1200){
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      justify-content: space-between;
+      .slogan {
+        text-transform: uppercase;
+        line-height: 1.3;
+
+        color: $white;
+        font-weight: 400;
+        max-width: 75px;
+
+      }
+      .burger {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        background: none;
+        border: none;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          background-color: $white;
+          transition: all 0.3s;
+          width: 30px;
+          left: 5px;
+          height: 2px;
+        }
+        &:before {
+          top: 10px;
+          transform-origin: left center;
+        }
+        &:after {
+          bottom: 10px;
+          transform-origin: left center;
+        }
+        span {
+          position: absolute;
+          background-color: $white;
+          top: 50%;
+          left: 5px;
+          width: 30px;
+          height: 2px;
+          margin-top: -1px;
+          transition: all 0.3s;
+        }
+      }
+    }
+    @include breakpoints(768,1200){
+      padding: 0 10px 0 $padding;
+      .slogan {
+        font-size: $px*2.88rem;
+        padding: 10px 0;
+      }
+    }
+    @include media(screen,767){
+      padding: 0 10px 0 18px;
+      .slogan {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &.simple-header {
+    transition: width 0.1s ease 0.4s;
+    &:before {
+      transition: transform 0.4s linear 0.15s;
+      transform: translateX(-100%);
+    }
+    @include media(hover,1381){
+      width: 370px;
+    }
+    @include breakpoints(1201,1380){
+      width: 305px;
+    }
+  }
+  &.is-active {
+    .close-mobile-nav {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-elements {
+      .burger {
+        &:before {
+          transform: rotate(45deg) translate(1px,-4px);
+        }
+        &:after {
+          transform: rotate(-45deg) translate(2px,3px);
+        }
+        span {
+          transform: translateX(-100%);
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
     }
   }
 }

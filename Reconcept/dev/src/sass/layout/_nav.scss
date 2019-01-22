@@ -1,32 +1,96 @@
 .nav {
   display: flex;
   width: 100%;
+  @include media(screen,1200){
+    position: fixed;
+    left: 0;
+    background-color: $text;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+    z-index: 2;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    .is-active & {
+      transition: all 0.4s ease 0.1s;
+      transform: translateX(0);
+    }
+  }
+  @include breakpoints(768,1200){
+    top: 60px;
+    width: 50vw;
+    height: calc(100vh - 60px);
+    padding: 40px 8%;
+    @media screen and (min-height: 681px){
+      font-size: 30px;
+    }
+    @media screen and (max-height: 680px){
+      font-size: 3.8vh;
+    }
+  }
+  @include media(screen,767){
+    top: 44px;
+    width: 100%;
+    height: calc(100vh - 44px);
+    padding: 20px 5% 20px 18%;
+    @media screen and (min-height: 521px){
+      font-size: 24px;
+    }
+    @media screen and (max-height: 520px){
+      font-size: 4.4vh;
+    }
+  }
   &-menu {
     width: 100%;
     display: flex;
-    font-size: $px*3.84rem;
-    padding: 0 0.8vw;
+
+    @include media(hover,1751){
+      font-size: $px*3.84rem;
+    }
+    @include breakpoints(1381,1750){
+      font-size: 0.88vw;
+    }
+    @include breakpoints(1201,1380){
+      font-size: $px*3.2rem;
+    }
+    @include media(hover,1201){
+      padding: 0 0.8vw;
+    }
+    @include media(screen,1200){
+      flex-direction: column;
+      color: $white;
+    }
     li {
-      padding: 0 20px;
       display: flex;
       align-items: center;
       white-space: nowrap;
-      &:nth-child(1){transition: all 0.15s ease 0.07s}
-      &:nth-child(2){transition: all 0.15s ease 0.1s}
-      &:nth-child(3){transition: all 0.15s ease 0.13s}
-      &:nth-child(4){transition: all 0.15s ease 0.16s}
-      &:nth-child(5){transition: all 0.15s ease 0.19s}
-      &:nth-child(6){transition: all 0.15s ease 0.22s}
-      &:nth-child(7){transition: all 0.15s ease 0.25s}
-      .simple-header & {
-        opacity: 0;
-        &:nth-child(1){transition: all 0.15s ease 0.25s}
-        &:nth-child(2){transition: all 0.15s ease 0.22s}
-        &:nth-child(3){transition: all 0.15s ease 0.19s}
+      @include media(hover,1381){
+        padding: 0 20px;
+      }
+      @include breakpoints(1201,1380){
+        padding: 0 15px;
+      }
+      @include media(hover,1201){
+        &:nth-child(1){transition: all 0.15s ease 0.07s}
+        &:nth-child(2){transition: all 0.15s ease 0.1s}
+        &:nth-child(3){transition: all 0.15s ease 0.13s}
         &:nth-child(4){transition: all 0.15s ease 0.16s}
-        &:nth-child(5){transition: all 0.15s ease 0.13s}
-        &:nth-child(6){transition: all 0.15s ease 0.1s}
-        &:nth-child(7){transition: all 0.15s ease 0.07s}
+        &:nth-child(5){transition: all 0.15s ease 0.19s}
+        &:nth-child(6){transition: all 0.15s ease 0.22s}
+        &:nth-child(7){transition: all 0.15s ease 0.25s}
+        .simple-header & {
+          opacity: 0;
+          &:nth-child(1){transition: all 0.15s ease 0.25s}
+          &:nth-child(2){transition: all 0.15s ease 0.22s}
+          &:nth-child(3){transition: all 0.15s ease 0.19s}
+          &:nth-child(4){transition: all 0.15s ease 0.16s}
+          &:nth-child(5){transition: all 0.15s ease 0.13s}
+          &:nth-child(6){transition: all 0.15s ease 0.1s}
+          &:nth-child(7){transition: all 0.15s ease 0.07s}
+        }
+      }
+      @include media(screen,1200){
+        padding: 1vh 0;
       }
     }
     a {
@@ -38,19 +102,33 @@
         color: $hover;
       }
     }
-    .simple-header & {
-      pointer-events: none;
+    @include media(hover,1201){
+      .simple-header & {
+        pointer-events: none;
+      }
     }
   }
   &-burger {
     position: absolute;
-    height: 80px;
-    width: 80px;
     left: -2px;
     top: 0;
     pointer-events: none;
+    border: none;
+    background: none;
     //box-shadow: 0 0 0 0 $yellow inset;
     transition: background-color 0.4s, box-shadow 0.3s;
+    @include media(hover,1381){
+      height: 80px;
+      width: 80px;
+    }
+    @include breakpoints(768,1380){
+      height: 60px;
+      width: 60px;
+    }
+    @include media(screen,767){
+      height: 40px;
+      width: 40px;
+    }
     .simple-header & {
       pointer-events: auto;
       //cursor: pointer;
@@ -66,12 +144,24 @@
     &:after {
       content: "";
       position: absolute;
-      width: 40px;
-      height: 3px;
       background-color: $black;
-      left: 20px;
       transition: all 0.4s;
       opacity: 0;
+      @include media(hover,1381){
+        width: 40px;
+        left: 20px;
+        height: 3px;
+      }
+      @include breakpoints(768,1380){
+        width: 30px;
+        left: 15px;
+        height: 3px;
+      }
+      @include media(screen,767){
+        width: 20px;
+        left: 10px;
+        height: 2px;
+      }
       .simple-header & {
         opacity: 1;
       }
@@ -79,45 +169,99 @@
     &:before {
       top: 10px;
       .simple-header & {
-        top: 25px;
+
+        @include media(hover,1381){
+          top: 25px;
+        }
+        @include breakpoints(768,1380){
+          top: 20px;
+        }
+        @include media(screen,767){
+          top: 15px;
+        }
       }
     }
     &:after {
       bottom: 10px;
       .simple-header & {
-        bottom: 25px;
+        @include media(hover,1381){
+          bottom: 25px;
+        }
+        @include breakpoints(768,1380){
+          bottom: 19px;
+        }
+        @include media(screen,767){
+          bottom: 15px;
+        }
       }
     }
     span {
       position: absolute;
-      width: 40px;
-      height: 3px;
       background-color: $black;
       transform: translate3d(calc(100vw - 500px),0,0);
       top: 50%;
       margin-top: -1.5px;
       opacity: 0;
+      left: 0;
       transition: all 0.4s;
+      @include media(hover,1381){
+        width: 40px;
+        height: 3px;
+      }
+      @include breakpoints(768,1380){
+        width: 30px;
+        height: 3px;
+      }
+      @include media(screen,767){
+        width: 20px;
+        height: 2px;
+      }
       .simple-header & {
         opacity: 1;
-        transform: translate3d(20px,0,0);
+
+        @include media(hover,1381){
+          transform: translate3d(20px,0,0);
+        }
+        @include breakpoints(768,1380){
+          transform: translate3d(15px,0,0);
+        }
+        @include media(screen,767){
+          transform: translate3d(10px,0,0);
+        }
       }
     }
   }
   .elements {
-    padding: 0 $padding;
+
     display: flex;
     align-items: center;
     flex-shrink: 0;
     position: relative;
+    @include media(hover,1751){
+      padding: 0 $padding;
+    }
+    @include media(screen,1750){
+      padding: 0 0 0 $padding;
+    }
+    @include media(screen,1200){
+      display: none !important;
+    }
   }
   .slogan {
     text-transform: uppercase;
     line-height: 1.1;
-    max-width: 120px;
     font-size: $px*2.88rem;
     transition: opacity 0.15s ease 0.15s, color 0.25s;
     color: inherit;
+    @include media(hover,1751){
+      max-width: 120px;
+    }
+    @include breakpoints(1381,1750){
+      max-width: 100px;
+    }
+    @include breakpoints(1201,1380){
+      max-width: 85px;
+    }
     @include hover(){
       color: $hover;
     }
@@ -132,13 +276,26 @@
     align-items: center;
     white-space: nowrap;
     transition: all 0.15s ease 0.25s;
+    @include media(screen,1200){
+      margin-top: 6vh;
+    }
     .favorites {
-      margin-right: $padding;
       display: inline-flex;
       align-items: center;
       color: $hover;
-      font-size: $px*3.36rem;
       font-weight: 600;
+      @include media(hover,1381){
+        margin-right: $padding;
+      }
+      @include breakpoints(1201,1380){
+        margin-right: 15px;
+      }
+      @include media(hover,1201){
+        font-size: $px*3.36rem;
+      }
+      @include media(screen,1200){
+        margin-right: 15px;
+      }
       .ico {
         margin-left: 8px;
         width: 16px;
@@ -149,19 +306,35 @@
       }
     }
     .questions {
-      font-size: $px*3.84rem;
-      color: $link;
-      font-weight: 600;
+
       background: none;
       border: none;
+      @include media(hover,1751){
+        font-size: $px*3.84rem;
+      }
+      @include breakpoints(1381,1750){
+        font-size: 0.88vw;
+      }
+      @include breakpoints(1201,1380){
+        font-size: $px*3.2rem;
+      }
+      @include media(hover,1201){
+        color: $link;
+        font-weight: 600;
+      }
+      @include media(screen,1200){
+        color: $white;
+      }
       @include hover(){
         color: $hover;
       }
     }
-    .simple-header & {
-      transition: all 0.15s;
-      pointer-events: none;
-      opacity: 0;
+    @include media(hover,1201){
+      .simple-header & {
+        transition: all 0.15s;
+        pointer-events: none;
+        opacity: 0;
+      }
     }
   }
 }

@@ -18,8 +18,14 @@
     }
   }
   &--aside {
-    width: calc(50% - 445px);
     position: relative;
+    @include media(hover,1381){
+      width: calc(50% - 445px);
+    }
+    @include breakpoints(1201,1380){
+      width: calc(100% - 890px);
+      max-width: 260px;
+    }
   }
   &--main {
     width: 890px;

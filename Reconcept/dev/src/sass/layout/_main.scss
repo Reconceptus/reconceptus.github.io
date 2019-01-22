@@ -3,9 +3,10 @@ html {
   &.ovh {
     overflow: hidden;
   }
-  @include media(hover,1201){font-size: 16px;}
-  @include breakpoints(1025,1200){font-size: 13px;}
-  @include breakpoints(768,1024){font-size: 12px;}
+  @include media(hover,1751){font-size: 16px;}
+  @include breakpoints(1381,1750){font-size: 16px;}
+  @include breakpoints(1201,1380){font-size: 13px;}
+  @include breakpoints(768,1200){font-size: 12px;}
   @include media(screen,767){font-size: 11px;}
 }
 body {
@@ -31,8 +32,16 @@ svg {
   position: relative;
   width: 100%;
   flex-grow: 1;
-  padding-top: 80px;
   overflow: hidden;
+  @include media(hover,1381){
+    padding-top: 80px;
+  }
+  @include breakpoints(768,1380){
+    padding-top: 60px;
+  }
+  @include media(screen,767){
+    padding-top: 44px;
+  }
 }
 #wrapper {
   display: flex;
