@@ -50,4 +50,13 @@
     font-size: $px*4.32rem;
     margin-bottom: 40px;
   }
+  .fieldset {
+    @include media(screen,680){
+      flex-direction: column;
+      .submit {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
 }

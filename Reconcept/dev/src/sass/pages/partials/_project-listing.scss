@@ -4,18 +4,40 @@
     text-transform: uppercase;
     text-align: center;
     color: $violet_light;
-    padding: 75px 0;
     font-weight: 600;
+    @include media(hover,1025){
+      padding: 75px 0;
+    }
+    @include media(screen,1024){
+      padding: 50px 0;
+    }
   }
   .listing {
     ul {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 -1*$padding/2;
+      justify-content: center;
+      @include media(hover,1025){
+        margin: 0 -1*$padding/2;
+      }
+      @include breakpoints(681,1024){
+        margin: 0 -7.5px;
+      }
     }
     li {
-      width: 25%;
-      padding: 0 $padding/2;
+      max-width: 480px;
+      @include media(hover,1025){
+        width: 25%;
+        padding: 0 $padding/2;
+      }
+      @include breakpoints(681,1024){
+        width: 50%;
+        padding: 7.5px;
+      }
+      @include media(screen,680){
+        width: 100%;
+        margin-bottom: 15px;
+      }
     }
     .item {
       width: 100%;
@@ -65,7 +87,15 @@
         right: 0;
       }
       &-data {
-        padding: 0 15px 0 25px;
+        @include media(hover,1201){
+          padding: 0 15px 0 25px;
+        }
+        @include breakpoints(1025,1200){
+          padding: 0 5px 0 10px;
+        }
+        @include media(screen,1024){
+          padding: 0 15px;
+        }
       }
       &-title {
         text-transform: uppercase;

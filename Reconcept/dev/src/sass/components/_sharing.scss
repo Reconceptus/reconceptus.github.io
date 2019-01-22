@@ -1,23 +1,39 @@
 .sharing {
-  &.fixed {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-705px);
-  }
-  &.bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  @include media(hover,1025){
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-705px);
+    }
+    &.bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
   ul {
-    padding: 110px 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    @include media(hover,1025){
+      padding: 110px 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include media(screen,1024){
+      padding: 20px 0;
+      align-items: center;
+    }
   }
   li {
-    margin: 8px 0;
+    @include media(hover,1025){
+      margin: 8px 0;
+    }
+    @include breakpoints(681,1024){
+      margin: 0 20px 0 0;
+    }
+    @include media(screen,680){
+      margin: 0 15px 0 0;
+    }
   }
   .link {
     display: flex;
@@ -30,8 +46,16 @@
         color: inherit;
       }
     }
+    @include media(screen,1024){
+      .ico {
+        color: inherit;
+      }
+    }
     &--tw {
       @include hover(){
+        color: #00aaef;
+      }
+      @include media(screen,1024){
         color: #00aaef;
       }
     }
@@ -39,9 +63,15 @@
       @include hover(){
         color: #455896;
       }
+      @include media(screen,1024){
+        color: #455896;
+      }
     }
     &--gp {
       @include hover(){
+        color: #C14F44;
+      }
+      @include media(screen,1024){
         color: #C14F44;
       }
     }
@@ -49,9 +79,15 @@
       @include hover(){
         color: #556F9C;
       }
+      @include media(screen,1024){
+        color: #556F9C;
+      }
     }
     &--ok {
       @include hover(){
+        color: #d3732f;
+      }
+      @include media(screen,1024){
         color: #d3732f;
       }
     }
@@ -61,8 +97,21 @@
   }
   .ico {
     color: $text;
-    margin-right: 15px;
-    width: 40px;
-    height: 40px;
+
+    @include media(hover,1025){
+      margin-right: 15px;
+    }
+    @include breakpoints(681,1024){
+      margin-right: 5px;
+    }
+    @include media(hover,681){
+      width: 40px;
+      height: 40px;
+    }
+    @include media(screen,680){
+      width: 25px;
+      height: 25px;
+      margin-right: 0;
+    }
   }
 }

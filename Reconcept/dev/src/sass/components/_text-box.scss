@@ -1,20 +1,51 @@
 .text-box {
-  font-size: 18px;
   line-height: 1.64;
   font-weight: 400;
+  @include media(hover,681){
+    font-size: 18px;
+  }
+  @include media(screen,680){
+    font-size: 15px;
+  }
   * {
     &::selection {
       background-color: $yellow;
     }
   }
   &--wrap {
-    padding: 105px 0;
+    @include media(hover,1381){
+      padding: 105px 0;
+    }
+    @include breakpoints(1201,1380){
+      padding: 80px 0;
+    }
+    @include breakpoints(1025,1200){
+      padding: 60px 0;
+    }
+    @include media(screen,1024){
+      padding: 40px 0;
+    }
   }
   &--layout {
     display: flex;
     width: 100%;
+    @include media(screen,1024){
+      flex-direction: column;
+    }
     &.first-info {
-      padding-top: 55px;
+      @include media(hover,1201){
+        padding-top: 55px;
+      }
+      @include media(screen,1200){
+        padding-top: 20px;
+      }
+    }
+    &:not(.first-info){
+      @include media(screen,1024){
+        .text-box--aside {
+          order: 1;
+        }
+      }
     }
   }
   &--aside {
@@ -26,11 +57,22 @@
       width: calc(100% - 890px);
       max-width: 260px;
     }
+    @include breakpoints(1025,1200){
+      min-width: 80px;
+    }
+    @include media(screen,1024){
+
+    }
   }
   &--main {
-    width: 890px;
-    padding: 0 $padding;
     position: relative;
+    @include media(hover,1025){
+      width: 890px;
+      padding: 0 $padding;
+    }
+    @include media(screen,1024){
+      width: 100%;
+    }
   }
   &--image {
     img {
@@ -44,13 +86,37 @@
     justify-content: space-between;
     flex-wrap: wrap;
     .figure {
-      width: calc(50% - 12.5px);
-      padding: 95px 50px;
-      margin-top: $padding;
-      &:nth-child(1),
-      &:nth-child(2) {
-        margin-top: 0;
+
+      @include media(hover,1201){
+        padding: 95px 50px;
       }
+      @include breakpoints(681,1200){
+        padding: 4vw;
+      }
+      @include media(screen,680){
+        padding: 15px;
+      }
+      @include media(hover,1025){
+        width: calc(50% - 12.5px);
+        margin-top: $padding;
+      }
+      @include breakpoints(681,1024){
+        width: calc(50% - 7.5px);
+        margin-top: 15px;
+      }
+      @include media(hover,681){
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
+      @include media(screen,680){
+        width: 100%;
+        &:not(:first-child){
+          margin-top: 15px;
+        }
+      }
+
     }
     img {
       width: 100%;
@@ -62,21 +128,45 @@
 
   blockquote {
     position: relative;
-    font-size: 22px;
-    padding-left: 50px;
-    margin-bottom: 56px;
+    @include media(hover,1025){
+      padding-left: 50px;
+      margin-bottom: 56px;
+      font-size: 22px;
+    }
+    @include breakpoints(681,1024){
+      padding-left: 40px;
+      margin-bottom: 40px;
+      font-size: 20px;
+    }
+    @include media(screen,680){
+      padding-left: 20px;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
     &:not(:first-child){
       margin-top: 65px;
     }
     &:before {
       content: "\201C";
       color: #c5c3cb;
-      left: -20px;
       top: 0;
-      font-size: $px*96rem;
       font-family: $font-yeseva;
       position: absolute;
-      line-height: 260px;
+      @include media(hover,1025){
+        left: -20px;
+        font-size: $px*96rem;
+        line-height: 16rem;
+      }
+      @include breakpoints(681,1024){
+        left: -5px;
+        font-size: 19rem;
+        line-height: 10rem;
+      }
+      @include media(screen,680){
+        left: -5px;
+        font-size: 12rem;
+        line-height: 6rem;
+      }
     }
     p {
       margin: 0;
@@ -86,12 +176,24 @@
   h2 {
     font-family: $font-yeseva;
     font-weight: 500;
-    font-size: 31px;
-    margin-bottom: 26px;
+    @include media(hover,681){
+      font-size: 31px;
+      margin-bottom: 26px;
+    }
+    @include media(screen,680){
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
   }
   h3 {
-    font-size: 19px;
-    margin-bottom: 20px;
+    @include media(hover,681){
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+    @include media(screen,680){
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
   }
   p {
     margin-bottom: 36px;

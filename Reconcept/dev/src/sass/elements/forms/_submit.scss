@@ -17,6 +17,9 @@
     width: 16px;
     position: absolute;
     transition: all 0.25s;
+    @include media(screen,680){
+      display: none;
+    }
   }
   span {
     position: relative;
@@ -101,6 +104,9 @@
     .search-form & {
       background-color: $yellow;
     }
+    @include media(screen,767){
+      display: none;
+    }
   }
   .ico {
     transition: all 0.25s;
@@ -110,6 +116,11 @@
     transform: translateX(-20px);
     svg {
       fill: $white
+    }
+    @include media(screen,767){
+      transform: translateX(0);
+      width: 24px;
+      height: 15px;
     }
   }
   @include hover(){
