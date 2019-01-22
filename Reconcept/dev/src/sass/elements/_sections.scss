@@ -1,6 +1,9 @@
 .text-section {
   &--main {
     background-color: $grey_light;
+    &.large {
+      padding-bottom: 105px;
+    }
   }
   .person {
     width: 100%;

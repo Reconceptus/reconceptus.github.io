@@ -1,4 +1,12 @@
 .text-box {
+  font-size: 18px;
+  line-height: 1.64;
+  font-weight: 400;
+  * {
+    &::selection {
+      background-color: $yellow;
+    }
+  }
   &--wrap {
     padding: 105px 0;
   }
@@ -45,8 +53,7 @@
       box-shadow: 0 0 5rem 0 rgba($black,0.6);
     }
   }
-  font-size: 18px;
-  line-height: 1.64;
+
   blockquote {
     position: relative;
     font-size: 22px;
@@ -87,19 +94,20 @@
     }
   }
   a:not(.link) {
-    color: inherit;
-    background-image: linear-gradient(to bottom, $hover 0%, $hover 100%);
-    background-size: 100%;
+    color: $hover;
+    background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+    background-size: 0 100%;
     background-repeat: no-repeat;
-    background-position: 0 1.15em;
-    border-bottom: 2px solid $hover;
+    background-position: 0 0;
+    padding: 0 1px;
     @include hover(){
       color: $white;
-      background-image: linear-gradient(to bottom, $hover 0%, $hover 100%);
-      background-position: 0 0em;
+      background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+      background-size: 100% 100%;
     }
   }
   img {
+    user-select: none;
     &:not(.align-left):not(.align-right) {
       height: auto;
       width: 1128px;
@@ -121,6 +129,7 @@
     }
   }
   .video {
+    user-select: none;
     width: 1128px;
     height: 564px;
     display: block;
@@ -137,6 +146,7 @@
     }
   }
   .read-also {
+    user-select: none;
     float: left;
     background-color: $white;
     padding: $padding;
@@ -161,6 +171,7 @@
   }
   .article-subscribe {
     margin: 40px 0;
+    user-select: none;
   }
   ol {
     margin-bottom: 36px;

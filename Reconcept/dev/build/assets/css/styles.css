@@ -247,9 +247,9 @@ select {
   top: 0;
   left: 0;
   pointer-events: none;
-  -webkit-transition: width 0.15s ease, height 0.15s ease;
-  -o-transition: width 0.15s ease, height 0.15s ease;
-  transition: width 0.15s ease, height 0.15s ease;
+  -webkit-transition: width 0.35s ease, height 0.35s ease;
+  -o-transition: width 0.35s ease, height 0.35s ease;
+  transition: width 0.35s ease, height 0.35s ease;
 }
 
 .mobile .cursor,
@@ -754,8 +754,6 @@ svg {
   left: -2px;
   top: 0;
   pointer-events: none;
-  -webkit-box-shadow: 0 0 0 0 #F9C582 inset;
-  box-shadow: 0 0 0 0 #F9C582 inset;
   -webkit-transition: background-color 0.4s, -webkit-box-shadow 0.3s;
   transition: background-color 0.4s, -webkit-box-shadow 0.3s;
   -o-transition: background-color 0.4s, box-shadow 0.3s;
@@ -766,8 +764,6 @@ svg {
 .simple-header .nav-burger {
   pointer-events: auto;
   background-color: #FFF;
-  -webkit-box-shadow: 0 0 0 2px #F9C582 inset;
-  box-shadow: 0 0 0 2px #F9C582 inset;
   -webkit-transition: background-color 0.4s, -webkit-box-shadow 0.4s ease 0.35s;
   transition: background-color 0.4s, -webkit-box-shadow 0.4s ease 0.35s;
   -o-transition: background-color 0.4s, box-shadow 0.4s ease 0.35s;
@@ -1054,6 +1050,10 @@ svg {
 
 .text-section--main {
   background-color: #F6F6F6;
+}
+
+.text-section--main.large {
+  padding-bottom: 105px;
 }
 
 .text-section .person {
@@ -1484,6 +1484,7 @@ textarea {
   font-size: 13.296rem;
   font-family: "Yeseva One", cursive;
   margin-bottom: 25px;
+  letter-spacing: 0.025em;
 }
 
 .consultation .text {
@@ -1820,6 +1821,15 @@ textarea {
 .text-box {
   font-size: 18px;
   line-height: 1.64;
+  font-weight: 400;
+}
+
+.text-box *::-moz-selection {
+  background-color: #F9C582;
+}
+
+.text-box *::selection {
+  background-color: #F9C582;
 }
 
 .text-box--wrap {
@@ -1936,16 +1946,23 @@ textarea {
 }
 
 .text-box a:not(.link) {
-  color: inherit;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#932064), to(#932064));
-  background-image: -webkit-linear-gradient(top, #932064 0%, #932064 100%);
-  background-image: -o-linear-gradient(top, #932064 0%, #932064 100%);
-  background-image: linear-gradient(to bottom, #932064 0%, #932064 100%);
-  -webkit-background-size: 100% 100%;
-  background-size: 100%;
+  color: #932064;
+  background-image: -webkit-gradient(linear, left top, right top, from(#932064), to(#932064));
+  background-image: -webkit-linear-gradient(left, #932064 0%, #932064 100%);
+  background-image: -o-linear-gradient(left, #932064 0%, #932064 100%);
+  background-image: linear-gradient(to right, #932064 0%, #932064 100%);
+  -webkit-background-size: 0 100%;
+  background-size: 0 100%;
   background-repeat: no-repeat;
-  background-position: 0 1.15em;
-  border-bottom: 2px solid #932064;
+  background-position: 0 0;
+  padding: 0 1px;
+}
+
+.text-box img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .text-box img:not(.align-left):not(.align-right) {
@@ -1973,6 +1990,10 @@ textarea {
 }
 
 .text-box .video {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 1128px;
   height: 564px;
   display: block;
@@ -1993,6 +2014,10 @@ textarea {
 }
 
 .text-box .read-also {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   float: left;
   background-color: #FFF;
   padding: 25px;
@@ -2017,6 +2042,10 @@ textarea {
 
 .text-box .article-subscribe {
   margin: 40px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .text-box ol {
@@ -2565,7 +2594,7 @@ textarea {
 }
 
 .portfolio .pagination {
-  padding: 25px 0;
+  padding: 44px 0 10px;
 }
 
 .portfolio .item {
@@ -2781,7 +2810,7 @@ textarea {
   right: 0;
   bottom: 0;
   background-color: #932064;
-  width: 10px;
+  width: 0;
   position: absolute;
   -webkit-transition: all 0.25s;
   -o-transition: all 0.25s;
@@ -3154,11 +3183,12 @@ textarea {
 
   .text-box a:not(.link):hover {
     color: #FFF;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#932064), to(#932064));
-    background-image: -webkit-linear-gradient(top, #932064 0%, #932064 100%);
-    background-image: -o-linear-gradient(top, #932064 0%, #932064 100%);
-    background-image: linear-gradient(to bottom, #932064 0%, #932064 100%);
-    background-position: 0 0em;
+    background-image: -webkit-gradient(linear, left top, right top, from(#932064), to(#932064));
+    background-image: -webkit-linear-gradient(left, #932064 0%, #932064 100%);
+    background-image: -o-linear-gradient(left, #932064 0%, #932064 100%);
+    background-image: linear-gradient(to right, #932064 0%, #932064 100%);
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
   }
 
   .text-box .read-also .link:hover {

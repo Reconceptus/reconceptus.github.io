@@ -13,7 +13,7 @@ html, a, button, input, textarea, label, select {
     top: 0;
     left: 0;
     pointer-events: none;
-    transition: width 0.15s ease, height 0.15s ease;
+    transition: width 0.35s ease, height 0.35s ease;
 }
 
 .mobile .cursor,
