@@ -189,37 +189,57 @@ project.searchReset = function(){
 };
 
     /*
-     ============= sticky sharing
+     ============= fixing aside
     */
 
-project.fixingSharing = function(share,box,boxHeight){
+project.fixingAside = function(box,boxParent,boxParentHeight){
 
-    var $shareBoxOffset = box.offset().top,
-        $shareHeight = share.height(),
-        maxShareScroll = $shareBoxOffset + boxHeight - $shareHeight;
+    var $boxOffset = boxParent.offset().top,
+        $boxHeight = box.height(),
+        maxShareScroll = $boxOffset + boxParentHeight - $boxHeight;
 
-    if(scrollTop < $shareBoxOffset){
-        share.removeClass('fixed bottom');
+    if(scrollTop < $boxOffset){
+        box.removeClass('fixed bottom');
     }
     else if(scrollTop > maxShareScroll){
-        share.removeClass('fixed');
-        share.addClass('bottom');
+        box.removeClass('fixed');
+        box.addClass('bottom');
     }
     else {
-        share.addClass('fixed');
-        share.removeClass('bottom');
+        box.addClass('fixed');
+        box.removeClass('bottom');
     }
 
 };
+
+    /*
+    ============= sticky sharing
+   */
 
 project.stickySharing = function(){
     var $sharing = $('.sharing'),
         $shareBox = $sharing.closest('.text-box--layout'),
         $shareBoxHeight = $shareBox.height();
 
-    project.fixingSharing($sharing,$shareBox,$shareBoxHeight);
+    project.fixingAside($sharing,$shareBox,$shareBoxHeight);
     $(window).scroll(function (e) {
-        project.fixingSharing($sharing,$shareBox,$shareBoxHeight);
+        project.fixingAside($sharing,$shareBox,$shareBoxHeight);
+    });
+
+};
+
+    /*
+     ============= sticky sidebar
+    */
+
+project.stickySidebar = function(){
+    var $sidebar = $('.sidebar'),
+        $sidebarBox = $sidebar.closest('.page-layout'),
+        $sidebarBoxHeight = $sidebarBox.height();
+
+    project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight);
+    $(window).scroll(function (e) {
+        project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight);
     });
 
 };
@@ -346,6 +366,9 @@ $(document).ready(function () {
     }
     if($('.sharing').length > 0){
         project.stickySharing();
+    }
+    if($('.sidebar').length > 0){
+        project.stickySidebar();
     }
     if($('.file').length > 0){
         project.fileInput();

@@ -88,6 +88,9 @@ $(document).ready(function () {
     if($('.sharing').length > 0){
         project.stickySharing();
     }
+    if($('.sidebar').length > 0){
+        project.stickySidebar();
+    }
     if($('.file').length > 0){
         project.fileInput();
     }
