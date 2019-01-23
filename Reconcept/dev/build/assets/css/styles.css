@@ -2688,6 +2688,16 @@ textarea {
   position: relative;
 }
 
+.text-box--link .link:hover span {
+  -webkit-animation: bounce 0.6s;
+  animation: bounce 0.6s;
+  color: #932064;
+}
+
+.text-box--link .link:hover .link-full {
+  background: none;
+}
+
 .text-box--link .link-full {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2728,7 +2738,6 @@ textarea {
   -webkit-transition: opacity 0.6s;
   -o-transition: opacity 0.6s;
   transition: opacity 0.6s;
-  font-size: 5rem;
 }
 
 .text-box--link .link-parts span:nth-child(2) {
@@ -3148,14 +3157,8 @@ textarea {
     font-size: 5rem;
   }
 
-  .text-box--link .link:hover span {
-    -webkit-animation: bounce 0.6s;
-    animation: bounce 0.6s;
-    color: #932064;
-  }
-
-  .text-box--link .link:hover .link-full {
-    background: none;
+  .text-box--link .link-parts span {
+    font-size: 5rem;
   }
 }
 
@@ -3224,6 +3227,10 @@ textarea {
   }
 
   .text-box--link {
+    font-size: 3rem;
+  }
+
+  .text-box--link .link-parts span {
     font-size: 3rem;
   }
 }
@@ -3336,6 +3343,10 @@ textarea {
   }
 
   .text-box--link {
+    font-size: 18px;
+  }
+
+  .text-box--link .link-parts span {
     font-size: 18px;
   }
 }
@@ -4197,10 +4208,6 @@ textarea {
 
   .project-preview:not(:last-child) {
     margin-bottom: 15px;
-  }
-
-  .text-box--link .link-parts {
-    display: none;
   }
 }
 
