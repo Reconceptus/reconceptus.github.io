@@ -1,6 +1,12 @@
 .sidebar {
-  padding-right: $padding;
-  width: 280px;
+  @include media(hover,1381){
+    width: 280px;
+    padding-right: $padding;
+  }
+  @include breakpoints(1025,1380){
+    width: 195px;
+    padding-right: $padding;
+  }
   @include media(hover,1025){
     &.fixed {
       position: fixed;
@@ -32,14 +38,25 @@
   }
   .title {
     color: #2c2341;
-    font-size: $px*11.52rem;
     font-family: $font-yeseva;
-    margin-bottom: 15px;
+
     font-weight: 500;
+    @include media(hover,1025){
+      font-size: $px*11.52rem;
+      margin-bottom: 15px;
+    }
+    @include breakpoints(768,1024){
+      font-size: $px*8rem;
+    }
+    @include media(screen,767){
+      font-size: $px*7.5rem;
+    }
   }
   .search {
     padding: 0 5px;
-    margin-bottom: 32px;
+    @include media(hover,1025){
+      margin-bottom: 32px;
+    }
     &-btn {
       display: flex;
       border: none;
@@ -69,6 +86,14 @@
       }
     }
   }
+  &-header {
+    @include media(screen,1024){
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+  }
   &-main {
     @include media(hover,1025){
       padding: 0 0 110px;
@@ -78,10 +103,28 @@
   &-nav {
     font-size: $px*3.36rem;
     font-weight: 600;
+    @include media(screen,1024){
+      margin-bottom: 40px;
+    }
+    @include media(screen,767){
+      white-space: nowrap;
+      overflow: auto;
+    }
+    ul {
+      @include media(screen,1024){
+        display: flex;
+        align-items: center;
+      }
+    }
     li {
-      padding: 0 5px;
-      &:not(:last-child){
-        margin-bottom: 20px;
+      @include media(hover,1025){
+        padding: 0 5px;
+        &:not(:last-child){
+          margin-bottom: 20px;
+        }
+      }
+      @include media(screen,1024){
+        margin-right: $padding;
       }
     }
     a {

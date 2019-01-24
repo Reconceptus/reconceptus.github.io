@@ -23,6 +23,9 @@
       font-size: $px*8rem;
       padding: 0 0 0 15%;
     }
+    @include media(screen,767){
+      font-size: $px*7.5rem;
+    }
 
     &:before {
       content: "";

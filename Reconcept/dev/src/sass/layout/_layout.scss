@@ -14,11 +14,20 @@
   }
   &-layout {
     display: flex;
+    @include media(screen,1024){
+      flex-direction: column;
+    }
   }
   &-sidebar {
-    width: 280px;
-    flex-shrink: 0;
     position: relative;
+    @include media(hover,1381){
+      width: 280px;
+      flex-shrink: 0;
+    }
+    @include breakpoints(1025,1380){
+      width: 195px;
+      flex-shrink: 0;
+    }
   }
   &-main-part {
     width: 100%;

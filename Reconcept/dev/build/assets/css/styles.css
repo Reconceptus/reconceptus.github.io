@@ -779,22 +779,14 @@ svg {
   border: none;
 }
 
-.sidebar {
-  padding-right: 25px;
-  width: 280px;
-}
-
 .sidebar .title {
   color: #2C2341;
-  font-size: 3.19104rem;
   font-family: "Yeseva One", cursive;
-  margin-bottom: 15px;
   font-weight: 500;
 }
 
 .sidebar .search {
   padding: 0 5px;
-  margin-bottom: 32px;
 }
 
 .sidebar .search-btn {
@@ -839,14 +831,6 @@ svg {
   font-weight: 600;
 }
 
-.sidebar-nav li {
-  padding: 0 5px;
-}
-
-.sidebar-nav li:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 .sidebar-nav a {
   color: inherit;
 }
@@ -863,10 +847,6 @@ svg {
 }
 
 .page-sidebar {
-  width: 280px;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
   position: relative;
 }
 
@@ -2136,16 +2116,6 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -12.5px;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.blog-grid li {
-  width: 50%;
-  padding: 0 12.5px;
-  margin-bottom: 30px;
 }
 
 .blog .item {
@@ -2178,7 +2148,6 @@ textarea {
 .blog .item-brief {
   width: 100%;
   color: #564E67;
-  padding: 28px 0 30px 20%;
 }
 
 .blog .item-data {
@@ -2216,17 +2185,6 @@ textarea {
   -o-transition: all 0.25s;
   transition: all 0.25s;
   position: relative;
-}
-
-.blog .item-title:before {
-  content: "";
-  position: absolute;
-  top: 1rem;
-  right: 100%;
-  margin-right: 25px;
-  width: calc(25% - 25px);
-  background-color: #1E1435;
-  height: 2px;
 }
 
 .blog .item-info {
@@ -2901,6 +2859,15 @@ textarea {
     padding-top: 110px;
   }
 
+  .sidebar .title {
+    font-size: 3.19104rem;
+    margin-bottom: 15px;
+  }
+
+  .sidebar .search {
+    margin-bottom: 32px;
+  }
+
   .sidebar .search-btn:hover {
     color: #932064;
   }
@@ -2915,6 +2882,14 @@ textarea {
     -webkit-transition: all 0.2s;
     -o-transition: all 0.2s;
     transition: all 0.2s;
+  }
+
+  .sidebar-nav li {
+    padding: 0 5px;
+  }
+
+  .sidebar-nav li:not(:last-child) {
+    margin-bottom: 20px;
   }
 
   .sidebar-nav a:hover {
@@ -3118,6 +3093,19 @@ textarea {
     color: #932064;
   }
 
+  .blog-grid ul {
+    margin: 0 -12.5px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .blog-grid li {
+    padding: 0 12.5px;
+    margin-bottom: 30px;
+    width: 50%;
+  }
+
   .blog .item:hover .item-img img {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
@@ -3249,6 +3237,19 @@ textarea {
     margin-right: 5px;
   }
 
+  .blog-grid ul {
+    margin: 0 -7.5px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .blog-grid li {
+    padding: 0 7.5px;
+    margin-bottom: 15px;
+    width: 50%;
+  }
+
   .project-listing .listing ul {
     margin: 0 -7.5px;
   }
@@ -3367,6 +3368,18 @@ textarea {
     width: 25px;
     height: 25px;
     margin-right: 0;
+  }
+
+  .blog-grid ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .blog-grid li {
+    margin-bottom: 15px;
   }
 
   .project-listing .listing li {
@@ -3788,8 +3801,21 @@ textarea {
     transform: translate3d(10px, 0, 0);
   }
 
+  .sidebar .title {
+    font-size: 2.0775rem;
+  }
+
+  .sidebar-nav {
+    white-space: nowrap;
+    overflow: auto;
+  }
+
   .page-title {
     padding: 40px 0;
+  }
+
+  .page-title--text {
+    font-size: 2.0775rem;
   }
 
   .page-title--text:before {
@@ -3853,6 +3879,10 @@ textarea {
 
   .modal-header .logo img {
     width: 115px;
+  }
+
+  .blog .item-brief {
+    padding: 20px 0;
   }
 
   .portfolio-categories {
@@ -4069,6 +4099,18 @@ textarea {
     margin-right: 25px;
   }
 
+  .sidebar {
+    width: 280px;
+    padding-right: 25px;
+  }
+
+  .page-sidebar {
+    width: 280px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
   .text-section--main.large {
     padding-bottom: 105px;
   }
@@ -4174,8 +4216,51 @@ textarea {
     display: none;
   }
 
+  .sidebar-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .sidebar-nav {
+    margin-bottom: 40px;
+  }
+
+  .sidebar-nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .sidebar-nav li {
+    margin-right: 25px;
+  }
+
   .page {
     padding: 40px 0;
+  }
+
+  .page-layout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .text-box--wrap {
@@ -4274,6 +4359,24 @@ textarea {
   }
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1380px) {
+  .sidebar {
+    width: 195px;
+    padding-right: 25px;
+  }
+
+  .page-sidebar {
+    width: 195px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+  }
+
+  .text-section--main.large {
+    padding-bottom: 40px;
+  }
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1750px) {
   .sidebar.fixed {
     left: 25px;
@@ -4281,6 +4384,10 @@ textarea {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sidebar .title {
+    font-size: 2.216rem;
+  }
+
   .page-title {
     padding: 60px 0;
   }
@@ -4325,17 +4432,26 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1380px) {
-  .text-section--main.large {
-    padding-bottom: 40px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .pagination a,
   .pagination span {
     width: 64px;
     height: 64px;
+  }
+
+  .blog .item-brief {
+    padding: 28px 0 30px 20%;
+  }
+
+  .blog .item-title:before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    right: 100%;
+    margin-right: 25px;
+    width: calc(25% - 25px);
+    background-color: #1E1435;
+    height: 2px;
   }
 
   .portfolio-grid ul {
