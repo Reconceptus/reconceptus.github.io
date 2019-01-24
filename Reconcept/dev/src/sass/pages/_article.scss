@@ -1,18 +1,42 @@
 .article {
-
+  &-info {
+    @include breakpoints(1025,1380){
+      margin-bottom: 40px;
+    }
+    @include media(screen,1024){
+      .text-box--main {
+        order: 1;
+      }
+    }
+  }
 }
 
 .article-preview {
-  height: 300px;
+
   width: 100%;
   position: relative;
+  margin-bottom: 40px;
+  @include media(hover,1381){
+    height: 300px;
+  }
+  @include breakpoints(1025,1380){
+    height: 24vw;
+  }
+  @include media(screen,1024){
+    height: 25vw;
+  }
   .img {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     overflow: hidden;
-    width: calc(50vw + 50%);
+    @include media(hover,1025){
+      width: calc(50vw + 50%);
+    }
+    @include media(screen,1024){
+      width: 100%;
+    }
   }
   img {
     width: 100%;

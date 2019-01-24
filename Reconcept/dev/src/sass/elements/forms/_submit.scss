@@ -51,8 +51,13 @@
     position: absolute;
     transition: all 0.25s;
   }
-  &:not(:first-child){
-    margin-left: $padding;
+  @include media(hover,681){
+    &:not(:first-child){
+      margin-left: $padding;
+    }
+  }
+  @include media(screen,680){
+    margin-top: $padding;
   }
   span {
     position: relative;

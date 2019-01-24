@@ -1,25 +1,53 @@
 .comment-box {
   &--main {
     background-color: $grey;
-    padding: 65px 0 45px;
+    @include media(hover,1025){
+      padding: 65px 0 45px;
+    }
+    @include breakpoints(681,1024){
+      padding: 50px 0 45px;
+    }
+    @include media(screen,680){
+      padding: 40px 0;
+    }
   }
   &--title {
     text-transform: uppercase;
     font-size: $px*3.36rem;
     letter-spacing: 1px;
     margin-bottom: 40px;
+    @include media(screen,680){
+      margin-bottom: 25px;
+    }
   }
 
 }
 
 .comment-content {
-  width: 890px;
+
   margin: 0 auto;
   padding: 0 $padding;
+  @include media(hover,1025){
+    width: 890px;
+  }
+  @include media(screen,1024){
+    width: 100%;
+  }
+  @include media(screen,680){
+    padding: 0 15px;
+  }
+  .input-box {
+    @include media(screen,680){
+      flex-direction: column;
+    }
+  }
   .label {
     display: block;
     &:not(:last-child){
       margin-bottom: $padding;
+      @include media(screen,680){
+        margin-bottom: 15px;
+      }
     }
   }
 }

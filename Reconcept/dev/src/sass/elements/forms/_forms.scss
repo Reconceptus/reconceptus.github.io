@@ -16,13 +16,22 @@
       margin-bottom: 30px;
     }
   }
-
-  .col-50 {
-    width: 50%;
-    &:not(:last-child){
-      margin-right: $padding;
+  @include media(hover,681){
+    .col-50 {
+      width: 50%;
+      &:not(:last-child){
+        margin-right: $padding;
+      }
     }
   }
+  @include media(screen,680){
+    .col-50 {
+      &:not(:last-child){
+        margin-bottom: 15px;
+      }
+    }
+  }
+
   .stretched {
     .label {
       height: 100%;

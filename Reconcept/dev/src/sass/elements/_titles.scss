@@ -50,10 +50,15 @@
   .article-info {
     color: $violet;
     font-size: $px*3.36rem;
-    padding: 0 0 0 20%;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 60px;
+    @include media(hover,681){
+      padding: 0 0 0 20%;
+      margin-bottom: 60px;
+    }
+    @include media(screen,680){
+      margin-bottom: $padding;
+    }
     .item-date {
       margin-right: $padding;
     }
