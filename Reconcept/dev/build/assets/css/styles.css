@@ -4627,7 +4627,7 @@ textarea {
   }
 
   .text-box img.align-right {
-    float: left;
+    float: right;
   }
 
   .sharing .ico {
