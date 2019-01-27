@@ -10,6 +10,11 @@
   &.centered {
     justify-content: center;
   }
+  &.wrapped {
+    @include media(screen,1024){
+      flex-wrap: wrap;
+    }
+  }
   &:not(:last-child){
     margin-bottom: 20px;
     .subscription-form & {

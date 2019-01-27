@@ -20,6 +20,10 @@ input[type="text"] {
     font-size: $px*3.36rem;
     background-color: $white;
     border-bottom: 1px solid currentColor;
+    @include media(screen,680){
+      height: 40px;
+      line-height: 40px;
+    }
   }
   .article-subscribe & {
     height: 55px;

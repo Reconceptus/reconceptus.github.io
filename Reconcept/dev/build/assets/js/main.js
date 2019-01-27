@@ -243,7 +243,7 @@ project.textParsing = function(){
         _this.find('img[style*="margin: auto"]').addClass('align-center');
         _this.find('img[style*="width"]').addClass('has-width');
 
-        _this.find('img[style*="float: right"]').addClass('align-right');
+        _this.find('blockquote').wrapInner('<p></p>');
     });
 };
 

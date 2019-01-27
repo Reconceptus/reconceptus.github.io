@@ -2,17 +2,33 @@
   &--layout {
     display: flex;
     width: 100%;
+    @include media(screen,1024){
+      flex-direction: column;
+    }
+    @include breakpoints(681,1024){
+      padding: 0 10px;
+    }
   }
   &--aside {
-    width: 20%;
-    min-width: 260px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include media(hover,1201){
+      min-width: 260px;
+      width: 20%;
+    }
+    @include breakpoints(1025,1200){
+      width: 25%;
+    }
   }
   &--main {
     width: 100%;
-    padding: 0 10% 0 $padding;
     position: relative;
+    @include media(hover,1201){
+      padding: 0 10% 0 $padding;
+    }
+    @include breakpoints(1025,1200){
+      padding: 0 0 0 $padding;
+    }
   }
 }

@@ -4,8 +4,16 @@
     text-transform: uppercase;
     font-size: $px*3.35rem;
     letter-spacing: 1px;
-    margin-bottom: 80px;
     text-align: center;
+    @include media(hover,1025){
+      margin-bottom: 80px;
+    }
+    @include breakpoints(681,1024){
+      margin-bottom: 60px;
+    }
+    @include media(screen,680){
+      margin-bottom: 40px;
+    }
   }
 }
 .support-form {
@@ -31,10 +39,16 @@
   }
   .file,
   .checkbox {
-    width: 30%;
     flex-shrink: 0;
-    margin-right: $padding;
     align-self: flex-start;
+    @include media(hover,1025){
+      margin-right: $padding;
+      width: 30%;
+    }
+    @include media(screen,1024){
+      margin-bottom: $padding;
+      width: 100%;
+    }
   }
   .submit {
     width: 100%;
