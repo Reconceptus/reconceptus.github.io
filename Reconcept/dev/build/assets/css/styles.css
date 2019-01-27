@@ -905,6 +905,8 @@ svg {
 input[type="text"] {
   width: 100%;
   border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 
 .consultation-form input[type="text"] {
@@ -1259,6 +1261,30 @@ textarea {
   height: 100%;
 }
 
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-2900vw, 0, 0);
+    transform: translate3d(-2900vw, 0, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(-2900vw, 0, 0);
+    transform: translate3d(-2900vw, 0, 0);
+  }
+}
+
 .consultation {
   position: relative;
   background: #241D3D url("../images/consultation-bg.jpg") no-repeat center;
@@ -1267,6 +1293,22 @@ textarea {
 }
 
 .consultation:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3000vw;
+  height: 100%;
+  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png") repeat-x;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  -webkit-animation: marquee 700s linear infinite;
+  animation: marquee 700s linear infinite;
+  opacity: 0.8;
+}
+
+.consultation:after {
   content: "";
   width: 0;
   height: 0;
@@ -1279,6 +1321,11 @@ textarea {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  z-index: 1;
+}
+
+.consultation .content {
+  position: relative;
 }
 
 .consultation .title {

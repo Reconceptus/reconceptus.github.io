@@ -248,6 +248,22 @@ project.textParsing = function(){
 };
 
     /*
+     ============= project link parsing
+    */
+
+project.linkParsing = function(){
+    var $link = $('.project-link'),
+        $linkText = $link.text().trim();
+
+    $link.html('<div class="link-full"></div><div class="link-parts"></div>');
+
+    for(var i=0; i<$linkText.length; i++){
+        $('.link-full, .link-parts').append('<span>'+$linkText[i]+'</span>');
+    }
+
+};
+
+    /*
      ============= sticky sidebar
     */
 
@@ -394,6 +410,9 @@ $(document).ready(function () {
     }
     if($('.text-box').length > 0){
         project.textParsing();
+    }
+    if($('.project-link').length > 0){
+        project.linkParsing();
     }
 
 

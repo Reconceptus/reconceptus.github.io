@@ -97,6 +97,9 @@ $(document).ready(function () {
     if($('.text-box').length > 0){
         project.textParsing();
     }
+    if($('.project-link').length > 0){
+        project.linkParsing();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */
