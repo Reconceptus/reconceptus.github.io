@@ -3,6 +3,13 @@
     &.fixed {
       position: fixed;
       top: 0;
+      @include media(hover,1511){
+        left: 50%;
+        transform: translateX(-705px);
+      }
+      @include breakpoints(1025,1510){
+        left: 50px;
+      }
     }
     &.bottom {
       position: absolute;
@@ -10,13 +17,7 @@
       bottom: 0;
     }
   }
-  @include media(hover,1511){
-    left: 50%;
-    transform: translateX(-705px);
-  }
-  @include breakpoints(1025,1510){
-    left: 50px;
-  }
+
   ul {
     display: flex;
     @include media(hover,1025){

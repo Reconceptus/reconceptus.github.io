@@ -116,11 +116,19 @@
   .ico {
     transition: all 0.25s;
     position: relative;
-    width: 75px;
-    height: 45px;
-    transform: translateX(-20px);
+
     svg {
       fill: $white
+    }
+    @include media(hover,1025){
+      width: 75px;
+      height: 45px;
+      transform: translateX(-20px);
+    }
+    @include breakpoints(768,1024){
+      width: 50px;
+      height: 30px;
+      transform: translateX(-10px);
     }
     @include media(screen,767){
       transform: translateX(0);

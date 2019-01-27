@@ -943,12 +943,7 @@ input[type="text"] {
 .search-form input[type="text"] {
   text-align: center;
   background: transparent;
-  height: 128px;
-  line-height: 128px;
-  border-bottom: 3px solid #FFF;
-  font-size: 3.19104rem;
   font-family: "Yeseva One", cursive;
-  padding: 0 75px 0 203px;
   color: #FFF;
 }
 
@@ -1231,11 +1226,6 @@ textarea {
   -o-transition: all 0.25s;
   transition: all 0.25s;
   position: relative;
-  width: 75px;
-  height: 45px;
-  -webkit-transform: translateX(-20px);
-  -ms-transform: translateX(-20px);
-  transform: translateX(-20px);
 }
 
 .submit-btn .ico svg {
@@ -2878,6 +2868,14 @@ textarea {
     font-size: 3.19104rem;
   }
 
+  .search-form input[type="text"] {
+    line-height: 128px;
+    height: 128px;
+    padding: 0 25px 0 153px;
+    font-size: 3.19104rem;
+    border-bottom: 3px solid #FFF;
+  }
+
   .file:not(.has-file):hover {
     color: #932064;
   }
@@ -2893,6 +2891,14 @@ textarea {
   .submit-btn {
     width: 128px;
     height: 128px;
+  }
+
+  .submit-btn .ico {
+    width: 75px;
+    height: 45px;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
   }
 
   .submit-btn:hover:before {
@@ -3947,6 +3953,14 @@ textarea {
     font-size: 1.385rem;
   }
 
+  .search-form input[type="text"] {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 1.385rem;
+    border-bottom: 1px solid #FFF;
+  }
+
   .submit-btn {
     width: 40px;
     height: 40px;
@@ -4643,9 +4657,25 @@ textarea {
     font-size: 2.216rem;
   }
 
+  .search-form input[type="text"] {
+    line-height: 80px;
+    height: 80px;
+    padding: 0 25px;
+    font-size: 2.216rem;
+    border-bottom: 2px solid #FFF;
+  }
+
   .submit-btn {
     width: 80px;
     height: 80px;
+  }
+
+  .submit-btn .ico {
+    width: 50px;
+    height: 30px;
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 
   .consultation {
@@ -4866,8 +4896,8 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1511px) {
-  .sharing {
+@media screen and (min-width: 1025px) and (min-width: 1511px) {
+  .sharing.fixed {
     left: 50%;
     -webkit-transform: translateX(-705px);
     -ms-transform: translateX(-705px);
@@ -4875,8 +4905,8 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1510px) {
-  .sharing {
+@media screen and (min-width: 1025px) and (min-width: 1025px) and (max-width: 1510px) {
+  .sharing.fixed {
     left: 50px;
   }
 }

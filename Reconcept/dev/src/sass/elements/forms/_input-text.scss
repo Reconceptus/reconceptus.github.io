@@ -36,9 +36,7 @@ input[type="text"] {
   .subscription-form & {
     text-align: center;
     border-bottom: 3px solid $violet;
-
     font-family: $font-yeseva;
-
     background: transparent;
     @include media(hover,1025){
       line-height: 128px;
@@ -62,13 +60,30 @@ input[type="text"] {
   .search-form & {
     text-align: center;
     background: transparent;
-    height: 128px;
-    line-height: 128px;
-    border-bottom: 3px solid $white;
-    font-size: $px*11.52rem;
+
     font-family: $font-yeseva;
-    padding: 0 3*$padding 0 3*$padding+128px;
     color: $white;
+    @include media(hover,1025){
+      line-height: 128px;
+      height: 128px;
+      padding: 0 $padding 0 $padding+128px;
+      font-size: $px*11.52rem;
+      border-bottom: 3px solid $white;
+    }
+    @include breakpoints(768,1024){
+      line-height: 80px;
+      height: 80px;
+      padding: 0 $padding;
+      font-size: $px*8rem;
+      border-bottom: 2px solid $white;
+    }
+    @include media(screen,767){
+      line-height: 40px;
+      height: 40px;
+      padding: 0 15px;
+      font-size: $px*5rem;
+      border-bottom: 1px solid $white;
+    }
   }
   .comment-content & {
     height: 40px;
