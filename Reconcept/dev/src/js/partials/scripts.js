@@ -94,6 +94,9 @@ $(document).ready(function () {
     if($('.file').length > 0){
         project.fileInput();
     }
+    if($('.text-box').length > 0){
+        project.textParsing();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */

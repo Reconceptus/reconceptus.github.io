@@ -229,6 +229,25 @@ project.stickySharing = function(){
 };
 
     /*
+     ============= text parsing
+    */
+
+project.textParsing = function(){
+    var $textBox = $('.text-box');
+    $textBox.each(function () {
+        var _this = $(this);
+        _this.find('iframe').wrap('<div class="video"></div>');
+
+        _this.find('img[style*="float: left"]').addClass('align-left');
+        _this.find('img[style*="float: right"]').addClass('align-right');
+        _this.find('img[style*="margin: auto"]').addClass('align-center');
+        _this.find('img[style*="width"]').addClass('has-width');
+
+        _this.find('img[style*="float: right"]').addClass('align-right');
+    });
+};
+
+    /*
      ============= sticky sidebar
     */
 
@@ -372,6 +391,9 @@ $(document).ready(function () {
     }
     if($('.file').length > 0){
         project.fileInput();
+    }
+    if($('.text-box').length > 0){
+        project.textParsing();
     }
 
 

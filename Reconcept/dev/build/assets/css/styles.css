@@ -1732,15 +1732,11 @@ textarea {
   user-select: none;
 }
 
-.text-box img:not(.align-left):not(.align-right) {
-  height: auto;
-  display: block;
+.text-box img.align-center {
   position: relative;
-  margin: 40px 0;
-}
-
-.text-box img.align-right {
-  float: right;
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+  height: auto;
 }
 
 .text-box .video {
@@ -1759,6 +1755,8 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .text-box .read-also {
@@ -1785,6 +1783,15 @@ textarea {
   font-size: 1.06368rem;
   font-weight: 600;
   color: #192476;
+}
+
+.text-box .full-width-container {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50vw);
+  -ms-transform: translateX(-50vw);
+  transform: translateX(-50vw);
 }
 
 .text-box .article-subscribe {
@@ -3346,12 +3353,14 @@ textarea {
 
   .text-box img.align-left {
     width: 100%;
-    margin-bottom: 20px;
+    min-width: 100%;
+    margin: 0 0 20px !important;
   }
 
   .text-box img.align-right {
     width: 100%;
-    margin-bottom: 20px;
+    min-width: 100%;
+    margin: 0 0 20px !important;
   }
 
   .text-box .read-also {
@@ -3786,7 +3795,7 @@ textarea {
     padding-top: 20px;
   }
 
-  .text-box img:not(.align-left):not(.align-right) {
+  .text-box img.align-center:not(.has-width) {
     width: 100%;
   }
 
@@ -4094,7 +4103,7 @@ textarea {
     max-width: 260px;
   }
 
-  .text-box img:not(.align-left):not(.align-right) {
+  .text-box img.align-center:not(.has-width) {
     width: 110%;
     left: -10%;
   }
@@ -4308,12 +4317,12 @@ textarea {
   }
 
   .text-box img.align-left {
-    margin: 0 20px 20px 0;
+    margin: 0 20px 20px 0 !important;
     max-width: 40%;
   }
 
   .text-box img.align-right {
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 20px !important;
     max-width: 40%;
   }
 
@@ -4406,6 +4415,10 @@ textarea {
 
   .text-box--main {
     width: 100%;
+  }
+
+  .text-box img.align-center {
+    max-width: 100%;
   }
 
   .sharing ul {
@@ -4622,14 +4635,6 @@ textarea {
     margin-bottom: 20px;
   }
 
-  .text-box img.align-left {
-    float: left;
-  }
-
-  .text-box img.align-right {
-    float: right;
-  }
-
   .sharing .ico {
     width: 40px;
     height: 40px;
@@ -4716,7 +4721,7 @@ textarea {
 }
 
 @media screen and (min-width: 1421px) {
-  .text-box img:not(.align-left):not(.align-right) {
+  .text-box img.align-center:not(.has-width) {
     width: 1128px;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -4725,12 +4730,12 @@ textarea {
   }
 
   .text-box img.align-left {
-    margin: 0 35px 35px -144px;
+    margin: 0 35px 35px -144px !important;
     max-width: 50%;
   }
 
   .text-box img.align-right {
-    margin: 0 -144px 35px 35px;
+    margin: 0 -144px 35px 35px !important;
     max-width: 50%;
   }
 
@@ -4745,7 +4750,7 @@ textarea {
 }
 
 @media screen and (min-width: 1381px) and (max-width: 1420px) {
-  .text-box img:not(.align-left):not(.align-right) {
+  .text-box img.align-center:not(.has-width) {
     width: 1000px;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -4754,12 +4759,12 @@ textarea {
   }
 
   .text-box img.align-left {
-    margin: 0 35px 35px -100px;
+    margin: 0 35px 35px -100px !important;
     max-width: 50%;
   }
 
   .text-box img.align-right {
-    margin: 0 -100px 35px 35px;
+    margin: 0 -100px 35px 35px !important;
     max-width: 50%;
   }
 
@@ -4775,12 +4780,12 @@ textarea {
 
 @media screen and (min-width: 681px) and (max-width: 767px) {
   .text-box img.align-left {
-    margin: 0 20px 20px 0;
+    margin: 0 20px 20px 0 !important;
     max-width: 40%;
   }
 
   .text-box img.align-right {
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 20px !important;
     max-width: 40%;
   }
 }

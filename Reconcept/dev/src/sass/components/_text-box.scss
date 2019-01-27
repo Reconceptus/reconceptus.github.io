@@ -216,79 +216,79 @@
   }
   img {
     user-select: none;
-    &:not(.align-left):not(.align-right) {
-      height: auto;
-      display: block;
+    &.align-center {
       position: relative;
-      margin: 40px 0;
-      @include media(hover,1421){
-        width: 1128px;
-        left: 50%;
-        transform: translateX(-50%);
+      margin-top: 40px !important;
+      margin-bottom: 40px !important;
+      height: auto;
+      @include media(screen,1024){
+        max-width: 100%;
       }
-      @include breakpoints(1381,1420){
-        width: 1000px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      @include breakpoints(1201,1380){
-        width: 110%;
-        left: -10%;
-      }
-      @include media(screen,1200){
-        width: 100%;
+      &:not(.has-width){
+        @include media(hover,1421){
+          width: 1128px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @include breakpoints(1381,1420){
+          width: 1000px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @include breakpoints(1201,1380){
+          width: 110%;
+          left: -10%;
+        }
+        @include media(screen,1200){
+          width: 100%;
+        }
       }
     }
     &.align-left {
       @include media(hover,1421){
-        margin: 0 35px 35px -144px;
+        margin: 0 35px 35px -144px !important;
         max-width: 50%;
       }
       @include breakpoints(1381,1420){
-        margin: 0 35px 35px -100px;
+        margin: 0 35px 35px -100px !important;
         max-width: 50%;
       }
       @include breakpoints(768,1380){
-        margin: 0 20px 20px 0;
+        margin: 0 20px 20px 0 !important;
         max-width: 40%;
       }
       @include breakpoints(681,767){
-        margin: 0 20px 20px 0;
+        margin: 0 20px 20px 0 !important;
         max-width: 40%;
-      }
-      @include media(hover,681){
-        float: left;
       }
       @include media(screen,680){
         width: 100%;
-        margin-bottom: 20px;
+        min-width: 100%;
+        margin: 0 0 20px !important;
       }
     }
     &.align-right {
-      float: right;
 
       @include media(hover,1421){
-        margin: 0 -144px 35px 35px;
+        margin: 0 -144px 35px 35px !important;
         max-width: 50%;
       }
       @include breakpoints(1381,1420){
-        margin: 0 -100px 35px 35px;
+        margin: 0 -100px 35px 35px !important;
         max-width: 50%;
       }
       @include breakpoints(768,1380){
-        margin: 0 0 20px 20px;
+        margin: 0 0 20px 20px !important;
         max-width: 40%;
       }
       @include breakpoints(681,767){
-        margin: 0 0 20px 20px;
+        margin: 0 0 20px 20px !important;
         max-width: 40%;
-      }
-      @include media(hover,681){
-        float: right;
       }
       @include media(screen,680){
         width: 100%;
-        margin-bottom: 20px;
+        min-width: 100%;
+        margin: 0 0 20px !important;
       }
     }
   }
@@ -324,6 +324,8 @@
       left: 0;
       width: 100%;
       height: 100%;
+      min-width: 100%;
+      min-height: 100%;
     }
   }
   .read-also {
@@ -365,6 +367,12 @@
         color: $hover;
       }
     }
+  }
+  .full-width-container {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50vw);
   }
   .article-subscribe {
     margin: 40px 0;
