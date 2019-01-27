@@ -1,69 +1,115 @@
 @keyframes marquee {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-2900vw, 0, 0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2900vw, 0, 0);
+  }
+}
+
+@keyframes blurText {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    filter: blur(1px);
+  }
+  25% {
+    transform: rotate(5deg) translate3d(45%, -10%, 0);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  50% {
+    transform: rotate(-5deg) translate3d(-25%, -10%, 0);
+    opacity: 0;
+    filter: blur(20px);
+  }
+  75% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    filter: blur(1px);
+  }
 }
 
 .consultation {
   position: relative;
   background: #241d3d url("../images/consultation-bg.jpg") no-repeat center;
   background-size: cover;
-  @include media(hover,1025){
+  @include media(hover, 1025) {
     padding: 75px 0 105px;
     margin-bottom: 70px;
-  }
-  @include breakpoints(768,1024){
-    padding: 60px 0 80px;
-    margin-bottom: 60px;
-  }
 
-  @include media(screen,767){
-    padding: 40px 0;
-    margin-bottom: 40px;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3000vw;
-    height: 100%;
-    background: url('https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png') repeat-x;
-    background-size: contain;
-    background-position: center;
-    animation: marquee 700s linear infinite;
-    opacity: 0.8;
-  }
-  &:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid solid none;
-    border-width: 30px 25px;
-    border-color: $white transparent;
-    left: 50%;
-    top: 0;
-    position: absolute;
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-  .content {
-    position: relative;
-  }
-  .title {
-    text-align: center;
-    color: $white;
-
-    font-family: $font-yeseva;
-    margin-bottom: $padding;
-    letter-spacing: 0.025em;
-    @include media(hover,1025){
-      font-size: $px*48rem;
+    @include breakpoints(768, 1024) {
+      padding: 60px 0 80px;
+      margin-bottom: 60px;
     }
-    @include breakpoints(768,1024){
+    @include media(screen, 767) {
+      padding: 40px 0;
+      margin-bottom: 40px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3000vw;
+      height: 100%;
+      background: url('../images/fog-bg.png') repeat-x;
+      background-size: contain;
+      background-position: center;
+      animation: marquee 700s linear infinite;
+      opacity: 0.8;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid solid none;
+      border-width: 30px 25px;
+      border-color: $white transparent;
+      left: 50%;
+      top: 0;
+      position: absolute;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+    }
+    .title {
+      text-align: center;
+      color: $white;
+      display: flex;
+      justify-content: center;
+      font-family: $font-yeseva;
+      margin-bottom: $padding;
+      letter-spacing: 0.025em;
+      span {
+        will-change: transform;
+        backface-visibility: visible;
+      }
+      @include media(hover, 1025) {
+        font-size: $px*48rem;
+        &:hover {
+          span {
+            animation: blurText 3s linear forwards;
+            &:nth-child(1) {animation-delay: 0s;}
+            &:nth-child(2) {animation-delay: 0.3s;}
+            &:nth-child(3) {animation-delay: 0.6s;}
+            &:nth-child(4) {animation-delay: 0.9s;}
+            &:nth-child(5) {animation-delay: 1.2s;}
+            &:nth-child(6) {animation-delay: 1.5s;}
+            &:nth-child(7) {animation-delay: 1.8s;}
+            &:nth-child(8) {animation-delay: 2.1s;}
+            &:nth-child(9) {animation-delay: 2.4s;}
+          }
+        }
+      }
+    }
+    @include breakpoints(768, 1024) {
       font-size: $px*25rem;
     }
 
-    @include media(screen,767){
+    @include media(screen, 767) {
       font-size: $px*15rem;
     }
   }
@@ -73,7 +119,7 @@
     margin-bottom: 40px;
   }
   .fieldset {
-    @include media(screen,680){
+    @include media(screen, 680) {
       flex-direction: column;
       .submit {
         height: 40px;

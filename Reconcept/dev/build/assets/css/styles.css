@@ -1285,55 +1285,79 @@ textarea {
   }
 }
 
+@-webkit-keyframes blurText {
+  0% {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+
+  25% {
+    -webkit-transform: rotate(5deg) translate3d(45%, -10%, 0);
+    transform: rotate(5deg) translate3d(45%, -10%, 0);
+    opacity: 0;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg) translate3d(-25%, -10%, 0);
+    transform: rotate(-5deg) translate3d(-25%, -10%, 0);
+    opacity: 0;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+}
+
+@keyframes blurText {
+  0% {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+
+  25% {
+    -webkit-transform: rotate(5deg) translate3d(45%, -10%, 0);
+    transform: rotate(5deg) translate3d(45%, -10%, 0);
+    opacity: 0;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+  }
+
+  50% {
+    -webkit-transform: rotate(-5deg) translate3d(-25%, -10%, 0);
+    transform: rotate(-5deg) translate3d(-25%, -10%, 0);
+    opacity: 0;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+    opacity: 1;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+  }
+}
+
 .consultation {
   position: relative;
   background: #241D3D url("../images/consultation-bg.jpg") no-repeat center;
   -webkit-background-size: cover;
   background-size: cover;
-}
-
-.consultation:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3000vw;
-  height: 100%;
-  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png") repeat-x;
-  -webkit-background-size: contain;
-  background-size: contain;
-  background-position: center;
-  -webkit-animation: marquee 700s linear infinite;
-  animation: marquee 700s linear infinite;
-  opacity: 0.8;
-}
-
-.consultation:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid solid none;
-  border-width: 30px 25px;
-  border-color: #FFF transparent;
-  left: 50%;
-  top: 0;
-  position: absolute;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.consultation .content {
-  position: relative;
-}
-
-.consultation .title {
-  text-align: center;
-  color: #FFF;
-  font-family: "Yeseva One", cursive;
-  margin-bottom: 25px;
-  letter-spacing: 0.025em;
 }
 
 .consultation .text {
@@ -1565,6 +1589,7 @@ textarea {
   pointer-events: none;
 }
 
+.modal:not(.active) .support-form,
 .modal:not(.active) .search-form {
   -webkit-transform: scale(1.15);
   -ms-transform: scale(1.15);
@@ -2963,8 +2988,62 @@ textarea {
     margin-bottom: 70px;
   }
 
+  .consultation:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3000vw;
+    height: 100%;
+    background: url("../images/fog-bg.png") repeat-x;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center;
+    -webkit-animation: marquee 700s linear infinite;
+    animation: marquee 700s linear infinite;
+    opacity: 0.8;
+  }
+
+  .consultation:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid solid none;
+    border-width: 30px 25px;
+    border-color: #FFF transparent;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .consultation .content {
+    position: relative;
+  }
+
   .consultation .title {
-    font-size: 13.296rem;
+    text-align: center;
+    color: #FFF;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "Yeseva One", cursive;
+    margin-bottom: 25px;
+    letter-spacing: 0.025em;
+  }
+
+  .consultation .title span {
+    will-change: transform;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
   }
 
   .subscription {
@@ -4025,15 +4104,6 @@ textarea {
     height: 15px;
   }
 
-  .consultation {
-    padding: 40px 0;
-    margin-bottom: 40px;
-  }
-
-  .consultation .title {
-    font-size: 4.155rem;
-  }
-
   .subscription {
     padding: 40px 0;
   }
@@ -4725,15 +4795,6 @@ textarea {
     transform: translateX(-10px);
   }
 
-  .consultation {
-    padding: 60px 0 80px;
-    margin-bottom: 60px;
-  }
-
-  .consultation .title {
-    font-size: 6.925rem;
-  }
-
   .subscription {
     padding: 60px 0;
   }
@@ -4783,6 +4844,84 @@ textarea {
   .sharing .ico {
     width: 40px;
     height: 40px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (min-width: 768px) and (max-width: 1024px) {
+  .consultation {
+    padding: 60px 0 80px;
+    margin-bottom: 60px;
+  }
+
+  .consultation {
+    font-size: 6.925rem;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 767px) {
+  .consultation {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+
+  .consultation {
+    font-size: 4.155rem;
+  }
+}
+
+@media screen and (min-width: 1025px) and (min-width: 1025px) {
+  .consultation .title {
+    font-size: 13.296rem;
+  }
+
+  .consultation .title:hover span {
+    -webkit-animation: blurText 3s linear forwards;
+    animation: blurText 3s linear forwards;
+  }
+
+  .consultation .title:hover span:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+
+  .consultation .title:hover span:nth-child(2) {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+
+  .consultation .title:hover span:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+
+  .consultation .title:hover span:nth-child(4) {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+  }
+
+  .consultation .title:hover span:nth-child(5) {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+  }
+
+  .consultation .title:hover span:nth-child(6) {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+
+  .consultation .title:hover span:nth-child(7) {
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+  }
+
+  .consultation .title:hover span:nth-child(8) {
+    -webkit-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+  }
+
+  .consultation .title:hover span:nth-child(9) {
+    -webkit-animation-delay: 2.4s;
+    animation-delay: 2.4s;
   }
 }
 
