@@ -1,9 +1,9 @@
 @keyframes marquee {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-2900vw, 0, 0);
   }
   100% {
-    transform: translate3d(-2900vw, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -23,7 +23,7 @@
     opacity: 0;
     filter: blur(20px);
   }
-  75% {
+  65% {
     transform: rotate(0deg) translate3d(0, 0, 0);
     opacity: 1;
     filter: blur(1px);
@@ -89,19 +89,17 @@
       }
       @include media(hover, 1025) {
         font-size: $px*48rem;
-        &:hover {
-          span {
-            animation: blurText 3s linear forwards;
-            &:nth-child(1) {animation-delay: 0s;}
-            &:nth-child(2) {animation-delay: 0.3s;}
-            &:nth-child(3) {animation-delay: 0.6s;}
-            &:nth-child(4) {animation-delay: 0.9s;}
-            &:nth-child(5) {animation-delay: 1.2s;}
-            &:nth-child(6) {animation-delay: 1.5s;}
-            &:nth-child(7) {animation-delay: 1.8s;}
-            &:nth-child(8) {animation-delay: 2.1s;}
-            &:nth-child(9) {animation-delay: 2.4s;}
-          }
+        span {
+          animation: blurText 6s linear infinite;
+          &:nth-child(1) {animation-delay: 0s;}
+          &:nth-child(2) {animation-delay: 0.3s;}
+          &:nth-child(3) {animation-delay: 0.6s;}
+          &:nth-child(4) {animation-delay: 0.9s;}
+          &:nth-child(5) {animation-delay: 1.2s;}
+          &:nth-child(6) {animation-delay: 1.5s;}
+          &:nth-child(7) {animation-delay: 1.8s;}
+          &:nth-child(8) {animation-delay: 2.1s;}
+          &:nth-child(9) {animation-delay: 2.4s;}
         }
       }
     }

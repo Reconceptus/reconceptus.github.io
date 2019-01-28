@@ -1263,25 +1263,25 @@ textarea {
 
 @-webkit-keyframes marquee {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(-2900vw, 0, 0);
+    transform: translate3d(-2900vw, 0, 0);
   }
 
   100% {
-    -webkit-transform: translate3d(-2900vw, 0, 0);
-    transform: translate3d(-2900vw, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes marquee {
   0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(-2900vw, 0, 0);
+    transform: translate3d(-2900vw, 0, 0);
   }
 
   100% {
-    -webkit-transform: translate3d(-2900vw, 0, 0);
-    transform: translate3d(-2900vw, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -1310,7 +1310,7 @@ textarea {
     filter: blur(20px);
   }
 
-  75% {
+  65% {
     -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
     transform: rotate(0deg) translate3d(0, 0, 0);
     opacity: 1;
@@ -1344,7 +1344,7 @@ textarea {
     filter: blur(20px);
   }
 
-  75% {
+  65% {
     -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
     transform: rotate(0deg) translate3d(0, 0, 0);
     opacity: 1;
@@ -4874,52 +4874,52 @@ textarea {
     font-size: 13.296rem;
   }
 
-  .consultation .title:hover span {
-    -webkit-animation: blurText 3s linear forwards;
-    animation: blurText 3s linear forwards;
+  .consultation .title span {
+    -webkit-animation: blurText 6s linear infinite;
+    animation: blurText 6s linear infinite;
   }
 
-  .consultation .title:hover span:nth-child(1) {
+  .consultation .title span:nth-child(1) {
     -webkit-animation-delay: 0s;
     animation-delay: 0s;
   }
 
-  .consultation .title:hover span:nth-child(2) {
+  .consultation .title span:nth-child(2) {
     -webkit-animation-delay: 0.3s;
     animation-delay: 0.3s;
   }
 
-  .consultation .title:hover span:nth-child(3) {
+  .consultation .title span:nth-child(3) {
     -webkit-animation-delay: 0.6s;
     animation-delay: 0.6s;
   }
 
-  .consultation .title:hover span:nth-child(4) {
+  .consultation .title span:nth-child(4) {
     -webkit-animation-delay: 0.9s;
     animation-delay: 0.9s;
   }
 
-  .consultation .title:hover span:nth-child(5) {
+  .consultation .title span:nth-child(5) {
     -webkit-animation-delay: 1.2s;
     animation-delay: 1.2s;
   }
 
-  .consultation .title:hover span:nth-child(6) {
+  .consultation .title span:nth-child(6) {
     -webkit-animation-delay: 1.5s;
     animation-delay: 1.5s;
   }
 
-  .consultation .title:hover span:nth-child(7) {
+  .consultation .title span:nth-child(7) {
     -webkit-animation-delay: 1.8s;
     animation-delay: 1.8s;
   }
 
-  .consultation .title:hover span:nth-child(8) {
+  .consultation .title span:nth-child(8) {
     -webkit-animation-delay: 2.1s;
     animation-delay: 2.1s;
   }
 
-  .consultation .title:hover span:nth-child(9) {
+  .consultation .title span:nth-child(9) {
     -webkit-animation-delay: 2.4s;
     animation-delay: 2.4s;
   }
