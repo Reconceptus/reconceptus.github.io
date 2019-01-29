@@ -1973,6 +1973,58 @@ textarea {
   margin-bottom: 40px;
 }
 
+.comment-box .comment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.comment-box .comment-ava {
+  width: 64px;
+  height: 64px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: "Yeseva One", cursive;
+  color: #8E899A;
+  margin-right: 20px;
+}
+
+.comment-box .comment-top-data {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  white-space: nowrap;
+  color: #8E899A;
+  font-size: 16px;
+}
+
 .comment-content {
   margin: 0 auto;
   padding: 0 25px;
@@ -1984,6 +2036,10 @@ textarea {
 
 .comment-content .label:not(:last-child) {
   margin-bottom: 25px;
+}
+
+.comment-content .parent > .sub-menu {
+  padding-left: 84px;
 }
 
 .article-listing .title {
