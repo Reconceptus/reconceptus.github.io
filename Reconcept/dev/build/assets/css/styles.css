@@ -2604,7 +2604,7 @@ textarea {
   right: 0;
   bottom: 0;
   background-color: #932064;
-  width: 10px;
+  width: 0;
   position: absolute;
   -webkit-transition: all 0.25s;
   -o-transition: all 0.25s;
@@ -4550,6 +4550,10 @@ textarea {
     padding: 80px 0;
   }
 
+  .text-box--wrap.md-size {
+    padding-top: 25px;
+  }
+
   .text-box--aside {
     width: calc(100% - 890px);
     max-width: 260px;
@@ -4699,6 +4703,10 @@ textarea {
 
   .text-box--wrap {
     padding: 105px 0;
+  }
+
+  .text-box--wrap.md-size {
+    padding-top: 45px;
   }
 
   .text-box--aside {
@@ -4877,6 +4885,10 @@ textarea {
 
   .text-box--wrap {
     padding: 40px 0;
+  }
+
+  .text-box--wrap.md-size {
+    padding-top: 0;
   }
 
   .text-box--layout {
@@ -5296,6 +5308,10 @@ textarea {
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   .text-box--wrap {
     padding: 60px 0;
+  }
+
+  .text-box--wrap.md-size {
+    padding-top: 15px;
   }
 
   .text-box--aside {
