@@ -160,6 +160,20 @@
       }
     }
   }
+  .notification {
+    background-color: #ffeeda;
+
+    font-size: $px*3.36rem;
+    font-weight: 600;
+    @include media(hover, 768) {
+      padding: $padding 40px;
+      margin-bottom: $padding;
+    }
+    @include media(screen, 767) {
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+  }
   .pagination {
     margin-top: 20px;
   }

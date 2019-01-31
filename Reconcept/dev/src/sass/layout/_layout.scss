@@ -32,4 +32,15 @@
   &-main-part {
     width: 100%;
   }
+  &-notify-part {
+    width: 100%;
+    @include media(hover,1381){
+      max-width: calc(100% - 280px);
+      margin-left: auto;
+    }
+    @include breakpoints(1025,1380){
+      max-width: calc(100% - 195px);
+      margin-left: auto;
+    }
+  }
 }

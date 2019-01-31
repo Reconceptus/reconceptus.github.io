@@ -52,11 +52,11 @@
   .title {
     color: #2c2341;
     font-family: $font-yeseva;
-
+    line-height: 1.2;
     font-weight: 500;
     @include media(hover,1025){
       font-size: $px*11.52rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     @include breakpoints(768,1024){
       font-size: $px*8rem;

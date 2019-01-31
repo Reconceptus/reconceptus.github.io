@@ -782,6 +782,7 @@ svg {
 .sidebar .title {
   color: #2C2341;
   font-family: "Yeseva One", cursive;
+  line-height: 1.2;
   font-weight: 500;
 }
 
@@ -880,6 +881,10 @@ svg {
 }
 
 .page-main-part {
+  width: 100%;
+}
+
+.page-notify-part {
   width: 100%;
 }
 
@@ -1438,6 +1443,7 @@ textarea {
 }
 
 .consultation {
+  overflow: hidden;
   position: relative;
   background: #241D3D url("../images/consultation-bg.jpg") no-repeat center;
   -webkit-background-size: cover;
@@ -2400,6 +2406,12 @@ textarea {
   height: 20px;
 }
 
+.blog .notification {
+  background-color: #FFEEDA;
+  font-size: 0.93072rem;
+  font-weight: 600;
+}
+
 .blog .pagination {
   margin-top: 20px;
 }
@@ -3030,7 +3042,7 @@ textarea {
 
   .sidebar .title {
     font-size: 3.19104rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   .sidebar .search {
@@ -4328,6 +4340,11 @@ textarea {
     padding: 20px 0;
   }
 
+  .blog .notification {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
   .portfolio-categories {
     white-space: nowrap;
     overflow: auto;
@@ -4575,6 +4592,11 @@ textarea {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+  }
+
+  .page-notify-part {
+    max-width: calc(100% - 280px);
+    margin-left: auto;
   }
 
   .text-section--main.large {
@@ -4919,6 +4941,11 @@ textarea {
     flex-shrink: 0;
   }
 
+  .page-notify-part {
+    max-width: calc(100% - 195px);
+    margin-left: auto;
+  }
+
   .text-section--main.large {
     padding-bottom: 40px;
   }
@@ -5143,6 +5170,11 @@ textarea {
     width: calc(25% - 25px);
     background-color: #1E1435;
     height: 2px;
+  }
+
+  .blog .notification {
+    padding: 25px 40px;
+    margin-bottom: 25px;
   }
 
   .portfolio-grid ul {
