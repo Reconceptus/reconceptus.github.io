@@ -1,0 +1,50 @@
+.inline-support {
+  @include media(hover,1025){
+    margin-bottom: 140px;
+  }
+  @include media(screen,1024){
+    margin-bottom: 60px;
+  }
+  background-color: $grey_light;
+  .title {
+    text-transform: uppercase;
+    font-size: $px*3.35rem;
+    letter-spacing: 1px;
+    text-align: center;
+    @include media(hover,1025){
+      margin-bottom: 60px;
+    }
+    @include breakpoints(681,1024){
+      margin-bottom: 50px;
+    }
+    @include media(screen,680){
+      margin-bottom: 40px;
+    }
+  }
+  .support-form {
+    background-color: #c5c3cb;
+    position: relative;
+    @include media(hover, 1025) {
+      padding: 80px 0 80px 0;
+    }
+    @include breakpoints(768, 1024) {
+      padding: 80px 0 80px;
+    }
+    @include media(screen, 767) {
+      padding: 60px 0 40px 0;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid solid none;
+      border-width: 30px 25px;
+      border-color: $grey_light transparent;
+      left: 50%;
+      top: 0;
+      position: absolute;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+  }
+}

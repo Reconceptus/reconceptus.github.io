@@ -38,79 +38,78 @@
   @include media(hover, 1025) {
     padding: 75px 0 105px;
     margin-bottom: 70px;
-
-    @include breakpoints(768, 1024) {
-      padding: 60px 0 80px;
-      margin-bottom: 60px;
+  }
+  @include breakpoints(768, 1024) {
+    padding: 60px 0 80px;
+    margin-bottom: 60px;
+  }
+  @include media(screen, 767) {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3000vw;
+    height: 100%;
+    background: url('../images/fog-bg.png') repeat-x;
+    background-size: contain;
+    background-position: center;
+    animation: marquee 700s linear infinite;
+    opacity: 0.8;
+  }
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid solid none;
+    border-width: 30px 25px;
+    border-color: $white transparent;
+    left: 50%;
+    top: 0;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .content {
+    position: relative;
+  }
+  .title {
+    text-align: center;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    font-family: $font-yeseva;
+    margin-bottom: $padding;
+    letter-spacing: 0.025em;
+    span {
+      will-change: transform;
+      backface-visibility: visible;
     }
-    @include media(screen, 767) {
-      padding: 40px 0;
-      margin-bottom: 40px;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3000vw;
-      height: 100%;
-      background: url('../images/fog-bg.png') repeat-x;
-      background-size: contain;
-      background-position: center;
-      animation: marquee 700s linear infinite;
-      opacity: 0.8;
-    }
-    &:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border-style: solid solid none;
-      border-width: 30px 25px;
-      border-color: $white transparent;
-      left: 50%;
-      top: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      z-index: 1;
-    }
-    .content {
-      position: relative;
-    }
-    .title {
-      text-align: center;
-      color: $white;
-      display: flex;
-      justify-content: center;
-      font-family: $font-yeseva;
-      margin-bottom: $padding;
-      letter-spacing: 0.025em;
+    @include media(hover, 1025) {
+      font-size: $px*48rem;
       span {
-        will-change: transform;
-        backface-visibility: visible;
-      }
-      @include media(hover, 1025) {
-        font-size: $px*48rem;
-        span {
-          animation: blurText 6s linear infinite;
-          &:nth-child(1) {animation-delay: 0s;}
-          &:nth-child(2) {animation-delay: 0.3s;}
-          &:nth-child(3) {animation-delay: 0.6s;}
-          &:nth-child(4) {animation-delay: 0.9s;}
-          &:nth-child(5) {animation-delay: 1.2s;}
-          &:nth-child(6) {animation-delay: 1.5s;}
-          &:nth-child(7) {animation-delay: 1.8s;}
-          &:nth-child(8) {animation-delay: 2.1s;}
-          &:nth-child(9) {animation-delay: 2.4s;}
-        }
+        animation: blurText 6s linear infinite;
+        &:nth-child(1) {animation-delay: 0s;}
+        &:nth-child(2) {animation-delay: 0.3s;}
+        &:nth-child(3) {animation-delay: 0.6s;}
+        &:nth-child(4) {animation-delay: 0.9s;}
+        &:nth-child(5) {animation-delay: 1.2s;}
+        &:nth-child(6) {animation-delay: 1.5s;}
+        &:nth-child(7) {animation-delay: 1.8s;}
+        &:nth-child(8) {animation-delay: 2.1s;}
+        &:nth-child(9) {animation-delay: 2.4s;}
       }
     }
-    @include breakpoints(768, 1024) {
-      font-size: $px*25rem;
-    }
+  }
+  @include breakpoints(768, 1024) {
+    font-size: $px*25rem;
+  }
 
-    @include media(screen, 767) {
-      font-size: $px*15rem;
-    }
+  @include media(screen, 767) {
+    font-size: $px*15rem;
   }
   .text {
     color: $white;

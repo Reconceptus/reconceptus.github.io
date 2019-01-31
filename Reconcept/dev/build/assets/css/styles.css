@@ -1454,6 +1454,64 @@ textarea {
   background-size: cover;
 }
 
+.consultation:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3000vw;
+  height: 100%;
+  background: url("../images/fog-bg.png") repeat-x;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  -webkit-animation: marquee 700s linear infinite;
+  animation: marquee 700s linear infinite;
+  opacity: 0.8;
+}
+
+.consultation:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid solid none;
+  border-width: 30px 25px;
+  border-color: #FFF transparent;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.consultation .content {
+  position: relative;
+}
+
+.consultation .title {
+  text-align: center;
+  color: #FFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Yeseva One", cursive;
+  margin-bottom: 25px;
+  letter-spacing: 0.025em;
+}
+
+.consultation .title span {
+  will-change: transform;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
 .consultation .text {
   color: #FFF;
   font-size: 1.19664rem;
@@ -2173,6 +2231,38 @@ textarea {
 
 .comment-content .comment-form {
   margin-bottom: 40px;
+}
+
+.inline-support {
+  background-color: #F6F6F6;
+}
+
+.inline-support .title {
+  text-transform: uppercase;
+  font-size: 0.92795rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.inline-support .support-form {
+  background-color: #C5C3CB;
+  position: relative;
+}
+
+.inline-support .support-form:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid solid none;
+  border-width: 30px 25px;
+  border-color: #F6F6F6 transparent;
+  left: 50%;
+  top: 0;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .article-listing .title {
@@ -3004,6 +3094,66 @@ textarea {
   animation-delay: 0.95s;
 }
 
+.contact-layout {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0 75px;
+}
+
+.contact-sidebar {
+  font-size: 1.19664rem;
+}
+
+.contact-sidebar .links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  font-weight: 700;
+}
+
+.contact-sidebar .item {
+  color: inherit;
+  margin-bottom: 25px;
+}
+
+.contact-sidebar .text {
+  line-height: 1.5;
+}
+
+.contact-main {
+  font-size: 1.06368rem;
+}
+
+.contact-main figure {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.contact-main figure img {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (min-width: 1025px) {
   .content {
     padding: 0 25px;
@@ -3216,62 +3366,58 @@ textarea {
     margin-bottom: 70px;
   }
 
-  .consultation:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3000vw;
-    height: 100%;
-    background: url("../images/fog-bg.png") repeat-x;
-    -webkit-background-size: contain;
-    background-size: contain;
-    background-position: center;
-    -webkit-animation: marquee 700s linear infinite;
-    animation: marquee 700s linear infinite;
-    opacity: 0.8;
-  }
-
-  .consultation:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid solid none;
-    border-width: 30px 25px;
-    border-color: #FFF transparent;
-    left: 50%;
-    top: 0;
-    position: absolute;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    z-index: 1;
-  }
-
-  .consultation .content {
-    position: relative;
-  }
-
   .consultation .title {
-    text-align: center;
-    color: #FFF;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-family: "Yeseva One", cursive;
-    margin-bottom: 25px;
-    letter-spacing: 0.025em;
+    font-size: 13.296rem;
   }
 
   .consultation .title span {
-    will-change: transform;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
+    -webkit-animation: blurText 6s linear infinite;
+    animation: blurText 6s linear infinite;
+  }
+
+  .consultation .title span:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+
+  .consultation .title span:nth-child(2) {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+  }
+
+  .consultation .title span:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+
+  .consultation .title span:nth-child(4) {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+  }
+
+  .consultation .title span:nth-child(5) {
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+  }
+
+  .consultation .title span:nth-child(6) {
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+  }
+
+  .consultation .title span:nth-child(7) {
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+  }
+
+  .consultation .title span:nth-child(8) {
+    -webkit-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+  }
+
+  .consultation .title span:nth-child(9) {
+    -webkit-animation-delay: 2.4s;
+    animation-delay: 2.4s;
   }
 
   .subscription {
@@ -3408,6 +3554,18 @@ textarea {
 
   .comment-content {
     width: 890px;
+  }
+
+  .inline-support {
+    margin-bottom: 140px;
+  }
+
+  .inline-support .title {
+    margin-bottom: 60px;
+  }
+
+  .inline-support .support-form {
+    padding: 80px 0 80px 0;
   }
 
   .article-listing {
@@ -3641,6 +3799,10 @@ textarea {
   .text-box--link .link-parts span {
     font-size: 5rem;
   }
+
+  .contact-sidebar a:hover {
+    color: #932064;
+  }
 }
 
 @media screen and (min-width: 681px) and (max-width: 1024px) {
@@ -3708,6 +3870,10 @@ textarea {
 
   .comment-box--main {
     padding: 50px 0 45px;
+  }
+
+  .inline-support .title {
+    margin-bottom: 50px;
   }
 
   .article-listing {
@@ -3959,6 +4125,10 @@ textarea {
     margin-left: -10px;
   }
 
+  .inline-support .title {
+    margin-bottom: 40px;
+  }
+
   .article-listing {
     padding: 50px 0 20px;
   }
@@ -4178,6 +4348,19 @@ textarea {
   .project-listing .listing .item-data {
     padding: 0 15px 0 25px;
   }
+
+  .contact-main .photo {
+    width: 50%;
+    margin-left: 25px;
+  }
+
+  .contact-main .photo:nth-child(2) {
+    margin-top: 120px;
+  }
+
+  .contact-main figcaption {
+    margin-top: 25px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -4356,6 +4539,10 @@ textarea {
     width: 100%;
     padding-top: 50%;
   }
+
+  .contact-main figcaption {
+    margin-top: 15px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -4497,6 +4684,15 @@ textarea {
     height: 15px;
   }
 
+  .consultation {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+
+  .consultation {
+    font-size: 4.155rem;
+  }
+
   .subscription {
     padding: 40px 0;
   }
@@ -4525,6 +4721,10 @@ textarea {
 
   .modal-header .logo img {
     width: 115px;
+  }
+
+  .inline-support .support-form {
+    padding: 60px 0 40px 0;
   }
 
   .article-listing .item-brief {
@@ -4556,6 +4756,29 @@ textarea {
 
   .portfolio .item-data {
     padding: 0 15px;
+  }
+
+  .contact-layout {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 20px 0 50px;
+  }
+
+  .contact-sidebar {
+    margin-bottom: 40px;
+  }
+
+  .contact-main .photo {
+    width: 100%;
+    margin-bottom: 25px;
+    max-width: 400px;
+  }
+
+  .contact-main .photo:nth-child(2) {
+    margin-left: auto;
   }
 }
 
@@ -4715,6 +4938,33 @@ textarea {
     width: 50vw;
     height: calc(100vh - 60px);
     padding: 40px 8%;
+  }
+
+  .contact-layout {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .contact-sidebar {
+    width: 50%;
+    padding-right: 10%;
+  }
+
+  .contact-main {
+    width: 50%;
+    padding-left: 25px;
+  }
+
+  .contact-main .photo {
+    width: 100%;
+    margin-bottom: 25px;
+    max-width: 65%;
+  }
+
+  .contact-main .photo:nth-child(2) {
+    margin-left: auto;
   }
 }
 
@@ -5075,6 +5325,10 @@ textarea {
     width: 100%;
   }
 
+  .inline-support {
+    margin-bottom: 60px;
+  }
+
   .article-listing .title {
     margin-bottom: 50px;
   }
@@ -5253,12 +5507,25 @@ textarea {
     transform: translateX(-10px);
   }
 
+  .consultation {
+    padding: 60px 0 80px;
+    margin-bottom: 60px;
+  }
+
+  .consultation {
+    font-size: 6.925rem;
+  }
+
   .subscription {
     padding: 60px 0;
   }
 
   .subscription .title {
     margin-bottom: 60px;
+  }
+
+  .inline-support .support-form {
+    padding: 80px 0 80px;
   }
 
   .portfolio .item-data {
@@ -5317,84 +5584,6 @@ textarea {
     height: 64px;
     font-size: 40px;
     margin-right: 20px;
-  }
-}
-
-@media screen and (min-width: 1025px) and (min-width: 768px) and (max-width: 1024px) {
-  .consultation {
-    padding: 60px 0 80px;
-    margin-bottom: 60px;
-  }
-
-  .consultation {
-    font-size: 6.925rem;
-  }
-}
-
-@media screen and (min-width: 1025px) and (max-width: 767px) {
-  .consultation {
-    padding: 40px 0;
-    margin-bottom: 40px;
-  }
-
-  .consultation {
-    font-size: 4.155rem;
-  }
-}
-
-@media screen and (min-width: 1025px) and (min-width: 1025px) {
-  .consultation .title {
-    font-size: 13.296rem;
-  }
-
-  .consultation .title span {
-    -webkit-animation: blurText 6s linear infinite;
-    animation: blurText 6s linear infinite;
-  }
-
-  .consultation .title span:nth-child(1) {
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-  }
-
-  .consultation .title span:nth-child(2) {
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-  }
-
-  .consultation .title span:nth-child(3) {
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-  }
-
-  .consultation .title span:nth-child(4) {
-    -webkit-animation-delay: 0.9s;
-    animation-delay: 0.9s;
-  }
-
-  .consultation .title span:nth-child(5) {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s;
-  }
-
-  .consultation .title span:nth-child(6) {
-    -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s;
-  }
-
-  .consultation .title span:nth-child(7) {
-    -webkit-animation-delay: 1.8s;
-    animation-delay: 1.8s;
-  }
-
-  .consultation .title span:nth-child(8) {
-    -webkit-animation-delay: 2.1s;
-    animation-delay: 2.1s;
-  }
-
-  .consultation .title span:nth-child(9) {
-    -webkit-animation-delay: 2.4s;
-    animation-delay: 2.4s;
   }
 }
 
@@ -5584,5 +5773,35 @@ textarea {
 @media screen and (min-width: 1025px) and (min-width: 1025px) and (max-width: 1510px) {
   .sharing.fixed {
     left: 50px;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .contact-sidebar {
+    width: 40%;
+    padding-right: 10%;
+  }
+
+  .contact-main {
+    width: 60%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .contact-sidebar {
+    width: 35%;
+    padding-right: 50px;
+  }
+
+  .contact-main {
+    width: 65%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
