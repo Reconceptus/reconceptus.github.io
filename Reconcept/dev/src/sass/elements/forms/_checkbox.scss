@@ -1,7 +1,8 @@
 .checkbox {
   display: flex;
   position: relative;
-  //cursor: pointer;
+  align-self: flex-start;
+  margin-right: auto;
   input {
     position: absolute;
     top: 0;

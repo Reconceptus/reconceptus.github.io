@@ -146,6 +146,10 @@
                 <div class="content content--lg">
                     <div class="comment-box--main">
                         <div class="comment-content">
+                            <div class="comment-box--head">
+                                <h3 class="comment-box--title">Комментарии (9)</h3>
+                                <button type="button" class="submit-sm"><span>Оставьте ваш комментарий</span></button>
+                            </div>
                             <ul class="main-menu">
                                 <li class="parent">
                                     <div class="comment">
@@ -160,47 +164,15 @@
                                             <div class="comment-text">В самом низу сделаем всегда открытую форму для комментирования. Обратите внимание на это новшество. Яндекс и Google отслеживают упоминания вашего бренда. Интенсивное его обсуждение в социальных сетях и на других сайтах позволяет поисковикам понять, что бренд растёт. Брендовый трафик — это чрезвычайно мощный импульс в SEO-продвижении сайта.
                                             </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Показать 10 ответов</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul class="sub-menu" style="display: none;">
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment-ava">
-                                                    <div class="letter">А</div>
-                                                </div>
-                                                <div class="comment-main-data">
-                                                    <div class="comment-top-data">
-                                                        <div class="comment-name">Вася Фамилия</div>
-                                                        <div class="comment-date">12 августа 2018, 15:00</div>
-                                                    </div>
-                                                    <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
-                                                    <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment-ava">
-                                                    <div class="letter">А</div>
-                                                </div>
-                                                <div class="comment-main-data">
-                                                    <div class="comment-top-data">
-                                                        <div class="comment-name">Сергей Фамилия</div>
-                                                        <div class="comment-date">12 августа 2018, 15:00</div>
-                                                    </div>
-                                                    <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
-                                                    <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <div class="comment-form">
+                                        <include src="../partials/comment.html"
+                                                 checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
+                                        ></include>
+                                    </div>
                                 </li>
                                 <li class="parent">
                                     <div class="comment">
@@ -214,8 +186,7 @@
                                             </div>
                                             <div class="comment-text">Здесь ниже открыта форма комментирования - нажали на кнопку “Ответить”. Поменялась надпись с “ответить” на “Отменить”. Цвет ховера - розовый 932064. Обратите внимание на это новшество. </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Свернуть</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
@@ -232,9 +203,14 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="comment-form">
+                                                <include src="../partials/comment.html"
+                                                         checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
+                                                ></include>
                                             </div>
                                         </li>
                                         <li>
@@ -249,7 +225,7 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -268,8 +244,7 @@
                                             </div>
                                             <div class="comment-text">Здесь ниже открыта форма комментирования - нажали на кнопку “Ответить”. Поменялась надпись с “ответить” на “Отменить”. Цвет ховера - розовый 932064. Обратите внимание на это новшество. </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Свернуть</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +261,7 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -303,9 +278,14 @@
                                                             </div>
                                                             <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                             <div class="comment-actions">
-                                                                <button type="button">Ответить</button>
+                                                                <button type="button" class="button">Ответить</button>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="comment-form">
+                                                        <include src="../partials/comment.html"
+                                                                 checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
+                                                        ></include>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -372,7 +352,14 @@
             <div class="comment-box">
                 <div class="content content--lg">
                     <div class="comment-box--main">
-                        <include src="../partials/comment.html"></include>
+                        <div class="comment-content">
+                            <div class="comment-form">
+                                <h4 class="comment-box--title">ОСТАВЬТЕ КОММЕНТАРИЙ ПЕРВЫМ!</h4>
+                                <include src="../partials/comment.html"
+                                         checkText="Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности."
+                                ></include>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

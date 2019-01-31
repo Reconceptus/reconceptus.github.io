@@ -296,6 +296,10 @@
                 <div class="content content--lg">
                     <div class="comment-box--main">
                         <div class="comment-content">
+                            <div class="comment-box--head">
+                                <h3 class="comment-box--title">Комментарии (9)</h3>
+                                <button type="button" class="submit-sm"><span>Оставьте ваш комментарий</span></button>
+                            </div>
                             <ul class="main-menu">
                                 <li class="parent">
                                     <div class="comment">
@@ -310,47 +314,39 @@
                                             <div class="comment-text">В самом низу сделаем всегда открытую форму для комментирования. Обратите внимание на это новшество. Яндекс и Google отслеживают упоминания вашего бренда. Интенсивное его обсуждение в социальных сетях и на других сайтах позволяет поисковикам понять, что бренд растёт. Брендовый трафик — это чрезвычайно мощный импульс в SEO-продвижении сайта.
                                             </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Показать 10 ответов</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul class="sub-menu" style="display: none;">
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment-ava">
-                                                    <div class="letter">А</div>
+                                    <div class="comment-form">
+                                        <form action="#">
+                                            <div class="input-box">
+                                                <div class="col-50 stretched">
+                                                    <label class="label">
+                                                        <textarea placeholder="Оставьте ваш комментарий"></textarea>
+                                                    </label>
                                                 </div>
-                                                <div class="comment-main-data">
-                                                    <div class="comment-top-data">
-                                                        <div class="comment-name">Вася Фамилия</div>
-                                                        <div class="comment-date">12 августа 2018, 15:00</div>
-                                                    </div>
-                                                    <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
-                                                    <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment-ava">
-                                                    <div class="letter">А</div>
-                                                </div>
-                                                <div class="comment-main-data">
-                                                    <div class="comment-top-data">
-                                                        <div class="comment-name">Сергей Фамилия</div>
-                                                        <div class="comment-date">12 августа 2018, 15:00</div>
-                                                    </div>
-                                                    <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
-                                                    <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
-                                                    </div>
+                                                <div class="col-50">
+                                                    <label class="label">
+                                                        <input type="text" placeholder="Имя">
+                                                    </label>
+                                                    <label class="label">
+                                                        <input type="text" placeholder="Ваш емейл (не будет опубликован)">
+                                                    </label>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                            <div class="input-box">
+                                                <label class="checkbox">
+                                                    <input type="checkbox" checked>
+                                                    <span class="checkbox-mark"></span>
+                                                    <span class="checkbox-text">
+                                                        Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                                                    </span>
+                                                </label>
+                                                <button class="submit-sm"><span>Опубликовать</span></button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </li>
                                 <li class="parent">
                                     <div class="comment">
@@ -364,8 +360,7 @@
                                             </div>
                                             <div class="comment-text">Здесь ниже открыта форма комментирования - нажали на кнопку “Ответить”. Поменялась надпись с “ответить” на “Отменить”. Цвет ховера - розовый 932064. Обратите внимание на это новшество. </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Свернуть</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
@@ -382,9 +377,38 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="comment-form">
+                                                <form action="#">
+                                                    <div class="input-box">
+                                                        <div class="col-50 stretched">
+                                                            <label class="label">
+                                                                <textarea placeholder="Оставьте ваш комментарий"></textarea>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-50">
+                                                            <label class="label">
+                                                                <input type="text" placeholder="Имя">
+                                                            </label>
+                                                            <label class="label">
+                                                                <input type="text" placeholder="Ваш емейл (не будет опубликован)">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-box">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox" checked>
+                                                            <span class="checkbox-mark"></span>
+                                                            <span class="checkbox-text">
+                                                                Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                                                            </span>
+                                                        </label>
+                                                        <button class="submit-sm"><span>Опубликовать</span></button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </li>
                                         <li>
@@ -399,7 +423,7 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -418,8 +442,7 @@
                                             </div>
                                             <div class="comment-text">Здесь ниже открыта форма комментирования - нажали на кнопку “Ответить”. Поменялась надпись с “ответить” на “Отменить”. Цвет ховера - розовый 932064. Обратите внимание на это новшество. </div>
                                             <div class="comment-actions">
-                                                <button type="button">Ответить</button>
-                                                <button type="button">Свернуть</button>
+                                                <button type="button" class="button">Ответить</button>
                                             </div>
                                         </div>
                                     </div>
@@ -436,7 +459,7 @@
                                                     </div>
                                                     <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                     <div class="comment-actions">
-                                                        <button type="button">Ответить</button>
+                                                        <button type="button" class="button">Ответить</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -453,9 +476,38 @@
                                                             </div>
                                                             <div class="comment-text">Откуда цифра в 3 млн за seo?</div>
                                                             <div class="comment-actions">
-                                                                <button type="button">Ответить</button>
+                                                                <button type="button" class="button">Ответить</button>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="comment-form">
+                                                        <form action="#">
+                                                            <div class="input-box">
+                                                                <div class="col-50 stretched">
+                                                                    <label class="label">
+                                                                        <textarea placeholder="Оставьте ваш комментарий"></textarea>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-50">
+                                                                    <label class="label">
+                                                                        <input type="text" placeholder="Имя">
+                                                                    </label>
+                                                                    <label class="label">
+                                                                        <input type="text" placeholder="Ваш емейл (не будет опубликован)">
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <label class="checkbox">
+                                                                    <input type="checkbox" checked>
+                                                                    <span class="checkbox-mark"></span>
+                                                                    <span class="checkbox-text">
+                                                                        Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                                                                    </span>
+                                                                </label>
+                                                                <button class="submit-sm"><span>Опубликовать</span></button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -631,34 +683,36 @@
                 <div class="content content--lg">
                     <div class="comment-box--main">
                         <div class="comment-content">
-                            <h4 class="comment-box--title">ОСТАВЬТЕ КОММЕНТАРИЙ ПЕРВЫМ!</h4>
-                            <form action="#">
-                                <div class="input-box">
-                                    <div class="col-50 stretched">
-                                        <label class="label">
-                                            <textarea placeholder="Оставьте ваше комментарий"></textarea>
-                                        </label>
+                            <div class="comment-form">
+                                <h4 class="comment-box--title">ОСТАВЬТЕ КОММЕНТАРИЙ ПЕРВЫМ!</h4>
+                                <form action="#">
+                                    <div class="input-box">
+                                        <div class="col-50 stretched">
+                                            <label class="label">
+                                                <textarea placeholder="Оставьте ваш комментарий"></textarea>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="label">
+                                                <input type="text" placeholder="Имя">
+                                            </label>
+                                            <label class="label">
+                                                <input type="text" placeholder="Ваш емейл (не будет опубликован)">
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="col-50">
-                                        <label class="label">
-                                            <input type="text" placeholder="Имя">
+                                    <div class="input-box">
+                                        <label class="checkbox">
+                                            <input type="checkbox" checked>
+                                            <span class="checkbox-mark"></span>
+                                            <span class="checkbox-text">
+                                                Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
+                                            </span>
                                         </label>
-                                        <label class="label">
-                                            <input type="text" placeholder="Ваш емейл (не будет опубликован)">
-                                        </label>
+                                        <button class="submit-sm"><span>Опубликовать</span></button>
                                     </div>
-                                </div>
-                                <div class="input-box">
-                                    <label class="checkbox">
-                                        <input type="checkbox" checked>
-                                        <span class="checkbox-mark"></span>
-                                        <span class="checkbox-text">
-                                            Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности.
-                                        </span>
-                                    </label>
-                                    <button class="submit-sm"><span>Опубликовать</span></button>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1095,6 +1095,10 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-right: auto;
 }
 
 .checkbox input {
@@ -2056,6 +2060,22 @@ textarea {
   background-color: #EFEEEE;
 }
 
+.comment-box--head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
 .comment-box--title {
   text-transform: uppercase;
   font-size: 0.93072rem;
@@ -2071,8 +2091,6 @@ textarea {
 }
 
 .comment-box .comment-ava {
-  width: 64px;
-  height: 64px;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -2091,11 +2109,9 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 40px;
   text-transform: uppercase;
   font-family: "Yeseva One", cursive;
   color: #8E899A;
-  margin-right: 20px;
 }
 
 .comment-box .comment-top-data {
@@ -2128,8 +2144,35 @@ textarea {
   margin-bottom: 25px;
 }
 
-.comment-content .parent > .sub-menu {
-  padding-left: 84px;
+.comment-content .comment {
+  margin-bottom: 35px;
+}
+
+.comment-content .comment-top-data {
+  font-size: 0.93072rem;
+  margin-bottom: 10px;
+}
+
+.comment-content .comment-name {
+  margin-right: 30px;
+}
+
+.comment-content .comment-text {
+  font-size: 1.06368rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.comment-content .comment-actions .button {
+  border: none;
+  background: none;
+  font-size: 0.93072rem;
+  color: #8E899A;
+  font-weight: 600;
+}
+
+.comment-content .comment-form {
+  margin-bottom: 40px;
 }
 
 .article-listing .title {
@@ -3631,6 +3674,14 @@ textarea {
     line-height: 40px;
   }
 
+  .comment-content input[type="text"] {
+    padding: 0 12px;
+  }
+
+  .comment-content textarea {
+    padding: 10px 12px;
+  }
+
   .submit:before {
     display: none;
   }
@@ -3744,8 +3795,27 @@ textarea {
     padding: 40px 0;
   }
 
+  .comment-box--head {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .comment-box--head .comment-box--title {
+    margin: 0 0 0 0;
+  }
+
   .comment-box--title {
     margin-bottom: 25px;
+  }
+
+  .comment-box .comment-ava {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 15px;
   }
 
   .comment-content {
@@ -3762,6 +3832,14 @@ textarea {
 
   .comment-content .label:not(:last-child) {
     margin-bottom: 15px;
+  }
+
+  .comment-content .parent > .sub-menu {
+    padding-left: 20px;
+  }
+
+  .comment-content .parent > .sub-menu .comment-form {
+    margin-left: -10px;
   }
 
   .article-listing {
@@ -5070,6 +5148,17 @@ textarea {
     width: 40px;
     height: 40px;
   }
+
+  .comment-box--head .comment-box--title {
+    margin: 0 30px 0 0;
+  }
+
+  .comment-box .comment-ava {
+    width: 64px;
+    height: 64px;
+    font-size: 40px;
+    margin-right: 20px;
+  }
 }
 
 @media screen and (min-width: 1025px) and (min-width: 768px) and (max-width: 1024px) {
@@ -5155,6 +5244,14 @@ textarea {
   .pagination span {
     width: 64px;
     height: 64px;
+  }
+
+  .comment-box--head .submit-sm {
+    padding: 0 160px;
+  }
+
+  .comment-content .parent > .sub-menu {
+    padding-left: 50px;
   }
 
   .blog .item-brief {
@@ -5309,6 +5406,10 @@ textarea {
   .text-box img.align-right {
     margin: 0 0 20px 20px !important;
     max-width: 40%;
+  }
+
+  .comment-content .parent > .sub-menu {
+    padding-left: 30px;
   }
 }
 
