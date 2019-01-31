@@ -92,4 +92,11 @@ input[type="text"] {
     padding: 0 $padding;
     border-bottom: 1px solid currentColor;
   }
+  .subscribe-form & {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 $padding;
+    background-color: #eee;
+    border-bottom: 1px solid $violet;
+  }
 }

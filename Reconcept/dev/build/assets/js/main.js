@@ -102,14 +102,17 @@ project.headerFixed = function(){
 
     if(scrollTop <= 80){
         $header.removeClass('simple-header');
+        $('.sidebar').length > 0 ? $('.sidebar').removeClass('subscribe-bar') : '';
         scrollVar = 0;
     }
     else if(scrollTop > scrollVar){
         $header.addClass('simple-header');
+        $('.sidebar').length > 0 ? $('.sidebar').removeClass('subscribe-bar') : '';
         scrollVar = scrollTop;
     }
     else {
         $header.removeClass('simple-header');
+        $('.sidebar').length > 0 ? $('.sidebar').addClass('subscribe-bar') : '';
         scrollVar = scrollTop;
     }
 };
@@ -192,13 +195,15 @@ project.searchReset = function(){
      ============= fixing aside
     */
 
-project.fixingAside = function(box,boxParent,boxParentHeight){
+project.fixingAside = function(box,boxParent,boxParentHeight,diff){
+
+    var difference = diff > 0 ? diff : 0;
 
     var $boxOffset = boxParent.offset().top,
         $boxHeight = box.height(),
         maxShareScroll = $boxOffset + boxParentHeight - $boxHeight;
 
-    if(scrollTop < $boxOffset){
+    if(scrollTop < $boxOffset - difference){
         box.removeClass('fixed bottom');
     }
     else if(scrollTop > maxShareScroll){
@@ -272,9 +277,9 @@ project.stickySidebar = function(){
         $sidebarBox = $sidebar.closest('.page-layout'),
         $sidebarBoxHeight = $sidebarBox.height();
 
-    project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight);
+    project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight,110);
     $(window).scroll(function (e) {
-        project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight);
+        project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight,110);
     });
 
 };
