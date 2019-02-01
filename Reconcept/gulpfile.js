@@ -218,10 +218,7 @@ gulp.task('watch', ['svg', 'img', 'builder:css', 'builder:html', 'builder:js', '
 
 /* scr build task */
 
-gulp.task('build',function () {
-    gulp.run('build:js');
-    gulp.run('build:css');
-});
+gulp.task('build',['build:js','build:css']);
 
 /* dafault tasks */
 
