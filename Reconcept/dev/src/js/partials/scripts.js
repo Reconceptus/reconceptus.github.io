@@ -113,6 +113,12 @@ $(document).ready(function () {
     $(window).scroll(function (e) {
         scrollTop = $(window).scrollTop();
         project.headerFixed();
+        if($('.sharing').length > 0){
+            project.stickySharing();
+        }
+        if($('.sidebar').length > 0){
+            project.stickySidebar();
+        }
     });
 
 });

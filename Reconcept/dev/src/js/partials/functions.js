@@ -142,9 +142,6 @@ project.stickySharing = function(){
         $shareBoxHeight = $shareBox.height();
 
     project.fixingAside($sharing,$shareBox,$shareBoxHeight);
-    $(window).scroll(function (e) {
-        project.fixingAside($sharing,$shareBox,$shareBoxHeight);
-    });
 
 };
 
@@ -193,10 +190,6 @@ project.stickySidebar = function(){
         $sidebarBoxHeight = $sidebarBox.height();
 
     project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight,110);
-    $(window).scroll(function (e) {
-        project.fixingAside($sidebar,$sidebarBox,$sidebarBoxHeight,110);
-    });
-
 };
 
 
