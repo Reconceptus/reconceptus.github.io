@@ -84,7 +84,6 @@
 
       }
       .item-img {
-        //transform: scale(1.03);
         transform: scale(0.98) rotateX(-3deg);
         &:after {
           opacity: 1;
@@ -140,31 +139,19 @@
       }
     }
     &-brief {
-
       display: flex;
       align-items: center;
-
-
       overflow: hidden;
-
       @include media(hover,1025){
         font-weight: 700;
         height: 64px;
       }
-      @include media(screen,1024){
-        background-color: rgba($violet_dark,0.6);
-        color: $white;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        min-height: 64px;
-      }
+
     }
     &-arrow {
       transition: all 0.5s;
       @include media(hover,1025){
+        flex-shrink: 0;
         width: 10px;
         height: 3px;
         border-radius: 2px;
