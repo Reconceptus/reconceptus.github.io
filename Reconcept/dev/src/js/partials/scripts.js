@@ -55,6 +55,15 @@ $(document).ready(function () {
     });
 
     /*
+    ============= add class on load
+    */
+
+    setTimeout(function () {
+        $('body').addClass('loaded-body');
+    },300);
+
+
+    /*
      ============= document click events
     */
 
@@ -93,6 +102,9 @@ $(document).ready(function () {
     }
     if($('.file').length > 0){
         project.fileInput();
+    }
+    if($('.rotate-box').length > 0){
+        project.rotateImg();
     }
     if($('.text-box').length > 0){
         project.textParsing();
