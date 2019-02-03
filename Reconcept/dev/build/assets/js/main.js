@@ -81,6 +81,12 @@ $("a, button, input, textarea, select, label").hover(function (e) {
 }, function (e) {
     $(".cursor").removeClass("overlink");
 });
+$("a, button, input, textarea, select, label").click(function (e) {
+    $(".cursor").addClass("clicked");
+    setTimeout(function () {
+        $(".cursor").removeClass("clicked");
+    },1000)
+});
 
 // functions
 var project = {},

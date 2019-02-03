@@ -233,6 +233,46 @@ select {
   cursor: none !important;
 }
 
+@-webkit-keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.5;
+    -webkit-box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 5px #F9C582;
+    box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 5px #F9C582;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 8px #F9C582;
+    box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 8px #F9C582;
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sonarEffect {
+  0% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.5;
+    -webkit-box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 5px #F9C582;
+    box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 5px #F9C582;
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 8px #F9C582;
+    box-shadow: 0 0 0 2px RGBA(255, 255, 255, 0.1), 0 0 10px 8px #F9C582;
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+
 .cursor {
   z-index: 10000000000000;
   position: fixed;
@@ -247,9 +287,28 @@ select {
   top: 0;
   left: 0;
   pointer-events: none;
-  -webkit-transition: width 0.35s ease, height 0.35s ease;
-  -o-transition: width 0.35s ease, height 0.35s ease;
-  transition: width 0.35s ease, height 0.35s ease;
+  -webkit-transition: width 0.35s ease, height 0.35s ease, -webkit-transform 0.1s;
+  transition: width 0.35s ease, height 0.35s ease, -webkit-transform 0.1s;
+  -o-transition: width 0.35s ease, height 0.35s ease, transform 0.1s;
+  transition: width 0.35s ease, height 0.35s ease, transform 0.1s;
+  transition: width 0.35s ease, height 0.35s ease, transform 0.1s, -webkit-transform 0.1s;
+}
+
+.cursor:after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.cursor.clicked:after {
+  -webkit-animation: sonarEffect 0.8s linear 0.05s;
+  animation: sonarEffect 0.8s linear 0.05s;
 }
 
 .mobile .cursor,
@@ -261,6 +320,16 @@ select {
   width: 32px;
   height: 32px;
   background-color: #F9C582 !important;
+}
+
+.cursor.clicked {
+  width: 26px;
+  height: 26px;
+  -webkit-transition: width 0.2s ease, height 0.2s ease, -webkit-transform 0.2s;
+  transition: width 0.2s ease, height 0.2s ease, -webkit-transform 0.2s;
+  -o-transition: width 0.2s ease, height 0.2s ease, transform 0.2s;
+  transition: width 0.2s ease, height 0.2s ease, transform 0.2s;
+  transition: width 0.2s ease, height 0.2s ease, transform 0.2s, -webkit-transform 0.2s;
 }
 
 /*.overtext {*/
