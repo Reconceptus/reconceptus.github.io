@@ -94,7 +94,6 @@
       background-color: transparent;
       border: none;
       margin: 0 $padding;
-
       transition: all 0.25s;
       text-align: center;
       @include hover(){
@@ -108,6 +107,20 @@
       }
       @include breakpoints(1201,1380){
         width: 75px;
+      }
+      &:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        @include media(hover,1201){
+          width: 130px;
+          height: 100vh;
+        }
+        @include media(screen,1200){
+          width: 60px;
+          height: 60px;
+        }
       }
     }
   }

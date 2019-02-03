@@ -1880,6 +1880,13 @@ textarea {
   color: #1E1435;
 }
 
+.modal-header .close:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 .modal-form {
   -webkit-transition: all 0.25s;
   -o-transition: all 0.25s;
@@ -4570,6 +4577,11 @@ textarea {
     opacity: 0;
   }
 
+  .modal-header .close:before {
+    width: 130px;
+    height: 100vh;
+  }
+
   .text-box--layout.first-info {
     padding-top: 55px;
   }
@@ -4957,6 +4969,11 @@ textarea {
 
   .modal-header .content {
     padding: 0;
+  }
+
+  .modal-header .close:before {
+    width: 60px;
+    height: 60px;
   }
 
   .text-box--layout.first-info {
