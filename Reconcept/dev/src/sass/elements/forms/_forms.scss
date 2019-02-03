@@ -43,3 +43,22 @@
     }
   }
 }
+
+.form-fieldset {
+  position: relative;
+  .form {
+    .successful & {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.form-success {
+  opacity: 0;
+  pointer-events: none;
+  .successful & {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

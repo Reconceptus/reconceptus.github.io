@@ -1,0 +1,29 @@
+<!-- blog subscribe validate -->
+
+<script>
+
+    $('.subscribe-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            mail: {required: true}
+        },
+        messages: {
+            mail: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.input-box').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.input-box').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function () {
+            $('.subscribe-form').addClass('successful');
+
+            return false;
+        }
+    })
+
+</script>

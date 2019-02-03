@@ -1,0 +1,35 @@
+<!-- support validate -->
+
+<script>
+
+    $('.support-modal .support-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            name: {required: true},
+            address: {required: true},
+            message: {required: true},
+            approve: {required: true}
+        },
+        messages: {
+            name: {required: ""},
+            address: {required: ""},
+            message: {required: ""},
+            approve: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.input-box').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.input-box').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function () {
+            $('.support-modal .support-form').addClass('successful');
+
+            return false;
+        }
+    })
+
+</script>

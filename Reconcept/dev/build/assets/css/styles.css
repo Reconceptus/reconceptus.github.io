@@ -429,7 +429,11 @@ select {
 
 .invalid input,
 .invalid textarea {
-  background-color: #FF807D;
+  background-color: #FF807D !important;
+}
+
+.invalid .checkbox-mark {
+  background-color: #FF807D !important;
 }
 
 ::-webkit-input-placeholder {
@@ -927,6 +931,15 @@ svg {
 .sidebar .subscribe-text {
   margin-top: 10px;
   font-size: 0.93072rem;
+}
+
+.sidebar .subscribe .form-success {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .sidebar-modules {
@@ -1433,6 +1446,25 @@ textarea {
   height: 100%;
 }
 
+.form-fieldset {
+  position: relative;
+}
+
+.successful .form-fieldset .form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-success {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.successful .form-success {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @-webkit-keyframes marquee {
   0% {
     -webkit-transform: translate3d(-2900vw, 0, 0);
@@ -1597,6 +1629,19 @@ textarea {
   margin-bottom: 40px;
 }
 
+.consultation .form-success {
+  color: #FFF;
+  font-size: 1.2465rem;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 .subscription ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: inherit;
@@ -1641,6 +1686,28 @@ textarea {
   top: 100%;
   height: 1px;
   background-color: #932064;
+}
+
+.subscription .form-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Yeseva One", cursive;
+  font-size: 2.216rem;
 }
 
 .pagination {
@@ -1922,6 +1989,32 @@ textarea {
   max-height: 100%;
 }
 
+.modal-form .form-success {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .text-box {
   line-height: 1.64;
   font-weight: 400;
@@ -2095,6 +2188,32 @@ textarea {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.text-box .article-subscribe .form-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 600;
 }
 
 .text-box ol {
@@ -2343,6 +2462,32 @@ textarea {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 1;
+}
+
+.inline-support .form-success {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .article-listing .title {

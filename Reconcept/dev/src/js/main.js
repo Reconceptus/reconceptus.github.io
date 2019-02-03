@@ -13,6 +13,9 @@
 // custom-cursor
 //= vendor/customCursor.js
 
+// jquery-validator-edited
+//= vendor/validator.js
+
 // functions
 //= partials/functions.js
 

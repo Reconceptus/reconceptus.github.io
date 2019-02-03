@@ -17,21 +17,26 @@
             <div class="text">
                 Таким образом реализация намеченных плановых заданий играет важную роль в формировании существенных финансовых и административных условий.
             </div>
-            <form action="/">
-                <div class="input-box fieldset">
-                    <input type="text" placeholder="Оставьте телефон или мейл">
-                    <button class="submit"><span>Заказать консультацию</span></button>
-                </div>
-                <div class="input-box">
-                    <label class="checkbox">
-                        <input type="checkbox" checked>
-                        <span class="checkbox-mark"></span>
-                        <span class="checkbox-text">
+            <div class="form-fieldset">
+                <form action="/" class="form">
+                    <div class="input-box fieldset">
+                        <input type="text" name="mail" placeholder="Оставьте телефон или мейл">
+                        <button class="submit"><span>Заказать консультацию</span></button>
+                    </div>
+                    <div class="input-box">
+                        <label class="checkbox">
+                            <input type="checkbox" name="approve" checked>
+                            <span class="checkbox-mark"></span>
+                            <span class="checkbox-text">
                             Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
                         </span>
-                    </label>
+                        </label>
+                    </div>
+                </form>
+                <div class="form-success">
+                    Ваша заявка принята!
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

@@ -122,6 +122,12 @@
       margin-top: 10px;
       font-size: $px*3.36rem;
     }
+    .form-success {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
   }
   &-header {
     @include media(screen,1024){

@@ -1,0 +1,31 @@
+<!-- article subscribe -->
+
+<script>
+
+    $('.article-subscribe form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            mail: {required: true},
+            approve: {required: true}
+        },
+        messages: {
+            mail: {required: ""},
+            approve: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.input-box').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.input-box').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function () {
+            $('.article-subscribe').addClass('successful');
+
+            return false;
+        }
+    })
+
+</script>

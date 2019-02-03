@@ -179,70 +179,110 @@
     </div>
     <div class="support-form modal-form">
         <div class="content content--md">
-            <h4 class="title">Задайте ваш вопрос</h4>
-            <div class="form-box--layout">
-                <div class="form-box--aside">
-                    <a href="#" class="load">
-                        <i class="ico">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-download"/>
-                            </svg>
-                        </i>
-                        Скачать бриф на сайт
-                    </a>
-                    <a href="#" class="load">
-                        <i class="ico">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-download"/>
-                            </svg>
-                        </i>
-                        Скачать бриф на сайт
-                    </a>
-                </div>
-                <div class="form-box--main">
-                    <form action="/">
-                        <div class="input-box">
-                            <input type="text" placeholder="Представьтесь">
-                        </div>
-                        <div class="input-box">
-                            <input type="text" placeholder="Как с вами связаться?">
-                        </div>
-                        <div class="input-box">
-                            <textarea placeholder="Расскажите о вашем проекте" rows="4"></textarea>
-                        </div>
-                        <div class="input-box wrapped">
-                            <label class="file">
-                                <input type="file">
-                                <span class="file-mark">
+            <div class="form-fieldset">
+                <div class="form">
+                    <h4 class="title">Задайте ваш вопрос</h4>
+                    <div class="form-box--layout">
+                        <div class="form-box--aside">
+                            <a href="#" class="load">
+                                <i class="ico">
                                     <svg xmlns="http://www.w3.org/2000/svg">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-attachment"/>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-download"/>
                                     </svg>
-                                </span>
-                                <span class="file-text" data-default-text="Прикрепить файл">
-                                    Прикрепить файл
-                                </span>
-                                <button type="button" class="reset">&times;</button>
-                            </label>
-                            <label class="checkbox">
-                                <input type="checkbox" checked="">
-                                <span class="checkbox-mark"></span>
-                                <span class="checkbox-text">Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.</span>
-                            </label>
-                            <button class="submit"><span>Отправить</span></button>
+                                </i>
+                                Скачать бриф на сайт
+                            </a>
+                            <a href="#" class="load">
+                                <i class="ico">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-download"/>
+                                    </svg>
+                                </i>
+                                Скачать бриф на сайт
+                            </a>
                         </div>
-                    </form>
+                        <div class="form-box--main">
+                            <form action="/">
+                                <div class="input-box">
+                                    <input type="text" name="name" placeholder="Представьтесь">
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" name="address" placeholder="Как с вами связаться?">
+                                </div>
+                                <div class="input-box">
+                                    <textarea name="message" placeholder="Расскажите о вашем проекте" rows="4"></textarea>
+                                </div>
+                                <div class="input-box wrapped">
+                                    <label class="file input-box">
+                                        <input type="file">
+                                        <span class="file-mark">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-attachment"/>
+                                            </svg>
+                                        </span>
+                                        <span class="file-text" data-default-text="Прикрепить файл">
+                                            Прикрепить файл
+                                        </span>
+                                        <button type="button" class="reset">&times;</button>
+                                    </label>
+                                    <label class="checkbox input-box">
+                                        <input name="approve" type="checkbox" checked="">
+                                        <span class="checkbox-mark"></span>
+                                        <span class="checkbox-text">Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.</span>
+                                    </label>
+                                    <button class="submit"><span>Отправить</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-success">
+                    <p>Спасибо!</p>
+                    <p>Ваша заявка принята!</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<!--<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>-->
 <script src="assets/js/main.min.js"></script>
+
+<!-- support validate -->
+
+<script>
+
+    $('.support-modal .support-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            name: {required: true},
+            address: {required: true},
+            message: {required: true},
+            approve: {required: true}
+        },
+        messages: {
+            name: {required: ""},
+            address: {required: ""},
+            message: {required: ""},
+            approve: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.input-box').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.input-box').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function () {
+            $('.support-modal .support-form').addClass('successful');
+
+            return false;
+        }
+    })
+
+</script>
 
 
 <!--script-->

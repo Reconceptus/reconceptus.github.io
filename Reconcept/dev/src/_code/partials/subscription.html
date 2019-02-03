@@ -6,27 +6,32 @@
     </div>
     <div class="subscription-form">
         <div class="content content--md">
-            <form action="/">
-                <div class="input-box">
-                    <input type="text" placeholder="Оставьте ваш email">
-                    <button class="submit-btn">
-                        <i class="ico">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right-long"/>
-                            </svg>
-                        </i>
-                    </button>
+            <div class="form-fieldset">
+                <form action="/" class="form">
+                    <div class="input-box">
+                        <input type="text" name="mail" placeholder="Оставьте ваш email">
+                        <button class="submit-btn">
+                            <i class="ico">
+                                <svg xmlns="http://www.w3.org/2000/svg">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right-long"/>
+                                </svg>
+                            </i>
+                        </button>
+                    </div>
+                    <div class="input-box centered">
+                        <label class="checkbox">
+                            <input type="checkbox" checked name="approve">
+                            <span class="checkbox-mark"></span>
+                            <span class="checkbox-text">
+                            Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
+                        </span>
+                        </label>
+                    </div>
+                </form>
+                <div class="form-success">
+                    Спасибо! Мы с вами свяжемся
                 </div>
-                <div class="input-box centered">
-                    <label class="checkbox">
-                        <input type="checkbox" checked>
-                        <span class="checkbox-mark"></span>
-                        <span class="checkbox-text">
-                        Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
-                    </span>
-                    </label>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

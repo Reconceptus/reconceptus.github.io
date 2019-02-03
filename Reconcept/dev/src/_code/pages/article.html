@@ -124,21 +124,26 @@
                                                 Обычный абзац. Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
                                             </p>
                                             <div class="article-subscribe">
-                                                <form action="#">
-                                                    <div class="input-box fieldset">
-                                                        <input type="text" placeholder="Оставьте ваш телефон или email">
-                                                        <button class="submit msty_cur"><span>Отправить</span></button>
-                                                    </div>
-                                                    <div class="input-box">
-                                                        <label class="checkbox msty_cur">
-                                                            <input type="checkbox" checked="">
-                                                            <span class="checkbox-mark"></span>
-                                                            <span class="checkbox-text">
+                                                <div class="form-fieldset">
+                                                    <form action="#" class="form">
+                                                        <div class="input-box fieldset">
+                                                            <input type="text" name="mail" placeholder="Оставьте ваш телефон или email">
+                                                            <button class="submit msty_cur"><span>Отправить</span></button>
+                                                        </div>
+                                                        <div class="input-box">
+                                                            <label class="checkbox msty_cur">
+                                                                <input type="checkbox" checked="" name="approve">
+                                                                <span class="checkbox-mark"></span>
+                                                                <span class="checkbox-text">
                                                                 Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.
                                                             </span>
-                                                        </label>
+                                                            </label>
+                                                        </div>
+                                                    </form>
+                                                    <div class="form-success">
+                                                        Спасибо! Ваша заявка принята
                                                     </div>
-                                                </form>
+                                                </div>
                                             </div>
                                             <p>
                                                 Обычный абзац. Учёные неплохо изучили покупающий мозг. Основной вывод, который они сделали: цель покупки не всегда очевидна, а зачастую лежит глубже, чем кажется с первого взгляда. Этим объясняются различия между тем, что продаёт продавец и покупает покупатель. Напомню избитое: продавец продаёт дрель, но покупатель покупает возможность самостоятельно продырявить стену.
@@ -393,7 +398,12 @@
 
 <include src="../templates/scripts.html"></include>
 
-<!--script-->
+<!--scripts-->
+
+<include src="../validators/consultation.html"></include>
+<include src="../validators/short-subscribe.html"></include>
+<include src="../validators/subscribtion.html"></include>
+<include src="../validators/comment.html"></include>
 
 
 </body>

@@ -1,22 +1,22 @@
 <form action="#">
     <div class="input-box">
         <div class="col-50 stretched">
-            <label class="label">
-                <textarea placeholder="Оставьте ваш комментарий"></textarea>
+            <label class="label input-box">
+                <textarea name="comment" placeholder="Оставьте ваш комментарий"></textarea>
             </label>
         </div>
         <div class="col-50">
-            <label class="label">
-                <input type="text" placeholder="Имя">
+            <label class="label input-box invalid">
+                <input type="text" name="name" placeholder="Имя">
             </label>
-            <label class="label">
-                <input type="text" placeholder="Ваш емейл (не будет опубликован)">
+            <label class="label input-box">
+                <input type="text" name="mail" placeholder="Ваш емейл (не будет опубликован)">
             </label>
         </div>
     </div>
     <div class="input-box">
         <label class="checkbox">
-            <input type="checkbox" checked>
+            <input type="checkbox" checked name="approve">
             <span class="checkbox-mark"></span>
             <span class="checkbox-text">
                 @@checkText
