@@ -97,8 +97,33 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+    margin: 40px 0;
+    @include media(hover,1750){
+      width: 1700px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include breakpoints(1268,1749){
+      width: calc(100vw - 50px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include breakpoints(1268,1380){
+      margin-left: calc(50vw - 763px);
+    }
+    @include breakpoints(1201,1267){
+      margin-right: -50px;
+      margin-left: calc(-100vw + 957px);
+    }
+    @include breakpoints(1025,1200){
+      margin-right: calc(-100vw + 957px);
+      margin-left: -130px;
+    }
+    @include media(screen,1024){
+      margin: 0 -16.25px;
+    }
     .figure {
-
       @include media(hover,1201){
         padding: 95px 50px;
       }

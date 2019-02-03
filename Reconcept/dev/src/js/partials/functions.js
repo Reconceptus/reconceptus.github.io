@@ -161,6 +161,16 @@ project.textParsing = function(){
         _this.find('img[style*="width"]').addClass('has-width');
 
         _this.find('blockquote').wrapInner('<p></p>');
+
+        var containerWidth = _this.closest('.text-box--wrap').width();
+        _this.find('.text-box--images').css('max-width',containerWidth+'px');
+
+        $(window).resize(function () {
+            containerWidth = _this.closest('.text-box--wrap').width();
+            _this.find('.text-box--images').css('max-width',containerWidth+'px');
+        });
+
+
     });
 };
 

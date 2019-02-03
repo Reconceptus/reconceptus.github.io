@@ -1883,6 +1883,8 @@ textarea {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  position: relative;
+  margin: 40px 0;
 }
 
 .text-box--images img {
@@ -2849,6 +2851,10 @@ textarea {
   width: 100%;
   display: block;
   height: auto;
+}
+
+.project-main-preview img:not(:last-child) {
+  margin-bottom: 25px;
 }
 
 .project-preview:not(.full-width) {
@@ -5616,6 +5622,10 @@ textarea {
     width: 100%;
   }
 
+  .text-box--images {
+    margin: 0 -16.25px;
+  }
+
   .text-box img.align-center {
     max-width: 100%;
   }
@@ -5978,6 +5988,11 @@ textarea {
     min-width: 80px;
   }
 
+  .text-box--images {
+    margin-right: calc(-100vw + 957px);
+    margin-left: -130px;
+  }
+
   .form-box--aside {
     width: 25%;
   }
@@ -6004,6 +6019,39 @@ textarea {
 
   .project-listing .listing .item-data {
     padding: 0 5px 0 10px;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .text-box--images {
+    width: 1700px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 1268px) and (max-width: 1749px) {
+  .text-box--images {
+    width: calc(100vw - 50px);
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 1268px) and (max-width: 1380px) {
+  .text-box--images {
+    margin-left: calc(50vw - 763px);
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1267px) {
+  .text-box--images {
+    margin-right: -50px;
+    margin-left: calc(-100vw + 957px);
   }
 }
 

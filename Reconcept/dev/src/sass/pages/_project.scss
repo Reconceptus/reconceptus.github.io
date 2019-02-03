@@ -15,6 +15,9 @@
       width: 100%;
       display: block;
       height: auto;
+      &:not(:last-child){
+        margin-bottom: $padding;
+      }
     }
   }
   &-preview {
