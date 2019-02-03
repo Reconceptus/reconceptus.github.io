@@ -3945,7 +3945,7 @@ textarea {
   }
 
   .blog .item:hover .item-title:before {
-    width: calc(25% - 25px);
+    width: calc(10% - 25px);
     -webkit-transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
     -o-transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
     transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
@@ -3986,14 +3986,14 @@ textarea {
   }
 
   .blog .item-brief {
-    padding: 28px 0 30px 20%;
+    padding: 28px 0 30px 10%;
     opacity: 0.75;
   }
 
   .blog .item-data {
-    -webkit-transform: translateX(-20%);
-    -ms-transform: translateX(-20%);
-    transform: translateX(-20%);
+    -webkit-transform: translateX(-10%);
+    -ms-transform: translateX(-10%);
+    transform: translateX(-10%);
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     -o-transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -4002,9 +4002,9 @@ textarea {
   }
 
   .blog .item-title {
-    -webkit-transform: translateX(-20%);
-    -ms-transform: translateX(-20%);
-    transform: translateX(-20%);
+    -webkit-transform: translateX(-10%);
+    -ms-transform: translateX(-10%);
+    transform: translateX(-10%);
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.04s;
     transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.04s;
     -o-transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.04s;
@@ -4020,9 +4020,9 @@ textarea {
   }
 
   .blog .item-info {
-    -webkit-transform: translateX(-20%);
-    -ms-transform: translateX(-20%);
-    transform: translateX(-20%);
+    -webkit-transform: translateX(-10%);
+    -ms-transform: translateX(-10%);
+    transform: translateX(-10%);
     -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.08s;
     transition: -webkit-transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.08s;
     -o-transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.08s;
@@ -6153,11 +6153,11 @@ textarea {
   }
 
   .blog .item-brief {
-    padding: 28px 0 30px 20%;
+    padding: 28px 0 30px 10%;
   }
 
   .blog .item-title:before {
-    width: calc(25% - 25px);
+    width: calc(10% - 25px);
   }
 
   .portfolio .item-data {

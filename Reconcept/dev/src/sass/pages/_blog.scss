@@ -62,7 +62,7 @@
       .item-title {
         color: $hover;
         &:before {
-          width: calc(25% - 25px);
+          width: calc(10% - 25px);
           transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.2s;
         }
       }
@@ -108,11 +108,11 @@
       width: 100%;
       color: $violet;
       @include media(hover,1025){
-        padding: 28px 0 30px 20%;
+        padding: 28px 0 30px 10%;
         opacity: 0.75;
       }
       @include breakpoints(768,1024){
-        padding: 28px 0 30px 20%;
+        padding: 28px 0 30px 10%;
       }
       @include media(screen,767){
         padding: 20px 0;
@@ -125,7 +125,7 @@
       white-space: nowrap;
       margin-bottom: 15px;
       @include media(hover,1025){
-        transform: translateX(-20%);
+        transform: translateX(-10%);
         transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
       }
     }
@@ -151,7 +151,7 @@
       transition: all 0.25s;
       position: relative;
       @include media(hover,1025){
-        transform: translateX(-20%);
+        transform: translateX(-10%);
         transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.04s;
       }
       &:before {
@@ -160,7 +160,7 @@
           transition: width 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
         }
         @include breakpoints(768,1024){
-          width: calc(25% - 25px);
+          width: calc(10% - 25px);
         }
         @include media(hover,768){
           content: "";
@@ -180,7 +180,7 @@
       display: flex;
       align-items: center;
       @include media(hover,1025){
-        transform: translateX(-20%);
+        transform: translateX(-10%);
         transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.08s;
       }
       span {
