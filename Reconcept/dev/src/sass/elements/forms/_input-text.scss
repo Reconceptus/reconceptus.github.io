@@ -91,6 +91,7 @@ input[type="text"] {
     line-height: 40px;
     padding: 0 $padding;
     border-bottom: 1px solid currentColor;
+    font-size: $px*3.36rem;
     @include media(screen,680){
       padding: 0 12px;
     }

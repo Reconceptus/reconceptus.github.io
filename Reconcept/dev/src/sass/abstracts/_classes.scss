@@ -53,7 +53,6 @@
   display: flex;
 }
 
-
 .desktop-hidden {
   @include media(hover,1201){
     display: none !important;

@@ -476,6 +476,14 @@ body {
   box-sizing: border-box;
 }
 
+*::-moz-selection {
+  background-color: #F9C582;
+}
+
+*::selection {
+  background-color: #F9C582;
+}
+
 a {
   outline: none;
   -webkit-transition: all 0.25s;
@@ -1057,6 +1065,7 @@ input[type="text"] {
   line-height: 40px;
   padding: 0 25px;
   border-bottom: 1px solid currentColor;
+  font-size: 0.93072rem;
 }
 
 .subscribe-form input[type="text"] {
@@ -1079,6 +1088,7 @@ textarea {
   line-height: 1.5;
   padding: 10px 25px;
   border-bottom: 1px solid currentColor;
+  font-size: 0.93072rem;
 }
 
 .support-form textarea {
@@ -1915,14 +1925,6 @@ textarea {
 .text-box {
   line-height: 1.64;
   font-weight: 400;
-}
-
-.text-box *::-moz-selection {
-  background-color: #F9C582;
-}
-
-.text-box *::selection {
-  background-color: #F9C582;
 }
 
 .text-box--layout {

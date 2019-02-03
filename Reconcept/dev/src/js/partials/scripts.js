@@ -62,6 +62,10 @@ $(document).ready(function () {
         $('body').addClass('loaded-body');
     },300);
 
+    setTimeout(function () {
+        $('.slideDown').slideDown(300);
+    },1000);
+
 
     /*
      ============= document click events

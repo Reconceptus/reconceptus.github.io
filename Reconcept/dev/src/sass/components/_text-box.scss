@@ -7,11 +7,6 @@
   @include media(screen,680){
     font-size: 15px;
   }
-  * {
-    &::selection {
-      background-color: $yellow;
-    }
-  }
   &--wrap {
     @include media(hover,1381){
       padding: 105px 0;
