@@ -2080,6 +2080,7 @@ textarea {
   top: 0;
   font-family: "Yeseva One", cursive;
   position: absolute;
+  opacity: 0.75;
 }
 
 .text-box blockquote p {
@@ -3698,6 +3699,10 @@ textarea {
 
   .modal-header .close:hover {
     color: #932064;
+  }
+
+  .text-box--layout > .person {
+    display: none !important;
   }
 
   .text-box--main {
@@ -5905,6 +5910,10 @@ textarea {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
+  }
+
+  .text-box--aside .person {
+    display: none !important;
   }
 
   .text-box--main {

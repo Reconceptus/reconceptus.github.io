@@ -116,6 +116,9 @@ $(document).ready(function () {
     if($('.project-link').length > 0){
         project.linkParsing();
     }
+    if($('.person').length > 0){
+        project.personAva();
+    }
 
 
     /* --------------------------------- document resize --------------------------------- */

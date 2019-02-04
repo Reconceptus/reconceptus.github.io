@@ -36,6 +36,11 @@
   &--layout {
     display: flex;
     width: 100%;
+    @include media(hover,1025){
+      & > .person {
+        display: none !important;
+      }
+    }
     @include media(screen,1024){
       flex-direction: column;
     }
@@ -68,7 +73,9 @@
       min-width: 80px;
     }
     @include media(screen,1024){
-
+      .person {
+        display: none !important;
+      }
     }
   }
   &--main {
@@ -184,6 +191,7 @@
       top: 0;
       font-family: $font-yeseva;
       position: absolute;
+      opacity: 0.75;
       @include media(hover,1025){
         left: -20px;
         font-size: $px*96rem;
