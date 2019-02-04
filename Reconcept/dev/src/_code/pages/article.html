@@ -168,7 +168,7 @@
                             </div>
                             <ul class="main-menu">
                                 <li class="parent">
-                                    <div class="comment">
+                                    <div class="comment" id="comment-101" data-id="101">
                                         <div class="comment-ava">
                                             <div class="letter">М</div>
                                         </div>
@@ -184,14 +184,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="comment-form">
-                                        <include src="../partials/comment.html"
-                                                 checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
-                                        ></include>
-                                    </div>
                                 </li>
                                 <li class="parent">
-                                    <div class="comment">
+                                    <div class="comment" id="comment-102" data-id="102">
                                         <div class="comment-ava">
                                             <div class="letter">Н</div>
                                         </div>
@@ -208,7 +203,7 @@
                                     </div>
                                     <ul class="sub-menu">
                                         <li>
-                                            <div class="comment">
+                                            <div class="comment" id="comment-103" data-id="103">
                                                 <div class="comment-ava">
                                                     <div class="letter">В</div>
                                                 </div>
@@ -223,14 +218,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="comment-form">
-                                                <include src="../partials/comment.html"
-                                                         checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
-                                                ></include>
-                                            </div>
                                         </li>
                                         <li>
-                                            <div class="comment">
+                                            <div class="comment" id="comment-104" data-id="104">
                                                 <div class="comment-ava">
                                                     <div class="letter">С</div>
                                                 </div>
@@ -249,7 +239,7 @@
                                     </ul>
                                 </li>
                                 <li class="parent">
-                                    <div class="comment">
+                                    <div class="comment" id="comment-105" data-id="105">
                                         <div class="comment-ava">
                                             <div class="letter">Н</div>
                                         </div>
@@ -266,7 +256,7 @@
                                     </div>
                                     <ul class="sub-menu">
                                         <li class="parent">
-                                            <div class="comment">
+                                            <div class="comment" id="comment-106" data-id="106">
                                                 <div class="comment-ava">
                                                     <div class="letter">В</div>
                                                 </div>
@@ -283,7 +273,7 @@
                                             </div>
                                             <ul class="sub-menu">
                                                 <li>
-                                                    <div class="comment">
+                                                    <div class="comment" id="comment-107" data-id="107">
                                                         <div class="comment-ava">
                                                             <div class="letter">В</div>
                                                         </div>
@@ -297,11 +287,6 @@
                                                                 <button type="button" class="button">Ответить</button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="comment-form">
-                                                        <include src="../partials/comment.html"
-                                                                 checkText="Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности."
-                                                        ></include>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -369,7 +354,7 @@
                 <div class="content content--lg">
                     <div class="comment-box--main">
                         <div class="comment-content">
-                            <div class="comment-form">
+                            <div class="comment-form total-comment">
                                 <h4 class="comment-box--title">ОСТАВЬТЕ КОММЕНТАРИЙ ПЕРВЫМ!</h4>
                                 <include src="../partials/comment.html"
                                          checkText="Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности."
@@ -404,6 +389,85 @@
 <include src="../validators/short-subscribe.html"></include>
 <include src="../validators/subscribtion.html"></include>
 <include src="../validators/comment.html"></include>
+
+<script>
+
+    // Add comment form
+
+    function addForm(id){
+        var formCode = '<div class="comment-form" data-comment-form="'+id+'">' +
+            '<form action="#">\n' +
+            '    <div class="input-box">\n' +
+            '        <div class="col-50 stretched">\n' +
+            '            <label class="label input-box">\n' +
+            '                <textarea name="comment" placeholder="Оставьте ваш комментарий"></textarea>\n' +
+            '            </label>\n' +
+            '        </div>\n' +
+            '        <div class="col-50">\n' +
+            '            <label class="label input-box">\n' +
+            '                <input type="text" name="name" placeholder="Имя">\n' +
+            '            </label>\n' +
+            '            <label class="label input-box">\n' +
+            '                <input type="text" name="mail" placeholder="Ваш емейл (не будет опубликован)">\n' +
+            '            </label>\n' +
+            '        </div>\n' +
+            '    </div>\n' +
+            '    <div class="input-box">\n' +
+            '        <label class="checkbox">\n' +
+            '            <input type="checkbox" checked name="approve">\n' +
+            '            <span class="checkbox-mark"></span>\n' +
+            '            <span class="checkbox-text">\n' +
+            '                Даю согласие  на обработку персональных данных и соглашаюсь с политикой конфиденциальности.\n' +
+            '            </span>\n' +
+            '        </label>\n' +
+            '        <button class="submit-sm"><span>Опубликовать</span></button>\n' +
+            '    </div>\n' +
+            '</form>' +
+            '</div>';
+
+        return formCode;
+    };
+
+    $('.comment-box').on('click','.button',function () {
+
+        var $thisComment = $(this).closest('.comment'),
+            $thisCommentID = $thisComment.attr('data-id');
+
+        $thisComment.after(addForm($thisCommentID));
+
+        $('[data-comment-form='+$thisCommentID+'] form').validate({
+            onfocusout: false,
+            ignore: ".ignore",
+            rules: {
+                comment: {required: true},
+                name: {required: true},
+                mail: {required: true},
+                approve: {required: true}
+            },
+            messages: {
+                comment: {required: ""},
+                name: {required: ""},
+                mail: {required: ""},
+                approve: {required: ""}
+            },
+            errorClass: 'invalid',
+            highlight: function(element, errorClass) {
+                $(element).closest('.input-box').addClass(errorClass);
+            },
+            unhighlight: function(element, errorClass) {
+                $(element).closest('.input-box').removeClass(errorClass)
+            },
+            errorPlacement: $.noop,
+            submitHandler:function () {
+                // _this.addClass('successful');
+                //
+                // return false;
+            }
+        });
+
+    });
+
+</script>
 
 
 </body>

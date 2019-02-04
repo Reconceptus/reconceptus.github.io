@@ -2,40 +2,34 @@
 
 <script>
 
-    $('.comment-form').each(function () {
-
-        var _this = $(this);
-
-        $(_this).find('form').validate({
-            onfocusout: false,
-            ignore: ".ignore",
-            rules: {
-                comment: {required: true},
-                name: {required: true},
-                mail: {required: true},
-                approve: {required: true}
-            },
-            messages: {
-                comment: {required: ""},
-                name: {required: ""},
-                mail: {required: ""},
-                approve: {required: ""}
-            },
-            errorClass: 'invalid',
-            highlight: function(element, errorClass) {
-                $(element).closest('.input-box').addClass(errorClass);
-            },
-            unhighlight: function(element, errorClass) {
-                $(element).closest('.input-box').removeClass(errorClass)
-            },
-            errorPlacement: $.noop,
-            submitHandler:function () {
-                // _this.addClass('successful');
-                //
-                // return false;
-            }
-        });
-
+    $('.total-comment form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            comment: {required: true},
+            name: {required: true},
+            mail: {required: true},
+            approve: {required: true}
+        },
+        messages: {
+            comment: {required: ""},
+            name: {required: ""},
+            mail: {required: ""},
+            approve: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.input-box').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.input-box').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function () {
+            // _this.addClass('successful');
+            //
+            // return false;
+        }
     });
 
 </script>
