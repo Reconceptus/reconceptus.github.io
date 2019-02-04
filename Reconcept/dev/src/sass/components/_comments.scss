@@ -110,6 +110,11 @@
   }
   .comment {
     margin-bottom: 35px;
+    &.opened {
+      .comment-actions {
+        display: none;
+      }
+    }
   }
   .comment-top-data {
     font-size: $px*3.36rem;

@@ -433,6 +433,7 @@
         var $thisComment = $(this).closest('.comment'),
             $thisCommentID = $thisComment.attr('data-id');
 
+        $thisComment.addClass('opened');
         $thisComment.after(addForm($thisCommentID));
 
         $('[data-comment-form='+$thisCommentID+'] form').validate({

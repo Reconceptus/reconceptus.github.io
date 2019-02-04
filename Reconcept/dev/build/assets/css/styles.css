@@ -2406,6 +2406,10 @@ textarea {
   margin-bottom: 35px;
 }
 
+.comment-content .comment.opened .comment-actions {
+  display: none;
+}
+
 .comment-content .comment-top-data {
   font-size: 0.93072rem;
   margin-bottom: 10px;
