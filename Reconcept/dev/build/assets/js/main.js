@@ -307,10 +307,12 @@ project.stickySidebar = function(){
     */
 
 project.personAva = function(){
-    var $person = $('.person'),
-        $textBox = $person.closest('.text-box--layout');
+    var $person = $('.text-box--aside .person');
 
-    $textBox.prepend($person.clone());
+    $person.each(function () {
+        var $textBox = $(this).closest('.text-box--layout');
+        $textBox.prepend($(this).clone());
+    });
 
 };
 

@@ -2028,6 +2028,13 @@ textarea {
   width: 100%;
 }
 
+.text-box--layout.centered {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .text-box--aside {
   position: relative;
 }
@@ -3102,6 +3109,18 @@ textarea {
   width: 100%;
   display: block;
   height: auto;
+}
+
+.project-review {
+  margin-top: 25px;
+}
+
+.project-review .title {
+  font-size: 0.93072rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #8E899A;
+  font-weight: 600;
 }
 
 @-webkit-keyframes aitf {
@@ -4207,6 +4226,10 @@ textarea {
 
   .project-preview:not(:last-child) {
     margin-bottom: 25px;
+  }
+
+  .project-review .title {
+    margin-bottom: 75px;
   }
 
   .text-box--link {
@@ -6025,6 +6048,10 @@ textarea {
 
   .project-preview:not(:last-child) {
     margin-bottom: 15px;
+  }
+
+  .project-review .title {
+    margin-bottom: 50px;
   }
 }
 

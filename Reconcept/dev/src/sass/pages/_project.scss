@@ -44,6 +44,22 @@
       height: auto;
     }
   }
+  &-review {
+    margin-top: $padding;
+    .title {
+      font-size: $px*3.36rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: $violet_light;
+      font-weight: 600;
+      @include media(hover,1025){
+        margin-bottom: 75px;
+      }
+      @include media(screen,1024){
+        margin-bottom: 50px;
+      }
+    }
+  }
 }
 
 @keyframes aitf {

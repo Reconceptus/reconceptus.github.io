@@ -44,6 +44,9 @@
     @include media(screen,1024){
       flex-direction: column;
     }
+    &.centered {
+      justify-content: center;
+    }
     &.first-info {
       @include media(hover,1201){
         padding-top: 55px;
