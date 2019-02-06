@@ -3188,16 +3188,19 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Yeseva One", cursive;
   text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
 }
 
 .text-box--link .link {
+  color: inherit;
   position: relative;
+}
+
+.text-box--link .link:hover {
+  color: #932064;
 }
 
 .text-box--link .link:hover span {
@@ -4233,7 +4236,7 @@ textarea {
   }
 
   .text-box--link {
-    font-size: 5rem;
+    font-size: 4.78656rem;
   }
 
   .text-box--link .link-parts span {
@@ -4343,7 +4346,7 @@ textarea {
   }
 
   .text-box--link {
-    font-size: 3rem;
+    font-size: 4.155rem;
   }
 
   .text-box--link .link-parts span {
@@ -4603,7 +4606,7 @@ textarea {
   }
 
   .text-box--link {
-    font-size: 18px;
+    font-size: 2.216rem;
   }
 
   .text-box--link .link-parts span {

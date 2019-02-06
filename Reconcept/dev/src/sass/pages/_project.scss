@@ -75,25 +75,25 @@
 .text-box--link {
   display: flex;
   justify-content: center;
-  font-family: $font-yeseva;
   text-align: center;
-  text-transform: uppercase;
-
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
+
   @include media(hover,1025){
-    font-size: 5rem;
+    font-size: $px*17.28rem;
   }
   @include breakpoints(681,1024){
-    font-size: 3rem;
+    font-size: $px*15rem;
   }
   @include media(screen,680){
-    font-size: 18px;
+    font-size: $px*8rem;
   }
   .link {
+    color: inherit;
     position: relative;
     &:hover {
+      color: $hover;
       span {
         animation: bounce .6s;
         color: $hover;
