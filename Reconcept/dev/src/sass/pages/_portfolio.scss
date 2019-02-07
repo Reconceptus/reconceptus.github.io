@@ -142,38 +142,31 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+      height: 64px;
       @include media(hover,1025){
         font-weight: 700;
-        height: 64px;
       }
-
     }
     &-arrow {
       transition: all 0.5s;
-      @include media(hover,1025){
-        flex-shrink: 0;
-        width: 10px;
+      flex-shrink: 0;
+      width: 10px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $text;
+      position: relative;
+      &:before,
+      &:after {
+        content: "";
+        width: 15px;
         height: 3px;
         border-radius: 2px;
         background-color: $text;
-        position: relative;
-        &:before,
-        &:after {
-          content: "";
-          width: 15px;
-          height: 3px;
-          border-radius: 2px;
-          background-color: $text;
-          position: absolute;
-          right: 1px;
-          top: 0;
-          transform-origin: right center;
-          transition: 0.1s;
-        }
-
-      }
-      @include media(screen,1024){
-        display: none;
+        position: absolute;
+        right: 1px;
+        top: 0;
+        transform-origin: right center;
+        transition: 0.1s;
       }
     }
     &-data {
@@ -213,33 +206,6 @@
       }
       @include media(screen,1024){
         font-weight: 400;
-      }
-    }
-    &-btn {
-      width: 64px;
-      height: 64px;
-      flex-shrink: 0;
-      background-color: #2c2341;
-      position: relative;
-      padding: 17px;
-      @include media(hover,1025){
-        display: none;
-      }
-      &:before {
-        content: "";
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-color: $hover;
-        width: 0;
-        position: absolute;
-        transition: all 0.25s;
-      }
-      .ico {
-        transform: translateX(-5px);
-        fill: $white;
-        position: relative;
-        transition: all 0.25s;
       }
     }
   }

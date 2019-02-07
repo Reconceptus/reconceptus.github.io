@@ -85,14 +85,6 @@
           .item-img img {
             transform: scale(1.03);
           }
-          .item-btn {
-            &:before {
-              width: 100%;
-            }
-            .ico {
-              transform: translateX(0);
-            }
-          }
         }
       }
       &-img {
@@ -136,48 +128,31 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        @include media(hover,1201){
-          font-weight: 700;
-          height: 64px;
-        }
-        @include media(screen,1200){
-          background-color: rgba($violet_dark,0.6);
-          color: $white;
-          justify-content: space-between;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          min-height: 64px;
-        }
+        font-weight: 700;
+        height: 64px;
+
       }
 
       &-arrow {
         transition: all 0.5s;
-        @include media(hover,1201){
-          width: 10px;
+        width: 10px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: $text;
+        position: relative;
+        flex-shrink: 0;
+        &:before,
+        &:after {
+          content: "";
+          width: 15px;
           height: 3px;
           border-radius: 2px;
           background-color: $text;
-          position: relative;
-          flex-shrink: 0;
-          &:before,
-          &:after {
-            content: "";
-            width: 15px;
-            height: 3px;
-            border-radius: 2px;
-            background-color: $text;
-            position: absolute;
-            right: 1px;
-            top: 0;
-            transform-origin: right center;
-            transition: 0.1s;
-          }
-
-        }
-        @include media(screen,1200){
-          display: none;
+          position: absolute;
+          right: 1px;
+          top: 0;
+          transform-origin: right center;
+          transition: 0.1s;
         }
       }
       &-data {
@@ -214,33 +189,6 @@
         }
         @include media(screen,1200){
           font-weight: 400;
-        }
-      }
-      &-btn {
-        width: 64px;
-        height: 64px;
-        flex-shrink: 0;
-        background-color: #2c2341;
-        position: relative;
-        padding: 17px;
-        @include media(hover,1201){
-          display: none;
-        }
-        &:before {
-          content: "";
-          top: 0;
-          right: 0;
-          bottom: 0;
-          background-color: $hover;
-          width: 0;
-          position: absolute;
-          transition: all 0.25s;
-        }
-        .ico {
-          transform: translateX(-5px);
-          fill: $white;
-          position: relative;
-          transition: all 0.25s;
         }
       }
     }

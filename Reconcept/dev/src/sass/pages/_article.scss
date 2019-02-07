@@ -24,6 +24,7 @@
   }
   @include media(screen,1024){
     height: 25vw;
+    display: none;
   }
   .img {
     position: absolute;

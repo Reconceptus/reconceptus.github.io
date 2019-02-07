@@ -79,6 +79,18 @@
   font-weight: 600;
   letter-spacing: 0;
   white-space: nowrap;
+  @include media(hover,1381){
+    padding: 105px 0 0;
+  }
+  @include breakpoints(1201,1380){
+    padding: 80px 0 0;
+  }
+  @include breakpoints(1025,1200){
+    padding: 60px 0 0;
+  }
+  @include media(screen,1024) {
+    padding: 40px 0 0;
+  }
 
   @include media(hover,1025){
     font-size: $px*17.28rem;
