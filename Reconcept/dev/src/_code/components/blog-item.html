@@ -1,5 +1,6 @@
-<a href="article.html" class="item">
+<div class="item">
     <figure class="item-img">
+        <a href="article.html" class="item-link"></a>
         <img src="@@imgSrc"
              alt="@@imgAlt">
     </figure>
@@ -8,16 +9,16 @@
             <span class="item-tag">@@tag</span>
             <time class="item-date">@@data</time>
         </div>
-        <h3 class="item-title">@@title</h3>
+        <h3 class="item-title"><a href="article.html">@@title</a></h3>
         </h3>
         <div class="item-info">
-            <span class="favorite">
-                <i class="ico @@isFavorite">
+            <button type="button" class="favorite @@isFavorite">
+                <i class="ico">
                     <svg xmlns="http://www.w3.org/2000/svg">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-favorite"/>
                     </svg>
                 </i>
-            </span>
+            </button>
             <span class="views">
                 <i class="ico">
                      <svg xmlns="http://www.w3.org/2000/svg">
@@ -37,4 +38,4 @@
         </div>
     </section>
 
-</a>
+</div>

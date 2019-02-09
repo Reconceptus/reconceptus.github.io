@@ -97,6 +97,21 @@
         color: #d3732f;
       }
     }
+    &--fv {
+      stroke: $hover;
+      svg {
+        fill: transparent;
+        transition: all 0.2s;
+      }
+      @include hover(){
+        svg {
+          fill: $hover;
+        }
+      }
+      @include media(screen,1024){
+        fill: $hover;
+      }
+    }
   }
   svg {
     fill: currentColor;

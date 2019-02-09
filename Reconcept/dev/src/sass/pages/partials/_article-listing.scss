@@ -78,6 +78,17 @@
         color: $hover;
       }
     }
+    &-data {
+      display: none;
+    }
+    &-link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
     &-img {
       width: 100%;
       padding-bottom: 50%;
@@ -142,6 +153,7 @@
       margin-bottom: 18px;
       transition: all 0.25s;
       position: relative;
+      a {color: inherit;}
       @include media(hover,1381){
         transform: translateX(-15px);
       }
@@ -160,6 +172,7 @@
       @include media(hover,1025){
         transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.04s;
       }
+      button,
       span {
         display: inline-flex;
         align-items: center;
@@ -172,6 +185,9 @@
         fill: $violet_light;
       }
       .favorite {
+        background: transparent;
+        border: none;
+        position: relative;
         .ico {
           width: 15px;
           height: 15px;
@@ -182,6 +198,21 @@
           &.favorite {
             svg {
               fill: $hover;
+              stroke: $hover;
+            }
+          }
+        }
+        &.liked {
+          .ico {
+            svg {
+              fill: $hover;
+              stroke: $hover;
+            }
+          }
+        }
+        @include hover(){
+          .ico {
+            svg {
               stroke: $hover;
             }
           }
