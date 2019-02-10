@@ -219,6 +219,24 @@ project.personAva = function(){
 
 };
 
+
+    /*
+      ============= alert message
+    */
+
+project.alertMessage = function(title,text) {
+    var $customModal = $('.modal[data-modal="custom"]');
+    project.ovhEnable();
+    if(title){
+        $customModal.find('.modal-custom--title').html(title)
+    }
+    if(text){
+        $customModal.find('.modal-custom--text').html(text)
+    }
+    $customModal.addClass('active');
+};
+
+
     /*
      ============= rotate img
     */
@@ -310,31 +328,4 @@ project.rotateImg = function(){
 
 /* ----------------------------------- plugins ----------------------------------- */
 
-project.carousel = function() {
-    var $carouselBox = $('[data-owl="blog"]'),
-        $carousel = $carouselBox.find('.owl-carousel');
 
-    $carousel.owlCarousel({
-        loop: true,
-        nav: true,
-        navText: ['',''],
-        dots: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2,
-                margin: 20
-            },
-            1201: {
-                items: 3,
-                margin: 30
-            },
-            1367: {
-                items: 3,
-                margin: 50
-            }
-        }
-    })
-};
