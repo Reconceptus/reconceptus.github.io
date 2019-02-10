@@ -1870,6 +1870,98 @@ textarea {
   width: 100%;
 }
 
+.custom-modal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+}
+
+.custom-modal .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: RGBA(30, 20, 53, 0.75);
+}
+
+.custom-modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.custom-modal--wrap {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  max-height: 100%;
+  width: 90%;
+  max-width: 680px;
+  padding: 25px;
+  background-color: #FFF;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  overflow: auto;
+  min-height: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.custom-modal--header {
+  padding: 0 15px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.custom-modal--main {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
 .modal {
   position: fixed;
   top: 0;
