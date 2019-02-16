@@ -1251,6 +1251,10 @@ textarea {
   line-height: 1.3;
 }
 
+.checkbox-text a {
+  color: #932064;
+}
+
 .support-form .checkbox-text {
   color: #564E67;
 }
