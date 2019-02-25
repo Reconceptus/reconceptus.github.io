@@ -375,12 +375,18 @@
       max-height: 100%;
     }
   }
+
+
+
+
+
   .read-also {
     user-select: none;
     float: left;
     background-color: $white;
     padding: $padding;
     width: 410px;
+    clear: both;
     @include media(hover,1751){
       margin: 35px 35px 35px -284px;
     }

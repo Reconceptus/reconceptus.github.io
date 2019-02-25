@@ -164,6 +164,7 @@ project.textParsing = function(){
         _this.find('img[style*="width"]').addClass('has-width');
 
         _this.find('blockquote').wrapInner('<p></p>');
+        _this.find('.read-also').closest('p').addClass('read-also--wrap');
 
         var containerWidth = _this.closest('.text-box--wrap').width();
         _this.find('.text-box--images').css('max-width',containerWidth+'px');

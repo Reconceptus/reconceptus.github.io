@@ -22,7 +22,7 @@
     li {
       @include media(hover,1025){
         padding: 0 $padding/2;
-        margin-bottom: 30px;
+        margin-bottom: 45px;
         width: 50%;
       }
       @include breakpoints(681,1024){
@@ -80,6 +80,7 @@
       padding-bottom: 50%;
       position: relative;
       overflow: hidden;
+      background-color: #9abbc8;
       @include media(hover,1025){
         transform-origin: 50% 100%;
         transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -109,6 +110,76 @@
         will-change: transform;
         @include media(hover,1025){
           transition: opacity 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+      }
+      .favorite {
+        background: transparent;
+        border: none;
+        position: absolute;
+        width: 16px;
+        height: 32px;
+        left: 16px;
+        bottom: 16px;
+        z-index: 1;
+        &:before {
+          content: "";
+          height: 21px;
+          top: 5px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 8px;
+          box-shadow: 0 0 7px 5px RGBA(0,0,0,.4);
+          position: absolute;
+        }
+        .icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            transition: all 0.2s;
+          }
+          &:before {
+            top: 0;
+            height: 25px;
+            background-color: $white;
+          }
+          &:after {
+            width: 0;
+            height: 0;
+            border-color: transparent $white;
+            border-style: none solid solid;
+            border-width: 7px 8px;
+            top: 25px;
+            margin: auto;
+          }
+        }
+        &.liked {
+          .icon {
+            &:before {
+              background-color: $hover;
+            }
+            &:after {
+              border-color: transparent $hover;
+            }
+          }
+        }
+        @include hover(){
+          .icon {
+            &:before {
+              background-color: $hover;
+            }
+            &:after {
+              border-color: transparent $hover;
+            }
+          }
         }
       }
     }
