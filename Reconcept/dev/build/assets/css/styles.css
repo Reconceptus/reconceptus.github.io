@@ -2605,6 +2605,68 @@ textarea {
   flex-direction: column;
 }
 
+.home-banner {
+  color: #FFF;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.home-banner .banner {
+  width: 100%;
+  background-color: #0B0B0B;
+  background-repeat: no-repeat;
+  background-image: url("../images/home-banner.jpg");
+  background-position: 0 100%;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  height: 865px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 135px;
+}
+
+.home-banner figcaption {
+  max-width: 600px;
+  position: relative;
+}
+
+.home-banner figcaption:before {
+  content: "\201C";
+  color: #F9C582;
+  top: 0;
+  font-family: "Yeseva One", cursive;
+  position: absolute;
+  margin-right: 1rem;
+}
+
+.home-banner .title {
+  font-size: 3.1855rem;
+  font-weight: 400;
+}
+
+.home-banner .auth {
+  font-size: 0.93072rem;
+}
+
+.home-banner .logo {
+  width: 800px;
+  height: 224px;
+  color: #F9C582;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.home-banner .logo svg {
+  fill: currentColor;
+}
+
 .article-listing .title {
   font-size: 0.93072rem;
   text-transform: uppercase;
@@ -3230,6 +3292,7 @@ textarea {
 
 .portfolio .item-title {
   text-transform: uppercase;
+  color: #1E1435;
   font-size: 0.93072rem;
 }
 
@@ -3237,6 +3300,7 @@ textarea {
   font-size: 0.93072rem;
   max-height: 40px;
   overflow: hidden;
+  color: #1E1435;
 }
 
 .project-listing .title {
@@ -3346,12 +3410,14 @@ textarea {
 .project-listing .listing .item-title {
   text-transform: uppercase;
   font-size: 0.93072rem;
+  color: #1E1435;
 }
 
 .project-listing .listing .item-subtitle {
   font-size: 0.93072rem;
   max-height: 40px;
   overflow: hidden;
+  color: #1E1435;
 }
 
 .project-main-preview:not(.full-width) {
@@ -4132,6 +4198,12 @@ textarea {
     padding: 80px 0 80px 0;
   }
 
+  .home-banner figcaption:before {
+    right: 100%;
+    font-size: 26.592rem;
+    line-height: 18rem;
+  }
+
   .article-listing {
     padding: 80px 0;
   }
@@ -4483,12 +4555,10 @@ textarea {
 
   .portfolio .item-title {
     font-weight: 700;
-    color: #1E1435;
   }
 
   .portfolio .item-subtitle {
     font-weight: 500;
-    color: #1E1435;
   }
 
   .project-listing .title {
@@ -4594,6 +4664,12 @@ textarea {
 
   .inline-support .title {
     margin-bottom: 50px;
+  }
+
+  .home-banner figcaption:before {
+    right: 100%;
+    font-size: 19rem;
+    line-height: 10rem;
   }
 
   .article-listing {
@@ -4847,6 +4923,12 @@ textarea {
 
   .inline-support .title {
     margin-bottom: 40px;
+  }
+
+  .home-banner figcaption:before {
+    right: 100%;
+    font-size: 12rem;
+    line-height: 6rem;
   }
 
   .article-listing {
@@ -5163,12 +5245,10 @@ textarea {
 
   .project-listing .listing .item-title {
     font-weight: 700;
-    color: #1E1435;
   }
 
   .project-listing .listing .item-subtitle {
     font-weight: 500;
-    color: #1E1435;
   }
 
   .contact-main .photo {
@@ -5793,6 +5873,10 @@ textarea {
   .text-box--link {
     padding: 80px 0 0;
   }
+
+  .text-box--link .link {
+    margin: 40px 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -5982,6 +6066,10 @@ textarea {
 
   .text-box--link {
     padding: 105px 0 0;
+  }
+
+  .text-box--link .link {
+    margin: 50px 0;
   }
 }
 
@@ -6288,6 +6376,10 @@ textarea {
   .text-box--link {
     padding: 40px 0 0;
   }
+
+  .text-box--link .link {
+    margin: 20px 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) and (min-height: 681px) {
@@ -6577,6 +6669,10 @@ textarea {
 
   .text-box--link {
     padding: 60px 0 0;
+  }
+
+  .text-box--link .link {
+    margin: 30px 0;
   }
 }
 

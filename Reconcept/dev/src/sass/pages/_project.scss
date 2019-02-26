@@ -104,6 +104,18 @@
   .link {
     color: inherit;
     position: relative;
+    @include media(hover,1381){
+      margin: 50px 0;
+    }
+    @include breakpoints(1201,1380){
+      margin: 40px 0;
+    }
+    @include breakpoints(1025,1200){
+      margin: 30px 0;
+    }
+    @include media(screen,1024) {
+      margin: 20px 0;
+    }
     &:hover {
       color: $hover;
       span {

@@ -184,12 +184,12 @@
     }
     &-title {
       text-transform: uppercase;
-
+      color: $text;
       font-size: $px*3.36rem;
 
       @include media(hover,1025){
         font-weight: 700;
-        color: $text;
+
       }
       @include media(screen,1024){
         font-weight: 600;
@@ -199,10 +199,10 @@
       font-size: $px*3.36rem;
       max-height: 40px;
       overflow: hidden;
-
+      color: $text;
       @include media(hover,1025){
         font-weight: 500;
-        color: $text;
+
       }
       @include media(screen,1024){
         font-weight: 400;
