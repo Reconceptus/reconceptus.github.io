@@ -52,6 +52,7 @@
         margin-bottom: 15px;
       }
     }
+
   }
 
   .pagination {
@@ -60,6 +61,11 @@
     }
     @include media(screen,767){
       padding: 28px 0 0;
+    }
+  }
+  .btn-box {
+    .btn {
+      width: 100%;
     }
   }
   .item {

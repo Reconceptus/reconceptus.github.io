@@ -2,10 +2,16 @@
   @include media(hover,1381){
     width: 280px;
     padding-right: $padding;
+    .main-articles & {
+      width: 40vw;
+    }
   }
   @include breakpoints(1025,1380){
     width: 195px;
     padding-right: $padding;
+    .main-articles & {
+      width: 40vw;
+    }
   }
   @include media(hover,1025){
     &.fixed {

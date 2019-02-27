@@ -317,7 +317,6 @@ project.personAva = function(){
 
 };
 
-
     /*
       ============= alert message
     */

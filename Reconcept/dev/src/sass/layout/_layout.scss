@@ -23,10 +23,16 @@
     @include media(hover,1381){
       width: 280px;
       flex-shrink: 0;
+      .main-articles & {
+        width: 50%;
+      }
     }
     @include breakpoints(1025,1380){
       width: 195px;
       flex-shrink: 0;
+      .main-articles & {
+        width: 40%;
+      }
     }
   }
   &-main-part {

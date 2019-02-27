@@ -1,3 +1,17 @@
 .btn {
-
+  &-simple {
+    display: inline-flex;
+    justify-content: center;
+    white-space: nowrap;
+    border: none;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 $padding;
+    background-color: $blue;
+    color: $white;
+    font-size: $px*3.84rem;
+    @include hover(){
+      background-color: $hover;
+    }
+  }
 }

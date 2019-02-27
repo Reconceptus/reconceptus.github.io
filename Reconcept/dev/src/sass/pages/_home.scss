@@ -2,14 +2,22 @@
   color: $white;
   position: relative;
   margin-bottom: 200px;
+  .banner-container {
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+  }
   .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
     background-color: #0b0b0b;
     background-repeat: no-repeat;
     background-image: url("../images/home-banner.jpg");
     background-position: 0 100%;
     background-size: auto 100%;
-    height: 865px;
     display: flex;
     align-items: center;
     padding: 0 135px;
@@ -57,6 +65,86 @@
     right: 0;
     svg {
       fill: currentColor;
+    }
+  }
+}
+
+.home-about {
+  font-size: $px*7.2rem;
+  .about {
+    max-width: 1200px;
+  }
+  a {
+    color: $hover;
+    background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding: 0 1px;
+    @include hover(){
+      color: $white;
+      background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+      background-size: 100% 100%;
+    }
+  }
+}
+
+.home-services {
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $px*3.35rem;
+    letter-spacing: 2.4px;
+    @include media(hover,1025){
+      margin-bottom: 50px;
+    }
+    @include breakpoints(768,1024){
+      margin-bottom: 40px;
+    }
+    @include media(screen,767){
+      margin-bottom: 30px;
+    }
+  }
+  .service-list {
+    background-color: $grey_light;
+    padding: 155px 0 145px;
+  }
+  .list {
+    font-size: $px*4.32rem;
+    columns: 3 auto;
+    column-gap: 120px;
+  }
+  .item {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    border-left: 1px solid $text;
+    a {
+      position: relative;
+      display: inline-block;
+      color: inherit;
+      &:before {
+        content: "";
+        position: absolute;
+        left: -43px;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        height: 5px;
+        margin: auto;
+        border-radius: 50%;
+        background-color: $text;
+        transition: all 0.2s;
+      }
+      @include hover(){
+        font-weight: bold;
+        &:before {
+          transform: scale(2);
+        }
+      }
     }
   }
 }
