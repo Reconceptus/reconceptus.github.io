@@ -1,0 +1,36 @@
+.partners {
+  &--main {
+    background-color: $grey_light;
+    padding: 72px 0;
+  }
+  &--list {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      width: 20%;
+      padding: 12px;
+    }
+    .partner {
+      width: 100%;
+      padding-bottom: 100%;
+      position: relative;
+    }
+    .figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+}

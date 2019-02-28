@@ -203,6 +203,9 @@
       font-weight: 600;
       white-space: nowrap;
       margin-bottom: 15px;
+      .main-articles & {
+        display: none;
+      }
       @include media(hover,1025){
         transform: translateX(-10%);
         transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -229,6 +232,9 @@
       margin-bottom: 18px;
       transition: all 0.25s;
       position: relative;
+      .main-articles & {
+        font-size: $px*3.84rem;
+      }
       a {color: inherit;}
       @include media(hover,1025){
         transform: translateX(-10%);

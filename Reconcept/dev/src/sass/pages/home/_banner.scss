@@ -1,0 +1,72 @@
+.home-banner {
+  color: $white;
+  position: relative;
+  margin-bottom: 200px;
+  .banner-container {
+    width: 100%;
+    padding-top: 50%;
+    position: relative;
+  }
+  .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0b0b0b;
+    background-repeat: no-repeat;
+    background-image: url("../images/home-banner.jpg");
+    background-position: 0 100%;
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 135px;
+  }
+  figcaption {
+    max-width: 600px;
+    position: relative;
+    &:before {
+      content: "\201C";
+      color: $yellow;
+      top: 0;
+      font-family: $font-yeseva;
+      position: absolute;
+      margin-right: 1rem;
+      @include media(hover,1025){
+        right: 100%;
+        font-size: $px*96rem;
+        line-height: 18rem;
+      }
+      @include breakpoints(681,1024){
+        right: 100%;
+        font-size: 19rem;
+        line-height: 10rem;
+      }
+      @include media(screen,680){
+        right: 100%;
+        font-size: 12rem;
+        line-height: 6rem;
+      }
+    }
+  }
+  .title {
+    font-size: $px*11.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 35px;
+  }
+  .auth {
+    font-size: $px*3.36rem;
+  }
+  .logo {
+    color: $yellow;
+    position: absolute;
+    width: 810px;
+    height: 245px;
+    bottom: -65px;
+    right: -82px;
+    svg {
+      fill: currentColor;
+    }
+  }
+}

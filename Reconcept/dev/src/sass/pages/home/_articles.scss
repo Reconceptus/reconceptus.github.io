@@ -1,0 +1,31 @@
+.main-articles {
+  .sidebar-header {
+    margin: 0 auto;
+    width: 500px;
+    padding: 80px 0 0 20px;
+    .text {
+      font-size: $px*3.84rem;
+      margin-top: 45px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    a {
+      color: $hover;
+      background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+      background-size: 0 100%;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      padding: 0 1px;
+      @include hover(){
+        color: $white;
+        background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+        background-size: 100% 100%;
+      }
+    }
+    img {
+      width: 400px;
+      height: auto;
+    }
+  }
+
+}

@@ -1,0 +1,21 @@
+.home-about {
+  font-size: $px*7.2rem;
+  line-height: 1.85;
+  margin-bottom: 150px;
+  .about {
+    max-width: 1200px;
+  }
+  a {
+    color: $hover;
+    background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding: 0 1px;
+    @include hover(){
+      color: $white;
+      background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+      background-size: 100% 100%;
+    }
+  }
+}

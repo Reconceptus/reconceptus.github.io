@@ -1,0 +1,59 @@
+.reviews {
+  margin-bottom: 20px;
+  &--main {
+    background-color: $grey_light;
+    padding: 100px 0 105px;
+  }
+  &--slider {
+    .owl-dots {
+      width: 400px;
+      height: 8px;
+      margin: 40px auto 0;
+      background-color: #cfcfcf;
+      display: flex;
+    }
+    .owl-dot {
+      width: 100%;
+      transition: all 0.3s;
+      &.active {
+        background-color: $text;
+      }
+    }
+  }
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: $px*3.35rem;
+    letter-spacing: 2.4px;
+    @include media(hover,1025){
+      margin-bottom: 50px;
+    }
+    @include breakpoints(768,1024){
+      margin-bottom: 40px;
+    }
+    @include media(screen,767){
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.review {
+  &--layout {
+    display: flex;
+    padding-top: 42px;
+  }
+  &--aside {
+    width: 25%;
+    flex-shrink: 0;
+    padding: 0 10px;
+    font-size: $px*3.84rem;
+    .person {
+      img {
+        margin-bottom: 26px;
+      }
+    }
+  }
+  &--main {
+    padding: 0 10px;
+  }
+}
