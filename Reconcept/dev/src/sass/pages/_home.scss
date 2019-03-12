@@ -9,8 +9,11 @@
   @include media(hover,1025){
     margin-bottom: 70px;
   }
-  @include media(screen,1024){
+  @include breakpoints(601,1024){
     margin-bottom: 35px;
+  }
+  @include media(screen,600){
+    margin-bottom: 20px;
   }
 }
 

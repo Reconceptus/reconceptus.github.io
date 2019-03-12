@@ -1,7 +1,12 @@
 .partners {
   &--main {
     background-color: $grey_light;
-    padding: 72px 0;
+    @include media(hover,681){
+      padding: 72px 0;
+    }
+    @include media(screen,680){
+      padding: 20px 0;
+    }
   }
   &--list {
     ul {
@@ -9,8 +14,13 @@
       flex-wrap: wrap;
     }
     li {
-      width: 20%;
       padding: 12px;
+      @include media(hover,801){
+        width: 20%;
+      }
+      @include breakpoints(601,800){
+        width: 25%;
+      }
     }
     .partner {
       width: 100%;

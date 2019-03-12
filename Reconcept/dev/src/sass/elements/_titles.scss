@@ -52,11 +52,15 @@
     font-size: $px*3.36rem;
     font-weight: 700;
     text-transform: uppercase;
-    @include media(hover,681){
+    @include media(hover,1025){
       padding: 0 0 0 20%;
       margin-bottom: 60px;
     }
-    @include media(screen,680){
+    @include breakpoints(768,1024){
+      padding: 0 0 0 15%;
+      margin-bottom: 45px;
+    }
+    @include media(screen,767){
       margin-bottom: $padding;
     }
     .item-date {

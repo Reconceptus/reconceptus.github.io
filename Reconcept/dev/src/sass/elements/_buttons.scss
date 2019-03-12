@@ -4,12 +4,19 @@
     justify-content: center;
     white-space: nowrap;
     border: none;
-    height: 65px;
-    line-height: 65px;
+
     padding: 0 $padding;
     background-color: $blue;
     color: $white;
     font-size: $px*3.84rem;
+    @include media(hover,1025){
+      height: 65px;
+      line-height: 65px;
+    }
+    @include media(screen,1024){
+      height: 45px;
+      line-height: 45px;
+    }
     @include hover(){
       background-color: $hover;
     }

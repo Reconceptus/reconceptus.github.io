@@ -126,7 +126,7 @@
       margin-left: -130px;
     }
     @include media(screen,1024){
-      margin: 0 -16.25px;
+      margin: 0 -16.25px 40px;
     }
     .figure {
       @include media(hover,1201){

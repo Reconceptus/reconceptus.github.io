@@ -1,7 +1,25 @@
 .home-about {
-  font-size: $px*7.2rem;
+
   line-height: 1.85;
-  margin-bottom: 150px;
+
+  @include media(hover,1621){
+    font-size: $px*7.2rem;
+    margin-bottom: 150px;
+  }
+  @include breakpoints(1025,1620){
+    font-size: $px*6rem;
+    margin-bottom: 150px;
+  }
+  @include media(screen,1024){
+
+    font-size: $px*5rem;
+  }
+  @include breakpoints(601,1024){
+    margin-bottom: 75px;
+  }
+  @include media(screen,600){
+    margin-bottom: 55px;
+  }
   .about {
     max-width: 1200px;
   }

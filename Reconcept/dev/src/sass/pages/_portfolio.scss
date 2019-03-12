@@ -7,6 +7,11 @@
   }
   &-section {
     margin-bottom: 55px;
+    @include media(screen,1024){
+      .home-portfolio & {
+        margin-bottom: 20px;
+      }
+    }
   }
   &-categories {
     font-size: $px*3.36rem;
