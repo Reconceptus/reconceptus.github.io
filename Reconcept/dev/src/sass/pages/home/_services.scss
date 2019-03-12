@@ -14,14 +14,17 @@
     text-transform: uppercase;
     font-size: $px*3.35rem;
     letter-spacing: 2.4px;
-    @include media(hover,1025){
-      margin-bottom: 50px;
+    @include media(hover,1281){
+      margin-bottom: 80px;
+    }
+    @include breakpoints(1025,1280){
+      margin-bottom: 60px;
     }
     @include breakpoints(768,1024){
       margin-bottom: 40px;
     }
     @include media(screen,767){
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
   .service-list {
@@ -44,28 +47,35 @@
   }
   .list {
     font-size: $px*4.32rem;
-
-
-    @include media(hover,1025){
-      column-gap: 120px;
-    }
-    @include breakpoints(801,1024){
-      column-gap: 60px;
-    }
     @include media(hover,801){
-      columns: 3 auto;
+      //columns: 3 auto;
+      display: flex;
     }
     @include breakpoints(601,800){
-      columns: 2 auto;
-      column-gap: 40px;
+      //columns: 2 auto;
+      //column-gap: 40px;
+      display: flex;
     }
   }
+  .list-section {
+    width: 100%;
+    &:not(:last-child){
+      @include media(hover,1201){
+        margin-right: 120px;
+      }
+      @include breakpoints(801,1200){
+        margin-right: 60px;
+      }
+      @include breakpoints(601,800){
+        margin-right: 40px;
+      }
+      @include media(screen,600){
+        margin-bottom: 20px;
+      }
+    }
+
+  }
   .item {
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    break-inside: avoid;
-
-
 
     @include media(hover,1025){
       padding-left: 40px;
@@ -85,14 +95,16 @@
     @include media(screen,600){
       padding: 10px 0 10px 20px;
     }
-    a {
+    .heading {
+      font-weight: 700;
+    }
+    a, .heading {
       position: relative;
       display: inline-block;
       color: inherit;
       &:before {
         content: "";
         position: absolute;
-
         top: 0;
         bottom: 0;
         width: 5px;
@@ -115,8 +127,12 @@
         }
 
       }
+
+    }
+    a {
       @include hover(){
         font-weight: bold;
+        color: $hover;
         &:before {
           transform: scale(2);
         }
