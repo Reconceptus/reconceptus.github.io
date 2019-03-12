@@ -10,9 +10,6 @@
 // touch-or-mouse
 //= vendor/touchOrMouse.min.js
 
-// custom-cursor
-//= vendor/customCursor.js
-
 // jquery-validator-edited
 //= vendor/validator.js
 

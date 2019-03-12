@@ -64,30 +64,6 @@ delete e[b].onload,e[b]=!0)}f="";q+=1;d()};var p=function(){window.removeEventLi
  * Copyright (c) 2014 Laurens Meurs, wiedes.nl; Licensed MIT */
 (function(e){"use strict";var t={ghostEventDelay:1e3};var n={init:function(n){var r=this;if(!r.data("touchOrMouse")){r.on("touchstart.touchOrMouse touchend.touchOrMouse",function(t){e(this).data("touchOrMouse").touchEventInProgress=t.type==="touchstart";e(this).data("touchOrMouse").lastTouchEventTimestamp=Date.now()}).data("touchOrMouse",{options:e.extend(t,n||{}),touchEventInProgress:false,lastTouchEventTimestamp:0})}return r},get:function(t){var n=this,r=n.data("touchOrMouse"),i=e(t.delegateTarget).data("touchOrMouse");if(!i){e(t.delegateTarget).data("touchOrMouse",i={})}var s=r.touchEventInProgress||r.lastTouchEventTimestamp>Date.now()-r.options.ghostEventDelay||t.type==="mouseleave"&&i.lastMouseEnterEventWasInvokedByTouch;if(t.type==="mouseenter"){i.lastMouseEnterEventWasInvokedByTouch=s}return s?"touch":"mouse"}};e.fn.touchOrMouse=function(e,t){return n[e].call(this,t)}})(jQuery);
 
-// custom-cursor
-$("body").append('<div class="cursor"></div>');
-var scrollY = 0, scrollX = 0;
-$(document).mousemove(function (e) {
-    $(".cursor").css("top", e.pageY - scrollY + "px").css("left", e.pageX - scrollX + "px");
-});
-$(document).scroll(function (e) {
-    scrollY = $(window).scrollTop();
-    scrollX = $(window).scrollLeft();
-});
-setInterval(function(){scroll = $(window).scrollTop();}, 500);
-$("a, button, input, textarea, select, label").hover(function (e) {
-    $(this).addClass("msty_cur");
-    $(".cursor").addClass("overlink");
-}, function (e) {
-    $(".cursor").removeClass("overlink");
-});
-$("a, button, input, textarea, select, label").click(function (e) {
-    $(".cursor").addClass("clicked");
-    setTimeout(function () {
-        $(".cursor").removeClass("clicked");
-    },1000)
-});
-
 // jquery-validator-edited
 /*! jQuery Validation Plugin - v1.19.0 - 11/28/2018
  * https://jqueryvalidation.org/
