@@ -160,6 +160,31 @@
       }
 
     }
+    .image {
+      @include media(hover,1025){
+        width: calc(50% - 12.5px);
+        margin-top: $padding;
+      }
+      @include breakpoints(681,1024){
+        width: calc(50% - 7.5px);
+        margin-top: 15px;
+      }
+      @include media(hover,681){
+        &:nth-child(1),
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
+      @include media(screen,680){
+        width: 100%;
+        &:not(:first-child){
+          margin-top: 15px;
+        }
+      }
+      img {
+        box-shadow: 0 0 2rem 0 rgba($black,0.4);
+      }
+    }
     img {
       width: 100%;
       display: block;
@@ -246,14 +271,14 @@
   }
   a:not(.link) {
     color: $hover;
-    background-image: linear-gradient(to right, $hover 0%, $hover 100%);
-    background-size: 0 100%;
+    background-image: linear-gradient(to bottom, $hover 0%, $hover 100%);
+    background-size: 100% 2px;
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: 0 100%;
     padding: 0 1px;
     @include hover(){
       color: $white;
-      background-image: linear-gradient(to right, $hover 0%, $hover 100%);
+      background-image: linear-gradient(to bottom, $hover 0%, $hover 100%);
       background-size: 100% 100%;
     }
   }

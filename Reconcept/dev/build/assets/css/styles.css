@@ -2070,6 +2070,11 @@ textarea {
   margin: 40px 0;
 }
 
+.text-box--images .image img {
+  -webkit-box-shadow: 0 0 2rem 0 RGBA(0, 0, 0, 0.4);
+  box-shadow: 0 0 2rem 0 RGBA(0, 0, 0, 0.4);
+}
+
 .text-box--images img {
   width: 100%;
   display: block;
@@ -2115,14 +2120,14 @@ textarea {
 
 .text-box a:not(.link) {
   color: #932064;
-  background-image: -webkit-gradient(linear, left top, right top, from(#932064), to(#932064));
-  background-image: -webkit-linear-gradient(left, #932064 0%, #932064 100%);
-  background-image: -o-linear-gradient(left, #932064 0%, #932064 100%);
-  background-image: linear-gradient(to right, #932064 0%, #932064 100%);
-  -webkit-background-size: 0 100%;
-  background-size: 0 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#932064), to(#932064));
+  background-image: -webkit-linear-gradient(top, #932064 0%, #932064 100%);
+  background-image: -o-linear-gradient(top, #932064 0%, #932064 100%);
+  background-image: linear-gradient(to bottom, #932064 0%, #932064 100%);
+  -webkit-background-size: 100% 2px;
+  background-size: 100% 2px;
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 0 100%;
   padding: 0 1px;
 }
 
@@ -3560,7 +3565,8 @@ textarea {
   align-items: center;
   overflow: hidden;
   font-weight: 700;
-  height: 64px;
+  min-height: 64px;
+  padding: 8px 0;
 }
 
 .project-listing .listing .item-arrow {
@@ -3605,7 +3611,6 @@ textarea {
 
 .project-listing .listing .item-subtitle {
   font-size: 0.93072rem;
-  max-height: 40px;
   overflow: hidden;
   color: #1E1435;
 }
@@ -4296,6 +4301,11 @@ textarea {
     margin-top: 25px;
   }
 
+  .text-box--images .image {
+    width: calc(50% - 12.5px);
+    margin-top: 25px;
+  }
+
   .text-box blockquote {
     padding-left: 50px;
     margin-bottom: 56px;
@@ -4310,10 +4320,10 @@ textarea {
 
   .text-box a:not(.link):hover {
     color: #FFF;
-    background-image: -webkit-gradient(linear, left top, right top, from(#932064), to(#932064));
-    background-image: -webkit-linear-gradient(left, #932064 0%, #932064 100%);
-    background-image: -o-linear-gradient(left, #932064 0%, #932064 100%);
-    background-image: linear-gradient(to right, #932064 0%, #932064 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#932064), to(#932064));
+    background-image: -webkit-linear-gradient(top, #932064 0%, #932064 100%);
+    background-image: -o-linear-gradient(top, #932064 0%, #932064 100%);
+    background-image: linear-gradient(to bottom, #932064 0%, #932064 100%);
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
   }
@@ -4914,6 +4924,11 @@ textarea {
     margin-top: 15px;
   }
 
+  .text-box--images .image {
+    width: calc(50% - 7.5px);
+    margin-top: 15px;
+  }
+
   .text-box blockquote {
     padding-left: 40px;
     margin-bottom: 40px;
@@ -5108,6 +5123,14 @@ textarea {
   }
 
   .text-box--images .figure:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .text-box--images .image {
+    width: 100%;
+  }
+
+  .text-box--images .image:not(:first-child) {
     margin-top: 15px;
   }
 
@@ -7009,6 +7032,11 @@ textarea {
 
   .text-box--images .figure:nth-child(1),
   .text-box--images .figure:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .text-box--images .image:nth-child(1),
+  .text-box--images .image:nth-child(2) {
     margin-top: 0;
   }
 

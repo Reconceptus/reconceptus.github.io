@@ -467,8 +467,8 @@ $(document).ready(function () {
     },300);
 
     setTimeout(function () {
-        $('.slideDown').slideDown(300);
-    },1000);
+        $('.slideDown').slideDown(200);
+    },300);
 
 
     /*
