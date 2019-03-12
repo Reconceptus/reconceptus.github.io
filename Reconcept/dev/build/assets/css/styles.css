@@ -2848,9 +2848,7 @@ textarea {
 }
 
 .reviews--slider .owl-dots {
-  width: 400px;
   height: 8px;
-  margin: 40px auto 0;
   background-color: #CFCFCF;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2887,15 +2885,10 @@ textarea {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding: 0 10px;
 }
 
 .review--aside .person img {
   margin-bottom: 26px;
-}
-
-.review--main {
-  padding: 0 10px;
 }
 
 .partners--main {
@@ -7483,6 +7476,19 @@ textarea {
     padding-top: 15px;
     padding-bottom: 15px;
   }
+
+  .reviews--slider .owl-dots {
+    width: 400px;
+    margin: 40px auto 0;
+  }
+
+  .review--aside {
+    padding: 0 10px;
+  }
+
+  .review--main {
+    padding: 0 10px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -7525,15 +7531,11 @@ textarea {
 
   .main-articles .sidebar-header {
     padding: 20px 0;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-    -webkit-flex-direction: row-reverse;
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -7542,14 +7544,32 @@ textarea {
 
   .main-articles .sidebar-header .text {
     margin-top: 10px;
+    margin-bottom: 0;
   }
 
   .main-articles .sidebar-header .img {
-    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .main-articles .sidebar-header img {
     width: 100px;
+  }
+
+  .main-articles .blog-section {
+    margin-bottom: 20px;
+  }
+
+  .reviews--main {
+    padding: 40px 0;
+  }
+
+  .reviews--slider .owl-dots {
+    width: 100%;
+    margin: 20px auto 0;
+  }
+
+  .partners--list li {
+    width: 50%;
   }
 
   .home-portfolio {

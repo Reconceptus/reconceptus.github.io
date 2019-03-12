@@ -21,6 +21,9 @@
       @include breakpoints(601,800){
         width: 25%;
       }
+      @include media(screen,600){
+        width: 50%;
+      }
     }
     .partner {
       width: 100%;
