@@ -3630,7 +3630,7 @@ textarea {
 }
 
 .project-main-preview img:not(:last-child) {
-  margin-bottom: 25px;
+  margin-bottom: 8vw;
 }
 
 .project-preview:not(.full-width) {
