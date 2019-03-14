@@ -32,11 +32,11 @@
       }
       @include breakpoints(681,1024){
         width: 50%;
-        padding: 7.5px;
+        padding: 7.5px 7.5px 20px;
       }
       @include media(screen,680){
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 22px;
       }
     }
     .item {

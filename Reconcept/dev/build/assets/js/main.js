@@ -455,6 +455,7 @@ $(document).ready(function () {
 
     $modal.find('.close').on('click',function () {
         project.ovhDisable();
+        $modal.find('.successful').removeClass('successful');
         $modal.removeClass('active');
     });
 

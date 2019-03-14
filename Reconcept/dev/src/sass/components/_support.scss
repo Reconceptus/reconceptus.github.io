@@ -56,7 +56,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
     flex-direction: column;
+    text-align: center;
+    @include media(hover,681){
+      font-size: 4rem;
+    }
+    @include media(screen,680){
+      font-size: 3rem;
+    }
   }
 }

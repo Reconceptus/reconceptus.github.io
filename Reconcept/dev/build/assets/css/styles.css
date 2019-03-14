@@ -1161,7 +1161,16 @@ textarea {
 }
 
 .checkbox-text a {
-  color: #932064;
+  color: inherit;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8E899A), to(#8E899A));
+  background-image: -webkit-linear-gradient(top, #8E899A 0%, #8E899A 100%);
+  background-image: -o-linear-gradient(top, #8E899A 0%, #8E899A 100%);
+  background-image: linear-gradient(to bottom, #8E899A 0%, #8E899A 100%);
+  -webkit-background-size: 100% 1px;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
 }
 
 .support-form .checkbox-text {
@@ -2012,12 +2021,12 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 4rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  text-align: center;
 }
 
 .text-box {
@@ -2575,12 +2584,12 @@ textarea {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 4rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  text-align: center;
 }
 
 .home-banner {
@@ -3667,7 +3676,7 @@ textarea {
 }
 
 .project-main-preview img:not(:last-child) {
-  margin-bottom: 8vw;
+  margin-bottom: 25px;
 }
 
 .project-preview:not(.full-width) {
@@ -5041,7 +5050,7 @@ textarea {
 
   .blog-grid li {
     padding: 0 7.5px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     width: 50%;
   }
 
@@ -5051,7 +5060,7 @@ textarea {
 
   .project-listing .listing li {
     width: 50%;
-    padding: 7.5px;
+    padding: 7.5px 7.5px 20px;
   }
 
   .text-box--link {
@@ -5140,6 +5149,10 @@ textarea {
 
   .support-modal .title {
     margin-bottom: 40px;
+  }
+
+  .modal-form .form-success {
+    font-size: 3rem;
   }
 
   .text-box {
@@ -5285,6 +5298,10 @@ textarea {
     margin-bottom: 40px;
   }
 
+  .inline-support .form-success {
+    font-size: 3rem;
+  }
+
   .home-banner {
     margin-bottom: 20px;
   }
@@ -5365,12 +5382,12 @@ textarea {
   }
 
   .blog-grid li {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
   }
 
   .project-listing .listing li {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 22px;
   }
 
   .text-box--link {
@@ -6128,7 +6145,7 @@ textarea {
 
   .portfolio-grid li {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 
   .portfolio .pagination {
@@ -7058,6 +7075,10 @@ textarea {
     margin-right: 25px;
   }
 
+  .modal-form .form-success {
+    font-size: 4rem;
+  }
+
   .text-box {
     font-size: 18px;
   }
@@ -7096,6 +7117,10 @@ textarea {
     height: 64px;
     font-size: 40px;
     margin-right: 20px;
+  }
+
+  .inline-support .form-success {
+    font-size: 4rem;
   }
 
   .partners--main {
@@ -7497,10 +7522,10 @@ textarea {
   .main-articles .sidebar-header {
     padding: 20px 0;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
-    -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
@@ -7513,7 +7538,7 @@ textarea {
   }
 
   .main-articles .sidebar-header .img {
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .main-articles .sidebar-header img {

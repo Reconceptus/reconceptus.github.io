@@ -52,7 +52,13 @@
     align-self: center;
     line-height: 1.3;
     a {
-      color: $hover;
+      color: inherit;
+      position: relative;
+      background-image: linear-gradient(to bottom, $violet_light 0%, $violet_light 100%);
+      background-size: 100% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+
     }
     .support-form & {
       color: $violet;

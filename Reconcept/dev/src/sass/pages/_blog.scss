@@ -27,11 +27,11 @@
       }
       @include breakpoints(681,1024){
         padding: 0 7.5px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         width: 50%;
       }
       @include media(screen,680){
-        margin-bottom: 15px;
+        margin-bottom: 22px;
       }
     }
   }

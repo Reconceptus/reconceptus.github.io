@@ -16,7 +16,7 @@
       display: block;
       height: auto;
       &:not(:last-child){
-        margin-bottom: 8vw;
+        margin-bottom: $padding;
       }
     }
   }
