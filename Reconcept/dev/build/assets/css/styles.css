@@ -2693,6 +2693,28 @@ textarea {
   width: 100%;
 }
 
+.home-services .item {
+  position: relative;
+}
+
+.home-services .item:before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: currentColor;
+}
+
+.home-services .item:first-child:before {
+  top: 50%;
+}
+
+.home-services .item:last-child:before {
+  bottom: 50%;
+}
+
 .home-services .item .heading {
   font-weight: 700;
 }
@@ -2704,8 +2726,8 @@ textarea {
   color: inherit;
 }
 
-.home-services .item a:before,
-.home-services .item .heading:before {
+.home-services .item a:after,
+.home-services .item .heading:after {
   content: "";
   position: absolute;
   top: 0;
@@ -2719,6 +2741,16 @@ textarea {
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.home-services .item .heading:before {
+  content: "";
+}
+
+.home-services .item .heading:after {
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
 }
 
 .main-articles .sidebar-header {
@@ -4447,8 +4479,8 @@ textarea {
     padding-left: 40px;
   }
 
-  .home-services .item a:before,
-  .home-services .item .heading:before {
+  .home-services .item a:after,
+  .home-services .item .heading:after {
     left: -43px;
   }
 
@@ -4457,7 +4489,7 @@ textarea {
     color: #932064;
   }
 
-  .home-services .item a:hover:before {
+  .home-services .item a:hover:after {
     -webkit-transform: scale(2);
     -ms-transform: scale(2);
     transform: scale(2);
@@ -7355,8 +7387,8 @@ textarea {
     padding-left: 25px;
   }
 
-  .home-services .item a:before,
-  .home-services .item .heading:before {
+  .home-services .item a:after,
+  .home-services .item .heading:after {
     left: -28px;
   }
 
@@ -7401,7 +7433,6 @@ textarea {
   }
 
   .home-services .item {
-    border-left: 1px solid #1E1435;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -7458,8 +7489,8 @@ textarea {
     padding: 10px 0 10px 20px;
   }
 
-  .home-services .item a:before,
-  .home-services .item .heading:before {
+  .home-services .item a:after,
+  .home-services .item .heading:after {
     left: -23px;
   }
 
@@ -7557,8 +7588,8 @@ textarea {
     padding-left: 20px;
   }
 
-  .home-services .item a:before,
-  .home-services .item .heading:before {
+  .home-services .item a:after,
+  .home-services .item .heading:after {
     left: -23px;
   }
 

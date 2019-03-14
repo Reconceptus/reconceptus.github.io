@@ -76,7 +76,26 @@
 
   }
   .item {
-
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: currentColor;
+    }
+    &:first-child {
+      &:before {
+        top: 50%;
+      }
+    }
+    &:last-child {
+      &:before {
+        bottom: 50%;
+      }
+    }
     @include media(hover,1025){
       padding-left: 40px;
     }
@@ -84,7 +103,6 @@
       padding-left: 25px;
     }
     @include media(hover,601){
-      border-left: 1px solid $text;
       padding-top: 15px;
       padding-bottom: 15px;
     }
@@ -102,7 +120,8 @@
       position: relative;
       display: inline-block;
       color: inherit;
-      &:before {
+
+      &:after {
         content: "";
         position: absolute;
         top: 0;
@@ -129,11 +148,19 @@
       }
 
     }
+    .heading {
+      &:before {
+        content: "";
+      }
+      &:after {
+        transform: scale(2);
+      }
+    }
     a {
       @include hover(){
         font-weight: bold;
         color: $hover;
-        &:before {
+        &:after {
           transform: scale(2);
         }
       }
