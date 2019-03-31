@@ -1,10 +1,12 @@
 .sidebar {
-  @include media(hover,1381){
-    width: 280px;
-    padding-right: $padding;
+  @include breakpoints(1381,1920){
     .main-articles & {
       width: 40vw;
     }
+  }
+  @include media(hover,1381){
+    width: 280px;
+    padding-right: $padding;
   }
   @include breakpoints(1025,1380){
     width: 195px;

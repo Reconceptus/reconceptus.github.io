@@ -78,7 +78,20 @@
                 <div class="home-banner">
                     <div class="content content--lg">
                         <div class="banner-container">
-                            <figure class="banner">
+                            <script>
+                                window.onload = function () {
+                                    var mobImg = "url('/assets/images/live-site/mob.jpg')",
+                                        deskImg = "url('/assets/images/live-site/desk.jpg')";
+
+                                    if($('html').hasClass('mobile')){
+                                        $('#homeFigure').css('background-image',mobImg)
+                                    }
+                                    else {
+                                        $('#homeFigure').css('background-image',deskImg)
+                                    }
+                                };
+                            </script>
+                            <figure class="banner" id="homeFigure">
                                 <figcaption>
                                     <h1 class="title">Экспертно создаём интернет-магазины и сайты компаний</h1>
                                     <div class="auth">Азалия, сооснователь студии ReConcept</div>
@@ -90,10 +103,10 @@
                                 </div>
                             </figure>
                         </div>
-                        <div class="descr">
-                            <div class="title">Экспертно создаём интернет-магазины и сайты компаний</div>
-                            <div class="auth">Азалия, сооснователь студии ReConcept</div>
-                        </div>
+                        <!--<div class="descr">-->
+                            <!--<div class="title">Экспертно создаём интернет-магазины и сайты компаний</div>-->
+                            <!--<div class="auth">Азалия, сооснователь студии ReConcept</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
 
