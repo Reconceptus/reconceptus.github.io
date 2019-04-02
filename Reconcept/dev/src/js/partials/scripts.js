@@ -41,6 +41,7 @@ $(document).ready(function () {
         project.ovhEnable();
         $header.removeClass('simple-header');
         $('.search-modal').addClass('active');
+        $('.search-input').focus();
     });
 
     $support.on('click',function () {
