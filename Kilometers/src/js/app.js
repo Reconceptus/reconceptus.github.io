@@ -1,3 +1,16 @@
+// imports
+import './vendor/detect.ie';
+import './vendor/device.min';
+import './vendor/svgxuse.min';
+
+import $ from 'jquery';
+
+// functions
+const functions = {
+    scroll: require('./modules/scroll')
+};
+
+// scripts
 $(document).ready(function () {
 
     /* ----------------------------------- variables ----------------------------------- */

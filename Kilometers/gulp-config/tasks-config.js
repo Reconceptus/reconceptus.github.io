@@ -84,9 +84,21 @@ module.exports = function (gulp, plugins) {
 
 /* js:compile ------------------------------------- */
 
-    gulp.task('js:build', () => {
-        return getTask('js-build', PATH_CONFIG.src.js, PATH_CONFIG.build.js);
+    // build app src file
+
+    gulp.task('js:rigger', () => {
+        return getTask('js-rigger', PATH_CONFIG.src.js_partials, PATH_CONFIG.src.js);
     });
+
+    gulp.task('webpack', () => {
+        return getTask('webpack', PATH_CONFIG.src.js, PATH_CONFIG.build.js);
+    });
+
+    // svg build sprite and copy all files to build
+
+    gulp.task('js:build', gulp.series('js:rigger', 'webpack', (done) => {
+        done();
+    }));
 
 
 
@@ -101,7 +113,7 @@ module.exports = function (gulp, plugins) {
     }));
 
     gulp.task('watch:js', gulp.parallel('js:build', 'browser:sync', () => {
-        return getTask('watch', PATH_CONFIG.watch.js, 'js:build');
+        return getTask('watch', [PATH_CONFIG.watch.js,PATH_CONFIG.watch.js_no_app], 'js:build');
     }));
 
     gulp.task('watch:img', gulp.parallel('img:optimize', 'browser:sync', () => {
@@ -111,8 +123,9 @@ module.exports = function (gulp, plugins) {
     gulp.task('watch', gulp.parallel('css:build', 'html:build', 'js:build', 'img:optimize', 'browser:sync', () => {
         getTask('watch', PATH_CONFIG.watch.style, 'css:build');
         getTask('watch', [PATH_CONFIG.watch.html,PATH_CONFIG.watch.html_no_svg], 'html:build');
-        getTask('watch', PATH_CONFIG.watch.js, 'js:build');
+        getTask('watch', [PATH_CONFIG.watch.js,PATH_CONFIG.watch.js_no_app], 'js:build');
         getTask('watch', PATH_CONFIG.watch.img, 'img:optimize');
-    }))
+    }));
+
 
 };
