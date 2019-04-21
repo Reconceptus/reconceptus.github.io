@@ -28,3 +28,13 @@ or
 ```
 npm run prettier
 ```
+
+## ESlint (for app-lint.js)
+show errors
+```
+yarn lint
+```
+try to fix errors
+```
+yarn lint:write
+```
