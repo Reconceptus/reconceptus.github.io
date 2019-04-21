@@ -128,4 +128,19 @@ module.exports = function (gulp, plugins) {
     }));
 
 
+
+/* server build --------------------------------------*/
+
+    gulp.task('build', gulp.parallel('css:build', 'js:build', 'img:optimize', 'svg:build', 'media:copy', 'fonts:copy', (done) => {
+        done();
+    }));
+
+
+
+/* gulp default --------------------------------------*/
+
+    gulp.task('default', gulp.series('watch'), (done) => {
+        done();
+    });
+
 };
