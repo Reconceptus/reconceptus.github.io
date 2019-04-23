@@ -1,4 +1,61 @@
 .footer {
   flex-shrink: 0;
-  background-color: red;
+  background-color: $text;
+  &-main {
+    display: flex;
+    align-items: flex-start;
+    padding: 96px 0 40px;
+    .part {
+      width: 50%;
+      display: flex;
+      &:first-child {
+        padding-right: 12px;
+      }
+      &:last-child {
+        padding-left: 12px;
+      }
+    }
+    .donate-btn {
+      min-width: 392px;
+    }
+  }
+  &-nav {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    a {
+      color: $white;
+      @include hover(){
+        color: $link;
+      }
+    }
+  }
+  &-contacts {
+    font-size: 14px;
+    font-weight: 600;
+    color: $white;
+    a {
+      color: inherit;
+      @include hover(){
+        color: $link;
+      }
+    }
+    .title {
+      text-transform: uppercase;
+    }
+  }
+  &-bottom {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+    text-align: right;
+    padding: 24px 0 40px;
+    a {
+      color: inherit;
+      @include hover(){
+        color: $link;
+      }
+    }
+  }
 }

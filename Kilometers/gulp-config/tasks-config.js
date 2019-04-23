@@ -108,7 +108,7 @@ module.exports = function(gulp, plugins) {
 
     gulp.task(
         'watch:css',
-        gulp.parallel('css:build', 'browser:sync', () => {
+        gulp.parallel('css:build', () => {
             return getTask('watch', PATH_CONFIG.watch.style, 'css:build');
         }),
     );
@@ -143,11 +143,23 @@ module.exports = function(gulp, plugins) {
     );
 
     gulp.task(
+        'watch:svg',
+        gulp.parallel('svg:build', 'browser:sync', () => {
+            return getTask(
+                'watch',
+                [PATH_CONFIG.watch.svg, PATH_CONFIG.watch.svg_no_sprite],
+                'svg:build',
+            );
+        }),
+    );
+
+    gulp.task(
         'watch',
         gulp.series(
             'files:clean',
             gulp.parallel(
                 'css:build',
+                'svg:copy',
                 'html:build',
                 'js:build',
                 'img:optimize',
@@ -165,6 +177,11 @@ module.exports = function(gulp, plugins) {
                         'js:build',
                     );
                     getTask('watch', PATH_CONFIG.watch.img, 'img:optimize');
+                    getTask(
+                        'watch',
+                        [PATH_CONFIG.watch.svg, PATH_CONFIG.watch.svg_no_sprite],
+                        'svg:build',
+                    );
                 },
             ),
         ),

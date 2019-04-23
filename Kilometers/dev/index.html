@@ -7,7 +7,7 @@
     <meta name="author" content="enenkoff@mail.ru">
 
     <link rel="icon" href="favicon.ico" sizes="32x32">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=cyrillic-ext" rel="stylesheet">
     <link href="assets/css/styles.min.css" rel="stylesheet">
     <!--<link href="assets/css/common.css" rel="stylesheet">-->
 
@@ -17,11 +17,7 @@
 <body>
 <div class="hide">
 
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-search" viewBox="0 0 32 32">
-    <g fill-rule="evenodd">
-        <path d="m19.427 20.427c-1.39.99-3.09 1.573-4.927 1.573-4.694 0-8.5-3.806-8.5-8.5 0-4.694 3.806-8.5 8.5-8.5 4.694 0 8.5 3.806 8.5 8.5 0 2.347-.951 4.472-2.49 6.01l5.997 5.997c.275.275.268.716-.008.992-.278.278-.72.28-.992.008l-6.081-6.081m-4.927.573c4.142 0 7.5-3.358 7.5-7.5 0-4.142-3.358-7.5-7.5-7.5-4.142 0-7.5 3.358-7.5 7.5 0 4.142 3.358 7.5 7.5 7.5"/>
-    </g>
-</symbol></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-eye" viewBox="0 0 7.68 3.83"><path d="M3.84,0A4.79,4.79,0,0,0,0,1.92q.14.19.3.36l.23.24A4.79,4.79,0,0,0,3.84,3.83,4.79,4.79,0,0,0,7.68,1.92,4.79,4.79,0,0,0,3.84,0Zm0,3.24A1.38,1.38,0,0,1,2.4,1.92,1.38,1.38,0,0,1,3.84.6,1.38,1.38,0,0,1,5.28,1.92,1.38,1.38,0,0,1,3.84,3.24Z"/></symbol></svg>
 
 </div>
 <div id="wrapper">
@@ -29,9 +25,31 @@
     <div class="container">
 
         <header id="header" class="header">
-            <div class="content content--lg">
-                <div class="header--main">
-                    header
+            <div class="content content--md">
+                <div class="header-main">
+                    <a href="/" class="logo">
+                        <img src="assets/svg/partials/logo.svg" alt="Километры добра" width="185">
+                    </a>
+                    <nav class="header-nav">
+                        <ul class="nav">
+                            <li><a href="stocks-current.html">Акции</a></li>
+                            <li><a href="rating.html">Рейтинг</a></li>
+                            <li><a href="my-rating.html">Мой рейтинг</a></li>
+                            <li><a href="donate.html">Пожертвовать</a></li>
+                            <li><a href="holdings.html">Фонды</a></li>
+                            <li><a href="about-us.html">О нас</a></li>
+                            <li><a href="contacts.html">Контакты</a></li>
+                        </ul>
+                        <div class="accessibility-mode">
+                            <a href="/">
+                                <i class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-eye"/>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </header>
@@ -39,21 +57,48 @@
 
         <div id="main" class="main">
 
-            <div style="width: 800px">
 
-                <picture>
-                    <source type="image/webp" srcset="assets/images/test-image.webp">
-                    <source type="image/jpeg" srcset="assets/images/test-image.jpg">
-                    <img src="assets/images/test-image.jpg" alt="Тестовая картинка">
-                </picture>
-            </div>
 
         </div>
 
         <footer class="footer" id="footer">
-            <div class="content content--lg">
-                <div class="footer--main">
-                    footer1 23
+            <div class="content content--md">
+                <div class="footer-main">
+                    <div class="part">
+                        <a href="#" class="btn btn--md btn--trans btn--rnd donate-btn">Пожертвовать</a>
+                    </div>
+                    <div class="part">
+                        <div class="part">
+                            <div class="footer-nav">
+                                <ul class="nav">
+                                    <li><a href="stocks-current.html">Акции</a></li>
+                                    <li><a href="rating.html">Рейтинг</a></li>
+                                    <li><a href="my-rating.html">Мой рейтинг</a></li>
+                                    <li><a href="donate.html">Пожертвовать</a></li>
+                                    <li><a href="holdings.html">Фонды</a></li>
+                                    <li><a href="about-us.html">О нас</a></li>
+                                    <li><a href="rules.html">Правила участия</a></li>
+                                    <li><a href="enter.html">Войти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="part">
+                            <div class="footer-contacts">
+                                <div><a href="tel:+73519498498">+7 (3519) 49-84-98</a></div>
+                                <div><a href="mailto:charity@magnitogorsk.ru">charity@magnitogorsk.ru</a></div>
+                                <div>г. Магнитогорск, парк у Вечного огня</div>
+                                <h4 class="title">
+                                    Присоединяйтесь к нам
+                                </h4>
+                                <div class="share">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    Разработка сервиса <a href="reconcept.ru">Reconcept</a>
                 </div>
             </div>
         </footer>

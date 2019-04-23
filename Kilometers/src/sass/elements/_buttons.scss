@@ -1,3 +1,53 @@
 .btn {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 0;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.18s;
+  &--red {
+    color: $white;
+    border-color: $btn-red;
+    background-color: $btn-red;
+    &:hover {
+      border-color: $btn-red-hover;
+      background-color: $btn-red-hover;
+    }
+  }
+  &--blue {
+    color: $white;
+    border-color: $btn-blue;
+    background-color: $btn-blue;
+    &:hover {
+      border-color: $btn-blue-hover;
+      background-color: $btn-blue-hover;
+    }
+  }
+  &--trans {
+    color: $white;
+    border-color: $white;
+    background-color: transparent;
+    &:hover {
+      color: $text;
+      background-color: $white;
+    }
+  }
+  &--sm {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 40px;
+  }
+  &--md {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 22px 40px;
+  }
+  &--full {
+    width: 100%;
+  }
+  &--rnd {
+    border-radius: 40px;
+  }
 
 }

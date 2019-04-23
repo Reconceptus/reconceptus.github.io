@@ -4,6 +4,46 @@
   left: 0;
   right: 0;
   top: 0;
-  background-color: $white;
   z-index: 50;
+  background-color: $white;
+  box-shadow: 0 0 2px 0 rgba($text,0.2);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-nav {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    li {
+      margin-right: 35px;
+    }
+    a {
+      color: $text;
+      @include hover(){
+        color: $link;
+      }
+    }
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.accessibility-mode {
+  .icon {
+    width: 48px;
+    height: 48px;
+    background-color: $text;
+    color: $white;
+    border-radius: 50%;
+    padding: 16px 8px;
+  }
 }
