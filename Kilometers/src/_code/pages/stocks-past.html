@@ -1,0 +1,70 @@
+<include src="../templates/head.html" title="Благотворительные акции Прошедшие"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" stocksCur="active"></include>
+
+        <div id="main" class="main">
+
+            <div class="bg--grey hp-section">
+                <div class="content content--md">
+                    <h1 class="title title--lg">Благотворительные акции</h1>
+                    <div class="offers-types">
+                        <a href="stocks-current.html">Актуальные акции</a>
+                        <a href="stocks-past.html" class="active">Прошедшие акции</a>
+                    </div>
+                    <div class="offers">
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item02"
+                                 date="17.05 - 20.05"
+                                 location="Парк у Вечного огня"
+                                 title="Второй раунд сбора средств на помощь Ване Петрову"
+                        ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item01"
+                                 date="24.05 - 25.05"
+                                 location="Парк у Вечного огня"
+                                 title="Весенний забег"
+                        ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item03"
+                                 date="1.06"
+                                 location="Парк у Вечного огня"
+                                 title="Помощь детскому дому №2"
+                        ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item04"
+                                 date="27.07 - 28.07"
+                                 location="Парк у Вечного огня"
+                                 title="Сбор средств на помощь Василию Петрову на реабилитацию"
+                        ></include>
+                    </div>
+                    <div class="pagination offers-pagination">
+                        <a href="#" class="current">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html" stocksCur="active"></include>
+
+    </div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+
+</body>
+</html>

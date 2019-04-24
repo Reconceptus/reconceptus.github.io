@@ -34,7 +34,7 @@ svg {
   flex: 1 0 auto;
 }
 .main {
-  padding: 80px $padding 0;
+  padding: 80px $padding $padding;
 }
 #wrapper {
   display: flex;

@@ -5,6 +5,30 @@
   &-action {
     margin-top: $padding;
   }
+  &-types {
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    a {
+      margin-right: 45px;
+      color: inherit;
+      padding: 4px 0;
+      border-bottom-width: 1px;
+      border-bottom-style: dashed;
+      &:not(.active){
+        border-bottom-color: transparent;
+        @include hover(){
+          color: $link;
+        }
+      }
+      &.active {
+        pointer-events: none;
+        border-bottom-color: currentColor;
+      }
+    }
+  }
 }
 
 .offer-item {

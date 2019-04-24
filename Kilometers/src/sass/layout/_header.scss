@@ -29,6 +29,9 @@
       @include hover(){
         color: $link;
       }
+      &.active {
+        color: $link;
+      }
     }
   }
   .nav {

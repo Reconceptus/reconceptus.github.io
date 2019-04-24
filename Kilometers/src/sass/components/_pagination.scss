@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  &.offers-pagination {
+    margin-top: 36px;
+  }
+  a {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    @include hover(){
+      color: $white;
+      background-color: $text;
+    }
+    &:not(.current) {
+      color: $text;
+      background-color: $white;
+    }
+    &.current {
+      color: $white;
+      background-color: $text;
+      pointer-events: none;
+    }
+  }
+}
