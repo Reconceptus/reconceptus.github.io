@@ -9,6 +9,9 @@ import $ from 'jquery';
 const functions = {
     scroll: require('./modules/scroll'),
 };
+const plugins = {
+    fancybox: require('./modules/fancybox'),
+};
 
 // scripts
 $(document).ready(() => {
@@ -55,7 +58,8 @@ $(document).ready(() => {
     getWindowSizes();
     functions.scroll();
 
-    if ($('[data-owl="blog"]').length > 0) {
+    if ($('[data-fancybox="gallery"]').length > 0) {
+        plugins.fancybox();
     }
 
     /* --------------------------------- document resize --------------------------------- */
