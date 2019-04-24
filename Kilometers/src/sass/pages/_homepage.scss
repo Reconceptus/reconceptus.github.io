@@ -1,0 +1,60 @@
+.hp-section {
+  padding-top: 110px;
+}
+
+.homepage-banner {
+  .statistics {
+    background-color: rgba($text,0.9);
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 700;
+    color: $white;
+    padding: 24px 80px;
+    &-wrap {
+      position: relative;
+      z-index: 1;
+    }
+    .item {
+      position: relative;
+      &:before {
+        content: "";
+        width: 4px;
+        height: 48px;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        background-color: $grad_end;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.site-steps {
+  padding: 110px 0 74px;
+  .steps {
+    display: flex;
+    counter-reset: item;
+  }
+  .step {
+    width: 33.33%;
+    font-size: 14px;
+    font-weight: 600;
+    &:before {
+      content: counter(item, decimal);
+      counter-increment: item;
+      display: block;
+      font-size: 212px;
+      line-height: 1;
+      color: #cde8e9;
+    }
+    &:not(:last-child){
+      margin-right: 64px;
+    }
+  }
+}
+
+.homepage-offers {
+
+}

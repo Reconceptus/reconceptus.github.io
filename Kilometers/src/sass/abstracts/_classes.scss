@@ -41,6 +41,12 @@
   }
 }
 
+.bg {
+  &--grey {
+    background-color: $bg;
+  }
+}
+
 .hide {
   display: none !important;
 }
