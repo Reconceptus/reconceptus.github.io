@@ -1,5 +1,8 @@
 .hp-section {
   padding-top: 110px;
+  &:last-child {
+    padding-bottom: 60px;
+  }
 }
 
 .homepage-banner {
@@ -32,7 +35,7 @@
 }
 
 .site-steps {
-  padding: 110px 0 74px;
+  padding: 110px 0 85px;
   .steps {
     display: flex;
     counter-reset: item;
@@ -41,6 +44,7 @@
     width: 33.33%;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1.6;
     &:before {
       content: counter(item, decimal);
       counter-increment: item;
@@ -48,6 +52,7 @@
       font-size: 212px;
       line-height: 1;
       color: #cde8e9;
+      padding: 30px 0;
     }
     &:not(:last-child){
       margin-right: 64px;
@@ -62,5 +67,36 @@
 .homepage-contacts {
   .map-box {
 
+  }
+}
+
+.partners {
+  ul {
+    margin: 0 -0.5*$padding;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    width: calc(100% / 6);
+    padding: 0 0.5*$padding;
+    margin-bottom: $padding;
+  }
+  .item {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: $white;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      max-width: 75%;
+      max-height: 75%;
+    }
   }
 }

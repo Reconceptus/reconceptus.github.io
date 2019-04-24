@@ -22,7 +22,7 @@
     font-weight: 600;
     text-transform: uppercase;
     li {
-      margin-right: 35px;
+      margin-right: 38px;
     }
     a {
       color: $text;
@@ -38,6 +38,9 @@
 }
 
 .accessibility-mode {
+  width: 48px;
+  height: 48px;
+  display: flex;
   .icon {
     width: 48px;
     height: 48px;
@@ -45,5 +48,11 @@
     color: $white;
     border-radius: 50%;
     padding: 16px 8px;
+    transition: all 0.18s;
+  }
+  @include hover(){
+    .icon {
+      background-color: $link;
+    }
   }
 }
