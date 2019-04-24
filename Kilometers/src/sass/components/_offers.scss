@@ -52,6 +52,22 @@
         }
       }
     }
+    &-status {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      font-size: 14px;
+      font-weight: 700;
+      color: $white;
+      padding: 10px 10px 10px 50px;
+      &.opened {
+        background-color: #5bc48c;
+      }
+      &.closed {
+        background-color: #a40843;
+      }
+    }
     &-info {
       background-color: $white;
       padding: 26px 24px 24px 48px;
