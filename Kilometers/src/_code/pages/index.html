@@ -57,11 +57,93 @@
                     <div class="offers">
                         <include src="../partials/offer-item.html"
                                  link="stock-page-current.html"
-                                 image="item01"
+                                 image="item02"
                                  date="17.05 - 20.05"
                                  location="Парк у Вечного огня"
                                  title="Второй раунд сбора средств на помощь Ване Петрову"
                         ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item01"
+                                 date="24.05 - 25.05"
+                                 location="Парк у Вечного огня"
+                                 title="Весенний забег"
+                        ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item03"
+                                 date="1.06"
+                                 location="Парк у Вечного огня"
+                                 title="Помощь детскому дому №2"
+                        ></include>
+                        <include src="../partials/offer-item.html"
+                                 link="stock-page-current.html"
+                                 image="item04"
+                                 date="27.07 - 28.07"
+                                 location="Парк у Вечного огня"
+                                 title="Сбор средств на помощь Василию Петрову на реабилитацию"
+                        ></include>
+                    </div>
+                    <div class="offers-action">
+                        <a href="stocks-current.html" class="btn btn--md btn--red btn--full">Посмотреть все акции</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="homepage-contacts bg--grey hp-section">
+                <div class="content content--md">
+                    <h2 class="title title--lg">Место проведения</h2>
+                </div>
+                <div id="map" class="map-box"></div>
+                <script type="text/javascript">
+                    var map;
+                    function initMap() {
+
+                        var icon = './assets/images/map-mark.png';
+
+                        var mapOptions = {
+                            zoom: 16,
+                            scrollwheel: false,
+                            center: new google.maps.LatLng(53.405637, 58.989276)
+                        };
+                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                        var marker = new google.maps.Marker({
+                            position: {lat: 53.405637, lng: 58.989276},
+                            map: map,
+                            icon: icon
+                        });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
+            </div>
+
+            <div class="bg--grey hp-section">
+                <div class="content content--md">
+                    <h2 class="title title--lg">Топ лидеров</h2>
+                    <div class="table">
+                        <include src="../pieces/table-md.html"></include>
+                        <div class="table-action">
+                            <a href="rating.html" class="btn btn--md btn--red btn--full">Смотреть полный рейтинг</a>
+                        </div>
+                    </div>
+                    <h2 class="title title--lg">Лидеры акций</h2>
+                    <div class="table">
+                        <div class="offers">
+                            <include src="../partials/offer-total.html"
+                                     link="stock-page-past.html"
+                                     date="17.05 - 20.05"
+                                     title="Второй раунд сбора средств на помощь Ване Петрову"
+                            ></include>
+                            <include src="../partials/offer-total.html"
+                                     link="stock-page-past.html"
+                                     date="5.05"
+                                     title="Весенний забег в поддержку белок"
+                            ></include>
+                        </div>
+                        <div class="table-action">
+                            <a href="stocks-past.html" class="btn btn--md btn--red btn--full">Смотреть все прошедшие акции</a>
+                        </div>
                     </div>
                 </div>
             </div>
