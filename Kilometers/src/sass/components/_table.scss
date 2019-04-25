@@ -40,6 +40,22 @@
     text-align: right;
     white-space: nowrap;
   }
+  &-sort {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    a {
+      margin-left: 10px;
+      color: inherit;
+      border-top: 1px solid transparent;
+      border-bottom: 1px dashed currentColor;
+      @include hover(){
+        color: $link;
+      }
+    }
+  }
   &-action {
     margin-top: 40px;
   }
