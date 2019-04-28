@@ -55,7 +55,14 @@
       top: 0;
     }
   }
-  p, ul, ol, blockquote, img {
+  img {
+    margin-top: 28px;
+    margin-bottom: 28px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  p, ul, ol, blockquote {
     margin-bottom: 24px;
     &:last-child {
       margin-bottom: 0;
