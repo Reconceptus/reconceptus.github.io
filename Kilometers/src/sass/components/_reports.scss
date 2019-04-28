@@ -1,0 +1,35 @@
+.reports {
+  &-list {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      display: flex;
+      width: 33.33%;
+      padding-right: $padding;
+      margin-bottom: $padding;
+    }
+    .item {
+      display: flex;
+      color: inherit;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+      @include hover(){
+        color: $link;
+        .icon {
+          color: inherit;
+        }
+      }
+    }
+    .icon {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      margin-right: 14px;
+      color: $icon;
+
+    }
+  }
+}

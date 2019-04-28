@@ -1,0 +1,108 @@
+.offer {
+  &-status {
+    position: relative;
+    z-index: 1;
+    .status {
+      display: inline-flex;
+      font-size: 24px;
+      font-weight: 600;
+      color: $white;
+      padding: 24px 60px;
+      &.closed {
+        background-color: $btn_red;
+      }
+    }
+  }
+  &-logo {
+    margin-left: auto;
+    margin-top: 15px;
+    img {
+      display: block;
+      max-width: 100%;
+      margin-left: auto;
+    }
+  }
+  &-data {
+    .date,
+    .location {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+  }
+  &-gallery {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    &--wrap {
+      margin-top: 40px;
+      width: 100%;
+      position: relative;
+    }
+    &--box {
+      width: 100%;
+      padding-top: 65%;
+      position: relative;
+      height: 0;
+    }
+    .swiper-button-white {
+      outline: none;
+      position: absolute;
+      background-color: #fff;
+      height: 128px;
+      width: 64px;
+      top: 50%;
+      margin-top: -64px;
+      z-index: 1;
+      cursor: pointer;
+      box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border-width: 42px 26px;
+      }
+      &:before {
+        border-color: transparent $text;
+      }
+      &:after {
+        border-color: transparent $white;
+      }
+    }
+    .swiper-button-disabled {
+      cursor: default;
+      &:before {
+        opacity: 0.35;
+      }
+    }
+    .swiper-button-next {
+      right: -32px;
+      &:before,
+      &:after {
+        border-style: solid none solid solid;
+      }
+      &:after {
+        transform: translateX(-2px);
+      }
+    }
+    .swiper-button-prev {
+      left: -32px;
+      &:before,
+      &:after {
+        border-style: solid solid solid none;
+      }
+      &:after {
+        transform: translateX(2px);
+      }
+    }
+  }
+}
