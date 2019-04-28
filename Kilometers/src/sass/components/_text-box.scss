@@ -1,5 +1,4 @@
 .text-box {
-
   &-layout {
     &--lg {
       padding-right: 16.7%;
@@ -82,6 +81,7 @@
     height: auto;
     max-width: 125%;
   }
+  .quote,
   blockquote {
     position: relative;
     font-size: 24px;

@@ -50,3 +50,14 @@ svg {
   flex-direction: column;
   height: 100vh;
 }
+.layout-flex {
+  display: flex;
+  &--main {
+    width: 100%;
+  }
+  &--aside {
+    width: 33.33%;
+    flex-shrink: 0;
+    padding-left: $padding;
+  }
+}
