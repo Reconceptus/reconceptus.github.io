@@ -1,0 +1,63 @@
+<include src="../templates/head.html" title="Контакты"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" contacts="active"></include>
+
+        <div id="main" class="main">
+
+            <div>
+                <div class="bg--grey hp-section">
+                    <div class="content content--md">
+                        <h1 class="title title--lg">Контакты</h1>
+                        <div class="text-box-layout--md text-box-preview">
+                            <div class="text-box">
+                                <p>Будем рады получить ваши предложения на почту <a href="mailto:charity@magnitogorsk.ru">charity@magnitogorsk.ru</a> или услышать по телефону
+                                    <a href="tel:+73519498498">+7 (3519) 49-84-98</a> в будни с 8:00 до 18:00. Проект «Километры добра» не отвечает на запросы об индивидуальной помощи. По частным вопросам можно обратиться в благотворительные фонды, работу которых мы поддерживаем.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contact-map">
+                <div id="map" class="map-box"></div>
+                <script type="text/javascript">
+                    var map;
+                    function initMap() {
+
+                        var icon = './assets/images/map-mark.png';
+
+                        var mapOptions = {
+                            zoom: 16,
+                            scrollwheel: false,
+                            center: new google.maps.LatLng(53.405637, 58.989276)
+                        };
+                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                        var marker = new google.maps.Marker({
+                            position: {lat: 53.405637, lng: 58.989276},
+                            map: map,
+                            icon: icon
+                        });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+
+</body>
+</html>
