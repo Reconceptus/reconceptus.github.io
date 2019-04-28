@@ -45,6 +45,9 @@ $(document).ready(() => {
     if ($('[data-fancybox="gallery"]').length > 0) {
         plugins.fancybox();
     }
+    if ($('.offer-gallery').length > 0) {
+        plugins.swiper();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

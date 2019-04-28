@@ -3,4 +3,5 @@ const functions = {
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),
+    swiper: require('./modules/swiper'),
 };

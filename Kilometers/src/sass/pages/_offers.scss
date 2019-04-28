@@ -11,6 +11,9 @@
       &.closed {
         background-color: $btn_red;
       }
+      &.opened {
+        background-color: $link;
+      }
     }
   }
   &-logo {

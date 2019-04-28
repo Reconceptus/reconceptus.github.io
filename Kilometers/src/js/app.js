@@ -11,6 +11,7 @@ const functions = {
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),
+    swiper: require('./modules/swiper'),
 };
 
 // scripts
@@ -60,6 +61,9 @@ $(document).ready(() => {
 
     if ($('[data-fancybox="gallery"]').length > 0) {
         plugins.fancybox();
+    }
+    if ($('.offer-gallery').length > 0) {
+        plugins.swiper();
     }
 
     /* --------------------------------- document resize --------------------------------- */

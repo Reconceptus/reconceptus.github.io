@@ -56,6 +56,7 @@
                     </div>
                     <div class="offer-gallery--wrap">
                         <div class="offer-gallery--box">
+                            <!--swiper gallery-->
                             <div class="offer-gallery">
                                 <div class="swiper-container gallery-top">
                                     <div class="swiper-wrapper">
@@ -126,6 +127,7 @@
                 <div class="content content--md">
                     <h2 class="title title--lg">Как это было</h2>
                 </div>
+                <!--fancybox gallery-->
                 <div class="gallery-main">
                     <a href="assets/images/gallery/sport-01.jpg" data-fancybox="gallery" class="item">
                         <div class="item-img">
@@ -343,30 +345,17 @@
 
 <include src="../templates/scripts.html"></include>
 
+<!--files for swiper gallery-->
 <link href="assets/css/vendors.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!---->
+
+<!--files for fancybox gallery-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-<!--script-->
+<!---->
 
-<script>
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-        spaceBetween: 8,
-        slidesPerView: 5,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
-    });
-    var galleryTop = new Swiper('.gallery-top', {
-        spaceBetween: 16,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        thumbs: {
-            swiper: galleryThumbs
-        }
-    });
-</script>
+
 
 </body>
 </html>
