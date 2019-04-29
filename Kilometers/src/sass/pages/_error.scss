@@ -1,0 +1,31 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  .error {
+    display: flex;
+    align-items: center;
+    font-size: 220px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    .digit-left {
+      color: #00508e;
+    }
+    .digit-right {
+      color: #039da3;
+    }
+    .logo {
+      margin: 0 -15px;
+      img {
+        width: 340px;
+        display: block;
+      }
+    }
+  }
+  .error-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+}

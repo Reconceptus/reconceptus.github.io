@@ -27,12 +27,22 @@
     }
   }
   &--trans {
-    color: $white;
-    border-color: $white;
     background-color: transparent;
-    &:hover {
+    &-white {
+      color: $white;
+      border-color: $white;
+      &:hover {
+        color: $text;
+        background-color: $white;
+      }
+    }
+    &-inherit {
       color: $text;
-      background-color: $white;
+      border-color: $text;
+      &:hover {
+        color: $white;
+        background-color: $text;
+      }
     }
   }
   &--sm {

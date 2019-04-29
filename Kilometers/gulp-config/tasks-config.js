@@ -47,6 +47,15 @@ module.exports = function(gulp, plugins) {
         }),
     );
 
+    // svg build and html build
+
+    gulp.task(
+        'svg:build-to-html',
+        gulp.series('svg:inject', 'svg:copy', () => {
+            return getTask('html-build', PATH_CONFIG.src.html_pages, PATH_CONFIG.build.html);
+        }),
+    );
+
     /* img:compile --------------------------------------*/
 
     gulp.task('img:optimize', () => {
@@ -180,7 +189,7 @@ module.exports = function(gulp, plugins) {
                     getTask(
                         'watch',
                         [PATH_CONFIG.watch.svg, PATH_CONFIG.watch.svg_no_sprite],
-                        'svg:build',
+                        'svg:build-to-html',
                     );
                 },
             ),
