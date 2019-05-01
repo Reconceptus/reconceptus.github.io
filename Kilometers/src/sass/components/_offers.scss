@@ -62,23 +62,27 @@
       overflow: hidden;
       color: inherit;
       height: 100%;
+      transition: all 0.2s;
       @include hover(){
         box-shadow: 0 0 48px 0 rgba($text,0.3);
         transform: translate3d(0,-16px,0);
-        .item-title {
-          color: $link;
-        }
       }
     }
     &-status {
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 50%;
       font-size: 14px;
       font-weight: 700;
       color: $white;
-      padding: 10px 10px 10px 50px;
+
+      @include media(hover,601){
+        padding: 10px 10px 10px 50px;
+        width: 50%;
+      }
+      @include media(screen,600){
+        padding: 10px 24px;
+      }
       &.opened {
         background-color: #5bc48c;
       }
@@ -169,6 +173,12 @@
       font-weight: 700;
       margin-bottom: 16px;
       transition: all 0.18s;
+      a {
+        color: inherit;
+        @include hover(){
+          color: $link;
+        }
+      }
       @include media(hover,1025){
         font-size: 24px;
       }
@@ -178,6 +188,27 @@
     }
     &-action {
       margin-top: auto;
+      display: flex;
+      @include media(hover,601){
+        align-items: center;
+        justify-content: space-between;
+      }
+      @include media(screen,600){
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      a:not(.btn) {
+        color: $link;
+        font-weight: 600;
+        @include hover(){
+          color: darken($link,5);
+        }
+        @include media(screen,600){
+          margin-top: 10px;
+        }
+      }
+
     }
   }
 }

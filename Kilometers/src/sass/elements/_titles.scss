@@ -16,6 +16,9 @@
       font-size: 32px;
       margin-bottom: 24px;
     }
+    @include media(screen,420){
+      font-size: 26px;
+    }
   }
   &--md {
     font-size: 28px;
