@@ -76,11 +76,11 @@
       font-weight: 700;
       color: $white;
 
-      @include media(hover,601){
+      @include media(hover,768){
         padding: 10px 10px 10px 50px;
         width: 50%;
       }
-      @include media(screen,600){
+      @include media(screen,767){
         padding: 10px 24px;
       }
       &.opened {
@@ -189,11 +189,11 @@
     &-action {
       margin-top: auto;
       display: flex;
-      @include media(hover,601){
+      @include media(hover,768){
         align-items: center;
         justify-content: space-between;
       }
-      @include media(screen,600){
+      @include media(screen,767){
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: wrap;
@@ -204,7 +204,10 @@
         @include hover(){
           color: darken($link,5);
         }
-        @include media(screen,600){
+        @include media(hover,768){
+          margin: 0 10px;
+        }
+        @include media(screen,767){
           margin-top: 10px;
         }
       }

@@ -60,12 +60,20 @@ svg {
 }
 .layout-flex {
   display: flex;
+  @include media(screen,1024){
+    flex-direction: column;
+  }
   &--main {
     width: 100%;
   }
   &--aside {
-    width: 33.33%;
-    flex-shrink: 0;
-    padding-left: $padding;
+    @include media(hover,1025){
+      width: 33.33%;
+      flex-shrink: 0;
+      padding-left: $padding;
+    }
+    @include media(screen,1024){
+      order: -1;
+    }
   }
 }

@@ -6,9 +6,18 @@
   .error {
     display: flex;
     align-items: center;
-    font-size: 220px;
+
     font-weight: 600;
     margin-bottom: 40px;
+    @include media(hover,768){
+      font-size: 220px;
+    }
+    @include breakpoints(601,767){
+      font-size: 140px;
+    }
+    @include media(screen,600){
+      font-size: 80px;
+    }
     .digit-left {
       color: #00508e;
     }
@@ -16,16 +25,34 @@
       color: #039da3;
     }
     .logo {
-      margin: 0 -15px;
+      @include media(hover,601){
+        margin: 0 -15px;
+      }
+
       img {
-        width: 340px;
+
         display: block;
+        @include media(hover,768){
+          width: 340px;
+        }
+        @include breakpoints(601,767){
+          width: 210px;
+        }
+        @include media(screen,600){
+          width: 140px;
+        }
       }
     }
   }
   .error-text {
-    font-size: 24px;
+
     font-weight: 600;
     margin-bottom: 40px;
+    @include media(hover,768){
+      font-size: 24px;
+    }
+    @include media(screen,767){
+      font-size: 20px;
+    }
   }
 }

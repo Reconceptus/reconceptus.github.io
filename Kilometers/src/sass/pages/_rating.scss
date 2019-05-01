@@ -3,32 +3,61 @@
     padding: 15px 0;
     min-height: 25vh;
     .form {
-      margin-bottom: 60px;
+      @include media(hover,768){
+        margin-bottom: 60px;
+      }
+      @include media(screen,767){
+        margin-bottom: 40px;
+      }
       .fieldset {
         display: flex;
         width: 100%;
         align-items: center;
         box-shadow: 0 5px 15px 0 rgba($black,0.3);
+        @include media(hover,601){}
+        @include media(screen,600){
+          flex-direction: column;
+        }
         .input {
           width: 100%;
-          border-style: solid none solid solid;
-          border-width: 8px;
+
           border-color: $btn-blue;
+          @include media(hover,601){
+            border-style: solid none solid solid;
+            border-width: 8px;
+          }
+          @include media(screen,600){
+            border-style: solid solid none solid;
+            border-width: 4px;
+          }
         }
         .btn {
           flex-shrink: 0;
-          height: 64px;
-          padding: 12px 64px;
+          @include media(hover,601){
+            height: 64px;
+            padding: 12px 64px;
+          }
+          @include media(screen,600){
+            height: 44px;
+            width: 100%;
+            padding: 0 12px;
+          }
         }
         input {
           width: 100%;
           border: none;
           background-color: $white;
-          font-size: 16px;
           color: inherit;
           padding: 0 12px;
-          height: 48px;
           font-weight: 500;
+          @include media(hover,601){
+            height: 48px;
+            font-size: 16px;
+          }
+          @include media(screen,600){
+            height: 40px;
+            font-size: 14px;
+          }
         }
       }
     }
@@ -40,16 +69,26 @@
           font-weight: 600;
           color: $white;
           background-color: #3b5998;
-          padding: 13px 40px;
           border-radius: 8px;
           @include hover(){
             background-color: darken(#3b5998,5);
+          }
+          @include media(hover,601){
+            padding: 13px 40px;
+          }
+          @include media(screen,600){
+            padding: 12px 24px;
           }
         }
       }
     }
     .result-item {
-      margin-bottom: 60px;
+      @include media(hover,768){
+        margin-bottom: 60px;
+      }
+      @include media(screen,767){
+        margin-bottom: 40px;
+      }
     }
   }
 }

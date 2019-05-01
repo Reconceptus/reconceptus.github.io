@@ -1,10 +1,12 @@
 .text-box {
   &-layout {
-    &--lg {
-      padding-right: 16.7%;
-    }
-    &--md {
-      padding-right: 33.33%;
+    @include media(hover,1025){
+      &--lg {
+        padding-right: 16.7%;
+      }
+      &--md {
+        padding-right: 33.33%;
+      }
     }
   }
   &-preview {
@@ -20,12 +22,21 @@
   }
   h2 {
     font-size: 28px;
+    @include media(screen,420){
+      font-size: 22px;
+    }
   }
   h3 {
     font-size: 24px;
+    @include media(screen,420){
+      font-size: 20px;
+    }
   }
   h4 {
     font-size: 20px;
+    @include media(screen,420){
+      font-size: 18px;
+    }
   }
   li {
     position: relative;
@@ -88,21 +99,43 @@
   img {
     display: block;
     height: auto;
-    max-width: 125%;
+    @include media(hover,1025){
+      max-width: 125%;
+    }
+    @include media(screen,1024){
+      max-width: 100%;
+    }
   }
   .quote,
   blockquote {
     position: relative;
-    font-size: 24px;
     padding-left: 12.5%;
     padding-top: 10px;
+    @include media(hover,768){
+      font-size: 24px;
+    }
+    @include breakpoints(601,767){
+      font-size: 20px;
+    }
+    @include media(screen,600){
+      font-size: 18px;
+    }
     &:before {
       content: "\201C";
-      font-size: 245px;
-      line-height: 175px;
       position: absolute;
       top: 10px;
       left: 0;
+      @include media(hover,768){
+        font-size: 245px;
+        line-height: 175px;
+      }
+      @include media(screen,767){
+        font-size: 132px;
+        line-height: 80px;
+      }
+      @include media(screen,600){
+        left: -14px;
+      }
     }
   }
 }

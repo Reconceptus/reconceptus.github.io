@@ -1,13 +1,28 @@
 .offer {
+  &-banner {
+    @include media(screen,767){
+      max-height: 50vw;
+    }
+  }
   &-status {
     position: relative;
     z-index: 1;
     .status {
       display: inline-flex;
-      font-size: 24px;
       font-weight: 600;
       color: $white;
-      padding: 24px 60px;
+      @include media(hover,768){
+        font-size: 24px;
+        padding: 24px 60px;
+      }
+      @include breakpoints(421,767){
+        font-size: 18px;
+        padding: 12px 30px;
+      }
+      @include media(screen,420){
+        font-size: 15px;
+        padding: 12px 24px;
+      }
       &.closed {
         background-color: $btn_red;
       }
@@ -17,20 +32,33 @@
     }
   }
   &-logo {
-    margin-left: auto;
-    margin-top: 15px;
+    @include media(hover,1025){
+      margin-left: auto;
+      margin-top: 15px;
+    }
+    @include media(screen,1024){
+      margin-bottom: 30px;
+    }
     img {
       display: block;
       max-width: 100%;
-      margin-left: auto;
+      @include media(hover,1025){
+        margin-left: auto;
+      }
     }
   }
   &-data {
     .date,
     .location {
-      font-size: 24px;
       font-weight: 600;
-      margin-bottom: 28px;
+      @include media(hover,768){
+        font-size: 24px;
+        margin-bottom: 28px;
+      }
+      @include media(screen,767){
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
     }
   }
   &-gallery {
@@ -54,13 +82,23 @@
       outline: none;
       position: absolute;
       background-color: #fff;
-      height: 128px;
-      width: 64px;
       top: 50%;
-      margin-top: -64px;
+      transform: translateY(-50%);
       z-index: 1;
       cursor: pointer;
       box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+      @include media(hover,768){
+        height: 128px;
+        width: 64px;
+      }
+      @include breakpoints(601,767){
+        height: 64px;
+        width: 32px;
+      }
+      @include media(screen,600){
+        height: 48px;
+        width: 24px;
+      }
       &:before,
       &:after {
         content: "";
@@ -72,7 +110,15 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        border-width: 42px 26px;
+        @include media(hover,768){
+          border-width: 42px 26px;
+        }
+        @include breakpoints(601,767){
+          border-width: 24px 16px;
+        }
+        @include media(screen,600){
+          border-width: 18px 10px;
+        }
       }
       &:before {
         border-color: transparent $text;
@@ -88,7 +134,6 @@
       }
     }
     .swiper-button-next {
-      right: -32px;
       &:before,
       &:after {
         border-style: solid none solid solid;
@@ -96,15 +141,26 @@
       &:after {
         transform: translateX(-2px);
       }
+      @include media(hover,1025){
+        right: -32px;
+      }
+      @include media(screen,1024){
+        right: -15px;
+      }
     }
     .swiper-button-prev {
-      left: -32px;
       &:before,
       &:after {
         border-style: solid solid solid none;
       }
       &:after {
         transform: translateX(2px);
+      }
+      @include media(hover,1025){
+        left: -32px;
+      }
+      @include media(screen,1024){
+        left: -15px;
       }
     }
   }

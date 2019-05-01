@@ -9,13 +9,6 @@
     }
     @include media(screen,1024){
       flex-direction: column;
-      & > .part {
-        width: 100%;
-        &:first-child,
-        &:last-child {
-          padding: 0;
-        }
-      }
     }
     @include breakpoints(768,1024){
       padding: 60px 0 40px;
@@ -24,7 +17,7 @@
       padding: 40px 0;
     }
     .part {
-      @include media(hover,601){
+      @include media(hover,1025){
         width: 50%;
         display: flex;
         &:first-child {
@@ -32,6 +25,29 @@
         }
         &:last-child {
           padding-left: 12px;
+        }
+      }
+      @include breakpoints(601,1024){
+        display: flex;
+        .part {
+          width: 50%;
+          display: flex;
+          &:first-child {
+            padding-right: 12px;
+          }
+          &:last-child {
+            padding-left: 12px;
+          }
+        }
+      }
+    }
+    @include media(screen,1024){
+      flex-direction: column;
+      & > .part {
+        width: 100%;
+        &:first-child,
+        &:last-child {
+          padding: 0;
         }
       }
     }

@@ -4,6 +4,11 @@ var swiper = function() {
         slidesPerView: 5,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
+        breakpoints: {
+            767: {
+                spaceBetween: 0,
+            },
+        },
     });
     var galleryTop = new Swiper('.gallery-top', {
         spaceBetween: 16,
