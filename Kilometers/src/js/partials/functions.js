@@ -1,5 +1,5 @@
 const functions = {
-    scroll: require('./modules/scroll'),
+    burger: require('./modules/burger'),
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),

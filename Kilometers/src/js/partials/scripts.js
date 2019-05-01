@@ -40,7 +40,7 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.scroll();
+    functions.burger();
 
     if ($('[data-fancybox="gallery"]').length > 0) {
         plugins.fancybox();

@@ -7,7 +7,7 @@ import $ from 'jquery';
 
 // functions
 const functions = {
-    scroll: require('./modules/scroll'),
+    burger: require('./modules/burger'),
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),
@@ -57,7 +57,7 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.scroll();
+    functions.burger();
 
     if ($('[data-fancybox="gallery"]').length > 0) {
         plugins.fancybox();
