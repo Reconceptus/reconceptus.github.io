@@ -49,10 +49,20 @@
     padding: 8px 24px;
   }
   &--xmd {
-    padding: 8px 40px;
+    @include media(hover,768){
+      padding: 8px 40px;
+    }
+    @include media(screen,767){
+      padding: 8px 24px;
+    }
   }
   &--md {
-    padding: 22px 40px;
+    @include media(hover,768){
+      padding: 22px 40px;
+    }
+    @include media(screen,767){
+      padding: 18px 24px;
+    }
   }
   &--full {
     width: 100%;

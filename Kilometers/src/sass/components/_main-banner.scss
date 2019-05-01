@@ -6,11 +6,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  &.homepage-banner {
-    height: 663px;
+  @include media(hover,1201){
+    &.homepage-banner {
+      height: 663px;
+    }
+    &.offer-banner {
+      height: 600px;
+    }
   }
-  &.offer-banner {
-    height: 600px;
+  @include media(screen,1200){
+    height: 480px;
   }
   .slider {
     top: 0;

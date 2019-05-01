@@ -1,50 +1,102 @@
-.hp-section {
-  padding-top: 110px;
-  &:last-child {
-    padding-bottom: 60px;
-  }
-}
+
 
 .homepage-banner {
+
   .statistics {
-    background-color: rgba($text,0.9);
     display: flex;
     justify-content: space-between;
-    font-size: 24px;
-    font-weight: 700;
     color: $white;
-    padding: 24px 80px;
+    @include media(hover,1201){
+      padding: 24px 80px;
+      font-size: 24px;
+    }
+    @include breakpoints(1025,1200){
+      padding: 24px 40px;
+      font-size: 20px;
+    }
+    @include media(hover,1025){
+      background-color: rgba($text,0.9);
+    }
+    @include media(screen,1024){
+      padding: 15px 0;
+    }
+    @include breakpoints(601,1025){
+      font-size: 14px;
+    }
+    @include media(hover,601){
+      font-weight: 700;
+    }
+    @include media(screen,600){
+      flex-direction: column;
+      font-weight: 500;
+      font-size: 16px;
+    }
     &-wrap {
       position: relative;
       z-index: 1;
+      @include media(screen,1024){
+        background-color: rgba($text,0.9);
+      }
     }
     .item {
       position: relative;
-      &:before {
-        content: "";
-        width: 4px;
-        height: 48px;
-        position: absolute;
-        left: 0;
-        bottom: 100%;
-        background-color: $grad_end;
-        margin-bottom: 8px;
+      @include media(hover,1025){
+        &:before {
+          content: "";
+          width: 4px;
+          height: 48px;
+          position: absolute;
+          left: 0;
+          bottom: 100%;
+          background-color: $grad_end;
+          margin-bottom: 8px;
+        }
+      }
+      @include media(screen,600){
+        &:not(:last-child){
+          margin-bottom: 5px;
+        }
+      }
+      span {
+        @include media(hover,601){
+          display: block;
+        }
+        @include media(screen,600){
+          font-weight: 700;
+        }
       }
     }
   }
 }
 
 .site-steps {
-  padding: 110px 0 85px;
+  @include media(hover,1025){
+    padding: 110px 0 85px;
+  }
+  @include breakpoints(601,1024){
+    padding: 75px 0 60px;
+  }
+  @include media(screen,600){
+    padding: 50px 0 40px;
+  }
   .steps {
     display: flex;
     counter-reset: item;
+    @include media(screen,767){
+      flex-direction: column;
+    }
   }
   .step {
-    width: 33.33%;
+
     font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
+    @include media(hover,768){
+      width: 33.33%;
+    }
+    @include media(screen,767){
+      width: 100%;
+    }
     &:before {
       content: counter(item, decimal);
       counter-increment: item;
@@ -62,7 +114,15 @@
 
 .homepage-table {
   .table {
-    padding-bottom: 90px;
+    @include media(hover,1025){
+      padding-bottom: 90px;
+    }
+    @include breakpoints(601,1024){
+      padding-bottom: 75px;
+    }
+    @include media(screen,600){
+      padding-bottom: 50px;
+    }
   }
 }
 
@@ -74,14 +134,32 @@
 
 .partners {
   ul {
-    margin: 0 -0.5*$padding;
+
     display: flex;
     flex-wrap: wrap;
+    @include media(hover,601){
+      margin: 0 -0.5*$padding;
+    }
+    @include media(screen,600){
+      margin: 0 -4px;
+    }
   }
   li {
-    width: calc(100% / 6);
-    padding: 0 0.5*$padding;
-    margin-bottom: $padding;
+
+    @include media(hover,1025){
+      width: calc(100% / 6);
+    }
+    @include media(screen,1024){
+      width: 25%;
+    }
+    @include media(hover,601){
+      padding: 0 0.5*$padding;
+      margin-bottom: $padding;
+    }
+    @include media(screen,600){
+      padding: 0 4px;
+      margin-bottom: 8px;
+    }
   }
   .item {
     width: 100%;

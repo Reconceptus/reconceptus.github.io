@@ -1,4 +1,12 @@
 .map-box {
   width: 100%;
-  height: 800px;
+  @include media(hover,1025){
+    height: 800px;
+  }
+  @include breakpoints(601,1024){
+    height: 600px;
+  }
+  @include media(screen,600){
+    height: 120vw;
+  }
 }

@@ -47,6 +47,27 @@
   }
 }
 
+.hp-section {
+
+  @include media(hover,1025){
+    padding-top: 110px;
+  }
+  @include breakpoints(601,1024){
+    padding-top: 75px;
+  }
+  @include media(screen,600){
+    padding-top: 50px;
+  }
+  &:last-child {
+    @include media(hover,601){
+      padding-bottom: 60px;
+    }
+    @include media(screen,600){
+      padding-bottom: 40px;
+    }
+  }
+}
+
 .hide {
   display: none !important;
 }

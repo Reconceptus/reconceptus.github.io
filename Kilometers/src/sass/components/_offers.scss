@@ -1,7 +1,12 @@
 .offers {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -0.5*$padding;
+  @include media(hover,768){
+    margin: 0 -0.5*$padding;
+  }
+  @include breakpoints(601,767){
+    margin: 0 -8px;
+  }
   &-action {
     margin-top: $padding;
   }
@@ -32,10 +37,23 @@
 }
 
 .offer-item {
-  width: 50%;
-  max-width: 50%;
-  padding: 0 $padding/2;
-  margin-bottom: $padding;
+  @include media(hover,768){
+    padding: 0 $padding/2;
+    margin-bottom: $padding;
+  }
+  @include breakpoints(601,767){
+    padding: 0 8px;
+  }
+  @include media(screen,767){
+    margin-bottom: 16px;
+  }
+  @include media(hover,601){
+    width: 50%;
+    max-width: 50%;
+  }
+  @include media(screen,600){
+    width: 100%;
+  }
   .item {
     &-box {
       display: flex;
@@ -70,10 +88,18 @@
     }
     &-info {
       background-color: $white;
-      padding: 26px 24px 24px 48px;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
+      @include media(hover,1025){
+        padding: 26px 24px 24px 48px;
+      }
+      @include breakpoints(601,1024){
+        padding: 20px;
+      }
+      @include media(screen,600){
+        padding: 20px 15px;
+      }
     }
     &-img {
       width: 100%;
@@ -92,10 +118,19 @@
     }
     &-data {
       font-weight: 600;
-      font-size: 14px;
+
       display: flex;
       align-items: flex-start;
       margin-bottom: 16px;
+      @include media(hover,1025){
+        font-size: 14px;
+      }
+      @include media(screen,1024){
+        font-size: 13px;
+      }
+      @include media(screen,767){
+        flex-direction: column;
+      }
       .date,
       .location {
         display: inline-flex;
@@ -106,7 +141,12 @@
         }
       }
       .date {
-        width: 45%;
+        @include media(hover,768){
+          width: 45%;
+        }
+        @include media(screen,767){
+          margin-bottom: 10px;
+        }
         .icon {
           width: 20px;
           height: 20px;
@@ -114,7 +154,9 @@
         }
       }
       .location {
-        width: 55%;
+        @include media(hover,768){
+          width: 55%;
+        }
         .icon {
           width: 24px;
           height: 24px;
@@ -125,9 +167,14 @@
     }
     &-title {
       font-weight: 700;
-      font-size: 24px;
       margin-bottom: 16px;
       transition: all 0.18s;
+      @include media(hover,1025){
+        font-size: 24px;
+      }
+      @include media(screen,1024){
+        font-size: 20px;
+      }
     }
     &-action {
       margin-top: auto;
@@ -136,18 +183,30 @@
 }
 
 .offer-total {
-  width: 50%;
-  max-width: 50%;
-  padding: 0 $padding/2;
-  margin-bottom: $padding;
   display: flex;
   flex-direction: column;
+  @include media(hover,768){
+    padding: 0 $padding/2;
+    margin-bottom: $padding;
+  }
+  @include breakpoints(601,767){
+    padding: 0 8px;
+  }
+  @include media(screen,767){
+    margin-bottom: 16px;
+  }
+  @include media(hover,601){
+    width: 50%;
+    max-width: 50%;
+  }
+  @include media(screen,600){
+    width: 100%;
+  }
   .item {
     &-table {
       flex-shrink: 0;
     }
     &-box {
-      padding: 24px;
       display: flex;
       flex-direction: column;
       max-width: 100%;
@@ -158,17 +217,36 @@
       @include hover(){
         background-color: $btn-blue_hover;
       }
+      @include media(hover,1025){
+        padding: 24px;
+      }
+      @include breakpoints(601,1024){
+        padding: 20px;
+      }
+      @include media(screen,600){
+        padding: 20px 15px;
+      }
     }
     &-data {
       font-weight: 600;
-      font-size: 14px;
       display: flex;
       align-items: flex-start;
       margin-bottom: 12px;
+      @include media(hover,1025){
+        font-size: 14px;
+      }
+      @include media(screen,1024){
+        font-size: 13px;
+      }
     }
     &-title {
       font-weight: 700;
-      font-size: 24px;
+      @include media(hover,1025){
+        font-size: 24px;
+      }
+      @include media(screen,1024){
+        font-size: 20px;
+      }
     }
   }
 }

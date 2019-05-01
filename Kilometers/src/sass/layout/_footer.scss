@@ -4,27 +4,63 @@
   &-main {
     display: flex;
     align-items: flex-start;
-    padding: 96px 0 40px;
-    .part {
-      width: 50%;
-      display: flex;
-      &:first-child {
-        padding-right: 12px;
+    @include media(hover,1025){
+      padding: 96px 0 40px;
+    }
+    @include media(screen,1024){
+      flex-direction: column;
+      & > .part {
+        width: 100%;
+        &:first-child,
+        &:last-child {
+          padding: 0;
+        }
       }
-      &:last-child {
-        padding-left: 12px;
+    }
+    @include breakpoints(768,1024){
+      padding: 60px 0 40px;
+    }
+    @include media(screen,767){
+      padding: 40px 0;
+    }
+    .part {
+      @include media(hover,601){
+        width: 50%;
+        display: flex;
+        &:first-child {
+          padding-right: 12px;
+        }
+        &:last-child {
+          padding-left: 12px;
+        }
       }
     }
     .donate-btn {
-      min-width: 392px;
+      @include media(screen,1024){
+        margin: 0 auto 30px;
+      }
+      @include media(hover,601){
+        min-width: 392px;
+      }
+      @include media(screen,600){
+        min-width: 100%;
+      }
     }
   }
   &-nav {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    .nav {
+      @include media(screen,600){
+        margin-bottom: 40px;
+      }
+    }
     li {
       margin-bottom: 16px;
+      @include media(screen,600){
+        text-align: center;
+      }
     }
     a {
       color: $white;
@@ -41,6 +77,9 @@
     font-weight: 600;
     color: $white;
     line-height: 2;
+    @include media(screen,600){
+      text-align: center;
+    }
     a {
       color: inherit;
       @include hover(){
@@ -56,12 +95,17 @@
       ul {
         display: flex;
         align-items: center;
+        @include media(screen,600){
+          justify-content: center;
+        }
       }
       li {
         display: flex;
         width: 40px;
         height: 40px;
-        margin-right: 16px;
+        &:not(:last-child){
+          margin-right: 16px;
+        }
       }
       a {
         width: 100%;
@@ -83,7 +127,12 @@
     text-transform: uppercase;
     color: $white;
     text-align: right;
-    padding: 20px 0 40px;
+    @include media(hover,768){
+      padding: 20px 0 40px;
+    }
+    @include media(screen,767){
+      padding: 20px 0;
+    }
     a {
       color: inherit;
       @include hover(){

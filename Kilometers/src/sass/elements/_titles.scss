@@ -1,9 +1,21 @@
 .title {
   line-height: 1.28;
   &--lg {
-    font-size: 48px;
+
     font-weight: 600;
-    margin-bottom: 2*$padding;
+
+    @include media(hover,1025){
+      font-size: 48px;
+      margin-bottom: 2*$padding;
+    }
+    @include breakpoints(601,1024){
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+    @include media(screen,600){
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
   }
   &--md {
     font-size: 28px;

@@ -1,14 +1,39 @@
 .table {
   width: 100%;
+
+  &-ovh {
+
+    @include media(hover,601){
+      width: 100%;
+    }
+    @include media(screen,600){
+      margin: 0 -15px;
+      padding: 0 15px;
+      overflow: auto;
+    }
+  }
   table {
     width: 100%;
     border-collapse: collapse;
   }
   th,td {
-    font-weight: 700;
-    font-size: 16px;
-    padding-left: $padding;
-    padding-right: $padding;
+    @include media(hover,1025){
+      font-weight: 700;
+      font-size: 16px;
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    @include media(screen,1024){
+      font-weight: 600;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @include breakpoints(601,1024){
+      font-size: 13px;
+    }
+    @include media(screen,600){
+      font-size: 12px;
+    }
   }
   thead {
     background-color: $text;
@@ -27,18 +52,33 @@
     }
   }
   td {
-    height: 64px;
     background-color: $white;
+    @include media(hover,1025){
+      height: 64px;
+    }
+    @include media(screen,1024){
+      height: 54px;
+    }
   }
   .cell-place {
     padding: 0 10px;
-    width: 80px;
     text-align: center;
+    @include media(hover,1025){
+      width: 80px;
+    }
+    @include media(screen,1024){
+      width: 40px;
+    }
   }
   .cell-short {
-    width: 80px;
     text-align: right;
     white-space: nowrap;
+    @include media(hover,1025){
+      width: 80px;
+    }
+    @include media(screen,1024){
+      width: 40px;
+    }
   }
   &-sort {
     margin-bottom: 30px;
