@@ -149,6 +149,9 @@
     @include media(screen,767){
       padding: 20px 0;
     }
+    @include media(screen,600){
+      text-align: center;
+    }
     a {
       color: inherit;
       @include hover(){

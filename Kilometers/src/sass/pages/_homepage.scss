@@ -74,10 +74,10 @@
     padding: 110px 0 85px;
   }
   @include breakpoints(601,1024){
-    padding: 75px 0 60px;
+    padding: 100px 0 75px;
   }
   @include media(screen,600){
-    padding: 50px 0 40px;
+    padding: 85px 0 60px;
   }
   .steps {
     display: flex;
@@ -118,10 +118,10 @@
       padding-bottom: 90px;
     }
     @include breakpoints(601,1024){
-      padding-bottom: 75px;
+      padding-bottom: 80px;
     }
     @include media(screen,600){
-      padding-bottom: 50px;
+      padding-bottom: 75px;
     }
   }
 }

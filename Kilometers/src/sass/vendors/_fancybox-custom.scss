@@ -1,0 +1,94 @@
+.custom-gallery {
+  .fancybox-bg {
+    background: $grad-begin;
+    background: -moz-linear-gradient(-45deg, $grad-begin 20%, $grad-end 80%);
+    background: -webkit-linear-gradient(-45deg, $grad-begin 20%,$grad-end 80%);
+    background: linear-gradient(135deg, $grad-begin 20%,$grad-end 80%);
+  }
+  .fancybox-toolbar {
+    .fancybox-button--close {
+      background: transparent;
+      padding: 5px;
+      color: $text;
+      margin: 5px;
+    }
+  }
+  .fancybox-navigation {
+    .fancybox-button {
+      box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+      padding: 0;
+      background-color: #fff;
+      top: 50%;
+      transform: translateY(-50%);
+      &[disabled]{
+        cursor: default;
+        &:before {
+          opacity: 0.35;
+        }
+      }
+      svg {
+        display: none;
+      }
+      @include media(hover,768){
+        height: 128px;
+        width: 64px;
+      }
+      @include breakpoints(601,767){
+        height: 64px;
+        width: 32px;
+      }
+      @include media(screen,600){
+        height: 48px;
+        width: 24px;
+      }
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        @include media(hover,768){
+          border-width: 42px 26px;
+        }
+        @include breakpoints(601,767){
+          border-width: 24px 16px;
+        }
+        @include media(screen,600){
+          border-width: 18px 10px;
+        }
+      }
+      &:before {
+        border-color: transparent $text;
+      }
+      &:after {
+        border-color: transparent $white;
+      }
+    }
+    .fancybox-button--arrow_left {
+      left: 12px;
+      &:before,
+      &:after {
+        border-style: solid solid solid none;
+      }
+      &:after {
+        transform: translateX(2px);
+      }
+    }
+    .fancybox-button--arrow_right {
+      right: 12px;
+      &:before,
+      &:after {
+        border-style: solid none solid solid;
+      }
+      &:after {
+        transform: translateX(-2px);
+      }
+    }
+  }
+
+}

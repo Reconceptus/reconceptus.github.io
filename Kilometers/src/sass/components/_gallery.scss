@@ -31,12 +31,3 @@
     }
   }
 }
-
-.custom-gallery {
-  .fancybox-bg {
-    background: $grad-begin;
-    background: -moz-linear-gradient(-45deg, $grad-begin 20%, $grad-end 80%);
-    background: -webkit-linear-gradient(-45deg, $grad-begin 20%,$grad-end 80%);
-    background: linear-gradient(135deg, $grad-begin 20%,$grad-end 80%);
-  }
-}
