@@ -1,5 +1,5 @@
-var swiper = function() {
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
+const swiper = function() {
+    const galleryThumbs = new Swiper('.gallery-thumbs', {
         spaceBetween: 8,
         slidesPerView: 5,
         watchSlidesVisibility: true,
@@ -10,7 +10,7 @@ var swiper = function() {
             },
         },
     });
-    var galleryTop = new Swiper('.gallery-top', {
+    const galleryTop = new Swiper('.gallery-top', {
         spaceBetween: 16,
         navigation: {
             nextEl: '.swiper-button-next',

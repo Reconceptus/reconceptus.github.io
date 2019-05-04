@@ -5,6 +5,12 @@ import './vendor/svgxuse.min';
 
 import $ from 'jquery';
 
+// variables
+let $html = $('html'),
+    scrollTop = $(window).scrollTop(),
+    winWidth,
+    winHeight;
+
 // functions
 const functions = {
     burger: require('./modules/burger'),
@@ -16,14 +22,6 @@ const plugins = {
 
 // scripts
 $(document).ready(() => {
-    /* ----------------------------------- variables ----------------------------------- */
-
-    let $html = $('html'),
-        $header = $('#header'),
-        scrollTop = $(window).scrollTop(),
-        winWidth,
-        winHeight;
-
     /* ------------------------------- get window values ------------------------------- */
 
     function getWindowSizes() {
@@ -74,5 +72,5 @@ $(document).ready(() => {
 
     /* --------------------------------- document scroll --------------------------------- */
 
-    $(window).scroll(e => {});
+    $(window).scroll(() => {});
 });

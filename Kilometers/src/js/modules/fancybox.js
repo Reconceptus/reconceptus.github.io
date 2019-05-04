@@ -1,4 +1,4 @@
-var fancybox = function() {
+const fancybox = function() {
     $('[data-fancybox="gallery"]').fancybox({
         buttons: ['close'],
         baseClass: 'custom-gallery',
