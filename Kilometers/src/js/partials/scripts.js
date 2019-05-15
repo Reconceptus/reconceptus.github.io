@@ -40,6 +40,9 @@ $(document).ready(() => {
     if ($('.offer-gallery').length > 0) {
         plugins.swiper();
     }
+    if ($('.contact-map').length > 0) {
+        functions.contacts();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

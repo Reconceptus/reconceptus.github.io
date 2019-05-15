@@ -14,6 +14,7 @@ let $html = $('html'),
 // functions
 const functions = {
     burger: require('./modules/burger'),
+    contacts: require('./modules/contacts'),
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),
@@ -62,6 +63,9 @@ $(document).ready(() => {
     }
     if ($('.offer-gallery').length > 0) {
         plugins.swiper();
+    }
+    if ($('.contact-map').length > 0) {
+        functions.contacts();
     }
 
     /* --------------------------------- document resize --------------------------------- */
