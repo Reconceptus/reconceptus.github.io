@@ -80,6 +80,47 @@
       width: 40px;
     }
   }
+  .sort {
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    @include hover(){
+      color: $link;
+    }
+    .arrow {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      margin-left: 5px;
+      &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid solid none solid;
+        border-color: currentColor transparent;
+        border-width: 5px 4px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        opacity: 0;
+      }
+    }
+
+    &.asc {
+      .arrow:after {
+        opacity: 1;
+        transform: rotate(180deg);
+      }
+    }
+    &.desc {
+      .arrow:after {
+        opacity: 1;
+      }
+    }
+  }
   &-sort {
     margin-bottom: 30px;
     font-weight: 700;
