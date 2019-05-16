@@ -81,11 +81,13 @@
     }
   }
   .sort {
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    @include hover(){
-      color: $link;
+    a {
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      @include hover(){
+        color: $link;
+      }
     }
     .arrow {
       width: 10px;
@@ -108,14 +110,13 @@
         opacity: 0;
       }
     }
-
-    &.asc {
+    .asc {
       .arrow:after {
         opacity: 1;
         transform: rotate(180deg);
       }
     }
-    &.desc {
+    .desc {
       .arrow:after {
         opacity: 1;
       }
