@@ -3,9 +3,10 @@
   &--lg {
 
     font-weight: 600;
+    @include fontsize1200(48px);
+    @include fontsize1024(48px);
 
     @include media(hover,1025){
-      font-size: 48px;
       margin-bottom: 2*$padding;
     }
     @include breakpoints(601,1024){

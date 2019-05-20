@@ -64,9 +64,13 @@
     }
   }
   &-nav {
-    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
+    @include fontsize1200(14px);
+    @include fontsize1024(14px);
+    @include media(hover,1025){
+      font-size: 14px;
+    }
     .nav {
       @include media(screen,600){
         margin-bottom: 40px;
@@ -89,10 +93,14 @@
     }
   }
   &-contacts {
-    font-size: 14px;
     font-weight: 600;
     color: $white;
     line-height: 2;
+    @include fontsize1200(14px);
+    @include fontsize1024(14px);
+    @include media(hover,1025){
+      font-size: 14px;
+    }
     @include media(screen,600){
       text-align: center;
     }
@@ -138,11 +146,15 @@
     }
   }
   &-bottom {
-    font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     color: $white;
     text-align: right;
+    @include fontsize1200(14px);
+    @include fontsize1024(14px);
+    @include media(hover,1025){
+      font-size: 14px;
+    }
     @include media(hover,768){
       padding: 20px 0 40px;
     }

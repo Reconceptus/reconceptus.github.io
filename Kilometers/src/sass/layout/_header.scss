@@ -29,6 +29,7 @@
       display: block;
       @include media(hover,601){
         width: 185px;
+        margin-right: 10px;
       }
       @include media(screen,600){
         width: 120px;
@@ -42,12 +43,8 @@
   &-nav {
     font-weight: 600;
     text-transform: uppercase;
-    @include media(hover,1201){
-      font-size: 14px;
-    }
-    @include breakpoints(1025,1200){
-      font-size: 13px;
-    }
+    @include fontsize1200(14px);
+    @include fontsize1024(13px);
     @include media(hover,1025){
       align-items: center;
       display: flex !important;
@@ -77,6 +74,9 @@
       color: $text;
       @include hover(){
         color: $link;
+      }
+      @include media(hover,1025){
+        white-space: nowrap;
       }
       &.active {
         color: $link;

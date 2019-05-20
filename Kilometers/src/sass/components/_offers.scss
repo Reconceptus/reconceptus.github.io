@@ -126,9 +126,8 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 16px;
-      @include media(hover,1025){
-        font-size: 14px;
-      }
+      @include fontsize1200(14px);
+      @include fontsize1024(14px);
       @include media(screen,1024){
         font-size: 13px;
       }
@@ -179,9 +178,8 @@
           color: $link;
         }
       }
-      @include media(hover,1025){
-        font-size: 24px;
-      }
+      @include fontsize1200(24px);
+      @include fontsize1024(24px);
       @include media(screen,1024){
         font-size: 20px;
       }
@@ -266,18 +264,16 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 12px;
-      @include media(hover,1025){
-        font-size: 14px;
-      }
+      @include fontsize1200(14px);
+      @include fontsize1024(14px);
       @include media(screen,1024){
         font-size: 13px;
       }
     }
     &-title {
       font-weight: 700;
-      @include media(hover,1025){
-        font-size: 24px;
-      }
+      @include fontsize1200(24px);
+      @include fontsize1024(24px);
       @include media(screen,1024){
         font-size: 20px;
       }

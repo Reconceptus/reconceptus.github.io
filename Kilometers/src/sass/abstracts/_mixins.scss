@@ -26,3 +26,13 @@
     }
   }
 }
+@mixin fontsize1200($px){
+  @include media(hover,1201){
+    font-size: $px*1rem/14px;
+  }
+}
+@mixin fontsize1024($px){
+  @include breakpoints(1025,1200){
+    font-size: $px*1rem/13px;
+  }
+}

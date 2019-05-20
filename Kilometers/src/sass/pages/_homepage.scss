@@ -6,13 +6,13 @@
     display: flex;
     justify-content: space-between;
     color: $white;
+    @include fontsize1200(24px);
+    @include fontsize1024(20px);
     @include media(hover,1201){
-      padding: 24px 80px;
-      font-size: 24px;
+      padding: 24px 65px;
     }
     @include breakpoints(1025,1200){
-      padding: 24px 40px;
-      font-size: 20px;
+      padding: 24px 25px;
     }
     @include media(hover,1025){
       background-color: rgba($text,0.9);
@@ -20,7 +20,7 @@
     @include media(screen,1024){
       padding: 15px 0;
     }
-    @include breakpoints(601,1025){
+    @include breakpoints(601,1024){
       font-size: 14px;
     }
     @include media(hover,601){
@@ -41,12 +41,13 @@
     .item {
       position: relative;
       @include media(hover,1025){
+        padding: 0 15px;
         &:before {
           content: "";
           width: 4px;
           height: 48px;
           position: absolute;
-          left: 0;
+          left: 15px;
           bottom: 100%;
           background-color: $grad_end;
           margin-bottom: 8px;
@@ -87,10 +88,13 @@
     }
   }
   .step {
-
-    font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
+    @include fontsize1200(14px);
+    @include fontsize1024(14px);
+    @include media(screen,1024){
+      font-size: 14px;
+    }
     @include media(hover,768){
       width: 33.33%;
     }

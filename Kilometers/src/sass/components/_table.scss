@@ -17,9 +17,10 @@
     border-collapse: collapse;
   }
   th,td {
+    @include fontsize1200(16px);
+    @include fontsize1024(16px);
     @include media(hover,1025){
       font-weight: 700;
-      font-size: 16px;
       padding-left: $padding;
       padding-right: $padding;
     }
