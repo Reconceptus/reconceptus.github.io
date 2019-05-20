@@ -1,0 +1,71 @@
+@include media(hover,1025){
+  [data-acc-color='black'] {
+
+    body {
+      color: $white;
+    }
+    .main {
+      background-color: $acc-black;
+    }
+    .header {
+      background-color: $acc-black;
+    }
+    .acc-mode .accessibility-mode .icon {
+      background-color: $white;
+      color: $acc-black;
+    }
+    .header-nav a {
+      color: $white;
+    }
+    .homepage-banner .statistics {
+      background-color: rgba($white,0.9);
+      color: $acc-black;
+    }
+    .offer-item .item-info {
+      background-color: $acc-black;
+    }
+    .bg--gradient .title,
+    .title {
+      color: $acc-black;
+    }
+    .site-steps .title {
+      color: $white;
+    }
+    .bg--gradient:before {
+      background: $white;
+    }
+    .btn--trans-white,
+    .btn--red,
+    .btn--blue {
+      border-color: $acc-black;
+      background-color: $white;
+      color: $acc-black;
+    }
+    .table thead {
+      background-color: $white;
+    }
+    .table thead th {
+      color: $acc-black;
+    }
+    .table td {
+      background-color: $acc-black;
+    }
+    .offer-total .item-box {
+      background-color: $white;
+      color: $acc-black;
+    }
+    .footer {
+      background-color: $white;
+      color: $acc-black;
+    }
+    .footer-bottom,
+    .footer-contacts,
+    .footer-nav a {
+      color: $acc-black;
+    }
+    .footer-contacts .share a {
+      background-color: $acc-black;
+      color: $white;
+    }
+  }
+}

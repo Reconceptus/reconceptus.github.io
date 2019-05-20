@@ -2,8 +2,14 @@ const accessibility = function(siteFont) {
     const $btn = document.querySelector('.accessibility-mode');
     const $body = document.body;
     const $html = document.documentElement;
+
     $btn.onclick = function() {
+        defaultSiteFont = siteFont;
+        font_cnt = 0;
         $body.classList.toggle('acc-mode');
+        $html.removeAttribute('data-acc-img');
+        $html.removeAttribute('data-acc-color');
+        $html.removeAttribute('data-acc-font');
     };
 
     const $btn_font_up = document.getElementById('font_up');
@@ -18,20 +24,21 @@ const accessibility = function(siteFont) {
 
     // font changes
 
+    let defaultSiteFont = siteFont;
     let font_cnt = 0;
 
     $btn_font_up.onclick = function() {
         if (font_cnt <= 2) {
-            siteFont += 2;
+            defaultSiteFont += 2;
             font_cnt++;
-            $html.dataset.accFont = siteFont;
+            $html.dataset.accFont = defaultSiteFont;
         }
     };
     $btn_font_down.onclick = function() {
         if (font_cnt > 0) {
-            siteFont -= 2;
+            defaultSiteFont -= 2;
             font_cnt--;
-            $html.dataset.accFont = siteFont;
+            $html.dataset.accFont = defaultSiteFont;
         }
     };
 
@@ -66,6 +73,8 @@ const accessibility = function(siteFont) {
 
     const $btn_reset = document.getElementById('acc_reset');
     $btn_reset.onclick = function() {
+        defaultSiteFont = siteFont;
+        font_cnt = 0;
         $html.removeAttribute('data-acc-img');
         $html.removeAttribute('data-acc-color');
         $html.removeAttribute('data-acc-font');

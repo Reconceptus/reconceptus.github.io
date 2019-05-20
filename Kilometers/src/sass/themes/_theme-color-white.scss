@@ -1,0 +1,35 @@
+@include media(hover,1025){
+  [data-acc-color='white'] {
+
+    body {
+      color: $acc-black;
+    }
+    .acc-mode .accessibility-mode .icon {
+      background-color: $acc-black;
+    }
+    .header-nav a {
+      color: $acc-black;
+    }
+    .homepage-banner .statistics {
+      background-color: rgba($acc-black,0.9);
+    }
+    .bg--gradient:before {
+      background: $acc-black;
+    }
+    .btn--red,
+    .btn--blue {
+      border-color: $acc-black;
+      background-color: $acc-black;
+    }
+    .table thead {
+      background-color: $acc-black;
+    }
+    .offer-total .item-box {
+      background-color: $acc-black;
+    }
+    .footer {
+      background-color: $acc-black;
+    }
+
+  }
+}
