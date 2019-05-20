@@ -15,6 +15,7 @@ let $html = $('html'),
 const functions = {
     burger: require('./modules/burger'),
     contacts: require('./modules/contacts'),
+    accessibility: require('./modules/accessibility'),
 };
 const plugins = {
     fancybox: require('./modules/fancybox'),
@@ -54,9 +55,12 @@ $(document).ready(() => {
 
     /* --------------------------------- document load --------------------------------- */
 
+    let siteFont = 14; // basic html font-size
+
     documentClick();
     getWindowSizes();
     functions.burger();
+    functions.accessibility(siteFont);
 
     if ($('[data-fancybox="gallery"]').length > 0) {
         plugins.fancybox();

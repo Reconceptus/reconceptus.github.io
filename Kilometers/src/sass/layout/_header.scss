@@ -9,6 +9,12 @@
   box-shadow: 0 0 2px 0 rgba($text,0.2);
   display: flex;
   align-items: center;
+  @include media(hover,1025){
+    transition: all 0.2s;
+    .acc-mode & {
+      transform: translate3d(0,160px,0);
+    }
+  }
   @include media(hover,601){
     height: 80px;
   }
@@ -166,6 +172,11 @@
     border-radius: 50%;
     padding: 16px 8px;
     transition: all 0.18s;
+    @include media(hover,1025){
+      .acc-mode & {
+        background-color: $link;
+      }
+    }
   }
   @include hover(){
     .icon {

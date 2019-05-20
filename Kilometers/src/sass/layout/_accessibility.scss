@@ -1,0 +1,142 @@
+.accessibility {
+  &-box {
+    @include media(hover,1025){
+      position: fixed;
+      z-index: 500;
+      left: 0;
+      right: 0;
+      top: 0;
+      background-color: $acc-grey-lt;
+      height: 160px;
+      box-shadow: 0 4px 13px 0 rgba($black,0);
+      transition: all 0.2s;
+      transform: translate3d(0,-120%,0);
+      .acc-mode & {
+        transform: translate3d(0,0,0);
+        box-shadow: 0 4px 13px 0 rgba($black,0.4);
+      }
+      .content {
+        display: flex;
+        height: 100%;
+        align-items: center;
+      }
+    }
+    @include media(screen,1024){
+      display: none !important;
+    }
+  }
+  &-options {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    .option {
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $acc-black;
+        margin-bottom: 30px;
+      }
+      &--clr {
+        @include media(hover,1025){
+          .option-btn[data-clr-white]{
+            [data-acc-color='white'] & {
+              background-color: $acc-grey;
+              color: $white;
+            }
+          }
+          .option-btn[data-clr-black]{
+            [data-acc-color='black'] & {
+              background-color: $acc-grey;
+              color: $white;
+            }
+          }
+          .option-btn[data-clr-blue]{
+            [data-acc-color='blue'] & {
+              background-color: $acc-grey;
+              color: $white;
+            }
+          }
+          .option-btn[data-clr-standart]{
+            background-color: $acc-grey;
+            color: $white;
+            [data-acc-color='white'] &,
+            [data-acc-color='black'] &,
+            [data-acc-color='blue'] & {
+              background-color: transparent;
+              color: inherit;
+              @include hover(){
+                background-color: rgba($acc-grey,0.2);
+              }
+            }
+          }
+        }
+      }
+      &--img {
+        @include media(hover,1025){
+          .option-btn[data-img-hide]{
+            [data-acc-img='hide'] & {
+              background-color: $acc-grey;
+              color: $white;
+            }
+          }
+          .option-btn[data-img-grey]{
+            [data-acc-img='grey'] & {
+              background-color: $acc-grey;
+              color: $white;
+            }
+          }
+          .option-btn[data-img-standart]{
+            background-color: $acc-grey;
+            color: $white;
+            [data-acc-img='hide'] &,
+            [data-acc-img='grey'] & {
+              background-color: transparent;
+              color: inherit;
+              @include hover(){
+                background-color: rgba($acc-grey,0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      align-items: center;
+    }
+    .option-btn {
+      background-color: transparent;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid $acc-grey;
+      border-radius: 4px;
+      display: inline-flex;
+      height: 32px;
+      align-items: center;
+      padding: 0 5px;
+      margin-right: 8px;
+      outline: none;
+      min-width: 40px;
+      text-align: center;
+      @include hover(){
+        background-color: rgba($acc-grey,0.2);
+      }
+    }
+    .action {
+      align-self: center;
+      .close {
+        background: none;
+        border: none;
+        font-size: 86px;
+        font-weight: 100;
+        height: 46px;
+        line-height: 46px;
+        display: block;
+        outline: none;
+        overflow: hidden;
+      }
+    }
+  }
+}
