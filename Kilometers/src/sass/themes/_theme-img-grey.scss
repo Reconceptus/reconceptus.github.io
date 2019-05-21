@@ -1,0 +1,7 @@
+@include media(hover,1025){
+  [data-acc-img='grey'] {
+    img {
+      filter: grayscale(1);
+    }
+  }
+}

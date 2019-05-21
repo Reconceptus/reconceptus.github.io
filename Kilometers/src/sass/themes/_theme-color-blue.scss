@@ -1,0 +1,85 @@
+@include media(hover,1025){
+  [data-acc-color='blue'] {
+
+    body {
+      color: $acc-blue;
+    }
+    .main {
+      background-color: $acc-blue;
+    }
+    .header {
+      background-color: $acc-yellow;
+    }
+    .acc-mode .accessibility-mode .icon {
+      background-color: $acc-blue;
+    }
+    .header-nav a {
+      color: $acc-blue;
+    }
+    .homepage-banner .statistics {
+      background-color: rgba($acc-blue,0.9);
+      color: $acc-yellow;
+    }
+    .site-steps .step {
+      color: $acc-yellow;
+    }
+    .site-steps .step:before {
+      color: $link;
+    }
+    .bg--gradient .title,
+    .site-steps .title {
+      color: $acc-yellow;
+    }
+    .bg--grey {
+      background-color: $acc-grey-dlt;
+    }
+    .bg--gradient:before {
+      background: $acc-blue;
+    }
+    .btn--trans-white {
+      border-color: $acc-yellow;
+      color: $acc-yellow;
+      &:hover {
+        background-color: $acc-yellow;
+        color: $acc-blue;
+      }
+    }
+    .btn--red,
+    .btn--blue {
+      border-color: $acc-blue;
+      background-color: $acc-blue;
+    }
+    .table thead {
+      background-color: $acc-blue;
+    }
+    .table td {
+      background-color: $acc-yellow;
+    }
+    .offer-item .item-info {
+      background-color: $acc-yellow;
+    }
+    .offer-total .item-box {
+      background-color: $acc-blue;
+    }
+
+    .offer-item .item-data .date .icon,
+    .offer-item .item-data .location .icon {
+      color: $acc-blue;
+    }
+    .footer {
+      background-color: $acc-blue;
+    }
+    .footer {
+      color: $acc-yellow;
+    }
+    .footer-bottom,
+    .footer-contacts,
+    .footer-nav a {
+      color: $acc-yellow;
+    }
+    .footer-contacts .share a {
+      background-color: $acc-yellow;
+    }
+
+  }
+}

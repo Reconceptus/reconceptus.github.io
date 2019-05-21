@@ -1,0 +1,20 @@
+@include media(hover,1025){
+  [data-acc-img='hide'] {
+    img {
+      display: none !important;
+    }
+    .main-banner.homepage-banner {
+      height: auto;
+    }
+    .homepage-banner .statistics-wrap {
+      margin-top: 80px;
+    }
+    .offer-item .item-img {
+      padding-bottom: 0;
+    }
+    .homepage-gallery,
+    .homepage-contacts {
+      display: none;
+    }
+  }
+}
