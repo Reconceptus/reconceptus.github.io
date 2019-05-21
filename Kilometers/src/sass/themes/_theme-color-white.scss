@@ -13,6 +13,12 @@
     .homepage-banner .statistics {
       background-color: rgba($acc-black,0.9);
     }
+    .site-steps .step:before {
+      color: $link;
+    }
+    .bg--grey {
+      background-color: $acc-grey-dlt;
+    }
     .bg--gradient:before {
       background: $acc-black;
     }
@@ -26,6 +32,10 @@
     }
     .offer-total .item-box {
       background-color: $acc-black;
+    }
+    .offer-item .item-data .date .icon,
+    .offer-item .item-data .location .icon {
+      color: $acc-black;
     }
     .footer {
       background-color: $acc-black;

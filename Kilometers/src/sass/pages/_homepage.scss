@@ -89,6 +89,7 @@
   .step {
     font-weight: 600;
     line-height: 1.6;
+    position: relative;
     @include fontsize1200(14px);
     @include fontsize1024(14px);
     @include media(screen,1024){
@@ -111,6 +112,23 @@
     }
     &:not(:last-child){
       margin-right: 64px;
+    }
+    .img {
+      display: block;
+      position: absolute;
+      width: 100%;
+
+      bottom: 0;
+      height: auto;
+      top: 136px;
+      transform: translateY(-50%);
+      max-width: 380px;
+      @include media(hover,768){
+        right: 0;
+      }
+      @include media(screen,767){
+        left: 0;
+      }
     }
   }
 }

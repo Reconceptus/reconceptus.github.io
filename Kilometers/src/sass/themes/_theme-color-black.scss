@@ -21,8 +21,15 @@
       background-color: rgba($white,0.9);
       color: $acc-black;
     }
+    .site-steps .step:before {
+      color: $link;
+    }
     .offer-item .item-info {
       background-color: $acc-black;
+    }
+    .offer-item .item-data .date .icon,
+    .offer-item .item-data .location .icon {
+      color: $white;
     }
     .bg--gradient .title,
     .title {
@@ -30,6 +37,9 @@
     }
     .site-steps .title {
       color: $white;
+    }
+    .bg--grey {
+      background-color: $acc-grey-dlt;
     }
     .bg--gradient:before {
       background: $white;
