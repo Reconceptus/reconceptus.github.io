@@ -50,9 +50,13 @@
           color: inherit;
           padding: 0 12px;
           font-weight: 500;
+          @include fontsize1200(16px);
+          @include fontsize1024(16px);
+          @include breakpoints(601,1024){
+            font-size: 16px;
+          }
           @include media(hover,601){
             height: 48px;
-            font-size: 16px;
           }
           @include media(screen,600){
             height: 40px;
@@ -65,11 +69,16 @@
       &-action {
         .link {
           display: inline-block;
-          font-size: 18px;
+
           font-weight: 600;
           color: $white;
           background-color: #3b5998;
           border-radius: 8px;
+          @include fontsize1200(18px);
+          @include fontsize1024(18px);
+          @include breakpoints(768,1024){
+            font-size: 18px;
+          }
           @include hover(){
             background-color: darken(#3b5998,5);
           }

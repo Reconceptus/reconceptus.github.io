@@ -126,9 +126,13 @@
   &-sort {
     margin-bottom: 30px;
     font-weight: 700;
-    font-size: 16px;
     display: flex;
     align-items: center;
+    @include fontsize1200(16px);
+    @include fontsize1024(16px);
+    @include media(screen,1024){
+      font-size: 16px;
+    }
     a {
       margin-left: 10px;
       color: inherit;

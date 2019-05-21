@@ -12,10 +12,14 @@
   }
   &-types {
     font-weight: 700;
-    font-size: 16px;
     display: flex;
     align-items: center;
     margin-bottom: 45px;
+    @include fontsize1200(16px);
+    @include fontsize1024(16px);
+    @include media(screen,1024){
+      font-size: 16px;
+    }
     a {
       margin-right: 45px;
       color: inherit;
@@ -72,10 +76,13 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      font-size: 14px;
       font-weight: 700;
       color: $white;
-
+      @include fontsize1200(14px);
+      @include fontsize1024(14px);
+      @include media(screen,1024){
+        font-size: 14px;
+      }
       @include media(hover,768){
         padding: 10px 10px 10px 50px;
         width: 50%;

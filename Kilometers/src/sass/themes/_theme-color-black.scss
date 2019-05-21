@@ -41,6 +41,7 @@
     .bg--grey {
       background-color: $acc-grey-dlt;
     }
+    .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
       background: $white;
     }
@@ -77,5 +78,65 @@
       background-color: $acc-black;
       color: $white;
     }
+
+    // stocks
+
+    .offer-status .status.opened {
+      background-color: $acc-grey;
+    }
+    .offer-item .item-status.opened {
+      background-color: $acc-black;
+    }
+    .offer-status .status.closed {
+      background-color: $acc-black;
+      color: $white;
+    }
+    .offer-item .item-status.closed {
+      background-color: $white;
+      color: $acc-black;
+    }
+    .offers-types {
+      color: $acc-black;
+    }
+    .offer-item .item-action a:not(.btn) {
+      color: $white;
+    }
+    .offer-data {
+      color: $acc-black;
+    }
+    .table-sort {
+      color: $acc-black;
+    }
+    .reports-list .item,
+    .reports-list .icon {
+      color: $acc-black;
+    }
+    .pagination a:hover,
+    .pagination a.current {
+      background-color: $acc-black;
+    }
+
+    // components
+
+    .text-box {
+      color: $acc-black;
+    }
+
+    // pages
+
+    .rating-search .form .fieldset .input {
+      border-color: $white;
+    }
+    .rating-search .form .fieldset .btn {
+      border-color: $white;
+    }
+    .rating-search .form .fieldset input {
+      background-color: $acc-black;
+    }
+
+    .error-page .error-text {
+      color: $acc-black;
+    }
+
   }
 }

@@ -11,8 +11,12 @@
       display: inline-flex;
       font-weight: 600;
       color: $white;
-      @include media(hover,768){
+      @include fontsize1200(24px);
+      @include fontsize1024(24px);
+      @include breakpoints(768,1024){
         font-size: 24px;
+      }
+      @include media(hover,768){
         padding: 24px 60px;
       }
       @include breakpoints(421,767){
@@ -51,8 +55,12 @@
     .date,
     .location {
       font-weight: 600;
-      @include media(hover,768){
+      @include fontsize1200(24px);
+      @include fontsize1024(24px);
+      @include breakpoints(768,1024){
         font-size: 24px;
+      }
+      @include media(hover,768){
         margin-bottom: 28px;
       }
       @include media(screen,767){

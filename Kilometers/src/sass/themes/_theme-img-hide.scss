@@ -12,9 +12,28 @@
     .offer-item .item-img {
       padding-bottom: 0;
     }
-    .homepage-gallery,
+    .contact-map,
+    .offer-gallery--wrap,
+    .gallery,
     .homepage-contacts {
       display: none;
     }
+
+    // stocks
+
+    .main-banner.offer-banner {
+      height: auto;
+      padding: 24px 0;
+    }
+
+    // pages
+
+    .error-page .error .logo {
+      margin: 0 15px;
+    }
+    .error-page .error .logo:after {
+      content: "0";
+    }
+
   }
 }

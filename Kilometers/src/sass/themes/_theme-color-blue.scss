@@ -33,6 +33,7 @@
     .bg--grey {
       background-color: $acc-grey-dlt;
     }
+    .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
       background: $acc-blue;
     }
@@ -66,6 +67,20 @@
     .offer-item .item-data .location .icon {
       color: $acc-blue;
     }
+    .gallery-thumbs .swiper-slide-thumb-active {
+      box-shadow: 0 0 0 8px $acc-yellow inset;
+    }
+    .custom-gallery .fancybox-toolbar .fancybox-button--close {
+      color: $acc-yellow;
+    }
+    .offer-gallery .swiper-button-white,
+    .custom-gallery .fancybox-navigation .fancybox-button {
+      background-color: $acc-yellow;
+    }
+    .offer-gallery .swiper-button-white:after,
+    .custom-gallery .fancybox-navigation .fancybox-button:after {
+      border-color: transparent $acc-yellow;
+    }
     .footer {
       background-color: $acc-blue;
     }
@@ -78,6 +93,49 @@
       color: $acc-yellow;
     }
     .footer-contacts .share a {
+      background-color: $acc-yellow;
+    }
+
+    // stocks
+
+    .offer-status .status.opened,
+    .offer-status .status.closed,
+    .offer-item .item-status.opened,
+    .offer-item .item-status.closed {
+      background-color: $acc-blue;
+      color: $acc-yellow;
+    }
+    .offer-item .item-action a:not(.btn) {
+      color: $acc-blue;
+    }
+    .reports-list .icon {
+      color: $acc-blue;
+    }
+    .pagination a:not(.current){
+      background-color: $acc-yellow;
+    }
+    .pagination a:hover,
+    .pagination a.current {
+      background-color: $acc-blue;
+    }
+
+    // components
+
+    .text-box a {
+      color: $acc-blue;
+      background-image: linear-gradient(to bottom, rgba($acc-blue, 0.5) 0,rgba($acc-blue, 0.5) 100%);
+      &:hover {
+        background-image: linear-gradient(to bottom, rgba($acc-blue, 1) 0,rgba($acc-blue, 1) 100%);
+        color: $acc-yellow;
+      }
+    }
+
+    // pages
+
+    .rating-search .form .fieldset .input {
+      border-color: $acc-blue;
+    }
+    .rating-search .form .fieldset input {
       background-color: $acc-yellow;
     }
 

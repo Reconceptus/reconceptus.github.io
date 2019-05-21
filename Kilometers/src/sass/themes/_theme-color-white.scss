@@ -19,6 +19,7 @@
     .bg--grey {
       background-color: $acc-grey-dlt;
     }
+    .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
       background: $acc-black;
     }
@@ -30,6 +31,9 @@
     .table thead {
       background-color: $acc-black;
     }
+    .custom-gallery .fancybox-toolbar .fancybox-button--close {
+      color: $white;
+    }
     .offer-total .item-box {
       background-color: $acc-black;
     }
@@ -39,6 +43,30 @@
     }
     .footer {
       background-color: $acc-black;
+    }
+
+    // stocks
+
+    .offer-status .status.opened,
+    .offer-status .status.closed,
+    .offer-item .item-status.opened {
+      background-color: $acc-grey;
+    }
+    .offer-item .item-status.closed {
+      background-color: $acc-black;
+    }
+    .pagination a:hover,
+    .pagination a.current {
+      background-color: $acc-black;
+    }
+    .reports-list .icon {
+      color: $acc-black;
+    }
+
+    // pages
+
+    .rating-search .form .fieldset .input {
+      border-color: $acc-black;
     }
 
   }

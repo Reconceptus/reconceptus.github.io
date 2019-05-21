@@ -3,5 +3,12 @@
     img {
       filter: grayscale(1);
     }
+    .swiper-slide, .swiper-slide .item {
+      filter: grayscale(1);
+    }
+    .error-page .error .digit-left,
+    .error-page .error .digit-right {
+      filter: grayscale(1);
+    }
   }
 }

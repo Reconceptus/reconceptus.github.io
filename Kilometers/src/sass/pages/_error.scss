@@ -48,7 +48,9 @@
 
     font-weight: 600;
     margin-bottom: 40px;
-    @include media(hover,768){
+    @include fontsize1200(24px);
+    @include fontsize1024(24px);
+    @include breakpoints(768,1024){
       font-size: 24px;
     }
     @include media(screen,767){
