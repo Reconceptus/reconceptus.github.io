@@ -75,6 +75,7 @@ const accessibility = function(siteFont) {
     $btn_reset.onclick = function() {
         defaultSiteFont = siteFont;
         font_cnt = 0;
+        $body.classList.toggle('acc-mode');
         $html.removeAttribute('data-acc-img');
         $html.removeAttribute('data-acc-color');
         $html.removeAttribute('data-acc-font');

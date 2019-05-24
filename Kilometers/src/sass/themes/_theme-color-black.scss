@@ -8,108 +8,132 @@
       background-color: $acc-black;
     }
     .header {
-      background-color: $acc-black;
+      background-color: $white;
     }
     .acc-mode .accessibility-mode .icon {
-      background-color: $white;
-      color: $acc-black;
+      background-color: $acc-black;
+      color: $white;
     }
     .header-nav a {
-      color: $white;
+      color: $acc-black;
     }
     .homepage-banner .statistics {
       background-color: rgba($white,0.9);
       color: $acc-black;
     }
+    .homepage-banner .statistics .item:before {
+      background-color: $acc-black;
+    }
     .site-steps .step:before {
-      color: $link;
+      color: $white;
+    }
+    .site-steps .step .img {
+      filter: brightness(10);
     }
     .offer-item .item-info {
-      background-color: $acc-black;
+      background-color: $white;
+    }
+    .offer-item .item-title,
+    .offer-item .item-data {
+      color: $acc-black;
     }
     .offer-item .item-data .date .icon,
     .offer-item .item-data .location .icon {
-      color: $white;
+      color: $acc-black;
     }
     .bg--gradient .title,
     .title {
-      color: $acc-black;
+      color: $white;
     }
     .site-steps .title {
       color: $white;
     }
     .bg--grey {
-      background-color: $acc-grey-dlt;
+      background-color: $acc-black;
     }
     .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
-      background: $white;
+      background: $acc-black;
     }
-    .btn--trans-white,
-    .btn--red,
+    .btn--trans-white {
+      border-color: $white;
+    }
+    .btn--trans-inherit {
+      border-color: $white;
+      background-color: $white;
+      color: $acc-black;
+    }
+    .btn--red {
+      border-color: $white;
+      background-color: $white;
+      color: $acc-black;
+    }
+
     .btn--blue {
       border-color: $acc-black;
-      background-color: $white;
-      color: $acc-black;
+      background-color: $acc-black;
+      color: $white;
     }
     .table thead {
-      background-color: $white;
+      background-color: $acc-black;
     }
     .table thead th {
-      color: $acc-black;
+      color: $white;
+    }
+    .table tbody tr {
+      border-color: $acc-black;
     }
     .table td {
-      background-color: $acc-black;
+      background-color: $white;
+      color: $acc-black;
     }
     .offer-total .item-box {
       background-color: $white;
       color: $acc-black;
     }
     .footer {
-      background-color: $white;
-      color: $acc-black;
+      background-color: $acc-black;
+      color: $white;
     }
     .footer-bottom,
     .footer-contacts,
     .footer-nav a {
-      color: $acc-black;
+      color: $white;
     }
     .footer-contacts .share a {
-      background-color: $acc-black;
-      color: $white;
+      background-color: $white;
+      color: $acc-black;
     }
 
     // stocks
 
     .offer-status .status.opened {
-      background-color: $acc-grey;
+      background-color: $acc-black;
     }
     .offer-item .item-status.opened {
       background-color: $acc-black;
     }
+    .offer-item .item-status.closed,
     .offer-status .status.closed {
       background-color: $acc-black;
       color: $white;
     }
-    .offer-item .item-status.closed {
-      background-color: $white;
-      color: $acc-black;
-    }
+
     .offers-types {
-      color: $acc-black;
-    }
-    .offer-item .item-action a:not(.btn) {
       color: $white;
     }
-    .offer-data {
+    .offer-item .item-action a:not(.btn) {
       color: $acc-black;
+    }
+    .offer-data {
+      color: $white;
     }
     .table-sort {
       color: $acc-black;
     }
     .reports-list .item,
     .reports-list .icon {
-      color: $acc-black;
+      color: $white;
     }
     .pagination a:hover,
     .pagination a.current {
@@ -119,7 +143,15 @@
     // components
 
     .text-box {
-      color: $acc-black;
+      color: $white;
+    }
+    .text-box a {
+      color: $white;
+      background-image: linear-gradient(to bottom, rgba($white, 0.5) 0,rgba($white, 0.5) 100%);
+      &:hover {
+        background-image: linear-gradient(to bottom, rgba($white, 1) 0,rgba($white, 1) 100%);
+        color: $acc-black;
+      }
     }
 
     // pages
@@ -129,13 +161,19 @@
     }
     .rating-search .form .fieldset .btn {
       border-color: $white;
+      background-color: $white;
+      color: $acc-black;
     }
     .rating-search .form .fieldset input {
       background-color: $acc-black;
     }
+    .rating-search .results-action .link {
+      background-color: $white;
+      color: $acc-black;
+    }
 
     .error-page .error-text {
-      color: $acc-black;
+      color: $white;
     }
 
   }

@@ -4,34 +4,88 @@
     body {
       color: $acc-black;
     }
-    .acc-mode .accessibility-mode .icon {
+    .header {
       background-color: $acc-black;
     }
-    .header-nav a {
+    .acc-mode .accessibility-mode .icon {
+      background-color: $white;
       color: $acc-black;
+    }
+    .header-nav a {
+      color: $white;
     }
     .homepage-banner .statistics {
       background-color: rgba($acc-black,0.9);
     }
+    .homepage-banner .statistics .item:before {
+      background-color: $white;
+    }
     .site-steps .step:before {
       color: $link;
     }
+    .bg--gradient .title {
+      color: $acc-black;
+    }
     .bg--grey {
-      background-color: $acc-grey-dlt;
+      background-color: $white;
     }
     .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
-      background: $acc-black;
+      background: $white;
     }
-    .btn--red,
-    .btn--blue {
+    .btn--red {
       border-color: $acc-black;
       background-color: $acc-black;
+      color: $white;
+    }
+    .btn--blue {
+      border-color: $white;
+      background-color: $white;
+      color: $acc-black;
+    }
+    .btn--trans-white {
+      border-color: $acc-black;
+      color: $acc-black;
+    }
+    .btn--trans-inherit {
+      border-color: $acc-black;
+      background-color: $white;
+      color: $acc-black;
     }
     .table thead {
+      background-color: $white;
+    }
+    .table thead th {
+      color: $acc-black;
+    }
+    .table tbody tr {
+      border-color: $white;
+    }
+    .table td {
       background-color: $acc-black;
+      color: $white;
     }
     .custom-gallery .fancybox-toolbar .fancybox-button--close {
+      color: $white;
+    }
+
+    .footer {
+      background-color: $white;
+    }
+    .footer-bottom,
+    .footer-contacts,
+    .footer-nav a {
+      color: $acc-black;
+    }
+    .footer-contacts .share a {
+      background-color: $acc-black;
+      color: $white;
+    }
+
+    // stocks
+
+    .offer-item .item-info {
+      background-color: $acc-black;
       color: $white;
     }
     .offer-total .item-box {
@@ -39,21 +93,16 @@
     }
     .offer-item .item-data .date .icon,
     .offer-item .item-data .location .icon {
-      color: $acc-black;
+      color: $white;
     }
-    .footer {
-      background-color: $acc-black;
-    }
-
-    // stocks
-
     .offer-status .status.opened,
     .offer-status .status.closed,
-    .offer-item .item-status.opened {
-      background-color: $acc-grey;
-    }
+    .offer-item .item-status.opened,
     .offer-item .item-status.closed {
       background-color: $acc-black;
+    }
+    .offer-item .item-action a:not(.btn) {
+      color: $white;
     }
     .pagination a:hover,
     .pagination a.current {
@@ -63,10 +112,34 @@
       color: $acc-black;
     }
 
+    // components
+
+    .text-box a {
+      color: $acc-black;
+      background-image: linear-gradient(to bottom, rgba($acc-black, 0.5) 0,rgba($acc-black, 0.5) 100%);
+      &:hover {
+        background-image: linear-gradient(to bottom, rgba($acc-black, 1) 0,rgba($acc-black, 1) 100%);
+        color: $white;
+      }
+    }
+
     // pages
 
     .rating-search .form .fieldset .input {
       border-color: $acc-black;
+    }
+    .rating-search .form .fieldset .btn {
+      border-color: $acc-black;
+      background-color: $acc-black;
+      color: $white;
+    }
+    .rating-search .results-action .link {
+      background-color: $acc-black;
+      color: $white;
+    }
+
+    .error-page .error-text {
+      color: $acc-black;
     }
 
   }
