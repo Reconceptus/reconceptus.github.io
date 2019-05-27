@@ -13,9 +13,15 @@ const accessibility = function(siteFont) {
 
     if ($accSettings.accMode > 0) {
         $body.classList.add('acc-mode');
-        $html.dataset.accFont = $accSettings.font;
+
         $html.dataset.accColor = $accSettings.color;
         $html.dataset.accImg = $accSettings.image;
+        if ($accSettings.font == undefined) {
+            $html.dataset.accFont = siteFont;
+            $.cookie('font', siteFont);
+        } else {
+            $html.dataset.accFont = $accSettings.font;
+        }
     }
 
     function cookieReload() {
