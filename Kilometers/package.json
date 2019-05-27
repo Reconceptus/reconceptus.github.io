@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.0",
+    "jquery.cookie": "^1.4.1",
     "stylefmt": "^6.0.3"
   }
 }
