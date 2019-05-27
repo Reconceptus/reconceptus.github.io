@@ -64,7 +64,7 @@
             [data-acc-color='black'] &,
             [data-acc-color='blue'] & {
               background-color: transparent;
-              color: $text;
+              color: $acc-black;
               @include hover(){
                 background-color: rgba($acc-grey,0.2);
               }
@@ -92,7 +92,7 @@
             [data-acc-img='hide'] &,
             [data-acc-img='grey'] & {
               background-color: transparent;
-              color: $text;
+              color: $acc-black;
               @include hover(){
                 background-color: rgba($acc-grey,0.2);
               }
@@ -120,6 +120,7 @@
       outline: none;
       min-width: 40px;
       text-align: center;
+      color: $acc-black;
       @include hover(){
         background-color: rgba($acc-grey,0.2);
       }
