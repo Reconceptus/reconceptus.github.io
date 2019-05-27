@@ -2,7 +2,7 @@
   [data-acc-color='blue'] {
 
     body {
-      color: $acc-blue;
+      color: $acc-yellow;
     }
     .main {
       background-color: $acc-blue;
@@ -20,18 +20,24 @@
       background-color: rgba($acc-blue,0.9);
       color: $acc-yellow;
     }
+    .homepage-banner .statistics .item:before {
+      background-color: $acc-yellow;
+    }
     .site-steps .step {
       color: $acc-yellow;
+    }
+    .site-steps .step .img {
+      filter: brightness(10);
     }
     .site-steps .step:before {
       color: $link;
     }
     .bg--gradient .title,
-    .site-steps .title {
+    .title {
       color: $acc-yellow;
     }
     .bg--grey {
-      background-color: $acc-grey-dlt;
+      background-color: $acc-blue;
     }
     .fancybox-is-open .fancybox-bg,
     .bg--gradient:before {
@@ -45,22 +51,40 @@
         color: $acc-blue;
       }
     }
-    .btn--red,
+    .btn--red {
+      border-color: $acc-yellow;
+      background-color: $acc-yellow;
+      color: $acc-blue;
+    }
     .btn--blue {
       border-color: $acc-blue;
       background-color: $acc-blue;
     }
+    .btn--trans-inherit {
+      border-color: $acc-yellow;
+      background-color: $acc-yellow;
+      color: $acc-blue;
+    }
     .table thead {
       background-color: $acc-blue;
     }
+    .table thead th  {
+      color: $acc-yellow;
+    }
     .table td {
       background-color: $acc-yellow;
+      color: $acc-blue;
+    }
+    .table tbody tr {
+      border-color: $acc-blue;
     }
     .offer-item .item-info {
       background-color: $acc-yellow;
+      color: $acc-blue;
     }
     .offer-total .item-box {
-      background-color: $acc-blue;
+      background-color: $acc-yellow;
+      color: $acc-blue;
     }
 
     .offer-item .item-data .date .icon,
@@ -105,11 +129,16 @@
       background-color: $acc-blue;
       color: $acc-yellow;
     }
+    .reports-list,
+    .offer-data,
+    .offers-types {
+      color: $acc-yellow;
+    }
     .offer-item .item-action a:not(.btn) {
       color: $acc-blue;
     }
     .reports-list .icon {
-      color: $acc-blue;
+      color: $acc-yellow;
     }
     .pagination a:not(.current){
       background-color: $acc-yellow;
@@ -121,22 +150,41 @@
 
     // components
 
+    .text-box {
+      color: $acc-yellow;
+    }
     .text-box a {
-      color: $acc-blue;
-      background-image: linear-gradient(to bottom, rgba($acc-blue, 0.5) 0,rgba($acc-blue, 0.5) 100%);
+      color: $acc-yellow;
+      background-image: linear-gradient(to bottom, rgba($acc-yellow, 0.5) 0,rgba($acc-yellow, 0.5) 100%);
       &:hover {
-        background-image: linear-gradient(to bottom, rgba($acc-blue, 1) 0,rgba($acc-blue, 1) 100%);
-        color: $acc-yellow;
+        background-image: linear-gradient(to bottom, rgba($acc-yellow, 1) 0,rgba($acc-yellow, 1) 100%);
+        color: $acc-blue;
       }
     }
 
     // pages
 
+    .rating-search {
+      color: $acc-yellow;
+    }
     .rating-search .form .fieldset .input {
-      border-color: $acc-blue;
+      border-color: $acc-yellow;
     }
     .rating-search .form .fieldset input {
+      background-color: $acc-blue;
+    }
+    .rating-search .form .fieldset .btn  {
+      border-color: $acc-yellow;
       background-color: $acc-yellow;
+      color: $acc-blue;
+    }
+    .donate-link .link,
+    .rating-search .results-action .link {
+      background-color: $acc-yellow;
+      color: $acc-blue;
+    }
+    .error-page .error-text {
+      color: $acc-yellow;
     }
 
   }

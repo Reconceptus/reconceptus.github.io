@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Контакты</title>
+    <title>Пожертвовать</title>
     <meta name="author" content="enenkoff@mail.ru">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -86,10 +86,10 @@
                             <li><a href="stocks-current.html" class="">Акции</a></li>
                             <li><a href="rating.html" class="">Рейтинг</a></li>
                             <li><a href="my-rating.html" class="">Мой рейтинг</a></li>
-                            <li><a href="donate.html" class="">Пожертвовать</a></li>
+                            <li><a href="donate.html" class="active">Пожертвовать</a></li>
                             <li><a href="holdings.html" class="">Фонды</a></li>
                             <li><a href="about-us.html" >О нас</a></li>
-                            <li><a href="contacts.html" class="active">Контакты</a></li>
+                            <li><a href="contacts.html" class="">Контакты</a></li>
                         </ul>
                         <div class="accessibility-mode">
                             <a href="javascript:void(0);">
@@ -109,46 +109,31 @@
 
         <div id="main" class="main">
 
-            <div>
-                <div class="bg--grey hp-section">
-                    <div class="content content--md">
-                        <h1 class="title title--lg">Контакты</h1>
-                        <div class="text-box-layout--md text-box-preview">
-                            <div class="text-box">
-                                <p>Будем рады получить ваши предложения на почту <a href="mailto:charity@magnitogorsk.ru">charity@magnitogorsk.ru</a> или услышать по телефону
-                                    <a href="tel:+73519498498">+7 (3519) 49-84-98</a> в будни с 8:00 до 18:00. Проект «Километры добра» не отвечает на запросы об индивидуальной помощи. По частным вопросам можно обратиться в благотворительные фонды, работу которых мы поддерживаем.</p>
+            <div class="bg--grey hp-section">
+                <div class="content content--md">
+                    <div class="layout-flex">
+                        <div class="layout-flex--main">
+                            <h1 class="title title--lg">Пожертвовать</h1>
+                            <div class="text-box-preview">
+                                <div class="text-box">
+                                    <p>Вы можете внести свой вклад в развитие благотворительного движения "Километры Добра" перечислив любую сумму на наш расчетный счёт. Даже 50 рублей могут помочь нуждающемуся в лечении или улучшении материальных условий. Мы верим, что только вместе мы сможем сделать общество гуманней, а наш город лучше. Люди помогают людям!</p>
+                                    <p>Все средства расходуются только на благотворительные акции, за каждую акцию отчитывается организовавший её фонд. Для перечисления денежных средств с банковской карты перейдите по кнопке на сервис оплаты.</p>
+                                </div>
                             </div>
-                            <div class="contact-map">
-                                <div id="map" class="map-box"></div>
-                                <script type="text/javascript">
-                                    var map;
-                                    function initMap() {
-
-                                        var icon = './assets/images/map-mark.png';
-
-                                        var mapOptions = {
-                                            zoom: 16,
-                                            scrollwheel: false,
-                                            center: new google.maps.LatLng(53.405637, 58.989276)
-                                        };
-                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
-
-                                        var marker = new google.maps.Marker({
-                                            position: {lat: 53.405637, lng: 58.989276},
-                                            map: map,
-                                            icon: icon
-                                        });
-                                    }
-                                </script>
-                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
+                            <div class="donate-link">
+                                <a href="#" class="link">Перейти для оплаты</a>
                             </div>
                         </div>
+                        <div class="layout-flex--aside tablet-hidden">
+                            <div class="sidebar-logo top-invert">
+                                <img src="assets/svg/partials/donate-icon.svg" alt="Пожертвовать" width="312">
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
-
-
-
 
         </div>
 

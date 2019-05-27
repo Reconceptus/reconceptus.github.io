@@ -1,0 +1,26 @@
+.donate {
+  &-link {
+    padding-bottom: 15px;
+    .link {
+      display: inline-block;
+
+      font-weight: 600;
+      color: $white;
+      background-color: $btn-red;
+      @include fontsize1200(18px);
+      @include fontsize1024(18px);
+      @include breakpoints(768,1024){
+        font-size: 18px;
+      }
+      @include hover(){
+        background-color: $btn-red_hover;
+      }
+      @include media(hover,601){
+        padding: 13px 40px;
+      }
+      @include media(screen,600){
+        padding: 12px 24px;
+      }
+    }
+  }
+}

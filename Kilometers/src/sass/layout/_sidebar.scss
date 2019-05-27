@@ -3,6 +3,9 @@
     width: 312px;
     margin-top: 48px;
     margin-left: auto;
+    &.top-invert {
+      margin-top: -48px;
+    }
     img {
       display: block;
       width: 100%;
