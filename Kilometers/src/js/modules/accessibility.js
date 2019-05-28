@@ -18,7 +18,7 @@ const accessibility = function(siteFont) {
         $html.dataset.accImg = $accSettings.image;
         if ($accSettings.font == undefined) {
             $html.dataset.accFont = siteFont;
-            $.cookie('font', siteFont);
+            $.cookie('font', siteFont, { path: '/' });
         } else {
             $html.dataset.accFont = $accSettings.font;
         }
@@ -47,9 +47,9 @@ const accessibility = function(siteFont) {
         $html.removeAttribute('data-acc-font');
 
         if ($accSettings.accMode == undefined) {
-            $.cookie('accMode', 1);
+            $.cookie('accMode', 1, { path: '/' });
         } else {
-            $.cookie('accMode', -1 * $accSettings.accMode);
+            $.cookie('accMode', -1 * $accSettings.accMode, { path: '/' });
         }
         cookieReload();
     };
@@ -74,7 +74,7 @@ const accessibility = function(siteFont) {
             defaultSiteFont = +defaultSiteFont + 2;
             font_cnt++;
             $html.dataset.accFont = defaultSiteFont;
-            $.cookie('font', defaultSiteFont);
+            $.cookie('font', defaultSiteFont, { path: '/' });
         }
     };
     $btn_font_down.onclick = function() {
@@ -82,7 +82,7 @@ const accessibility = function(siteFont) {
             defaultSiteFont -= 2;
             font_cnt--;
             $html.dataset.accFont = defaultSiteFont;
-            $.cookie('font', defaultSiteFont);
+            $.cookie('font', defaultSiteFont, { path: '/' });
         }
     };
 
@@ -95,19 +95,19 @@ const accessibility = function(siteFont) {
 
     $btn_clr_white.onclick = function() {
         $html.dataset.accColor = 'white';
-        $.cookie('color', 'white');
+        $.cookie('color', 'white', { path: '/' });
     };
     $btn_clr_black.onclick = function() {
         $html.dataset.accColor = 'black';
-        $.cookie('color', 'black');
+        $.cookie('color', 'black', { path: '/' });
     };
     $btn_clr_blue.onclick = function() {
         $html.dataset.accColor = 'blue';
-        $.cookie('color', 'blue');
+        $.cookie('color', 'blue', { path: '/' });
     };
     $btn_clr_standart.onclick = function() {
         $html.dataset.accColor = 'standart';
-        $.cookie('color', 'default');
+        $.cookie('color', 'default', { path: '/' });
     };
 
     // img changes
@@ -118,15 +118,15 @@ const accessibility = function(siteFont) {
 
     $btn_img_hide.onclick = function() {
         $html.dataset.accImg = 'hide';
-        $.cookie('image', 'hide');
+        $.cookie('image', 'hide', { path: '/' });
     };
     $btn_img_grey.onclick = function() {
         $html.dataset.accImg = 'grey';
-        $.cookie('image', 'grey');
+        $.cookie('image', 'grey', { path: '/' });
     };
     $btn_img_standart.onclick = function() {
         $html.dataset.accImg = 'standart';
-        $.cookie('image', 'default');
+        $.cookie('image', 'default', { path: '/' });
     };
 
     // reset changes
