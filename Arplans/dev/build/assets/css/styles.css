@@ -4040,6 +4040,12 @@ svg {
 }
 
 .btn--lt {
+  background-color: #FFF;
+  color: #2196F3;
+  text-transform: uppercase;
+}
+
+.btn--white {
   background-color: #2196F3;
   color: #FFF;
   text-transform: uppercase;
@@ -9943,6 +9949,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .btn--lt:hover {
+    color: #1F8FE7;
+  }
+
+  .btn--white:hover {
     background-color: #1F8FE7;
   }
 

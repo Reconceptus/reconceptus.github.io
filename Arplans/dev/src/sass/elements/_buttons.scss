@@ -49,6 +49,14 @@
     }
   }
   &--lt {
+    background-color: $white;
+    color: $link;
+    text-transform: uppercase;
+    @include hover(){
+      color: $link * 0.95;
+    }
+  }
+  &--white {
     background-color: $link;
     color: $white;
     text-transform: uppercase;

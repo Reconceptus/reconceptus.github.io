@@ -131,3 +131,11 @@
     }
   }
 }
+.summary {
+  @include media(hover,768){
+    padding-bottom: 2*$padding_md;
+  }
+  @include media(screen,767){
+    padding-bottom: 2*$padding_sm;
+  }
+}
