@@ -9934,6 +9934,61 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   padding: 0 1px;
 }
 
+.ref-link {
+  position: fixed;
+  -webkit-box-shadow: 0 10px 20px 0 RGBA(0, 0, 0, 0.6);
+  box-shadow: 0 10px 20px 0 RGBA(0, 0, 0, 0.6);
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+  background-color: #FFF;
+  border: 8px solid #EF6C00;
+  padding: 24px 15px 15px;
+  color: #657482;
+}
+
+.ref-link .link {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ref-link .link .custom-form {
+  width: 100%;
+}
+
+.ref-link .link .copy-btn {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.ref-link--title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.ref-link--subtitle {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.ref-link--subtitle a {
+  color: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, from(#657482), to(#657482));
+  background: -webkit-linear-gradient(top, #657482 0%, #657482 100%);
+  background: -o-linear-gradient(top, #657482 0%, #657482 100%);
+  background: linear-gradient(to bottom, #657482 0%, #657482 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  -webkit-background-size: 1px 1px;
+  background-size: 1px 1px;
+  padding: 0 1px;
+}
+
 .text-section {
   margin: 40px 0 60px;
 }
@@ -10654,6 +10709,12 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .referral-item .link-info a:hover {
+    color: #FFF;
+    -webkit-background-size: 1px 100%;
+    background-size: 1px 100%;
+  }
+
+  .ref-link--subtitle a:hover {
     color: #FFF;
     -webkit-background-size: 1px 100%;
     background-size: 1px 100%;
