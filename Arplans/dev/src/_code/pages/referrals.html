@@ -1,0 +1,158 @@
+<include src="../templates/head.html" title="Доходы с реферралов"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-registered.html" sales="active"></include>
+
+        <div id="main" class="main">
+
+            <div class="section site-profile">
+                <div class="content content--lg mobile-wide">
+                    <div class="request--wrap gradient">
+                        <div class="content content--md">
+                            <h1 class="title title-lg">Доходы с рефералов</h1>
+                            <div class="referral-box">
+                                <div class="referral-sections">
+                                    <div class="section">
+                                        <div class="referral-item">
+                                            <div class="section-title">Ваша уникальная ссылка</div>
+                                            <div class="link">
+                                                <div class="custom-form">
+                                                    <div class="input">
+                                                        <input type="text" readonly value="https://arplans.ru/contacts?inv=5">
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="copy-btn btn-square-dark">Copy</button>
+                                            </div>
+                                            <div class="link-info">
+                                                Поделитесь ссылкой и зарабатывайте. Если вы авторизованы, то на каждой странице сайта есть ссылка на эту страницу (внизу справа). О реферальной системе
+                                                <a href="#" target="_blank">подробнее</a>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="referral-item">
+                                            <div class="section-title">Статистика за все время</div>
+                                            <div class="form-text">
+                                                <p>По вашей ссылке зарегистрировано: <strong>45 чел.</strong></p>
+                                                <p>Баланс за все время: <strong>54600 руб.</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section">
+                                        <div class="referral-item">
+                                            <div class="section-title">Остаток на счете</div>
+                                            <div class="form-text">
+                                                <p>Текущий баланс: <strong>5600 руб</strong></p>
+                                                <p>Запрос на вывод возможен для суммы больше <strong>2000&nbsp;р</strong></p>
+                                            </div>
+                                            <a href="#" class="btn-round-min-orange">ЗАПРОСИТЬ ВЫВОД СРЕДСТВ </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-sales">
+                                <div class="table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Дата</th>
+                                                <th>Сумма заказ</th>
+                                                <th>Отчисления</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4.09.2018</td>
+                                                <td>20 000</td>
+                                                <td>2000</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+<div class="modal" data-modal="loginSuccess">
+    <div class="bg close"></div>
+    <div class="modal-box">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Успешная регистрация</h3>
+        <div class="modal-content">
+            <div class="links">
+                <a href="#" class="link">Перейти в личный кабинет</a>
+            </div>
+        </div>
+    </div>
+</div>
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+<script>
+
+    $('.profile-form form').validate({
+        onfocusout: false,
+        ignore: ".ignore",
+        rules: {
+            profile_mail: {required: true},
+            profile_surname: {required: true},
+            profile_name: {required: true},
+            profile_patron: {required: true},
+            telephone: {required: true},
+            country: {required: true},
+            city: {required: true},
+            address: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            profile_mail: {required: ""},
+            profile_surname: {required: ""},
+            profile_name: {required: ""},
+            profile_patron: {required: ""},
+            telephone: {required: ""},
+            country: {required: ""},
+            city: {required: ""},
+            address: {required: ""},
+            password: {required: ""}
+        },
+        errorClass: 'invalid',
+        highlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').addClass(errorClass);
+        },
+        unhighlight: function(element, errorClass) {
+            $(element).closest('.form-row-element').removeClass(errorClass)
+        },
+        errorPlacement: $.noop,
+        submitHandler:function (form) {
+
+            $('.modal[data-modal="loginSuccess"]').addClass('active');
+
+            return false;
+        }
+    })
+
+</script>
+
+</body>
+</html>

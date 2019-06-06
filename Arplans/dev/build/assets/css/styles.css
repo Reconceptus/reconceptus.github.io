@@ -4039,13 +4039,13 @@ svg {
   border-radius: 60px;
 }
 
-.btn--lt {
+.btn--white {
   background-color: #FFF;
   color: #2196F3;
   text-transform: uppercase;
 }
 
-.btn--white {
+.btn--lt {
   background-color: #2196F3;
   color: #FFF;
   text-transform: uppercase;
@@ -4160,6 +4160,30 @@ svg {
   pointer-events: none;
 }
 
+.btn-square-dark {
+  border: none;
+  background-color: #346697;
+  color: #FFF;
+  line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding: 0 20px;
+  height: 40px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
 .btn-round-min {
   background-color: #2196F3;
   color: #FFF;
@@ -4168,6 +4192,26 @@ svg {
   line-height: 1.2;
   font-size: 4rem;
   font-weight: 700;
+  padding: 0 20px;
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.btn-round-min-orange {
+  background-color: #EF6C00;
+  color: #FFF;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  line-height: 1.2;
+  font-size: 3.6rem;
+  font-weight: 600;
   padding: 0 20px;
   height: 40px;
   display: -webkit-box;
@@ -9808,6 +9852,88 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   color: #009788;
 }
 
+.referral-box {
+  margin-bottom: 30px;
+}
+
+.referral-sections {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.referral-sections .section {
+  width: 100%;
+}
+
+.referral-item {
+  background-color: #FFF;
+  color: #657482;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.referral-item .section-title {
+  font-size: 4.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.referral-item .form-text {
+  line-height: 1.6;
+  font-size: 3.35rem;
+  margin-bottom: 20px;
+}
+
+.referral-item .link {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.referral-item .link .custom-form {
+  width: 100%;
+}
+
+.referral-item .link .copy-btn {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.referral-item .link-info {
+  font-size: 2.95rem;
+}
+
+.referral-item .link-info a {
+  color: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, from(#657482), to(#657482));
+  background: -webkit-linear-gradient(top, #657482 0%, #657482 100%);
+  background: -o-linear-gradient(top, #657482 0%, #657482 100%);
+  background: linear-gradient(to bottom, #657482 0%, #657482 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  -webkit-background-size: 1px 1px;
+  background-size: 1px 1px;
+  padding: 0 1px;
+}
+
 .text-section {
   margin: 40px 0 60px;
 }
@@ -9948,11 +10074,11 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #1F8FE7;
   }
 
-  .btn--lt:hover {
+  .btn--white:hover {
     color: #1F8FE7;
   }
 
-  .btn--white:hover {
+  .btn--lt:hover {
     background-color: #1F8FE7;
   }
 
@@ -9982,8 +10108,16 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
     background-color: #1F8FE7;
   }
 
+  .btn-square-dark:hover {
+    background-color: #31618F;
+  }
+
   .btn-round-min:hover {
     background-color: #1F8FE7;
+  }
+
+  .btn-round-min-orange:hover {
+    background-color: #E36700;
   }
 
   .btn-small:hover {
@@ -10509,6 +10643,20 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .search-results--list .title:hover {
     color: #2A7EC5;
+  }
+
+  .referral-sections {
+    margin: 0 -15px;
+  }
+
+  .referral-sections .section {
+    padding: 0 15px;
+  }
+
+  .referral-item .link-info a:hover {
+    color: #FFF;
+    -webkit-background-size: 1px 100%;
+    background-size: 1px 100%;
   }
 }
 
@@ -11218,6 +11366,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .profile-sales table {
     width: 600px;
   }
+
+  .referral-item {
+    padding: 20px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -11732,6 +11884,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .profile-sales {
+    padding-bottom: 40px;
+  }
+
+  .summary {
     padding-bottom: 40px;
   }
 }
@@ -12844,6 +13000,18 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   .contact-form--submit .form-row-submit {
     margin: 10px 0;
   }
+
+  .referral-sections {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .referral-sections .section:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -13166,6 +13334,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .profile-sales {
+    padding-bottom: 60px;
+  }
+
+  .summary {
     padding-bottom: 60px;
   }
 }
@@ -13592,6 +13764,10 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
   .contact-page--data .tel {
     font-size: 8.5rem;
+  }
+
+  .referral-item {
+    padding: 30px 24px;
   }
 }
 
