@@ -85,7 +85,7 @@ $(document).ready(function () {
     */
 
     var isPrevent = false;
-    $('#copy-ref').click(function (e) {
+    $('.copy-btn').click(function (e) {
         var _link = $(this).closest('.link');
         if (isPrevent){
             e.preventDefault;

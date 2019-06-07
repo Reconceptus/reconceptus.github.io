@@ -9967,56 +9967,6 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   flex-shrink: 0;
 }
 
-.ref-link .link:after,
-.ref-link .link:before {
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: all 3s;
-  -o-transition: all 3s;
-  transition: all 3s;
-}
-
-.ref-link .link:after {
-  content: "copied";
-  position: absolute;
-  left: 50%;
-  bottom: 100%;
-  background-color: #249A56;
-  color: #FFF;
-  text-transform: uppercase;
-  -webkit-transform: translate(-50%, -8px);
-  -ms-transform: translate(-50%, -8px);
-  transform: translate(-50%, -8px);
-  padding: 3px 11px;
-  font-size: 14px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-}
-
-.ref-link .link:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-style: solid solid none;
-  border-width: 4px;
-  border-color: #249A56 transparent;
-  bottom: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -4px);
-  -ms-transform: translate(-50%, -4px);
-  transform: translate(-50%, -4px);
-}
-
-.ref-link .link.copied:after,
-.ref-link .link.copied:before {
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 .ref-link--title {
   font-size: 18px;
   font-weight: 600;
@@ -10039,6 +9989,62 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-background-size: 1px 1px;
   background-size: 1px 1px;
   padding: 0 1px;
+}
+
+.referral-item .link:after,
+.referral-item .link:before,
+.ref-link .link:after,
+.ref-link .link:before {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+}
+
+.referral-item .link:after,
+.ref-link .link:after {
+  content: "copied";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  background-color: #249A56;
+  color: #FFF;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -8px);
+  -ms-transform: translate(-50%, -8px);
+  transform: translate(-50%, -8px);
+  padding: 3px 11px;
+  font-size: 14px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.referral-item .link:before,
+.ref-link .link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid solid none;
+  border-width: 4px;
+  border-color: #249A56 transparent;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -4px);
+  -ms-transform: translate(-50%, -4px);
+  transform: translate(-50%, -4px);
+}
+
+.referral-item .link.copied:after,
+.referral-item .link.copied:before,
+.ref-link .link.copied:after,
+.ref-link .link.copied:before {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .text-section {
