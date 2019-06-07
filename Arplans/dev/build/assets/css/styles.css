@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -10004,7 +10006,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .referral-item .link:after,
 .ref-link .link:after {
-  content: "copied";
+  content: "ССЫЛКА СКОПИРОВАНА";
   position: absolute;
   left: 50%;
   bottom: 100%;
