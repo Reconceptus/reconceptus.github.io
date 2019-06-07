@@ -80,6 +80,27 @@ $(document).ready(function () {
         })
     }
 
+    /*
+     ============= copy ref link
+    */
+
+    var isPrevent = false;
+    $('#copy-ref').click(function (e) {
+        var _link = $(this).closest('.link');
+        if (isPrevent){
+            e.preventDefault;
+        }
+        else {
+            _link.addClass('copied');
+            isPrevent = true;
+            setTimeout(function () {
+                isPrevent = false;
+                _link.removeClass('copied');
+            },3000)
+        }
+
+    });
+
     /* --------------------------------- document load --------------------------------- */
 
     documentClick();

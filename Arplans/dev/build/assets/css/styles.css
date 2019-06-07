@@ -9905,6 +9905,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .referral-item .link .custom-form {
@@ -9949,6 +9950,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .ref-link .link {
   width: 100%;
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9963,6 +9965,56 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+.ref-link .link:after,
+.ref-link .link:before {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+}
+
+.ref-link .link:after {
+  content: "copied";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  background-color: #21202E;
+  color: #FFF;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -8px);
+  -ms-transform: translate(-50%, -8px);
+  transform: translate(-50%, -8px);
+  padding: 3px 11px;
+  font-size: 14px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.ref-link .link:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid solid none;
+  border-width: 4px;
+  border-color: #21202E transparent;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -4px);
+  -ms-transform: translate(-50%, -4px);
+  transform: translate(-50%, -4px);
+}
+
+.ref-link .link.copied:after,
+.ref-link .link.copied:before {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .ref-link--title {
