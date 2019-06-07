@@ -9981,7 +9981,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   position: absolute;
   left: 50%;
   bottom: 100%;
-  background-color: #21202E;
+  background-color: #249A56;
   color: #FFF;
   text-transform: uppercase;
   -webkit-transform: translate(-50%, -8px);
@@ -10000,7 +10000,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   height: 0;
   border-style: solid solid none;
   border-width: 4px;
-  border-color: #21202E transparent;
+  border-color: #249A56 transparent;
   bottom: 100%;
   left: 50%;
   -webkit-transform: translate(-50%, -4px);
