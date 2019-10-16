@@ -49,6 +49,7 @@
       width: 100%;
       display: flex;
       margin-bottom: 20px;
+      position: relative;
       .custom-form {
         width: 100%;
       }
@@ -89,6 +90,7 @@
   color: $border;
   .link {
     width: 100%;
+    position: relative;
     display: flex;
     .custom-form {
       width: 100%;
@@ -96,6 +98,7 @@
     .copy-btn {
       flex-shrink: 0;
     }
+
   }
   &--title {
     font-size: 18px;
@@ -118,6 +121,49 @@
           background-size: 1px 100%;
         }
       }
+    }
+  }
+}
+
+.referral-item .link,
+.ref-link .link {
+  &:after,
+  &:before {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 3s;
+  }
+  &:after {
+    content: 'ССЫЛКА СКОПИРОВАНА';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    background-color: #249A56;
+    color: $white;
+    text-transform: uppercase;
+    transform: translate(-50%,-8px);
+    padding: 3px 11px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid solid none;
+    border-width:  4px;
+    border-color: #249A56 transparent;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%,-4px);
+  }
+  &.copied {
+    &:after,
+    &:before {
+      opacity: 1;
+      pointer-events: auto;
+      transition: all 0.3s;
     }
   }
 }

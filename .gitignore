@@ -2,5 +2,7 @@
 node_modules/
 app-lnt.js
 
+yarn.lock
+package-lock.json
 
 
