@@ -1,0 +1,10 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: $btn-red;
+  font-size: $font-md;
+  &-img {
+    width: 156px;
+    height: 40px;
+  }
+}

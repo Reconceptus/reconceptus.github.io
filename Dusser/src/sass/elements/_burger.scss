@@ -1,0 +1,36 @@
+.burger {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  span {
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: $tag;
+    border-radius: 3px;
+    transform: rotate(0deg);
+  }
+  &:before,
+  &:after {
+    content: "";
+    left: 0;
+    right: 0;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background-color: $tag;
+    border-radius: 3px;
+  }
+  &:before {
+    top: 6px;
+  }
+  &:after {
+    bottom: 6px;
+  }
+}

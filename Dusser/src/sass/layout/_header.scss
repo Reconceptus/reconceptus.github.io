@@ -1,0 +1,98 @@
+.header {
+  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: $white;
+  z-index: 50;
+  &-logo {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    .burger {
+      @extend %btn_reset;
+      margin-right: $padding-lg;
+    }
+  }
+  &-search {
+    width: 33.33%;
+    padding: 0 $padding;
+    &--fieldset {
+      width: 100%;
+      display: flex;
+      position: relative;
+      input {
+        width: 100%;
+        border: none;
+        height: 40px;
+        border-radius: 20px;
+        padding: 0 2*$padding-lg 0 $padding-lg;
+        background: $bg-gray;
+        color: $tag;
+        outline: none;
+      }
+    }
+    &--btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @extend %btn_reset;
+      border-radius: 20px;
+    }
+  }
+  &-profile {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    &--auth {
+      display: inline-flex;
+      @extend %btn_reset;
+    }
+  }
+  &-personal_info {
+    display: flex;
+    align-items: center;
+    a {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      margin-left: $padding-xl;
+    }
+  }
+
+  &-top {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-nav {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    &--wrap {
+      background: linear-gradient(to right, $grad-begin 0%,$grad-end 100%);
+    }
+    &--list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-weight: 500;
+      li {
+        display: flex;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        color: $white;
+      }
+    }
+  }
+}

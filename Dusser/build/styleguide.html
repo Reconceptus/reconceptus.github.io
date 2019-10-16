@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Style Guide</title>
+    <meta name="author" content="enenkoff@mail.ru">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+<!--    <link href="assets/css/common.css" rel="stylesheet">-->
+
+</head>
+<body>
+<div class="hide">
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-auth" viewBox="0 0 24 24"><path d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"/></symbol><symbol id="icon-basket" viewBox="0 0 28 28"><path d="M20.37 15.4A2.79 2.79 0 0 0 22.82 14l5-9.09A1.4 1.4 0 0 0 26.61 2.8H5.89L4.58 0H0V2.8H2.8l5 10.63L6 16.84A2.8 2.8 0 0 0 8.4 21H25.2V18.2H8.4l1.54-2.8M7.22 5.6h17l-3.86 7H10.54M8.4 22.4a2.8 2.8 0 1 0 2.8 2.8 2.8 2.8 0 0 0 -2.8 -2.8m14 0a2.8 2.8 0 1 0 2.8 2.8 2.8 2.8 0 0 0 -2.8 -2.8"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol><symbol id="icon-view" viewBox="0 0 24 24"><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"/></symbol></svg>
+
+</div>
+<div id="wrapper">
+
+    <div class="container">
+
+        <header id="header" class="header">
+            <div class="header-top--wrap">
+                <div class="content content--lg">
+                    <div class="header-top">
+                        <div class="header-logo">
+                            <button id="burger" class="burger" type="button">
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="logo">
+                                <img src="assets/svg/partials/logo.svg" alt="DUZZER" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="header-search">
+                            <form action="/">
+                                <div class="header-search--fieldset">
+                                    <input type="text" placeholder="Поиск по товарам">
+                                    <button class="header-search--btn">
+                                        <i class="icon icon-search">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-profile">
+                            <button class="header-profile--auth" type="button">
+                                <i class="icon icon-auth">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-auth"/>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div class="header-personal_info">
+                                <a href="looked.html" class="header-personal_info--views">
+                                    <i class="icon icon-view">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"/>
+                                        </svg>
+                                    </i>
+                                </a>
+                                <a href="favorites.html" class="header-personal_info--favorites">
+                                    <i class="icon icon-favorite">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                        </svg>
+                                    </i>
+                                </a>
+                                <a href="basket.html" class="header-personal_info--basket">
+                                    <i class="icon icon-basket">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                                        </svg>
+                                    </i>
+                                </a>
+                                <div class="header-personal_info--total">
+                                    Сумма 63000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav--wrap">
+                <div class="content content--lg">
+                    <nav class="header-nav">
+                        <ul class="header-nav--list">
+                            <li><a href="#">Как заказать</a></li>
+                            <li><a href="#">Способы оплаты и доставка</a></li>
+                            <li><a href="#">Производителям</a></li>
+                            <li><a href="#">Добавки</a></li>
+                            <li><a href="#">Гайд</a></li>
+                            <li><a href="#">8 800 900 78 78</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div id="main" class="main">
+            <style>
+                .sct {
+                    margin-bottom: 10px;
+                }
+                .sct2 {
+                    margin-bottom: 30px;
+                }
+                .list-no-bullets {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+                .swatch {
+                    width: 23%;
+                    margin-right: 2%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                }
+                .swatch-preview {
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                    display: block;
+                    height: 60px;
+                    width: 100%;
+                }
+                .swatch-details {
+                    display: flex;
+                    flex-direction: column;
+                }
+                xmp {
+                    background-color: #edf1f6;
+                    padding: 0 20px;
+                }
+            </style>
+            <div style="width: 980px; margin: 50px auto;">
+                <h1 class="sct">COLORS</h1>
+                <ul class="sct2 list-no-bullets">
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #002b4f;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Текст</strong></li>
+                            <li>#002b4f</li>
+                            <li><strong style="color: #002b4f">$text</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #009ca2;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Ссылки</strong></li>
+                            <li>#009ca2</li>
+                            <li><strong style="color: #009ca2">$link</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #edf1f6;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Фон</strong></li>
+                            <li>#edf1f6</li>
+                            <li><strong style="color: #edf1f6">$bg</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #bdbdbd;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Иконка</strong></li>
+                            <li>#bdbdbd</li>
+                            <li><strong style="color: #bdbdbd">$icon</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #1976d2;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Кнопка синяя</strong></li>
+                            <li>#1976d2</li>
+                            <li><strong style="color: #1976d2">$btn_blue</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #0f6bc5;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Кнопка синяя ховер</strong></li>
+                            <li>#0f6bc5</li>
+                            <li><strong style="color: #0f6bc5">$btn_blue_hover</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #a40843;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Кнопка красная</strong></li>
+                            <li>#a40843</li>
+                            <li><strong style="color: #a40843">$btn_red</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #860435;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Кнопка красная ховер</strong></li>
+                            <li>#860435</li>
+                            <li><strong style="color: #860435">$btn_red_hover</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #2e6db6;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Градиент начало</strong></li>
+                            <li>#2e6db6</li>
+                            <li><strong style="color: #2e6db6">$grad_begin</strong></li>
+                        </ul>
+                    </li>
+                    <li class="swatch">
+                        <span class="swatch-preview" style="background-color: #5bc48c;"></span>
+                        <ul class="list-no-bullets swatch-details">
+                            <li><strong>Градиент конец</strong></li>
+                            <li>#5bc48c</li>
+                            <li><strong style="color: #5bc48c">$grad_end</strong></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <h1 class="sct">HEADINGS</h1>
+                <div style="display: flex; align-items: baseline">
+                    <div class="title title--lg">Заголовок</div>
+                    &nbsp;&nbsp;&nbsp;(.title .title--lg)
+                </div>
+                <div style="display: flex; align-items: baseline">
+                    <div class="title title--md">Заголовок</div>
+                    &nbsp;&nbsp;&nbsp;(.title .title--md)
+                </div>
+                <div style="display: flex; align-items: baseline">
+                    <div class="title title--sm">Заголовок</div>
+                    &nbsp;&nbsp;&nbsp;(.title .title--sm)
+                </div>
+                <div class="sct2" style="display: flex; align-items: baseline">
+                    <div class="title title--xs">Заголовок</div>
+                    &nbsp;&nbsp;&nbsp;(.title .title--xs)
+                </div>
+                <h1 class="sct">BUTTONS</h1>
+                <div class="sct" style="display: flex; align-items: baseline">
+                    <button class="btn btn--sm btn--blue">Кнопка</button>
+                    &nbsp;&nbsp;&nbsp;(.btn .btn--sm .btn--blue)
+                </div>
+                <div class="sct" style="display: flex; align-items: baseline">
+                    <button class="btn btn--sm btn--red">Кнопка</button>
+                    &nbsp;&nbsp;&nbsp;(.btn .btn--sm .btn--red)
+                </div>
+                <div class="sct" >
+                    <div class="sct" >
+                        <button class="btn btn--sm btn--full btn--red">Кнопка</button>
+                    </div>
+                    (.btn .btn--sm .btn--full .btn--red)
+                </div>
+                <div class="sct2" >
+                    <div class="sct" >
+                        <button class="btn btn--md btn--full btn--red">Кнопка</button>
+                    </div>
+                    (.btn .btn--md .btn--full .btn--red)
+                </div>
+                <h1 class="sct">MEDIA</h1>
+                <xmp class="sct">
+<picture>
+    <source type="image/webp" srcset="assets/images/test-image.webp">
+    <source type="image/jpeg" srcset="assets/images/test-image.jpg">
+    <img src="assets/images/test-image.jpg" alt="Тестовая картинка" width="600">
+</picture>
+                </xmp>
+                <div class="sct2">
+                    <picture width="600">
+                        <source type="image/webp" srcset="assets/images/test-image.webp">
+                        <source type="image/jpeg" srcset="assets/images/test-image.jpg">
+                        <img src="assets/images/test-image.jpg" alt="Тестовая картинка" width="600">
+                    </picture>
+                </div>
+                <h1 class="sct">SVG</h1>
+                <xmp class="sct">
+<i class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"/>
+    </svg>
+</i>
+                </xmp>
+
+            </div>
+
+        </div>
+
+        <footer class="footer" id="footer">
+            <div class="content content--lg">
+                <div class="footer--main">
+                    footer
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="assets/js/bower/select2/dist/js/select2.full.min.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/widgets/datepicker.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-ui/ui/i18n/datepicker-ru.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
+<script src="assets/js/app.min.js"></script>
+
+
+<!--script-->
+
+
+</body>
+</html>

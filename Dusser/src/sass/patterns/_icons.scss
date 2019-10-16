@@ -1,0 +1,30 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &-auth {
+    color: $link;
+    width: $font-lg;
+    height: $font-lg;
+  }
+  &-view {
+    color: $link;
+    width: $font-lg;
+    height: $font-lg;
+  }
+  &-favorite {
+    color: $link;
+    width: $font-lg;
+    height: $font-lg;
+  }
+  &-basket {
+    color: $link;
+    width: 28px;
+    height: 28px;
+  }
+  &-search {
+    color: $tag;
+    width: $font-md;
+    height: $font-md;
+  }
+}
