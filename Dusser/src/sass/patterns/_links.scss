@@ -1,0 +1,21 @@
+.link {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $btn-red;
+    opacity: 0;
+    transform: translateY($padding-sm);
+    transition: all 0.25s;
+  }
+  @include hover(){
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
