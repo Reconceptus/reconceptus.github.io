@@ -11,6 +11,7 @@
     opacity: 0;
     transform: translateY($padding-sm);
     transition: all 0.25s;
+    pointer-events: none;
   }
   @include hover(){
     &:after {

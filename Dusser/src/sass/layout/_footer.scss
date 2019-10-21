@@ -2,6 +2,18 @@
   flex-shrink: 0;
   background-color: $white;
   padding-top: 85px;
+  position: relative;
+  &-scroll_top {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+    &--btn {
+      margin-left: 100%;
+      transform: translateX(-100%);
+    }
+  }
   &-top {
     display: flex;
     width: 100%;
@@ -20,12 +32,57 @@
   }
   &-nav {
     display: flex;
+    margin-bottom: 40px;
     &--section {
       width: 25%;
       &_title {
         font-weight: 500;
         text-transform: uppercase;
         margin-bottom: $padding-xl;
+      }
+      &_payments {
+        margin: 0 -1*$padding-sm;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          padding: $padding-sm;
+        }
+        a {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          background-color: $bg-gray;
+        }
+      }
+      &_links {
+        font-size: $font;
+        color: $tag;
+        li {
+          margin-bottom: 12px;
+        }
+        a {
+          color: inherit;
+        }
+        &.columns {
+          columns: 2 auto;
+          li {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+        }
+      }
+    }
+  }
+  &-bottom {
+    padding: $padding-md 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    &--web {
+      a {
+        color: inherit;
       }
     }
   }

@@ -5,12 +5,14 @@
   text-align: center;
   justify-content: center;
   transition: all 0.18s;
-  &--red {
+  &-grey {
     color: $white;
-    background-color: $btn-red;
-    &:hover {
-      background-color: $btn-red-hover;
-    }
+    text-transform: uppercase;
+    background-color: $icon;
+    font-size: $font;
+    font-weight: 600;
+    line-height: 48px;
+    padding: 0 $padding-lg;
   }
   &--sm {
     font-size: 16px;
