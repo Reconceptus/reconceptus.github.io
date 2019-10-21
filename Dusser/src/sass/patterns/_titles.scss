@@ -1,15 +1,24 @@
 .title {
-  font-weight: 500;
-  &--lg {
+  &-heading {
+    display: flex;
+    line-height: 1;
+    margin-bottom: $padding-lg;
+    &--sub {
+      align-self: flex-end;
+      margin-left: $padding;
+    }
+  }
+  &-lg {
     font-size: 32px;
+    font-weight: 500;
   }
-  &--md {
-    font-size: 28px;
+  &-md {
+  
   }
-  &--sm {
-    font-size: 22px;
+  &-sm {
+  
   }
-  &--xs {
-    font-size: 18px;
+  &-xs {
+  
   }
 }

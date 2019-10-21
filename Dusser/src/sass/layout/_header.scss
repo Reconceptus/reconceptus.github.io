@@ -92,6 +92,29 @@
         display: inline-flex;
         align-items: center;
         color: $white;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          right: 50%;
+          height: 4px;
+          background-color: $btn-red;
+          transition: all 0.25s;
+        }
+        @include hover(){
+          &:after {
+            left: 0;
+            right: 0;
+          }
+        }
+        &.active {
+          &:after {
+            left: 0;
+            right: 0;
+          }
+        }
       }
     }
   }

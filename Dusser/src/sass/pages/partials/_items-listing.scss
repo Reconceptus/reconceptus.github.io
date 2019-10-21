@@ -1,0 +1,53 @@
+.listing {
+  &-filters {
+    background-color: $white;
+    margin-bottom: $padding;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 $padding-lg;
+    a {
+      text-transform: lowercase;
+      color: $tag;
+      margin-right: 36px;
+    }
+  }
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1*$padding-sm;
+  }
+  &-item {
+    padding: 0 $padding-sm;
+    margin-bottom: $padding-sm;
+    &.col-2 {
+      width: 100%;
+      max-width: calc( 100%/6 );
+    }
+    
+    &--section {
+      background-color: $white;
+    }
+    &--img {
+      padding: $padding-xl;
+    }
+    &--img_box {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      position: relative;
+      overflow: hidden;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+    &--data {
+      padding: 20px $padding-lg;
+    }
+  }
+}
