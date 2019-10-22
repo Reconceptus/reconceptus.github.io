@@ -1,0 +1,48 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  margin: 80px -6px 0;
+  justify-content: flex-end;
+  a,span {
+    display: inline-flex;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: $white;
+    color: $text;
+    align-items: center;
+    justify-content: center;
+    font-size: $font;
+    margin: 0 6px;
+    position: relative;
+    overflow: hidden;
+    &.prev,
+    &.next {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-style: solid solid none none;
+        border-color: currentColor;
+      }
+    }
+    &.prev:after {
+      transform: rotate(-135deg) translate(-2px, 2px);
+    }
+    &.next:after {
+      transform: rotate(45deg) translate(-2px, 2px);
+    }
+    &.current {
+      background-color: $text;
+      color: $white;
+      pointer-events: none;
+    }
+  }
+  a {
+    @include hover(){
+      background-color: $text;
+      color: $white;
+    }
+  }
+}

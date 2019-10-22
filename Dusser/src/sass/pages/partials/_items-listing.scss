@@ -19,7 +19,7 @@
   }
   &-item {
     padding: 0 $padding-sm;
-    margin-bottom: $padding-sm;
+    margin-bottom: $padding;
     &.col-2 {
       width: 100%;
       max-width: calc( 100%/6 );
@@ -27,9 +27,34 @@
     
     &--section {
       background-color: $white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+      @include hover(){
+        box-shadow: 0 20px 20px 0 rgba($black, 0.16);
+      }
     }
     &--img {
       padding: $padding-xl;
+      position: relative;
+      .mark {
+        text-transform: uppercase;
+        font-size: $font;
+        font-weight: 600;
+        line-height: $font-md;
+        padding: 0 6px;
+        display: inline-flex;
+        margin-right: $padding;
+        &-new {
+          background: $tag;
+          color: $white;
+        }
+        &-top {
+          background: $btn-red;
+          color: $white;
+        }
+      }
     }
     &--img_box {
       width: 100%;
@@ -37,6 +62,7 @@
       padding-bottom: 100%;
       position: relative;
       overflow: hidden;
+      display: block;
       img {
         position: absolute;
         width: 100%;
@@ -46,8 +72,102 @@
         object-fit: cover;
       }
     }
+    &--sale {
+      position: absolute;
+      left: $padding-md;
+      top: $padding-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      background: $sale;
+      color: $white;
+      font-size: $font-md;
+      font-weight: 500;
+    }
+    &--marks {
+      position: absolute;
+      left: $padding-md;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+    }
     &--data {
       padding: 20px $padding-lg;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &--title {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+      margin-bottom: $padding-md;
+      a {
+        color: $text;
+        background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 0 2px;
+        padding: 2px 0;
+        transition: background-size .3s;
+        position: relative;
+        @include hover(){
+          background-size: 98% 2px;
+        }
+      }
+    }
+    &--descr {
+      margin-top: auto;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    &--prices {
+      color: $text;
+      display: flex;
+      flex-direction: column;
+      .old-price {
+        font-size: $font;
+        text-decoration: line-through;
+      }
+      .actual-price {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    &--icons {
+      display: flex;
+      align-items: center;
+      margin-bottom: $padding;
+      & > * {
+        margin-left: $padding-lg;
+      }
+    }
+    &--like {
+      display: inline-flex;
+      width: $font-md;
+      height: $font-md;
+    }
+    &--info {
+      display: flex;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      color: $icon;
+      background: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all 0.2s;
+      @include hover(){
+        color: $sale;
+      }
     }
   }
 }

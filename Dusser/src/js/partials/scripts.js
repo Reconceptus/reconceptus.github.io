@@ -33,6 +33,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
+    functions.scroll_top();
 
     if ($('[data-owl="blog"]').length > 0) {
     }

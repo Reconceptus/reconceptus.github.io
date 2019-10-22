@@ -14,6 +14,7 @@ let $html = $('html'),
 // functions
 const functions = {
     burger: require('./modules/burger'),
+    scroll_top: require('./modules/scroll-top'),
 };
 
 // scripts
@@ -52,6 +53,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
+    functions.scroll_top();
 
     if ($('[data-owl="blog"]').length > 0) {
     }

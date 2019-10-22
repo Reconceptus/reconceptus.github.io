@@ -27,4 +27,16 @@
     width: $font-md;
     height: $font-md;
   }
+  &-like {
+    color: transparent;
+    width: $font-md;
+    height: $font-md;
+    transition: all 0.2s;
+    @include hover(){
+      color: $sale;
+    }
+    &.liked {
+      color: $sale;
+    }
+  }
 }
