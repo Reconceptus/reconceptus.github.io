@@ -1,4 +1,4 @@
-let burger = function() {
+const burger = function() {
     let burger = document.getElementById('burger'),
         header = document.getElementById('header');
     burger.onclick = function() {

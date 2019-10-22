@@ -6,8 +6,8 @@ import './vendor/svgxuse.min';
 import $ from 'jquery';
 
 // variables
-let $html = $('html'),
-    scrollTop = $(window).scrollTop(),
+const $html = $('html');
+let scrollTop = $(window).scrollTop(),
     winWidth,
     winHeight;
 
