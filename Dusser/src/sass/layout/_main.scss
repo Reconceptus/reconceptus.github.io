@@ -35,6 +35,10 @@ svg {
   width: 100%;
   flex: 1 0 auto;
   padding: $padding-xl 0 80px;
+  transition: filter 0.5s;
+  .blured & {
+    filter: blur(4px);
+  }
 }
 .wrapper {
   display: flex;
@@ -42,7 +46,7 @@ svg {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-}
+ }
 
 .container {
   width: 100%;

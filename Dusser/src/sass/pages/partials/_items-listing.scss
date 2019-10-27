@@ -1,4 +1,18 @@
 .listing {
+  &-columns {
+    display: flex;
+    margin: 0 -1*$padding-sm;
+  }
+  &-sidebar {
+    padding: 0 $padding-sm;
+    max-width: calc( 100%/6 );
+    width: 100%;
+    flex-shrink: 0;
+  }
+  &-main {
+    padding: 0 $padding-sm;
+    width: 100%;
+  }
   &-filters {
     background-color: $white;
     margin-bottom: $padding;
@@ -20,9 +34,13 @@
   &-item {
     padding: 0 $padding-sm;
     margin-bottom: $padding;
-    &.col-2 {
+    &.col-1-6 {
       width: 100%;
       max-width: calc( 100%/6 );
+    }
+    &.col-1-5 {
+      width: 100%;
+      max-width: calc( 100%/5 );
     }
     
     &--section {

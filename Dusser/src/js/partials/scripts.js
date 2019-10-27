@@ -34,8 +34,10 @@ $(document).ready(() => {
     getWindowSizes();
     functions.burger();
     functions.scroll_top();
+    functions.expander();
 
-    if ($('[data-owl="blog"]').length > 0) {
+    if ($('.pl-nav-scroll').length > 0) {
+        $('.pl-nav-scroll').mCustomScrollbar({ theme: 'minimal' });
     }
 
     /* --------------------------------- document resize --------------------------------- */

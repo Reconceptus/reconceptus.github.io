@@ -1,4 +1,4 @@
-const $html = $('html');
+const $html = document.documentElement;
 let scrollTop = $(window).scrollTop(),
     winWidth,
     winHeight;

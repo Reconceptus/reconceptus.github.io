@@ -2,7 +2,12 @@
   &-heading {
     display: flex;
     line-height: 1;
-    margin-bottom: $padding-lg;
+    &.margin-md {
+      margin-bottom: $padding-lg;
+    }
+    &.margin-xl {
+      margin-bottom: 56px;
+    }
     &--sub {
       align-self: flex-end;
       margin-left: $padding;

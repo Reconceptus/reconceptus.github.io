@@ -3,6 +3,10 @@
   background-color: $white;
   padding-top: 85px;
   position: relative;
+  transition: filter 0.5s;
+  .blured & {
+    filter: blur(4px);
+  }
   &-scroll_top {
     position: absolute;
     left: 0;

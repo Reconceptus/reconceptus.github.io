@@ -3,10 +3,8 @@ import './vendor/detect.ie';
 import './vendor/device.min';
 import './vendor/svgxuse.min';
 
-import $ from 'jquery';
-
 // variables
-const $html = $('html');
+const $html = document.documentElement;
 let scrollTop = $(window).scrollTop(),
     winWidth,
     winHeight;
@@ -15,6 +13,7 @@ let scrollTop = $(window).scrollTop(),
 const functions = {
     burger: require('./modules/burger'),
     scroll_top: require('./modules/scroll-top'),
+    expander: require('./modules/expander'),
 };
 
 // scripts
@@ -54,8 +53,10 @@ $(document).ready(() => {
     getWindowSizes();
     functions.burger();
     functions.scroll_top();
+    functions.expander();
 
-    if ($('[data-owl="blog"]').length > 0) {
+    if ($('.pl-nav-scroll').length > 0) {
+        $('.pl-nav-scroll').mCustomScrollbar({ theme: 'minimal' });
     }
 
     /* --------------------------------- document resize --------------------------------- */

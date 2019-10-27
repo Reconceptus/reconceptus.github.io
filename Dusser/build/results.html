@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <meta name="author" content="enenkoff@mail.ru">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+<!--    <link href="assets/css/common.css" rel="stylesheet">-->
+
+</head>
+<body>
+<div class="hide">
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-auth" viewBox="0 0 24 24"><path d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"/></symbol><symbol id="icon-basket" viewBox="0 0 28 28"><path d="M20.37 15.4A2.79 2.79 0 0 0 22.82 14l5-9.09A1.4 1.4 0 0 0 26.61 2.8H5.89L4.58 0H0V2.8H2.8l5 10.63L6 16.84A2.8 2.8 0 0 0 8.4 21H25.2V18.2H8.4l1.54-2.8M7.22 5.6h17l-3.86 7H10.54M8.4 22.4a2.8 2.8 0 1 0 2.8 2.8 2.8 2.8 0 0 0 -2.8 -2.8m14 0a2.8 2.8 0 1 0 2.8 2.8 2.8 2.8 0 0 0 -2.8 -2.8"/></symbol><symbol id="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></symbol><symbol id="icon-like" viewBox="0 0 24 24"><path fill="#B0BEC5" d="m16.5 3c-1.7 0-3.4.8-4.5 2.1-1.1-1.3-2.8-2.1-4.5-2.1-3.1 0-5.5 2.4-5.5 5.5 0 3.8 3.4 6.9 8.6 11.5l1.4 1.3 1.4-1.3c5.2-4.7 8.6-7.8 8.6-11.5 0-3.1-2.4-5.5-5.5-5.5m-4.4 15.5l-.1.1-.1-.1c-4.8-4.3-7.9-7.1-7.9-10 0-2 1.5-3.5 3.5-3.5 1.5 0 3 1 3.6 2.4h1.9c.5-1.4 2-2.4 3.5-2.4 2 0 3.5 1.5 3.5 3.5 0 2.9-3.1 5.7-7.9 10"/><path d="M16.5,3c-1.7,0-3.4,0.8-4.5,2.1C10.9,3.8,9.2,3,7.5,3C4.4,3,2,5.4,2,8.5c0,3.8,3.4,6.9,8.6,11.5l1.4,1.3l1.4-1.3
+	c5.2-4.7,8.6-7.8,8.6-11.5C22,5.4,19.6,3,16.5,3z"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></symbol><symbol id="icon-view" viewBox="0 0 24 24"><path d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"/></symbol></svg>
+
+</div>
+<div id="wrapper" class="wrapper">
+
+    <div class="container">
+
+        
+        <header id="header" class="header">
+
+            <div class="header-top--wrap">
+                <div class="content content--lg">
+                    <div class="header-top">
+                        <div class="header-logo">
+                            <button id="burger" class="burger" type="button">
+                                <span></span>
+                            </button>
+                            <a href="index.html" class="logo">
+                                <img src="assets/svg/partials/logo.svg" alt="DUZZER" class="logo-img">
+                            </a>
+                        </div>
+                        <div class="header-search">
+                            <form action="/">
+                                <div class="header-search--fieldset">
+                                    <input type="text" placeholder="Поиск по товарам">
+                                    <button class="header-search--btn">
+                                        <i class="icon icon-search">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                            </svg>
+                                        </i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-profile">
+                            <button class="header-profile--auth" type="button">
+                                <i class="icon icon-auth">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-auth"/>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div class="header-personal_info">
+                                <a href="looked.html" class="header-personal_info--views">
+                                    <i class="icon icon-view">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"/>
+                                        </svg>
+                                    </i>
+                                    <span class="count">23</span>
+                                </a>
+                                <a href="favorites.html" class="header-personal_info--favorites">
+                                    <i class="icon icon-favorite">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                        </svg>
+                                    </i>
+                                    <span class="count">23</span>
+                                </a>
+                                <a href="basket.html" class="header-personal_info--basket">
+                                    <i class="icon icon-basket">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                                        </svg>
+                                    </i>
+                                    <span class="count">23</span>
+                                </a>
+                                <div class="header-personal_info--total">
+                                    Сумма
+                                    <span class="summ">63 000&#x20bd;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav--wrap">
+                <div class="content content--lg">
+                    <nav class="header-nav">
+                        <ul class="header-nav--list">
+                            <li><a href="#">Как заказать</a></li>
+                            <li><a href="#">Способы оплаты и доставка</a></li>
+                            <li><a href="#">Производителям</a></li>
+                            <li><a href="#">Добавки</a></li>
+                            <li><a href="#">Гайд</a></li>
+                            <li><a href="#">8 800 900 78 78</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div id="main" class="main">
+
+            <div class="content content--lg">
+
+                <!--breadcrumbs BEGIN-->
+
+                <div class="breadcrumbs">
+                    <a class="breadcrumbs-link" href="index.html">Главная</a>
+                    <span class="breadcrumbs-current">Поиск</span>
+                </div>
+
+                <!--breadcrumbs END-->
+
+                <div class="title-heading margin-xl">
+                    <h1 class="title-lg">По запросу "Кирпич" найдено 34 товара</h1>
+                </div>
+
+                <!--listing BEGIN-->
+
+                <div class="listing">
+
+                    <div class="listing-items">
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый расколотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                        <span class="listing-item--mark mark mark-top">Top</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый расколотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-top">Top</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like liked">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listing-item col-2">
+                            <div class="listing-item--section">
+                                <div class="listing-item--img">
+                                    <a href="#" class="listing-item--img_box">
+                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg"
+                                             alt="Колотый кирпич">
+                                    </a>
+                                    <div class="listing-item--sale">-70</div>
+                                    <div class="listing-item--marks">
+                                        <span class="listing-item--mark mark mark-new">New</span>
+                                    </div>
+                                </div>
+                                <div class="listing-item--data">
+                                    <div class="listing-item--title">
+                                        <a href="#">Колотый кирпич</a>
+                                    </div>
+                                    <div class="listing-item--descr">
+                                        <div class="listing-item--prices">
+                                            <span class="old-price">75787</span>
+                                            <span class="actual-price">3456&#x20bd;</span>
+                                        </div>
+                                        <div class="listing-item--icons">
+                                            <a href="#" class="listing-item--like">
+                                                <i class="icon icon-like ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="listing-item--info">i</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--pagination BEGIN-->
+
+                    <div class="pagination">
+                        <span class="prev"></span>
+                        <a href="#" class="current">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#" class="next"></a>
+                    </div>
+
+                    <!--pagination END-->
+
+                </div>
+
+                <!--listing END-->
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <footer class="footer" id="footer">
+            <div class="footer-scroll_top">
+                <div class="content content--lg">
+                    <button type="button" class="footer-scroll_top--btn btn btn-grey">Наверх</button>
+                </div>
+            </div>
+            <div class="content content--lg">
+                <div class="footer-top">
+                    <div class="footer-top--slogan">
+                        DUZZER &mdash; товары для производства напрямую от производителя. Быстрая доставка.
+                    </div>
+                    <div class="footer-top--telephone">
+                        <a href="tel:88007005050" class="link">8 800 700-50-50</a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <section class="footer-nav--section">
+                        <h4 class="footer-nav--section_title">Способы оплаты</h4>
+                        <ul class="footer-nav--section_payments">
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                           <li><a href="#"></a></li>
+                        </ul>
+                    </section>
+                    <section class="footer-nav--section">
+                        <h4 class="footer-nav--section_title">Помощь</h4>
+                        <ul class="footer-nav--section_links">
+                            <li><a class="link" href="#">Способы оплаты и доставка</a></li>
+                            <li><a class="link" href="#">Возврат</a></li>
+                            <li><a class="link" href="#">Программа лояльности</a></li>
+                            <li><a class="link" href="#">Оферта</a></li>
+                        </ul>
+                    </section>
+                    <section class="footer-nav--section">
+                        <h4 class="footer-nav--section_title">О нас</h4>
+                        <ul class="footer-nav--section_links">
+                            <li><a class="link" href="#">Производителям</a></li>
+                            <li><a class="link" href="#">Партнерам</a></li>
+                            <li><a class="link" href="#">О компании</a></li>
+                            <li><a class="link" href="#">Контакты</a></li>
+                            <li><a class="link" href="#">Реквизиты</a></li>
+                        </ul>
+                    </section>
+                    <section class="footer-nav--section">
+                        <h4 class="footer-nav--section_title">Товары</h4>
+                        <ul class="footer-nav--section_links columns">
+                            <li><a class="link" href="#">Камни</a></li>
+                            <li><a class="link" href="#">Цемент</a></li>
+                            <li><a class="link" href="#">Красители</a></li>
+                            <li><a class="link" href="#">Пластификаторы</a></li>
+                            <li><a class="link" href="#">Камни</a></li>
+                            <li><a class="link" href="#">Цемент</a></li>
+                            <li><a class="link" href="#">Красители</a></li>
+                            <li><a class="link" href="#">Пластификаторы</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-bottom--copyright">&copy; 2019 Duzzer</div>
+                    <div class="footer-bottom--web">Web by <a class="link" target="_blank" href="http://reconcept.ru">ReConcept</a></div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+</div>
+
+<div class="burger_menu" id="burgerMenu">
+    <div class="burger_menu-blur burger_close"></div>
+    <div class="content content--lg">
+        <div class="burger_menu-wrap">
+            <div class="burger_menu-bg"></div>
+            <div class="burger_menu-main">
+                <div class="burger_menu-close">
+                    <button class="burger_close">
+                        <i class="icon icon-close">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+                <div class="burger_menu-invite">
+                    Привет, reconcept@mail.ru
+                </div>
+                <div class="burger_menu-nav--wrap">
+                    <div class="pl-nav-scroll">
+                        <div class="burger_menu-nav">
+                            <div class="burger_menu-site_menu">
+                                <ul>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="#" class="burger_menu-site_menu--link">Способы оплаты и доставка</a>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="#" class="burger_menu-site_menu--link">Программа лояльности</a>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item fn-expand-box">
+                                        <span class="burger_menu-site_menu--link fn-expand-btn">Товары</span>
+                                        <ul class="fn-expand-data" style="display: none;">
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="#" class="burger_menu-site_menu--sublink">Категория 1</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="#" class="burger_menu-site_menu--sublink">Категория 2</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="#" class="burger_menu-site_menu--sublink">Категория 3</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="#" class="burger_menu-site_menu--sublink">Категория 4</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="#" class="burger_menu-site_menu--link">О нас</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="burger_menu-auth_menu">
+                                <ul>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Корзина (1)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Мои заказы (3)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Избранное (2)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Я смотрел (65)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Мои личные данные</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="#">Выйти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
+<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
+<script src="assets/js/app.min.js"></script>
+
+
+<!--script-->
+
+
+</body>
+</html>

@@ -7,6 +7,26 @@
   z-index: 100;
   transform: translateX(-100%);
   pointer-events: none;
+  transition: transform 0.4s;
+  &.opened {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  &-blur {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($black,0.3);
+    transition: opacity 0.35s;
+    pointer-events: none;
+    .opened & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
   &-wrap {
     position: relative;
     width: 66.6667%;
@@ -17,21 +37,101 @@
     left: -24px;
     top: 0;
     bottom: 0;
-    background-color: $grad-begin;
+    background: linear-gradient(45deg, $grad-end 0%,$grad-begin 100%);
+    box-shadow: 0 0 30px 0 rgba($black,0.5);
     @include media(hover,1672){
       left: calc(812px - 50vw);
     }
   }
   &-main {
     position: relative;
+    display: flex;
+    flex-direction: column;
     color: $white;
     height: 100vh;
-    &--close {
-      height: 88px;
-      display: flex;
-      align-items: center;
-      .close {
-        @extend %btn_reset;
+    padding-bottom: $padding-xxl;
+  }
+  &-close {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    .burger_close {
+      @extend %btn_reset;
+    }
+  }
+  &-invite {
+    font-size: 3*$font;
+    font-weight: 300;
+    padding-bottom: $padding-xxl;
+    min-height: 96px;
+    flex-shrink: 0;
+  }
+  &-nav {
+    font-weight: 500;
+    display: flex;
+    margin-left: $padding-xxl;
+    &--wrap {
+      flex-grow: 1;
+      overflow: hidden;
+      margin-left: -1*$padding-xxl;
+    }
+    a {
+      color: inherit;
+    }
+  }
+  &-site_menu {
+    width: 62.5%;
+    padding-right: $padding-md;
+    &--item {
+      margin-bottom: $padding-xxl;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &--link {
+      font-size: $font-lg;
+      cursor: pointer;
+      &.fn-expand-btn {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          right: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto 24px auto 0;
+          width: 12px;
+          height: 12px;
+          border-style: solid solid none none;
+          border-width: 3px;
+          border-color: currentColor;
+          transform: rotate(45deg) translate(-2px, 2px);
+          transition: transform 0.25s;
+          .expanded & {
+            transform: rotate(135deg) translate(-2px, 2px);
+          }
+        }
+      }
+    }
+    &--subitem {
+      margin-top: $padding-xl;
+    }
+    &--sublink {
+      font-size: $font;
+      text-transform: uppercase;
+    }
+  }
+  &-auth_menu {
+    width: 37.5%;
+    font-size: $font;
+    text-transform: uppercase;
+    padding-right: $padding-md;
+    padding-top: $padding-md;
+    &--item {
+      margin-bottom: $padding-xl;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
