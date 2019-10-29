@@ -36,6 +36,7 @@ $(document).ready(() => {
     functions.auth.default();
     functions.scroll_top();
     functions.expander();
+    functions.no_ui_slider();
 
     if ($('.pl-nav-scroll').length > 0) {
         $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });

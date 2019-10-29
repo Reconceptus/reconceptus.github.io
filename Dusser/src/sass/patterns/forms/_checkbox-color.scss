@@ -1,0 +1,19 @@
+.checkbox_color {
+  &-item {
+    cursor: pointer;
+    position: relative;
+    input {
+      @extend %hidden_input;
+    }
+  }
+  &-label {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+  }
+  input:checked ~ .checkbox_color-label {
+    box-shadow: 0 0 0 4px inset $sale;
+  }
+}

@@ -3,12 +3,94 @@
     background-color: $white;
     margin-bottom: $padding;
     width: 100%;
+    padding: $padding-lg;
   }
   &-filters {
-
+    &--fieldset {
+      &:not(:last-child){
+        margin-bottom: $padding-lg;
+      }
+      &:last-child{
+        margin-top: $padding-xxl;
+      }
+      .form-checkbox {
+        &:not(:last-child){
+          margin-bottom: $padding;
+        }
+      }
+      .colors {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: -1*$padding;
+      }
+      .checkbox_color {
+        margin-right: $padding;
+        margin-bottom: $padding;
+      }
+    }
+    &--title {
+      margin-bottom: 10px;
+    }
+    &--reset {
+      @extend %btn_reset;
+      color: $tag;
+      text-transform: uppercase;
+      font-size: $font;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
   }
 }
 
 .sidebar_categories {
-
+  color: $tag;
+  &-item {
+    padding-left: $padding-lg;
+    &:not(:last-child){
+      margin-bottom: 20px;
+    }
+  }
+  &-subitem {
+    margin-top: $padding-md;
+  }
+  &-title {
+    cursor: pointer;
+    &.fn-expand-btn {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        right: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto 12px auto 0;
+        width: 9px;
+        height: 9px;
+        border-style: solid solid none none;
+        border-width: 2px;
+        border-color: $icon;
+        transform: rotate(45deg) translate(-2px, 2px);
+        transition: transform 0.25s;
+        .expanded & {
+          transform: rotate(135deg) translate(-2px, 2px);
+        }
+      }
+    }
+  }
+  a {
+    color: inherit;
+    background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    padding: 2px 0;
+    transition: background-size .3s;
+    position: relative;
+    @include hover(){
+      background-size: 98% 2px;
+    }
+    &.active {
+      background-size: 98% 2px;
+    }
+  }
 }

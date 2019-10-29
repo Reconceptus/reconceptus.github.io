@@ -15,6 +15,7 @@ const functions = {
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
     expander: require('./modules/expander'),
+    no_ui_slider: require('./modules/no-ui-slider'),
 };
 
 // scripts
@@ -56,6 +57,7 @@ $(document).ready(() => {
     functions.auth.default();
     functions.scroll_top();
     functions.expander();
+    functions.no_ui_slider();
 
     if ($('.pl-nav-scroll').length > 0) {
         $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });

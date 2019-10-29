@@ -147,15 +147,37 @@
                                             <div class="sidebar-filters--fieldset">
                                                 <h4 class="sidebar-filters--title title-reg">Цена</h4>
                                                 <div class="range">
-                                                    <input type="number" value="2000">
-                                                    <input type="number" value="20000">
+                                                    <div class="range-slider"
+                                                         data-range-min="100"
+                                                         data-range-max="1000"
+                                                         data-range-step="50"
+                                                         data-range-start="500,800"
+                                                    >
+                                                        <div class="no-ui-slider" id="uuu" ></div>
+                                                        <div class="range-slider--inputs">
+                                                            <input type="number" value="500" >
+                                                            <span class="dash"></span>
+                                                            <input type="number" value="800">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="sidebar-filters--fieldset">
                                                 <h4 class="sidebar-filters--title title-reg">Толщина, М</h4>
                                                 <div class="range">
-                                                    <input type="number" value="2000">
-                                                    <input type="number" value="20000">
+                                                    <div class="range-slider"
+                                                         data-range-min="20"
+                                                         data-range-max="80"
+                                                         data-range-step="5"
+                                                         data-range-start="35,55"
+                                                    >
+                                                        <div class="no-ui-slider"></div>
+                                                        <div class="range-slider--inputs">
+                                                            <input type="number" value="35">
+                                                            <span class="dash"></span>
+                                                            <input type="number" value="55">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="sidebar-filters--fieldset">
@@ -173,7 +195,7 @@
                                                             <span class="checkbox-label">50х50х6</span>
                                                         </label>
                                                     </div>
-                                                    <div class="checkbox">
+                                                    <div class="form-checkbox">
                                                         <label class="checkbox-item">
                                                             <input type="checkbox" name="size">
                                                             <span class="checkbox-label">30х90х8</span>
@@ -193,89 +215,119 @@
                                                     <div class="checkbox_color">
                                                         <label class="checkbox_color-item">
                                                             <input type="checkbox" name="color">
-                                                            <span class="checkbox_color-label"></span>
+                                                            <span class="checkbox_color-label" style="background: #D8E6EE"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox_color">
+                                                        <label class="checkbox_color-item">
+                                                            <input type="checkbox" name="color">
+                                                            <span class="checkbox_color-label" style="background: #8DABAC"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox_color">
+                                                        <label class="checkbox_color-item">
+                                                            <input type="checkbox" name="color">
+                                                            <span class="checkbox_color-label" style="background: #7AA6BC"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox_color">
+                                                        <label class="checkbox_color-item">
+                                                            <input type="checkbox" name="color">
+                                                            <span class="checkbox_color-label" style="background: #CDF2A9"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox_color">
+                                                        <label class="checkbox_color-item">
+                                                            <input type="checkbox" name="color">
+                                                            <span class="checkbox_color-label" style="background: #436170"></span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="checkbox_color">
+                                                        <label class="checkbox_color-item">
+                                                            <input type="checkbox" name="color">
+                                                            <span class="checkbox_color-label" style="background: #453F71"></span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="sidebar-filters--fieldset">
-                                                <button type="reset">сбросить</button>
+                                            <div class="sidebar-filters--fieldset u-align-center">
+                                                <button type="reset" class="sidebar-filters--reset link u-nowrap">сбросить фильтр</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="sidebar-section">
-                                    <div class="sidebar-categories">
+                                    <div class="sidebar_categories">
                                         <ul>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Забор</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Забор</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Каменный</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Каменный</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Деревянный</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Деревянный</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Тротуарная плитка</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Тротуарная плитка</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Тротуарная плитка 1</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Тротуарная плитка 1</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Тротуарная плитка 2</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Тротуарная плитка 2</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Искусственный камень</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Искусственный камень</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Фасадный камень</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Фасадный камень</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Тротуарная плитка</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Тротуарная плитка</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Декоративный камень</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Декоративный камень</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Декоративный камень в 2 строки</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Декоративный камень в 2 строки</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Бетонные смеси</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Бетонные смеси</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Бетонные смеси 1</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Бетонные смеси 1</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Бетонные смеси 2</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Бетонные смеси 2</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Цемент</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Цемент</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Цемент 1</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Цемент 1</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Цемент 2</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Цемент 2</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="sidebar-categories--item fn-expand-box">
-                                                <span class="sidebar-categories--title fn-expand-btn">Добавки</span>
+                                            <li class="sidebar_categories-item fn-expand-box">
+                                                <span class="sidebar_categories-title fn-expand-btn">Добавки</span>
                                                 <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Добавки 1</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Добавки 1</a>
                                                     </li>
-                                                    <li class="sidebar-categories--subitem">
-                                                        <a href="#" class="sidebar-categories--link">Добавки 2</a>
+                                                    <li class="sidebar_categories-subitem">
+                                                        <a href="#" class="sidebar_categories-link">Добавки 2</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -805,14 +857,11 @@
         </div>
     </div>
 </div>
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-<!--<script type="text/javascript" src="assets/js/bower/owl.carousel/dist/owl.carousel.min.js"></script>-->
-<!--<script type="text/javascript" src="assets/js/bower/jquery-validation/dist/jquery.validate.min.js"></script>-->
 <script src="assets/js/app.min.js"></script>
 
 

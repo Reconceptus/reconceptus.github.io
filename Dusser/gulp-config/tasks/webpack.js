@@ -28,8 +28,18 @@ module.exports = function(gulp, plugins, path_src, path_dest) {
                                 presets: ['env'],
                             },
                         },
+                        // {
+                        //     test: /\.css$/,
+                        //     loader: 'style-loader!css-loader'
+                        // }
                     ],
                 },
+                plugins: [
+                    new webpack.ProvidePlugin({
+                        noUiSlider: 'nouislider',
+                        wNumb: 'wnumb',
+                    }),
+                ],
             }),
         )
         .pipe(plugins.uglify())
