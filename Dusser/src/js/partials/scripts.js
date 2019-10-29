@@ -33,12 +33,22 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
+    functions.auth.default();
     functions.scroll_top();
     functions.expander();
 
     if ($('.pl-nav-scroll').length > 0) {
-        $('.pl-nav-scroll').mCustomScrollbar({ theme: 'minimal' });
+        $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
     }
+    if ($('.pl-scroll').length > 0) {
+        $('.pl-scroll').each(function() {
+            $(this).mCustomScrollbar();
+        });
+    }
+
+    // $('.link-auth-open').click(() => {
+    //     functions.auth.open()
+    // })
 
     /* --------------------------------- document resize --------------------------------- */
 

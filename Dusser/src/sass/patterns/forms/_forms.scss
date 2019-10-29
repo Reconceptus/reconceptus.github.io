@@ -1,1 +1,12 @@
 @import "input-text";
+@import "checkbox";
+
+.form-field {
+  width: 100%;
+  margin-bottom: $padding-xl;
+}
+.form-buttons {
+  * {
+    margin-right: $padding-xl;
+  }
+}

@@ -5,3 +5,11 @@
     margin: 0;
   }
 }
+
+.pl-scroll {
+  height: 100%;
+  overflow: hidden;
+  .mCSB_inside>.mCSB_container {
+    margin: 0;
+  }
+}

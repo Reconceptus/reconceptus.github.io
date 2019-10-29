@@ -1,0 +1,116 @@
+.auth_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: transform 0.4s;
+  &.opened {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  &-blur {
+    position: absolute;
+    right: 0;
+    width: 200%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($black,0.3);
+    transition: opacity 0.35s;
+    pointer-events: none;
+    .opened & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &-wrap {
+    position: relative;
+    margin-left: auto;
+    width: 50%;
+  }
+  &-bg {
+    position: absolute;
+    left: 0;
+    right: -24px;
+    top: 0;
+    bottom: 0;
+    background: $white;
+    box-shadow: 0 0 30px 0 rgba($black,0.5);
+    @include media(hover,1672){
+      right: calc(812px - 50vw);
+    }
+  }
+  &-main {
+    position: relative;
+    height: 100vh;
+    padding: $padding-xxl 8% $padding-xxl 16.7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &-radio_button {
+    @extend %hidden_input;
+  }
+  &-selects {
+    display: flex;
+    margin-bottom: $padding-xl;
+    flex-shrink: 0;
+    padding-right: $padding-lg;
+    &--option {
+      height: 64px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 $padding-lg;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $tag;
+      cursor: pointer;
+      transition: all 0.25s;
+      &:first-child {
+        flex-shrink: 0;
+      }
+      &:not(:first-child) {
+        width: 100%;
+      }
+    }
+  }
+  &-forms {
+    overflow: hidden;
+    display: flex;
+    [data-auth] {
+      width: 100%;
+      min-width: 100%;
+    }
+    &--section {
+      padding-right: $padding-lg;
+      width: 100%;
+    }
+    &--socials {
+      ul {
+        margin-top: 28px;
+        display: flex;
+        align-items: center;
+      }
+      li {
+        margin-right: $padding-xl;
+      }
+      a {
+        display: block;
+        height: 56px;
+        width: 56px;
+        border-radius: 50%;
+        background: $icon;
+      }
+    }
+  }
+  input[data-auth="enter"]:checked ~ .auth_menu-forms [data-auth="enter"],
+  input[data-auth="registration"]:checked ~ .auth_menu-forms [data-auth="registration"] {order: -1}
+  input[data-auth="enter"]:checked ~ .auth_menu-selects [data-auth="enter"],
+  input[data-auth="registration"]:checked ~ .auth_menu-selects [data-auth="registration"] {
+    background: $bg-gray;
+  }
+}

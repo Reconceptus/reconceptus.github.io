@@ -15,7 +15,7 @@ body {
   color: $text;
   font-family: PTRoot, sans-serif;
 }
-* {
+*, *:after, *:before {
   box-sizing: border-box;
 }
 a {

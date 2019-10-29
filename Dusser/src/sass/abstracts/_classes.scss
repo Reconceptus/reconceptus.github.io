@@ -32,6 +32,10 @@
   display: flex;
 }
 
+.u-nowrap {
+  white-space: nowrap;
+}
+
 
 .desktop-hidden {
   @include media(hover,1201){

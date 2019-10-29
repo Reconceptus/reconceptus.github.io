@@ -64,8 +64,13 @@
     font-size: 3*$font;
     font-weight: 300;
     padding-bottom: $padding-xxl;
-    min-height: 96px;
-    flex-shrink: 0;
+    &:not(.no-auth) {
+      flex-shrink: 0;
+      min-height: 96px;
+    }
+    &.no-auth {
+      height: 96px;
+    }
   }
   &-nav {
     font-weight: 500;
@@ -76,7 +81,7 @@
       overflow: hidden;
       margin-left: -1*$padding-xxl;
     }
-    a {
+    a:not(.btn) {
       color: inherit;
     }
   }

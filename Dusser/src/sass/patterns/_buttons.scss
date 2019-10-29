@@ -5,6 +5,13 @@
   text-align: center;
   justify-content: center;
   transition: all 0.18s;
+  &-link {
+    color: $tag;
+    text-transform: uppercase;
+    font-size: $font;
+    font-weight: 600;
+    line-height: 48px;
+  }
   &-grey {
     color: $white;
     text-transform: uppercase;
@@ -14,16 +21,30 @@
     line-height: 48px;
     padding: 0 $padding-lg;
   }
-  &--sm {
-    font-size: 16px;
+  &-red {
+    color: $btn-red;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-size: $font;
     font-weight: 600;
-    padding: 10px 40px;
+    line-height: 48px;
+    padding: 0 $padding-lg;
+    border: 2px solid $btn-red;
+    @include hover(){
+      color: $white;
+      background-color: $btn-red;
+    }
   }
-  &--md {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 24px 40px;
-  }
+  //&--sm {
+  //  font-size: 16px;
+  //  font-weight: 600;
+  //  padding: 10px 40px;
+  //}
+  //&--md {
+  //  font-size: 16px;
+  //  font-weight: 600;
+  //  padding: 24px 40px;
+  //}
   &--full {
     width: 100%;
   }

@@ -1,0 +1,40 @@
+.form-checkbox {
+  .checkbox {
+    &-item {
+      cursor: pointer;
+      position: relative;
+      line-height: $font-md;
+      font-size: $font;
+      color: $tag;
+      input {
+        @extend %hidden_input;
+      }
+    }
+    &-label {
+      position: relative;
+      padding-left: $padding-xl;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: 18px;
+        width: 18px;
+        border-radius: 2px;
+      }
+      &:before {
+        border: 2px solid $icon;
+      }
+      &:after {
+        background: $sale;
+        opacity: 0;
+      }
+    }
+  }
+  input:checked ~ .checkbox-label {
+    &:after {
+      opacity: 1;
+    }
+  }
+}
