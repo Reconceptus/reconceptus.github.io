@@ -1,0 +1,34 @@
+.home {
+  &-heading {
+    position: relative;
+    &:not(:first-child){
+      margin-top: $padding-lg;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50vw;
+      right: -50vw;
+      bottom: -56px;
+      background: #FFF176;
+    }
+    &--link {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    .title-heading {
+      max-width: 60%;
+      margin: 0 auto;
+      padding: $padding-xl 0;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    & + * {
+      position: relative;
+    }
+  }
+}
