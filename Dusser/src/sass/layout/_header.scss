@@ -79,11 +79,10 @@
   &-personal_info {
     display: flex;
     align-items: center;
-    a {
+    .link-icon {
       display: inline-flex;
       align-items: center;
       position: relative;
-      margin-left: $padding-xl;
     }
     .count {
       position: absolute;
@@ -96,6 +95,57 @@
       line-height: $padding-lg;
       border-radius: $padding-lg;
       padding: 0 $padding;
+    }
+    &--views,
+    &--favorites,
+    &--basket {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+    &--item {
+      position: relative;
+      margin-left: $padding-xl;
+      display: inline-flex;
+      align-items: center;
+      @include hover(){
+        .header-personal_info--short {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    &--short {
+      z-index: 1;
+      transition: all 0.25s;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      background: $white;
+      width: 528px;
+      top: 100%;
+      right: -1*$padding;
+      box-shadow: 0 20px 20px 0 rgba($text,0.5);
+      padding: $padding-lg $padding-xl $padding-xl;
+      &_title {
+        margin-bottom: $padding-lg;
+      }
+    }
+    &--actions {
+      margin-top: $padding-lg;
+      &_title {
+        font-size: $font;
+        color: $tag;
+      }
+    }
+    &--buttons {
+      display: flex;
+      align-items: center;
+      .summ {
+        font-weight: 600;
+        font-size: 48px;
+        margin-right: $padding-lg;
+      }
     }
     &--total {
       margin-left: $padding-xl;

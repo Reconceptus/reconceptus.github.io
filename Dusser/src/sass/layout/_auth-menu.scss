@@ -99,11 +99,20 @@
         margin-right: $padding-xl;
       }
       a {
-        display: block;
+        display: flex;
         height: 56px;
         width: 56px;
         border-radius: 50%;
         background: $icon;
+        align-items: center;
+        justify-content: center;
+        @include hover(){
+          background: none;
+        }
+      }
+      img {
+        max-width: 75%;
+        max-height: 75%;
       }
     }
   }

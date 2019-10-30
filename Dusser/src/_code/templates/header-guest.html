@@ -38,28 +38,44 @@
                         </i>
                     </button>
                     <div class="header-personal_info">
-                        <a href="looked.html" class="header-personal_info--views">
-                            <i class="icon icon-view">
-                                <svg xmlns="http://www.w3.org/2000/svg">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"/>
-                                </svg>
-                            </i>
-                            <span class="count">4</span>
-                        </a>
-                        <a href="favorites.html" class="header-personal_info--favorites">
-                            <i class="icon icon-favorite">
-                                <svg xmlns="http://www.w3.org/2000/svg">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
-                                </svg>
-                            </i>
-                        </a>
-                        <a href="basket.html" class="header-personal_info--basket">
-                            <i class="icon icon-basket">
-                                <svg xmlns="http://www.w3.org/2000/svg">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
-                                </svg>
-                            </i>
-                        </a>
+                        <div class="header-personal_info--item">
+                            <a href="looked.html" class="header-personal_info--views">
+                                <i class="icon icon-view">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view"/>
+                                    </svg>
+                                </i>
+                                <span class="count">4</span>
+                            </a>
+                            <div class="header-personal_info--short">
+                                <h4 class="title-reg header-personal_info--short_title">Вы смотрели</h4>
+                                <ul class="short_listing">
+                                    <include src="../pages/partials/items/short-listing-item.html" title="Pasta Colorante"></include>
+                                    <include src="../pages/partials/items/short-listing-item.html" title="Pasta Colorante"></include>
+                                </ul>
+                                <div class="header-personal_info--actions">
+                                    <a href="#" class="btn btn-red btn--full">перейти к списку</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-personal_info--item">
+                            <a href="favorites.html" class="header-personal_info--favorites">
+                                <i class="icon icon-favorite">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="header-personal_info--item">
+                            <a href="basket.html" class="header-personal_info--basket">
+                                <i class="icon icon-basket">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                                    </svg>
+                                </i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

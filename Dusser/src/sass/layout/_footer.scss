@@ -56,6 +56,15 @@
           height: 80px;
           display: flex;
           background-color: $bg-gray;
+          align-items: center;
+          justify-content: center;
+          @include hover(){
+            background: none;
+          }
+        }
+        img {
+          max-width: 90%;
+          max-height: 90%;
         }
       }
       &_links {

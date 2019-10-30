@@ -56,23 +56,6 @@
     &--img {
       padding: $padding-xl;
       position: relative;
-      .mark {
-        text-transform: uppercase;
-        font-size: $font;
-        font-weight: 600;
-        line-height: $font-md;
-        padding: 0 6px;
-        display: inline-flex;
-        margin-right: $padding;
-        &-new {
-          background: $tag;
-          color: $white;
-        }
-        &-top {
-          background: $btn-red;
-          color: $white;
-        }
-      }
     }
     &--img_box {
       width: 100%;
@@ -91,9 +74,6 @@
       }
     }
     &--sale {
-      position: absolute;
-      left: $padding-md;
-      top: $padding-md;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -104,6 +84,11 @@
       color: $white;
       font-size: $font-md;
       font-weight: 500;
+      .listing-item & {
+        position: absolute;
+        left: $padding-md;
+        top: $padding-md;
+      }
     }
     &--marks {
       position: absolute;
@@ -111,6 +96,27 @@
       bottom: 0;
       display: flex;
       align-items: center;
+      .mark {
+        margin-right: $padding;
+      }
+    }
+    &--mark {
+      text-transform: uppercase;
+      font-size: $font;
+      font-weight: 600;
+      line-height: $font-md;
+      padding: 0 6px;
+      display: inline-flex;
+      &.mark {
+        &-new {
+          background: $tag;
+          color: $white;
+        }
+        &-top {
+          background: $btn-red;
+          color: $white;
+        }
+      }
     }
     &--data {
       padding: 20px $padding-lg;
