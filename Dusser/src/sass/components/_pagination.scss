@@ -26,6 +26,11 @@
         border-style: solid solid none none;
         border-color: currentColor;
         border-width: 3px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        left: 0;
+        right: 0;
       }
     }
     &.prev:after {

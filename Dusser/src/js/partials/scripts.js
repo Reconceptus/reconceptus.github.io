@@ -36,7 +36,6 @@ $(document).ready(() => {
     functions.auth.default();
     functions.scroll_top();
     functions.expander();
-    functions.no_ui_slider();
 
     if ($('.pl-nav-scroll').length > 0) {
         $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
@@ -45,6 +44,12 @@ $(document).ready(() => {
         $('.pl-scroll').each(function() {
             $(this).mCustomScrollbar();
         });
+    }
+    if ($('.range-slider').length > 0) {
+        functions.no_ui_slider();
+    }
+    if ($('.gallery').length > 0) {
+        functions.gallery();
     }
 
     // $('.link-auth-open').click(() => {
