@@ -56,6 +56,18 @@ $(document).ready(() => {
     //     functions.auth.open()
     // })
 
+    $('[data-open-modal]').click(() => {
+        let modalData = $(this).attr('data-open-modal');
+        $('html').addClass('ovh');
+        $('.modal').addClass('opened');
+    });
+
+    $('.modal').on('click', '.close', () => {
+        $('html').removeClass('ovh');
+        $('.modal').removeClass('opened');
+        $('[data-modal]').removeClass('active');
+    });
+
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(() => {

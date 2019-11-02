@@ -28,12 +28,22 @@
     background-color: transparent;
     font-size: $font;
     font-weight: 600;
-    line-height: 48px;
+    line-height: 44px;
     padding: 0 $padding-lg;
     border: 2px solid $btn-red;
     @include hover(){
       color: $white;
       background-color: $btn-red;
+    }
+  }
+  &-green {
+    color: $tag;
+    background-color: $bg-green;
+    font-size: $font;
+    line-height: 56px;
+    padding: 0 $padding-lg;
+    @include hover(){
+
     }
   }
   &-red-fill {
@@ -42,7 +52,7 @@
     background-color: $btn-red;
     font-size: $font;
     font-weight: 600;
-    line-height: 48px;
+    line-height: 44px;
     padding: 0 $padding-lg;
     border: 2px solid $btn-red;
     @include hover(){

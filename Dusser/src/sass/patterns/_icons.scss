@@ -39,6 +39,18 @@
       color: $sale;
     }
   }
+  &-like-grey {
+    width: $font-md;
+    height: $font-md;
+    transition: all 0.2s;
+    color: $icon;
+    @include hover(){
+      color: $sale;
+    }
+    &.liked {
+      color: $sale;
+    }
+  }
   &-like-lg {
     color: transparent;
     width: 54px;

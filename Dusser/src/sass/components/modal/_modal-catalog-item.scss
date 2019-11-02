@@ -1,0 +1,42 @@
+.modal_catalog {
+  &-heading {
+    margin-bottom: $padding-xl;
+  }
+  &-box {
+    display: flex;
+    overflow: hidden;
+    padding-bottom: 56px;
+    position: relative;
+    max-height: 728px;
+  }
+  &-gallery {
+    padding: 0 $padding-sm;
+    width: calc(5*100%/8);
+  }
+  &-about {
+    width: calc(3*100%/8);
+    padding: $padding-xl $padding-xxl;
+    overflow: auto;
+    .text-box {
+      &:not(:last-child){
+        margin-bottom: $padding-xxl;
+      }
+    }
+  }
+  &-form_actions {
+    display: flex;
+    align-items: center;
+    &--like {
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+  }
+  &-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+}

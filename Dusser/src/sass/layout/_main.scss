@@ -36,6 +36,7 @@ svg {
   flex: 1 0 auto;
   padding: $padding-xl 0 80px;
   transition: filter 0.5s;
+  will-change: filter;
   .blured & {
     filter: blur(4px);
   }

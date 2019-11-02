@@ -189,6 +189,7 @@
       justify-content: center;
       font-size: 12px;
       transition: all 0.2s;
+      outline: none;
       @include hover(){
         color: $sale;
       }
