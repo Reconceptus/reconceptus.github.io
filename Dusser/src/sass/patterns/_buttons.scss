@@ -46,6 +46,18 @@
 
     }
   }
+  &-acid {
+    text-transform: uppercase;
+    color: $white;
+    background-color: $sale;
+    font-size: $font;
+    line-height: 40px;
+    padding: 0 $padding-lg;
+    font-weight: 600;
+    @include hover(){
+
+    }
+  }
   &-red-fill {
     color: $white;
     text-transform: uppercase;
