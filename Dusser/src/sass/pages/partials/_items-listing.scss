@@ -51,6 +51,9 @@
       transition: all 0.25s;
       @include hover(){
         box-shadow: 0 20px 20px 0 rgba($black, 0.16);
+        .listing-carousel & {
+          box-shadow: 0 4px 4px 0 rgba($black, 0.16);
+        }
       }
     }
     &--img {

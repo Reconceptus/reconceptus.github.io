@@ -8,12 +8,7 @@
 
             <div class="content content--lg">
 
-                <div class="breadcrumbs">
-                    <a class="breadcrumbs-link" href="index.html">Главная</a>
-                    <a class="breadcrumbs-link" href="index.html">Каталог</a>
-                    <a class="breadcrumbs-link" href="index.html">Категория</a>
-                    <span class="breadcrumbs-current">Товар</span>
-                </div>
+                <include src="./partials/breadcrumbs/breadcrumbs-3-link.html" page1="Главная" page2="Каталог" page3="Категория"></include>
 
                 <div class="catalog_item">
 
@@ -78,7 +73,7 @@
                                         </div>
                                     </div>
                                     <div class="form-field form-field--lg">
-                                        <button class="btn btn-red-fill btn--full">В корзину</button>
+                                        <button class="btn btn-red-fill btn--full" onclick="addToCart(); return false;">В корзину</button>
                                     </div>
                                     <div class="text-box">
                                         <p>Доставка: 48 часов по СНГ <br>до 7 дней по миру</p>
@@ -93,16 +88,35 @@
                     <div class="catalog_item-more_info">
                         <h4 class="adds-title title-reg">Подробно</h4>
                     </div>
-
                 </div>
 
-                <div class="listing_slider"></div>
+                <div class="listing_slider">
+                    <h4 class="listing_slider-title title-reg">Похожие популярные товары</h4>
+                    <div class="listing_slider-items listing-carousel owl-carousel">
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                        <include src="./partials/item/listing-item-one-mark.html" title="Колотый кирпич" markClass="mark mark-new" markTitle="New"></include>
+                    </div>
+                </div>
+
+                <div class="listing_slider">
+                    <h4 class="listing_slider-title title-reg">Вы смотрели</h4>
+                    <div class="listing_slider-items listing-carousel owl-carousel">
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                        <include src="./partials/item/listing-item-sale.html" title="Колотый кирпич" ></include>
+                    </div>
+                </div>
 
             </div>
-
-
-
-
 
         </div>
 
@@ -112,9 +126,44 @@
 
 </div>
 
-<include src="./partials/item-modal.html"></include>
+<include src="./partials/modal/item-modal.html"></include>
 <include src="../templates/burger-menu.html"></include>
+
 <include src="../templates/scripts.html"></include>
+
+<!--if we have a carousel (class .listing-carousel) on the page: BEGIN-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+
+    $(document).ready(() => {
+        initListingCarousel();
+    });
+
+    function addToCart() {
+        $.fn.additemToCart({
+            selector: '.added-item',
+            img_url: 'http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg',
+            title: 'Pasta Colorante',
+            category: 'Краситель',
+            price: '3211',
+            popup: {
+                head: 'Товар добавлен в корзину',
+                btn_order: 'К оплате',
+                link_order: '/cart.html',
+                btn_continue: 'Продолжить покупки',
+            }
+        })
+        // $.fn.additemToCart({
+        //     selector: '.added-item',
+        //     popup: {
+        //         head: 'Товар уже в корзине',
+        //     }
+        // })
+    }
+
+</script>
+<!--if we have a carousel on the page: END-->
 
 <!--script-->
 

@@ -97,6 +97,14 @@
       border-radius: $padding-lg;
       padding: 0 $padding;
     }
+    &--close {
+      position: absolute;
+      top: 24px;
+      right: 12px;
+      @extend %btn_reset;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23546e7a%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012%2019%206.41z%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+    }
     &--views,
     &--favorites,
     &--basket {
@@ -110,7 +118,7 @@
       display: inline-flex;
       align-items: center;
       @include hover(){
-        .header-personal_info--short {
+        .header-personal_info--short:not(.added-item) {
           opacity: 1;
           pointer-events: auto;
         }
@@ -118,7 +126,7 @@
     }
     &--short {
       z-index: 1;
-      transition: all 0.25s;
+      transition: opacity 0.25s;
       opacity: 0;
       pointer-events: none;
       position: absolute;
@@ -129,7 +137,23 @@
       box-shadow: 0 20px 20px 0 rgba($text,0.5);
       padding: $padding-lg $padding-xl $padding-xl;
       &_title {
-        margin-bottom: $padding-lg;
+        &:not(:last-child){
+          margin-bottom: $padding-lg;
+        }
+      }
+      &.added-item {
+        display: none;
+        padding: 0;
+        &.active {
+          opacity: 1;
+          pointer-events: auto;
+          padding: $padding-lg $padding-xl $padding-xl;
+        }
+      }
+      &:not(.added-item){
+        .added-order & {
+          display: none;
+        }
       }
     }
     &--actions {
@@ -154,6 +178,7 @@
       flex-direction: column;
       font-size: 12px;
       font-weight: 500;
+      cursor: default;
       .summ {
         font-size: $font;
       }

@@ -41,7 +41,7 @@
       line-height: 24px;
       font-weight: 500;
       margin-bottom: $padding-sm;
-      a {
+      a, .a {
         color: $text;
         background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
         background-position: 0 100%;
