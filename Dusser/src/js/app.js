@@ -18,6 +18,7 @@ const functions = {
     expander: require('./modules/expander'),
     no_ui_slider: require('./modules/no-ui-slider'),
     gallery: require('./modules/gallery'),
+    spinner: require('./modules/spinner'),
 };
 
 // scripts
@@ -103,6 +104,9 @@ $(document).ready(() => {
     }
     if ($('.gallery').length > 0) {
         functions.gallery();
+    }
+    if ($('.spinner').length > 0) {
+        functions.spinner();
     }
 
     // $('.link-auth-open').click(() => {

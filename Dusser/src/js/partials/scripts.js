@@ -81,6 +81,9 @@ $(document).ready(() => {
     if ($('.gallery').length > 0) {
         functions.gallery();
     }
+    if ($('.spinner').length > 0) {
+        functions.spinner();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()

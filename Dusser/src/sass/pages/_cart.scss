@@ -123,6 +123,12 @@
         font-size: 20px;
         font-weight: 600;
         margin: 0 12px;
+        &:after {
+          content: attr(data-total);
+          display: inline-flex;
+          width: 24px;
+          justify-content: center;
+        }
       }
     }
     &--old_price {

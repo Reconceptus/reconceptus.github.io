@@ -5,4 +5,5 @@ const functions = {
     expander: require('./modules/expander'),
     no_ui_slider: require('./modules/no-ui-slider'),
     gallery: require('./modules/gallery'),
+    spinner: require('./modules/spinner'),
 };
