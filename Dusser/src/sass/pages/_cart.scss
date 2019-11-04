@@ -49,6 +49,55 @@
     padding: 0 $padding-sm;
     width: 100%;
   }
+  &-section {
+    &:not(:last-child){
+      margin-bottom: 90px;
+    }
+    &--title {
+      margin-bottom: $padding-md;
+    }
+    &--box {
+      background: $white;
+      padding: $padding-xxl;
+    }
+    &--columns {
+      display: flex;
+    }
+    &--col {
+      width: 50%;
+      &.has-padding {
+        padding-right: 10%;
+      }
+    }
+  }
+  &-submit {
+    margin-top: $padding-xl;
+    .btn {
+      line-height: 88px;
+      align-items: center;
+      i {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          border-style: solid solid none none;
+          border-color: currentColor;
+          border-width: 3px;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          left: 0;
+          right: 0;
+          transform: rotate(45deg) translate(-2px, 2px);
+        }
+      }
+    }
+  }
 }
 
 .cart_table {

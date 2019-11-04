@@ -6,12 +6,14 @@
   justify-content: center;
   transition: all 0.18s;
   outline: none;
+  letter-spacing: 2px;
   &-link {
     color: $tag;
     text-transform: uppercase;
     font-size: $font;
     font-weight: 600;
     line-height: 48px;
+    letter-spacing: 2px;
   }
   &-grey {
     color: $white;
@@ -31,6 +33,9 @@
     line-height: 44px;
     padding: 0 $padding-lg;
     border: 2px solid $btn-red;
+    &.large-padding {
+      padding: 0 $padding-xl;
+    }
     @include hover(){
       color: $white;
       background-color: $btn-red;

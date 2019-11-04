@@ -17,3 +17,34 @@
     margin-right: $padding-xl;
   }
 }
+.form-text {
+  font-size: $font;
+  color: $tag;
+  line-height: 24px;
+}
+.form-socials {
+  ul {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+  }
+  li {
+    margin-right: $padding-xl;
+  }
+  a {
+    display: flex;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background: $icon;
+    align-items: center;
+    justify-content: center;
+    @include hover(){
+      background: none;
+    }
+  }
+  img {
+    max-width: 75%;
+    max-height: 75%;
+  }
+}
