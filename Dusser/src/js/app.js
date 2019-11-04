@@ -16,6 +16,7 @@ const functions = {
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
     expander: require('./modules/expander'),
+    table_expander: require('./modules/table-expander'),
     no_ui_slider: require('./modules/no-ui-slider'),
     gallery: require('./modules/gallery'),
     spinner: require('./modules/spinner'),
@@ -107,6 +108,9 @@ $(document).ready(() => {
     }
     if ($('.spinner').length > 0) {
         functions.spinner();
+    }
+    if ($('.fn-expand-table-box').length > 0) {
+        functions.table_expander();
     }
 
     // $('.link-auth-open').click(() => {

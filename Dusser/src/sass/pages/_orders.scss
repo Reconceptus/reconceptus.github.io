@@ -1,0 +1,71 @@
+.orders {
+
+}
+
+.orders_table {
+  &-row {
+    border-top: 8px solid $bg-gray;
+    background: $white;
+    td {
+      height: 56px;
+      padding: 0 $padding-xl;
+    }
+  }
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  &-thead {
+    color: $white;
+    background: linear-gradient(to right, $grad-end 0%, $grad-begin 100%);
+    text-align: left;
+    font-size: $font;
+    th {
+      height: 56px;
+      padding: 0 $padding-xl;
+      font-weight: 500;
+    }
+  }
+  &-cart {
+    .cart_table {
+      display: none;
+      width: 100%;
+      max-width: calc(200%/3);
+      margin: 0 auto;
+      table {
+        margin: $padding-lg 0;
+      }
+    }
+  }
+  &-expand_btn {
+    @extend %btn_reset;
+    width: 56px;
+    height: 56px;
+    background: $tag;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: -1*$padding-xl;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-style: solid solid none none;
+      border-color: $white;
+      border-width: 3px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      left: 0;
+      right: 0;
+      transition: all 0.25s;
+      transform: rotate(135deg) translate(-2px, 2px);
+    }
+    .opened & {
+      &:after {
+        transform: rotate(315deg) translate(-2px, 2px);
+      }
+    }
+  }
+}

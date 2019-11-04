@@ -84,6 +84,9 @@ $(document).ready(() => {
     if ($('.spinner').length > 0) {
         functions.spinner();
     }
+    if ($('.fn-expand-table-box').length > 0) {
+        functions.table_expander();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()

@@ -1,0 +1,59 @@
+<include src="../templates/head.html" title="Мои заказы"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html"></include>
+
+        <div id="main" class="main">
+
+            <div class="content content--lg">
+
+                <include src="./partials/breadcrumbs/breadcrumbs-1-link.html" page1="Мои заказы"></include>
+
+                <div class="title-heading margin-md">
+                    <h1 class="title-lg">Мои заказы</h1>
+                </div>
+
+                <div class="orders">
+                    <div class="orders_table">
+                        <table class="orders_table-table">
+                            <thead class="orders_table-thead">
+                                <tr>
+                                    <th>Номер заказа</th>
+                                    <th>Дата</th>
+                                    <th>Сумма</th>
+                                    <th>Статус заказа</th>
+                                    <th>Трекер</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <include src="./partials/cart/orders-row.html" ></include>
+                                <include src="./partials/cart/orders-row.html" ></include>
+                                <include src="./partials/cart/orders-row.html" ></include>
+                                <include src="./partials/cart/orders-row.html" ></include>
+                                <include src="./partials/cart/orders-row.html" ></include>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="./partials/modal/item-modal.html"></include>
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/scripts.html"></include>
+
+<!--script-->
+
+
+</body>
+</html>

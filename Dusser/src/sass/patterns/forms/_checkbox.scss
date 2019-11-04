@@ -11,6 +11,7 @@
       }
     }
     &-label {
+      user-select: none;
       position: relative;
       padding-left: $padding-xl;
       &:before,
