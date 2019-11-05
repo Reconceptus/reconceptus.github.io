@@ -1,8 +1,11 @@
 .short_listing {
-  margin: 0 -1*$padding;
+  margin: 0 -20px 0 -8px;
+  overflow: auto;
+  max-height: calc(100vh - 275px);
   &-item {
     display: flex;
     align-items: center;
+    padding-right: $padding-md;
     margin-bottom: $padding-sm;
     &--img {
       padding: $padding;

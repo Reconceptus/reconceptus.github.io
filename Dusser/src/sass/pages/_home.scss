@@ -18,6 +18,35 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%);
+      background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 0 2px;
+      padding: 2px 0;
+      color: $tag;
+      text-transform: uppercase;
+      font-size: $font;
+      font-weight: 600;
+      letter-spacing: 2px;
+      transition: background-size .3s;
+      margin-right: 40px;
+      @include hover(){
+        background-size: 98% 2px;
+      }
+      &:before {
+        content: "";
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2218%22%20height%3D%2212%22%20viewBox%3D%220%200%2018%2012%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_93%22%20data-name%3D%22Path%2093%22%20d%3D%22M3%2C11H17.17L13.59%2C7.41%2C15%2C6l6%2C6-6%2C6-1.41-1.41L17.17%2C13H3Z%22%20transform%3D%22translate%28-3%20-6%29%22%20fill%3D%22%23546e7a%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-size: 100% auto;
+        background-position: center;
+        left: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0 auto 12px;
+      }
     }
     .title-heading {
       max-width: 60%;

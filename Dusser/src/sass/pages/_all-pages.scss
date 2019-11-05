@@ -6,3 +6,12 @@
 @import "partials/short-items-listing";
 @import "partials/listing-sidebar";
 @import "partials/listing-slider";
+
+.page_action {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  .pagination {
+    margin-left: auto;
+  }
+}
