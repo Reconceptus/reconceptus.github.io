@@ -7,4 +7,5 @@ const functions = {
     no_ui_slider: require('./modules/no-ui-slider'),
     gallery: require('./modules/gallery'),
     spinner: require('./modules/spinner'),
+    validation: require('./modules/validation'),
 };

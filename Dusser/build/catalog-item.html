@@ -440,9 +440,9 @@
 
                 <div class="breadcrumbs">
                     <a class="breadcrumbs-link" href="index.html">Главная</a>
-                    <a class="breadcrumbs-link" href="#">Главная</a>
-                    <a class="breadcrumbs-link" href="#">Каталог</a>
-                    <span class="breadcrumbs-current">Категория</span>
+                    <a class="breadcrumbs-link" href="catalog.html">Каталог</a>
+                    <a class="breadcrumbs-link" href="category.html">Категория</a>
+                    <span class="breadcrumbs-current">Камень колотый угловой малый левый</span>
                 </div>
 
                 <!--breadcrumbs END-->
@@ -547,7 +547,7 @@
                             </div>
                         </div>
                         <div class="catalog_item-sidebar--wrap">
-                            <div class="catalog_item-sidebar">
+                            <div class="catalog_item-sidebar validate-form" data-form="add-to-cart">
                                 <form action="#">
                                     <div class="catalog_item-prices">
                                         <div class="price-old">3 588 &#x20bd;/уп</div>
@@ -566,7 +566,7 @@
                                         </div>
                                     </div>
                                     <div class="form-field form-field--lg">
-                                        <button class="btn btn-red-fill btn--full" onclick="addToCart(); return false;">В корзину</button>
+                                        <button class="btn btn-red-fill btn--full">В корзину</button>
                                     </div>
                                     <div class="text-box">
                                         <p>Доставка: 48 часов по СНГ <br>до 7 дней по миру</p>
@@ -1395,6 +1395,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <script src="assets/js/app.min.js"></script>
@@ -1404,36 +1405,49 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-
-    $(document).ready(() => {
-        initListingCarousel();
-    });
-
-    function addToCart() {
-        $.fn.additemToCart({
-            selector: '.added-item',
-            img_url: 'http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg',
-            title: 'Pasta Colorante',
-            category: 'Краситель',
-            price: '3211',
-            popup: {
-                head: 'Товар добавлен в корзину',
-                btn_order: 'К оплате',
-                link_order: '/cart.html',
-                btn_continue: 'Продолжить покупки',
-            }
-        })
-        // $.fn.additemToCart({
-        //     selector: '.added-item',
-        //     popup: {
-        //         head: 'Товар уже в корзине',
-        //     }
-        // })
-    }
-
+    $(document).ready(() => {initListingCarousel();});
 </script>
 <!--if we have a carousel on the page: END-->
 
+<script>
+    $(document).ready(() => {
+
+        $('[data-form="add-to-cart"] form').validate({
+            rules: {
+                count: {required: true}
+            },
+            messages: {
+                count: {required: ""}
+            },
+            submitHandler:function (form) {
+
+                $.fn.additemToCart({
+                    selector: '.added-item',
+                    img_url: 'http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg',
+                    title: 'Pasta Colorante',
+                    category: 'Краситель',
+                    price: '3211',
+                    popup: {
+                        head: 'Товар добавлен в корзину',
+                        btn_order: 'К оплате',
+                        link_order: '/cart.html',
+                        btn_continue: 'Продолжить покупки',
+                    }
+                });
+
+                // $.fn.additemToCart({
+                //     selector: '.added-item',
+                //     popup: {
+                //         head: 'Товар уже в корзине',
+                //     }
+                // })
+
+                return false;
+            }
+        })
+
+    });
+</script>
 <!--script-->
 
 

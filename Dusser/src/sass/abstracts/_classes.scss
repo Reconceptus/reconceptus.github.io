@@ -27,9 +27,11 @@
   display: none !important;
 }
 .invalid {
-  color: rgba(255,128,124,.5);
-  input, textarea {background-color: rgba(255,128,125,1)}
-  display: flex;
+  //color: rgba(255,128,124,.5);
+  input,
+  textarea,
+  select {background-color: $clr-invalid-lt !important;}
+  //display: flex;
 }
 
 .u-nowrap {
