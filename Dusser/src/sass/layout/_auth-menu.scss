@@ -69,6 +69,7 @@
       text-transform: uppercase;
       color: $tag;
       cursor: pointer;
+      background: $bg-gray;
       transition: all 0.25s;
       &:first-child {
         flex-shrink: 0;
@@ -90,10 +91,10 @@
       width: 100%;
     }
   }
-  input[data-auth="enter"]:checked ~ .auth_menu-forms [data-auth="enter"],
-  input[data-auth="registration"]:checked ~ .auth_menu-forms [data-auth="registration"] {order: -1}
-  input[data-auth="enter"]:checked ~ .auth_menu-selects [data-auth="enter"],
-  input[data-auth="registration"]:checked ~ .auth_menu-selects [data-auth="registration"] {
-    background: $bg-gray;
+  input[data-auth="signin"]:checked ~ .auth_menu-forms [data-auth="signin"],
+  input[data-auth="signup"]:checked ~ .auth_menu-forms [data-auth="signup"] {order: -1}
+  input[data-auth="signin"]:checked ~ .auth_menu-selects [data-auth="signin"],
+  input[data-auth="signup"]:checked ~ .auth_menu-selects [data-auth="signup"] {
+    background: $white;
   }
 }

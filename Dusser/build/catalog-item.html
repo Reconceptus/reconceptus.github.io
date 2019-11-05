@@ -1268,29 +1268,53 @@
                             <div class="price-actual">2 508 &#x20bd;/уп</div>
                             <div class="price-equal">1 200 &#x20bd;/м<sup>2</sup></div>
                         </div>
-                        <form action="#">
-                            <div class="form-field form-field--md">
-                                <div class="form-select form-select--white">
-                                    <select name="count" class="has-border">
-                                        <option value="">Укажите количество</option>
-                                        <option value="100">100</option>
-                                        <option value="200">200</option>
-                                        <option value="300">300</option>
-                                        <option value="400">400</option>
-                                    </select>
+                        <div class="validate-form" data-form="add-to-cart">
+                            <form action="#">
+                                <div class="form-field form-field--md">
+                                    <div class="form-select form-select--white">
+                                        <select name="count" class="has-border">
+                                            <option value="">Укажите количество</option>
+                                            <option value="100">100</option>
+                                            <option value="200">200</option>
+                                            <option value="300">300</option>
+                                            <option value="400">400</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-field form-field--lg modal_catalog-form_actions">
-                                <button class="btn btn-red-fill btn--full">В корзину</button>
-                                <a href="javascript:void(0)" class="modal_catalog-form_actions--like">
-                                    <i class="icon icon-like-grey">
-                                        <svg xmlns="http://www.w3.org/2000/svg">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like-lg"/>
-                                        </svg>
-                                    </i>
-                                </a>
-                            </div>
-                        </form>
+                                <div class="form-field form-field--lg modal_catalog-form_actions">
+                                    <button class="btn btn-red-fill btn--full">В корзину</button>
+                                    <a href="javascript:void(0)" class="modal_catalog-form_actions--like">
+                                        <i class="icon icon-like-grey">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like-lg"/>
+                                            </svg>
+                                        </i>
+                                    </a>
+                                </div>
+                            </form>
+                            <!--script for 'add-to-cart' validation: BEGIN-->
+                            <script>
+                                window.onload = function(){
+                                    $('[data-form="add-to-cart"] form').validate({
+                                        rules: {
+                                            count: {required: true}
+                                        },
+                                        messages: {
+                                            count: {required: ""}
+                                        },
+                                        submitHandler: function (form) {
+
+                                            // if (form.valid()){
+                                            // SUBMIT form script
+                                            // }
+
+                                            return false;
+                                        }
+                                    })
+                                }
+                            </script>
+                            <!--script for 'add-to-cart' validation: END-->
+                        </div>
                         <div class="text-box">
                             <p>Доставка: 48 часов по СНГ <br>до 7 дней по миру</p>
                             <p>Артикул: 43223</p>
@@ -1409,6 +1433,8 @@
 </script>
 <!--if we have a carousel on the page: END-->
 
+
+<!--script for 'add-to-cart' validation: BEGIN-->
 <script>
     $(document).ready(() => {
 
@@ -1435,6 +1461,9 @@
                     }
                 });
 
+
+                // CASE: if we have already this order in cart
+
                 // $.fn.additemToCart({
                 //     selector: '.added-item',
                 //     popup: {
@@ -1442,13 +1471,17 @@
                 //     }
                 // })
 
+                // if (form.valid()){
+                    // SUBMIT form script
+                // }
+
                 return false;
             }
         })
 
     });
 </script>
-<!--script-->
+<!--script for 'add-to-cart' validation: END-->
 
 
 </body>

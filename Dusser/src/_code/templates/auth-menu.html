@@ -4,87 +4,91 @@
         <div class="auth_menu-wrap">
             <div class="auth_menu-bg"></div>
             <div class="auth_menu-main">
-                <input type="radio" name="auth-form" id="auth_enter" class="auth_menu-radio_button" data-auth="enter" checked>
-                <input type="radio" name="auth-form" id="auth_registration" class="auth_menu-radio_button" data-auth="registration">
+                <input type="radio" name="auth-form" id="auth_signin" class="auth_menu-radio_button" data-auth="signin" checked>
+                <input type="radio" name="auth-form" id="auth_signup" class="auth_menu-radio_button" data-auth="signup">
                 <div class="auth_menu-selects">
-                    <label class="auth_menu-selects--option" for="auth_enter" data-auth="enter">Вход</label>
-                    <label class="auth_menu-selects--option" for="auth_registration" data-auth="registration">Регистрация</label>
+                    <label class="auth_menu-selects--option" for="auth_signin" data-auth="signin">Вход</label>
+                    <label class="auth_menu-selects--option" for="auth_signup" data-auth="signup">Регистрация</label>
                 </div>
                 <div class="auth_menu-forms">
-                    <div class="pl-scroll" data-auth="enter">
-                        <form action="#">
-                            <div class="auth_menu-forms--section">
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="text" placeholder="ФИО" name="name">
+                    <div class="pl-scroll" data-auth="signup">
+                        <div class="validate-form" data-form="signup">
+                            <form action="#">
+                                <div class="auth_menu-forms--section">
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="text" placeholder="ФИО" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="text" placeholder="Емейл" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="password" placeholder="Пароль" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="password" placeholder="Повторить пароль" name="reset_password">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-checkbox">
+                                            <label class="checkbox-item">
+                                                <input type="checkbox" name="agreement">
+                                                <span class="checkbox-label">я согласен на обработку персональных данных</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <button class="btn btn-red btn--full">Регистрация</button>
+                                    </div>
+                                    <div class="form-socials">
+                                        <div class="title-reg">Вход через соц сети</div>
+                                        <ul>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="text" placeholder="Емейл" name="email">
-                                    </div>
-                                </div>
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="password" placeholder="Пароль" name="password">
-                                    </div>
-                                </div>
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="password" placeholder="Повторить пароль" name="reset_password">
-                                    </div>
-                                </div>
-                                <div class="form-field form-field--lg">
-                                    <div class="form-checkbox">
-                                        <label class="checkbox-item">
-                                            <input type="checkbox" name="size">
-                                            <span class="checkbox-label">я согласен на обработку персональных данных</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-field form-field--lg">
-                                    <button class="btn btn-red btn--full">Регистрация</button>
-                                </div>
-                                <div class="form-socials">
-                                    <div class="title-reg">Вход через соц сети</div>
-                                    <ul>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                    <div class="pl-scroll" data-auth="registration">
-                        <form action="#">
-                            <div class="auth_menu-forms--section">
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="text" placeholder="Емейл" name="email">
+                    <div class="pl-scroll" data-auth="signin">
+                        <div class="validate-form" data-form="signin">
+                            <form action="#">
+                                <div class="auth_menu-forms--section">
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="text" placeholder="Емейл" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg">
+                                        <div class="form-input">
+                                            <input type="password" placeholder="Пароль" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="form-field form-field--lg form-buttons">
+                                        <button class="btn btn-red">Войти</button>
+                                        <a href="text-page.html" class="btn-link link u-nowrap">Забыли пароль ?</a>
+                                    </div>
+                                    <div class="form-socials">
+                                        <div class="title-reg">Вход через соц сети</div>
+                                        <ul>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                            <li><a href="javascript:void(0)"></a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="form-field form-field--lg">
-                                    <div class="form-input">
-                                        <input type="password" placeholder="Пароль" name="password">
-                                    </div>
-                                </div>
-                                <div class="form-field form-field--lg form-buttons">
-                                    <button class="btn btn-red">Войти</button>
-                                    <a href="text-page.html" class="btn-link link u-nowrap">Забыли пароль ?</a>
-                                </div>
-                                <div class="form-socials">
-                                    <div class="title-reg">Вход через соц сети</div>
-                                    <ul>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                        <li><a href="javascript:void(0)"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

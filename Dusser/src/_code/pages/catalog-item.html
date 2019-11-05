@@ -139,6 +139,8 @@
 </script>
 <!--if we have a carousel on the page: END-->
 
+
+<!--script for 'add-to-cart' validation: BEGIN-->
 <script>
     $(document).ready(() => {
 
@@ -165,6 +167,9 @@
                     }
                 });
 
+
+                // CASE: if we have already this order in cart
+
                 // $.fn.additemToCart({
                 //     selector: '.added-item',
                 //     popup: {
@@ -172,13 +177,17 @@
                 //     }
                 // })
 
+                // if (form.valid()){
+                    // SUBMIT form script
+                // }
+
                 return false;
             }
         })
 
     });
 </script>
-<!--script-->
+<!--script for 'add-to-cart' validation: END-->
 
 
 </body>
