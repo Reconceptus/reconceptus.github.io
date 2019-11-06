@@ -90,6 +90,9 @@ $(document).ready(() => {
     if ($('.validate-form').length > 0) {
         functions.validation();
     }
+    if ($('.sidebar-sticky').length > 0) {
+        functions.sticky_sidebar.init();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()

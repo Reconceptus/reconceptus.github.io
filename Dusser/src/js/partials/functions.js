@@ -8,4 +8,5 @@ const functions = {
     gallery: require('./modules/gallery'),
     spinner: require('./modules/spinner'),
     validation: require('./modules/validation'),
+    sticky_sidebar: require('./modules/sticky-sidebar'),
 };
