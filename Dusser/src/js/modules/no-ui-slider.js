@@ -1,5 +1,5 @@
 import 'nouislider';
-import 'wNumb';
+import 'wnumb';
 // import 'nouislider/distribute/nouislider.css';
 
 const no_ui_slider = function() {
