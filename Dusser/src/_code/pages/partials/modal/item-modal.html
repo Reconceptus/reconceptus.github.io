@@ -22,7 +22,7 @@
                             <div class="price-actual">2 508 &#x20bd;/уп</div>
                             <div class="price-equal">1 200 &#x20bd;/м<sup>2</sup></div>
                         </div>
-                        <div class="validate-form" data-form="add-to-cart">
+                        <div class="validate-form" data-form="add-to-cart-modal">
                             <form action="#">
                                 <div class="form-field form-field--md">
                                     <div class="form-select form-select--white">
@@ -49,7 +49,7 @@
                             <!--script for 'add-to-cart' validation: BEGIN-->
                             <script>
                                 window.onload = function(){
-                                    $('[data-form="add-to-cart"] form').validate({
+                                    $('[data-form="add-to-cart-modal"] form').validate({
                                         rules: {
                                             count: {required: true}
                                         },

@@ -98,6 +98,7 @@ $(document).ready(() => {
 
     $(document).on('click', '[data-open-modal]', function() {
         let modalData = $(this).attr('data-open-modal');
+        $('[data-modal=' + modalData + ']').addClass('active');
         $('html').addClass('ovh');
         $('.modal').addClass('opened');
     });

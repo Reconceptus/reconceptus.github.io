@@ -1377,14 +1377,12 @@
                             <div class="gallery-container">
                                 <div class="gallery-main">
                                     <div class="gallery-main--wrap">
-                                        <div class="gallery-main--item current" style="background-image: url(http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg)"></div>
-                        <!--                <div class="gallery-main&#45;&#45;item current"></div>-->
+                                        <div class="gallery-main--item current"></div>
                                         <div class="gallery-main--item new"></div>
-
                                     </div>
                                 </div>
                                 <div class="gallery-dots">
-                                    <div class="gallery-dots--item current">
+                                    <div class="gallery-dots--item">
                                         <div class="gallery-dots--img">
                                             <img src="http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg" alt="">
                                         </div>
@@ -1440,7 +1438,7 @@
                             <div class="price-actual">2 508 &#x20bd;/уп</div>
                             <div class="price-equal">1 200 &#x20bd;/м<sup>2</sup></div>
                         </div>
-                        <div class="validate-form" data-form="add-to-cart">
+                        <div class="validate-form" data-form="add-to-cart-modal">
                             <form action="#">
                                 <div class="form-field form-field--md">
                                     <div class="form-select form-select--white">
@@ -1467,7 +1465,7 @@
                             <!--script for 'add-to-cart' validation: BEGIN-->
                             <script>
                                 window.onload = function(){
-                                    $('[data-form="add-to-cart"] form').validate({
+                                    $('[data-form="add-to-cart-modal"] form').validate({
                                         rules: {
                                             count: {required: true}
                                         },

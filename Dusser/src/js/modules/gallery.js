@@ -88,7 +88,10 @@ const gallery = function() {
             }
         });
 
-        // changeItem($('.gallery-dots--item.current img').attr('src'));
+        // init
+
+        $('.gallery-dots--item:first', _this).addClass('current');
+        changeItem($('.gallery-dots--item.current img', _this).attr('src'));
     });
 };
 
