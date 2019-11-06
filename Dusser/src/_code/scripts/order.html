@@ -1,0 +1,44 @@
+<!--script for 'order' validation: BEGIN-->
+<script>
+    $(document).ready(() => {
+
+        $('[data-form="order"] form').validate({
+            rules: {
+                name: {required: true},
+                tel: {required: true},
+                email: {
+                    required: true,
+                    email: true
+                },
+                country: {required: true},
+                city: {required: true},
+                street: {required: true},
+                home_number: {required: true},
+                corps: {required: true},
+                porch: {required: true},
+                room: {required: true},
+                agreement: {required: true}
+            },
+            messages: {
+                name: {required: ""},
+                tel: {required: ""},
+                country: {required: ""},
+                city: {required: ""},
+                street: {required: ""},
+                home_number: {required: ""},
+                corps: {required: ""},
+                porch: {required: ""},
+                room: {required: ""},
+                agreement: {required: ""}
+            },
+            submitHandler:function (form) {
+                // if (form.valid()){
+                // SUBMIT form script
+                // }
+                return false;
+            }
+        });
+
+    });
+</script>
+<!--script for 'order' validation: END-->

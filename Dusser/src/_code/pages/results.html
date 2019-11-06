@@ -29,31 +29,7 @@
 <include src="../templates/burger-menu.html"></include>
 <include src="../templates/scripts.html"></include>
 
-
-<!--script for add html to catalog-item modal: BEGIN-->
-<script>
-    $('[data-open-modal="catalog-item"]').click(function () {
-
-        $(".modal-section--box[data-modal='catalog-item']")
-            .load("modal-catalog-item.html",function () {
-
-                functions.gallery("[data-modal='catalog-item']");
-
-                $('[data-form="add-to-cart-modal"] form').validate({
-                    ...functions.validation.defaults,
-                    rules: {count: {required: true}},
-                    messages: {count: {required: ""}},
-                    submitHandler: function (form) {
-                        // if (form.valid()){
-                        // SUBMIT form script
-                        // }
-                        return false;
-                    }
-                })
-            });
-    });
-</script>
-<!--script for add html to catalog-item modal: END-->
+<include src="../scripts/catalog-item-modal.html"></include>
 
 
 </body>

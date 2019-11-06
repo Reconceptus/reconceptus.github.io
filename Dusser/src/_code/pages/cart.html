@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <include src="../templates/header.html"></include>
+        <include src="../templates/header-guest.html"></include>
 
         <div id="main" class="main">
 
@@ -69,7 +69,7 @@
                                                         <div class="form-text">Авторизуйтесь на сайте, и мы сохраним всю информацию по заказу и автоматически заполним ваши контактные данные</div>
                                                     </div>
                                                     <div class="form-field form-field--lg">
-                                                        <a href="/index-guest.html" class="btn btn-red large-padding">авторизация</a>
+                                                        <button type="button" class="auth_open btn btn-red large-padding">авторизация</button>
                                                     </div>
                                                     <div class="form-socials">
                                                         <div class="form-text">Вы можете войти через социальные сети</div>
@@ -203,54 +203,13 @@
 </div>
 
 <include src="./partials/modal/item-modal.html"></include>
-<include src="../templates/burger-menu.html"></include>
+<include src="../templates/auth-menu.html"></include>
+<include src="../templates/burger-menu-guest.html"></include>
 <include src="../templates/scripts.html"></include>
 
-<!--script for 'add-to-cart' validation: BEGIN-->
-<script>
-    $(document).ready(() => {
+<include src="../scripts/auth.html"></include>
 
-        $('[data-form="order"] form').validate({
-            rules: {
-                name: {required: true},
-                tel: {required: true},
-                email: {
-                    required: true,
-                    email: true
-                },
-                country: {required: true},
-                city: {required: true},
-                street: {required: true},
-                home_number: {required: true},
-                corps: {required: true},
-                porch: {required: true},
-                room: {required: true},
-                agreement: {required: true}
-            },
-            messages: {
-                name: {required: ""},
-                tel: {required: ""},
-                country: {required: ""},
-                city: {required: ""},
-                street: {required: ""},
-                home_number: {required: ""},
-                corps: {required: ""},
-                porch: {required: ""},
-                room: {required: ""},
-                agreement: {required: ""}
-            },
-            submitHandler:function (form) {
-                // if (form.valid()){
-                // SUBMIT form script
-                // }
-                return false;
-            }
-        });
-
-    });
-</script>
-<!--script for 'add-to-cart' validation: END-->
-
+<include src="../scripts/order.html"></include>
 
 </body>
 </html>

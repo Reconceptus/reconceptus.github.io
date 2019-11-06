@@ -89,88 +89,9 @@
 <include src="../templates/burger-menu-guest.html"></include>
 <include src="../templates/scripts.html"></include>
 
-<!--script for 'add-to-cart' validation: BEGIN-->
-<script>
-    $(document).ready(() => {
+<include src="../scripts/auth.html"></include>
 
-        $('[data-form="signin"] form').validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-                password: {required: true}
-            },
-            messages: {
-                email: {required: ""},
-                password: {required: ""}
-            },
-            submitHandler:function (form) {
-                // if (form.valid()){
-                // SUBMIT form script
-                // }
-                return false;
-            }
-        });
-
-        $('[data-form="signup"] form').validate({
-            rules: {
-                name: {
-                    required: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                password: {required: true},
-                reset_password: {required: true},
-                agreement: {required: true}
-            },
-            messages: {
-                name: {required: ""},
-                email: {required: ""},
-                password: {required: ""},
-                reset_password: {required: ""},
-                agreement: {required: ""}
-            },
-            submitHandler:function (form) {
-                // if (form.valid()){
-                // SUBMIT form script
-                // }
-                return false;
-            }
-        });
-
-    });
-</script>
-<!--script for 'add-to-cart' validation: END-->
-
-
-
-<!--script for add html to catalog-item modal: BEGIN-->
-<script>
-    $('[data-open-modal="catalog-item"]').click(function () {
-
-        $(".modal-section--box[data-modal='catalog-item']")
-            .load("modal-catalog-item.html",function () {
-
-                functions.gallery("[data-modal='catalog-item']");
-
-                $('[data-form="add-to-cart-modal"] form').validate({
-                    ...functions.validation.defaults,
-                    rules: {count: {required: true}},
-                    messages: {count: {required: ""}},
-                    submitHandler: function (form) {
-                        // if (form.valid()){
-                        // SUBMIT form script
-                        // }
-                        return false;
-                    }
-                })
-            });
-    });
-</script>
-<!--script for add html to catalog-item modal: END-->
+<include src="../scripts/catalog-item-modal.html"></include>
 
 </body>
 </html>

@@ -144,80 +144,9 @@
 <!--if we have a carousel on the page: END-->
 
 
-<!--script for 'add-to-cart' validation: BEGIN-->
-<script>
-    $(document).ready(() => {
+<include src="../scripts/add-to-cart.html"></include>
 
-        $('[data-form="add-to-cart"] form').validate({
-            rules: {
-                count: {required: true}
-            },
-            messages: {
-                count: {required: ""}
-            },
-            submitHandler:function (form) {
-
-                $.fn.additemToCart({
-                    selector: '.added-item',
-                    img_url: 'http://vp-blok.ru/wa-data/public/shop/products/38/08/838/images/1596/1596.750@2x.jpg',
-                    title: 'Pasta Colorante',
-                    category: 'Краситель',
-                    price: '3211',
-                    popup: {
-                        head: 'Товар добавлен в корзину',
-                        btn_order: 'К оплате',
-                        link_order: '/cart.html',
-                        btn_continue: 'Продолжить покупки',
-                    }
-                });
-
-
-                // CASE: if we have already this order in cart
-
-                // $.fn.additemToCart({
-                //     selector: '.added-item',
-                //     popup: {
-                //         head: 'Товар уже в корзине',
-                //     }
-                // })
-
-                // if (form.valid()){
-                    // SUBMIT form script
-                // }
-
-                return false;
-            }
-        })
-
-    });
-</script>
-<!--script for 'add-to-cart' validation: END-->
-
-
-<!--script for add html to catalog-item modal: BEGIN-->
-<script>
-    $('[data-open-modal="catalog-item"]').click(function () {
-
-        $(".modal-section--box[data-modal='catalog-item']")
-            .load("modal-catalog-item.html",function () {
-
-                functions.gallery("[data-modal='catalog-item']");
-
-                $('[data-form="add-to-cart-modal"] form').validate({
-                    ...functions.validation.defaults,
-                    rules: {count: {required: true}},
-                    messages: {count: {required: ""}},
-                    submitHandler: function (form) {
-                        // if (form.valid()){
-                        // SUBMIT form script
-                        // }
-                        return false;
-                    }
-                })
-            });
-    });
-</script>
-<!--script for add html to catalog-item modal: END-->
+<include src="../scripts/catalog-item-modal.html"></include>
 
 </body>
 </html>
