@@ -1,5 +1,5 @@
-const gallery = function() {
-    $('.gallery').each(function() {
+const gallery = function(selector) {
+    $(selector).each(function() {
         const _this = $(this),
             galleryItemCurrent = $('.gallery-main--item.current', _this),
             galleryItemNew = $('.gallery-main--item.new', _this),

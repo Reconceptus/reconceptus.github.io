@@ -1,5 +1,5 @@
-const validation = function() {
-    $.validator.setDefaults({
+const validation = {
+    defaults: {
         onfocusout: false,
         ignore: '.ignore',
         errorClass: 'invalid',
@@ -14,7 +14,10 @@ const validation = function() {
                 .removeClass(errorClass);
         },
         errorPlacement: $.noop,
-    });
+    },
+    setDefaults: function() {
+        $.validator.setDefaults(this.defaults);
+    },
 };
 
 module.exports = validation;

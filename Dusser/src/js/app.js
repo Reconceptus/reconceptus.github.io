@@ -77,7 +77,7 @@ $(document).ready(() => {
         functions.no_ui_slider();
     }
     if ($('.gallery').length > 0) {
-        functions.gallery();
+        functions.gallery('.gallery');
     }
     if ($('.spinner').length > 0) {
         functions.spinner();
@@ -86,7 +86,7 @@ $(document).ready(() => {
         functions.table_expander();
     }
     if ($('.validate-form').length > 0) {
-        functions.validation();
+        functions.validation.setDefaults();
     }
     if ($('.sidebar-sticky').length > 0) {
         functions.sticky_sidebar.init();
