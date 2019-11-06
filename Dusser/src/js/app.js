@@ -11,7 +11,7 @@ let scrollTop = $(window).scrollTop(),
     winHeight;
 
 // functions
-const functions = {
+window.functions = {
     burger: require('./modules/burger'),
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
@@ -22,6 +22,7 @@ const functions = {
     spinner: require('./modules/spinner'),
     validation: require('./modules/validation'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
+    carousel: require('./modules/carousel'),
 };
 
 // scripts
@@ -54,36 +55,6 @@ $(document).ready(() => {
             // }
         });
     }
-
-    window.initListingCarousel = function() {
-        if ($('.listing-carousel').length > 0) {
-            $('.listing-carousel').each(function() {
-                const _this = $(this),
-                    itemsCount = _this.find('.listing-item').length;
-
-                _this.owlCarousel({
-                    dots: false,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            loop: itemsCount > 1 ? true : false,
-                            nav: itemsCount > 1 ? true : false,
-                        },
-                        800: {
-                            items: 4,
-                            loop: itemsCount > 4 ? true : false,
-                            nav: itemsCount > 1 ? true : false,
-                        },
-                        1024: {
-                            items: 6,
-                            loop: itemsCount > 6 ? true : false,
-                            nav: itemsCount > 1 ? true : false,
-                        },
-                    },
-                });
-            });
-        }
-    };
 
     /* --------------------------------- document load --------------------------------- */
 

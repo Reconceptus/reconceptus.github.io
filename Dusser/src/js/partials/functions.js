@@ -1,4 +1,4 @@
-const functions = {
+window.functions = {
     burger: require('./modules/burger'),
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
@@ -9,4 +9,5 @@ const functions = {
     spinner: require('./modules/spinner'),
     validation: require('./modules/validation'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
+    carousel: require('./modules/carousel'),
 };
