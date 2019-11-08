@@ -4,24 +4,34 @@ const $wrapper = document.getElementById('wrapper'),
     $authClosers = document.querySelectorAll('.auth_close');
 
 const auth = {
-    default: function() {
+    init: function() {
         for (const btn of $authOpeners) {
-            btn.onclick = function() {
-                $authMenu.classList.add('opened');
-                $wrapper.classList.add('blured');
+            btn.onclick = () => {
+                this.open();
             };
         }
 
         for (const btn of $authClosers) {
-            btn.onclick = function() {
-                $authMenu.classList.remove('opened');
-                $wrapper.classList.remove('blured');
+            btn.onclick = () => {
+                this.close();
             };
         }
     },
-    open: function() {
+    open: function(check) {
+        if ($authMenu == null) return false;
+
+        functions.ovh.add();
+        functions.sticky_sidebar.translate('add');
         $authMenu.classList.add('opened');
         $wrapper.classList.add('blured');
+
+        check == 'signup' ? $('#auth_signup').click() : $('#auth_signin').click();
+    },
+    close: function() {
+        $authMenu.classList.remove('opened');
+        $wrapper.classList.remove('blured');
+        functions.sticky_sidebar.translate('remove');
+        functions.ovh.remove();
     },
 };
 

@@ -1,19 +1,31 @@
-const burger = function() {
-    const $wrapper = document.getElementById('wrapper'),
-        $burger = document.getElementById('burger'),
-        $burgerMenu = document.getElementById('burgerMenu'),
-        $burgerClosers = document.querySelectorAll('.burger_close');
+const $wrapper = document.getElementById('wrapper'),
+    $burger = document.getElementById('burger'),
+    $burgerMenu = document.getElementById('burgerMenu'),
+    $burgerClosers = document.querySelectorAll('.burger_close');
 
-    $burger.onclick = function() {
+const burger = {
+    init: function() {
+        $burger.onclick = () => {
+            this.open();
+        };
+        for (const btn of $burgerClosers) {
+            btn.onclick = () => {
+                this.close();
+            };
+        }
+    },
+    open: function() {
+        functions.ovh.add();
+        functions.sticky_sidebar.translate('add');
         $burgerMenu.classList.add('opened');
         $wrapper.classList.add('blured');
-    };
-    for (const btn of $burgerClosers) {
-        btn.onclick = function() {
-            $burgerMenu.classList.remove('opened');
-            $wrapper.classList.remove('blured');
-        };
-    }
+    },
+    close: function() {
+        $burgerMenu.classList.remove('opened');
+        $wrapper.classList.remove('blured');
+        functions.sticky_sidebar.translate('remove');
+        functions.ovh.remove();
+    },
 };
 
 module.exports = burger;

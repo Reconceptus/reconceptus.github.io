@@ -35,6 +35,7 @@ const sticky_sidebar = {
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
     },
     changeMargin: function() {
+        $sidebar.removeClass('temp-sticky');
         if (this.params.height > this.params.wrapperHeight) {
             $sidebar.removeClass('sticky').attr('style', '');
             return;
@@ -54,10 +55,27 @@ const sticky_sidebar = {
                 $sidebar.addClass('sticky').css({
                     top: this.params.allowMargin + 'px',
                     width: this.params.width + 'px',
+                    transform: 'translateY(0)',
                 });
             }
         } else {
             $sidebar.removeClass('sticky').attr('style', '');
+        }
+    },
+    translate: function(event) {
+        if ($sidebar.length < 1) return false;
+        if ($sidebar.hasClass('sticky') < 1) return false;
+        if (event == 'add') {
+            $sidebar.addClass('temp-sticky').css({
+                transform:
+                    'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
+            });
+        } else {
+            // setTimeout(()=>{
+            //     $sidebar.removeClass('temp-sticky').css({
+            //         transform: 'translateY(0)',
+            //     });
+            // },500)
         }
     },
     init: function() {

@@ -32,8 +32,8 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.burger();
-    functions.auth.default();
+    functions.burger.init();
+    functions.auth.init();
     functions.scroll_top();
     functions.expander();
 
@@ -71,12 +71,12 @@ $(document).ready(() => {
     $(document).on('click', '[data-open-modal]', function() {
         let modalData = $(this).attr('data-open-modal');
         $('[data-modal=' + modalData + ']').addClass('active');
-        $('html').addClass('ovh');
+        functions.ovh.add();
         $('.modal').addClass('opened');
     });
 
     $('.modal').on('click', '.close', () => {
-        $('html').removeClass('ovh');
+        functions.ovh.remove();
         $('.modal').removeClass('opened');
         $('[data-modal]').removeClass('active');
     });
