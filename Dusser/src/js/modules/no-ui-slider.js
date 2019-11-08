@@ -45,6 +45,13 @@ const no_ui_slider = function() {
                 }
             });
         });
+
+        $(slider)
+            .closest('form')
+            .find('button[type=reset]')
+            .click(() => {
+                slider_box.noUiSlider.reset();
+            });
     }
 };
 
