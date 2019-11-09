@@ -30,7 +30,14 @@
   &-wrap {
     position: relative;
     margin-left: auto;
-    width: 50%;
+
+    @include mq($from: desktop) {
+      width: 50%;
+    }
+    @include mq($until: desktop) {
+      width: 80vw;
+      max-width: 640px;
+    }
   }
   &-bg {
     position: absolute;
@@ -40,14 +47,23 @@
     bottom: 0;
     background: $white;
     box-shadow: 0 0 30px 0 rgba($black,0.5);
-    @include media(hover,1672){
-      right: calc(812px - 50vw);
+    @include mq($from: 1680px){
+      right: calc(800px - 50vw);
+    }
+    @include mq(tablet, 1680px){
+      right: -1*$padding-xl;
     }
   }
   &-main {
     position: relative;
     height: 100vh;
-    padding: $padding-xxl 8% $padding-xxl 16.7%;
+
+    @include mq($from: desktop_md) {
+      padding: $padding-xxl 8% $padding-xxl 16.7%;
+    }
+    @include mq($until: desktop_md) {
+      padding: $padding-xxl;
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;

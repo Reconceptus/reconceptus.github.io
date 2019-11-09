@@ -32,3 +32,13 @@ $font: 16px;
 $font-sm: 0.5*$font;        // 8px
 $font-md: 1.5*$font;        // 24px
 $font-lg: 2*$font;          // 32px
+
+$mq-breakpoints: (
+        mobile:  481px,
+        mobile_xl:  601px,
+        tablet:  801px,
+        desktop: 1025px,
+        desktop_md: 1281px,
+        desktop_xl: 1421px,
+        wide:    1725px
+) !default;

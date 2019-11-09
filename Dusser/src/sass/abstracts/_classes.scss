@@ -3,17 +3,17 @@
   margin: 0 auto;
   box-sizing: border-box;
   display: block;
-  @include media(hover,1025){
+  @include mq($from: desktop) {
+    padding: 0 $padding-xl;
+  }
+  @include mq(tablet, desktop) {
     padding: 0 $padding-lg;
   }
-  @include breakpoints(681,1024){
+  @include mq($until: tablet) {
     padding: 0 $padding-md;
   }
-  @include media(screen,680){
-    padding: 0 $padding;
-  }
   &--lg {
-    max-width: 1672px;
+    max-width: 1680px;
   }
   &--md {
     max-width: 1128px;

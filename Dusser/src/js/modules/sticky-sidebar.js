@@ -11,9 +11,11 @@ const sticky_sidebar = {
         heightChangingTime: 500,
         scrollTop: 0,
         allowMargin: 0,
-        allowPadding: 8,
+        padding: 8,
+        allowPadding: 0,
         maxMargin: 0,
         headerHeight: 0,
+        breakpoint: 1024,
     },
     resetInners: function() {
         this.params.offsetTop = $sidebarWrap.offset().top;
@@ -22,6 +24,7 @@ const sticky_sidebar = {
         this.params.width = $sidebar.parent().width();
         this.params.headerHeight = $('#header').height();
 
+        this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
     },
     setInners: function() {
@@ -32,7 +35,10 @@ const sticky_sidebar = {
         this.params.width = $sidebar.parent().width();
         this.params.headerHeight = $('#header').height();
 
+        this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
+
+        $sidebar.parent().height(this.params.height);
     },
     changeMargin: function() {
         $sidebar.removeClass('temp-sticky');
@@ -70,12 +76,6 @@ const sticky_sidebar = {
                 transform:
                     'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
             });
-        } else {
-            // setTimeout(()=>{
-            //     $sidebar.removeClass('temp-sticky').css({
-            //         transform: 'translateY(0)',
-            //     });
-            // },500)
         }
     },
     init: function() {

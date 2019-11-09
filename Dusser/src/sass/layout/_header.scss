@@ -18,14 +18,24 @@
     .burger {
       @extend %btn_reset;
       margin-right: $padding-lg;
+      flex-shrink: 0;
     }
   }
   &-domain {
-    margin-left: 20px;
-    padding-left: 20px;
+    display: flex;
+    align-items: center;
     max-width: 120px;
     position: relative;
     min-height: 44px;
+    @include mq($from: desktop_md) {
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+    @include mq($until: desktop_md) {
+      margin-left: $padding-md;
+      padding-left: $padding-md;
+      font-size: 12px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -37,8 +47,18 @@
     }
   }
   &-search {
-    width: 33.33%;
+
     padding: 0 $padding;
+    @include mq($from: desktop) {
+      width: 33.33%;
+    }
+    @include mq($until: desktop) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0.2;
+      pointer-events: none;
+    }
     &--fieldset {
       width: 100%;
       display: flex;
@@ -93,9 +113,18 @@
       font-weight: 500;
       color: $white;
       background-color: $btn-red;
-      line-height: $padding-lg;
+
       border-radius: $padding-lg;
-      padding: 0 $padding;
+
+      @include mq($from: desktop_md) {
+        line-height: $padding-lg;
+        padding: 0 $padding;
+      }
+      @include mq($until: desktop_md) {
+        font-size: 12px;
+        padding: 0 6px;
+        line-height: 20px;
+      }
     }
     &--close {
       position: absolute;
@@ -114,9 +143,15 @@
     }
     &--item {
       position: relative;
-      margin-left: $padding-xl;
+
       display: inline-flex;
       align-items: center;
+      @include mq($from: desktop_md) {
+        margin-left: $padding-xl;
+      }
+      @include mq($until: desktop_md) {
+        margin-left: $padding-lg;
+      }
       @include hover(){
         .header-personal_info--short:not(.added-item) {
           opacity: 1;
@@ -154,6 +189,9 @@
         .added-order & {
           display: none;
         }
+        @include mq($until: desktop) {
+          display: none;
+        }
       }
     }
     &--actions {
@@ -180,21 +218,41 @@
       font-weight: 500;
       cursor: default;
       .summ {
-        font-size: $font;
+
+        white-space: nowrap;
+        @include mq($from: desktop_md) {
+          font-size: $font;
+        }
+        @include mq($until: desktop_md) {
+          font-weight: 600;
+        }
       }
     }
   }
 
   &-top {
-    height: 88px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mq($from: desktop) {
+      height: 88px;
+    }
+    @include mq($until: desktop) {
+      height: 62px;
+    }
   }
   &-nav {
-    height: 48px;
+
     display: flex;
     width: 100%;
+    @include mq($from: desktop) {
+      height: 48px;
+      font-size: $font;
+    }
+    @include mq($until: desktop) {
+      height: 38px;
+      font-size: 12px;
+    }
     &--wrap {
       background: linear-gradient(to right, $grad-begin 0%,$grad-end 100%);
     }
@@ -204,8 +262,16 @@
       justify-content: space-between;
       text-transform: uppercase;
       font-weight: 500;
+      @include mq($until: desktop) {
+        &:last-child:after {
+          content: "";
+          width: 38px;
+          height: 38px;
+        }
+      }
       li {
         display: flex;
+
       }
       a {
         display: inline-flex;

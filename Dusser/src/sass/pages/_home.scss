@@ -10,8 +10,13 @@
       top: 0;
       left: -50vw;
       right: -50vw;
-      bottom: -56px;
       background: #FFF176;
+      @include mq($from: desktop) {
+        bottom: -56px;
+      }
+      @include mq($until: desktop) {
+        bottom: -16px;
+      }
     }
     &--link {
       position: absolute;
@@ -49,12 +54,16 @@
       }
     }
     .title-heading {
-      max-width: 60%;
-      margin: 0 auto;
       padding: $padding-xl 0;
-      justify-content: center;
-      text-align: center;
+
+      max-width: 60%;
       position: relative;
+      @include mq($from: desktop) {
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+      }
+
     }
     & + * {
       position: relative;

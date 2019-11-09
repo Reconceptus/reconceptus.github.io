@@ -2,7 +2,9 @@
   will-change: transform;
   position: relative;
   z-index: 2;
-  padding-bottom: 8px;
+  @include mq($from: desktop) {
+    padding-bottom: $padding;
+  }
   &.sticky {
     position: fixed;
   }

@@ -1,6 +1,12 @@
 .pl-nav-scroll {
   height: 100%;
-  overflow: hidden;
+  .desktop & {
+    overflow: hidden;
+  }
+  .mobile &,
+  .tablet & {
+    overflow: auto;
+  }
   .mCSB_inside>.mCSB_container {
     margin: 0;
   }
@@ -8,7 +14,13 @@
 
 .pl-scroll {
   height: 100%;
-  overflow: hidden;
+  .desktop & {
+    overflow: hidden;
+  }
+  .mobile &,
+  .tablet & {
+    overflow: auto;
+  }
   .mCSB_inside>.mCSB_container {
     margin: 0;
   }

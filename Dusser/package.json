@@ -61,6 +61,7 @@
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
     "prettier": "^1.17.0",
+    "sass-mq": "^3.3.2",
     "stylefmt": "^6.0.3",
     "webpack": "^4.30.0",
     "webpack-stream": "^5.2.1"

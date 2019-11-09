@@ -29,7 +29,13 @@
   }
   &-wrap {
     position: relative;
-    width: 66.6667%;
+    @include mq($from: desktop) {
+      width: 66.6667%;
+    }
+    @include mq($until: desktop) {
+      width: 80vw;
+      max-width: 640px;
+    }
   }
   &-bg {
     position: absolute;
@@ -39,8 +45,11 @@
     bottom: 0;
     background: linear-gradient(45deg, $grad-end 0%,$grad-begin 100%);
     box-shadow: 0 0 30px 0 rgba($black,0.5);
-    @include media(hover,1672){
-      left: calc(812px - 50vw);
+    @include mq($from: 1680px){
+      left: calc(800px - 50vw);
+    }
+    @include mq(tablet, 1680px){
+      left: -1*$padding-xl;
     }
   }
   &-main {
@@ -61,9 +70,21 @@
     }
   }
   &-invite {
-    font-size: 3*$font;
+
     font-weight: 300;
     padding-bottom: $padding-xxl;
+    @include mq($from: wide) {
+      margin-left: $padding-xxl;
+    }
+    @include mq($until: wide) {
+      margin-left: $padding-lg;
+    }
+    @include mq($from: desktop_md) {
+      font-size: 3*$font;
+    }
+    @include mq($until: desktop_md) {
+      font-size: $font-lg;
+    }
     &:not(.no-auth) {
       flex-shrink: 0;
       min-height: 96px;
@@ -79,7 +100,13 @@
     &--wrap {
       flex-grow: 1;
       overflow: hidden;
-      margin-left: -1*$padding-xxl;
+      @include mq($from: wide) {
+        margin-left: -1*$padding-xxl;
+
+      }
+      @include mq($until: wide) {
+        margin-left: -1*$padding-lg;
+      }
     }
     a:not(.btn) {
       color: inherit;
@@ -95,8 +122,14 @@
       }
     }
     &--link {
-      font-size: $font-lg;
+
       cursor: pointer;
+      @include mq($from: desktop_md) {
+        font-size: $font-lg;
+      }
+      @include mq($until: desktop_md) {
+        font-size: $font-md;
+      }
       &.fn-expand-btn {
         position: relative;
         &:before {
@@ -105,7 +138,7 @@
           right: 100%;
           top: 0;
           bottom: 0;
-          margin: auto 24px auto 0;
+
           width: 12px;
           height: 12px;
           border-style: solid solid none none;
@@ -113,6 +146,12 @@
           border-color: currentColor;
           transform: rotate(45deg) translate(-2px, 2px);
           transition: transform 0.25s;
+          @include mq($from: desktop) {
+            margin: auto 24px auto 0;
+          }
+          @include mq($until: desktop) {
+            margin: auto 12px auto 0;
+          }
           .expanded & {
             transform: rotate(135deg) translate(-2px, 2px);
           }
@@ -132,7 +171,13 @@
     font-size: $font;
     text-transform: uppercase;
     padding-right: $padding-md;
-    padding-top: $padding-md;
+
+    @include mq($from: desktop_md) {
+      padding-top: $padding-md;
+    }
+    @include mq($until: desktop_md) {
+      padding-top: $padding;
+    }
     &--item {
       margin-bottom: $padding-xl;
       &:last-child {

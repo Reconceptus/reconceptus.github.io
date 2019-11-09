@@ -4,23 +4,48 @@
   justify-content: center;
   &-auth {
     color: $link;
-    width: $font-lg;
-    height: $font-lg;
+    @include mq($from: desktop_md) {
+      width: $font-lg;
+      height: $font-lg;
+    }
+    @include mq($until: desktop_md) {
+      width: 28px;
+      height: 28px;
+    }
   }
   &-view {
     color: $link;
-    width: $font-lg;
-    height: $font-lg;
+    @include mq($from: desktop_md) {
+      width: $font-lg;
+      height: $font-lg;
+    }
+    @include mq($until: desktop_md) {
+      width: 28px;
+      height: 28px;
+    }
   }
   &-favorite {
     color: $link;
-    width: $font-lg;
-    height: $font-lg;
+    @include mq($from: desktop_md) {
+      width: $font-lg;
+      height: $font-lg;
+    }
+    @include mq($until: desktop_md) {
+      width: 28px;
+      height: 28px;
+    }
   }
   &-basket {
     color: $link;
-    width: 28px;
-    height: 28px;
+
+    @include mq($from: desktop_md) {
+      width: 28px;
+      height: 28px;
+    }
+    @include mq($until: desktop_md) {
+      width: $padding-lg;
+      height: $padding-lg;
+    }
   }
   &-search {
     color: $tag;

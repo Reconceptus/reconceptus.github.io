@@ -2,12 +2,24 @@
   &-columns {
     display: flex;
     margin: 0 -1*$padding-sm;
+    @include mq($until: desktop) {
+      flex-wrap: wrap;
+    }
   }
   &-sidebar {
     padding: 0 $padding-sm;
-    max-width: calc( 100%/6 );
+
     width: 100%;
     flex-shrink: 0;
+    @include mq($from: desktop_md) {
+      max-width: calc( 100%/6 );
+    }
+    @include mq(desktop, desktop_md) {
+      max-width: calc( 100%/5 );
+    }
+    @include mq($until: desktop) {
+      margin-bottom: $padding;
+    }
   }
   &-main {
     padding: 0 $padding-sm;
@@ -36,11 +48,22 @@
     margin-bottom: $padding;
     &.col-1-6 {
       width: 100%;
-      max-width: calc( 100%/6 );
+      @include mq($from: desktop_md) {
+        max-width: calc( 100%/6 );
+      }
+      @include mq($until: desktop_md) {
+        max-width: calc( 100%/5 );
+      }
     }
     &.col-1-5 {
       width: 100%;
-      max-width: calc( 100%/5 );
+
+      @include mq($from: desktop_md) {
+        max-width: calc( 100%/5 );
+      }
+      @include mq($until: desktop_md) {
+        max-width: calc( 100%/4 );
+      }
     }
     
     &--section {
@@ -57,7 +80,13 @@
       }
     }
     &--img {
-      padding: $padding-xl;
+
+      @include mq($from: desktop_xl) {
+        padding: $padding-xl;
+      }
+      @include mq($until: desktop_xl) {
+        padding: $padding-lg;
+      }
       position: relative;
     }
     &--img_box {
@@ -89,16 +118,29 @@
       font-weight: 500;
       .listing-item & {
         position: absolute;
-        left: $padding-md;
-        top: $padding-md;
+
+        @include mq($from: desktop_xl) {
+          left: $padding-md;
+          top: $padding-md;
+        }
+        @include mq($until: desktop_xl) {
+          left: $padding;
+          top: $padding;
+        }
       }
     }
     &--marks {
       position: absolute;
       left: $padding-md;
-      bottom: 0;
+
       display: flex;
       align-items: center;
+      @include mq($from: desktop_xl) {
+        bottom: 0;
+      }
+      @include mq($until: desktop_xl) {
+        bottom: -1*$padding;
+      }
       .mark {
         margin-right: $padding;
       }
@@ -122,11 +164,17 @@
       }
     }
     &--data {
-      padding: 20px $padding-lg;
+
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      @include mq($from: desktop_xl) {
+        padding: 20px $padding-lg;
+      }
+      @include mq($until: desktop_xl) {
+        padding: $padding-md;
+      }
     }
     &--title {
       font-size: 20px;

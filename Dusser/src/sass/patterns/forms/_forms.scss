@@ -29,7 +29,13 @@
     align-items: center;
   }
   li {
-    margin-right: $padding-xl;
+
+    @include mq($from: desktop_md) {
+      margin-right: $padding-xl;
+    }
+    @include mq($until: desktop_md) {
+      margin-right: $padding-lg;
+    }
   }
   a {
     display: flex;

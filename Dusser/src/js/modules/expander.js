@@ -24,8 +24,13 @@ const expander = function() {
                 };
 
                 if (expandData.querySelector('.active')) {
-                    $(expandBox).addClass('expanded');
-                    $(expandData).slideDown(0);
+                    if ($('html').hasClass('desktop')) {
+                        $(expandBox).addClass('expanded');
+                        $(expandData).slideDown(0);
+                    } else {
+                        $(expandBox).removeClass('expanded');
+                        $(expandData).slideUp(0);
+                    }
                 }
             }
         }
@@ -43,8 +48,13 @@ const expander = function() {
         };
 
         if (expandData.querySelector('.active')) {
-            $(expandBox).addClass('expanded');
-            $(expandData).slideDown(0);
+            if ($('html').hasClass('desktop')) {
+                $(expandBox).addClass('expanded');
+                $(expandData).slideDown(0);
+            } else {
+                $(expandBox).removeClass('expanded');
+                $(expandData).slideUp(0);
+            }
         }
     }
 };

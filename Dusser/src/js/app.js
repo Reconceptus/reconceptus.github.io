@@ -67,12 +67,16 @@ $(document).ready(() => {
     functions.expander();
 
     if ($('.pl-nav-scroll').length > 0) {
-        $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
+        if ($('html').hasClass('desktop')) {
+            $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
+        }
     }
     if ($('.pl-scroll').length > 0) {
-        $('.pl-scroll').each(function() {
-            $(this).mCustomScrollbar();
-        });
+        if ($('html').hasClass('desktop')) {
+            $('.pl-scroll').each(function() {
+                $(this).mCustomScrollbar();
+            });
+        }
     }
     if ($('.range-slider').length > 0) {
         functions.no_ui_slider();

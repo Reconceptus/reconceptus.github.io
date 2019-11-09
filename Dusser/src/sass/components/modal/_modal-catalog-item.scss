@@ -15,8 +15,14 @@
   }
   &-about {
     width: calc(3*100%/8);
-    padding: $padding-xl $padding-xxl;
+
     overflow: auto;
+    @include mq($from: desktop_md) {
+      padding: $padding-xl $padding-xxl;
+    }
+    @include mq($until: desktop_md) {
+      padding: $padding-xl;
+    }
     .text-box {
       &:not(:last-child){
         margin-bottom: $padding-xxl;
