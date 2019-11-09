@@ -2,12 +2,35 @@
   &-columns {
     display: flex;
     margin: 0 -1*$padding-sm;
+    &:not(:last-child){
+      @include mq($from: desktop_xl) {
+        margin-bottom: 90px;
+      }
+      @include mq(desktop, desktop_xl) {
+        margin-bottom: 80px;
+      }
+      @include mq($until: desktop) {
+        margin-bottom: 40px;
+      }
+    }
+    @include mq($from: desktop) {
+
+    }
+    @include mq($until: desktop) {
+      flex-direction: column;
+    }
   }
   &-sidebar {
     padding: 0 $padding-sm;
-    max-width: calc( 100%/3 );
+
     width: 100%;
     flex-shrink: 0;
+    @include mq($from: desktop) {
+      max-width: calc( 100%/3 );
+    }
+    @include mq($until: desktop) {
+      margin-top: $padding-lg;
+    }
     &--box {
       background: $white;
 
@@ -40,8 +63,11 @@
           @include mq($from: desktop_md) {
             font-size: 48px;
           }
-          @include mq($until: desktop_md) {
+          @include mq(desktop, desktop_md) {
             font-size: $font-lg;
+          }
+          @include mq($until: desktop) {
+            font-size: 48px;
           }
         }
       }
@@ -49,12 +75,12 @@
     &--promocode {
       display: flex;
       width: 100%;
-      @include mq($until: desktop_md) {
+      @include mq(desktop, desktop_md) {
         flex-wrap: wrap;
       }
       &_btn {
         flex-shrink: 0;
-        @include mq($until: desktop_md) {
+        @include mq(desktop, desktop_md) {
           width: 100%;
         }
       }
@@ -73,8 +99,11 @@
       @include mq($from: desktop_xl) {
         margin-bottom: 90px;
       }
-      @include mq($until: desktop_xl) {
+      @include mq(desktop, desktop_xl) {
         margin-bottom: 80px;
+      }
+      @include mq($until: desktop) {
+        margin-bottom: 40px;
       }
     }
     &--title {

@@ -12,25 +12,18 @@ $(document).ready(() => {
      ============= document click events
     */
 
-    function documentClick() {
+    function documentSearchClick() {
         $(document).click(e => {
-            // var targ = $(e.target);
-            // if(targ.parents('#searchForm').length == 0){
-            //     if(targ.parents('#search_btn').length == 0){
-            //         search.removeClass('active');
-            //         nav.removeClass('hidden');
-            //     }
-            // }
-            //
-            // if(targ.parents('.language').length == 0){
-            //     lang.removeClass('show')
-            // }
+            var targ = $(e.target);
+            if (targ.parents('.header-search').length == 0) {
+                $search.removeClass('active');
+            }
         });
     }
 
     /* --------------------------------- document load --------------------------------- */
 
-    documentClick();
+    documentSearchClick();
     getWindowSizes();
     functions.burger.init();
     functions.auth.init();
@@ -83,6 +76,11 @@ $(document).ready(() => {
         functions.ovh.remove();
         $('.modal').removeClass('opened');
         $('[data-modal]').removeClass('active');
+    });
+
+    $(document).on('click', '.header-search--opener', function() {
+        $search.addClass('active');
+        $search.find('input').focus();
     });
 
     /* --------------------------------- document resize --------------------------------- */

@@ -1,0 +1,42 @@
+.arrow {
+  position: relative;
+  border: none;
+  display: block;
+
+  border-radius: 50%;
+  background: $white;
+  outline: none;
+  box-shadow: 0 3px 6px 0 rgba(33,33,33,0.2);
+  @include mq($from: desktop) {
+    width: 80px;
+    height: 80px;
+  }
+  @include mq($until: desktop) {
+    width: 60px;
+    height: 60px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-style: solid solid none none;
+    border-color: $icon;
+    border-width: 3px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+  &-prev {
+    &:after {
+      transform: rotate(-135deg) translate(-2px, 2px);
+    }
+  }
+  &-next {
+    &:after {
+      transform: rotate(45deg) translate(-2px, 2px);
+    }
+  }
+}

@@ -49,8 +49,14 @@
   }
   &-search {
     color: $tag;
-    width: $font-md;
-    height: $font-md;
+    @include mq($from: desktop) {
+      width: $font-md;
+      height: $font-md;
+    }
+    @include mq($until: desktop) {
+      width: 20px;
+      height: 20px;
+    }
   }
   &-like {
     color: transparent;

@@ -47,31 +47,71 @@
     }
   }
   &-search {
-
-    padding: 0 $padding;
     @include mq($from: desktop) {
       width: 33.33%;
+      padding: 0 $padding;
     }
     @include mq($until: desktop) {
       position: absolute;
-      bottom: 0;
-      right: 0;
-      opacity: 0.2;
-      pointer-events: none;
+      bottom: 4px;
+      right: $padding-md;
+      width: 30px;
+      transition: width 0.2s;
+      z-index: 1;
+      &.active {
+        width: calc(100% - 32px);
+        .header-search--opener {
+          pointer-events: none;
+        }
+        .header-search--fieldset input {
+          opacity: 1;
+          padding: 0 2*$padding-lg 0 $padding-lg;
+        }
+        .header-search--btn {
+          background: transparent;
+          pointer-events: auto;
+        }
+      }
+    }
+    &--opener {
+      @include mq($from: desktop) {
+        display: none;
+      }
+      @include mq($until: desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+      }
     }
     &--fieldset {
       width: 100%;
       display: flex;
       position: relative;
+      @include mq($until: desktop) {
+
+      }
       input {
         width: 100%;
         border: none;
-        height: 40px;
         border-radius: 20px;
-        padding: 0 2*$padding-lg 0 $padding-lg;
         background: $bg-gray;
         color: $tag;
         outline: none;
+        @include mq($from: desktop) {
+          height: 40px;
+          padding: 0 2*$padding-lg 0 $padding-lg;
+        }
+        @include mq($until: desktop) {
+          height: 30px;
+          padding: 0 0 0 $padding-lg;
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.2s;
+        }
       }
     }
     &--btn {
@@ -79,12 +119,20 @@
       top: 0;
       right: 0;
       bottom: 0;
-      width: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       @extend %btn_reset;
       border-radius: 20px;
+      @include mq($from: desktop) {
+        width: 40px;
+      }
+      @include mq($until: desktop) {
+        pointer-events: none;
+        width: 30px;
+        height: 30px;
+        background: $white;
+      }
     }
   }
   &-profile {
@@ -265,7 +313,7 @@
       @include mq($until: desktop) {
         &:last-child:after {
           content: "";
-          width: 38px;
+          width: 30px;
           height: 38px;
         }
       }

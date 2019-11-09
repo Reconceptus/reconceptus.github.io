@@ -7,13 +7,25 @@ const carousel = {
 
                 _this.owlCarousel({
                     dots: false,
+                    navText: ['', ''],
+                    navClass: ['arrow arrow-prev owl-prev', 'arrow arrow-next owl-next'],
                     responsive: {
                         0: {
                             items: 1,
                             loop: itemsCount > 1 ? true : false,
                             nav: itemsCount > 1 ? true : false,
                         },
+                        601: {
+                            items: 3,
+                            loop: itemsCount > 3 ? true : false,
+                            nav: itemsCount > 1 ? true : false,
+                        },
                         800: {
+                            items: 4,
+                            loop: itemsCount > 4 ? true : false,
+                            nav: itemsCount > 1 ? true : false,
+                        },
+                        1025: {
                             items: 5,
                             loop: itemsCount > 5 ? true : false,
                             nav: itemsCount > 1 ? true : false,

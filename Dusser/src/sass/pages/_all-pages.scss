@@ -10,7 +10,12 @@
 .page_action {
   display: flex;
   align-items: center;
-  margin-top: 80px;
+  @include mq($from: desktop) {
+    margin-top: 80px;
+  }
+  @include mq($until: desktop) {
+    margin-top: 60px;
+  }
   .pagination {
     margin-left: auto;
   }

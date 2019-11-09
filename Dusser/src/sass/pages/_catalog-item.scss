@@ -3,10 +3,22 @@
   &-main {
     display: flex;
     margin: 0 -1*$padding-sm $padding;
+    @include mq($from: desktop) {
+
+    }
+    @include mq($until: desktop) {
+      flex-wrap: wrap;
+    }
   }
   &-data {
     padding: 0 $padding-sm;
-    width: 75%;
+    @include mq($from: desktop) {
+      width: 75%;
+    }
+    @include mq($until: desktop) {
+      width: 100%;
+      margin-bottom: $padding;
+    }
     &--general {
       display: flex;
       margin: 0 -1*$padding-sm;
@@ -24,6 +36,7 @@
       &_wrap {
         padding: 0 $padding-sm;
         width: calc(4*100%/9);
+
       }
       dl {
         font-size: $font;
@@ -77,12 +90,21 @@
     @include mq($from: desktop_xl) {
       padding: 64px $padding-xl;
     }
-    @include mq($until: desktop_xl) {
+    @include mq(desktop, desktop_xl) {
       padding: $padding-xxl $padding-lg;
     }
+    @include mq($until: desktop) {
+      padding: $padding-lg;
+    }
     &--wrap {
-      width: 25%;
+
       padding: 0 $padding-sm;
+      @include mq($from: desktop) {
+        width: 25%;
+      }
+      @include mq($until: desktop) {
+        width: 100%;
+      }
     }
 
   }

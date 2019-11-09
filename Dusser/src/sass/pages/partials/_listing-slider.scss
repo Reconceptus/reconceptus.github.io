@@ -1,7 +1,19 @@
 .listing_slider {
-  margin-top: 95px;
+
+  @include mq($from: desktop) {
+    margin-top: 95px;
+  }
+  @include mq($until: desktop) {
+    margin-top: 60px;
+  }
   &-title {
-    margin-bottom: $padding-xxl;
+
+    @include mq($from: desktop) {
+      margin-bottom: $padding-xxl;
+    }
+    @include mq($until: desktop) {
+      margin-bottom: $padding-lg;
+    }
   }
 
 }

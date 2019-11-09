@@ -7,8 +7,21 @@
   }
   &.sticky {
     position: fixed;
+    @include mq($until: desktop) {
+      .sticky-mobile-disable & {
+        position: static;
+        width: auto !important;
+        transform: none !important;
+      }
+    }
   }
   &.temp-sticky {
     position: relative;
+  }
+}
+
+.sticky-mobile-disable {
+  @include mq($until: desktop) {
+    height: auto !important;
   }
 }

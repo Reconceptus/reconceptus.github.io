@@ -51,8 +51,11 @@
       @include mq($from: desktop_md) {
         max-width: calc( 100%/6 );
       }
-      @include mq($until: desktop_md) {
+      @include mq(desktop, desktop_md) {
         max-width: calc( 100%/5 );
+      }
+      @include mq($until: desktop) {
+        max-width: calc( 100%/4 );
       }
     }
     &.col-1-5 {

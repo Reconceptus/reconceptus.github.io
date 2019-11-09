@@ -1,4 +1,14 @@
 .sidebar {
+  @include mq($until: desktop) {
+    display: flex;
+    flex-direction: column;
+    &.sticky {
+      box-sizing: content-box;
+      margin: 0 -1*$padding-md;
+      padding: 0 $padding-md;
+      box-shadow: 0 8px 8px 0 rgba($text,0.2);
+    }
+  }
   &-section {
     background-color: $white;
     @include mq($from: desktop_xl) {
@@ -11,23 +21,95 @@
       margin-bottom: $padding;
       width: 100%;
     }
-    @include mq($until: desktop) {
-      padding: 10px;
-      transition: all 0.1s;
-      .sticky & {
-        margin: 0 -1*$padding-md;
-        padding: 10px 10px+$padding-md;
-        box-shadow: 0 8px 8px 0 rgba($text,0.2);
+
+    &--categories {
+      @include mq($until: desktop) {
+        order: -1;
+        .sticky & {
+          margin: 0 -1*$padding-md;
+          padding: 0 $padding-md;
+        }
       }
+    }
+    &--filters {
+      position: relative;
+      .open_filters {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: -2;
+        pointer-events: none;
+        @include mq($until: desktop) {
+          &:checked ~ .form {
+            display: block;
+          }
+        }
+        &-btn {
+          color: $tag;
+          background-color: $bg-green;
+          font-size: $font;
+          line-height: $font-lg;
+          display: block;
+          transition: none;
+          .sticky & {
+            margin: 0 -1*$padding-md;
+            padding: 0 $padding-md;
+          }
+          @include mq($from: desktop) {
+            display: none;
+          }
+        }
+      }
+      @include mq($from: desktop) {
+
+      }
+      @include mq($until: desktop) {
+        .form {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          box-shadow: 0 8px 8px 0 rgba($text,0.5);
+          background: $white;
+          max-height: 50vh;
+          overflow: auto;
+          padding: $padding 0 $padding-md;
+          .sticky & {
+            left: -1*$padding-md;
+            right: -1*$padding-md;
+          }
+        }
+      }
+
     }
   }
   &-filters {
+    @include mq($until: desktop) {
+      display: flex;
+      flex-wrap: wrap;
+    }
     &--fieldset {
+      @include mq($until: desktop) {
+        width: 50%;
+        padding: 0 $padding-md;
+        .sticky & {
+          padding: 0 $padding-lg;
+        }
+      }
       &:not(:last-child){
         margin-bottom: $padding-lg;
       }
       &:last-child{
-        margin-top: $padding-xxl;
+        @include mq($from: desktop) {
+          margin-top: $padding-xxl;
+        }
+        @include mq($until: desktop) {
+          margin-top: $padding-lg;
+        }
       }
       .form-checkbox {
         &:not(:last-child){
@@ -42,6 +124,21 @@
       .checkbox_color {
         margin-right: $padding;
         margin-bottom: $padding;
+      }
+    }
+    &--checkbox_set {
+      @include mq($until: desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        .form-checkbox {
+          width: 50%;
+          padding-right: $padding-md;
+        }
+      }
+    }
+    &--btnset {
+      @include mq($until: desktop) {
+        width: 100%;
       }
     }
     &--title {
@@ -63,6 +160,9 @@
 
 .sidebar_categories {
   color: $tag;
+  @include mq($until: desktop) {
+    padding: 10px;
+  }
   &-list {
     @include mq($until: desktop) {
       display: flex;
@@ -82,12 +182,12 @@
       &:not(:last-child){
         margin-right: $padding-md;
         .fn-expand-data {
-          left: 0;
+          left: -10px;
         }
       }
       &:last-child{
         .fn-expand-data {
-          right: 0;
+          right: -10px;
         }
       }
       .fn-expand-data {
@@ -105,7 +205,7 @@
       margin-top: $padding-md;
     }
     @include mq($until: desktop) {
-      padding: 6px 12px;
+      padding: $padding $padding-md;
     }
   }
   &-title {
