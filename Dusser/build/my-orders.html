@@ -66,7 +66,7 @@
                                 </i>
                             </a>
                             <div class="header-personal_info">
-                                <div class="header-personal_info--item">
+                                <div class="header-personal_info--item small-hidden">
                                     <a href="looked.html" class="header-personal_info--views link-icon">
                                         <i class="icon icon-view">
                                             <svg xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +168,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="header-personal_info--item">
+                                <div class="header-personal_info--item small-hidden">
                                     <a href="favorites.html" class="header-personal_info--favorites link-icon">
                                         <i class="icon icon-favorite">
                                             <svg xmlns="http://www.w3.org/2000/svg">
@@ -299,18 +299,21 @@
                                     </div>
                                 </div>
                                 <div class="header-personal_info--item">
-                                    <a href="cart.html" class="header-personal_info--basket link-icon">
-                                        <i class="icon icon-basket">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
-                                            </svg>
-                                        </i>
-                                        <span class="count">23</span>
+                                    <a href="cart.html" class="header-personal_info--basket">
+                                        <div class="link-icon">
+                                            <i class="icon icon-basket">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                                                </svg>
+                                            </i>
+                                            <span class="count">23</span>
+                                        </div>
+                                        <div class="header-personal_info--total">
+                                            Сумма
+                                            <span class="summ">63 000&#x20bd;</span>
+                                        </div>
                                     </a>
-                                    <div class="header-personal_info--total">
-                                        Сумма
-                                        <span class="summ">63 000&#x20bd;</span>
-                                    </div>
+
                                     <div class="header-personal_info--short added-item"></div>
                                     <div class="header-personal_info--short">
                                         <h4 class="title-reg header-personal_info--short_title">Товары в корзине</h4>
@@ -489,7 +492,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -507,15 +510,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -523,7 +529,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -541,15 +547,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -557,7 +566,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -575,146 +584,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="orders_table-row fn-expand-table-box">
-                                    <td>122122</td>
-                                    <td>12.10.2019</td>
-                                    <td>3456&#x20bd;</td>
-                                    <td>Отправлен</td>
-                                    <td>343534</td>
-                                    <td>
-                                        <button type="button" class="orders_table-expand_btn fn-expand-table-btn"></button>
-                                    </td>
-                                </tr>
-                                <tr class="orders_table-cart fn-expand-table-box">
-                                    <td colspan="6">
-                                        <div class="cart_table fn-expand-table-data">
-                                            <table>
-                                                <thead>
-                                                <tr>
-                                                    <th>Товар</th>
-                                                    <th class="u-align-center">Кол-во упаковок</th>
-                                                    <th>Скидка</th>
-                                                    <th>Стоимость</th>
-                                                    <th></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -751,7 +632,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -769,15 +650,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -785,7 +669,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -803,15 +687,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -819,7 +706,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -837,146 +724,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="orders_table-row fn-expand-table-box">
-                                    <td>122122</td>
-                                    <td>12.10.2019</td>
-                                    <td>3456&#x20bd;</td>
-                                    <td>Отправлен</td>
-                                    <td>343534</td>
-                                    <td>
-                                        <button type="button" class="orders_table-expand_btn fn-expand-table-btn"></button>
-                                    </td>
-                                </tr>
-                                <tr class="orders_table-cart fn-expand-table-box">
-                                    <td colspan="6">
-                                        <div class="cart_table fn-expand-table-data">
-                                            <table>
-                                                <thead>
-                                                <tr>
-                                                    <th>Товар</th>
-                                                    <th class="u-align-center">Кол-во упаковок</th>
-                                                    <th>Скидка</th>
-                                                    <th>Стоимость</th>
-                                                    <th></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--actual_price">
-                                                                3336&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="cart_table-item">
-                                                                <div class="cart_table-item--img">
-                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
-                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                                    </a>
-
-                                                                </div>
-                                                                <div class="cart_table-item--heading">
-                                                                    <div class="cart_table-item--title">
-                                                                        <a href="catalog-item.html">Колотый кирпич</a>
-                                                                    </div>
-                                                                    <div class="cart_table-item--category">
-                                                                        Краситель
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="u-align-center">
-                                                            <span class="cart_table-item--count_total" data-total="12"></span>
-                                                        </td>
-                                                        <td>
-                                                            <div class="cart_table-item--old_price">
-                                                                3456&#x20bd;
-                                                            </div>
-                                                        </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -1013,7 +772,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -1031,15 +790,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -1047,7 +809,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -1065,15 +827,18 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>
@@ -1081,7 +846,7 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
+                                                        <td class="cart_table-cell--part">
                                                             <div class="cart_table-item">
                                                                 <div class="cart_table-item--img">
                                                                     <a href="catalog-item.html" class="cart_table-item--img_box">
@@ -1099,15 +864,298 @@
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td class="u-align-center">
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
                                                             <span class="cart_table-item--count_total" data-total="12"></span>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
                                                             <div class="cart_table-item--old_price">
                                                                 3456&#x20bd;
                                                             </div>
                                                         </td>
-                                                        <td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="orders_table-row fn-expand-table-box">
+                                    <td>122122</td>
+                                    <td>12.10.2019</td>
+                                    <td>3456&#x20bd;</td>
+                                    <td>Отправлен</td>
+                                    <td>343534</td>
+                                    <td>
+                                        <button type="button" class="orders_table-expand_btn fn-expand-table-btn"></button>
+                                    </td>
+                                </tr>
+                                <tr class="orders_table-cart fn-expand-table-box">
+                                    <td colspan="6">
+                                        <div class="cart_table fn-expand-table-data">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>Товар</th>
+                                                    <th class="u-align-center">Кол-во упаковок</th>
+                                                    <th>Скидка</th>
+                                                    <th>Стоимость</th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="orders_table-row fn-expand-table-box">
+                                    <td>122122</td>
+                                    <td>12.10.2019</td>
+                                    <td>3456&#x20bd;</td>
+                                    <td>Отправлен</td>
+                                    <td>343534</td>
+                                    <td>
+                                        <button type="button" class="orders_table-expand_btn fn-expand-table-btn"></button>
+                                    </td>
+                                </tr>
+                                <tr class="orders_table-cart fn-expand-table-box">
+                                    <td colspan="6">
+                                        <div class="cart_table fn-expand-table-data">
+                                            <table>
+                                                <thead>
+                                                <tr>
+                                                    <th>Товар</th>
+                                                    <th class="u-align-center">Кол-во упаковок</th>
+                                                    <th>Скидка</th>
+                                                    <th>Стоимость</th>
+                                                    <th></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
+                                                            <div class="cart_table-item--actual_price">
+                                                                3336&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="cart_table-cell--part">
+                                                            <div class="cart_table-item">
+                                                                <div class="cart_table-item--img">
+                                                                    <a href="catalog-item.html" class="cart_table-item--img_box">
+                                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                                    </a>
+
+                                                                </div>
+                                                                <div class="cart_table-item--heading">
+                                                                    <div class="cart_table-item--title">
+                                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                                    </div>
+                                                                    <div class="cart_table-item--category">
+                                                                        Краситель
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="u-align-center cart_table-cell--count cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Количество: </div>
+                                                            <span class="cart_table-item--count_total" data-total="12"></span>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Скидка: </div>
+                                                            <div class="cart_table-item--old_price">
+                                                                3456&#x20bd;
+                                                            </div>
+                                                        </td>
+                                                        <td class="cart_table-cell--price cart_table-cell--term">
+                                                            <div class="cart_table-cell--term_title wide-hidden">Стоимость: </div>
                                                             <div class="cart_table-item--actual_price">
                                                                 3336&#x20bd;
                                                             </div>

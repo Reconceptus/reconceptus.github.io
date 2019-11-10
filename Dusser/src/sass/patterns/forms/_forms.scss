@@ -33,18 +33,28 @@
     @include mq($from: desktop_md) {
       margin-right: $padding-xl;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile, desktop_md) {
       margin-right: $padding-lg;
+    }
+    @include mq($until: mobile) {
+      margin-right: $padding-md;
     }
   }
   a {
     display: flex;
-    height: 56px;
-    width: 56px;
+
     border-radius: 50%;
     background: $icon;
     align-items: center;
     justify-content: center;
+    @include mq($from: mobile) {
+      height: 56px;
+      width: 56px;
+    }
+    @include mq($until: mobile) {
+      height: 40px;
+      width: 40px;
+    }
     @include hover(){
       background: none;
     }

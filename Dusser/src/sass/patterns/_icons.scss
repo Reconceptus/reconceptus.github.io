@@ -84,9 +84,16 @@
   }
   &-like-lg {
     color: transparent;
-    width: 54px;
-    height: 50px;
+
     transition: all 0.2s;
+    @include mq($from: tablet) {
+      width: 54px;
+      height: 50px;
+    }
+    @include mq($until: tablet) {
+      width: 30px;
+      height: 28px;
+    }
     @include hover(){
       color: $sale;
     }

@@ -19,17 +19,25 @@ const sticky_sidebar = {
     },
     resetInners: function() {
         this.params.offsetTop = $sidebarWrap.offset().top;
-        this.params.wrapperHeight = $sidebarWrap.height();
+        this.params.wrapperHeight =
+            window.innerWidth > 1025
+                ? $sidebarWrap.height()
+                : $sidebarWrap.height() - 0.4 * window.innerWidth;
         this.params.height = $sidebar.height();
         this.params.width = $sidebar.parent().width();
         this.params.headerHeight = $('#header').height();
 
         this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
+
+        $sidebar.parent().height(this.params.height);
     },
     setInners: function() {
         this.params.offsetTop = $sidebarWrap.offset().top;
-        this.params.wrapperHeight = $sidebarWrap.height();
+        this.params.wrapperHeight =
+            window.innerWidth > 1025
+                ? $sidebarWrap.height()
+                : $sidebarWrap.height() - 0.4 * window.innerWidth;
         this.params.scrollTop = $(window).scrollTop();
         this.params.height = $sidebar.height();
         this.params.width = $sidebar.parent().width();

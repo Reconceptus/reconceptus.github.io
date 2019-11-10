@@ -20,8 +20,10 @@
       margin-bottom: $padding;
     }
     &--general {
-      display: flex;
       margin: 0 -1*$padding-sm;
+      @include mq($from: tablet) {
+        display: flex;
+      }
     }
     &--about {
       height: 100%;
@@ -30,13 +32,20 @@
       @include mq($from: desktop_xl) {
         padding: $padding-xl $padding-lg $padding-xl $padding-xxl;
       }
-      @include mq($until: desktop_xl) {
+      @include mq(mobile, desktop_xl) {
         padding: $padding-xl;
+      }
+      @include mq($until: mobile) {
+        padding: $padding-md;
       }
       &_wrap {
         padding: 0 $padding-sm;
-        width: calc(4*100%/9);
 
+        @include mq($from: tablet) {
+          width: calc(4*100%/9);
+        }
+        @include mq($until: tablet) {
+        }
       }
       dl {
         font-size: $font;
@@ -67,12 +76,26 @@
     margin-bottom: $padding;
     display: flex;
     align-items: center;
-    height: 96px;
+
     padding: 0 $padding-md;
+    @include mq($from: tablet) {
+      min-height: 96px;
+    }
+    @include mq($until: tablet) {
+      min-height: 60px;
+    }
     &--like {
-      width: 54px;
-      height: 50px;
-      margin-right: $padding-lg;
+
+      @include mq($from: tablet) {
+        width: 54px;
+        height: 50px;
+        margin-right: $padding-lg;
+      }
+      @include mq($until: tablet) {
+        width: 30px;
+        height: 28px;
+        margin-right: $padding-md;
+      }
     }
   }
   &-gallery {
@@ -80,7 +103,13 @@
     height: 100%;
     &_wrap {
       padding: 0 $padding-sm;
-      width: calc(5*100%/9);
+
+      @include mq($from: tablet) {
+        width: calc(5*100%/9);
+      }
+      @include mq($until: tablet) {
+        margin-bottom: $padding;
+      }
     }
   }
   &-sidebar {
@@ -93,8 +122,11 @@
     @include mq(desktop, desktop_xl) {
       padding: $padding-xxl $padding-lg;
     }
-    @include mq($until: desktop) {
+    @include mq(mobile, desktop) {
       padding: $padding-lg;
+    }
+    @include mq($until: mobile) {
+      padding: $padding-md;
     }
     &--wrap {
 
@@ -135,8 +167,11 @@
     @include mq($from: desktop_md) {
       padding: $padding-xxl;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile, desktop_md) {
       padding: $padding-xl;
+    }
+    @include mq($until: mobile) {
+      padding: $padding-md;
     }
   }
 }

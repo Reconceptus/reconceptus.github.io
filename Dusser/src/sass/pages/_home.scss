@@ -30,11 +30,26 @@
       padding: 2px 0;
       color: $tag;
       text-transform: uppercase;
-      font-size: $font;
       font-weight: 600;
       letter-spacing: 2px;
       transition: background-size .3s;
-      margin-right: 40px;
+
+      @include mq($from: tablet) {
+        font-size: $font;
+      }
+      @include mq($until: tablet) {
+        font-size: 14px;
+      }
+      @include mq($from: mobile) {
+        margin-right: 40px;
+      }
+      @include mq($until: mobile) {
+        width: $padding-lg;
+        height: $padding-lg;
+        overflow: hidden;
+        text-indent: 100px;
+        white-space: nowrap;
+      }
       @include hover(){
         background-size: 98% 2px;
       }
@@ -47,23 +62,41 @@
         height: 18px;
         background-size: 100% auto;
         background-position: center;
-        left: 100%;
-        top: 0;
-        bottom: 0;
-        margin: auto 0 auto 12px;
+        @include mq($from: mobile) {
+          left: 100%;
+          top: 0;
+          bottom: 0;
+          margin: auto 0 auto 12px;
+        }
+        @include mq($until: mobile) {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
       }
     }
     .title-heading {
-      padding: $padding-xl 0;
 
-      max-width: 60%;
       position: relative;
       @include mq($from: desktop) {
         justify-content: center;
         margin: 0 auto;
         text-align: center;
       }
-
+      @include mq($from: tablet) {
+        padding: $padding-xl 0;
+      }
+      @include mq($until: tablet) {
+        padding: $padding-lg 0;
+      }
+      @include mq($from: mobile) {
+        max-width: 60%;
+      }
+      @include mq($until: mobile) {
+        max-width: 85%;
+      }
     }
     & + * {
       position: relative;

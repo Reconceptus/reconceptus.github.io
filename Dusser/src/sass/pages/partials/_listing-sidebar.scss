@@ -4,9 +4,20 @@
     flex-direction: column;
     &.sticky {
       box-sizing: content-box;
+
+      box-shadow: 0 8px 8px 0 rgba($text,0.2);
+    }
+  }
+  @include mq(tablet, desktop) {
+    &.sticky {
+      margin: 0 -1*$padding-lg;
+      padding: 0 $padding-lg;
+    }
+  }
+  @include mq($until: tablet) {
+    &.sticky {
       margin: 0 -1*$padding-md;
       padding: 0 $padding-md;
-      box-shadow: 0 8px 8px 0 rgba($text,0.2);
     }
   }
   &-section {
@@ -25,6 +36,15 @@
     &--categories {
       @include mq($until: desktop) {
         order: -1;
+
+      }
+      @include mq(tablet, desktop) {
+        .sticky & {
+          margin: 0 -1*$padding-lg;
+          padding: 0 $padding-lg;
+        }
+      }
+      @include mq($until: tablet) {
         .sticky & {
           margin: 0 -1*$padding-md;
           padding: 0 $padding-md;
@@ -55,8 +75,14 @@
           display: block;
           transition: none;
           .sticky & {
-            margin: 0 -1*$padding-md;
-            padding: 0 $padding-md;
+            @include mq(tablet, desktop) {
+              margin: 0 -1*$padding-lg;
+              padding: 0 $padding-lg;
+            }
+            @include mq($until: tablet) {
+              margin: 0 -1*$padding-md;
+              padding: 0 $padding-md;
+            }
           }
           @include mq($from: desktop) {
             display: none;
@@ -93,8 +119,14 @@
       flex-wrap: wrap;
     }
     &--fieldset {
-      @include mq($until: desktop) {
+      @include mq(mobile, desktop) {
         width: 50%;
+        padding: 0 $padding-md;
+        .sticky & {
+          padding: 0 $padding-lg;
+        }
+      }
+      @include mq($until: mobile) {
         padding: 0 $padding-md;
         .sticky & {
           padding: 0 $padding-lg;
@@ -131,7 +163,7 @@
         display: flex;
         flex-wrap: wrap;
         .form-checkbox {
-          width: 50%;
+          min-width: 50%;
           padding-right: $padding-md;
         }
       }
@@ -193,6 +225,7 @@
       .fn-expand-data {
         display: none;
         position: absolute;
+        z-index: 1;
         top: 100%;
         margin-top: 6px;
         background: $white;

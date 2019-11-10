@@ -28,10 +28,21 @@
   &-filters {
     background-color: $white;
     margin-bottom: $padding;
-    min-height: 56px;
+    white-space: nowrap;
     display: flex;
     align-items: center;
-    padding: 0 $padding-lg;
+
+    @include mq($from: tablet) {
+      padding: 0 $padding-lg;
+      min-height: 56px;
+    }
+    @include mq($until: tablet) {
+      padding: 0 $padding-md;
+      min-height: 40px;
+    }
+    @include mq($until: mobile_xl) {
+      display: none;
+    }
     a {
       text-transform: lowercase;
       color: $tag;
@@ -54,8 +65,14 @@
       @include mq(desktop, desktop_md) {
         max-width: calc( 100%/5 );
       }
-      @include mq($until: desktop) {
+      @include mq(tablet, desktop) {
         max-width: calc( 100%/4 );
+      }
+      @include mq(mobile_xl, tablet) {
+        max-width: calc( 100%/3 );
+      }
+      @include mq(mobile, mobile_xl) {
+        max-width: calc( 100%/2 );
       }
     }
     &.col-1-5 {
@@ -64,8 +81,14 @@
       @include mq($from: desktop_md) {
         max-width: calc( 100%/5 );
       }
-      @include mq($until: desktop_md) {
+      @include mq(tablet, desktop_md) {
         max-width: calc( 100%/4 );
+      }
+      @include mq(mobile_xl, tablet) {
+        max-width: calc( 100%/3 );
+      }
+      @include mq(mobile, mobile_xl) {
+        max-width: calc( 100%/2 );
       }
     }
     

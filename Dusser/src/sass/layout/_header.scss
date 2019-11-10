@@ -6,15 +6,21 @@
   top: 0;
   background-color: $white;
   z-index: 50;
-  transition: filter 0.5s;
-  will-change: filter;
-  .blured & {
-    filter: blur(4px);
+  box-shadow: 0 2px 2px 0 rgba($text,0.2);
+  @include mq($from: tablet) {
+    transition: filter 0.5s;
+    will-change: filter;
+    .blured & {
+      filter: blur(4px);
+    }
   }
   &-logo {
-    width: 30%;
+
     display: flex;
     align-items: center;
+    @include mq($from: desktop) {
+      width: 30%;
+    }
     .burger {
       @extend %btn_reset;
       margin-right: $padding-lg;
@@ -35,6 +41,9 @@
       margin-left: $padding-md;
       padding-left: $padding-md;
       font-size: 12px;
+    }
+    @include mq($until: tablet) {
+      display: none;
     }
     &:before {
       content: "";
@@ -72,6 +81,9 @@
           pointer-events: auto;
         }
       }
+    }
+    @include mq($until: mobile_xl) {
+      display: none;
     }
     &--opener {
       @include mq($from: desktop) {
@@ -136,10 +148,12 @@
     }
   }
   &-profile {
-    width: 30%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include mq($from: desktop) {
+      width: 30%;
+    }
     &--auth {
       display: inline-flex;
       @extend %btn_reset;
@@ -148,6 +162,9 @@
   &-personal_info {
     display: flex;
     align-items: center;
+    @include mq($until: mobile) {
+      display: none;
+    }
     .link-icon {
       display: inline-flex;
       align-items: center;
@@ -265,6 +282,7 @@
       font-size: 12px;
       font-weight: 500;
       cursor: default;
+      color: $text;
       .summ {
 
         white-space: nowrap;
@@ -297,12 +315,19 @@
       height: 48px;
       font-size: $font;
     }
-    @include mq($until: desktop) {
+    @include mq(tablet, desktop) {
       height: 38px;
       font-size: 12px;
     }
+    @include mq($until: tablet) {
+      height: 38px;
+      font-size: 9px;
+    }
     &--wrap {
       background: linear-gradient(to right, $grad-begin 0%,$grad-end 100%);
+      @include mq($until: mobile_xl) {
+        display: none;
+      }
     }
     &--list {
       width: 100%;

@@ -47,8 +47,13 @@
     font-size: $font;
     line-height: 56px;
     padding: 0 $padding-lg;
-    @include hover(){
-
+    @include mq($until: mobile) {
+      .modal_catalog-link & {
+        height: 56px;
+        line-height: 1.2;
+        align-items: center;
+        font-size: 14px;
+      }
     }
   }
   &-acid {

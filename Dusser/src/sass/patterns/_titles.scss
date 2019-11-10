@@ -6,30 +6,33 @@
       margin-bottom: $padding-lg;
     }
     &.margin-xl {
-      margin-bottom: 56px;
+      @include mq($from: tablet) {
+        margin-bottom: 56px;
+      }
+      @include mq($until: tablet) {
+        margin-bottom: $padding-xl;
+      }
     }
     &--sub {
+      font-size: $font;
+      font-weight: 400;
       align-self: flex-end;
       margin-left: $padding;
     }
   }
   &-lg {
-    font-size: 32px;
     font-weight: 500;
-  }
-  &-md {
-  
+    @include mq($from: tablet) {
+      font-size: $font-lg;
+    }
+    @include mq($until: tablet) {
+      font-size: $font-md;
+    }
   }
   &-reg {
     font-size: $font;
     font-weight: 500;
     text-transform: uppercase;
     color: $tag;
-  }
-  &-sm {
-
-  }
-  &-xs {
-  
   }
 }

@@ -5,9 +5,15 @@
   width: 100%;
   height: 100%;
   z-index: 100;
-  transform: translateX(100%);
+
   pointer-events: none;
   transition: transform 0.4s;
+  @include mq($from: tablet) {
+    transform: translateX(100%);
+  }
+  @include mq($until: tablet) {
+    transform: translateX(110%);
+  }
   &.opened {
     transform: translateX(0);
     pointer-events: auto;
@@ -34,24 +40,49 @@
     @include mq($from: desktop) {
       width: 50%;
     }
-    @include mq($until: desktop) {
+    @include mq(tablet, desktop) {
       width: 80vw;
       max-width: 640px;
     }
   }
   &-bg {
     position: absolute;
-    left: 0;
-    right: -24px;
+
     top: 0;
     bottom: 0;
     background: $white;
-    box-shadow: 0 0 30px 0 rgba($black,0.5);
+
     @include mq($from: 1680px){
       right: calc(800px - 50vw);
+      left: 0;
     }
     @include mq(tablet, 1680px){
       right: -1*$padding-xl;
+      left: 0;
+    }
+    @include mq($until: tablet) {
+      left: -1*$padding-xl;
+      right: -1*$padding-xl;
+    }
+    @include mq($from: mobile_xl) {
+      box-shadow: 0 0 30px 0 rgba($black,0.5);
+    }
+  }
+  &-close {
+    position: absolute;
+    z-index: 1;
+    @extend %btn_reset;
+    color: $text;
+    @include mq($from: mobile_xl) {
+      top: 12px;
+      right: $padding;
+    }
+    @include mq($until: mobile_xl) {
+      top: $padding;
+      right: 0;
+    }
+    .icon {
+      color: inherit;
     }
   }
   &-main {
@@ -61,8 +92,14 @@
     @include mq($from: desktop_md) {
       padding: $padding-xxl 8% $padding-xxl 16.7%;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile_xl, desktop_md) {
       padding: $padding-xxl;
+    }
+    @include mq(mobile, mobile_xl) {
+      padding: $padding-xxl $padding-xl $padding-xl;
+    }
+    @include mq($until: mobile) {
+      padding: $padding-xxl $padding $padding-xl;
     }
     display: flex;
     flex-direction: column;
@@ -75,7 +112,10 @@
     display: flex;
     margin-bottom: $padding-xl;
     flex-shrink: 0;
-    padding-right: $padding-lg;
+
+    @include mq($from: mobile_xl) {
+      padding-right: $padding-lg;
+    }
     &--option {
       height: 64px;
       display: inline-flex;
@@ -103,8 +143,10 @@
       min-width: 100%;
     }
     &--section {
-      padding-right: $padding-lg;
       width: 100%;
+      @include mq($from: mobile_xl) {
+        padding-right: $padding-lg;
+      }
     }
   }
   input[data-auth="signin"]:checked ~ .auth_menu-forms [data-auth="signin"],

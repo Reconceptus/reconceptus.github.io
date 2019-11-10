@@ -1,12 +1,18 @@
 .footer {
   flex-shrink: 0;
   background-color: $white;
-  padding-top: 85px;
+
   position: relative;
-  transition: filter 0.5s;
-  will-change: filter;
-  .blured & {
-    filter: blur(4px);
+  @include mq($from: tablet) {
+    transition: filter 0.5s;
+    will-change: filter;
+    padding-top: 85px;
+    .blured & {
+      filter: blur(4px);
+    }
+  }
+  @include mq($until: tablet) {
+    padding-top: 60px;
   }
   &-scroll_top {
     position: absolute;
@@ -20,14 +26,27 @@
     }
   }
   &-top {
-    display: flex;
+
     width: 100%;
-    font-size: $font-lg;
+
     font-weight: 500;
     color: $tag;
     margin-bottom: 60px;
+    @include mq($from: tablet) {
+      display: flex;
+      font-size: $font-lg;
+    }
+    @include mq($until: tablet) {
+      font-size: $font-md;
+    }
     &--slogan {
-      width: 58.333%;
+
+      @include mq($from: tablet) {
+        width: 58.333%;
+      }
+      @include mq($until: tablet) {
+        margin-bottom: $padding-lg;
+      }
     }
     &--telephone {
       a {
@@ -37,28 +56,49 @@
   }
   &-nav {
     display: flex;
-    margin-bottom: 40px;
     @include mq($until: desktop_md) {
       flex-wrap: wrap;
     }
+    @include mq($from: tablet) {
+      margin-bottom: 40px;
+    }
     &--section {
+      padding-right: $padding-md;
       @include mq($from: desktop_md) {
         width: 25%;
       }
-      @include mq($until: desktop_md) {
+      @include mq(tablet, desktop_md) {
         width: 33.33%;
       }
+      @include mq(mobile, tablet) {
+        width: 50%;
+        margin-bottom: $padding-xl;
+      }
+      @include mq($until: mobile) {
+        width: 100%;
+        margin-bottom: $padding-xl;
+      }
       &.nav-payments {
-        @include mq($until: desktop_md) {
+        @include mq(tablet, desktop_md) {
           width: 100%;
           order: 4;
           margin-top: $padding-xl;
+        }
+        @include mq($until: tablet) {
+          width: 100%;
+          order: 4;
         }
       }
       &_title {
         font-weight: 500;
         text-transform: uppercase;
-        margin-bottom: $padding-xl;
+
+        @include mq($from: tablet) {
+          margin-bottom: $padding-xl;
+        }
+        @include mq($until: tablet) {
+          margin-bottom: $padding-lg;
+        }
       }
       &_payments {
         margin: 0 -1*$padding-sm;
@@ -100,7 +140,13 @@
           color: inherit;
         }
         &.columns {
-          columns: 2 auto;
+
+          @include mq(mobile, tablet) {
+            width: 200%;
+          }
+          @include mq($from: mobile) {
+            columns: 2 auto;
+          }
           li {
             -webkit-column-break-inside: avoid;
             page-break-inside: avoid;

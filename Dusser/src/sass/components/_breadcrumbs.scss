@@ -2,11 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: $padding-xl;
+
+  @include mq($from: mobile_xl) {
+    margin-bottom: $padding-xl;
+  }
+  @include mq($until: mobile_xl) {
+    margin-bottom: $padding-lg;
+  }
   &-link {
-    margin-right: 36px;
+
     position: relative;
     color: $tag;
+    @include mq($from: tablet) {
+      margin-right: 36px;
+    }
+    @include mq($until: tablet) {
+      margin-right: $padding-lg;
+    }
     &:after {
       content: "";
       width: 10px;
@@ -18,8 +30,13 @@
       position: absolute;
       left: 100%;
       top: 50%;
-      transform: translate(15px, -50%);
       pointer-events: none;
+      @include mq($from: tablet) {
+        transform: translate(15px, -50%);
+      }
+      @include mq($until: tablet) {
+        transform: translate(9px, -50%);
+      }
     }
   }
   &-current {

@@ -2,26 +2,59 @@
   &-heading {
     margin-bottom: $padding-xl;
   }
+  &-wrap {
+
+    @include mq($from: desktop) {
+      max-height: 656px;
+      display: flex;
+
+    }
+    @include mq($until: desktop) {
+      overflow: auto;
+    }
+  }
   &-box {
-    display: flex;
     overflow: hidden;
     padding-bottom: 56px;
     position: relative;
-    max-height: 728px;
+    @include mq($from: desktop) {
+
+    }
+    @include mq($until: desktop) {
+      padding-top: $padding-lg;
+      display: flex;
+      flex-direction: column;
+    }
   }
   &-gallery {
     padding: 0 $padding-sm;
-    width: calc(5*100%/8);
+
+    @include mq($from: desktop) {
+      width: calc(5*100%/8);
+    }
+    @include mq($until: desktop) {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   }
   &-about {
-    width: calc(3*100%/8);
 
-    overflow: auto;
     @include mq($from: desktop_md) {
       padding: $padding-xl $padding-xxl;
     }
-    @include mq($until: desktop_md) {
+    @include mq(desktop, desktop_md) {
       padding: $padding-xl;
+    }
+    @include mq($from: desktop) {
+      width: calc(5*100%/8);
+      overflow: auto;
+    }
+    @include mq(mobile, desktop) {
+      padding: 0 $padding-xl $padding-xl;
+    }
+    @include mq($until: mobile) {
+      padding: 0 $padding-md $padding-xl;
     }
     .text-box {
       &:not(:last-child){

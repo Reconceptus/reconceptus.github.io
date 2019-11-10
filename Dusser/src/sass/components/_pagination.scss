@@ -1,36 +1,69 @@
 .pagination {
   display: flex;
   align-items: center;
-  margin: 0 -6px;
-  justify-content: flex-end;
+  @include mq($from: tablet) {
+    margin: 0 -6px;
+  }
+  @include mq($until: tablet) {
+    margin: 0 -4px;
+  }
+  @include mq($from: mobile_xl) {
+    justify-content: flex-end;
+  }
+  @include mq($until: mobile_xl) {
+    justify-content: center;
+  }
   a,span {
     display: inline-flex;
-    height: 56px;
-    width: 56px;
+
     border-radius: 50%;
     background-color: $white;
     color: $text;
     align-items: center;
     justify-content: center;
     font-size: $font;
-    margin: 0 6px;
+
     position: relative;
     overflow: hidden;
+    @include mq($from: tablet) {
+      height: 56px;
+      width: 56px;
+      margin: 0 6px;
+    }
+    @include mq(mobile, tablet) {
+      height: 40px;
+      width: 40px;
+      margin: 0 4px;
+    }
+    @include mq($until: mobile) {
+      height: 28px;
+      width: 28px;
+      margin: 0 3px;
+    }
     &.prev,
     &.next {
       &:after {
         content: "";
         position: absolute;
-        width: 14px;
-        height: 14px;
+
         border-style: solid solid none none;
         border-color: currentColor;
-        border-width: 3px;
+
         top: 0;
         bottom: 0;
         margin: auto;
         left: 0;
         right: 0;
+        @include mq($from: mobile) {
+          border-width: 3px;
+          width: 14px;
+          height: 14px;
+        }
+        @include mq($until: mobile) {
+          border-width: 2px;
+          width: 10px;
+          height: 10px;
+        }
       }
     }
     &.prev:after {

@@ -15,7 +15,12 @@ const carousel = {
                             loop: itemsCount > 1 ? true : false,
                             nav: itemsCount > 1 ? true : false,
                         },
-                        601: {
+                        480: {
+                            items: 2,
+                            loop: itemsCount > 2 ? true : false,
+                            nav: itemsCount > 1 ? true : false,
+                        },
+                        600: {
                             items: 3,
                             loop: itemsCount > 3 ? true : false,
                             nav: itemsCount > 1 ? true : false,

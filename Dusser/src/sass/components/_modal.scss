@@ -29,14 +29,40 @@
     top: 50%;
     width: 100vw;
     transform: translate(-50%, -50%);
+    @include mq($until: mobile) {
+      padding: 0;
+    }
   }
   &-wrap {
     background: $white;
     box-shadow: 0 0 30px 0 rgba($black,0.5);
     overflow: hidden;
-    max-height: 95vh;
+
     display: flex;
     flex-direction: column;
+    @include mq($from: mobile) {
+      max-height: 95vh;
+    }
+    @include mq($until: mobile) {
+      max-height: 100vh;
+    }
+  }
+  &-close {
+    position: absolute;
+    top: 4px;
+    z-index: 1;
+
+    @extend %btn_reset;
+    color: $text;
+    @include mq($from: mobile) {
+      right: $padding-lg;
+    }
+    @include mq($until: mobile) {
+      right: 4px;
+    }
+    .icon {
+      color: inherit;
+    }
   }
   &-section {
     &--box {

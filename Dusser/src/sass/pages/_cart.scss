@@ -37,8 +37,11 @@
       @include mq($from: desktop_md) {
         padding: $padding-xxl $padding-xl 1px;
       }
-      @include mq($until: desktop_md) {
+      @include mq(mobile, desktop_md) {
         padding: $padding-xl $padding-lg 1px;
+      }
+      @include mq($until: mobile) {
+        padding: $padding-md $padding-md 1px;
       }
     }
     &--total {
@@ -66,8 +69,11 @@
           @include mq(desktop, desktop_md) {
             font-size: $font-lg;
           }
-          @include mq($until: desktop) {
+          @include mq(mobile, desktop) {
             font-size: 48px;
+          }
+          @include mq($until: mobile) {
+            font-size: $font-lg;
           }
         }
       }
@@ -78,9 +84,15 @@
       @include mq(desktop, desktop_md) {
         flex-wrap: wrap;
       }
+      @include mq($until: mobile) {
+        flex-wrap: wrap;
+      }
       &_btn {
         flex-shrink: 0;
         @include mq(desktop, desktop_md) {
+          width: 100%;
+        }
+        @include mq($until: mobile) {
           width: 100%;
         }
       }
@@ -115,21 +127,33 @@
       @include mq($from: desktop_xl) {
         padding: $padding-xxl;
       }
-      @include mq($until: desktop_xl) {
+      @include mq(tablet, desktop_xl) {
         padding: $padding-xl;
+      }
+      @include mq(mobile, tablet) {
+        padding: $padding-lg;
+      }
+      @include mq($until: mobile) {
+        padding: $padding-md;
       }
     }
     &--columns {
-      display: flex;
+
+      @include mq($from: tablet) {
+        display: flex;
+      }
     }
     &--col {
-      width: 50%;
+
+      @include mq($from: tablet) {
+        width: 50%;
+      }
       &.has-padding {
 
         @include mq($from: desktop_xl) {
           padding-right: 10%;
         }
-        @include mq($until: desktop_xl) {
+        @include mq(tablet, desktop_xl) {
           padding-right: 8%;
         }
       }
@@ -138,8 +162,14 @@
   &-submit {
     margin-top: $padding-xl;
     .btn {
-      line-height: 88px;
+
       align-items: center;
+      @include mq($from: tablet) {
+        line-height: 88px;
+      }
+      @include mq($until: tablet) {
+        line-height: 60px;
+      }
       i {
         position: relative;
         width: 20px;
@@ -173,7 +203,16 @@
     @include mq($from: desktop_md) {
       margin-left: -1*$padding-lg;
     }
-    @include mq($until: desktop_md) {
+    @include mq(tablet, desktop_md) {
+      margin-left: -1*$padding-md;
+    }
+    @include mq(mobile_xl, tablet) {
+      margin-top: -1*$padding-md;
+      margin-bottom: -1*$padding-md;
+      margin-left: -1*$padding-lg;
+    }
+    @include mq($until: mobile_xl) {
+      margin-top: -1*$padding;
       margin-left: -1*$padding-md;
     }
     &--img {
@@ -181,6 +220,7 @@
       width: 128px;
       padding: $padding-md;
       position: relative;
+      flex-shrink: 0;
     }
     &--img_box {
       width: 100%;
@@ -263,15 +303,74 @@
       width: $padding-lg;
     }
   }
+  &-cell {
+    &--part {
+      @include mq(mobile_xl, tablet) {
+        float: left;
+        width: 50%;
+        display: block;
+      }
+      @include mq($until: mobile_xl) {
+        display: block;
+      }
+    }
+    &--count {
+      @include mq(mobile_xl, tablet) {
+        margin-left: 50%;
+        display: block;
+      }
+      @include mq($until: mobile_xl) {
+        display: block;
+      }
+    }
+    &--price {
+      @include mq(mobile_xl, tablet) {
+        margin-left: 50%;
+        margin-top: $padding;
+      }
+      @include mq($until: mobile_xl) {
+        display: block;
+        margin-top: $padding;
+      }
+    }
+    &--term {
+      @include mq(mobile_xl, tablet) {
+        display: flex;
+        align-items: center;
+      }
+      @include mq($until: mobile_xl) {
+        display: flex;
+        align-items: center;
+      }
+      &_title {
+        margin-right: $padding;
+        font-weight: 300;
+      }
+    }
+    &--action {
+      @include mq($until: tablet) {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
   table {
     width: 100%;
     border-collapse: collapse;
+    @include mq($until: tablet) {
+      display: block;
+    }
   }
   thead {
     color: $white;
     background: $tag;
     text-align: left;
     font-size: $font;
+    @include mq($until: tablet) {
+      display: none;
+    }
     th {
       height: 40px;
       @include mq($from: desktop_md) {
@@ -283,9 +382,24 @@
     }
   }
   tbody {
+    @include mq($until: tablet) {
+      display: block;
+    }
     tr {
       border-top: 6px solid $bg-gray;
       background: $white;
+      @include mq($until: tablet) {
+        overflow: hidden;
+        display: block;
+        position: relative;
+
+      }
+      @include mq(mobile, tablet) {
+        padding: $padding-md $padding-xl $padding-md $padding-md;
+      }
+      @include mq($until: mobile) {
+        padding: $padding $padding-xl $padding-md $padding;
+      }
     }
   }
   td {

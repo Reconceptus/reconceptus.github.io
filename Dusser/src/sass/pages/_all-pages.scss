@@ -8,15 +8,24 @@
 @import "partials/listing-slider";
 
 .page_action {
-  display: flex;
-  align-items: center;
+
   @include mq($from: desktop) {
     margin-top: 80px;
   }
-  @include mq($until: desktop) {
+  @include mq(tablet, desktop) {
     margin-top: 60px;
   }
+  @include mq($until: tablet) {
+    margin-top: 40px;
+  }
+  @include mq($from: mobile_xl) {
+    display: flex;
+    align-items: center;
+  }
+
   .pagination {
-    margin-left: auto;
+    @include mq($from: mobile_xl) {
+      margin-left: auto;
+    }
   }
 }

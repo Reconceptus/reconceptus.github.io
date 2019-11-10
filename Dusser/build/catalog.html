@@ -66,7 +66,7 @@
                                 </i>
                             </a>
                             <div class="header-personal_info">
-                                <div class="header-personal_info--item">
+                                <div class="header-personal_info--item small-hidden">
                                     <a href="looked.html" class="header-personal_info--views link-icon">
                                         <i class="icon icon-view">
                                             <svg xmlns="http://www.w3.org/2000/svg">
@@ -168,7 +168,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="header-personal_info--item">
+                                <div class="header-personal_info--item small-hidden">
                                     <a href="favorites.html" class="header-personal_info--favorites link-icon">
                                         <i class="icon icon-favorite">
                                             <svg xmlns="http://www.w3.org/2000/svg">
@@ -299,18 +299,21 @@
                                     </div>
                                 </div>
                                 <div class="header-personal_info--item">
-                                    <a href="cart.html" class="header-personal_info--basket link-icon">
-                                        <i class="icon icon-basket">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
-                                            </svg>
-                                        </i>
-                                        <span class="count">23</span>
+                                    <a href="cart.html" class="header-personal_info--basket">
+                                        <div class="link-icon">
+                                            <i class="icon icon-basket">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
+                                                </svg>
+                                            </i>
+                                            <span class="count">23</span>
+                                        </div>
+                                        <div class="header-personal_info--total">
+                                            Сумма
+                                            <span class="summ">63 000&#x20bd;</span>
+                                        </div>
                                     </a>
-                                    <div class="header-personal_info--total">
-                                        Сумма
-                                        <span class="summ">63 000&#x20bd;</span>
-                                    </div>
+
                                     <div class="header-personal_info--short added-item"></div>
                                     <div class="header-personal_info--short">
                                         <h4 class="title-reg header-personal_info--short_title">Товары в корзине</h4>
@@ -452,768 +455,766 @@
 
                 <!--listing BEGIN-->
 
-                <div class="listing">
+                <div class="sidebar-sticky-wrap">
+                    <div class="listing">
 
-                    <div class="listing-columns">
-                        <aside class="listing-sidebar">
-                            <!--sidebar BEGIN-->
+                        <div class="listing-columns">
+                            <aside class="listing-sidebar">
+                                <!--sidebar BEGIN-->
 
-                            <div class="sidebar sidebar-sticky">
-                                <div class="sidebar-section sidebar-section--filters">
-                                    <input type="checkbox" id="open_filters" class="open_filters">
-                                    <label for="open_filters" class="btn open_filters-btn">Фильтры <i></i></label>
-                                    <div class="form">
-                                        <form action="#">
-                                            <div class="sidebar-filters">
-                                                <div class="sidebar-filters--fieldset">
-                                                    <h4 class="sidebar-filters--title title-reg">Цена</h4>
-                                                    <div class="range">
-                                                        <div class="range-slider"
-                                                             data-range-min="100"
-                                                             data-range-max="1000"
-                                                             data-range-step="50"
-                                                             data-range-start="500,800"
-                                                        >
-                                                            <div class="no-ui-slider" id="uuu" ></div>
-                                                            <div class="range-slider--inputs">
-                                                                <input type="number" value="500" >
-                                                                <span class="dash"></span>
-                                                                <input type="number" value="800">
+                                <div class="sidebar sidebar-sticky">
+                                    <div class="sidebar-section sidebar-section--filters">
+                                        <input type="checkbox" id="open_filters" class="open_filters">
+                                        <label for="open_filters" class="btn open_filters-btn">Фильтры <i></i></label>
+                                        <div class="form">
+                                            <form action="#">
+                                                <div class="sidebar-filters">
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Цена</h4>
+                                                        <div class="range">
+                                                            <div class="range-slider"
+                                                                 data-range-min="100"
+                                                                 data-range-max="1000"
+                                                                 data-range-step="50"
+                                                                 data-range-start="500,800"
+                                                            >
+                                                                <div class="no-ui-slider" id="uuu" ></div>
+                                                                <div class="range-slider--inputs">
+                                                                    <input type="number" value="500" >
+                                                                    <span class="dash"></span>
+                                                                    <input type="number" value="800">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="sidebar-filters--fieldset">
-                                                    <h4 class="sidebar-filters--title title-reg">Толщина, М</h4>
-                                                    <div class="range">
-                                                        <div class="range-slider"
-                                                             data-range-min="20"
-                                                             data-range-max="80"
-                                                             data-range-step="5"
-                                                             data-range-start="35,55"
-                                                        >
-                                                            <div class="no-ui-slider"></div>
-                                                            <div class="range-slider--inputs">
-                                                                <input type="number" value="35">
-                                                                <span class="dash"></span>
-                                                                <input type="number" value="55">
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Толщина, М</h4>
+                                                        <div class="range">
+                                                            <div class="range-slider"
+                                                                 data-range-min="20"
+                                                                 data-range-max="80"
+                                                                 data-range-step="5"
+                                                                 data-range-start="35,55"
+                                                            >
+                                                                <div class="no-ui-slider"></div>
+                                                                <div class="range-slider--inputs">
+                                                                    <input type="number" value="35">
+                                                                    <span class="dash"></span>
+                                                                    <input type="number" value="55">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="sidebar-filters--fieldset">
-                                                    <h4 class="sidebar-filters--title title-reg">Габариты, см</h4>
-                                                    <div class="sidebar-filters--checkbox_set">
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="size">
-                                                                <span class="checkbox-label">30х60х8</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="size">
-                                                                <span class="checkbox-label">50х50х6</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="size">
-                                                                <span class="checkbox-label">30х90х8</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="size">
-                                                                <span class="checkbox-label">60х60х8</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="sidebar-filters--fieldset">
-                                                    <h4 class="sidebar-filters--title title-reg">Цвета</h4>
-                                                    <div class="colors">
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #D8E6EE"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #8DABAC"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #7AA6BC"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #CDF2A9"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #436170"></span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox_color">
-                                                            <label class="checkbox_color-item">
-                                                                <input type="checkbox" name="color">
-                                                                <span class="checkbox_color-label" style="background: #453F71"></span>
-                                                            </label>
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Габариты, см</h4>
+                                                        <div class="sidebar-filters--checkbox_set">
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">30х60х8</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">50х50х6</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">30х90х8</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">60х60х8</span>
+                                                                </label>
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Цвета</h4>
+                                                        <div class="colors">
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #D8E6EE"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #8DABAC"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #7AA6BC"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #CDF2A9"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #436170"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #453F71"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="sidebar-filters--fieldset sidebar-filters--btnset u-align-center">
+                                                        <button type="reset" class="sidebar-filters--reset link u-nowrap">сбросить фильтр</button>
+                                                    </div>
                                                 </div>
-                                                <div class="sidebar-filters--fieldset sidebar-filters--btnset u-align-center">
-                                                    <button type="reset" class="sidebar-filters--reset link u-nowrap">сбросить фильтр</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar-section sidebar-section--categories mobile-hidden">
+                                        <div class="sidebar_categories">
+                                            <ul class="sidebar_categories-list">
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Забор</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Каменный</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Деревянный</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Тротуарная плитка</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Тротуарная плитка 1</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Тротуарная плитка 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Искусственный камень</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Фасадный камень</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Тротуарная плитка</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Декоративный камень</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Декоративный камень в 2 строки</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Бетонные смеси</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Бетонные смеси 1</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Бетонные смеси 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Цемент</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Цемент 1</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Цемент 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <span class="sidebar_categories-title fn-expand-btn">Добавки</span>
+                                                    <ul class="fn-expand-data" style="display: none;">
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Добавки 1</a>
+                                                        </li>
+                                                        <li class="sidebar_categories-subitem">
+                                                            <a href="category.html" class="sidebar_categories-link">Добавки 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="sidebar-section sidebar-section--categories">
-                                    <div class="sidebar_categories">
-                                        <ul class="sidebar_categories-list">
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Забор</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Каменный</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Деревянный</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Тротуарная плитка</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Тротуарная плитка 1</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Тротуарная плитка 2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Искусственный камень</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Фасадный камень</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Тротуарная плитка</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Декоративный камень</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Декоративный камень в 2 строки</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Бетонные смеси</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Бетонные смеси 1</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Бетонные смеси 2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Цемент</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Цемент 1</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Цемент 2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="sidebar_categories-item fn-expand-box">
-                                                <span class="sidebar_categories-title fn-expand-btn">Добавки</span>
-                                                <ul class="fn-expand-data" style="display: none;">
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Добавки 1</a>
-                                                    </li>
-                                                    <li class="sidebar_categories-subitem">
-                                                        <a href="category.html" class="sidebar_categories-link">Добавки 2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+
+                                <!--sidebar END-->
+                            </aside>
+                            <div class="listing-main">
+
+                                    <div class="listing-filters">
+                                        <a href="javascript:void(0);" class="link active">По цене</a>
+                                        <a href="javascript:void(0);" class="link">По новизне</a>
+                                        <a href="javascript:void(0);" class="link">По скидке</a>
+                                        <a href="javascript:void(0);" class="link">По популярности</a>
                                     </div>
+
+                                    <div class="listing-items">
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--sale">-70</div>
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="old-price">75787</span>
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--sale">-70</div>
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="old-price">75787</span>
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--sale">-70</div>
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="old-price">75787</span>
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-top">Top</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like ">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-new">New</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                    <div class="listing-item--marks">
+                                                        <span class="listing-item--mark mark mark-top">Top</span>
+                                                    </div>
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing-item col-1-5">
+                                            <div class="listing-item--section">
+                                                <div class="listing-item--img">
+                                                    <a href="catalog-item.html" class="listing-item--img_box">
+                                                        <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
+                                                    </a>
+
+                                                </div>
+                                                <div class="listing-item--data">
+                                                    <div class="listing-item--title">
+                                                        <a href="catalog-item.html">Колотый кирпич</a>
+                                                    </div>
+                                                    <div class="listing-item--descr">
+                                                        <div class="listing-item--prices">
+                                                            <span class="actual-price">3456&#x20bd;</span>
+                                                        </div>
+                                                        <div class="listing-item--icons">
+                                                            <a href="javascript:void(0);" class="listing-item--like">
+                                                                <i class="icon icon-like liked">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
+                                                                    </svg>
+                                                                </i>
+                                                            </a>
+                                                            <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                <div class="page_action">
+                                    <!--previous page BEGIN-->
+
+                                    <div class="back_page">
+                                        <a onclick="window.history.go(-1); return false;" class="btn-link">назад</a>
+                                    </div>
+
+                                    <!--previous page END-->
+                                    <!--pagination BEGIN-->
+
+                                    <div class="pagination">
+                                        <span class="prev"></span>
+                                        <a href="#" class="current">1</a>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">5</a>
+                                        <a href="#">6</a>
+                                        <a href="#" class="next"></a>
+                                    </div>
+
+                                    <!--pagination END-->
                                 </div>
-                            </div>
-
-                            <!--sidebar END-->
-                        </aside>
-                        <div class="listing-main">
-                            <div class="sidebar-sticky-wrap">
-
-                                <div class="listing-filters">
-                                    <a href="javascript:void(0);" class="link active">По цене</a>
-                                    <a href="javascript:void(0);" class="link">По новизне</a>
-                                    <a href="javascript:void(0);" class="link">По скидке</a>
-                                    <a href="javascript:void(0);" class="link">По популярности</a>
-                                </div>
-
-                                <div class="listing-items">
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--sale">-70</div>
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="old-price">75787</span>
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--sale">-70</div>
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="old-price">75787</span>
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--sale">-70</div>
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="old-price">75787</span>
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-top">Top</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like ">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-new">New</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                                <div class="listing-item--marks">
-                                                    <span class="listing-item--mark mark mark-top">Top</span>
-                                                </div>
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="listing-item col-1-5">
-                                        <div class="listing-item--section">
-                                            <div class="listing-item--img">
-                                                <a href="catalog-item.html" class="listing-item--img_box">
-                                                    <img src="http://kirpichking.com.ua/wp-content/uploads/2018/11/%D0%9A%D0%B8%D1%80%D0%BF%D0%B8%D1%87-%D0%BA%D0%BE%D0%BB%D0%BE%D1%82%D1%8B%D0%B9-%D0%B5%D0%B2%D1%80%D0%BE%D1%86%D0%B5%D0%B3%D0%BB%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D1%8B%D0%B9-250%D1%85100%D1%8565.jpg" alt="Колотый кирпич">
-                                                </a>
-
-                                            </div>
-                                            <div class="listing-item--data">
-                                                <div class="listing-item--title">
-                                                    <a href="catalog-item.html">Колотый кирпич</a>
-                                                </div>
-                                                <div class="listing-item--descr">
-                                                    <div class="listing-item--prices">
-                                                        <span class="actual-price">3456&#x20bd;</span>
-                                                    </div>
-                                                    <div class="listing-item--icons">
-                                                        <a href="javascript:void(0);" class="listing-item--like">
-                                                            <i class="icon icon-like liked">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-like"/>
-                                                                </svg>
-                                                            </i>
-                                                        </a>
-                                                        <button type="button" class="listing-item--info" data-open-modal="catalog-item">i</button>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="page_action">
-                                <!--previous page BEGIN-->
-
-                                <div class="back_page">
-                                    <a onclick="window.history.go(-1); return false;" class="btn-link">назад</a>
-                                </div>
-
-                                <!--previous page END-->
-                                <!--pagination BEGIN-->
-
-                                <div class="pagination">
-                                    <span class="prev"></span>
-                                    <a href="#" class="current">1</a>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <a href="#">6</a>
-                                    <a href="#" class="next"></a>
-                                </div>
-
-                                <!--pagination END-->
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
                 <!--listing END-->

@@ -3,12 +3,28 @@
 }
 
 .orders_table {
+  @include mq($until: mobile) {
+    margin: 0 -1*$padding-md;
+  }
   &-row {
     border-top: 8px solid $bg-gray;
     background: $white;
     td {
-      height: 56px;
-      padding: 0 $padding-xl;
+
+      @include mq($from: tablet) {
+        height: 56px;
+        padding: 0 $padding-xl;
+      }
+      @include mq(mobile, tablet) {
+        height: 40px;
+        padding: 0 $padding-md;
+        font-size: 12px;
+      }
+      @include mq($until: mobile) {
+        height: 32px;
+        padding: 0 $padding;
+        font-size: 10px;
+      }
     }
   }
   &-table {
@@ -19,11 +35,31 @@
     color: $white;
     background: linear-gradient(to right, $grad-end 0%, $grad-begin 100%);
     text-align: left;
-    font-size: $font;
+
+    @include mq($from: tablet) {
+      font-size: $font;
+    }
+    @include mq(mobile, tablet) {
+      font-size: 12px;;
+    }
+    @include mq($until: mobile) {
+      font-size: 10px;
+    }
     th {
-      height: 56px;
-      padding: 0 $padding-xl;
       font-weight: 500;
+      line-height: 1.2;
+      @include mq($from: tablet) {
+        height: 56px;
+        padding: 0 $padding-xl;
+      }
+      @include mq(mobile, tablet) {
+        height: 40px;
+        padding: 0 $padding-md;
+      }
+      @include mq($until: mobile) {
+        height: 40px;
+        padding: 0 $padding;
+      }
     }
   }
   &-cart {
@@ -35,23 +71,43 @@
       @include mq($from: desktop) {
         max-width: calc(200%/3);
       }
-      @include mq($until: desktop) {
+      @include mq(tablet, desktop) {
         max-width: calc(200%/2.5);
       }
       table {
-        margin: $padding-lg 0;
+
+        @include mq($from: tablet) {
+          margin: $padding-lg 0;
+        }
+        @include mq($until: tablet) {
+          margin: $padding 0;
+        }
       }
     }
   }
   &-expand_btn {
     @extend %btn_reset;
-    width: 56px;
-    height: 56px;
+
     background: $tag;
     position: relative;
     display: block;
     margin-left: auto;
-    margin-right: -1*$padding-xl;
+
+    @include mq($from: tablet) {
+      width: 56px;
+      height: 56px;
+      margin-right: -1*$padding-xl;
+    }
+    @include mq(mobile, tablet) {
+      width: 40px;
+      height: 40px;
+      margin-right: -1*$padding-md;
+    }
+    @include mq($until: mobile) {
+      width: 32px;
+      height: 32px;
+      margin-right: -1*$padding;
+    }
     &:after {
       content: "";
       position: absolute;

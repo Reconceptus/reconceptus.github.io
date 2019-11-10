@@ -43,17 +43,27 @@
 
 
 .desktop-hidden {
-  @include media(hover,1201){
+  @include mq($from: desktop) {
     display: none !important;
   }
 }
 .tablet-hidden {
-  @include media(screen,1200){
+  @include mq($until: desktop) {
+    display: none !important;
+  }
+}
+.wide-hidden {
+  @include mq($from: tablet) {
     display: none !important;
   }
 }
 .mobile-hidden {
-  @include media(screen,767){
+  @include mq($until: tablet) {
+    display: none !important;
+  }
+}
+.small-hidden {
+  @include mq($until: mobile_xl) {
     display: none !important;
   }
 }

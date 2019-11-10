@@ -22,8 +22,14 @@
       height: 100%;
       background: $white;
       border: 1px solid $bg-gray;
-      padding: 8px;
+
       position: relative;
+      @include mq($from: mobile) {
+        padding: 8px;
+      }
+      @include mq($until: mobile) {
+        padding: 4px;
+      }
       &:first-child {
         margin-left: auto;
       }

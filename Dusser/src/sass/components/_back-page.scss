@@ -1,5 +1,8 @@
 .back_page {
   margin: 0 0 0 40px;
+  @include mq($until: mobile_xl) {
+    display: none;
+  }
   a {
     cursor: pointer;
     color: inherit;
