@@ -18,6 +18,9 @@
     transform: translateX(0);
     pointer-events: auto;
   }
+  .content {
+    height: 100%;
+  }
   &-blur {
     position: absolute;
     right: 0;
@@ -36,7 +39,7 @@
   &-wrap {
     position: relative;
     margin-left: auto;
-
+    height: 100%;
     @include mq($from: desktop) {
       width: 50%;
     }
@@ -104,6 +107,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    .mobile &,
+    .tablet & {
+      overflow-y: auto;
+      display: block;
+    }
   }
   &-radio_button {
     @extend %hidden_input;
@@ -138,19 +146,35 @@
   &-forms {
     overflow: hidden;
     display: flex;
+    width: 100%;
     [data-auth] {
       width: 100%;
+      max-width: 100%;
       min-width: 100%;
+      .mobile &,
+      .tablet & {
+        max-height: 50vh;
+      }
     }
     &--section {
       width: 100%;
       @include mq($from: mobile_xl) {
         padding-right: $padding-lg;
       }
+      .mobile &,
+      .tablet & {
+        margin-bottom: 32px;
+      }
     }
   }
   input[data-auth="signin"]:checked ~ .auth_menu-forms [data-auth="signin"],
-  input[data-auth="signup"]:checked ~ .auth_menu-forms [data-auth="signup"] {order: -1}
+  input[data-auth="signup"]:checked ~ .auth_menu-forms [data-auth="signup"] {
+    order: -1;
+    .mobile &,
+    .tablet & {
+      max-height: none;
+    }
+  }
   input[data-auth="signin"]:checked ~ .auth_menu-selects [data-auth="signin"],
   input[data-auth="signup"]:checked ~ .auth_menu-selects [data-auth="signup"] {
     background: $white;

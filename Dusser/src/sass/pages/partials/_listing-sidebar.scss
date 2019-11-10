@@ -65,6 +65,9 @@
         @include mq($until: desktop) {
           &:checked ~ .form {
             display: block;
+            .no-drops & {
+              display: none;
+            }
           }
         }
         &-btn {

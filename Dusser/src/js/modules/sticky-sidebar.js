@@ -60,17 +60,23 @@ const sticky_sidebar = {
             this.params.maxMargin = this.params.wrapperHeight - this.params.height;
 
             if (this.params.marginTop + this.params.height > this.params.wrapperHeight) {
-                $sidebar.removeClass('sticky').css({
-                    top: 0,
-                    transform: 'translateY(' + this.params.maxMargin + 'px)',
-                    width: this.params.width + 'px',
-                });
+                $sidebar
+                    .removeClass('sticky')
+                    .addClass('no-drops')
+                    .css({
+                        top: 0,
+                        transform: 'translateY(' + this.params.maxMargin + 'px)',
+                        width: this.params.width + 'px',
+                    });
             } else {
-                $sidebar.addClass('sticky').css({
-                    top: this.params.allowMargin + 'px',
-                    width: this.params.width + 'px',
-                    transform: 'translateY(0)',
-                });
+                $sidebar
+                    .addClass('sticky')
+                    .removeClass('no-drops')
+                    .css({
+                        top: this.params.allowMargin + 'px',
+                        width: this.params.width + 'px',
+                        transform: 'translateY(0)',
+                    });
             }
         } else {
             $sidebar.removeClass('sticky').attr('style', '');

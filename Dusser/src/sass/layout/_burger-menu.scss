@@ -78,6 +78,10 @@
     height: 100%;
     min-height: 100vh;
     padding-bottom: $padding-xxl;
+    .mobile &,
+    .tablet & {
+      padding-bottom: 60px;
+    }
   }
   &-close {
 
@@ -129,6 +133,11 @@
       @include mq($from: mobile_xl) {
         height: 96px;
       }
+      .mobile &,
+      .tablet & {
+        padding-bottom: $padding-lg;
+        height: 0;
+      }
     }
   }
   &-nav {
@@ -146,10 +155,13 @@
       overflow: hidden;
       @include mq($from: wide) {
         margin-left: -1*$padding-xxl;
-
       }
       @include mq($until: wide) {
         margin-left: -1*$padding-lg;
+      }
+      .mobile &,
+      .tablet & {
+        overflow: auto;
       }
     }
     a:not(.btn) {

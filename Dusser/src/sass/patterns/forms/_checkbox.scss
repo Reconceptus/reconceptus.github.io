@@ -13,7 +13,8 @@
     &-label {
       user-select: none;
       position: relative;
-      padding-left: $padding-xl;
+      text-indent: $padding-xl;
+      display: block;
       &:before,
       &:after {
         content: "";
