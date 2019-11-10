@@ -3,10 +3,13 @@ html {
   font-size: $font;
   &.ovh {
     overflow: hidden;
-    height: 100%;
-    body {
-      overflow: hidden;
+    &.mobile,
+    &.tablet {
       height: 100%;
+      body {
+        overflow: hidden;
+        height: 100%;
+      }
     }
   }
   //@include media(hover,1201){font-size: 16px;}

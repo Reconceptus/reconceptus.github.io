@@ -254,9 +254,10 @@
         .added-order & {
           display: none;
         }
-        @include mq($until: desktop) {
-          display: none;
-        }
+      }
+
+      @include mq($until: desktop) {
+        display: none !important;
       }
     }
     &--actions {

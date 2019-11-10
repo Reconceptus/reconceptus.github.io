@@ -1,3 +1,7 @@
 <a href="catalog-item.html" class="@@class">
-    <img src="@@imgUrl" alt="@@title">
+    <picture>
+        <source type="image/webp" srcset="assets/images/items/@@imgUrl.webp">
+        <source type="image/jpeg" srcset="assets/images/items/@@imgUrl.jpg">
+        <img src="assets/images/items/@@imgUrl.jpg" alt="@@title">
+    </picture>
 </a>
