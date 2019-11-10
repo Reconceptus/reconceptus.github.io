@@ -18,6 +18,9 @@
     transform: translateX(0);
     pointer-events: auto;
   }
+  .content {
+    height: 100%;
+  }
   &-blur {
     position: absolute;
     left: 0;
@@ -34,6 +37,7 @@
     }
   }
   &-wrap {
+    height: 100%;
     position: relative;
     @include mq($from: desktop) {
       width: 66.6667%;
@@ -71,7 +75,8 @@
     display: flex;
     flex-direction: column;
     color: $white;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     padding-bottom: $padding-xxl;
   }
   &-close {
