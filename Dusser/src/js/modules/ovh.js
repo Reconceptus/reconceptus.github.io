@@ -1,9 +1,14 @@
+let scroll_top;
 const ovh = {
     add: function() {
-        $('html').addClass('ovh');
+        scroll_top = $(window).scrollTop();
+        setTimeout(function() {
+            $('html').addClass('ovh');
+        }, 300);
     },
     remove: function() {
         $('html').removeClass('ovh');
+        $(window).scrollTop(scroll_top);
     },
 };
 

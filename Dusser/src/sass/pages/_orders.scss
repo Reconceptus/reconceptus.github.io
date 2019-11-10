@@ -6,6 +6,21 @@
   @include mq($until: mobile) {
     margin: 0 -1*$padding-md;
   }
+  position: relative;
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to right, $grad-end 0%, $grad-begin 100%);
+    @include mq($from: tablet) {
+      height: 56px;
+    }
+    @include mq($until: tablet) {
+      height: 40px;
+    }
+  }
   &-row {
     border-top: 8px solid $bg-gray;
     background: $white;
@@ -30,10 +45,11 @@
   &-table {
     width: 100%;
     border-collapse: collapse;
+    position: relative;
   }
   &-thead {
     color: $white;
-    background: linear-gradient(to right, $grad-end 0%, $grad-begin 100%);
+
     text-align: left;
 
     @include mq($from: tablet) {

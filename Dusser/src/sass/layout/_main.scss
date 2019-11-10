@@ -3,6 +3,11 @@ html {
   font-size: $font;
   &.ovh {
     overflow: hidden;
+    height: 100%;
+    body {
+      overflow: hidden;
+      height: 100%;
+    }
   }
   //@include media(hover,1201){font-size: 16px;}
   //@include breakpoints(1025,1200){font-size: 16px;}

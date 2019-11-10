@@ -1,7 +1,8 @@
 .pl-nav-scroll {
-  height: 100%;
+
   .desktop & {
     overflow: hidden;
+    height: 100%;
   }
 
   .mCSB_inside>.mCSB_container {
@@ -10,9 +11,10 @@
 }
 
 .pl-scroll {
-  height: 100%;
+
   .desktop & {
     overflow: hidden;
+    height: 100%;
   }
 
   .mCSB_inside>.mCSB_container {

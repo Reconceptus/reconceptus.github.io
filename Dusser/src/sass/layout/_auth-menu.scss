@@ -149,7 +149,6 @@
     width: 100%;
     [data-auth] {
       width: 100%;
-      max-width: 100%;
       min-width: 100%;
       .mobile &,
       .tablet & {
@@ -163,7 +162,7 @@
       }
       .mobile &,
       .tablet & {
-        margin-bottom: 32px;
+        margin-bottom: 60px;
       }
     }
   }
