@@ -25,10 +25,21 @@
   }
   &-container {
     position: absolute;
-    left: 50%;
-    top: 50%;
     width: 100vw;
-    transform: translate(-50%, -50%);
+    @include mq($from: desktop) {
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+    @include mq($until: desktop) {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     @include mq($until: mobile) {
       padding: 0;
     }
@@ -40,6 +51,11 @@
 
     display: flex;
     flex-direction: column;
+    @include mq($until: desktop) {
+      position: relative;
+      align-self: center;
+      width: 100%;
+    }
     @include mq($from: mobile) {
       max-height: 95vh;
     }
