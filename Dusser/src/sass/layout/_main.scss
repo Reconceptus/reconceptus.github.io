@@ -74,9 +74,6 @@ svg {
   min-height: 100vh;
 
   overflow: hidden;
-  @include mq($from: desktop) {
-    padding-top: 136px;
-  }
   @include mq(mobile_xl, desktop) {
     padding-top: 100px;
   }

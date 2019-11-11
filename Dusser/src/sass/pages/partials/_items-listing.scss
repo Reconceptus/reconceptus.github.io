@@ -106,13 +106,6 @@
       }
     }
     &--img {
-
-      @include mq($from: desktop_xl) {
-        padding: $padding-xl;
-      }
-      @include mq($until: desktop_xl) {
-        padding: $padding-lg;
-      }
       position: relative;
     }
     &--img_box {

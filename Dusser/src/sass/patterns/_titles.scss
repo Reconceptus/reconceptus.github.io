@@ -22,6 +22,7 @@
   }
   &-lg {
     font-weight: 500;
+    color: $tag;
     @include mq($from: tablet) {
       font-size: $font-lg;
     }

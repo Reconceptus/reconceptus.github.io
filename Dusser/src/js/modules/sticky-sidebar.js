@@ -25,7 +25,7 @@ const sticky_sidebar = {
                 : $sidebarWrap.height() - 0.4 * window.innerWidth;
         this.params.height = $sidebar.height();
         this.params.width = $sidebar.parent().width();
-        this.params.headerHeight = $('#header').height();
+        this.params.headerHeight = window.innerWidth > 1025 ? 0 : $('#header').height();
 
         this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
@@ -41,7 +41,7 @@ const sticky_sidebar = {
         this.params.scrollTop = $(window).scrollTop();
         this.params.height = $sidebar.height();
         this.params.width = $sidebar.parent().width();
-        this.params.headerHeight = $('#header').height();
+        this.params.headerHeight = window.innerWidth > 1025 ? 0 : $('#header').height();
 
         this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;

@@ -47,7 +47,7 @@
       padding: $padding-xl;
     }
     @include mq($from: desktop) {
-      width: calc(5*100%/8);
+      width: calc(3*100%/8);
       overflow: auto;
     }
     @include mq(mobile, desktop) {

@@ -1,12 +1,14 @@
 .header {
   flex-shrink: 0;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
   background-color: $white;
   z-index: 50;
   box-shadow: 0 2px 2px 0 rgba($text,0.2);
+  @include mq($until: desktop) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
   @include mq($from: tablet) {
     transition: filter 0.5s;
     will-change: filter;
