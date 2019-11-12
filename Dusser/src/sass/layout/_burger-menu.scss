@@ -102,9 +102,6 @@
 
     font-weight: 300;
     color: #AB2D2D;
-    @include mq($from: wide) {
-      margin-left: $padding-xxl;
-    }
     @include mq($until: wide) {
       margin-left: $padding-lg;
     }

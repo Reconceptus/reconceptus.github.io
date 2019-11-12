@@ -133,8 +133,19 @@
       text-transform: uppercase;
       color: $tag;
       cursor: pointer;
-      background: $bg-gray;
+      background: $white;
       transition: all 0.25s;
+      position: relative;
+      user-select: none;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        background: $grad-begin;
+      }
       &:first-child {
         flex-shrink: 0;
       }
@@ -176,6 +187,8 @@
   }
   input[data-auth="signin"]:checked ~ .auth_menu-selects [data-auth="signin"],
   input[data-auth="signup"]:checked ~ .auth_menu-selects [data-auth="signup"] {
-    background: $white;
+    &:after {
+      height: 4px;
+    }
   }
 }
