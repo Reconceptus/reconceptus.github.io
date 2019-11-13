@@ -102,26 +102,16 @@
     }
   }
   &-expand_btn {
-    @extend %btn_reset;
 
-    background: $tag;
-    position: relative;
-    display: block;
     margin-left: auto;
 
     @include mq($from: tablet) {
-      width: 56px;
-      height: 56px;
       margin-right: -1*$padding-xl;
     }
     @include mq(mobile, tablet) {
-      width: 40px;
-      height: 40px;
       margin-right: -1*$padding-md;
     }
     @include mq($until: mobile) {
-      width: 32px;
-      height: 32px;
       margin-right: -1*$padding;
     }
     &:after {

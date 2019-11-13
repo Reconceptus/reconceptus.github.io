@@ -20,16 +20,12 @@
       flex-direction: column;
     }
   }
-  &-sidebar {
-    width: 100%;
-    flex-shrink: 0;
-    @include mq($from: desktop) {
-      max-width: calc( 100%/3 );
-    }
-  }
   &-main {
     padding: 0 $padding-sm;
     width: 100%;
+    @include mq($from: desktop) {
+      max-width: calc( 2*100%/3 );
+    }
   }
   &-section {
     &:not(:last-child){

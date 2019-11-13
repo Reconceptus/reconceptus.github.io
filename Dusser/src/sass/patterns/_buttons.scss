@@ -77,6 +77,46 @@
       background-color: $btn-red_hover;
     }
   }
+  &-expand {
+    @extend %btn_reset;
+    background: $tag;
+    position: relative;
+    display: block;
+    @include mq($from: tablet) {
+      width: 56px;
+      height: 56px;
+    }
+    @include mq(mobile, tablet) {
+      width: 40px;
+      height: 40px;
+    }
+    @include mq($until: mobile) {
+      width: 32px;
+      height: 32px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-style: solid solid none none;
+      border-color: $white;
+      border-width: 3px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      left: 0;
+      right: 0;
+      transition: all 0.25s;
+      transform: rotate(135deg) translate(-2px, 2px);
+    }
+    .expanded &,
+    .opened & {
+      &:after {
+        transform: rotate(315deg) translate(-2px, 2px);
+      }
+    }
+  }
   &--sm {
     line-height: 44px;
   }

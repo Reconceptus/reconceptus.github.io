@@ -99,6 +99,9 @@
     }
   }
   &-nav {
+    @include mq($until: mobile) {
+      display: none;
+    }
     &--button {
       position: absolute;
       top: 0;
