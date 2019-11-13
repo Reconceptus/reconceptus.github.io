@@ -1,0 +1,156 @@
+<include src="../templates/head.html" title="Профиль"></include>
+
+    <div class="container">
+
+        <include src="../templates/header-guest.html"></include>
+
+        <div id="main" class="main">
+
+            <div class="content content--lg">
+
+                <include src="./partials/breadcrumbs/breadcrumbs-1-link.html" page1="Профиль"></include>
+
+                <div class="title-heading margin-md">
+                    <h1 class="title-lg">Профиль</h1>
+                </div>
+
+                <div class="validate-form" data-form="order">
+                    <form action="#">
+
+                        <div class="profile">
+
+                            <div class="profile-columns">
+                                <div class="profile-main">
+
+                                    <div class="profile-section">
+                                        <div class="profile-section--box">
+                                            <div class="form-field form-field--lg">
+                                                <div class="form-text">Личные данные</div>
+                                            </div>
+                                            <div class="profile-section--columns">
+                                                <div class="profile-section--col has-padding">
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="last_name">
+                                                            <label class="form-input--label">Фамилия</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="first_name">
+                                                            <label class="form-input--label">Имя</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="patronymic">
+                                                            <label class="form-input--label">Отчество</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="profile-section--col has-padding">
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="email">
+                                                            <label class="form-input--label">Емейл</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="phone_number">
+                                                            <label class="form-input--label">Телефон</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="profile-section">
+                                        <div class="profile-section--box">
+                                            <div class="form-field form-field--lg">
+                                                <div class="form-text">Адрес доставки</div>
+                                            </div>
+                                            <div class="profile-section--columns">
+                                                <div class="profile-section--col has-padding">
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="country">
+                                                            <label class="form-input--label">Страна</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="city">
+                                                            <label class="form-input--label">Населенный пункт</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="street">
+                                                            <label class="form-input--label">Улица</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="home_number">
+                                                            <label class="form-input--label">Номер дома</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="profile-section--col has-padding">
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="corps">
+                                                            <label class="form-input--label">Строение</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field form-field--lg">
+                                                        <div class="form-input">
+                                                            <input type="text" name="apartment_number">
+                                                            <label class="form-input--label">Квартира</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <aside class="profile-sidebar"></aside>
+                            </div>
+
+
+
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="./partials/modal/item-modal.html"></include>
+<include src="../templates/auth-menu.html"></include>
+<include src="../templates/burger-menu-guest.html"></include>
+<include src="../templates/scripts.html"></include>
+
+<include src="../scripts/auth.html"></include>
+
+<include src="../scripts/order.html"></include>
+
+</body>
+</html>
