@@ -25,6 +25,8 @@ window.functions = {
     validation: require('./modules/validation'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     carousel: require('./modules/carousel'),
+    filled_input: require('./modules/filled-input'),
+    textbox: require('./modules/textbox'),
 };
 
 // scripts
@@ -59,6 +61,7 @@ $(document).ready(() => {
     functions.auth.init();
     functions.scroll_top();
     functions.expander();
+    functions.filled_input();
 
     if ($('.pl-nav-scroll').length > 0) {
         if ($('html').hasClass('desktop')) {
@@ -89,6 +92,9 @@ $(document).ready(() => {
     }
     if ($('.sidebar-sticky').length > 0) {
         functions.sticky_sidebar.init();
+    }
+    if ($('.text-box').length > 0) {
+        functions.textbox();
     }
 
     // $('.link-auth-open').click(() => {

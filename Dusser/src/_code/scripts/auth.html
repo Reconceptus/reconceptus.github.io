@@ -8,11 +8,20 @@
                     required: true,
                     email: true
                 },
-                password: {required: true}
+                password: {
+                    required: true,
+                    minlength: 8
+                }
             },
             messages: {
-                email: {required: ""},
-                password: {required: ""}
+                email: {
+                    required: "Это поле обязательное",
+                    email: "Введите корректный email"
+                },
+                password: {
+                    required: "Это поле обязательное",
+                    minlength: "Пароль должен содержать минимум 8 символов"
+                }
             },
             submitHandler:function (form) {
                 // if (form.valid()){
@@ -31,15 +40,21 @@
                     required: true,
                     email: true
                 },
-                password: {required: true},
-                reset_password: {required: true},
+                password: {
+                    required: true,
+                    minlength: 8
+                },
+                reset_password: {equalTo: '#signup_password'},
                 agreement: {required: true}
             },
             messages: {
                 name: {required: ""},
                 email: {required: ""},
-                password: {required: ""},
-                reset_password: {required: ""},
+                password: {
+                    required: "Это поле обязательное",
+                    minlength: "Пароль должен содержать минимум 8 символов"
+                },
+                reset_password: {equalTo: "Пароль не совпадает"},
                 agreement: {required: ""}
             },
             submitHandler:function (form) {

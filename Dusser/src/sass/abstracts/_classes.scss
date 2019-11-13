@@ -1,7 +1,6 @@
 .clearfix:after {content: ""; display: block; clear: both;}
 .content {
   margin: 0 auto;
-  box-sizing: border-box;
   display: block;
   @include mq($from: desktop) {
     padding: 0 $padding-xl;
@@ -20,6 +19,9 @@
   }
   &--sm {
     max-width: 980px;
+  }
+  &--xs {
+    max-width: 872px;
   }
 }
 

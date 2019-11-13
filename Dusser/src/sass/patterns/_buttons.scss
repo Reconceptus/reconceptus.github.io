@@ -12,7 +12,6 @@
     text-transform: uppercase;
     font-size: $font;
     font-weight: 600;
-    line-height: 48px;
     letter-spacing: 2px;
   }
   &-grey {
@@ -21,7 +20,6 @@
     background-color: $icon;
     font-size: $font;
     font-weight: 600;
-    line-height: 48px;
     padding: 0 $padding-lg;
   }
   &-red {
@@ -30,7 +28,6 @@
     background-color: transparent;
     font-size: $font;
     font-weight: 600;
-    line-height: 44px;
     padding: 0 $padding-lg;
     border: 2px solid $btn-red;
     &.large-padding {
@@ -45,7 +42,6 @@
     color: $tag;
     background-color: $bg-green;
     font-size: $font;
-    line-height: 56px;
     padding: 0 $padding-lg;
     @include mq($until: mobile) {
       .modal_catalog-link & {
@@ -74,7 +70,6 @@
     background-color: $btn-red;
     font-size: $font;
     font-weight: 600;
-    line-height: 44px;
     padding: 0 $padding-lg;
     border: 2px solid $btn-red;
     @include hover(){
@@ -82,16 +77,15 @@
       background-color: $btn-red_hover;
     }
   }
-  //&--sm {
-  //  font-size: 16px;
-  //  font-weight: 600;
-  //  padding: 10px 40px;
-  //}
-  //&--md {
-  //  font-size: 16px;
-  //  font-weight: 600;
-  //  padding: 24px 40px;
-  //}
+  &--sm {
+    line-height: 44px;
+  }
+  &--md {
+    line-height: 48px;
+  }
+  &--lg {
+    line-height: 56px;
+  }
   &--full {
     width: 100%;
   }

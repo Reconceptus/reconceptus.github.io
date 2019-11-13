@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Style Guide</title>
+    <title>Как это работает</title>
     <meta name="author" content="enenkoff@mail.ru">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -481,190 +481,35 @@
 
 
         <div id="main" class="main">
-            <style>
-                .sct {
-                    margin-bottom: 10px;
-                }
-                .sct2 {
-                    margin-bottom: 30px;
-                }
-                .list-no-bullets {
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                }
-                .swatch {
-                    width: 23%;
-                    margin-right: 2%;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 10px;
-                }
-                .swatch-preview {
-                    border-top: 1px solid rgba(0, 0, 0, 0.1);
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                    display: block;
-                    height: 60px;
-                    width: 100%;
-                }
-                .swatch-details {
-                    display: flex;
-                    flex-direction: column;
-                }
-                xmp {
-                    background-color: #edf1f6;
-                    padding: 0 20px;
-                }
-            </style>
-            <div style="width: 980px; margin: 50px auto;">
-                <h1 class="sct">COLORS</h1>
-                <ul class="sct2 list-no-bullets">
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #002b4f;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Текст</strong></li>
-                            <li>#002b4f</li>
-                            <li><strong style="color: #002b4f">$text</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #009ca2;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Ссылки</strong></li>
-                            <li>#009ca2</li>
-                            <li><strong style="color: #009ca2">$link</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #edf1f6;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Фон</strong></li>
-                            <li>#edf1f6</li>
-                            <li><strong style="color: #edf1f6">$bg</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #bdbdbd;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Иконка</strong></li>
-                            <li>#bdbdbd</li>
-                            <li><strong style="color: #bdbdbd">$icon</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #1976d2;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Кнопка синяя</strong></li>
-                            <li>#1976d2</li>
-                            <li><strong style="color: #1976d2">$btn_blue</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #0f6bc5;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Кнопка синяя ховер</strong></li>
-                            <li>#0f6bc5</li>
-                            <li><strong style="color: #0f6bc5">$btn_blue_hover</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #a40843;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Кнопка красная</strong></li>
-                            <li>#a40843</li>
-                            <li><strong style="color: #a40843">$btn_red</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #860435;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Кнопка красная ховер</strong></li>
-                            <li>#860435</li>
-                            <li><strong style="color: #860435">$btn_red_hover</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #2e6db6;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Градиент начало</strong></li>
-                            <li>#2e6db6</li>
-                            <li><strong style="color: #2e6db6">$grad_begin</strong></li>
-                        </ul>
-                    </li>
-                    <li class="swatch">
-                        <span class="swatch-preview" style="background-color: #5bc48c;"></span>
-                        <ul class="list-no-bullets swatch-details">
-                            <li><strong>Градиент конец</strong></li>
-                            <li>#5bc48c</li>
-                            <li><strong style="color: #5bc48c">$grad_end</strong></li>
-                        </ul>
-                    </li>
 
-                </ul>
-                <h1 class="sct">HEADINGS</h1>
-                <div style="display: flex; align-items: baseline">
-                    <div class="title title--lg">Заголовок</div>
-                    &nbsp;&nbsp;&nbsp;(.title .title--lg)
+            <div class="content content--lg">
+
+                <!--breadcrumbs BEGIN-->
+
+                <div class="breadcrumbs">
+                    <a class="breadcrumbs-link" href="index.html">Главная</a>
+                    <span class="breadcrumbs-current">Как это работает</span>
                 </div>
-                <div style="display: flex; align-items: baseline">
-                    <div class="title title--md">Заголовок</div>
-                    &nbsp;&nbsp;&nbsp;(.title .title--md)
+
+                <!--breadcrumbs END-->
+
+                <div class="title-heading margin-md">
+                    <h1 class="title-lg">
+                        Как это работает
+                    </h1>
                 </div>
-                <div style="display: flex; align-items: baseline">
-                    <div class="title title--sm">Заголовок</div>
-                    &nbsp;&nbsp;&nbsp;(.title .title--sm)
-                </div>
-                <div class="sct2" style="display: flex; align-items: baseline">
-                    <div class="title title--xs">Заголовок</div>
-                    &nbsp;&nbsp;&nbsp;(.title .title--xs)
-                </div>
-                <h1 class="sct">BUTTONS</h1>
-                <div class="sct" style="display: flex; align-items: baseline">
-                    <button class="btn btn--sm btn--blue">Кнопка</button>
-                    &nbsp;&nbsp;&nbsp;(.btn .btn--sm .btn--blue)
-                </div>
-                <div class="sct" style="display: flex; align-items: baseline">
-                    <button class="btn btn--sm btn--red">Кнопка</button>
-                    &nbsp;&nbsp;&nbsp;(.btn .btn--sm .btn--red)
-                </div>
-                <div class="sct" >
-                    <div class="sct" >
-                        <button class="btn btn--sm btn--full btn--red">Кнопка</button>
+
+                <div class="text-area">
+                    <div class="content content--xs">
+                        <div class="text-box">
+                            <p>Мы привыкли ежедневно использовать сотни предметов и приборов в обыденной жизни, но задумывался ли кто-нибудь из нас, а как это работает? Научные ответы на вполне бытовые вопросы представит Discovery Channel в серии своих телепередач, объединенных логичным названием «Как это работает?»</p>
+                            <p>Зрители смогут окунуться в тонкости производства привычных предметов: ручной пилы, бурового долото, хоккейной шайбы и даже замороженной картошки фри. Прежде чем получить столь удобные и незатейливые в обращении вещи, в ход приходится пускать сложное оборудование и технологические разработки.</p>
+                            <img src="assets/images/test-image.jpg" alt="test-image">
+                        </div>
                     </div>
-                    (.btn .btn--sm .btn--full .btn--red)
                 </div>
-                <div class="sct2" >
-                    <div class="sct" >
-                        <button class="btn btn--md btn--full btn--red">Кнопка</button>
-                    </div>
-                    (.btn .btn--md .btn--full .btn--red)
-                </div>
-                <h1 class="sct">MEDIA</h1>
-                <xmp class="sct">
-<picture>
-    <source type="image/webp" srcset="assets/images/test-image.webp">
-    <source type="image/jpeg" srcset="assets/images/test-image.jpg">
-    <img src="assets/images/test-image.jpg" alt="Тестовая картинка" width="600">
-</picture>
-                </xmp>
-                <div class="sct2">
-                    <picture width="600">
-                        <source type="image/webp" srcset="assets/images/test-image.webp">
-                        <source type="image/jpeg" srcset="assets/images/test-image.jpg">
-                        <img src="assets/images/test-image.jpg" alt="Тестовая картинка" width="600">
-                    </picture>
-                </div>
-                <h1 class="sct">SVG</h1>
-                <xmp class="sct">
-<i class="icon">
-    <svg xmlns="http://www.w3.org/2000/svg">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-name"/>
-    </svg>
-</i>
-                </xmp>
 
             </div>
-
         </div>
 
         <footer class="footer" id="footer">
@@ -766,6 +611,76 @@
 
 </div>
 
+<div class="burger_menu" id="burgerMenu">
+    <div class="burger_menu-blur burger_close"></div>
+    <div class="content content--lg">
+        <div class="burger_menu-wrap">
+            <div class="burger_menu-bg"></div>
+            <div class="burger_menu-main">
+                <div class="burger_menu-close">
+                    <button class="burger_close">
+                        <i class="icon icon-close">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+                <div class="burger_menu-invite">
+                    Привет, reconcept@mail.ru
+                </div>
+                <div class="burger_menu-nav--wrap">
+                    <div class="pl-nav-scroll">
+                        <div class="burger_menu-nav">
+                            <div class="burger_menu-site_menu">
+                                <ul>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="text-page.html" class="burger_menu-site_menu--link">Способы оплаты и доставка</a>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="text-page.html" class="burger_menu-site_menu--link">Программа лояльности</a>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item fn-expand-box">
+                                        <span class="burger_menu-site_menu--link fn-expand-btn">Товары</span>
+                                        <ul class="fn-expand-data" style="display: none;">
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="category.html" class="burger_menu-site_menu--sublink">Категория 1</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="category.html" class="burger_menu-site_menu--sublink">Категория 2</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="category.html" class="burger_menu-site_menu--sublink">Категория 3</a>
+                                            </li>
+                                            <li class="burger_menu-site_menu--subitem">
+                                                <a href="category.html" class="burger_menu-site_menu--sublink">Категория 4</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="burger_menu-site_menu--item">
+                                        <a href="text-page.html" class="burger_menu-site_menu--link">О нас</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="burger_menu-auth_menu">
+                                <ul>
+                                    <li class="burger_menu-auth_menu--item"><a href="cart.html">Корзина (1)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="my-orders.html">Мои заказы (3)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="favorites.html">Избранное (2)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="looked.html">Я смотрел (65)</a></li>
+                                    <li class="burger_menu-auth_menu--item"><a href="profile.html">Мои личные данные</a></li>
+                                    <li class="burger_menu-auth_menu--item">
+                                        <a href="javascript:void(0);" class="btn btn-red btn--sm">Выйти</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.2/nouislider.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -775,7 +690,6 @@
 <script src="assets/js/app.min.js"></script>
 
 
-<!--script-->
 
 
 </body>

@@ -2,18 +2,20 @@ const validation = {
     defaults: {
         onfocusout: false,
         ignore: '.ignore',
+        success: 'valid',
         errorClass: 'invalid',
-        highlight: function(element, errorClass) {
+        highlight: function(element, errorClass, validClass) {
             $(element)
                 .closest('.form-field')
-                .addClass(errorClass);
+                .addClass(errorClass)
+                .removeClass(validClass);
         },
-        unhighlight: function(element, errorClass) {
+        unhighlight: function(element, errorClass, validClass) {
             $(element)
                 .closest('.form-field')
+                .addClass(validClass)
                 .removeClass(errorClass);
         },
-        errorPlacement: $.noop,
     },
     setDefaults: function() {
         $.validator.setDefaults(this.defaults);

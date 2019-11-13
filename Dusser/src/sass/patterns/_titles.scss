@@ -30,6 +30,18 @@
       font-size: $font-md;
     }
   }
+  &-article {
+
+    @include mq($from: desktop) {
+      padding: $padding-xxl 0 80px;
+    }
+    @include mq(tablet, desktop) {
+      padding: $padding-xl 0 60px;
+    }
+    @include mq($until: tablet) {
+      padding: $padding 0 40px;
+    }
+  }
   &-reg {
     font-size: $font;
     font-weight: 500;

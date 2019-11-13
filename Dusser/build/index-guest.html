@@ -130,12 +130,12 @@
                                             </li>
                                         </ul>
                                         <div class="header-personal_info--actions">
-                                            <a href="looked.html" class="btn btn-red btn--full">перейти к списку</a>
+                                            <a href="looked.html" class="btn btn-red btn--sm btn--full">перейти к списку</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="header-personal_info--item small-hidden">
-                                    <a href="favorites.html" class="header-personal_info--favorites">
+                                    <a href="how-it-works.html" class="header-personal_info--favorites">
                                         <i class="icon icon-favorite">
                                             <svg xmlns="http://www.w3.org/2000/svg">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"/>
@@ -144,7 +144,7 @@
                                     </a>
                                 </div>
                                 <div class="header-personal_info--item">
-                                    <a href="cart.html" class="header-personal_info--basket">
+                                    <a href="how-it-works.html" class="header-personal_info--basket">
                                         <i class="icon icon-basket">
                                             <svg xmlns="http://www.w3.org/2000/svg">
                                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-basket"/>
@@ -1081,7 +1081,7 @@
         <footer class="footer" id="footer">
             <div class="footer-scroll_top">
                 <div class="content content--lg">
-                    <button type="button" class="footer-scroll_top--btn btn btn-grey">Наверх</button>
+                    <button type="button" class="footer-scroll_top--btn btn btn--md btn-grey">Наверх</button>
                 </div>
             </div>
             <div class="content content--lg">
@@ -1228,8 +1228,9 @@
                                     </div>
                                     <div class="form-field form-field--lg">
                                         <div class="form-input">
-                                            <input type="password" name="password">
+                                            <input type="password" name="password" id="signup_password">
                                             <label class="form-input--label">Пароль</label>
+                                            <div class="form-input--message">Пароль должен содержать минимум 8 символов</div>
                                         </div>
                                     </div>
                                     <div class="form-field form-field--lg">
@@ -1247,7 +1248,7 @@
                                         </div>
                                     </div>
                                     <div class="form-field form-field--lg">
-                                        <button class="btn btn-red btn--full">Регистрация</button>
+                                        <button class="btn btn-red btn--lg btn--full">Регистрация</button>
                                     </div>
                                     <div class="form-socials">
                                         <div class="title-reg">Вход через соц сети</div>
@@ -1279,8 +1280,8 @@
                                         </div>
                                     </div>
                                     <div class="form-field form-field--lg form-buttons">
-                                        <button class="btn btn-red">Войти</button>
-                                        <a href="text-page.html" class="btn-link link u-nowrap">Забыли пароль ?</a>
+                                        <button class="btn btn-red btn--lg">Войти</button>
+                                        <a href="text-page.html" class="btn-link btn--lg link u-nowrap">Забыли пароль ?</a>
                                     </div>
                                     <div class="form-socials">
                                         <div class="title-reg">Вход через соц сети</div>
@@ -1361,7 +1362,7 @@
                                     <li class="burger_menu-auth_menu--item"><a href="profile.html">Мои личные данные</a></li>
                                     <li class="burger_menu-auth_menu--item">
                                         <button type="button"
-                                                class="btn btn-red"
+                                                class="btn btn-red btn--sm"
                                                 onclick="functions.burger.close(); functions.auth.open();"
                                         >Авторизация</button>
                                     </li>
@@ -1393,11 +1394,20 @@
                     required: true,
                     email: true
                 },
-                password: {required: true}
+                password: {
+                    required: true,
+                    minlength: 8
+                }
             },
             messages: {
-                email: {required: ""},
-                password: {required: ""}
+                email: {
+                    required: "Это поле обязательное",
+                    email: "Введите корректный email"
+                },
+                password: {
+                    required: "Это поле обязательное",
+                    minlength: "Пароль должен содержать минимум 8 символов"
+                }
             },
             submitHandler:function (form) {
                 // if (form.valid()){
@@ -1416,15 +1426,21 @@
                     required: true,
                     email: true
                 },
-                password: {required: true},
-                reset_password: {required: true},
+                password: {
+                    required: true,
+                    minlength: 8
+                },
+                reset_password: {equalTo: '#signup_password'},
                 agreement: {required: true}
             },
             messages: {
                 name: {required: ""},
                 email: {required: ""},
-                password: {required: ""},
-                reset_password: {required: ""},
+                password: {
+                    required: "Это поле обязательное",
+                    minlength: "Пароль должен содержать минимум 8 символов"
+                },
+                reset_password: {equalTo: "Пароль не совпадает"},
                 agreement: {required: ""}
             },
             submitHandler:function (form) {

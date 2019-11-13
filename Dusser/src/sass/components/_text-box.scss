@@ -1,9 +1,183 @@
+$textBoxMargin: $padding-md;
 .text-box {
   line-height: 1.5;
-  p {
+  color: $tag;
+  h2 {
+    font-weight: 500;
+    @include mq($from: tablet) {
+      font-size: $font-lg;
+    }
+    @include mq($until: tablet) {
+      font-size: $font-md;
+    }
     &:not(:last-child){
-      margin-bottom: 12px;
+      margin-bottom: 24px;
+    }
+  }
+  h3 {
+    @include mq($from: tablet) {
+      font-size: $font-md;
+    }
+    @include mq($until: tablet) {
+      font-size: 20px;
+    }
+    font-weight: 500;
+    &:not(:last-child){
+      margin-bottom: 24px;
+    }
+  }
+  h4 {
+    font-weight: 500;
+    @include mq($from: tablet) {
+      font-size: 20px;
+    }
+    @include mq($until: tablet) {
+      font-size: 18px;
+    }
+    &:not(:last-child){
+      margin-bottom: 24px;
+    }
+  }
+  ol {
+    counter-reset: item;
+    &:not(:last-child){
+      margin-bottom: $textBoxMargin;
+    }
+    li {
+      padding-left: $padding-xl;
+      position: relative;
+      &:before {
+        content: counter(item, decimal)'.';
+        counter-increment: item;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+  ul {
+    &:not(:last-child){
+      margin-bottom: $textBoxMargin;
+    }
+    li {
+      padding-left: $padding-xl;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: $padding-lg;
+        height: 1px;
+        background: currentColor;
+        top: 12px;
+      }
+    }
+  }
+  li {
+    &:not(:last-child){
+      margin-bottom: $textBoxMargin;
+    }
+  }
+  p {
+    min-height: 24px;
+    &:not(:last-child){
+      margin-bottom: $textBoxMargin;
+    }
+  }
+  img {
+    display: block;
+    margin: 24px auto;
+    height: auto;
+    position: relative;
+    max-width: 100%;
+    @include mq($from: desktop_md) {
+      max-width: calc(4*100%/3);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .video {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    margin: 24px auto;
+    position: relative;
+    padding-bottom: calc(2*100%/3);
+    @include mq($from: desktop_md) {
+      width: calc(4*100%/3);
+      padding-bottom: calc(8*100%/9);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
+  blockquote {
+    position: relative;
+    color: $text;
+    @include mq($from: desktop) {
+      padding-left: 128px;
+    }
+    @include mq($until: desktop) {
+      padding-left: 12vw;
+    }
+    @include mq($from: tablet) {
+      font-size: $font-md;
+      margin-top: 56px;
+      &:not(:last-child){
+        margin-bottom: 56px;
+      }
+    }
+    @include mq($until: tablet) {
+      font-size: 20px;
+      margin-top: 40px;
+      &:not(:last-child){
+        margin-bottom: 40px;
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 8px;
+      background: linear-gradient(to bottom, $grad-begin 0%, $grad-end 100%);
+    }
+  }
+  a {
+    color: inherit;
+    background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    padding: 2px 0;
+    transition: background-size .3s;
+    position: relative;
+    background-size: 75% 2px;
+    @include hover(){
+      background-size: 100% 2px;
+    }
+  }
+}
+
+.text-area {
+  background: $white;
+
+  @include mq($from: desktop) {
+    padding: 80px 0;
+  }
+  @include mq(tablet, desktop) {
+    padding: 60px 0;
+  }
+  @include mq($until: tablet) {
+    padding: 40px 0;
+  }
 }

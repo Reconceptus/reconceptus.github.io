@@ -11,4 +11,6 @@ window.functions = {
     validation: require('./modules/validation'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     carousel: require('./modules/carousel'),
+    filled_input: require('./modules/filled-input'),
+    textbox: require('./modules/textbox'),
 };
