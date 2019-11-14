@@ -26,29 +26,22 @@
       padding: $padding-lg;
       margin-bottom: $padding;
       width: 100%;
+      &.sidebar-section--categories {
+        padding-bottom: 4px;
+      }
     }
     @include mq(desktop, desktop_xl) {
       padding: $padding-md;
       margin-bottom: $padding;
       width: 100%;
+      &.sidebar-section--categories {
+        padding-bottom: 4px;
+      }
     }
 
     &--categories {
       @include mq($until: desktop) {
-        order: -1;
 
-      }
-      @include mq(tablet, desktop) {
-        .sticky & {
-          margin: 0 -1*$padding-lg;
-          padding: 0 $padding-lg;
-        }
-      }
-      @include mq($until: tablet) {
-        .sticky & {
-          margin: 0 -1*$padding-md;
-          padding: 0 $padding-md;
-        }
       }
     }
     &--filters {
@@ -195,82 +188,57 @@
 
 .sidebar_categories {
   color: $tag;
-  @include mq($until: desktop) {
-    padding: 10px;
-  }
-  &-list {
-    @include mq($until: desktop) {
-      display: flex;
-      font-size: 12px;
-      justify-content: space-between;
-    }
-  }
   &-item {
     padding-left: $padding-lg;
-    @include mq($from: desktop) {
-      &:not(:last-child){
-        margin-bottom: 20px;
-      }
-    }
-    @include mq($until: desktop) {
-      position: relative;
-      &:not(:last-child){
-        margin-right: $padding-md;
-        .fn-expand-data {
-          left: -10px;
+    &.fn-expand-box {
+      & > .fn-expand-btn {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          right: 100%;
+
+          margin: 0 12px 0 0;
+          width: 9px;
+          height: 9px;
+          border-style: solid solid none none;
+          border-width: 2px;
+          border-color: $icon;
+          transform: rotate(45deg) translate(-2px, 2px);
+          transition: transform 0.25s;
+          top: 8px;
         }
       }
-      &:last-child{
-        .fn-expand-data {
-          right: -10px;
+      &.expanded {
+        & > .fn-expand-btn {
+          &:before {
+            transform: rotate(135deg) translate(-2px, 2px);
+          }
         }
-      }
-      .fn-expand-data {
-        display: none;
-        position: absolute;
-        z-index: 1;
-        top: 100%;
-        margin-top: 6px;
-        background: $white;
-        box-shadow: 0 8px 8px 0 rgba($text,0.5);
+
       }
     }
+
+  }
+  &-sublist {
+    display: none;
   }
   &-subitem {
     @include mq($from: desktop) {
       margin-top: $padding-md;
     }
-    @include mq($until: desktop) {
-      padding: $padding $padding-md;
-    }
   }
   &-title {
+    //display: inline-block;
     cursor: pointer;
-    &.fn-expand-btn {
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        right: 100%;
-
-        margin: 0 12px 0 0;
-        width: 9px;
-        height: 9px;
-        border-style: solid solid none none;
-        border-width: 2px;
-        border-color: $icon;
-        transform: rotate(45deg) translate(-2px, 2px);
-        transition: transform 0.25s;
-        @include mq($from: desktop) {
-          top: 6px;
-        }
-        @include mq($until: desktop) {
-          top: 4px;
-        }
-        .expanded & {
-          transform: rotate(135deg) translate(-2px, 2px);
-        }
-      }
+    //@include mq($from: desktop) {
+    //  margin-bottom: 20px;
+    //}
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 20px;
     }
   }
   a {
