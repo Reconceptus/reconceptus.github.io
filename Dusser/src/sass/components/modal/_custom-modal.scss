@@ -1,0 +1,37 @@
+.custom_modal {
+  padding: 95px $padding-xxl $padding-xxl;
+  display: flex;
+  @include mq($from: mobile) {
+    max-height: 95vh;
+  }
+  @include mq($until: mobile) {
+    height: 100vh;
+    overflow: hidden;
+  }
+  &-main {
+    overflow: auto;
+    @include mq($until: mobile) {
+
+    }
+  }
+  &-title {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &-text {
+    margin-bottom: 40px;
+  }
+  &-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .icon-close {
+    width: 28px;
+    height: 28px;
+  }
+  .modal-close {
+    right: 75px;
+    top: 32px;
+  }
+}

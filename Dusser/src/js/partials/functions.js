@@ -13,4 +13,5 @@ window.functions = {
     carousel: require('./modules/carousel'),
     filled_input: require('./modules/filled-input'),
     textbox: require('./modules/textbox'),
+    popup: require('./modules/popup'),
 };

@@ -9,6 +9,7 @@
   letter-spacing: 2px;
   &-link {
     color: $tag;
+    @extend %btn_reset;
     text-transform: uppercase;
     font-size: $font;
     font-weight: 600;
