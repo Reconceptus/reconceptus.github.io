@@ -28,6 +28,7 @@ window.functions = {
     filled_input: require('./modules/filled-input'),
     textbox: require('./modules/textbox'),
     popup: require('./modules/popup'),
+    orders_table: require('./modules/orders-table'),
 };
 
 // scripts
@@ -96,6 +97,9 @@ $(document).ready(() => {
     }
     if ($('.text-box').length > 0) {
         functions.textbox();
+    }
+    if ($('.orders_table').length > 0) {
+        functions.orders_table.init();
     }
 
     // $('.link-auth-open').click(() => {

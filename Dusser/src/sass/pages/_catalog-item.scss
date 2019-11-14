@@ -162,7 +162,6 @@
     }
   }
   &-more_info {
-
     background: $white;
     @include mq($from: desktop_md) {
       padding: $padding-xxl;
@@ -172,6 +171,24 @@
     }
     @include mq($until: mobile) {
       padding: $padding-md;
+    }
+    .content {
+      @include mq($until: desktop_md) {
+        padding: 0;
+      }
+    }
+    .adds-title {
+      &:not(:last-child){
+        @include mq($from: desktop_md) {
+          margin-bottom: $padding-xxl;
+        }
+        @include mq(mobile, desktop_md) {
+          margin-bottom: $padding-xl;
+        }
+        @include mq($until: mobile) {
+          margin-bottom: $padding-md;
+        }
+      }
     }
   }
 }

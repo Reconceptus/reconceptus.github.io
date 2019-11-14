@@ -14,4 +14,5 @@ window.functions = {
     filled_input: require('./modules/filled-input'),
     textbox: require('./modules/textbox'),
     popup: require('./modules/popup'),
+    orders_table: require('./modules/orders-table'),
 };

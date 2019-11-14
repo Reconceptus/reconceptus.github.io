@@ -64,6 +64,9 @@ $(document).ready(() => {
     if ($('.text-box').length > 0) {
         functions.textbox();
     }
+    if ($('.orders_table').length > 0) {
+        functions.orders_table.init();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()
