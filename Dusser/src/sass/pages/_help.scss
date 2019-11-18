@@ -26,6 +26,12 @@
     @include mq($from: desktop) {
       max-width: calc( 3*100%/4 );
     }
+    @include mq(desktop_md, 1600px) {
+      .text-box img {
+        max-width: calc( 10*100vw/15 );
+      }
+
+    }
   }
   &-section {
     &:not(:last-child){
