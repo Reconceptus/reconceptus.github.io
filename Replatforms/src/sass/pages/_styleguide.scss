@@ -1,0 +1,115 @@
+$global-spacing: 16px !default;
+$sidbar-width: 300px !default;
+
+@import './styleguide/block';
+@import './styleguide/main';
+@import './styleguide/sidebar';
+@import './styleguide/navigation';
+@import './styleguide/rendered';
+@import './styleguide/prettify';
+@import './styleguide/elements';
+
+/**
+Styleguide
+
+Styleguide styleguide
+ */
+
+/**
+Цвета
+
+Weight: 1
+
+Styleguide styleguide.colorpalette
+ */
+
+/**
+Типографика
+
+Weight: 2
+
+Styleguide styleguide.typography
+ */
+
+/**
+Links & Lists
+
+Weight: 3
+
+Styleguide styleguide.linkslists
+ */
+
+/**
+Buttons
+
+Weight: 4
+
+Styleguide styleguide.buttons
+ */
+
+/**
+Forms
+
+Weight: 5
+
+Styleguide styleguide.forms
+ */
+
+/**
+Grid
+
+Grid framework based on Bootstrap, which follows stand alone grid setup provided by Bootstrap
+https://github.com/twbs/bootstrap/blob/v4-dev/scss/bootstrap-grid.scss. we made some changes for project scope:
+<ul>
+<li>class "row" changed to "o-grid"</li>
+<li>class "col-*" changed to "o-grid__item"</li>
+<li>clean up of bootstrap variables.scss for having grid variables only</li>
+<li>NOTE: usage similar to bootstrap with sm, md, lg modifier</li>
+</ul>
+
+Weight: 6
+
+Styleguide styleguide.grid
+ */
+
+/**
+Icons
+
+Weight: 7
+
+Styleguide styleguide.icons
+ */
+
+/**
+Widgets
+
+Weight: 8
+
+Styleguide styleguide.widgets
+ */
+
+/**
+Utilities
+
+Weight: 11
+
+Styleguide styleguide.utilities
+ */
+
+/**
+VueJS
+
+Component Documentation lists all components included in VueDocumentation.vue.
+Component Styleguide is equal to the frontend stylguide and shows scss files and examples.
+
+Styleguide vue
+ */
+
+/**
+JS Documentation
+
+Markup:
+  <vue-documentation></vue-documentation>
+
+Styleguide vue.documentation
+ */

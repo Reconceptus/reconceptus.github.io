@@ -1,0 +1,18 @@
+@import "mixins/mq";
+@import "mixins/class-generator";
+@mixin fonts($name,$file,$weight,$style){
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    src: url("../fonts/" + $file + ".woff"),
+    url("../fonts/" + $file + ".woff2");
+  }
+}
+@mixin hover(){
+  @include mq($from: desktop) {
+    &:hover {
+      @content;
+    }
+  }
+}

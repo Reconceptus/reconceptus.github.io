@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{options.title}}</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node">
+    <meta name="viewport" content="width=device-width">
+    {{{styles}}}
+</head>
+
+<body>
+
+<aside class="__sidebar">
+    <div class="content content--lg">
+        <div class="content-row flex-align_items--center">
+            <div class="content-col col-1">
+                <div class="__logo"><img src="./../assets/svg/partials/logo.svg"></div>
+            </div>
+            <div class="content-col col-11">
+                <ul class="__navigation">
+                    <li class="">
+                        <a href="./index.html">Documentation</a>
+                    </li>
+                    {{#each menu}}
+                        <li class="__navigation-item __navigation-item--1">
+                            {{#if children}}
+                                <ul class="__navigation-child">
+                                    {{#each children}}
+                                        <li class="__navigation-item __navigation-item--{{referenceNumber}}" data-depth="{{depth}}">
+                                            <a href="section-{{../referenceURI}}.html#{{referenceURI}}">
+                                                {{header}}
+                                            </a>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</aside>
+
+<main class="__main" id="js-app">
+
+    <div class="content content--lg">
+        <div class="content-row">
+            <div class="content-col col-12">
+                {{#if template.isHomepage}}
+                    {{#if homepage}}
+                        <section class="__block">
+                            {{{homepage}}}
+                        </section>
+                    {{/if}}
+                {{else}}
+
+                {{#each sections}}
+                    <section id="{{referenceURI}}" class="__block __block--{{depth}}">
+
+                        <h{{depth}} class="__h{{depth}}">{{header}}</h{{depth}}>
+
+                        {{#if source.filename}}
+                            <small class="__file">
+                                Source: <code>{{source.filename}}</code>, line {{source.line}}
+                            </small>
+                        {{/if}}
+
+                        {{#if description}}
+                            <span class="__description">
+                                {{{description}}}
+                            </span>
+                        {{/if}}
+
+                        {{#if example}}
+                            <div class="__rendered">
+                                {{#if modifiers}}
+                                    {{#each modifiers}}
+                                        <div class="__rendered-example">
+                                            <small class="__rendered-example-name">
+                                                <span>{{name}}</span> ({{{description}}})
+                                            </small>
+                                            <div class="__rendered-example-element">
+                                                {{{markup}}}
+                                            </div>
+                                        </div>
+                                    {{/each}}
+                                {{else}}
+                                    <div class="__rendered-example">
+                                        {{{example}}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                            {{#if markup}}
+                                <pre class="prettyprint linenums lang-html"><code
+                                        data-language="html">{{markup}}</code></pre>
+                            {{/if}}
+                        {{/if}}
+                    </section>
+                {{/each}}
+
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<footer class="__footer"></footer>
+{{{scripts}}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).on('click', 'a[href*="#"]', function() {
+        setTimeout(() => {
+            var st = $(window).scrollTop()
+            $(window).scrollTop(st - 130)
+        }, 0);
+    });
+    let indexes = [];
+    $('.__navigation-child [data-depth="2"]').each(function(){
+        var _this = $(this);
+        indexes.push(_this.index());
+        if(_this.next().attr('data-depth') == 3){
+            _this.append('<div class="__dropdown"></div>')
+
+            var thisClass = _this.attr('class');
+
+            var _allNext = _this.nextAll('[class*="'+thisClass+'"]');
+            $('div', _this).append(_allNext)
+        }
+    })
+</script>
+</body>
+</html>

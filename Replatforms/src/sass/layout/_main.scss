@@ -1,0 +1,46 @@
+html {
+
+  min-height: 100%;
+  font-size: $font;
+  &.ovh {
+    overflow: hidden;
+  }
+
+}
+body {
+  line-height: 1.4;
+  font-weight: 400;
+  color: $black;
+  font-family: $font_family;
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+a {
+  outline: none;
+  transition: all 0.3s;
+}
+svg {
+  @extend %full_block;
+  fill: currentColor;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  flex: 1 0 auto;
+}
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

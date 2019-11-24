@@ -1,0 +1,48 @@
+$white: #fff;
+$black: #000;
+
+$text: #002b4f;
+$link: #009ca2;
+$bg: #edf1f6;
+$icon: #bdbdbd;
+
+$btn-blue: #1976d2;
+$btn-blue_hover: #0f6bc5;
+$btn-red: #a40843;
+$btn-red_hover: #860435;
+
+$grad-begin: #2e6db6;
+$grad-end: #5bc48c;
+
+
+$padding: 16px;
+$padding-sm: 0.5*$padding;  // 8px
+$padding-md: 2*$padding;    // 32px
+$padding-lg: 3*$padding;    // 48px
+$padding-xl: 4*$padding;    // 64px
+$padding-xxl: 8*$padding;   // 128px
+
+$gutter: 12px;
+
+$font: 16px;
+$font-sm: 0.5*$font;        // 8px
+$font-md: 1.5*$font;        // 24px
+$font-lg: 2*$font;          // 32px
+
+$content-lg: 1800px;
+
+$mq-breakpoints: (
+        mobile:  480px,
+        mobile_xl:  600px,
+        tablet:  800px,
+        desktop: 1025px,
+        desktop_md: 1281px,
+        desktop_xl: 1421px,
+        wide:    1725px
+) !default;
+
+//@include mq($from: desktop) {}
+//@include mq(tablet, desktop) {}
+//@include mq($until: desktop) {}
+
+

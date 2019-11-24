@@ -1,0 +1,28 @@
+{
+  "//": "theme folder for styleguide theming",
+  "builder": "./theme/",
+
+
+  "//": "file scope",
+  "mask": "*.scss",
+
+
+  "//": "source directory to look for kss comments",
+  "source": "./../src/sass/",
+
+
+  "//": "destination directory for static styleguide files",
+  "destination": "./../build/styleguide",
+
+
+  "//": "css build file to include in styleguide",
+  "css": [
+    "./../assets/css/styles.min.css",
+    "./../assets/css/styleguide.min.css"
+  ],
+
+
+  "//": "documentation readme",
+  "homepage": "./../../styleguide/documentation.md"
+
+}
