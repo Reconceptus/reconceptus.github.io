@@ -48,7 +48,7 @@
     &.col-8 {max-width: calc(8*100%/12)}
     &.col-9 {max-width: calc(9*100%/12)}
     &.col-10 {max-width: calc(10*100%/12)}
-    &.col-12 {max-width: calc(11*100%/12)}
+    &.col-11 {max-width: calc(11*100%/12)}
     &.col-12 {max-width: calc(12*100%/12)}
   }
 }
@@ -57,6 +57,11 @@
   &-align_items {
     &--center {
       align-items: center;
+    }
+  }
+  &-justify {
+    &--right {
+      justify-content: flex-end;
     }
   }
 }
