@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KSS Style Guide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./../assets/css/styles.min.css">
+<link rel="stylesheet" href="./../assets/css/styleguide.min.css">
+
+</head>
+
+<body>
+
+<aside class="__sidebar">
+    <div class="content content--lg">
+        <div class="content-row flex-align_items--center">
+            <div class="content-col col-1">
+                <div class="__logo"><img src="./../assets/svg/partials/logo.svg"></div>
+            </div>
+            <div class="content-col col-11">
+                <ul class="__navigation">
+                    <li class="">
+                        <a href="./index.html">Documentation</a>
+                    </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--1.1" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-colorpalette">
+                                                Цвета
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-brand">
+                                                Brand Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-ui">
+                                                UI Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.3" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-text">
+                                                Text Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-typography">
+                                                Typography
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-headings">
+                                                Headings
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-text-box">
+                                                Text-box
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.3" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-linkslists">
+                                                Links &amp; Lists
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.4" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-buttons">
+                                                Buttons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-forms">
+                                                Forms
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.6" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-grid">
+                                                Grid
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.7" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-icons">
+                                                Icons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.8" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-widgets">
+                                                Widgets
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.9" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-utilities">
+                                                Utilities
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--2.1" data-depth="2">
+                                            <a href="section-vue.html#vue-documentation">
+                                                JS Documentation
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</aside>
+
+<main class="__main" id="js-app">
+
+    <div class="content content--lg">
+        <div class="content-row">
+            <div class="content-col col-12">
+
+                    <section id="vue" class="__block __block--1">
+
+                        <h1 class="__h1">VueJS</h1>
+
+                            <small class="__file">
+                                Source: <code>pages/_styleguide.scss</code>, line 99
+                            </small>
+
+                            <span class="__description">
+                                <p>Component Documentation lists all components included in VueDocumentation.vue.
+Component Styleguide is equal to the frontend stylguide and shows scss files and examples.</p>
+
+                            </span>
+
+                    </section>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<footer class="__footer"></footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).on('click', 'a[href*="#"]', function() {
+        setTimeout(() => {
+            var st = $(window).scrollTop()
+            $(window).scrollTop(st - 130)
+        }, 0);
+    });
+    let indexes = [];
+    $('.__navigation-child [data-depth="2"]').each(function(){
+        var _this = $(this);
+        indexes.push(_this.index());
+        if(_this.next().attr('data-depth') == 3){
+            _this.append('<div class="__dropdown"></div>')
+
+            var thisClass = _this.attr('class');
+
+            var _allNext = _this.nextAll('[class*="'+thisClass+'"]');
+            $('div', _this).append(_allNext)
+        }
+    })
+</script>
+</body>
+</html>

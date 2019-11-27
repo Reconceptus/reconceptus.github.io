@@ -1,0 +1,44 @@
+/**
+Headings
+
+Markup:
+  <div class="h1">H1 heading</div>
+  <div class="h2">H2 heading</div>
+  <div class="h3">H3 heading</div>
+
+Weight: 1
+
+Styleguide styleguide.typography.headings
+ */
+
+.h1 {
+  font-size: 56px;
+  line-height: (80/56);
+  font-weight: 300;
+}
+.h2 {
+  font-size: 32px;
+  line-height: (48/32);
+  font-weight: 400;
+}
+.h3 {
+  font-size: 24px;
+  line-height: (40/24);
+  font-weight: 400;
+}
+
+//.title {
+//  font-weight: 500;
+//  &--lg {
+//    font-size: 32px;
+//  }
+//  &--md {
+//    font-size: 28px;
+//  }
+//  &--sm {
+//    font-size: 22px;
+//  }
+//  &--xs {
+//    font-size: 18px;
+//  }
+//}

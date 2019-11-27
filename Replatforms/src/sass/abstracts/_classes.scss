@@ -1,0 +1,93 @@
+.clearfix:after {content: ""; display: block; clear: both;}
+.tableBox {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  & > div {
+    display: table;
+    width: 100%;
+    height: 100%;
+    & > div {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+    }
+  }
+}
+.content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0 $gutter;
+  &--lg {
+    max-width: $content-lg + 2*$gutter;
+  }
+  &--md {
+    //max-width: 1710px;
+  }
+  &--sm {
+    //max-width: 980px;
+  }
+  &-row {
+    margin: 0 -1*$gutter;
+    display: flex;
+  }
+  &-col {
+    padding: 0 $gutter;
+    width: 100%;
+    &.col-1 {max-width: calc(100%/12)}
+    &.col-2 {max-width: calc(2*100%/12)}
+    &.col-3 {max-width: calc(3*100%/12)}
+    &.col-4 {max-width: calc(4*100%/12)}
+    &.col-5 {max-width: calc(5*100%/12)}
+    &.col-6 {max-width: calc(6*100%/12)}
+    &.col-7 {max-width: calc(7*100%/12)}
+    &.col-8 {max-width: calc(8*100%/12)}
+    &.col-9 {max-width: calc(9*100%/12)}
+    &.col-10 {max-width: calc(10*100%/12)}
+    &.col-11 {max-width: calc(11*100%/12)}
+    &.col-12 {max-width: calc(12*100%/12)}
+  }
+}
+
+.flex {
+  &-align_items {
+    &--center {
+      align-items: center;
+    }
+  }
+  &-justify {
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}
+.invalid {
+  color: rgba(255,128,124,.5);
+  input, textarea {background-color: rgba(255,128,125,1)}
+  display: flex;
+}
+
+
+.desktop-hidden {
+  @include mq($from: desktop) {
+    display: none !important;
+  }
+}
+.tablet-hidden {
+  @include mq($until: desktop) {
+    display: none !important;
+  }
+}
+.mobile-hidden {
+  @include mq($until: tablet) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin color-class($color, $tag){
+    .color-font-#{$tag} {
+        color: $color;
+    }
+    .color-bg-#{$tag} {
+        background-color: $color;
+    }
+    .color-border-#{$tag} {
+        border-color: $color;
+    }
+}

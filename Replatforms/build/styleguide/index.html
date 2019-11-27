@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KSS Style Guide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./../assets/css/styles.min.css">
+<link rel="stylesheet" href="./../assets/css/styleguide.min.css">
+
+</head>
+
+<body>
+
+<aside class="__sidebar">
+    <div class="content content--lg">
+        <div class="content-row flex-align_items--center">
+            <div class="content-col col-1">
+                <div class="__logo"><img src="./../assets/svg/partials/logo.svg"></div>
+            </div>
+            <div class="content-col col-11">
+                <ul class="__navigation">
+                    <li class="">
+                        <a href="./index.html">Documentation</a>
+                    </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--1.1" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-colorpalette">
+                                                Цвета
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-brand">
+                                                Brand Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-ui">
+                                                UI Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.3" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-text">
+                                                Text Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-typography">
+                                                Typography
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-headings">
+                                                Headings
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-text-box">
+                                                Text-box
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.3" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-linkslists">
+                                                Links &amp; Lists
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.4" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-buttons">
+                                                Buttons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-forms">
+                                                Forms
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.6" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-grid">
+                                                Grid
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.7" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-icons">
+                                                Icons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.8" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-widgets">
+                                                Widgets
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.9" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-utilities">
+                                                Utilities
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--2.1" data-depth="2">
+                                            <a href="section-vue.html#vue-documentation">
+                                                JS Documentation
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</aside>
+
+<main class="__main" id="js-app">
+
+    <div class="content content--lg">
+        <div class="content-row">
+            <div class="content-col col-12">
+                        <section class="__block">
+                            <h1>Frontend Documentation</h1>
+<p>A documentation for getting into frontend development in california project.</p>
+<h2>Getting started</h2>
+<p>Go to our Gitlab Repositiory -  https://git.votum-media.net/sour/platform - where you can find installation instructions and how to set up your local environment.
+additionally have a read at our global confluence documentation https://confluence.votum.info:9443/display/SOUR/Getting+started</p>
+<h2>Coding Guidelines</h2>
+<p>Our projects coding guidelines can be read in confluence: https://confluence.votum.info:9443/pages/viewpage.action?pageId=14319994</p>
+<h2>Frontend basics</h2>
+<p>California project is set up with <a href="https://academy.spryker.com/">Spryker</a>, a &quot;commerce operating system for customer focused companies&quot;. Spryker hast two important main parts:</p>
+<ol>
+<li>ZED - Backend</li>
+<li>Yves - Frontend</li>
+</ol>
+<p>Frontend development will take place in YVES part based on the technologies spryker provides - which are mainly Webpack for building all frontend resources and Twig as template engine.
+Yves and Zed are connected through a client service which provides data for Yves.</p>
+<h3>-</h3>
+<h3>Templating</h3>
+<p>Yves is divided into bundles, which are mainly the features the shop provides, e.g. Product, Catalog, Cart or Checkout.
+Every bundle includes a theme folder where the twig templates are located.</p>
+<p>The Application bundle provides all basic templates:</p>
+<pre class="hljs"><code class="language-bash">// base templates <span class="hljs-keyword">in</span> Application bundle
+src/Pyz/Yves/Application/Theme
+    
+// base layout file with html scaffolding and base layout
+src/Pyz/Yves/Application/Theme/default/layout/layout.twig
+    
+// homepage template is also located <span class="hljs-keyword">in</span> Application bundle
+src/Pyz/Yves/Application/Theme/default/index/index.twig
+    
+// data is provided by YVES controller, <span class="hljs-keyword">in</span> Application bundle e.g.
+src/Pyz/Yves/Application/Controller/IndexController.php
+</code></pre>
+<h3>-</h3>
+<h3>Assets</h3>
+<p>Including all Frontend resources: CSS/SCSS, JS, Images, Fonts and build configuration.</p>
+<p><strong>Asset locations</strong></p>
+<pre class="hljs"><code class="language-">// build output: static production/distribution assets
+// static assets are linked in Application bundle's layout.twig
+public/Yves/assets/default
+    
+// source assets
+assets/Yves/default
+      
+// for building public static assets Webpack2 is used with Oryx as Sprykers asset building tool as addon for Webpack
+assets/Yves/default/build
+    
+// plugin dependencies and build scripts
+package.json
+</code></pre>
+<h5>Source asset structure - place to be for frontend development</h5>
+<ul>
+<li><strong>CSS/SCSS</strong> /assets/Yves/default/app/style</li>
+<li><strong>Javascript</strong> /assets/Yves/default/app/js</li>
+<li><strong>Images</strong> /assets/Yves/default/img</li>
+<li><strong>Translation files</strong> /assets/Yves/default/translations - JSON / containing Spyker translations for using in JS Modules</li>
+<li><strong>Other files</strong> /assets/Yves/default/files - other static files, e.g. example xls files for download</li>
+<li><strong>Build configuration</strong> /assets/Yves/default/build - Webpack/Oryx configuration files</li>
+<li><strong>Documentation files</strong> /assets/Yves/default/documentation - FE Documentation/Styleguide/VueJS component docs</li>
+</ul>
+<h5>JS Entrypoints</h5>
+<p>These are the applications startpoints containing all needed resources. The build process compiles static production bundles out of that.</p>
+<pre class="hljs"><code class="language-">app.entry.js // global entry file 
+styleguide.entry.js // styleguide entry file which contains also styleguide only related stuff
+</code></pre>
+<h5>YARN</h5>
+<p>As package manager we use YARN. All dependencies shold be installed via <strong>yarn install</strong>. Run the build scripts with <strong>yarn run %script%</strong></p>
+<h4>Asset building with Webpack and Oryx</h4>
+<p><strong>Note:</strong> We use Docker for our development environment (see documentation part about Docker). Run all Script in Dockers command line interface.
+(<code>$ make cli</code>)</p>
+<p>There are several build scripts defined in our package.json:</p>
+<pre class="hljs"><code class="language-">// building all yves assets default mode
+&quot;yves&quot;: &quot;node ./assets/Yves/default/build&quot;,
+    
+// build and watch yves assets - development mode with watcher
+&quot;yves:dev&quot;: &quot;node ./assets/Yves/default/build --dev&quot;,
+    
+// build yves assets for production deployment
+&quot;yves:prod&quot;: &quot;node ./assets/Yves/default/build --prod&quot;,
+    
+// asset building for zed backend (not important - will go to single page application)
+&quot;zed&quot;: &quot;node ./node_modules/@spryker/oryx-for-zed/build&quot;,
+&quot;zed:dev&quot;: &quot;node ./node_modules/@spryker/oryx-for-zed/build --dev&quot;,
+&quot;zed:prod&quot;: &quot;node ./node_modules/@spryker/oryx-for-zed/build --prod&quot;
+</code></pre>
+<p>Webpack/Oryx configuration is located in <strong>assets/Yves/default/build</strong> and has the two entrypoints <strong>app.entry.js</strong> and <strong>styleguide.entry.js</strong>
+defined and looks for them before build process. These entry point files contain all resources which shall go into the static bundles (JS and CSS).</p>
+<p>For now the difference between both entry points is, that the styleguide entry point contains additionally resources necessary only used in this styleguide.</p>
+<p>Check out the detailed documentation for Asset building at Spryker academy: http://spryker.github.io/user-interface/oryx/</p>
+<h3>-</h3>
+<h2>CSS/SCSS</h2>
+<p>Short introduction to our CSS/SCSS Architecture.</p>
+<h4>OOCSS/INUITCSS</h4>
+<p>We adopt inuitcss, which is an extensible, scalable, Sass-based, OOCSS framework for large and long-lasting UI projects: https://github.com/inuitcss/inuitcss</p>
+<h4>BEM</h4>
+<p>http://getbem.com/naming/</p>
+<p>We use the BEM methodology for writing CSS/SCSS and markup:</p>
+<ul>
+<li>Block</li>
+<li>Element</li>
+<li>Modifier</li>
+</ul>
+<pre class="hljs"><code class="language-">.block__element--modifier
+</code></pre>
+<h4>Folder / File Structure</h4>
+<p>We follow the default inuit.css folder structure. All folders and stylesheets are located in <strong>/assets/Yves/default/app/style</strong></p>
+<pre class="hljs"><code class="language-">/settings: Global variables, site-wide settings, config switches, etc.
+/tools: Site-wide mixins and functions.
+/generic: Low-specificity, far-reaching rulesets (e.g. resets).
+/elements: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+/objects: Objects, abstractions, and design patterns (e.g. .o-layout {}).
+/components: Discrete, complete chunks of UI (e.g. .c-carousel {}). This is the one layer that inuitcss doesn’t provide code for, as this is completely your terrain.
+/utilities: High-specificity, very explicit selectors. Overrides and helper classes
+</code></pre>
+<p>Everything defined in <strong>elements, objects, components and utilities</strong> is listed visually in this styleguide following the same navigation structure.</p>
+<h5>Class namespaces</h5>
+<ul>
+<li>.o-: Objects</li>
+<li>.c-: Components</li>
+<li>.u-: Utilities</li>
+</ul>
+<h5>app.scss</h5>
+<p>All stylesheets from our oocss architecture are imported in the main <strong>app.scss</strong>. This is our main entry point for styles and is
+required in the <strong>app.entry.js</strong> to go in our project bundle, build by webpack.</p>
+<h5>Styleguide</h5>
+<p>Additionaly there is a <strong>styleguide</strong> folder which contains the styleguide configuration and theme based on <strong>KSS Node</strong>
+https://github.com/kss-node/kss-node.</p>
+<p>For more information checkout detailed styleguide documentation later.</p>
+<h4>Media Queries / Breakpoints with Sass MQ</h4>
+<p>For responsive / mobile development we use the sass mq mixin. it is included as dev dependency node module and imported in the tools layer. For now we use sass mq's default breakpoints: https://github.com/sass-mq/sass-mq</p>
+<pre class="hljs"><code class="language-scss"><span class="hljs-variable">$mq-breakpoints</span>: (
+    mobile:  <span class="hljs-number">320px</span>,
+            tablet:  <span class="hljs-number">740px</span>,
+            desktop: <span class="hljs-number">1025px</span>,
+            wide:    <span class="hljs-number">1300px</span>
+) !default;
+</code></pre>
+<p><strong>Usage</strong></p>
+<pre class="hljs"><code class="language-scss"><span class="hljs-selector-class">.element</span> {
+  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$from</span>: mobile) {
+    <span class="hljs-attribute">color</span>: red;
+  }
+  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$until</span>: tablet) {
+    <span class="hljs-attribute">color</span>: blue;
+  }
+  @<span class="hljs-keyword">include</span> mq(mobile, tablet) {
+    <span class="hljs-attribute">color</span>: green;
+  }
+  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$from</span>: tablet, <span class="hljs-variable">$and</span>: <span class="hljs-string">'(orientation: landscape)'</span>) {
+    <span class="hljs-attribute">color</span>: teal;
+  }
+  @<span class="hljs-keyword">include</span> mq(<span class="hljs-number">950px</span>) {
+    <span class="hljs-attribute">color</span>: hotpink;
+  }
+  @<span class="hljs-keyword">include</span> mq(tablet, <span class="hljs-variable">$media-type</span>: screen) {
+    <span class="hljs-attribute">color</span>: hotpink;
+  }
+  <span class="hljs-comment">// Advanced use:</span>
+  <span class="hljs-variable">$my-breakpoints</span>: (L: <span class="hljs-number">900px</span>, XL: <span class="hljs-number">1200px</span>);
+  @<span class="hljs-keyword">include</span> mq(L, <span class="hljs-variable">$breakpoints</span>: <span class="hljs-variable">$my-breakpoints</span>, <span class="hljs-variable">$static-breakpoint</span>: L) {
+    <span class="hljs-attribute">color</span>: hotpink;
+  }
+}
+</code></pre>
+<h2>Javascript</h2>
+<p>As default Javascript development specification Spryker adopted CommonJS: https://addyosmani.com/resources/essentialjsdesignpatterns/book/#detailcommonjs
+and basically we follow this approach.</p>
+<p>As coding standard we use ECMAScript 6: In PhpStorm go to <strong>Settings &gt; Languages &amp; Frameworks &gt; JavaScript</strong> and change JavaScript language version to ECMAScript 6</p>
+<h4>JS folder structure</h4>
+<ul>
+<li><strong>/assets/Yves/default/app/js/clients</strong> - http request clients using axios / component related</li>
+<li><strong>/assets/Yves/default/app/js/components</strong> - mostly VueJS modules and some plain JS modules</li>
+<li><strong>/assets/Yves/default/app/js/directives</strong> - custom directives usable in components</li>
+<li><strong>/assets/Yves/default/app/js/filters</strong> - custom VueJS filters for using in template parts of vue modules</li>
+<li><strong>/assets/Yves/default/app/js/helpers</strong> - some js helper modules, e.g. formatter or validations</li>
+<li><strong>/assets/Yves/default/app/js/plugins</strong> - third party plugins folder</li>
+<li><strong>/assets/Yves/default/app/js/store</strong> - application store for state management based on vuex</li>
+<li><strong>/assets/Yves/default/app/js/utilities</strong> - global usable functions, e.g. sorting, scrollhandling, etc...</li>
+</ul>
+<h4>JS Tests</h4>
+<ul>
+<li>located in <strong>/tests/js</strong></li>
+<li>You have to check if this.$store exists (Vuex). Otherwise JS Test will be create a warning / error</li>
+</ul>
+<pre class="hljs"><code class="language-">yarn run tests
+</code></pre>
+<h4>Known issues</h4>
+<ul>
+<li>Vue.js &gt; 2.5.4 generates an JS-Test error in VueInputQuantity.vue. Vue.js will updated if 2.6 will released</li>
+</ul>
+<h4>Codeception Acceptance Tests</h4>
+<p>See https://confluence.votum.info:9443/display/SOUR/Acceptance+Tests</p>
+
+                        </section>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<footer class="__footer"></footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).on('click', 'a[href*="#"]', function() {
+        setTimeout(() => {
+            var st = $(window).scrollTop()
+            $(window).scrollTop(st - 130)
+        }, 0);
+    });
+    let indexes = [];
+    $('.__navigation-child [data-depth="2"]').each(function(){
+        var _this = $(this);
+        indexes.push(_this.index());
+        if(_this.next().attr('data-depth') == 3){
+            _this.append('<div class="__dropdown"></div>')
+
+            var thisClass = _this.attr('class');
+
+            var _allNext = _this.nextAll('[class*="'+thisClass+'"]');
+            $('div', _this).append(_allNext)
+        }
+    })
+</script>
+</body>
+</html>

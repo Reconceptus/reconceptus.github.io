@@ -1,0 +1,21 @@
+.__rendered {
+  //padding: $global-spacing;
+  border-top: 4px double #798A69;
+  margin-bottom: $global-spacing;
+  margin-top: $global-spacing;
+  padding-top: $global-spacing;
+
+  &-example {
+    //padding: $global-spacing/2 0;
+  }
+
+  &-example-name {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+}
+
+.__description {
+  color: #999;
+}

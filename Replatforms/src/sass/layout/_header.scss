@@ -1,0 +1,50 @@
+$header-height: 88px;
+
+.header {
+  position: fixed;
+  top: $padding-lg;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  &_logo {
+    margin-bottom: $header-height+$padding+$padding-sm;
+    &-link {
+      display: block;
+      width: $header-height;
+      height: $header-height;
+      position: relative;
+      z-index: 21;
+    }
+    img {
+      @extend %full_block;
+    }
+  }
+  &_nav {
+    height: $header-height;
+    width: 100%;
+    background-color: $white;
+    position: relative;
+    display: flex;
+    box-shadow: 0 4px 16px 0 rgba($black,0.16);
+    &-general {
+      width: 100%;
+      display: flex;
+      padding: 0 $padding-md;
+      justify-content: space-between;
+      & > * {
+        padding-right: $gutter-x2;
+      }
+    }
+    &-burger {
+      width: $header-height;
+      height: 100%;
+      flex-shrink: 0;
+      &--button {
+        @extend %full_block;
+        border: none;
+        background-color: $text-04;
+        position: relative;
+      }
+    }
+  }
+}
