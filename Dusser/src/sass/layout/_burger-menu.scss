@@ -101,7 +101,6 @@
   &-invite {
 
     font-weight: 300;
-    color: #AB2D2D;
     @include mq($until: wide) {
       margin-left: $padding-lg;
     }
