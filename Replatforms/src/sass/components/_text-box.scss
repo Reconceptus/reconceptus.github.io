@@ -33,12 +33,12 @@ Styleguide styleguide.typography.text-box
   line-height: 1.5;
   h1 {
     @extend .h1;
-    color: $brand-01;
+    color: $link;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
   }
   h2 {
-    color: $brand-01;
+    color: $link;
     font-size: 48px;
     line-height: (64/48);
     font-weight: 300;

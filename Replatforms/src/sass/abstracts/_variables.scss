@@ -1,8 +1,8 @@
 $white: #fff;
 $black: #000;
 
-$text: #002b4f;
-$link: #009ca2;
+$text: $text-04;
+$link: $brand-01;
 $bg: #F5F5F5;
 $icon: #bdbdbd;
 
@@ -22,8 +22,8 @@ $padding-lg: 3*$padding;    // 48px
 $padding-xl: 4*$padding;    // 64px
 $padding-xxl: 8*$padding;   // 128px
 
-$gutter: 12px;
-$gutter-x2: 2*$gutter;
+$gutter: 12px;              // 12px
+$gutter-x2: 2*$gutter;      // 24px
 
 $font: 16px;
 $font-sm: 0.5*$font;        // 8px

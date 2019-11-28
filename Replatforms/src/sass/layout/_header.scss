@@ -43,7 +43,7 @@ $header-height: 88px;
       &--button {
         @extend %full_block;
         border: none;
-        background-color: $text-04;
+        background-color: $text;
         position: relative;
         span {
           position: absolute;

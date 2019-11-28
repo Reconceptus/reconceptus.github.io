@@ -1,6 +1,7 @@
 .language {
   position: relative;
-  color: $brand-01;
+  color: $link;
+  font-weight: 500;
   &_selected {
     font-size: $font;
     position: relative;

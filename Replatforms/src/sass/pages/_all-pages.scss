@@ -1,5 +1,7 @@
+@import "partials/listing";
 @import "blog";
 
 .composing-box {
   padding-top: $padding-lg;
+  padding-bottom: $padding-md;
 }
