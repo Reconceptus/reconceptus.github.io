@@ -12,6 +12,7 @@ let $html = $('html'),
 // functions
 const functions = {
     burger: require('./modules/burger'),
+    language: require('./modules/language'),
 };
 
 // scripts
@@ -31,16 +32,10 @@ $(document).ready(() => {
 
     function documentClick() {
         $(document).click(e => {
-            // var targ = $(e.target);
-            // if(targ.parents('#searchForm').length == 0){
-            //     if(targ.parents('#search_btn').length == 0){
-            //         search.removeClass('active');
-            //         nav.removeClass('hidden');
-            //     }
-            // }
+            // let targ = $(e.target);
             //
             // if(targ.parents('.language').length == 0){
-            //     lang.removeClass('show')
+            //     lang.removeClass('active')
             // }
         });
     }
@@ -50,6 +45,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
+    functions.language();
 
     if ($('[data-owl="blog"]').length > 0) {
     }

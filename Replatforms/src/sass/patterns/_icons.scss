@@ -1,3 +1,21 @@
 .icon {
-
+  &_size {
+    &-2 {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &-arrow_down {
+    border-style: none none solid solid;
+    border-color: currentColor;
+    transform: translate(50%,-50%) rotate(-45deg);
+    position: absolute;
+    &--sm {
+      width: 9px;
+      height: 9px;
+      border-width: 2px;
+      right: 12px;
+      top: 11px;
+    }
+  }
 }

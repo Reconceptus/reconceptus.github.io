@@ -1,0 +1,18 @@
+.link {
+  &_simple {
+    @extend %btn_reset;
+    display: inline-flex;
+    font-size: $font;
+    color: $brand-01;
+  }
+  &_icon {
+    @extend %btn_reset;
+    display: inline-flex;
+    align-items: center;
+    font-size: $font;
+    color: $brand-01;
+    .icon {
+      margin-right: $padding-sm;
+    }
+  }
+}
