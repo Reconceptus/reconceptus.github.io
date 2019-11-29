@@ -12,7 +12,7 @@ let $html = $('html'),
 // functions
 const functions = {
     burger: require('./modules/burger'),
-    language: require('./modules/language'),
+    dropdown: require('./modules/dropdown'),
 };
 
 // scripts
@@ -45,7 +45,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
-    functions.language();
+    functions.dropdown();
 
     if ($('[data-owl="blog"]').length > 0) {
     }

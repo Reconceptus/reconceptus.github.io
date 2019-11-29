@@ -1,4 +1,70 @@
 .footer {
   flex-shrink: 0;
-  background-color: #ffae00;
+  background-color: $white;
+  padding: 120px 0 $padding-lg;
+  &_wrap {
+    margin-left: calc(100%/12);
+  }
+  &_general {
+    margin-bottom: 100px;
+    &-features {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      &--logo {
+        width: $header-height;
+        height: $header-height;
+        margin-bottom: 120px;
+        img {
+          @extend %full_block;
+        }
+      }
+      &--selects {
+        display: flex;
+        align-items: center;
+        margin-bottom: $padding-xl;
+        .dropdown {
+          margin-right: $padding-md;
+        }
+      }
+      &--payment {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        a {
+          width: 80px;
+          margin-right: $padding-sm;
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &-nav {
+      &--section {
+        li {
+          margin-top: $padding;
+        }
+        a {
+          color: $text;
+          @include hover(){
+            color: $link;
+          }
+        }
+      }
+      &--title {
+        font-size: $font-md;
+        color: $text-03;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: $padding;
+      }
+    }
+  }
+  &_copyright {
+    border-top: 1px solid $text-03;
+    color: $text-03;
+    padding: $padding 0;
+  }
 }

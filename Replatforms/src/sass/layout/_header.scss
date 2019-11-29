@@ -3,9 +3,15 @@ $header-height: 88px;
 .header {
   position: fixed;
   top: $padding-lg;
-  left: 0;
+  left: 50%;
   right: 0;
   z-index: 20;
+  &_wrap {
+    width: 200%;
+    & > .content {
+      margin: 0;
+    }
+  }
   &_logo {
     margin-bottom: $header-height+$padding+$padding-sm;
     &-link {

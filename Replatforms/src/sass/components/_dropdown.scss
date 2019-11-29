@@ -1,21 +1,22 @@
-.language {
+.dropdown {
   position: relative;
   color: $link;
   font-weight: 500;
+  display: inline-flex;
   &_selected {
     font-size: $font;
     position: relative;
     padding-right: $gutter-x2;
     cursor: pointer;
-    &:before {
-      @extend .pseudo-content;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: $gutter-x2;
-      height: 1px;
-      background: currentColor;
-    }
+    //&:before {
+    //  @extend .pseudo-content;
+    //  position: absolute;
+    //  top: 100%;
+    //  left: 0;
+    //  right: $gutter-x2;
+    //  height: 1px;
+    //  background: currentColor;
+    //}
     &:after {
       @extend .pseudo-content;
       @extend .icon-arrow_down;

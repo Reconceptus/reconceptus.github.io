@@ -1,4 +1,4 @@
 const functions = {
     burger: require('./modules/burger'),
-    language: require('./modules/language'),
+    dropdown: require('./modules/dropdown'),
 };

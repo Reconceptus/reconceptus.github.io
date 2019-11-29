@@ -27,7 +27,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger();
-    functions.language();
+    functions.dropdown();
 
     if ($('[data-owl="blog"]').length > 0) {
     }
