@@ -1,5 +1,26 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
 
 <script src="assets/js/app.min.js"></script>
+
+
+<script>
+    // AutoComplete
+
+    new autoComplete({
+        selector: '#autoComplete',
+        minChars: 2,
+        source: function(term, response){
+            $.getJSON('/russian-cities.json', term, function(data){
+                var results = [];
+                for (i=0;i<data.length;i++)
+                    if (~data[i].toLowerCase().indexOf(term.toLowerCase())) results.push(data[i]);
+                response(results);
+            });
+        }
+    });
+
+
+</script>

@@ -1,5 +1,4 @@
-const $wrapper = document.getElementById('wrapper'),
-    $burger = document.getElementById('burger'),
+const $burger = document.getElementById('burger'),
     $burgerMenu = document.getElementById('burgerMenu'),
     $burgerClosers = document.querySelectorAll('.burger_close');
 

@@ -12,6 +12,7 @@ let $html = $('html'),
 // functions
 window.functions = {
     burger: require('./modules/burger'),
+    search: require('./modules/search'),
     ovh: require('./modules/ovh'),
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
@@ -48,6 +49,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger.init();
+    functions.search.init();
     functions.dropdown();
     functions.expander();
 

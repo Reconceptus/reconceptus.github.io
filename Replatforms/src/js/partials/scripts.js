@@ -27,6 +27,7 @@ $(document).ready(() => {
     documentClick();
     getWindowSizes();
     functions.burger.init();
+    functions.search.init();
     functions.dropdown();
     functions.expander();
 

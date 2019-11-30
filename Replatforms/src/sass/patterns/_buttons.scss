@@ -1,22 +1,15 @@
 .btn {
-  border: none;
-  border-radius: 0;
+  @extend %btn_reset;
   display: inline-flex;
   text-align: center;
   justify-content: center;
   transition: all 0.18s;
-  &--red {
+  font-weight: 500;
+  &--orange {
     color: $white;
-    background-color: $btn-red;
+    background-color: $link;
     &:hover {
-      background-color: $btn-red-hover;
-    }
-  }
-  &--blue {
-    color: $white;
-    background-color: $btn-blue;
-    &:hover {
-      background-color: $btn-blue-hover;
+
     }
   }
   &--sm {
@@ -25,9 +18,9 @@
     padding: 10px 40px;
   }
   &--md {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 24px 40px;
+    font-size: 24px;
+    height: 72px;
+    padding: 0 40px;
   }
   &--full {
     width: 100%;
