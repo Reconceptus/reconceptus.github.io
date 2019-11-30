@@ -10,9 +10,11 @@ let $html = $('html'),
     winHeight;
 
 // functions
-const functions = {
+window.functions = {
     burger: require('./modules/burger'),
+    ovh: require('./modules/ovh'),
     dropdown: require('./modules/dropdown'),
+    markers: require('./modules/markers'),
 };
 
 // scripts
@@ -44,10 +46,13 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.burger();
+    functions.burger.init();
     functions.dropdown();
 
     if ($('[data-owl="blog"]').length > 0) {
+    }
+    if ($('#map').length > 0) {
+        functions.markers();
     }
 
     /* --------------------------------- document resize --------------------------------- */

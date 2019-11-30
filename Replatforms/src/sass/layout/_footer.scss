@@ -23,6 +23,7 @@
         display: flex;
         align-items: center;
         margin-bottom: $padding-xl;
+        color: $link;
         .dropdown {
           margin-right: $padding-md;
         }
@@ -57,13 +58,13 @@
       &--title {
         font-size: $font-md;
         color: $text-03;
-        border-bottom: 1px solid currentColor;
+        border-bottom: 1px solid rgba($text-03, 0.3);
         padding-bottom: $padding;
       }
     }
   }
   &_copyright {
-    border-top: 1px solid $text-03;
+    border-top: 1px solid rgba($text-03, 0.3);
     color: $text-03;
     padding: $padding 0;
   }

@@ -26,10 +26,13 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.burger();
+    functions.burger.init();
     functions.dropdown();
 
     if ($('[data-owl="blog"]').length > 0) {
+    }
+    if ($('#map').length > 0) {
+        functions.markers();
     }
 
     /* --------------------------------- document resize --------------------------------- */

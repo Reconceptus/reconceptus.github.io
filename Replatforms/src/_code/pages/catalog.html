@@ -19,17 +19,17 @@
                     </div>
                     <div class="content-row flex-justify--right">
                         <div class="content-col col-11">
-                            <h1 class="h1 color-font-brand-01">Searching results</h1>
+                            <h1 class="h1 color-font-brand-01">Searching results <sub>24</sub></h1>
                         </div>
                     </div>
                 </div>
 
             </section>
 
-            <div class="content content--lg">
+            <div class="main_box content content--lg">
                 <div class="listing">
                     <input type="radio" checked id="view_listing" class="listing_filter-checker" name="listing_view">
-                    <input type="radio" id="view_map" class="listing_filter-checker" name="listing_view">
+                    <input type="radio"  id="view_map" class="listing_filter-checker" name="listing_view">
                     <div class="listing_filter">
                         <div class="content-row flex-justify--right">
                             <div class="content-col col-11">
@@ -58,35 +58,109 @@
                             </div>
                         </div>
                     </div>
-                    <div class="listing_items">
-                        <div class="content-row flex-wrap">
-                            <div class="listing_item-box content-col col-4">
-                                <include src="./listing/listing-item.html"
-                                         img="https://media-cdn.tripadvisor.com/media/photo-s/01/9f/5e/2e/1a-habitacion-casa-4pax.jpg"
-                                         title="Дизайн"
-                                ></include>
+                    <div class="listing_tabs">
+                        <div class="listing_items">
+                            <div class="content-row flex-wrap">
+                                <div class="listing_item-box content-col col-4">
+                                    <include src="./listing/listing-item.html"
+                                             img="https://media-cdn.tripadvisor.com/media/photo-s/01/9f/5e/2e/1a-habitacion-casa-4pax.jpg"
+                                             title="Дизайн"
+                                             data="data-item=001"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4">
+                                    <include src="./listing/listing-item.html"
+                                             img="https://cnd.afy.ru/files/pbb/full/4/4a/4ad8b3a7856d78f73687b3033089471201.jpeg"
+                                             title="Город, индекс или цена"
+                                             liked="liked"
+                                             data="data-item=002"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4">
+                                    <include src="./listing/listing-item.html"
+                                             img="https://media-cdn.tripadvisor.com/media/photo-s/05/37/f2/e2/patong-tower-holiday.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=003"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4">
+                                    <include src="./listing/listing-item.html"
+                                             img="https://media-cdn.tripadvisor.com/media/photo-s/03/64/59/1e/patong-tower.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=004"
+                                    ></include>
+                                </div>
                             </div>
-                            <div class="listing_item-box content-col col-4">
-                                <include src="./listing/listing-item.html"
-                                         img="https://cnd.afy.ru/files/pbb/full/4/4a/4ad8b3a7856d78f73687b3033089471201.jpeg"
-                                         title="Город, индекс или цена"
-                                         liked="liked"
-                                ></include>
-                            </div>
-                            <div class="listing_item-box content-col col-4">
-                                <include src="./listing/listing-item.html"
-                                         img="https://media-cdn.tripadvisor.com/media/photo-s/05/37/f2/e2/patong-tower-holiday.jpg"
-                                         title="Отдых в аппараментах Патонг Тауэр"
-                                ></include>
-                            </div>
-                            <div class="listing_item-box content-col col-4">
-                                <include src="./listing/listing-item.html"
-                                         img="https://media-cdn.tripadvisor.com/media/photo-s/05/37/f2/e2/patong-tower-holiday.jpg"
-                                         title="Отдых в аппараментах Патонг Тауэр"
-                                ></include>
+                            <include src="../components/pagination.html"></include>
+                        </div>
+                        <div class="listing_map">
+                            <div data-map="listing_map-box">
+                                <div id="map" class="listing_map-box--frame"></div>
+                                <script type="text/javascript">
+                                    var map;
+                                    function initMap() {
+
+                                        var mapOptions = {
+                                            mapTypeControl: false,
+                                            streetViewControl: false,
+                                            scrollwheel: false
+                                        };
+                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                                        var locations = [
+                                            {lat: 55.762300, lng: 37.632070},
+                                            {lat: 55.762149, lng: 37.628363},
+                                            {lat: 55.760199, lng: 37.631710},
+                                            {lat: 55.760917, lng: 37.632568}
+                                        ];
+
+                                        var icons = [
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker001',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker002',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker003',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker004',
+                                                size: new google.maps.Size(72, 72)
+                                            }
+                                        ];
+
+                                        var marker;
+                                        var bounds  = new google.maps.LatLngBounds();
+
+                                        for(var i = 0; i < locations.length; i++){
+                                            marker = new google.maps.Marker({
+                                                position: locations[i],
+                                                map: map,
+                                                icon: icons[i]
+                                            });
+                                            var loc = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+                                            bounds.extend(loc);
+                                        }
+
+                                        map.fitBounds(bounds);
+                                        map.panToBounds(bounds);
+
+                                        google.maps.event.addListenerOnce(map, 'idle', function() {
+                                            var getZoom = map.zoom;
+                                            map.setZoom(getZoom-2);
+                                        });
+
+                                    }
+                                </script>
+                                <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
+                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
+
                             </div>
                         </div>
-                        <include src="../components/pagination.html"></include>
                     </div>
 
 
@@ -101,6 +175,7 @@
 
 </div>
 
+<include src="../templates/burger-menu.html"></include>
 <include src="../templates/scripts.html"></include>
 
 <!--script-->

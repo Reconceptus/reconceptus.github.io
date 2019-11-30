@@ -80,8 +80,42 @@ $listing_size: 56px;
       font-weight: 500;
     }
   }
+  &_tabs {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
   &_items {
-
+    width: 100%;
+    min-width: 100%;
+  }
+  &_map {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    &-box {
+      &--frame {
+        width: 100%;
+        height: 800px;
+      }
+    }
+    img[src*='map-mark']{
+      @extend %full_block;
+      max-width: 100% !important;
+      max-height: 100%;
+    }
+    .map-item {
+      overflow: visible !important;
+      opacity: 1 !important;
+      &:not(.visible) {
+        .listing_item {
+          display: none;
+        }
+      }
+      & > img {
+        opacity: 0;
+      }
+    }
   }
   &_item {
     border-radius: 0 0 10px 10px;
@@ -89,6 +123,30 @@ $listing_size: 56px;
     height: 100%;
     display: flex;
     flex-direction: column;
+    .map-item & {
+      width: 280px;
+      border-radius: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -16px);
+      height: auto;
+      background: $white;
+      padding: $padding-sm $padding-sm 0;
+      box-shadow: 0 4px 16px 0 rgba($black,0.16);
+      &:after {
+        @extend .pseudo-content;
+        width: 0;
+        height: 0;
+        border-style: solid solid none;
+        border-color: $white transparent;
+        border-width: 14px 15px;
+        margin-left: -15px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+      }
+    }
     @include hover(){
       box-shadow: 0 4px 16px 0 rgba($black,0.16);
     }
@@ -121,6 +179,9 @@ $listing_size: 56px;
       display: flex;
       align-items: center;
       font-weight: 500;
+      .map-item & {
+        display: none;
+      }
       .hash {
         line-height: $font-md;
         font-size: $font;
@@ -145,6 +206,12 @@ $listing_size: 56px;
       padding: $padding 2*$padding-lg $padding $padding-md;
       border-radius: 0 0 10px 10px;
       flex-grow: 1;
+      font-size: $font;
+      .map-item & {
+        position: static;
+        border-radius: 0;
+        padding: $padding-sm $padding-lg $padding-sm $padding;
+      }
       &--title {
         display: inline-flex;
         color: $text;
@@ -155,12 +222,25 @@ $listing_size: 56px;
       &--descr,
       &--price {
         margin-top: 12px;
+        .map-item & {
+          margin-top: $padding-sm;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
       }
       &--cta {
         position: absolute;
         top: 40px;
         right: 24px;
         color: $white;
+        .map-item & {
+          border-radius: 50%;
+          box-shadow: 0 0 0 8px $white;
+          background: $white;
+          top: -8px;
+          right: -8px;
+        }
         @include hover(){
           color: $brand-02;
         }
@@ -177,4 +257,20 @@ $listing_size: 56px;
 #view_map:checked ~ .listing_filter [for="view_map"]{
   background: $link;
   color: $white;
+}
+#view_map:checked ~ .listing_filter .listing_filter-sorting {
+  * {
+    display: none;
+  }
+}
+#view_listing:checked ~ .listing_tabs .listing_map-box--frame {
+  //position: absolute !important;
+  //left: 0;
+  //top: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+#view_map:checked ~ .listing_tabs .listing_items {
+  display: none;
 }

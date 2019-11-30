@@ -30,6 +30,9 @@ svg {
   width: 100%;
   flex: 1 0 auto;
   background-color: #F5F5F5;
+  &_box {
+    padding-bottom: $padding-xxl;
+  }
 }
 .wrapper {
   display: flex;

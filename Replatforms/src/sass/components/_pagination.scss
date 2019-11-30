@@ -1,6 +1,9 @@
 .pagination {
   display: flex;
   align-items: center;
+  .listing_items & {
+    margin-top: ($padding-xxl - $gutter-x2);
+  }
   a,span {
     display: inline-flex;
 

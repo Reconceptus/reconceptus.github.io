@@ -15,6 +15,11 @@ Styleguide styleguide.typography.headings
   font-size: 56px;
   line-height: (80/56);
   font-weight: 300;
+  sub {
+    color: $text;
+    font-size: $font;
+    font-weight: 400;
+  }
 }
 .h2 {
   font-size: 32px;

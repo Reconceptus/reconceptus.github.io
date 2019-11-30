@@ -21,9 +21,9 @@
   box-sizing: border-box;
   display: block;
   width: 100%;
-  padding: 0 $gutter;
+  padding: 0 $gutter-x2;
   &--lg {
-    max-width: $content-lg + 2*$gutter;
+    max-width: $content-lg + 2*$gutter-x2;
   }
   &--md {
     //max-width: 1710px;
