@@ -22,8 +22,11 @@
       width: 9px;
       height: 9px;
       border-width: 2px;
-      right: 12px;
-      top: 11px;
+    }
+    &--md {
+      width: 12px;
+      height: 12px;
+      border-width: 3px;
     }
   }
 }

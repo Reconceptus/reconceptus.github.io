@@ -3,4 +3,5 @@ window.functions = {
     ovh: require('./modules/ovh'),
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
+    expander: require('./modules/expander'),
 };

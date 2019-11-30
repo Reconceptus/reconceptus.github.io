@@ -15,6 +15,7 @@ window.functions = {
     ovh: require('./modules/ovh'),
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
+    expander: require('./modules/expander'),
 };
 
 // scripts
@@ -48,11 +49,17 @@ $(document).ready(() => {
     getWindowSizes();
     functions.burger.init();
     functions.dropdown();
+    functions.expander();
 
     if ($('[data-owl="blog"]').length > 0) {
     }
     if ($('#map').length > 0) {
         functions.markers();
+    }
+    if ($('.pl-nav-scroll').length > 0) {
+        if ($('html').hasClass('desktop')) {
+            $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
+        }
     }
 
     /* --------------------------------- document resize --------------------------------- */
