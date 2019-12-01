@@ -28,6 +28,7 @@ $(document).ready(() => {
     getWindowSizes();
     functions.burger.init();
     functions.search.init();
+    functions.modal.init();
     functions.dropdown();
     functions.scroll_top();
     functions.expander();

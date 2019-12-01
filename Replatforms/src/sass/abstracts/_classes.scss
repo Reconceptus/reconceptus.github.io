@@ -72,6 +72,9 @@
     &--center {
       justify-content: center;
     }
+    &--space {
+      justify-content: space-between;
+    }
   }
   &-wrap {
     flex-wrap: wrap;

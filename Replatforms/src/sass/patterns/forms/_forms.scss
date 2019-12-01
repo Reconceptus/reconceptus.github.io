@@ -3,20 +3,21 @@
 @import "range";
 @import "radio-line";
 
-//.form-field {
-//  width: 100%;
-//  &--md {
-//    margin-bottom: $padding-md;
-//  }
-//  &--lg {
-//    margin-bottom: 40px;
-//  }
-//}
-//.form-buttons {
-//  * {
-//    margin-right: $padding-xl;
-//  }
-//}
+.form-field {
+  width: 100%;
+  margin-bottom: $padding-md;
+}
+.form-fieldset {
+  margin-bottom: $padding-lg;
+}
+
+.form-label {
+  font-size: $font;
+  color: $text;
+  line-height: (24px/$font);
+  font-weight: 500;
+  margin-bottom: $padding;
+}
 .form-text {
   font-size: $font;
   color: $text;

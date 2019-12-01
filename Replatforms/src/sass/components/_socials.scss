@@ -1,0 +1,15 @@
+.socials {
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  li {
+    margin-right: $gutter-x2;
+  }
+  a {
+    display: flex;
+    border-radius: 50%;
+    color: $link;
+  }
+}

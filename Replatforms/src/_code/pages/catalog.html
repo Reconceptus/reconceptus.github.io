@@ -117,6 +117,12 @@
                                             {lat: 55.760917, lng: 37.632568}
                                         ];
 
+
+                                        // число в url в конце соответствует значению дата-аттрибута data-item в каждом из айтемов листинга
+                                        // это может быть не обязательно число, а любой другой уникальный ключ.
+                                        // ключи нужны для того, чтоб отображать превьюхи на карте
+                                        // скрипт вначале берёт ключ из url иконки, потом ищет соответствующий айтем в листинге и клонит его на карту
+
                                         var icons = [
                                             {
                                                 url: './assets/svg/partials/map-mark.svg?i=custom_marker001',
@@ -179,12 +185,20 @@
 </div>
 
 
-
 <include src="../templates/burger-menu.html"></include>
 <include src="../templates/search.html"></include>
-<include src="../templates/scripts.html"></include>
 
-<!--script-->
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
 
 
 </body>

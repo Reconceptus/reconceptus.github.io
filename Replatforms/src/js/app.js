@@ -12,6 +12,7 @@ let $html = $('html'),
 // functions
 window.functions = {
     burger: require('./modules/burger'),
+    modal: require('./modules/modal'),
     search: require('./modules/search'),
     filter: require('./modules/filter'),
     ovh: require('./modules/ovh'),
@@ -52,6 +53,7 @@ $(document).ready(() => {
     getWindowSizes();
     functions.burger.init();
     functions.search.init();
+    functions.modal.init();
     functions.dropdown();
     functions.scroll_top();
     functions.expander();

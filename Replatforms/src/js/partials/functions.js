@@ -1,5 +1,6 @@
 window.functions = {
     burger: require('./modules/burger'),
+    modal: require('./modules/modal'),
     search: require('./modules/search'),
     filter: require('./modules/filter'),
     ovh: require('./modules/ovh'),
