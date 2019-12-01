@@ -20,6 +20,11 @@ Styleguide styleguide.typography.headings
     font-size: $font;
     font-weight: 400;
   }
+  &--sm {
+    font-size: 48px;
+    line-height: (64/48);
+    font-weight: 300;
+  }
 }
 .h2 {
   font-size: 32px;

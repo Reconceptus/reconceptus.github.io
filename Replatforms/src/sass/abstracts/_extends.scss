@@ -11,7 +11,7 @@
 }
 %hover_underline {
   &:hover {
-    @include mq($from: desktop) {
+    @include mq($from: tablet_xl) {
       text-decoration: underline;
     }
   }

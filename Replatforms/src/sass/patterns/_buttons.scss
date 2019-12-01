@@ -1,7 +1,7 @@
 .btn {
   @extend %btn_reset;
   display: inline-flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   transition: all 0.18s;
   font-weight: 500;
@@ -11,14 +11,40 @@
     &:hover {
 
     }
+    &_border {
+      border: 1px solid $link;
+      background: $white;
+      color: $link;
+    }
+  }
+  &--white {
+    background-color: $white;
+    color: $link;
+    &:hover {
+
+    }
+  }
+  &--xs {
+    font-size: 16px;
+    height: 40px;
+    font-weight: 500;
+    padding: 0 24px;
   }
   &--sm {
     font-size: 16px;
-    font-weight: 600;
-    padding: 10px 40px;
+    font-weight: 500;
+    height: 48px;
+    padding: 0 32px;
   }
   &--md {
+    font-size: 16px;
+    font-weight: 500;
+    height: 56px;
+    padding: 0 32px;
+  }
+  &--lg {
     font-size: 24px;
+    font-weight: 500;
     height: 72px;
     padding: 0 40px;
   }

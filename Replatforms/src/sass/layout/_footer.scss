@@ -2,8 +2,30 @@
   flex-shrink: 0;
   background-color: $white;
   padding: 120px 0 $padding-lg;
+  position: relative;
+  &_scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-50%);
+    &-btn {
+      background: $text-03;
+      color: $white;
+      width: 105px;
+      position: relative;
+      &:after {
+        @extend .pseudo-content;
+        @extend .icon-arrow_up;
+        @extend .icon-arrow_up--sm;
+        right: 50%;
+        top: 50%;
+        margin-top: 2px;
+      }
+    }
+  }
   &_wrap {
-    margin-left: calc(100%/12);
+    //margin-left: calc(100%/12);
   }
   &_general {
     margin-bottom: 100px;

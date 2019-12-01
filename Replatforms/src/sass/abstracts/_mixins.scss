@@ -1,5 +1,17 @@
+$mq-breakpoints: (
+        mobile_sm:  480px,  // xx
+        mobile_xl:  600px,  // xs
+        tablet_sm:  800px,  // sm
+        tablet_xl:  1025px, // md
+        desktop_sm: 1281px, // lg
+        desktop_xl: 1421px, // xl
+        wide:    1725px     // wd
+) !default;
+
 @import "mixins/mq";
 @import "mixins/class-generator";
+@import "mixins/grid";
+
 @mixin fonts($name,$file,$weight,$style){
   @font-face {
     font-family: $name;
@@ -9,8 +21,9 @@
     url("../fonts/" + $file + ".woff2");
   }
 }
+
 @mixin hover(){
-  @include mq($from: desktop) {
+  @include mq($from: tablet_xl) {
     &:hover {
       @content;
     }

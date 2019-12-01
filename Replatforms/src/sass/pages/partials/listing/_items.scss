@@ -1,0 +1,139 @@
+.listing {
+  &_items {
+    width: 100%;
+    min-width: 100%;
+  }
+  &_item {
+    border-radius: 0 0 10px 10px;
+    transition: box-shadow 0.25s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .map-item & {
+      width: 280px;
+      border-radius: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, -16px);
+      height: auto;
+      background: $white;
+      padding: $padding-sm $padding-sm 0;
+      box-shadow: 0 4px 16px 0 rgba($black,0.16);
+      &:after {
+        @extend .pseudo-content;
+        width: 0;
+        height: 0;
+        border-style: solid solid none;
+        border-color: $white transparent;
+        border-width: 14px 15px;
+        margin-left: -15px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+      }
+    }
+    @include hover(){
+      box-shadow: 0 4px 16px 0 rgba($black,0.16);
+    }
+    &-box {
+      margin-bottom: $gutter-x2;
+    }
+    &-figure {
+      position: relative;
+    }
+    &-img {
+      width: 100%;
+      height: 0;
+      padding-bottom: 57.5%;
+      position: relative;
+      .img {
+        position: absolute;
+        @extend %full_block;
+        left: 0;
+        top: 0;
+      }
+      img {
+        @extend %full_block;
+        object-fit: cover;
+      }
+    }
+    &-hashes {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      .map-item & {
+        display: none;
+      }
+      .hash {
+        line-height: $font-md;
+        font-size: $font;
+        color: $white;
+        padding: 0 $padding;
+        margin-right: $padding-sm;
+        cursor: default;
+        &-premium {
+          background: $brand-01;
+        }
+        &-pro {
+          background: $brand-03;
+        }
+        &-new {
+          background: $text-05;
+        }
+      }
+    }
+    &-data {
+      position: relative;
+      background: $white;
+      padding: $padding 2*$padding-lg $padding $padding-md;
+      border-radius: 0 0 10px 10px;
+      flex-grow: 1;
+      font-size: $font;
+      .map-item & {
+        position: static;
+        border-radius: 0;
+        padding: $padding-sm $padding-lg $padding-sm $padding;
+      }
+      &--title {
+        display: inline-flex;
+        color: $text;
+        @include hover(){
+          color: $link;
+        }
+      }
+      &--descr,
+      &--price {
+        margin-top: 12px;
+        .map-item & {
+          margin-top: $padding-sm;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      &--cta {
+        position: absolute;
+        top: 40px;
+        right: 24px;
+        color: $white;
+        .map-item & {
+          border-radius: 50%;
+          box-shadow: 0 0 0 8px $white;
+          background: $white;
+          top: -8px;
+          right: -8px;
+        }
+        @include hover(){
+          color: $brand-02;
+        }
+        &.liked {
+          color: $brand-02;
+        }
+      }
+    }
+  }
+}

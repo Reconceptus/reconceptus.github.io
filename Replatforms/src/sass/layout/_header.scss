@@ -3,14 +3,13 @@ $header-height: 88px;
 .header {
   position: fixed;
   top: $padding-lg;
-  left: 50%;
-  right: 0;
+  right: $gutter-x2;
   z-index: 20;
+  @include mq($from: ($content-lg + 2*$gutter-x2 + $padding)){
+    right: calc(50% - #{$content-lg}/2);
+  }
   &_wrap {
-    width: 200%;
-    & > .content {
-      margin: 0;
-    }
+
   }
   &_logo {
     margin-bottom: $header-height+$padding+$padding-sm;
@@ -31,8 +30,9 @@ $header-height: 88px;
     background-color: $white;
     position: relative;
     display: flex;
-    margin-left: -1*$gutter;
     box-shadow: 0 4px 16px 0 rgba($black,0.16);
+    border-radius: $header-height 0 0 $header-height;
+    min-width: calc(#{$content-lg/2} - #{$gutter});
     &-general {
       width: 100%;
       display: flex;
@@ -42,6 +42,64 @@ $header-height: 88px;
       color: $link;
       & > * {
         margin-right: $gutter-x2;
+      }
+      &--auth {
+        position: relative;
+        .dropdown_selected {
+          padding-right: 0;
+          &:after {
+            left: 0;
+            top: 50%;
+            right: auto;
+          }
+        }
+        .dropdown_list {
+          color: $text;
+          left: auto;
+          right: -56px;
+          margin-top: 18px;
+          min-width: 360px;
+          padding-top: $padding-md;
+          padding-bottom: $padding-lg;
+          a {
+            @include hover(){
+              color: $link;
+            }
+            &.active {
+              color: $link;
+            }
+          }
+        }
+        &_profile {
+          @extend %btn_reset;
+          padding-left: $gutter-x2;
+          position: relative;
+          color: $link;
+        }
+        &_img {
+          display: block;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          overflow: hidden;
+          img {
+            @extend %full_block;
+            object-fit: cover;
+          }
+        }
+        &_views {
+          color: $white;
+          background: $ui-01;
+          font-size: 14px;
+          line-height: 32px;
+          font-weight: 500;
+          position: absolute;
+          bottom: 100%;
+          left: 100%;
+          border-radius: 10px;
+          padding: 0 10px;
+          transform: translate(-14px, 10px);
+        }
       }
     }
     &-burger {

@@ -1,0 +1,28 @@
+.listing_map {
+  position: relative;
+  width: 100%;
+  min-width: 100%;
+  &-box {
+    &--frame {
+      width: 100%;
+      height: 800px;
+    }
+  }
+  img[src*='map-mark']{
+    @extend %full_block;
+    max-width: 100% !important;
+    max-height: 100%;
+  }
+  .map-item {
+    overflow: visible !important;
+    opacity: 1 !important;
+    &:not(.visible) {
+      .listing_item {
+        display: none;
+      }
+    }
+    & > img {
+      opacity: 0;
+    }
+  }
+}

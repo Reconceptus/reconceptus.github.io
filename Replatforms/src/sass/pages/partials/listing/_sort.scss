@@ -1,0 +1,78 @@
+.listing_filter {
+  margin-bottom: $gutter-x2;
+  &-checker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+    &--label {
+      width: $listing_size;
+      height: $listing_size;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      color: $link;
+      flex-shrink: 0;
+      transition: background-color 0.2s;
+    }
+  }
+  &-field {
+    height: $listing_size;
+    display: flex;
+    & > * {
+      &:not(:last-child){
+        margin-right: $padding;
+      }
+    }
+  }
+  &-sorting {
+    width: 100%;
+    display: flex;
+    background: $white;
+    align-items: center;
+    padding: 0 $padding-md;
+    a {
+      color: $text;
+      margin-right: $padding-lg;
+      position: relative;
+      &:after {
+        @extend .pseudo-content;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: $link;
+        transform: translateY(4px);
+        opacity: 0;
+        transition: all 0.2s;
+      }
+      @include hover(){
+        &:after {
+          transform: translateY(1px);
+          opacity: 1;
+        }
+      }
+      &.active {
+        &:after {
+          transform: translateY(1px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &-button {
+    @extend %btn_reset;
+    background: $white;
+    flex-shrink: 0;
+    padding: 0 $padding-md;
+    color: $link;
+    font-weight: 500;
+  }
+}

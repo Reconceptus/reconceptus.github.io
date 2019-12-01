@@ -32,18 +32,10 @@ $font-lg: 2*$font;          // 32px
 
 $content-lg: 1800px;
 
-$mq-breakpoints: (
-        mobile:  480px,
-        mobile_xl:  600px,
-        tablet:  800px,
-        desktop: 1025px,
-        desktop_md: 1281px,
-        desktop_xl: 1421px,
-        wide:    1725px
-) !default;
 
-//@include mq($from: desktop) {}
-//@include mq(tablet, desktop) {}
-//@include mq($until: desktop) {}
+
+//@include mq($from: tablet_xl) {}
+//@include mq(tablet_sm, tablet_xl) {}
+//@include mq($until: tablet_xl) {}
 
 

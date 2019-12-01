@@ -1,0 +1,49 @@
+.form-checkbox {
+  .checkbox {
+    &-item {
+      cursor: pointer;
+      position: relative;
+      line-height: $font-md;
+      font-size: $font;
+      color: $text;
+      input {
+        @extend %hidden_input;
+      }
+    }
+    &-label {
+      user-select: none;
+      position: relative;
+      text-indent: $padding-md;
+      display: block;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        height: 18px;
+        width: 18px;
+        border-radius: 2px;
+      }
+      &:before {
+        border: 2px solid $brand-01;
+        .invalid & {
+          //background-color: $clr-invalid-lt;
+        }
+      }
+      &:after {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2017.6%2013.4%22%3E%3Ctitle%3E%u0420%u0435%u0441%u0443%u0440%u0441%201%3C/title%3E%3Cg%20id%3D%22%u0421%u043B%u043E%u0439_2%22%20data-name%3D%22%u0421%u043B%u043E%u0439%202%22%3E%3Cg%20id%3D%22%u0421%u043B%u043E%u0439_1-2%22%20data-name%3D%22%u0421%u043B%u043E%u0439%201%22%3E%3Cpath%20d%3D%22M5.6%2C10.6%2C1.4%2C6.4%2C0%2C7.8l5.6%2C5.6%2C12-12L16.2%2C0Z%22%20style%3D%22fill%3A%23fff%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-color: $brand-01;
+        background-size: 12px auto;
+        background-position: center;
+        opacity: 0;
+      }
+    }
+  }
+  input:checked ~ .checkbox-label {
+    &:after {
+      opacity: 1;
+    }
+  }
+}

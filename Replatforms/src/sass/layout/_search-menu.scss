@@ -30,22 +30,16 @@
     }
   }
   &-wrap {
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    right: calc(50% - #{$content-lg}/2 - #{$gutter-x2});
-    padding: 0 $gutter-x2 0 $gutter;
-    max-width: 50%;
+    position: relative;
   }
   &-close {
-    position: absolute;
-    top: $padding-md;
-    right: $padding-md;
-    width: $header-height;
-    height: $header-height;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: $padding-xl;
     .search_close {
       @extend %btn_reset;
-      @extend %full_block;
+      width: $header-height;
+      height: $header-height;
       border: 1px solid $brand-02;
       display: flex;
       align-items: center;
@@ -55,25 +49,14 @@
   }
   &-form {
     position: relative;
-    @extend %full_block;
     background: $white;
-    padding: 224px calc(100%/6) 152px calc(100%/6);
     color: $white;
-    display: flex;
-    flex-direction: column;
     transition: opacity 0.25s, transform 0.25s;
     opacity: 0;
     transform: translateY(-100%);
-    border-radius: 0 0 0 152px;
     box-shadow: 0 4px 32px 0 rgba($black,0.16);
-    max-height: calc(100vh - 96px);
-    @media screen and (max-height: 840px) {
-      padding-top: 26vh;
-      padding-bottom: 18vh;
-      form {
-        overflow: auto;
-      }
-    }
+    padding-top: $padding-lg;
+    padding-bottom: $padding-xl;
     .opened & {
       transform: translateY(0);
       opacity: 1;
@@ -97,22 +80,27 @@
     input {
       height: 72px;
       width: 100%;
-      border: 1px solid $brand-01;
+      border-color: $brand-01;
+      border-width: 1px;
+      border-style: solid none solid solid;
       font-size: $font-md;
-      border-radius: 4px;
+      border-radius: 0;
     }
     &--fieldset {
-      margin-bottom: $gutter-x2;
-
+      display: flex;
+      & > * {
+        &:first-child {
+          border-radius: 40px 0 0 40px;
+        }
+        &:last-child {
+          border-radius: 0 40px 40px 0;
+        }
+      }
     }
     &--actions {
       color: $link;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      .btn {
-        margin-right: $gutter-x2;
-      }
     }
   }
 

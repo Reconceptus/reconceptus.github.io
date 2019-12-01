@@ -8,15 +8,6 @@
     position: relative;
     padding-right: $gutter-x2;
     cursor: pointer;
-    //&:before {
-    //  @extend .pseudo-content;
-    //  position: absolute;
-    //  top: 100%;
-    //  left: 0;
-    //  right: $gutter-x2;
-    //  height: 1px;
-    //  background: currentColor;
-    //}
     &:after {
       @extend .pseudo-content;
       @extend .icon-arrow_down;
@@ -26,6 +17,7 @@
     }
   }
   &_list {
+    z-index: 1;
     color: $link;
     background: $white;
     position: absolute;
@@ -45,7 +37,7 @@
         margin-bottom: $padding;
       }
     }
-    a {
+    .link {
       color: inherit;
     }
   }

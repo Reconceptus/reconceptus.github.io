@@ -26,48 +26,42 @@
 
         <header id="header" class="header">
             <div class="header_wrap">
-                <div class="content content--lg">
-                    <div class="content-row">
-                        <div class="content-col col-6">
-                            <div class="header_nav">
-                                <div class="header_nav-general">
-                                    <button type="button" class="link_icon" id="searchObject">
-                                        <i class="icon icon_size-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
-                                            </svg>
-                                        </i>
-                                        search object
-                                    </button>
-                                    <a href="objects.html" class="link_icon">
-                                        <i class="icon icon_size-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
-                                            </svg>
-                                        </i>
-                                        add object
-                                    </a>
+                <div class="header_nav">
+                    <div class="header_nav-general">
+                        <button type="button" class="link_icon" id="searchObject">
+                            <i class="icon icon_size-2">
+                                <svg xmlns="http://www.w3.org/2000/svg">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                </svg>
+                            </i>
+                            search object
+                        </button>
+                        <a href="objects.html" class="link_icon">
+                            <i class="icon icon_size-2">
+                                <svg xmlns="http://www.w3.org/2000/svg">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
+                                </svg>
+                            </i>
+                            add object
+                        </a>
 
-                                    <div class="dropdown">
-                                        <div class="dropdown_selected">eng</div>
-                                        <ul class="dropdown_list">
-                                            <li><a href="#">spa</a></li>
-                                            <li><a href="#">fr</a></li>
-                                            <li><a href="#">ru</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="header_nav-general--auth">
-                                        <a href="#" class="link_simple">авторизация</a>
-                                    </div>
-                                </div>
-                                <div class="header_nav-burger">
-                                    <button id="burger" type="button" class="header_nav-burger--button">
-                                        <span></span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="dropdown">
+                            <div class="dropdown_selected">eng</div>
+                            <ul class="dropdown_list">
+                                <li><a class="link" href="#">spa</a></li>
+                                <li><a class="link" href="#">fr</a></li>
+                                <li><a class="link" href="#">ru</a></li>
+                            </ul>
                         </div>
+
+                        <a href="registration.html" class="link_simple">create account</a>
+
+                        <a href="registration.html" class="link_simple">login</a>
+                    </div>
+                    <div class="header_nav-burger">
+                        <button id="burger" type="button" class="header_nav-burger--button">
+                            <span></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -80,8 +74,8 @@
 
             <section class="composing-box">
                 <div class="content content--lg">
-                    <div class="content-row flex-justify--right">
-                        <div class="content-col col-11">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-11">
                             <div class="header_logo">
                                 <a href="index.html" class="header_logo-link">
                                     <img src="assets/svg/partials/logo.svg" alt="Replatforms">
@@ -89,8 +83,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-row flex-justify--right">
-                        <div class="content-col col-11">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-11">
                             <h1 class="h1 color-font-brand-01">Searching results <sub>24</sub></h1>
                         </div>
                     </div>
@@ -103,10 +97,10 @@
                     <input type="radio" checked id="view_listing" class="listing_filter-checker" name="listing_view">
                     <input type="radio"  id="view_map" class="listing_filter-checker" name="listing_view">
                     <div class="listing_filter">
-                        <div class="content-row flex-justify--right">
-                            <div class="content-col col-11">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11">
                                 <div class="listing_filter-field">
-                                    <button type="button" class="listing_filter-button">фильтровать</button>
+                                    <button type="button" id="filters" class="listing_filter-button">фильтровать</button>
                                     <div class="listing_filter-sorting">
                                         <a href="#" class="active">сверху новые</a>
                                         <a href="#">сверху популярные</a>
@@ -130,6 +124,220 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="listing_sidebar" id="filtersBar">
+                        <form action="#">
+                            <div class="content content--lg">
+                                <div class="content-row">
+                                    <div class="content-col col-3">
+                                        <div class="listing_sidebar-blur filters_close"></div>
+                                        <div class="listing_sidebar-aside">
+                                            <div class="listing_sidebar-form pl-sidebar-scroll">
+                                                <div class="listing_sidebar-fieldset">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Estimated completion:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="completion">
+                                                                <span class="checkbox-label">Completed</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="completion">
+                                                                <span class="checkbox-label">Not completed</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Type:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="type">
+                                                                <span class="checkbox-label">Studio</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="type">
+                                                                <span class="checkbox-label">Apartment</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="type">
+                                                                <span class="checkbox-label">Penthouse</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Asking price:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-range">
+                                                            <span class="measure">&euro;</span>
+                                                            <input type="number" placeholder="Min">
+                                                            <span class="dash"></span>
+                                                            <input type="number" placeholder="Max">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Area:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-range">
+                                                            <span class="measure">M<sup>2</sup></span>
+                                                            <input type="number" placeholder="Min">
+                                                            <span class="dash"></span>
+                                                            <input type="number" placeholder="Max">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Bedrooms:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-radio_line">
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bedrooms">
+                                                                <span class="radio_line-label">1</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bedrooms">
+                                                                <span class="radio_line-label">2</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bedrooms">
+                                                                <span class="radio_line-label">3</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bedrooms">
+                                                                <span class="radio_line-label">4</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bedrooms">
+                                                                <span class="radio_line-label">5+</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Bathrooms:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-radio_line">
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bathrooms">
+                                                                <span class="radio_line-label">1</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bathrooms">
+                                                                <span class="radio_line-label">2</span>
+                                                            </label>
+                                                            <label class="radio_line-item">
+                                                                <input type="radio" name="bathrooms">
+                                                                <span class="radio_line-label">3+</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Floor:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-range">
+                                                            <input type="number" placeholder="Min">
+                                                            <span class="dash"></span>
+                                                            <input type="number" placeholder="Max">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset flex-align_items--center">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Storeys:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-range">
+                                                            <input type="number" placeholder="Min">
+                                                            <span class="dash"></span>
+                                                            <input type="number" placeholder="Max">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="listing_sidebar-fieldset">
+                                                    <div class="listing_sidebar-fieldset--label">
+                                                        Development facilities:
+                                                    </div>
+                                                    <div class="listing_sidebar-fieldset--element">
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">24 hour Concierge</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Swimming pool</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Spa</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Gym</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Private Cinema</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Underground Parking</span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="checkbox-item">
+                                                                <input type="checkbox" name="facilities">
+                                                                <span class="checkbox-label">Private Garden</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="listing_sidebar-actions">
+                                                <button type="submit" class="btn btn--md btn--full btn--orange">filter</button>
+                                                <button type="reset" class="btn btn--md btn--full btn--white">clear filter</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                     <div class="listing_tabs">
                         <div class="listing_items">
                             <div class="content-row flex-wrap">
@@ -344,9 +552,16 @@
         </div>
 
         <footer class="footer" id="footer">
+            <div class="footer_scroll">
+                <div class="content content--lg">
+                    <div class="flex-box flex-justify--right">
+                        <button type="button" class="footer_scroll-btn btn btn--sm"></button>
+                    </div>
+                </div>
+            </div>
             <div class="content content--lg">
                 <div class="content-row">
-                    <div class="footer_wrap content-col col-9">
+                    <div class="footer_wrap content-col col-pull-1 col-9">
                         <div class="footer_general">
                             <div class="content-row">
                                 <div class="content-col col-4">
@@ -358,22 +573,22 @@
                                             <div class="dropdown">
                                                 <div class="dropdown_selected">eng</div>
                                                 <ul class="dropdown_list">
-                                                    <li><a href="#">spa</a></li>
-                                                    <li><a href="#">fr</a></li>
-                                                    <li><a href="#">ru</a></li>
+                                                    <li><a class="link" href="#">spa</a></li>
+                                                    <li><a class="link" href="#">fr</a></li>
+                                                    <li><a class="link" href="#">ru</a></li>
                                                 </ul>
                                             </div>
                                             <div class="dropdown">
                                                 <div class="dropdown_selected">&euro;</div>
                                                 <ul class="dropdown_list">
-                                                    <li><a href="#">&dollar;</a></li>
-                                                    <li><a href="#">&#x20bd;</a></li>
+                                                    <li><a class="link" href="#">&dollar;</a></li>
+                                                    <li><a class="link" href="#">&#x20bd;</a></li>
                                                 </ul>
                                             </div>
                                             <div class="dropdown">
                                                 <div class="dropdown_selected">м<sup>2</sup></div>
                                                 <ul class="dropdown_list">
-                                                    <li><a href="#">ft<sup>2</sup></a></li>
+                                                    <li><a class="link" href="#">ft<sup>2</sup></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -458,158 +673,176 @@
 
 </div>
 
+
+
 <div class="burger_menu " id="burgerMenu">
-    <div class="burger_menu-blur burger_close"></div>
-    <div class="burger_menu-wrap">
-        <div class="burger_menu-nav">
-            <div class="burger_menu-close">
-                <button class="burger_close">
-                    <i class="icon icon_size-3">
-                        <svg xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close_lg"/>
-                        </svg>
-                    </i>
-                </button>
-            </div>
-            <div class="burger_menu-nav--selects">
-                <div class="dropdown">
-                    <div class="dropdown_selected">eng</div>
-                    <ul class="dropdown_list">
-                        <li><a href="#">spa</a></li>
-                        <li><a href="#">fr</a></li>
-                        <li><a href="#">ru</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown_selected">€</div>
-                    <ul class="dropdown_list">
-                        <li><a href="#">$</a></li>
-                        <li><a href="#">₽</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown_selected">м<sup>2</sup></div>
-                    <ul class="dropdown_list">
-                        <li><a href="#">ft<sup>2</sup></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="burger_menu-nav--menu">
-                <div class="burger_menu-nav--menu_main pl-nav-scroll">
-                    <ul class="burger_nav">
-                        <li class="burger_nav-parent fn-expand-box">
-                            <span class="burger_nav-link fn-expand-btn">Services</span>
-                            <ul class="burger_nav-submenu fn-expand-data" style="display: none;">
-                                <li><a href="#" class="burger_nav-link">Подбор инвестиций</a></li>
-                                <li><a href="#" class="burger_nav-link">3D-cъемка интерьера</a></li>
-                                <li><a href="#" class="burger_nav-link">Правовая экспертиза с заключением по сделке</a></li>
-                                <li><a href="#" class="burger_nav-link">Простая сделка "под ключ"</a></li>
-                                <li><a href="#" class="burger_nav-link">Название услуги</a></li>
-                            </ul>
-                        </li>
-                        <li class="burger_nav-parent fn-expand-box">
-                            <span class="burger_nav-link fn-expand-btn">To partners</span>
-                            <ul class="burger_nav-submenu fn-expand-data" style="display: none;">
-                                <li><a href="#" class="burger_nav-link">To partners</a></li>
-                                <li><a href="#" class="burger_nav-link">3D-cъемка интерьера</a></li>
-                                <li><a href="#" class="burger_nav-link">Юристам</a></li>
-                                <li><a href="#" class="burger_nav-link">Переводчикам</a></li>
-                                <li><a href="#" class="burger_nav-link">Застройщикам</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#" class="burger_nav-link">FAQ</a></li>
-                        <li><a href="#" class="burger_nav-link">About platform</a></li>
-                        <li><a href="#" class="burger_nav-link">Analytics</a></li>
-                    </ul>
-                </div>
-                <div class="burger_menu-nav--menu_help">
-                    <ul>
-                        <li>
-                            <a href="auto-search.html" class="link_icon">
-                                <i class="icon icon_size-2">
+    <div class="content content--lg">
+        <div class="content-row flex-justify--right">
+            <div class="burger_menu-wrap--size content-col col-8">
+                <div class="burger_menu-blur burger_close"></div>
+                <div class="burger_menu-wrap">
+                    <div class="burger_menu-nav">
+                        <div class="burger_menu-close">
+                            <button class="burger_close">
+                                <i class="icon icon_size-3">
                                     <svg xmlns="http://www.w3.org/2000/svg">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close_lg"/>
                                     </svg>
                                 </i>
-                                Автопоиск объекта
-                            </a>
-                        </li>
-                        <li>
-                            <a href="faq.html" class="link_icon">
-                                <i class="icon icon_size-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
-                                    </svg>
-                                </i>
-                                Помощь
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:+788007008080" class="link_icon">
-                                <i class="icon icon_size-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg">
-                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
-                                    </svg>
-                                </i>
-                                8 800 700 80 80
-                            </a>
-                        </li>
-                    </ul>
+                            </button>
+                        </div>
+                        <div class="burger_menu-nav--selects">
+                            <div class="dropdown">
+                                <div class="dropdown_selected">eng</div>
+                                <ul class="dropdown_list">
+                                    <li><a class="link" href="#">spa</a></li>
+                                    <li><a class="link" href="#">fr</a></li>
+                                    <li><a class="link" href="#">ru</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_selected">€</div>
+                                <ul class="dropdown_list">
+                                    <li><a class="link" href="#">$</a></li>
+                                    <li><a class="link" href="#">₽</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <div class="dropdown_selected">м<sup>2</sup></div>
+                                <ul class="dropdown_list">
+                                    <li><a class="link" href="#">ft<sup>2</sup></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="burger_menu-nav--menu">
+                            <div class="burger_menu-nav--menu_main pl-nav-scroll">
+                                <ul class="burger_nav">
+                                    <li class="burger_nav-parent fn-expand-box">
+                                        <span class="burger_nav-link fn-expand-btn">Services</span>
+                                        <ul class="burger_nav-submenu fn-expand-data" style="display: none;">
+                                            <li><a href="#" class="burger_nav-link">Подбор инвестиций</a></li>
+                                            <li><a href="#" class="burger_nav-link">3D-cъемка интерьера</a></li>
+                                            <li><a href="#" class="burger_nav-link">Правовая экспертиза с заключением по сделке</a></li>
+                                            <li><a href="#" class="burger_nav-link">Простая сделка "под ключ"</a></li>
+                                            <li><a href="#" class="burger_nav-link">Название услуги</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="burger_nav-parent fn-expand-box">
+                                        <span class="burger_nav-link fn-expand-btn">To partners</span>
+                                        <ul class="burger_nav-submenu fn-expand-data" style="display: none;">
+                                            <li><a href="#" class="burger_nav-link">To partners</a></li>
+                                            <li><a href="#" class="burger_nav-link">3D-cъемка интерьера</a></li>
+                                            <li><a href="#" class="burger_nav-link">Юристам</a></li>
+                                            <li><a href="#" class="burger_nav-link">Переводчикам</a></li>
+                                            <li><a href="#" class="burger_nav-link">Застройщикам</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="burger_nav-link">FAQ</a></li>
+                                    <li><a href="#" class="burger_nav-link">About platform</a></li>
+                                    <li><a href="#" class="burger_nav-link">Analytics</a></li>
+                                </ul>
+                            </div>
+                            <div class="burger_menu-nav--menu_help">
+                                <ul>
+                                    <li>
+                                        <a href="auto-search.html" class="link_icon">
+                                            <i class="icon icon_size-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                                </svg>
+                                            </i>
+                                            Автопоиск объекта
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="link_icon">
+                                            <i class="icon icon_size-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
+                                                </svg>
+                                            </i>
+                                            Помощь
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+788007008080" class="link_icon">
+                                            <i class="icon icon_size-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
+                                                </svg>
+                                            </i>
+                                            8 800 700 80 80
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
+
+
 </div>
-<div class="search_menu " id="searchMenu">
+<div class="search_menu" id="searchMenu">
     <div class="search_menu-blur search_close"></div>
     <div class="search_menu-wrap">
         <div class="search_menu-form">
-            <div class="search_menu-close">
-                <button class="search_close">
-                    <i class="icon icon_size-3">
-                        <svg xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close_lg"/>
-                        </svg>
-                    </i>
-                </button>
+            <div class="content content--lg">
+                <div class="content-row">
+                    <div class="content-col col-12">
+                        <div class="search_menu-close">
+                            <button class="search_close">
+                                <i class="icon icon_size-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close_lg"/>
+                                    </svg>
+                                </i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <form action="#">
-                <div class="search_menu-form--fieldset">
-                    <select name="">
-                        <option value="Купить">Купить</option>
-                        <option value="Продать">Продать</option>
-                    </select>
-                </div>
-                <div class="search_menu-form--fieldset">
-                    <select name="">
-                        <option value="Апартаменты">Апартаменты</option>
-                        <option value="Жилой комплекс">Жилой комплекс</option>
-                        <option value="Дом с землёй">Дом с землёй</option>
-                        <option value="Землю">Землю</option>
-                        <option value="Коммерческий объект">Коммерческий объект</option>
-                    </select>
-                </div>
-                <div class="search_menu-form--fieldset">
-                    <input id="autoComplete" type="text" placeholder="Город">
-                </div>
-                <div class="search_menu-form--actions">
-                    <button type="submit" class="btn btn--md btn--orange">найти</button>
-                    <a href="auto-search.html" class="link_icon">
-                        <i class="icon icon_size-2">
-                            <svg xmlns="http://www.w3.org/2000/svg">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-thumb"/>
-                            </svg>
-                        </i>
-                        попробовать автопоиск
-                    </a>
+                <div class="content content--lg">
+                    <div class="content-row flex-align_items--center">
+                        <div class="content-col col-pull-2 col-8">
+                            <div class="search_menu-form--fieldset">
+                                <select name="">
+                                    <option value="Купить">Купить</option>
+                                    <option value="Продать">Продать</option>
+                                </select>
+                                <select name="">
+                                    <option value="Апартаменты">Апартаменты</option>
+                                    <option value="Жилой комплекс">Жилой комплекс</option>
+                                    <option value="Дом с землёй">Дом с землёй</option>
+                                    <option value="Землю">Землю</option>
+                                    <option value="Коммерческий объект">Коммерческий объект</option>
+                                </select>
+                                <input id="autoComplete" type="text" placeholder="Город">
+                                <button type="submit" class="btn btn--lg btn--orange">найти</button>
+                            </div>
+                        </div>
+                        <div class="content-col col-2">
+                            <div class="search_menu-form--actions">
+                                <a href="auto-search.html" class="link_icon">
+                                    <i class="icon icon_size-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-thumb"/>
+                                        </svg>
+                                    </i>
+                                    попробовать автопоиск
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-
-
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

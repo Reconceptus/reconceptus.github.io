@@ -16,17 +16,17 @@
 
     position: relative;
     overflow: hidden;
-    @include mq($from: tablet) {
+    @include mq($from: tablet_sm) {
       height: 56px;
       width: 56px;
       margin: 0 6px;
     }
-    @include mq(mobile, tablet) {
+    @include mq(mobile_sm, tablet_sm) {
       height: 40px;
       width: 40px;
       margin: 0 4px;
     }
-    @include mq($until: mobile) {
+    @include mq($until: mobile_sm) {
       height: 28px;
       width: 28px;
       margin: 0 3px;

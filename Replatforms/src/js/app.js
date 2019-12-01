@@ -13,7 +13,9 @@ let $html = $('html'),
 window.functions = {
     burger: require('./modules/burger'),
     search: require('./modules/search'),
+    filter: require('./modules/filter'),
     ovh: require('./modules/ovh'),
+    scroll_top: require('./modules/scroll-top'),
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
     expander: require('./modules/expander'),
@@ -51,6 +53,7 @@ $(document).ready(() => {
     functions.burger.init();
     functions.search.init();
     functions.dropdown();
+    functions.scroll_top();
     functions.expander();
 
     if ($('[data-owl="blog"]').length > 0) {
@@ -63,6 +66,14 @@ $(document).ready(() => {
             $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
         }
     }
+    if ($('.pl-sidebar-scroll').length > 0) {
+        if ($('html').hasClass('desktop')) {
+            $('.pl-sidebar-scroll').mCustomScrollbar({ theme: 'dark-3' });
+        }
+    }
+    if ($('.listing_sidebar').length > 0) {
+        functions.filter.init();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 
@@ -72,5 +83,5 @@ $(document).ready(() => {
 
     /* --------------------------------- document scroll --------------------------------- */
 
-    $(window).scroll(() => {});
+    $(window).scroll(e => {});
 });

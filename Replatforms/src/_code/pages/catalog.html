@@ -8,8 +8,8 @@
 
             <section class="composing-box">
                 <div class="content content--lg">
-                    <div class="content-row flex-justify--right">
-                        <div class="content-col col-11">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-11">
                             <div class="header_logo">
                                 <a href="index.html" class="header_logo-link">
                                     <img src="assets/svg/partials/logo.svg" alt="Replatforms">
@@ -17,8 +17,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content-row flex-justify--right">
-                        <div class="content-col col-11">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-11">
                             <h1 class="h1 color-font-brand-01">Searching results <sub>24</sub></h1>
                         </div>
                     </div>
@@ -31,10 +31,10 @@
                     <input type="radio" checked id="view_listing" class="listing_filter-checker" name="listing_view">
                     <input type="radio"  id="view_map" class="listing_filter-checker" name="listing_view">
                     <div class="listing_filter">
-                        <div class="content-row flex-justify--right">
-                            <div class="content-col col-11">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11">
                                 <div class="listing_filter-field">
-                                    <button type="button" class="listing_filter-button">фильтровать</button>
+                                    <button type="button" id="filters" class="listing_filter-button">фильтровать</button>
                                     <div class="listing_filter-sorting">
                                         <a href="#" class="active">сверху новые</a>
                                         <a href="#">сверху популярные</a>
@@ -58,6 +58,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <include src="./listing/listing-sidebar.html"></include>
+
                     <div class="listing_tabs">
                         <div class="listing_items">
                             <div class="content-row flex-wrap">
@@ -174,6 +177,8 @@
     </div>
 
 </div>
+
+
 
 <include src="../templates/burger-menu.html"></include>
 <include src="../templates/search.html"></include>

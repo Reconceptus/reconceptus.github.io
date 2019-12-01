@@ -1,0 +1,121 @@
+.listing_sidebar {
+  position: fixed;
+  left: 0;
+  //left: calc(50% - #{$content-lg}/2 - #{$gutter-x2});
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+  transition: transform 0.4s;
+  will-change: transform;
+  opacity: 0;
+  overflow: hidden;
+  &.opened {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  &-blur {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($text,0.3);
+    transition: opacity 0.35s;
+  }
+  &-aside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    background: $white;
+    box-shadow: 0 0 32px 0 rgba($black,0.16);
+    transform: translateX(-150%);
+    transition: transform 0.25s ease 0.15s;
+    will-change: transform;
+    .opened & {
+      transform: translateX(0);
+    }
+    &:before {
+      @extend .pseudo-content;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;
+      width: 30vw;
+      background: $white;
+    }
+  }
+  &-form {
+    flex-grow: 1;
+    width: 100%;
+    padding: 0 0 0 $padding-md;
+    overflow: hidden;
+    .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden,
+    .mCSB_inside>.mCSB_container {
+      margin-right: $padding-md;
+    }
+    .mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+    .mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail {
+      margin: 0 0 0 auto;
+      border-radius: 0;
+      width: 8px;
+    }
+    .mCS-dark-3.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+    .mCS-dark-3.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+    .mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+      background-color: $brand-03;
+
+    }
+  }
+  &-fieldset {
+    display: flex;
+    &:first-child{
+      margin-top: $padding-lg;
+    }
+    &:last-child{
+      margin-bottom: $padding-sm;
+    }
+    &:not(:last-child){
+      margin-bottom: $padding-md;
+    }
+    &--label {
+      width: 30%;
+      flex-shrink: 0;
+      padding-right: $padding;
+    }
+    &--element {
+      width: 100%;
+      padding-left: $gutter-x2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .form-checkbox {
+        &:not(:last-child){
+          margin-bottom: $padding-sm;
+        }
+      }
+      .form-range {
+        .measure {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 100%;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+  &-actions {
+    flex-shrink: 0;
+    height: 168px;
+    width: 100%;
+    padding: 0 $padding-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
