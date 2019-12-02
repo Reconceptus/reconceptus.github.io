@@ -26,6 +26,27 @@
     @include media(screen,767){
       bottom: 0;
     }
+    figure {
+      width: 100%;
+      height: 100%;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include media(hover,768){
+          &.img-mobile {
+            display: none;
+          }
+        }
+        @include media(screen,767){
+          &.img-desktop {
+            display: none;
+          }
+        }
+
+      }
+    }
     video {
       position: absolute;
       min-height: 100%;
