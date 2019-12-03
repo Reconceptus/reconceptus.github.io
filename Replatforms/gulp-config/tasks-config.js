@@ -77,6 +77,12 @@ module.exports = function(gulp, plugins) {
         return getTask('copy', PATH_CONFIG.src.fonts, PATH_CONFIG.build.fonts);
     });
 
+    /* json:copy --------------------------------------*/
+
+    gulp.task('json:copy', () => {
+        return getTask('copy', PATH_CONFIG.src.json, PATH_CONFIG.build.html);
+    });
+
     /* css:compile ------------------------------------- */
 
     gulp.task('css:build', () => {
@@ -170,6 +176,7 @@ module.exports = function(gulp, plugins) {
                 'css:build',
                 'svg:copy',
                 'fonts:copy',
+                'json:copy',
                 'html:build',
                 'js:build',
                 'img:optimize',
@@ -208,6 +215,7 @@ module.exports = function(gulp, plugins) {
             'svg:build',
             'media:copy',
             'fonts:copy',
+            'json:copy',
             done => {
                 done();
             },

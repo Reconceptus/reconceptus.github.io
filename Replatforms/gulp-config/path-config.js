@@ -15,6 +15,7 @@ module.exports = {
         svg_files: 'src/svg/**/*.svg' /* path to source all svg files */,
         media: 'src/media/**/*.*' /* path to source media files */,
         fonts: 'src/fonts/**/*.*' /* path to source fonts folder */,
+        json: 'src/*.+(json)' /* path to source json files */,
         js_partials: 'src/js/partials/' /* path to source js partials folder */,
         js: 'src/js/' /* path to source js folder */,
         html_templates: 'src/_code/templates/' /* path to source html all files */,
