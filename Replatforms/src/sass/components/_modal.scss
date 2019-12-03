@@ -24,8 +24,16 @@
     transition: opacity 0.35s;
   }
   &_container {
-    &:not(.current){
+    will-change: opacity;
+    transition: opacity 0.2s, transform 0.2s;
+    &:not(.visible){
       display: none;
+    }
+    &:not(.current){
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(0,-80%,0);
+      transition: opacity 0.3s, transform 0.3s;
     }
   }
   &_box {

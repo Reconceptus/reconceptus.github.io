@@ -3,7 +3,10 @@ html {
   min-height: 100%;
   font-size: $font;
   &.ovh {
-    overflow: hidden;
+    //overflow: hidden;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
   }
 
 }
