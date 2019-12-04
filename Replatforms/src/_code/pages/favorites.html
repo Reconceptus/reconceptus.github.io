@@ -1,0 +1,230 @@
+<include src="../templates/head.html" title="Фавориты"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="unregister"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <h1 class="h1 color-font-brand-01">Мои фавориты <sub>24</sub></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="listing">
+                    <input type="radio" checked id="view_listing" class="listing_filter-checker" name="listing_view">
+                    <input type="radio"  id="view_map" class="listing_filter-checker" name="listing_view">
+                    <div class="listing_filter">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="listing_filter-field">
+                                    <div class="mobile-hidden listing_filter-sorting">
+                                        <a href="#" class="active">сверху новые</a>
+                                        <a href="#">сверху популярные</a>
+                                        <a href="#">сверху меньшая цена</a>
+                                    </div>
+                                    <label for="view_listing" class="mobile-hidden listing_filter-checker--label">
+                                        <i class="icon icon_size-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view_listing"/>
+                                            </svg>
+                                        </i>
+                                    </label>
+                                    <label for="view_map" class="mobile-hidden listing_filter-checker--label">
+                                        <i class="icon icon_size-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-view_map"/>
+                                            </svg>
+                                        </i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="listing_tabs">
+                        <div class="listing_items">
+                            <div class="content-row flex-wrap">
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item01.jpg"
+                                             title="Дизайн"
+                                             data="data-item=001"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item02.jpg"
+                                             title="Город, индекс или цена"
+                                             liked="liked"
+                                             data="data-item=002"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item03.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=003"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item04.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=004"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item05.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=005"
+                                    ></include>
+                                </div>
+                                <div class="listing_item-box content-col col-4 col-md-6 col-xs-12">
+                                    <include src="./listing/listing-item.html"
+                                             img="assets/images/listing/item06.jpg"
+                                             title="Отдых в аппараментах Патонг Тауэр"
+                                             data="data-item=006"
+                                    ></include>
+                                </div>
+                            </div>
+                            <include src="../components/pagination.html"></include>
+                        </div>
+                        <div class="listing_map">
+                            <div data-map="listing_map-box">
+                                <div id="map" class="listing_map-box--frame"></div>
+                                <script type="text/javascript">
+                                    var map;
+                                    function initMap() {
+
+                                        var mapOptions = {
+                                            mapTypeControl: false,
+                                            streetViewControl: false,
+                                            scrollwheel: false
+                                        };
+                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                                        var locations = [
+                                            {lat: 55.762300, lng: 37.632070},
+                                            {lat: 55.762149, lng: 37.628363},
+                                            {lat: 55.760199, lng: 37.631710},
+                                            {lat: 55.760917, lng: 37.632568},
+                                            {lat: 55.761199, lng: 37.632710},
+                                            {lat: 55.762917, lng: 37.635568}
+                                        ];
+
+
+                                        // число в url в конце соответствует значению дата-аттрибута data-item в каждом из айтемов листинга
+                                        // это может быть не обязательно число, а любой другой уникальный ключ.
+                                        // ключи нужны для того, чтоб отображать превьюхи на карте
+                                        // скрипт вначале берёт ключ из url иконки, потом ищет соответствующий айтем в листинге и клонит его на карту
+
+                                        var icons = [
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker001',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker002',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker003',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker004',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker005',
+                                                size: new google.maps.Size(72, 72)
+                                            },
+                                            {
+                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker006',
+                                                size: new google.maps.Size(72, 72)
+                                            }
+                                        ];
+
+                                        var marker;
+                                        var bounds  = new google.maps.LatLngBounds();
+
+                                        for(var i = 0; i < locations.length; i++){
+                                            marker = new google.maps.Marker({
+                                                position: locations[i],
+                                                map: map,
+                                                icon: icons[i]
+                                            });
+                                            var loc = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+                                            bounds.extend(loc);
+                                        }
+
+                                        map.fitBounds(bounds);
+                                        map.panToBounds(bounds);
+
+                                        google.maps.event.addListenerOnce(map, 'idle', function() {
+                                            var getZoom = map.zoom;
+                                            map.setZoom(getZoom-2);
+                                        });
+
+                                    }
+                                </script>
+                                <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
+                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

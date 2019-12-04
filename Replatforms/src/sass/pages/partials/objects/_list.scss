@@ -1,0 +1,87 @@
+.objects-list {
+
+  &--sections {
+
+  }
+  &--section {
+
+    @include mq($from: tablet_xl) {
+      max-width: 20%;
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      max-width: 33.3333%;
+      margin-bottom: $gutter-x2;
+    }
+    @include mq(mobile_sm, mobile_xl) {
+      max-width: 50%;
+      margin-bottom: $gutter-x2;
+    }
+    @include mq($until: mobile_sm) {
+      max-width: 100%;
+      margin-bottom: $gutter-x2;
+    }
+    &_link {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 0;
+      color: $white;
+      @include mq($from: mobile_xl) {
+        padding-bottom: 208%;
+      }
+      @include mq(mobile_sm, mobile_xl) {
+        padding-bottom: 100%;
+      }
+      @include mq($until: mobile_sm) {
+        padding-bottom: 50%;
+      }
+      figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        transition: box-shadow 0.25s, border-radius 0.3s;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      figcaption {
+        position: relative;
+
+
+        line-height: (48/32);
+        font-weight: 400;
+        @include mq($from: wide) {
+          font-size: 32px;
+          padding: $padding-xl $padding-md;
+        }
+        @include mq(desktop_sm, wide) {
+          font-size: 24px;
+          padding: 24% 7%;
+        }
+        @include mq(mobile_xl, desktop_sm) {
+          font-size: 20px;
+          padding: 24% 7%;
+        }
+        @include mq($until: mobile_xl) {
+          font-size: 20px;
+          padding: 15% 7%;
+        }
+      }
+      @include hover(){
+        figure {
+          box-shadow: 0 8px 20px 0 rgba($black,0.16);
+          border-radius: 0 0 160px 0;
+        }
+      }
+    }
+  }
+}

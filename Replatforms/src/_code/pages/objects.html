@@ -1,0 +1,110 @@
+<include src="../templates/head.html" title="Карточка объектов"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box composing-box--bg_static">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <h1 class="h1 color-font-text-01">Что вы хотите продать?</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="objects-list">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-10 col-lg-12">
+                                <div class="objects-list--sections">
+                                    <div class="content-row flex-wrap">
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object01.jpg" alt="Апартаменты">
+                                                    <figcaption >Апартаменты</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object02.jpg" alt="Жилой Комплекс">
+                                                    <figcaption >Жилой Комплекс</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="user-object.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object03.jpg" alt="Дом с землей (юзер все блоки)">
+                                                    <figcaption >Дом с землей (юзер все блоки)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="manager-object.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object04.jpg" alt="Землю (адм)">
+                                                    <figcaption>Землю (адм)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/listing/item02.jpg" alt="Коммерческий объект (1 стр)">
+                                                    <figcaption >Коммерческий объект (1 стр)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>
