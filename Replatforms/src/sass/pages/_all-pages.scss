@@ -2,6 +2,13 @@
 @import "blog";
 
 .composing-box {
-  padding-top: $padding-lg;
-  padding-bottom: $padding-md;
+
+  @include mq($from: tablet_sm) {
+    padding-top: $padding-lg;
+    padding-bottom: $padding-md;
+  }
+  @include mq($until: tablet_sm) {
+    padding-top: $padding-md;
+    padding-bottom: $padding-md;
+  }
 }

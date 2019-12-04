@@ -11,9 +11,18 @@
   will-change: transform;
   opacity: 0;
   overflow: hidden;
+
   &.opened {
     pointer-events: auto;
     opacity: 1;
+  }
+  &-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    @extend %btn_reset;
+    color: $link;
+    z-index: 1;
   }
   &-blur {
     position: absolute;
@@ -34,8 +43,25 @@
     transform: translateX(-150%);
     transition: transform 0.25s ease 0.15s;
     will-change: transform;
+
+    @include mq($from: tablet_sm) {
+      min-width: 420px;
+    }
+    @include mq($until: tablet_sm) {
+      padding-top: 60px;
+      margin: 0 -24px;
+    }
     .opened & {
-      transform: translateX(0);
+
+      @include mq($from: desktop_sm) {
+        transform: translateX(0);
+      }
+      @include mq(tablet_sm, desktop_sm) {
+        transform: translateX(-24px);
+      }
+      @include mq($until: tablet_sm) {
+        transform: translateX(0);
+      }
     }
     &:before {
       @extend .pseudo-content;
@@ -51,7 +77,16 @@
     flex-grow: 1;
     width: 100%;
     padding: 0 0 0 $padding-md;
-    overflow: hidden;
+
+    .desktop & {
+      overflow: hidden;
+    }
+    .tablet &,
+    .mobile & {
+      padding-right: $padding-md;
+      overflow: auto;
+    }
+
     .mCSB_container.mCS_no_scrollbar_y.mCS_y_hidden,
     .mCSB_inside>.mCSB_container {
       margin-right: $padding-md;
@@ -71,8 +106,18 @@
   }
   &-fieldset {
     display: flex;
+    @include mq($until: mobile_sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     &:first-child{
-      margin-top: $padding-lg;
+
+      @include mq($from: mobile_sm) {
+        margin-top: $padding-lg;
+      }
+      @include mq($until: mobile_sm) {
+        margin-top: $padding-md;
+      }
     }
     &:last-child{
       margin-bottom: $padding-sm;
@@ -81,16 +126,28 @@
       margin-bottom: $padding-md;
     }
     &--label {
-      width: 30%;
-      flex-shrink: 0;
-      padding-right: $padding;
+      @include mq($from: mobile_sm) {
+        width: 30%;
+        flex-shrink: 0;
+        padding-right: $padding;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $padding;
+        font-weight: 500;
+      }
     }
     &--element {
       width: 100%;
-      padding-left: $gutter-x2;
+
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      @include mq($from: mobile_sm) {
+        padding-left: $gutter-x2;
+      }
+      @include mq($until: mobile_sm) {
+
+      }
       .form-checkbox {
         &:not(:last-child){
           margin-bottom: $padding-sm;

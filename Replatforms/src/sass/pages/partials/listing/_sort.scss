@@ -20,27 +20,54 @@
       color: $link;
       flex-shrink: 0;
       transition: background-color 0.2s;
+      @include mq($until: tablet_xl) {
+        margin-left: $padding;
+      }
     }
   }
   &-field {
-    height: $listing_size;
     display: flex;
-    & > * {
-      &:not(:last-child){
-        margin-right: $padding;
+    @include mq($from: tablet_xl) {
+      height: $listing_size;
+      & > * {
+        &:not(:last-child){
+          margin-right: $padding;
+        }
       }
     }
+    @include mq($until: tablet_xl) {
+      flex-wrap: wrap;
+    }
+
+
   }
   &-sorting {
     width: 100%;
     display: flex;
     background: $white;
     align-items: center;
-    padding: 0 $padding-md;
+
+    @include mq($until: tablet_xl) {
+      height: $listing_size;
+      margin-top: $padding;
+      order: 10;
+    }
+    @include mq($from: tablet_sm) {
+      padding: 0 $padding-md;
+    }
+    @include mq($until: tablet_sm) {
+      padding: 0 $padding;
+    }
     a {
       color: $text;
-      margin-right: $padding-lg;
+
       position: relative;
+      @include mq($from: tablet_sm) {
+        margin-right: $padding-lg;
+      }
+      @include mq($until: tablet_sm) {
+        margin-right: $padding;
+      }
       &:after {
         @extend .pseudo-content;
         position: absolute;
@@ -74,5 +101,9 @@
     padding: 0 $padding-md;
     color: $link;
     font-weight: 500;
+    @include mq($until: tablet_xl) {
+      height: $listing_size;
+      flex-grow: 1;
+    }
   }
 }
