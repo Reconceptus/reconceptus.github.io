@@ -8,4 +8,5 @@ window.functions = {
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
     expander: require('./modules/expander'),
+    listing_views: require('./modules/listing-views'),
 };

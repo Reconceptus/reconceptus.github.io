@@ -51,6 +51,9 @@ $(document).ready(() => {
     if ($('.listing_sidebar').length > 0) {
         functions.filter.init();
     }
+    if ($('.listing_item-selectable').length > 0) {
+        functions.listing_views();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

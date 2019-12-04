@@ -13,7 +13,7 @@
         selector: '#autoComplete',
         minChars: 2,
         source: function(term, response){
-            $.getJSON('/russian-cities.json', term, function(data){
+            $.getJSON('russian-cities.json', term, function(data){
                 var results = [];
                 for (i=0;i<data.length;i++)
                     if (~data[i].toLowerCase().indexOf(term.toLowerCase())) results.push(data[i]);

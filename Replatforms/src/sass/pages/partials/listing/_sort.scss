@@ -60,36 +60,37 @@
     }
     a {
       color: $text;
-
+      height: 100%;
+      display: flex;
+      align-items: center;
       position: relative;
-      @include mq($from: tablet_sm) {
-        margin-right: $padding-lg;
-      }
-      @include mq($until: tablet_sm) {
-        margin-right: $padding;
+      line-height: 1;
+      &:not(:last-child){
+        @include mq($from: tablet_sm) {
+          margin-right: $padding-lg;
+        }
+        @include mq($until: tablet_sm) {
+          margin-right: $padding;
+        }
       }
       &:after {
         @extend .pseudo-content;
         position: absolute;
-        top: 100%;
+        bottom: 0;
         left: 0;
         right: 0;
-        height: 1px;
+        height: 0;
         background: $link;
-        transform: translateY(4px);
-        opacity: 0;
         transition: all 0.2s;
       }
       @include hover(){
         &:after {
-          transform: translateY(1px);
-          opacity: 1;
+          height: 4px;
         }
       }
       &.active {
         &:after {
-          transform: translateY(1px);
-          opacity: 1;
+          height: 4px;
         }
       }
     }
@@ -97,13 +98,26 @@
   &-button {
     @extend %btn_reset;
     background: $white;
-    flex-shrink: 0;
+    line-height: 1.1;
     padding: 0 $padding-md;
     color: $link;
     font-weight: 500;
-    @include mq($until: tablet_xl) {
+    @include mq($from: desktop_sm) {
+      flex-shrink: 0;
+    }
+    @include mq(mobile_xl, tablet_xl) {
       height: $listing_size;
       flex-grow: 1;
+      &:not(:first-of-type){
+        margin-left: $padding;
+      }
+    }
+    @include mq($until: mobile_xl) {
+      height: $listing_size;
+      width: 100%;
+      &:not(:first-of-type){
+        margin-top: $padding;
+      }
     }
   }
 }

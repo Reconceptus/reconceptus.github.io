@@ -20,6 +20,7 @@ window.functions = {
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
     expander: require('./modules/expander'),
+    listing_views: require('./modules/listing-views'),
 };
 
 // scripts
@@ -75,6 +76,9 @@ $(document).ready(() => {
     }
     if ($('.listing_sidebar').length > 0) {
         functions.filter.init();
+    }
+    if ($('.listing_item-selectable').length > 0) {
+        functions.listing_views();
     }
 
     /* --------------------------------- document resize --------------------------------- */

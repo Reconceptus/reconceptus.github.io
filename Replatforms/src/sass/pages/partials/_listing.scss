@@ -20,11 +20,16 @@ $listing_size: 56px;
   background: $link;
   color: $white;
 }
-#view_map:checked ~ .listing_filter .listing_filter-sorting {
-  * {
-    display: none;
+#view_map:checked ~ .listing_filter {
+  .listing_filter-sorting {
+    * {
+      display: none;
+    }
+    @include mq($until: tablet_xl) {
+      display: none;
+    }
   }
-  @include mq($until: tablet_xl) {
+  .listing_filter-user_cta {
     display: none;
   }
 }

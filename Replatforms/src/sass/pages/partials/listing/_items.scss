@@ -38,6 +38,7 @@
     }
     &-box {
       margin-bottom: $gutter-x2;
+      position: relative;
     }
     &-figure {
       position: relative;
@@ -65,6 +66,7 @@
       display: flex;
       align-items: center;
       font-weight: 500;
+      pointer-events: none;
       @include mq($until: tablet_sm) {
         flex-direction: column;
         align-items: flex-start;
@@ -155,6 +157,81 @@
         }
         &.liked {
           color: $brand-02;
+        }
+      }
+    }
+    &-selectable {
+      border: 2px solid $ui-02;
+      &.selected {
+        border-color: $link;
+      }
+      &--checkbox {
+        @extend %hidden_input;
+        &:checked + .listing_item-selectable {
+          border-color: $brand-01;
+          .listing_item-check--label {
+            border-color: $brand-01;
+            background-color: $brand-01;
+          }
+          .listing_item-check {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($text-05,0.65);
+          }
+          .listing_item-check--new {
+            display: none;
+          }
+        }
+      }
+    }
+    &-check {
+      display: none;
+      .listing_item-selectable & {
+        display: block;
+      }
+      &--new {
+        background-color: $ui-02;
+        color: $white;
+        font-size: $font;
+        font-weight: 500;
+        line-height: 32px;
+        padding: 0 $padding;
+        border-radius: $padding;
+        position: absolute;
+        
+        pointer-events: none;
+        @include mq($from: desktop_sm) {
+          top: $gutter-x2;
+          left: $gutter-x2;
+        }
+        @include mq($until: desktop_sm) {
+          top: $padding;
+          left: $padding;
+        }
+      }
+      &--label {
+        position: absolute;
+        
+        width: $padding-md;
+        height: $padding-md;
+        border-radius: 50%;
+        border: 2px solid $ui-02;
+        cursor: pointer;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2017.6%2013.4%22%3E%3Ctitle%3E%u0420%u0435%u0441%u0443%u0440%u0441%201%3C/title%3E%3Cg%20id%3D%22%u0421%u043B%u043E%u0439_2%22%20data-name%3D%22%u0421%u043B%u043E%u0439%202%22%3E%3Cg%20id%3D%22%u0421%u043B%u043E%u0439_1-2%22%20data-name%3D%22%u0421%u043B%u043E%u0439%201%22%3E%3Cpath%20d%3D%22M5.6%2C10.6%2C1.4%2C6.4%2C0%2C7.8l5.6%2C5.6%2C12-12L16.2%2C0Z%22%20style%3D%22fill%3A%23fff%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-color: $white;
+        background-size: 16px auto;
+        background-position: center;
+        @include mq($from: desktop_sm) {
+          top: $gutter-x2;
+          right: $gutter-x2;
+        }
+        @include mq($until: desktop_sm) {
+          top: $padding;
+          right: $padding;
         }
       }
     }
