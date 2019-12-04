@@ -8,9 +8,9 @@
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
                         </svg>
                     </i>
-                    search object
+                    <span class="mobile-hidden">search object</span>
                 </button>
-                <a href="objects.html" class="link_icon">
+                <a href="objects.html" class="link_icon tablet-hidden">
                     <i class="icon icon_size-2">
                         <svg xmlns="http://www.w3.org/2000/svg">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-add"/>
@@ -19,11 +19,12 @@
                     add object
                 </a>
 
-                <include src="../components/language.html"></include>
+                <div class="tablet-hidden">
+                    <include src="../components/language.html"></include>
+                </div>
 
-                <a href="javascript:void(0);" data-open-modal="signup" class="link_simple">create account</a>
+                <include src="./header/@@user.html"></include>
 
-                <a href="javascript:void(0);" data-open-modal="signin" class="link_simple">login</a>
             </div>
             <div class="header_nav-burger">
                 <button id="burger" type="button" class="header_nav-burger--button">

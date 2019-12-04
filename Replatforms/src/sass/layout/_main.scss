@@ -35,7 +35,12 @@ svg {
   background-color: #F5F5F5;
   overflow: hidden;
   &_box {
-    padding-bottom: $padding-xxl;
+    @include mq($from: tablet_xl) {
+      padding-bottom: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      padding-bottom: 80px;
+    }
   }
 }
 .wrapper {

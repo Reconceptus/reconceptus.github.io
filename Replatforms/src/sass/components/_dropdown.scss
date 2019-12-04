@@ -22,12 +22,20 @@
     background: $white;
     position: absolute;
     top: 100%;
-    left: calc(100% - #{$gutter-x2});
     box-shadow: 0 2px 4px 0 rgba($black,0.16);
-    padding: $padding $padding-md;
+
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s;
+    white-space: nowrap;
+    @include mq($from: tablet_sm) {
+      left: calc(100% - #{$gutter-x2});
+      padding: $padding $padding-md;
+    }
+    @include mq($until: tablet_sm) {
+      left: 0;
+      padding: $padding;
+    }
     .active & {
       opacity: 1;
       pointer-events: auto;

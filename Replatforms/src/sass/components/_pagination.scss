@@ -2,7 +2,15 @@
   display: flex;
   align-items: center;
   .listing_items & {
-    margin-top: ($padding-xxl - $gutter-x2);
+    @include mq($from: tablet_xl) {
+      margin-top: ($padding-xxl - $gutter-x2);
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      margin-top: 56px;
+    }
+    @include mq($until: tablet_sm) {
+      margin-top: $gutter-x2;
+    }
   }
   a,span {
     display: inline-flex;

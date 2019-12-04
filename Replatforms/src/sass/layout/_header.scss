@@ -2,49 +2,89 @@ $header-height: 88px;
 
 .header {
   position: fixed;
-  top: $padding-lg;
+
   right: $gutter-x2;
   z-index: 20;
   @include mq($from: ($content-lg + 2*$gutter-x2 + $padding)){
     right: calc(50% - #{$content-lg}/2);
   }
+  @include mq($from: tablet_sm) {
+    top: $padding-lg;
+  }
+  @include mq($until: tablet_sm) {
+    top: $padding-md;
+  }
   &_wrap {
 
   }
   &_logo {
-    margin-bottom: $header-height+$padding+$padding-sm;
+    @include mq($from: tablet_xl) {
+      margin-bottom: $header-height+$padding+$padding-sm;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      margin-bottom: 80px;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-lg;
+    }
     &-link {
       display: block;
-      width: $header-height;
-      height: $header-height;
+
       position: relative;
       z-index: 21;
+      @include mq($from: tablet_sm) {
+        width: $header-height;
+        height: $header-height;
+      }
+      @include mq($until: tablet_sm) {
+        width: $padding-lg;
+        height: $padding-lg;
+      }
     }
     img {
       @extend %full_block;
     }
   }
   &_nav {
-    height: $header-height;
+
     width: 100%;
     background-color: $white;
     position: relative;
     display: flex;
     box-shadow: 0 4px 16px 0 rgba($black,0.16);
     border-radius: $header-height 0 0 $header-height;
-    min-width: calc(#{$content-lg/2} - #{$gutter});
+
+    @include mq($from: tablet_xl) {
+      min-width: calc(#{$content-lg/2} - 20px - #{$gutter});
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      min-width: 540px;
+    }
+    @include mq($from: tablet_sm) {
+      height: $header-height;
+    }
+    @include mq($until: tablet_sm) {
+      height: $padding-lg;
+    }
     &-general {
       width: 100%;
       display: flex;
-      padding: 0 $padding-md;
+
       justify-content: space-between;
       align-items: center;
       color: $link;
+      @include mq($from: tablet_sm) {
+        padding: 0 $padding-md;
+      }
+      @include mq($until: tablet_sm) {
+        padding: 0 0 0 $padding;
+      }
       & > * {
         margin-right: $gutter-x2;
       }
       &--auth {
         position: relative;
+        display: flex;
         .dropdown_selected {
           padding-right: 0;
           &:after {
@@ -57,10 +97,18 @@ $header-height: 88px;
           color: $text;
           left: auto;
           right: -56px;
-          margin-top: 18px;
-          min-width: 360px;
+
+
           padding-top: $padding-md;
           padding-bottom: $padding-lg;
+          @include mq($from: tablet_sm) {
+            margin-top: 16px;
+            min-width: 360px;
+          }
+          @include mq($until: tablet_sm) {
+            margin-top: 8px;
+            min-width: 240px;
+          }
           a {
             @include hover(){
               color: $link;
@@ -78,10 +126,16 @@ $header-height: 88px;
         }
         &_img {
           display: block;
-          width: 56px;
-          height: 56px;
           border-radius: 50%;
           overflow: hidden;
+          @include mq($from: tablet_sm) {
+            width: 56px;
+            height: 56px;
+          }
+          @include mq($until: tablet_sm) {
+            width: $padding-md;
+            height: $padding-md;
+          }
           img {
             @extend %full_block;
             object-fit: cover;
@@ -90,22 +144,44 @@ $header-height: 88px;
         &_views {
           color: $white;
           background: $ui-01;
-          font-size: 14px;
-          line-height: 32px;
+
           font-weight: 500;
           position: absolute;
           bottom: 100%;
           left: 100%;
           border-radius: 10px;
-          padding: 0 10px;
+
           transform: translate(-14px, 10px);
+          @include mq($from: tablet_sm) {
+            font-size: 14px;
+            line-height: 32px;
+            padding: 0 10px;
+          }
+          @include mq($until: tablet_sm) {
+            font-size: 12px;
+            line-height: 24px;
+            padding: 0 5px;
+          }
+        }
+        &_drop {
+          .dropdown_selected {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
       }
     }
     &-burger {
-      width: $header-height;
+
       height: 100%;
       flex-shrink: 0;
+      @include mq($from: tablet_sm) {
+        width: $header-height;
+      }
+      @include mq($until: tablet_sm) {
+        width: $padding-lg;
+      }
       &--button {
         @extend %full_block;
         border: none;
@@ -113,7 +189,7 @@ $header-height: 88px;
         position: relative;
         span {
           position: absolute;
-          width: 40px;
+
           height: 2px;
           border-radius: 2px;
           background: $white;
@@ -122,6 +198,12 @@ $header-height: 88px;
           right: 0;
           bottom: 0;
           margin: auto;
+          @include mq($from: tablet_sm) {
+            width: 40px;
+          }
+          @include mq($until: tablet_sm) {
+            width: $padding-md;
+          }
           &:before,
           &:after {
             @extend .pseudo-content;
@@ -133,10 +215,21 @@ $header-height: 88px;
             left: 0;
           }
           &:before {
-            bottom: 12px;
+
+            @include mq($from: tablet_sm) {
+              bottom: 12px;
+            }
+            @include mq($until: tablet_sm) {
+              bottom: 9px;
+            }
           }
           &:after {
-            top: 12px;
+            @include mq($from: tablet_sm) {
+              top: 12px;
+            }
+            @include mq($until: tablet_sm) {
+              top: 9px;
+            }
           }
         }
       }

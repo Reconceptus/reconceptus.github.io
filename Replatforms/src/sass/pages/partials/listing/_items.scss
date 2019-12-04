@@ -65,6 +65,10 @@
       display: flex;
       align-items: center;
       font-weight: 500;
+      @include mq($until: tablet_sm) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .map-item & {
         display: none;
       }
@@ -73,8 +77,14 @@
         font-size: $font;
         color: $white;
         padding: 0 $padding;
-        margin-right: $padding-sm;
+
         cursor: default;
+        @include mq($from: tablet_sm) {
+          margin-right: $padding-sm;
+        }
+        @include mq($until: tablet_sm) {
+          margin-top: $padding-sm;
+        }
         &-premium {
           background: $brand-01;
         }
@@ -89,10 +99,16 @@
     &-data {
       position: relative;
       background: $white;
-      padding: $padding 2*$padding-lg $padding $padding-md;
+
       border-radius: 0 0 10px 10px;
       flex-grow: 1;
       font-size: $font;
+      @include mq($from: desktop_sm) {
+        padding: $padding 2*$padding-lg $padding $padding-md;
+      }
+      @include mq($until: desktop_sm) {
+        padding: $padding 54px $padding $padding;
+      }
       .map-item & {
         position: static;
         border-radius: 0;
@@ -117,9 +133,16 @@
       }
       &--cta {
         position: absolute;
-        top: 40px;
-        right: 24px;
+
         color: $white;
+        @include mq($from: desktop_sm) {
+          top: 40px;
+          right: 24px;
+        }
+        @include mq($until: desktop_sm) {
+          top: 16px;
+          right: 8px;
+        }
         .map-item & {
           border-radius: 50%;
           box-shadow: 0 0 0 8px $white;

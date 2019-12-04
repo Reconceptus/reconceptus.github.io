@@ -24,6 +24,9 @@ $listing_size: 56px;
   * {
     display: none;
   }
+  @include mq($until: tablet_xl) {
+    display: none;
+  }
 }
 #view_listing:checked ~ .listing_tabs .listing_map-box--frame {
   //position: absolute !important;

@@ -12,9 +12,15 @@ Styleguide styleguide.typography.headings
  */
 
 .h1 {
-  font-size: 56px;
+
   line-height: (80/56);
   font-weight: 300;
+  @include mq($from: tablet_sm) {
+    font-size: 56px;
+  }
+  @include mq($until: tablet_sm) {
+    font-size: 40px;
+  }
   sub {
     color: $text;
     font-size: $font;
@@ -24,6 +30,9 @@ Styleguide styleguide.typography.headings
     font-size: 48px;
     line-height: (64/48);
     font-weight: 300;
+    @include mq($until: tablet_sm) {
+      font-size: 36px;
+    }
   }
 }
 .h2 {

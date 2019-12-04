@@ -31,20 +31,34 @@
   }
   &-wrap {
     position: relative;
+    overflow: auto;
+    max-height: 100vh;
   }
   &-close {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: $padding-xl;
+
+    @include mq($from: tablet_sm) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-md;
+    }
     .search_close {
       @extend %btn_reset;
-      width: $header-height;
-      height: $header-height;
       border: 1px solid $brand-02;
       display: flex;
       align-items: center;
       justify-content: center;
       color: $brand-02;
+      @include mq($from: tablet_sm) {
+        width: $header-height;
+        height: $header-height;
+      }
+      @include mq($until: tablet_sm) {
+        width: $padding-lg;
+        height: $padding-lg;
+      }
     }
   }
   &-form {
@@ -55,8 +69,14 @@
     opacity: 0;
     transform: translateY(-100%);
     box-shadow: 0 4px 32px 0 rgba($black,0.16);
-    padding-top: $padding-lg;
-    padding-bottom: $padding-xl;
+    @include mq($from: tablet_sm) {
+      padding-top: $padding-lg;
+      padding-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      padding-top: $gutter-x2;
+      padding-bottom: $gutter-x2;
+    }
     .opened & {
       transform: translateY(0);
       opacity: 1;
@@ -78,22 +98,56 @@
     }
     select,
     input {
-      height: 72px;
+
       width: 100%;
       border-color: $brand-01;
       border-width: 1px;
-      border-style: solid none solid solid;
-      font-size: $font-md;
+
+
       border-radius: 0;
+      @include mq($from: tablet_sm) {
+        border-style: solid none solid solid;
+      }
+      @include mq($until: tablet_sm) {
+        border-style: solid solid none solid;
+      }
+      @include mq($from: mobile_xl) {
+        height: 72px;
+        font-size: $font-md;
+      }
+      @include mq($until: mobile_xl) {
+        height: 48px;
+        font-size: 20px;
+      }
     }
     &--fieldset {
       display: flex;
+      @include mq($from: tablet_sm) {
+
+      }
+      @include mq($until: tablet_sm) {
+        flex-direction: column;
+        max-width: 480px;
+        margin: 0 auto;
+      }
       & > * {
         &:first-child {
-          border-radius: 40px 0 0 40px;
+
+          @include mq($from: tablet_sm) {
+            border-radius: 40px 0 0 40px;
+          }
+          @include mq($until: tablet_sm) {
+            border-radius: 20px 20px 0 0;
+          }
         }
         &:last-child {
-          border-radius: 0 40px 40px 0;
+
+          @include mq($from: tablet_sm) {
+            border-radius: 0 40px 40px 0;
+          }
+          @include mq($until: tablet_sm) {
+            border-radius: 0 0 20px 20px;
+          }
         }
       }
     }
@@ -101,6 +155,11 @@
       color: $link;
       display: inline-flex;
       align-items: center;
+      @include mq($until: tablet_xl) {
+        margin-top: 24px;
+        width: 100%;
+        justify-content: center;
+      }
     }
   }
 

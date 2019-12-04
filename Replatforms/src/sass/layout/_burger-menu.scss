@@ -25,19 +25,45 @@
   }
   &-wrap {
     position: relative;
-    margin-top: 48px;
-    height: calc(100vh - 2*#{$padding-lg});
-    //padding: 0 $gutter-x2 0 $gutter;
+
+    @include mq($from: tablet_sm) {
+      margin-top: $padding-lg;
+      height: calc(100vh - 2*#{$padding-lg});
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      margin-top: $padding-md;
+      height: calc(100vh - 2*#{$padding-md});
+    }
+    @include mq($until: mobile_xl) {
+      margin-top: 0;
+      height: 100vh;
+      margin: 0 -24px;
+    }
     &--size {
-      min-width: calc(#{$content-lg/2} + #{$gutter});
+
+      @include mq($from: tablet_xl) {
+        min-width: calc(#{$content-lg/2} + #{$gutter});
+      }
     }
   }
   &-close {
     position: absolute;
-    top: $padding-md;
-    right: $padding-md;
-    width: $header-height;
-    height: $header-height;
+    @include mq($from: tablet_sm) {
+      width: $header-height;
+      height: $header-height;
+    }
+    @include mq($until: tablet_sm) {
+      width: $padding-lg;
+      height: $padding-lg;
+    }
+    @include mq($from: mobile_xl) {
+      top: $padding-md;
+      right: $padding-md;
+    }
+    @include mq($until: mobile_xl) {
+      top: $padding;
+      right: $padding;
+    }
     .burger_close {
       @extend %btn_reset;
       @extend %full_block;
@@ -75,19 +101,38 @@
       display: flex;
       flex-grow: 1;
       overflow: hidden;
-      &_main {
-        width: calc(5*100%/8);
-        flex-shrink: 0;
+      @include mq($from: tablet_sm) {
+
+      }
+      @include mq($until: tablet_sm) {
+        flex-direction: column;
+        padding-left: 12.5%;
+        padding-right: $gutter-x2;
         overflow: auto;
-        .burger_nav {
-          padding-left: 20%;
+      }
+      &_main {
+
+        @include mq($from: tablet_sm) {
+          width: calc(5*100%/8);
+          flex-shrink: 0;
+          overflow: auto;
+          .burger_nav {
+            padding-left: 20%;
+          }
         }
+
       }
       &_help {
         width: 100%;
-        padding-left: $gutter-x2;
-        padding-top: 52px;
-        padding-right: $gutter-x2;
+
+        @include mq($from: tablet_sm) {
+          padding-left: $gutter-x2;
+          padding-top: 52px;
+          padding-right: $gutter-x2;
+        }
+        @include mq($until: tablet_sm) {
+
+        }
         li {
           margin-top: $gutter-x2;
           display: flex;
@@ -107,8 +152,17 @@
     margin-bottom: $padding-md;
     & > .burger_nav-link {
       font-weight: 300;
-      font-size: 56px;
+
       line-height: 1;
+      @include mq($from: tablet_sm) {
+        font-size: 56px;
+      }
+      @include mq(mobile_xl, tablet_sm) {
+        font-size: 48px;
+      }
+      @include mq($until: mobile_xl) {
+        font-size: 32px;
+      }
     }
   }
   a {
@@ -126,9 +180,15 @@
         top: 12px;
         bottom: 0;
         transition: transform 0.25s;
-        margin: auto 32px auto 0;
+
         .expanded & {
           transform: rotate(135deg) translate(-4px, -4px);
+        }
+        @include mq($from: mobile_xl) {
+          margin: auto 32px auto 0;
+        }
+        @include mq($until: mobile_xl) {
+          margin: auto 20px auto 0;
         }
       }
     }
