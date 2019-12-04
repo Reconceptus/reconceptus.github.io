@@ -82,6 +82,10 @@
       color: $link;
       display: flex;
     }
+    &-close {
+      position: absolute;
+      @extend %full_block;
+    }
     &-main {
       overflow: auto;
       margin-right: -10%;
