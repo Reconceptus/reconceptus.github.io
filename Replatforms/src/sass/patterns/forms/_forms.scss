@@ -6,9 +6,20 @@
 .form-field {
   width: 100%;
   margin-bottom: $padding-md;
+  &--columns {
+    display: flex;
+    margin: 0 -24px;
+  }
+  &--col {
+    width: 100%;
+    padding: 0 24px;
+    max-width: 50%;
+  }
 }
 .form-fieldset {
-  margin-bottom: $padding-lg;
+  &:not(:last-child){
+    margin-bottom: $padding-lg;
+  }
 }
 
 .form-label {

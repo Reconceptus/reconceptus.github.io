@@ -1,0 +1,549 @@
+<include src="../templates/head.html" title="Карточка объектов пользователь"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box composing-box--bg_static">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-logo"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <h1 class="h1 color-font-text-01">Опишите объект</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="object_cart content content--lg">
+                <form action="#">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-8">
+                            <div class="object_cart-main">
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Адрес (одинаковый)</h3>
+                                    <div class="form-fieldset">
+                                        <div class="form-input">
+                                            <div class="form-label">Локация:</div>
+                                            <input type="text" placeholder="Страна, населённый пункт">
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Индекс:</div>
+                                                    <input type="text" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Точный адрес (никто не увидит):</div>
+                                                    <input type="text" placeholder="улица, дом">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Широта:</div>
+                                                    <input type="text" id="form_map_lng" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Долгота:</div>
+                                                    <input type="text" id="form_map_lat" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="object_cart-form--map_box">
+                                            <div class="form-label">Укажите точку на карте:</div>
+                                            <div class="object_cart-form--map">
+                                                <div id="map" class="object_cart-form--map_frame"></div>
+                                                <script type="text/javascript">
+                                                    var map, marker,
+                                                        defaultLatLng = {lat: 55.762300, lng: 37.632070},
+                                                        currentLatLng = {},
+                                                        input_lat = document.getElementById('form_map_lat'),
+                                                        input_lng = document.getElementById('form_map_lng');
+
+                                                    function initMap() {
+
+                                                        var LatLng = new google.maps.LatLng(defaultLatLng.lat, defaultLatLng.lng);
+                                                        var mapOptions = {
+                                                            mapTypeControl: false,
+                                                            streetViewControl: false,
+                                                            scrollwheel: false,
+                                                            zoom: 14,
+                                                            center: LatLng
+                                                        };
+                                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                                                        marker = new google.maps.Marker({
+                                                            position: LatLng,
+                                                            map: map,
+                                                            editable: true,
+                                                            draggable: true
+                                                        });
+
+                                                        google.maps.event.addListener(marker, 'drag', changeInputs);
+
+                                                        function setMarkerPosition(mark,ref) {
+
+                                                            if(!input_lat.value) currentLatLng.lat = defaultLatLng.lat;
+                                                            if(!input_lng.value) currentLatLng.lng = defaultLatLng.lng;
+
+                                                            if(ref == 'lat') currentLatLng.lat = +input_lat.value;
+                                                            if(ref == 'lng') currentLatLng.lng = +input_lng.value;
+
+                                                            var LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng)
+                                                            map.setCenter(LatLng);
+                                                            mark.setPosition(LatLng)
+                                                        }
+                                                        input_lat.addEventListener('change',function () {
+                                                            setMarkerPosition(marker,'lat')
+                                                        });
+                                                        input_lng.addEventListener('change',function () {
+                                                            setMarkerPosition(marker,'lng')
+                                                        });
+
+                                                    }
+                                                    function changeInputs(event) {
+                                                        input_lat.value = event.latLng.lat();
+                                                        input_lng.value = event.latLng.lng();
+
+                                                        currentLatLng.lat = input_lat.value;
+                                                        currentLatLng.lng = input_lng.value;
+                                                    }
+
+                                                </script>
+                                                <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
+                                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
+                                                <div class="object_cart-form--map_hint">
+                                                    передвиньте метку на <br>
+                                                    адрес вашего объекта
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Данные объекта</h3>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Стоимость, &#x20bd;:</div>
+                                                    <input type="text" placeholder="Стоимость объекта">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Площадь, М<sup>2</sup>:</div>
+                                                    <input type="text" placeholder="Площадь объекта">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Стоимость, &#x20bd;:</div>
+                                                <div class="form-range form-input">
+                                                    <input type="number" placeholder="min">
+                                                    <span class="dash"></span>
+                                                    <input type="number" placeholder="max">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Площадь, М<sup>2</sup>:</div>
+                                                <div class="form-range form-input">
+                                                    <input type="number" placeholder="min">
+                                                    <span class="dash"></span>
+                                                    <input type="number" placeholder="max">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Этаж:</div>
+                                                    <input type="text" placeholder="Этаж объекта">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Этажность дома:</div>
+                                                    <input type="text" placeholder="10">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Bathrooms (радио-кнопки):</div>
+                                                <div class="form-radio_line">
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">1</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">2</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">3</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">4</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">5+</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Bedrooms (чекбоксы):</div>
+                                                <div class="form-radio_line">
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">1</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">2</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">3+</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Год строительства:</div>
+                                                    <input type="text" placeholder="2005">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Реализация проекта:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">На стадии проекта</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">Завершен</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">Что-то ещё</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Тип объекта:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Studio</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Penthouse</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Apartment</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">House</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Development facilities:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">24 hour Concierge</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Swimming pool</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Spa</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Gym</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Cinema</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Underground Parking</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Garden</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Swimming pool</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Spa</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Gym</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Cinema</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Underground Parking</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Garden</span>
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Материал стен:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Кирпич</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Кирпично-монолитный</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Монолит</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Шлакоблоки</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Панельный</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Дерево</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Другое</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Ремонт и класс:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 1</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 2</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 3</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 4</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 5</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 6</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 7</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object_cart-cta">
+                                    <button type="submit" class="btn btn--full btn--orange">ready to check</button>
+                                    <div class="object_cart-cta--text text-box">
+                                        <p>
+                                            После нажатия на кнопку "ready to check" ваш объект уйдет на проверку менеджером, после чего он будет опубликован на платформе или возвращен вам с пометкой информации не хватает.  RePlatforms может не принять объекты, которые не отвечают
+                                            <a href="#" target="_blank">требованиям</a> платформы.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-col col-3">
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>
