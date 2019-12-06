@@ -506,26 +506,30 @@
                                     <h3 class="h2">Визуал (одинаковый)</h3>
                                     <div class="form-fieldset">
                                         <div class="form-label">Загрузите файл с 3D-туром, общий объем до ---МБ:</div>
-                                        <div class="draggable" id="grid">
-                                            <div class="draggable_box">
-                                                <div class="draggable_box-figure">
-                                                    1
-                                                </div>
+                                        <div class="zone">
+                                            <div class="dropzone">
+                                                <input type="file" name="file" multiple/>
                                             </div>
-                                            <div class="draggable_box">
-                                                <div class="draggable_box-figure">
-                                                    2
+                                            <div class="draggable" id="grid">
+
+                                                <div class="draggable_box">
+                                                    <div class="draggable_box-figure">
+                                                        1
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="draggable_box">
-                                                <div class="draggable_box-figure">
-                                                    3
+                                                <div class="draggable_box">
+                                                    <div class="draggable_box-figure">
+                                                        2
+                                                    </div>
                                                 </div>
+                                                <!--                                            <div class="draggable_box">-->
+                                                <!--                                                <div class="draggable_box-figure">-->
+                                                <!--                                                    3-->
+                                                <!--                                                </div>-->
+                                                <!--                                            </div>-->
                                             </div>
                                         </div>
-                                        <div class="dropzone" id="my-awesome-dropzone">
-                                            <input type="file" name="file" multiple/>
-                                        </div>
+
                                     </div>
 
 
@@ -602,8 +606,42 @@
 
     $(document).ready(function() {
         $('input[type="file"]').fileuploader({
-            addMore: true
-            // Options will go here
+            addMore: true,
+            dragDrop: {
+                container: '.dropzone',
+            },
+            upload: {
+                url: 'admin/uploads/compress.php', // upload needs to change according to our site server
+                data: null,
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                start: true,
+                synchron: true,
+                beforeSend: null
+            },
+            onListInput: function(list, fileList, listInputEl, listEl, parentEl, newInputEl, inputEl) {
+                console.log($('.fileuploader-item').length)
+            },
+            afterSelect: function(listEl, parentEl, newInputEl, inputEl) {
+                console.log('after '+ $('.fileuploader-item').length)
+            },
+            onRemove: function(item, listEl, parentEl, newInputEl, inputEl) {
+                console.log(listEl[0].childNodes)
+                setTimeout(function () {
+                    console.log(listEl[0].childNodes.length)
+                },0)
+
+                console.log('remove '+ $('.fileuploader-item').length)
+            },
+            onFileRead: function(item, listEl, parentEl, newInputEl, inputEl) {
+                console.log('read '+ $('.fileuploader-item').length)
+            },
+            afterRender: function(listEl, parentEl, newInputEl, inputEl) {
+                console.log('render '+ $('.fileuploader-item').length)
+            },
+            onFilesCheck: function(files, options, listEl, parentEl, newInputEl, inputEl) {
+                console.log('files-check '+ $('.fileuploader-item').length)
+            },
         });
     });
 </script>
