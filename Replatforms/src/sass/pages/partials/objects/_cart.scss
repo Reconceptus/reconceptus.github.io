@@ -34,6 +34,10 @@
     .btn {
       height: 80px;
       font-size: $font-md;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22Component_68_494%22%20data-name%3D%22Component%2068%20%u2013%20494%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2221%22%20height%3D%2218%22%20viewBox%3D%220%200%2021%2018%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_59%22%20data-name%3D%22Path%2059%22%20d%3D%22M4.01%2C6.03l7.51%2C3.22L4%2C8.25l.01-2.22m7.5%2C8.72L4%2C17.97V15.75l7.51-1M2.01%2C3%2C2%2C10l15%2C2L2%2C14l.01%2C7L23%2C12Z%22%20transform%3D%22translate%28-2%20-3%29%22%20fill%3D%22%23fff%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-position: calc(100% - 32px) center;
+      background-size: 21px auto;
     }
     &--text {
       margin-top: $padding-md;

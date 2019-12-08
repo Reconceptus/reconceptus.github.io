@@ -1,0 +1,38 @@
+.key_benefits {
+  &-input {
+
+  }
+  &-list {
+    margin-top: $padding-lg;
+    &--item {
+      position: relative;
+      padding: $padding 180px $padding 40px;
+      box-shadow: 0 4px 8px 0 rgba($black,0.16);
+      min-height: 72px;
+      font-size: 24px;
+      line-height: (40/24);
+      &:not(:last-child){
+        margin-bottom: $padding-sm;
+      }
+      &_cta {
+        position: absolute;
+        top: $padding;
+        right: $padding;
+        display: flex;
+        align-items: center;
+      }
+      &_btn {
+        @extend %btn_reset;
+        background-color: $white;
+        width: 40px;
+        height: 40px;
+        color: $brand-02;
+        margin-left: $padding-sm;
+        border: 1px solid $brand-02;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
