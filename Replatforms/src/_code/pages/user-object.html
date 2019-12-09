@@ -615,10 +615,14 @@
                                             <div class="form-label">Ключевые преимущества:</div>
                                             <div class="key_benefits-input digits-relative">
                                                 <div class="key_benefits-input--fieldset">
-                                                    <div class="key_benefits-input--field contenteditable-key"
+<!--                                                    <div class="key_benefits-input&#45;&#45;field contenteditable-key"-->
+<!--                                                         contenteditable-->
+<!--                                                         data-placeholder="Label"-->
+<!--                                                    ></div>-->
+                                                    <input type="text" class="key_benefits-input--field contenteditable-key"
                                                          contenteditable
-                                                         data-placeholder="Label"
-                                                    ></div>
+                                                         placeholder="Label"
+                                                    />
                                                     <button type="button"
                                                             class="key_benefits-input--remove"
                                                             onclick="functions.contenteditable.clearInput();"
@@ -630,7 +634,10 @@
                                                         </i>
                                                     </button>
                                                 </div>
-                                                <button type="button" class="key_benefits-input--enter">
+                                                <button type="button"
+                                                        class="key_benefits-input--enter"
+                                                        onclick="functions.contenteditable.insertItem('key_benefits-list--item','key_benefits-list--item_cta','key_benefits-list--item_btn');"
+                                                >
                                                     <i class="icon icon_size-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg">
                                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"/>
@@ -639,25 +646,25 @@
                                                 </button>
                                                 <div class="digits">0/200</div>
                                             </div>
-                                            <div class="key_benefits-list">
-                                                <div class="key_benefits-list--item">
+                                            <div class="key_benefits-list contenteditable-list">
+                                                <!--<div class="key_benefits-list&#45;&#45;item">
                                                     15 minutes by walk to Stockwell Station
-                                                    <div class="key_benefits-list--item_cta">
-                                                        <button type="button" class="key_benefits-list--item_btn">
+                                                    <div class="key_benefits-list&#45;&#45;item_cta">
+                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">
                                                             <i class="icon icon_size-2">
                                                                 <svg xmlns="http://www.w3.org/2000/svg">
                                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"/>
                                                                 </svg>
                                                             </i>
                                                         </button>
-                                                        <button type="button" class="key_benefits-list--item_btn">
+                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">
                                                             <i class="icon icon_size-2">
                                                                 <svg xmlns="http://www.w3.org/2000/svg">
                                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
                                                                 </svg>
                                                             </i>
                                                         </button>
-                                                        <button type="button" class="key_benefits-list--item_btn">
+                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">
                                                             <i class="icon icon_size-2">
                                                                 <svg xmlns="http://www.w3.org/2000/svg">
                                                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-translate"/>
@@ -665,33 +672,33 @@
                                                             </i>
                                                         </button>
                                                     </div>
-                                                </div>
-                                                <div class="key_benefits-list--item">
-                                                    With the new underground station on site and Vauxhall transport hub just 6 minutes walk away, the West End, City and Canary Wharf can all be reached in less than 30 minutes.
-                                                    <div class="key_benefits-list--item_cta">
-                                                        <button type="button" class="key_benefits-list--item_btn">
-                                                            <i class="icon icon_size-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"/>
-                                                                </svg>
-                                                            </i>
-                                                        </button>
-                                                        <button type="button" class="key_benefits-list--item_btn">
-                                                            <i class="icon icon_size-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>
-                                                                </svg>
-                                                            </i>
-                                                        </button>
-                                                        <button type="button" class="key_benefits-list--item_btn">
-                                                            <i class="icon icon_size-2">
-                                                                <svg xmlns="http://www.w3.org/2000/svg">
-                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-translate"/>
-                                                                </svg>
-                                                            </i>
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                                </div>-->
+<!--                                                <div class="key_benefits-list&#45;&#45;item">-->
+<!--                                                    With the new underground station on site and Vauxhall transport hub just 6 minutes walk away, the West End, City and Canary Wharf can all be reached in less than 30 minutes.-->
+<!--                                                    <div class="key_benefits-list&#45;&#45;item_cta">-->
+<!--                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">-->
+<!--                                                            <i class="icon icon_size-2">-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg">-->
+<!--                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"/>-->
+<!--                                                                </svg>-->
+<!--                                                            </i>-->
+<!--                                                        </button>-->
+<!--                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">-->
+<!--                                                            <i class="icon icon_size-2">-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg">-->
+<!--                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-remove"/>-->
+<!--                                                                </svg>-->
+<!--                                                            </i>-->
+<!--                                                        </button>-->
+<!--                                                        <button type="button" class="key_benefits-list&#45;&#45;item_btn">-->
+<!--                                                            <i class="icon icon_size-2">-->
+<!--                                                                <svg xmlns="http://www.w3.org/2000/svg">-->
+<!--                                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-translate"/>-->
+<!--                                                                </svg>-->
+<!--                                                            </i>-->
+<!--                                                        </button>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
