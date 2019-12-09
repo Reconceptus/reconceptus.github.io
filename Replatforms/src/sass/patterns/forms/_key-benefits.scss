@@ -1,6 +1,72 @@
 .key_benefits {
   &-input {
-
+    display: flex;
+    align-items: center;
+    &--fieldset {
+      position: relative;
+      width: 100%;
+    }
+    &--field {
+      display: flex;
+      width: 100%;
+      border: 1px solid $brand-02;
+      border-radius: 4px;
+      padding: 0 40px 0 12px;
+      background: $white;
+      outline: none;
+      position: relative;
+      align-items: center;
+      line-height: 48px;
+      width: 100%;
+      &:after {
+        content: attr(data-placeholder);
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        opacity: 0.8;
+        pointer-events: none;
+        .has-text & {
+          display: none;
+        }
+      }
+    }
+    &--remove {
+      @extend %btn_reset;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+      color: $brand-02;
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      .has-text & {
+        display: flex;
+      }
+    }
+    &--enter {
+      @extend %btn_reset;
+      display: flex;
+      height: 50px;
+      width: 50px;
+      border-radius: 4px;
+      background-color: $brand-02;
+      color: $white;
+      align-items: center;
+      justify-content: center;
+      margin-left: $padding-sm;
+      flex-shrink: 0;
+      opacity: 0.7;
+      pointer-events: none;
+      .has-text & {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
   }
   &-list {
     margin-top: $padding-lg;

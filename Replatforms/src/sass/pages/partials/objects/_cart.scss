@@ -75,7 +75,35 @@
     }
   }
   &-sidebar {
-  
+    padding: $padding-xl 0 $padding-xl 40px;
+    &--cta {
+      display: flex;
+      align-items: center;
+      margin-bottom: $padding-xl;
+      .btn {
+        padding: 0 $gutter-x2;
+      }
+      .icon {
+        margin-right: $gutter;
+      }
+    }
+    &--btn {
+      border-radius: 8px;
+      margin-right: $padding-sm;
+    }
+    &--img {
+      width: 128px;
+      height: 128px;
+      display: block;
+      margin-bottom: $gutter-x2;
+      img {
+        @extend %full_block;
+        object-fit: cover;
+      }
+    }
+    &--text {
+    
+    }
   }
 
 }

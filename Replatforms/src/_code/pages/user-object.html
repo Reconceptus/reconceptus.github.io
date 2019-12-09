@@ -104,6 +104,10 @@
                                                             position: LatLng,
                                                             map: map,
                                                             editable: true,
+                                                            icon: {
+                                                                url: './assets/images/map-set-mark.png',
+                                                                size: new google.maps.Size(72, 72)
+                                                            },
                                                             draggable: true
                                                         });
 
@@ -607,10 +611,32 @@
                                     </div>
 
                                     <div class="form-fieldset">
-                                        <div class="form-input">
+                                        <div class="form-input contenteditable-box">
                                             <div class="form-label">Ключевые преимущества:</div>
                                             <div class="key_benefits-input digits-relative">
-                                                <input type="text" placeholder="Label">
+                                                <div class="key_benefits-input--fieldset">
+                                                    <div class="key_benefits-input--field contenteditable-key"
+                                                         contenteditable
+                                                         data-placeholder="Label"
+                                                    ></div>
+                                                    <button type="button"
+                                                            class="key_benefits-input--remove"
+                                                            onclick="functions.contenteditable.clearInput();"
+                                                    >
+                                                        <i class="icon icon_size-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close_sm"/>
+                                                            </svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="key_benefits-input--enter">
+                                                    <i class="icon icon_size-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-check"/>
+                                                        </svg>
+                                                    </i>
+                                                </button>
                                                 <div class="digits">0/200</div>
                                             </div>
                                             <div class="key_benefits-list">
@@ -689,8 +715,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-col col-3">
-
+                        <div class="content-col col-3 sidebar-sticky-wrap">
+                            <div class="sidebar-sticky object_cart-sidebar">
+                                <div class="object_cart-sidebar--cta">
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            onclick="window.history.go(-1); return false;"
+                                            type="button">
+                                        close
+                                    </button>
+                                    <a href="object-page.html" target="_blank" class="btn btn--md btn--grey object_cart-sidebar--btn">
+                                        <i class="icon icon_size-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-link"/>
+                                            </svg>
+                                        </i>
+                                        view
+                                    </a>
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            type="button"
+                                            data-open-modal="popup-saved"
+                                    >
+                                        <i class="icon icon_size-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-save"/>
+                                            </svg>
+                                        </i>
+                                        save
+                                    </button>
+                                </div>
+                                <div class="object_cart-sidebar--data">
+                                    <div class="object_cart-sidebar--img">
+                                        <img src="assets/images/listing/item03.jpg" alt="item">
+                                    </div>
+                                    <div class="object_cart-sidebar--text">
+                                        Текст пояснения. Регистрация и авторизация аккаунта происходит через ваш телефон. Емеил необходим для получения заявок, предложений и документов. Никто не видит ваши личные контактные данные. Укажите фамилию и имя, загрузите свое фото, чтобы другим участникам платформы было удобно к вам обращаться в переписке.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -713,6 +774,8 @@
     <include src="./modal/signin.html"></include>
     <include src="./modal/signup.html"></include>
     <include src="./modal/reset-password.html"></include>
+
+    <include src="./modal/popup-saved.html"></include>
 </div>
 
 <include src="../templates/scripts.html"></include>

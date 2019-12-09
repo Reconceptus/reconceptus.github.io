@@ -1,0 +1,10 @@
+.sidebar {
+  &-sticky {
+    &.sticky {
+      position: fixed;
+    }
+    &.temp-sticky {
+      position: relative;
+    }
+  }
+}

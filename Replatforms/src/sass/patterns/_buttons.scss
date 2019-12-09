@@ -8,20 +8,31 @@
   &--orange {
     color: $white;
     background-color: $link;
-    &:hover {
-
+    @include hover(){
+      background-color: darken($link, 8);
     }
     &_border {
       border: 1px solid $link;
       background: $white;
       color: $link;
+      @include hover(){
+        border-color: darken($link, 8);
+        color: darken($link, 8);
+      }
     }
   }
   &--white {
     background-color: $white;
     color: $link;
-    &:hover {
-
+    @include hover(){
+      color: darken($link, 8);
+    }
+  }
+  &--grey {
+    background-color: $text-04;
+    color: $white;
+    @include hover(){
+      background-color: darken($text-04, 8);
     }
   }
   &--xs {

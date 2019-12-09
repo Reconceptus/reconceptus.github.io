@@ -26,6 +26,7 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
+    functions.header_shadow();
     functions.burger.init();
     functions.search.init();
     functions.modal.init();
@@ -54,6 +55,12 @@ $(document).ready(() => {
     if ($('.listing_item-selectable').length > 0) {
         functions.listing_views();
     }
+    if ($('.sidebar-sticky').length > 0) {
+        functions.sticky_sidebar.init();
+    }
+    if ($('.contenteditable-box').length > 0) {
+        functions.contenteditable.init();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 
@@ -63,5 +70,7 @@ $(document).ready(() => {
 
     /* --------------------------------- document scroll --------------------------------- */
 
-    $(window).scroll(e => {});
+    $(window).scroll(e => {
+        functions.header_shadow();
+    });
 });

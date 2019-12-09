@@ -54,9 +54,11 @@ $header-height: 88px;
     background-color: $white;
     position: relative;
     display: flex;
-    box-shadow: 0 4px 16px 0 rgba($black,0.16);
     border-radius: $header-height 0 0 $header-height;
-
+    transition: box-shadow 0.25s;
+    .scrolled & {
+      box-shadow: 0 4px 16px 0 rgba($black,0.16);
+    }
     @include mq($from: tablet_xl) {
       min-width: calc(#{$content-lg/2} - 20px - #{$gutter});
     }
@@ -81,6 +83,11 @@ $header-height: 88px;
       }
       @include mq($until: tablet_sm) {
         padding: 0 0 0 $padding;
+      }
+      .link_icon {
+        @include hover(){
+          color: darken($link, 8);
+        }
       }
       & > * {
         margin-right: $gutter-x2;

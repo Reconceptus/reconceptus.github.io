@@ -1,5 +1,6 @@
 window.functions = {
     burger: require('./modules/burger'),
+    header_shadow: require('./modules/header-shadow'),
     modal: require('./modules/modal'),
     search: require('./modules/search'),
     filter: require('./modules/filter'),
@@ -9,4 +10,6 @@ window.functions = {
     markers: require('./modules/markers'),
     expander: require('./modules/expander'),
     listing_views: require('./modules/listing-views'),
+    sticky_sidebar: require('./modules/sticky-sidebar'),
+    contenteditable: require('./modules/contenteditable'),
 };

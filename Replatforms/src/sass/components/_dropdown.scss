@@ -47,6 +47,9 @@
     }
     .link {
       color: inherit;
+      @include hover(){
+        color: darken($link, 8);
+      }
     }
   }
 }

@@ -28,6 +28,9 @@
         top: 50%;
         margin-top: 2px;
       }
+      @include hover(){
+        background: darken($text-03, 8);
+      }
     }
   }
   &_wrap {
