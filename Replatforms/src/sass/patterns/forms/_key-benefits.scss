@@ -53,7 +53,7 @@
     margin-top: $padding-lg;
     &--item,
     &--item_textarea {
-      padding: $padding 200px $padding 40px;
+      padding: $padding 180px $padding 40px;
     }
     &--item {
       position: relative;
@@ -91,6 +91,19 @@
         right: $padding;
         display: flex;
         align-items: center;
+        .editing {
+          &-text-btn {
+            display: none;
+            .editing & {
+              display: flex;
+            }
+          }
+          &-item-btn {
+            .editing & {
+              display: none;
+            }
+          }
+        }
       }
       &_btn {
         @extend %btn_reset;
