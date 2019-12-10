@@ -5,31 +5,12 @@
     &--fieldset {
       position: relative;
       width: 100%;
+      input {
+        padding: 0 40px 0 12px;
+      }
     }
     &--field {
-      display: flex;
-      width: 100%;
-      border: 1px solid $brand-02;
-      border-radius: 4px;
-      padding: 0 40px 0 12px;
-      background: $white;
-      outline: none;
-      position: relative;
-      align-items: center;
-      line-height: 48px;
-      width: 100%;
-      &:after {
-        content: attr(data-placeholder);
-        position: absolute;
-        top: 50%;
-        left: 12px;
-        transform: translateY(-50%);
-        opacity: 0.8;
-        pointer-events: none;
-        .has-text & {
-          display: none;
-        }
-      }
+    
     }
     &--remove {
       @extend %btn_reset;
@@ -51,8 +32,8 @@
     &--enter {
       @extend %btn_reset;
       display: flex;
-      height: 50px;
-      width: 50px;
+      height: 48px;
+      width: 48px;
       border-radius: 4px;
       background-color: $brand-02;
       color: $white;
@@ -70,15 +51,39 @@
   }
   &-list {
     margin-top: $padding-lg;
+    &--item,
+    &--item_textarea {
+      padding: $padding 200px $padding 40px;
+    }
     &--item {
       position: relative;
-      padding: $padding 180px $padding 40px;
       box-shadow: 0 4px 8px 0 rgba($black,0.16);
       min-height: 72px;
       font-size: 24px;
       line-height: (40/24);
       &:not(:last-child){
         margin-bottom: $padding-sm;
+      }
+      &_text {
+        .editing & {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      &_textarea {
+        @extend %btn_reset;
+        position: absolute;
+        top: 0;
+        left: 0;
+        resize: none;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+        .editing & {
+          opacity: 1;
+          pointer-events: auto;
+        }
       }
       &_cta {
         position: absolute;
