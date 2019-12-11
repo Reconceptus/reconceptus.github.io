@@ -112,6 +112,14 @@ button,
 input {
   overflow: visible;
 }
+// IE: BEGIN
+input::-ms-clear {
+  display: none;
+}
+select::-ms-expand {
+  display: none;
+}
+// IE: END
 button,
 select {
   cursor: pointer;

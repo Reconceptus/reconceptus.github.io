@@ -30,6 +30,9 @@ module.exports = function(gulp, plugins, path_src, path_dest) {
                         },
                     ],
                 },
+                optimization: {
+                    // minimize: false
+                },
             }),
         )
         .pipe(plugins.uglify())

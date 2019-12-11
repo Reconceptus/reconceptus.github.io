@@ -64,7 +64,6 @@
   &-form {
     position: relative;
     background: $white;
-    color: $white;
     transition: opacity 0.25s, transform 0.25s;
     opacity: 0;
     transform: translateY(-100%);
@@ -98,7 +97,7 @@
     }
     select,
     input {
-
+      background-color: $white;
       width: 100%;
       border-color: $brand-01;
       border-width: 1px;
@@ -119,6 +118,9 @@
         height: 48px;
         font-size: 20px;
       }
+    }
+    .btn {
+      flex-shrink: 0;
     }
     &--fieldset {
       display: flex;

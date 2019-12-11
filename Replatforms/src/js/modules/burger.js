@@ -7,7 +7,8 @@ const burger = {
         $burger.onclick = () => {
             this.open();
         };
-        for (const btn of $burgerClosers) {
+        for (let i = 0; i < $burgerClosers.length; ++i) {
+            const btn = $burgerClosers[i];
             btn.onclick = () => {
                 this.close();
             };

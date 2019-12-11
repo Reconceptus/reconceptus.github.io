@@ -7,7 +7,8 @@ const search = {
         $search.onclick = () => {
             this.open();
         };
-        for (const btn of $searchClosers) {
+        for (let i = 0; i < $searchClosers.length; ++i) {
+            const btn = $searchClosers[i];
             btn.onclick = () => {
                 this.close();
             };

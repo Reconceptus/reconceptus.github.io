@@ -7,7 +7,8 @@ const filter = {
         $filter.onclick = () => {
             this.open();
         };
-        for (const btn of $filterClosers) {
+        for (let i = 0; i < $filterClosers.length; ++i) {
+            const btn = $filterClosers[i];
             btn.onclick = () => {
                 this.close();
             };

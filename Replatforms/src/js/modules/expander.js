@@ -2,10 +2,13 @@ const expander = function() {
     const $expandAccordion = document.querySelectorAll('.fn-expand-accordion');
 
     if ($expandAccordion.length) {
-        for (const accordion of $expandAccordion) {
-            const $expandBox = accordion.querySelectorAll('.fn-expand-box');
-            for (const expandBox of $expandBox) {
-                const expandBtn = expandBox.querySelector('.fn-expand-btn'),
+        for (let i = 0; i < $expandAccordion.length; ++i) {
+            const accordion = $expandAccordion[i],
+                $expandBox = accordion.querySelectorAll('.fn-expand-box');
+
+            for (let i = 0; i < $expandBox.length; ++i) {
+                const expandBox = $expandBox[i],
+                    expandBtn = expandBox.querySelector('.fn-expand-btn'),
                     expandData = expandBox.querySelector('.fn-expand-data');
                 expandBtn.onclick = function() {
                     if ($(expandBox).hasClass('expanded')) {
@@ -39,8 +42,9 @@ const expander = function() {
 
     const $expandBox = document.querySelectorAll('.fn-expand-box');
 
-    for (const expandBox of $expandBox) {
-        const expandBtn = expandBox.querySelector('.fn-expand-btn'),
+    for (let i = 0; i < $expandBox.length; ++i) {
+        const expandBox = $expandBox[i],
+            expandBtn = expandBox.querySelector('.fn-expand-btn'),
             expandData = expandBox.querySelector('.fn-expand-data');
         expandBtn.onclick = function() {
             $(expandBox).toggleClass('expanded');
