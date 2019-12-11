@@ -86,7 +86,7 @@ const sticky_sidebar = {
     },
     translate: function(event) {
         if ($sidebar.length < 1) return false;
-        // if ($sidebar.hasClass('sticky') < 1) return false;
+        if ($sidebar.hasClass('sticky') < 1) return false;
         if (event == 'add') {
             $sidebar.addClass('temp-sticky').css({
                 transform:

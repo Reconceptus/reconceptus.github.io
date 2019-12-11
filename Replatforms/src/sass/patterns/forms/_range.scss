@@ -13,7 +13,11 @@
     margin: 0 $padding;
     background: $brand-02;
   }
+  .form-input {
+    width: 100%;
+  }
   input {
+    -moz-appearance: textfield;
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;
