@@ -1,48 +1,92 @@
 .object_cart {
+  @include mq(tablet_xl, desktop_sm) {
+    margin-top: -200px;
+  }
   @include mq($from: tablet_xl) {
     padding-bottom: $padding-xxl;
   }
   @include mq($until: tablet_xl) {
     padding-bottom: 80px;
+    margin-top: -128px;
+  }
+  @include mq($until: tablet_sm) {
+    margin-top: -72px;
   }
   &-main {
-    @include mq($from: tablet_xl) {
+    @include mq($from: desktop_sm) {
       margin-top: -1*$padding-xxl;
     }
-    @include mq($until: tablet_xl) {
-      margin-top: -1*$padding-xl;
-    }
+    //@include mq($until: tablet_xl) {
+    //  margin-top: -1*$padding-xl;
+    //}
   }
   &-section {
     background-color: $white;
-    border-radius: 0 150px 0 0;
-    padding: $padding-xl $padding-lg;
-    &:not(:last-child){
-      margin-bottom: $gutter-x2;
+
+
+    @include mq($from: tablet_xl) {
+      padding: $padding-xl $padding-lg;
     }
+
+    @include mq(mobile_sm, tablet_xl) {
+      padding: $padding-lg $gutter-x2;
+    }
+    @include mq($from: mobile_xl) {
+      border-radius: 0 150px 0 0;
+    }
+    @include mq($from: mobile_sm) {
+      &:not(:last-child){
+        margin-bottom: $gutter-x2;
+      }
+    }
+    @include mq($until: mobile_sm) {
+      padding: $padding-md $gutter-x2;
+      margin: 0 -24px;
+    }
+
     .h2 {
       margin-bottom: $padding-lg;
     }
     .form-checkbox {
-      &:not(:nth-last-child(1)):not(:nth-last-child(2)){
-        margin-bottom: $padding-sm;
+      @include mq($from: mobile_xl) {
+        &:not(:nth-last-child(1)):not(:nth-last-child(2)){
+          margin-bottom: $padding-sm;
+        }
+      }
+      @include mq($until: mobile_xl) {
+        &:not(:last-child){
+          margin-bottom: $padding-sm;
+        }
       }
     }
   }
   &-cta {
-    margin-top: $padding-xxl;
+
+    @include mq($from: tablet_xl) {
+      margin-top: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      margin-top: $padding-xl;
+    }
     .btn {
+      padding: 0 $gutter-x2;
       height: 80px;
       font-size: $font-md;
       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22Component_68_494%22%20data-name%3D%22Component%2068%20%u2013%20494%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2221%22%20height%3D%2218%22%20viewBox%3D%220%200%2021%2018%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_59%22%20data-name%3D%22Path%2059%22%20d%3D%22M4.01%2C6.03l7.51%2C3.22L4%2C8.25l.01-2.22m7.5%2C8.72L4%2C17.97V15.75l7.51-1M2.01%2C3%2C2%2C10l15%2C2L2%2C14l.01%2C7L23%2C12Z%22%20transform%3D%22translate%28-2%20-3%29%22%20fill%3D%22%23fff%22/%3E%0D%0A%3C/svg%3E%0D%0A');
       background-repeat: no-repeat;
       background-position: calc(100% - 32px) center;
       background-size: 21px auto;
+      @include mq($until: mobile_sm) {
+        justify-content: flex-start;
+      }
     }
     &--text {
       margin-top: $padding-md;
       font-size: $font;
-      max-width: 80%;
+
+      @include mq($from: tablet_xl) {
+        max-width: 80%;
+      }
     }
   }
   &-form {
@@ -60,6 +104,9 @@
         padding: $padding $gutter-x2;
         border-radius: 20px 20px 20px 0;
         transform: translateY($padding);
+        @include mq($until: mobile_xl) {
+          display: none;
+        }
       }
       &_box {
       
@@ -75,21 +122,79 @@
     }
   }
   &-sidebar {
-    padding: $padding-xl 0 $padding-xl 40px;
+
+    @include mq($from: wide) {
+      padding-left: 40px;
+    }
+    @include mq(desktop_xl, wide) {
+      padding-left: $gutter-x2;
+    }
+    @include mq($from: desktop_sm) {
+      padding: $padding-xl 0;
+    }
+    @include mq($until: desktop_sm) {
+      display: flex;
+      justify-content: flex-end;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      padding: $padding-md 0;
+    }
+    &--wrap {
+      @include mq($until: desktop_sm) {
+        order: -1;
+
+        margin-left: auto;
+      }
+      @include mq(mobile_sm, tablet_xl) {
+        margin-bottom: $gutter-x2;
+      }
+      @include mq($from: tablet_sm) {
+        height: 128px;
+      }
+      @include mq($until: tablet_sm) {
+        height: 72px;
+      }
+    }
     &--cta {
       display: flex;
       align-items: center;
-      margin-bottom: $padding-xl;
+      @include mq($from: desktop_sm) {
+        flex-wrap: wrap;
+        margin-bottom: $padding-xl - $padding-sm;
+      }
       .btn {
-        padding: 0 $gutter-x2;
+        @include mq($from: tablet_sm) {
+          padding: 0 $gutter-x2;
+        }
+        @include mq($until: tablet_sm) {
+          height: 40px;
+          padding: 0 12px;
+          font-size: 12px;
+          .icon {
+            width: 18px;
+            height: 18px;
+          }
+        }
       }
       .icon {
         margin-right: $gutter;
       }
     }
+    &--data {
+      @include mq($until: desktop_sm) {
+        display: none;
+      }
+    }
     &--btn {
       border-radius: 8px;
-      margin-right: $padding-sm;
+
+      margin-bottom: $padding-sm;
+      @include mq($from: desktop_sm) {
+        margin-right: $padding-sm;
+      }
+      @include mq($until: desktop_sm) {
+        margin-left: $padding-sm;
+      }
     }
     &--img {
       width: 128px;

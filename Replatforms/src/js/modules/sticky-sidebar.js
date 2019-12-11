@@ -15,7 +15,7 @@ const sticky_sidebar = {
         allowPadding: 0,
         maxMargin: 0,
         headerHeight: 0,
-        breakpoint: 1024,
+        breakpoint: 0, // 799
     },
     resetInners: function() {
         this.params.offsetTop = $sidebarWrap.offset().top;
@@ -24,11 +24,12 @@ const sticky_sidebar = {
         this.params.width = $sidebar.parent().width();
         this.params.headerHeight = $('#header').outerHeight();
 
-        this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
+        this.params.allowPadding =
+            window.innerWidth > this.params.breakpoint ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
 
         this.params.wrapperHeight =
-            window.innerWidth > 1025
+            window.innerWidth > this.params.breakpoint
                 ? $sidebarWrap.outerHeight()
                 : $sidebarWrap.outerHeight() - 0.4 * window.innerWidth;
     },
@@ -40,11 +41,12 @@ const sticky_sidebar = {
         this.params.width = $sidebar.parent().width();
         this.params.headerHeight = $('#header').outerHeight();
 
-        this.params.allowPadding = window.innerWidth > 1025 ? this.params.padding : 0;
+        this.params.allowPadding =
+            window.innerWidth > this.params.breakpoint ? this.params.padding : 0;
         this.params.allowMargin = this.params.headerHeight + this.params.allowPadding;
 
         this.params.wrapperHeight =
-            window.innerWidth > 1025
+            window.innerWidth > this.params.breakpoint
                 ? $sidebarWrap.outerHeight()
                 : $sidebarWrap.outerHeight() - 0.4 * window.innerWidth;
     },
@@ -94,19 +96,18 @@ const sticky_sidebar = {
             $sidebar.removeClass('temp-sticky');
         }
     },
+    reCalculate: function() {
+        let changing = setInterval(() => {
+            this.resetInners();
+            this.changeMargin();
+        }, 1);
+        setTimeout(() => {
+            clearInterval(changing);
+        }, this.params.heightChangingTime);
+    },
     init: function() {
         this.setInners();
         this.changeMargin();
-
-        // $(document).on('click', '.fn-expand-btn', () => {
-        //     let changing = setInterval(() => {
-        //         this.params.height = $sidebar.outerHeight();
-        //         this.changeMargin();
-        //     }, 1);
-        //     setTimeout(() => {
-        //         clearInterval(changing);
-        //     }, this.params.heightChangingTime);
-        // });
 
         $(window).scroll(() => {
             this.params.scrollTop = $(window).scrollTop();

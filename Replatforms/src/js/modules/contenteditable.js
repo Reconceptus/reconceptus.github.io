@@ -1,6 +1,10 @@
-let c_box = document.querySelector('.contenteditable-box'),
-    c_input = c_box.querySelector('.contenteditable-key'),
+let c_box, c_input, c_list;
+
+if ($('.contenteditable-box').length > 0) {
+    c_box = document.querySelector('.contenteditable-box');
+    c_input = c_box.querySelector('.contenteditable-key');
     c_list = c_box.querySelector('.contenteditable-list');
+}
 
 let contenteditable = {
     data: {
@@ -81,6 +85,7 @@ let contenteditable = {
     removeItem: function(el) {
         let el_parent = $(el).closest('.contenteditable-item');
         el_parent.remove();
+        functions.sticky_sidebar.reCalculate();
     },
     insertItem: function(
         translateCallback,
@@ -128,7 +133,7 @@ let contenteditable = {
             '">' +
             this.data.icons.icon_remove +
             '</button>' +
-            '<button type="button" class="' +
+            '<button type="button" onclick="functions.contenteditable.translate(this);" class="' +
             btn_class +
             '">' +
             this.data.icons.icon_translate +
@@ -138,6 +143,7 @@ let contenteditable = {
 
         $(c_list).prepend(itemCode);
         this.clearInput();
+        functions.sticky_sidebar.reCalculate();
     },
 };
 

@@ -11,18 +11,43 @@
   width: 100%;
   margin-bottom: $padding-md;
   &--columns {
-    display: flex;
-    margin: 0 -24px;
+    @include mq($from: tablet_xl) {
+      margin: 0 -24px;
+      display: flex;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      margin: 0 -12px;
+      display: flex;
+    }
   }
   &--col {
     width: 100%;
-    padding: 0 24px;
-    max-width: 50%;
+    @include mq($from: tablet_xl) {
+      padding: 0 24px;
+      max-width: 50%;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      padding: 0 12px;
+      max-width: 50%;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-md;
+    }
   }
 }
 .form-fieldset {
   &:not(:last-child){
     margin-bottom: $padding-lg;
+  }
+  &--responsive {
+    &:not(:last-child){
+      @include mq($from: tablet_sm) {
+        margin-bottom: $padding-lg;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-md;
+      }
+    }
   }
 }
 

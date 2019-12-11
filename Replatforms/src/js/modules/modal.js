@@ -48,6 +48,14 @@ const modal = {
         $modal.removeClass('opened');
         this.modal.isOpened = false;
     },
+    show: function(dataModal) {
+        this.modal.data = dataModal;
+        if (this.modal.isOpened) {
+            this.reopen();
+        } else {
+            this.open();
+        }
+    },
 };
 
 module.exports = modal;

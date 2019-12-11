@@ -53,7 +53,13 @@
     margin-top: $padding-lg;
     &--item,
     &--item_textarea {
-      padding: $padding 180px $padding 40px;
+
+      @include mq($from: tablet_sm) {
+        padding: $padding 180px $padding 40px;
+      }
+      @include mq($until: tablet_sm) {
+        padding: 64px $padding $padding $padding;
+      }
     }
     &--item {
       position: relative;

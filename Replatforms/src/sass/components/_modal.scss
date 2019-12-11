@@ -9,7 +9,8 @@
   transition: transform 0.4s;
   will-change: transform;
   opacity: 0;
-
+  display: flex;
+  flex-direction: column;
   @include mq($from: tablet_sm) {
     padding: $padding-lg 0;
   }
@@ -32,6 +33,9 @@
   &_container {
     will-change: opacity;
     transition: opacity 0.2s, transform 0.2s;
+    &.centered {
+      margin: auto;
+    }
     &:not(.visible){
       display: none;
     }
@@ -48,14 +52,16 @@
     position: relative;
     background: $white;
     box-shadow: 0 4px 32px 0 rgba($black,0.16);
-
-
     transition: opacity 0.25s, transform 0.25s;
     opacity: 0;
     transform: translateY(-100%);
+
     @include mq($from: tablet_sm) {
       min-width: 540px;
       max-height: calc(100vh - 2*#{$padding-lg});
+      &.static {
+        width: 740px;
+      }
     }
     @include mq(mobile_xl, tablet_sm) {
       max-height: calc(100vh - 2*#{$gutter-x2});
@@ -95,7 +101,14 @@
       &--title {
         margin-bottom: $padding-md;
       }
+      &--text {
+
+      }
     }
   }
 
+}
+
+[data-open-modal] * {
+  pointer-events: none;
 }
