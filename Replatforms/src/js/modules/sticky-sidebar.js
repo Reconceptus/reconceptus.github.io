@@ -64,7 +64,7 @@ const sticky_sidebar = {
             if (this.params.marginTop + this.params.height > this.params.wrapperHeight) {
                 $sidebar
                     .removeClass('sticky')
-                    // .addClass('no-drops')
+                    .addClass('no-drops')
                     .css({
                         top: 0,
                         transform: 'translateY(' + this.params.maxMargin + 'px)',
@@ -73,7 +73,7 @@ const sticky_sidebar = {
             } else {
                 $sidebar
                     .addClass('sticky')
-                    // .removeClass('no-drops')
+                    .removeClass('no-drops')
                     .css({
                         top: this.params.allowMargin + 'px',
                         width: this.params.width + 'px',
@@ -86,15 +86,18 @@ const sticky_sidebar = {
     },
     translate: function(event) {
         if ($sidebar.length < 1) return false;
-        if ($sidebar.hasClass('sticky') < 1) return false;
-        if (event == 'add') {
-            $sidebar.addClass('temp-sticky').css({
-                transform:
-                    'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
-            });
-        } else {
-            $sidebar.removeClass('temp-sticky');
-        }
+        if ($sidebar.hasClass('sticky')) {
+            if (event == 'add') {
+                $sidebar.addClass('temp-sticky').css({
+                    transform:
+                        'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
+                });
+            } else {
+                $sidebar.removeClass('temp-sticky');
+            }
+        } else if ($sidebar.hasClass('no-drops')) {
+            return false;
+        } else return false;
     },
     reCalculate: function() {
         let changing = setInterval(() => {

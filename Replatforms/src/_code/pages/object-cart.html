@@ -1,0 +1,824 @@
+<include src="../templates/head.html" title="Карточка объекта"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box composing-box--bg_static">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <h1 class="h1 color-font-text-01">Опишите объект</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="objects-list">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-10 col-lg-12">
+                                <div class="objects-list--sections">
+                                    <div class="content-row flex-wrap">
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object01.jpg" alt="Апартаменты">
+                                                    <figcaption >Апартаменты</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object02.jpg" alt="Жилой Комплекс">
+                                                    <figcaption >Жилой Комплекс</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="user-object.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object03.jpg" alt="Дом с землей (юзер все блоки)">
+                                                    <figcaption >Дом с землей (юзер все блоки)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="manager-object.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/objects/object04.jpg" alt="Землю (адм)">
+                                                    <figcaption>Землю (адм)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <div class="objects-list--section content-col">
+                                            <a href="object-cart.html" class="objects-list--section_link">
+                                                <figure>
+                                                    <img src="assets/images/listing/item02.jpg" alt="Коммерческий объект (1 стр)">
+                                                    <figcaption >Коммерческий объект (1 стр)</figcaption>
+                                                </figure>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="object_cart content content--lg">
+                <form action="#">
+                    <div class="content-row flex-wrap sidebar-sticky-wrap">
+                        <div class="content-col col-pull-1 col-pull-xl-0 col-8 col-lg-12">
+                            <div class="object_cart-main">
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Адрес (одинаковый)</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-input">
+                                            <div class="form-label">Локация:</div>
+                                            <input type="text" placeholder="Страна, населённый пункт">
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Индекс:</div>
+                                                    <input type="text" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Точный адрес (никто не увидит):</div>
+                                                    <input type="text" placeholder="улица, дом">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Широта:</div>
+                                                    <input type="text" id="form_map_lng" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Долгота:</div>
+                                                    <input type="text" id="form_map_lat" placeholder="00.000000">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="object_cart-form--map_box">
+                                            <div class="form-label">Укажите точку на карте:</div>
+                                            <div class="object_cart-form--map">
+                                                <div id="map" class="object_cart-form--map_frame"></div>
+                                                <script type="text/javascript">
+                                                    var map, marker,
+                                                        defaultLatLng = {lat: 55.762300, lng: 37.632070},
+                                                        currentLatLng = {},
+                                                        input_lat = document.getElementById('form_map_lat'),
+                                                        input_lng = document.getElementById('form_map_lng');
+
+                                                    function initMap() {
+
+                                                        var LatLng = new google.maps.LatLng(defaultLatLng.lat, defaultLatLng.lng);
+                                                        var mapOptions = {
+                                                            mapTypeControl: false,
+                                                            streetViewControl: false,
+                                                            scrollwheel: false,
+                                                            zoom: 14,
+                                                            center: LatLng
+                                                        };
+                                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                                                        marker = new google.maps.Marker({
+                                                            position: LatLng,
+                                                            map: map,
+                                                            editable: true,
+                                                            icon: {
+                                                                url: './assets/images/map-set-mark.png',
+                                                                size: new google.maps.Size(72, 72)
+                                                            },
+                                                            draggable: true
+                                                        });
+
+                                                        google.maps.event.addListener(marker, 'drag', changeInputs);
+
+                                                        function setMarkerPosition(mark,ref) {
+
+                                                            if(!input_lat.value) currentLatLng.lat = defaultLatLng.lat;
+                                                            if(!input_lng.value) currentLatLng.lng = defaultLatLng.lng;
+
+                                                            if(ref == 'lat') currentLatLng.lat = +input_lat.value;
+                                                            if(ref == 'lng') currentLatLng.lng = +input_lng.value;
+
+                                                            var LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng)
+                                                            map.setCenter(LatLng);
+                                                            mark.setPosition(LatLng)
+                                                        }
+                                                        input_lat.addEventListener('change',function () {
+                                                            setMarkerPosition(marker,'lat')
+                                                        });
+                                                        input_lng.addEventListener('change',function () {
+                                                            setMarkerPosition(marker,'lng')
+                                                        });
+
+                                                    }
+                                                    function changeInputs(event) {
+                                                        input_lat.value = event.latLng.lat();
+                                                        input_lng.value = event.latLng.lng();
+
+                                                        currentLatLng.lat = input_lat.value;
+                                                        currentLatLng.lng = input_lng.value;
+                                                    }
+
+                                                </script>
+                                                <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
+                                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
+                                                <div class="object_cart-form--map_hint">
+                                                    передвиньте метку на <br>
+                                                    адрес вашего объекта
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Данные объекта</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Стоимость, &#x20bd;:</div>
+                                                    <input type="text" placeholder="Стоимость объекта">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Площадь, М<sup>2</sup>:</div>
+                                                    <input type="text" placeholder="Площадь объекта">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Стоимость, &#x20bd;:</div>
+                                                <div class="form-range">
+                                                    <div class="form-input"><input type="number" placeholder="min"></div>
+                                                    <span class="dash"></span>
+                                                    <div class="form-input"><input type="number" placeholder="max"></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Площадь, М<sup>2</sup>:</div>
+                                                <div class="form-range">
+                                                    <div class="form-input"><input type="number" placeholder="min"></div>
+                                                    <span class="dash"></span>
+                                                    <div class="form-input"><input type="number" placeholder="max"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Этаж:</div>
+                                                    <input type="text" placeholder="Этаж объекта">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Этажность дома:</div>
+                                                    <input type="text" placeholder="10">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Bathrooms (радио-кнопки):</div>
+                                                <div class="form-radio_line">
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">1</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">2</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">3</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">4</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="radio" name="bedrooms">
+                                                        <span class="radio_line-label">5+</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Bedrooms (чекбоксы):</div>
+                                                <div class="form-radio_line">
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">1</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">2</span>
+                                                    </label>
+                                                    <label class="radio_line-item">
+                                                        <input type="checkbox" name="bathrooms">
+                                                        <span class="radio_line-label">3+</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Год строительства:</div>
+                                                    <input type="text" placeholder="2005">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Реализация проекта:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">На стадии проекта</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">Завершен</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="project_realization">
+                                                            <span class="checkbox-label">Что-то ещё</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Тип объекта:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Studio</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Penthouse</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">Apartment</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="object_type">
+                                                            <span class="checkbox-label">House</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Development facilities:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">24 hour Concierge</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Swimming pool</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Spa</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Gym</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Cinema</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Underground Parking</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Garden</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Swimming pool</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Spa</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Gym</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Cinema</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Underground Parking</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="development_facilities">
+                                                            <span class="checkbox-label">Private Garden</span>
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-label">Материал стен:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Кирпич</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Кирпично-монолитный</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Монолит</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Шлакоблоки</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Панельный</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Дерево</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="side_material">
+                                                            <span class="checkbox-label">Другое</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Ремонт и класс:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 1</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 2</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 3</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 4</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 5</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 6</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col col-6 col-xs-12">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Вариант 7</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Визуал (одинаковый)</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-label">Загрузите файл с 3D-туром, общий объем до ---МБ:</div>
+                                        <div class="draggable">
+
+                                        <!--    в этом боксе должно находится всё, что связано с загрузкой файла и перетаскиванием айтемов  -->
+                                        <!--    код ниже - в .draggable_box - чисто для демонстрации, можно его снести, потом подстилю  -->
+
+                                            <div class="draggable_box">
+                                                <div class="draggable_box-figure">
+                                                    <figure class="draggable_box-figure--text">
+                                                        Перетащите сюда файлы или нажмите, чтобы выбрать
+                                                    </figure>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-label">Загрузите фотографии объекта, общий объем до ---МБ</div>
+                                        <div class="draggable">
+
+                                            <!--    в этом боксе должно находится всё, что связано с загрузкой файла и перетаскиванием айтемов  -->
+                                            <!--    код ниже - в .draggable_box - чисто для демонстрации, можно его снести, потом подстилю  -->
+
+                                            <div class="draggable_box">
+                                                <div class="draggable_box-figure">
+                                                    <figure class="draggable_box-figure--img">
+                                                        <img src="assets/images/listing/item03.jpg" alt="item">
+                                                    </figure>
+                                                    <div class="draggable_box-figure--cta">
+                                                        <i class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-move"/></svg>
+                                                        </i>
+                                                        <i class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-remove"/></svg>
+                                                        </i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="draggable_box">
+                                                <div class="draggable_box-figure">
+                                                    <figure class="draggable_box-figure--img">
+                                                        <img src="assets/images/listing/item02.jpg" alt="item">
+                                                    </figure>
+                                                    <div class="draggable_box-figure--cta">
+                                                        <i class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-move"/></svg>
+                                                        </i>
+                                                        <i class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-remove"/></svg>
+                                                        </i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-input">
+                                            <div class="form-label">Ссылка на видео, Youtube:</div>
+                                            <input type="text" placeholder="Label">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Свободный рассказ (одинаковый)</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-input">
+                                            <div class="form-label">Описание объекта</div>
+                                            <div class="text_editor">
+
+                                                <!--    в этом боксе должно находится всё, что связано с текстовым редактором  -->
+                                                <!--    код ниже - в .text_editor-box - чисто для демонстрации, можно его снести, потом подстилю  -->
+
+                                                <div class="text_editor-box digits-relative">
+                                                    <div class="redactor-box" role="application"><ul class="redactor-toolbar" id="redactor-toolbar-0" role="toolbar" style="position: relative; width: auto; top: 0px; left: 0px; visibility: visible;"><li><a href="#" class="re-icon re-html" rel="html" role="button" aria-label="Код" tabindex="-1"></a></li><li><a href="#" class="re-icon re-formatting redactor-toolbar-link-dropdown" rel="formatting" role="button" aria-label="Форматирование" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-bold" rel="bold" role="button" aria-label="Полужирный" tabindex="-1"></a></li><li><a href="#" class="re-icon re-italic" rel="italic" role="button" aria-label="Наклонный" tabindex="-1"></a></li><li><a href="#" class="re-icon re-deleted" rel="deleted" role="button" aria-label="Зачеркнутый" tabindex="-1"></a></li><li><a href="#" class="re-icon re-unorderedlist" rel="unorderedlist" role="button" aria-label="&amp;bull; Обычный список" tabindex="-1"></a></li><li><a href="#" class="re-icon re-orderedlist" rel="orderedlist" role="button" aria-label="1. Нумерованный список" tabindex="-1"></a></li><li><a href="#" class="re-icon re-outdent" rel="outdent" role="button" aria-label="< Уменьшить отступ" tabindex="-1"></a></li><li><a href="#" class="re-icon re-indent" rel="indent" role="button" aria-label="> Увеличить отступ" tabindex="-1"></a></li><li><a href="#" class="re-icon re-image" rel="image" role="button" aria-label="Изображение" tabindex="-1"></a></li><li><a href="#" class="re-icon re-video redactor-btn-image" rel="video" role="button" aria-label="Видео" tabindex="-1"></a></li><li><a href="#" class="re-icon re-table redactor-btn-image redactor-toolbar-link-dropdown" rel="table" role="button" aria-label="Таблица" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-link redactor-toolbar-link-dropdown" rel="link" role="button" aria-label="Ссылка" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-alignment redactor-toolbar-link-dropdown" rel="alignment" role="button" aria-label="Выравнивание" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-horizontalrule" rel="horizontalrule" role="button" aria-label="Горизонтальная линейка" tabindex="-1"></a></li><li><a href="#" class="re-icon re-fontcolor redactor-btn-image redactor-toolbar-link-dropdown" rel="fontcolor" role="button" aria-label="Цвет текста" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-backcolor redactor-btn-image redactor-toolbar-link-dropdown" rel="backcolor" role="button" aria-label="Заливка текста" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-fontfamily redactor-btn-image redactor-toolbar-link-dropdown" rel="fontfamily" role="button" aria-label="Change Font Family" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-fontsize redactor-btn-image redactor-toolbar-link-dropdown" rel="fontsize" role="button" aria-label="Change Font Size" tabindex="-1" aria-haspopup="true"></a></li><li><a href="#" class="re-icon re-fullscreen redactor-btn-image" rel="fullscreen" role="button" aria-label="Во весь экран" tabindex="-1"></a></li><li><a href="#" class="re-icon re-textdirection redactor-btn-image redactor-toolbar-link-dropdown" rel="textdirection" role="button" aria-label="Change Text Direction" tabindex="-1" aria-haspopup="true"></a></li></ul><div class="redactor-editor" contenteditable="true" dir="ltr" style="min-height: 200px;"><p>&#8203;</p></div><textarea id="post-text" name="Post[text]" dir="ltr" style="display: none;"></textarea></div>
+                                                    <style> .redactor-box {position: relative;overflow: visible;margin-bottom: 24px;background: #fff;}  .redactor-toolbar {position: relative;top: 0;left: 0;margin: 0 !important;padding: 0 !important;list-style: none !important;font-size: 14px !important;line-height: 1 !important;background: #fff;border: none;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);}  .redactor-toolbar li {vertical-align: top;display: inline-block;margin: 0 !important;padding: 0 !important;outline: none;list-style: none !important;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}  .redactor-toolbar li a {display: block;color: #333;text-align: center;padding: 9px 10px;outline: none;border: none;text-decoration: none;cursor: pointer;zoom: 1;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}  .redactor-editor {position: relative;overflow: auto;margin: 0 !important;padding: 20px;min-height: 80px;outline: none;white-space: normal;border: 1px solid #eee;font-family: Arial, Helvetica, Verdana, Tahoma, sans-serif !important;font-size: 14px;line-height: 1.6em;}</style>
+
+                                                    <button type="button" class="re-translate" data-open-modal="translation">
+                                                        <i class="icon icon_size-2">
+                                                            <svg><use xlink:href="#icon-translate"/></svg>
+                                                        </i>
+                                                    </button>
+                                                    <div class="digits">0/1000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-input contenteditable-box">
+                                            <div class="form-label">Ключевые преимущества:</div>
+                                            <div class="key_benefits-input digits-relative">
+                                                <div class="key_benefits-input--fieldset">
+                                                    <input type="text" class="key_benefits-input--field contenteditable-key"
+                                                         contenteditable
+                                                         placeholder="Label"
+                                                    />
+                                                    <button type="button"
+                                                            class="key_benefits-input--remove"
+                                                            onclick="functions.contenteditable.clearInput();"
+                                                    >
+                                                        <i class="icon icon_size-2">
+                                                            <svg><use xlink:href="#icon-close_sm"/></svg>
+                                                        </i>
+                                                    </button>
+                                                </div>
+                                                <button type="button"
+                                                        class="key_benefits-input--enter"
+                                                        onclick="functions.contenteditable.insertItem();"
+                                                >
+                                                    <i class="icon icon_size-2">
+                                                        <svg><use xlink:href="#icon-check"/></svg>
+                                                    </i>
+                                                </button>
+                                                <div class="digits">0/200</div>
+                                            </div>
+                                            <div class="key_benefits-list contenteditable-list">
+                                                <div class="contenteditable-item key_benefits-list--item">
+                                                    <div class="contenteditable-item-text key_benefits-list--item_text">
+                                                        With the new underground station on site and Vauxhall transport hub just 6 minutes walk away, the West End, City and Canary Wharf can all be reached in less than 30 minutes.
+                                                    </div>
+                                                    <textarea class="contenteditable-item-textarea key_benefits-list--item_textarea">
+                                                        With the new underground station on site and Vauxhall transport hub just 6 minutes walk away, the West End, City and Canary Wharf can all be reached in less than 30 minutes.
+                                                    </textarea>
+                                                    <div class="contenteditable-item-cta key_benefits-list--item_cta">
+                                                        <button type="button"
+                                                                onclick="functions.contenteditable.approveEditingItem(this);"
+                                                                class="editing-text-btn key_benefits-list--item_btn">
+                                                            <i class="icon icon_size-2">
+                                                                <svg><use xlink:href="#icon-check"></use></svg>
+                                                            </i>
+                                                        </button>
+                                                        <button type="button"
+                                                                onclick="functions.contenteditable.cancelEditingItem(this);"
+                                                                class="editing-text-btn key_benefits-list--item_btn">
+                                                            <i class="icon icon_size-2">
+                                                                <svg><use xlink:href="#icon-close_sm"></use></svg>
+                                                            </i>
+                                                        </button>
+                                                        <button type="button"
+                                                                onclick="functions.contenteditable.editItem(this);"
+                                                                class="editing-item-btn key_benefits-list--item_btn">
+                                                            <i class="icon icon_size-2">
+                                                                <svg><use xlink:href="#icon-edit"></use></svg>
+                                                            </i>
+                                                        </button>
+                                                        <button type="button"
+                                                                onclick="functions.contenteditable.removeItem(this);"
+                                                                class="editing-item-btn key_benefits-list--item_btn">
+                                                            <i class="icon icon_size-2">
+                                                                <svg><use xlink:href="#icon-remove"></use></svg>
+                                                            </i>
+                                                        </button>
+                                                        <button type="button"
+                                                                onclick="functions.contenteditable.translate(this);"
+                                                                class="key_benefits-list--item_btn">
+                                                            <i class="icon icon_size-2">
+                                                                <svg><use xlink:href="#icon-translate"></use></svg>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-input">
+                                            <div class="form-label">Официальное название объекта, если имеется:</div>
+                                            <input type="text" placeholder="Label">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="object_cart-cta">
+                                    <button type="submit" class="btn btn--full btn--orange">ready to check</button>
+                                    <div class="object_cart-cta--text text-box">
+                                        <p>
+                                            После нажатия на кнопку "ready to check" ваш объект уйдет на проверку менеджером, после чего он будет опубликован на платформе или возвращен вам с пометкой информации не хватает.  RePlatforms может не принять объекты, которые не отвечают
+                                            <a href="#" target="_blank">требованиям</a> платформы.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-col col-3 col-xl-4 col-lg-3 object_cart-sidebar--wrap">
+                            <div class="sidebar-sticky object_cart-sidebar">
+                                <div class="object_cart-sidebar--cta">
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            onclick="window.history.go(-1); return false;"
+                                            type="button">
+                                        close
+                                    </button>
+                                    <a href="object-page.html" target="_blank" class="btn btn--md btn--grey object_cart-sidebar--btn">
+                                        <i class="icon icon_size-2">
+                                            <svg><use xlink:href="#icon-link"/></svg>
+                                        </i>
+                                        view
+                                    </a>
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            type="button"
+                                            data-open-modal="popup-saved"
+                                    >
+                                        <i class="icon icon_size-2">
+                                            <svg><use xlink:href="#icon-save"/></svg>
+                                        </i>
+                                        save
+                                    </button>
+                                </div>
+                                <div class="object_cart-sidebar--data">
+                                    <div class="object_cart-sidebar--img">
+                                        <img src="assets/images/listing/item03.jpg" alt="item">
+                                    </div>
+                                    <div class="object_cart-sidebar--text">
+                                        Текст пояснения. Регистрация и авторизация аккаунта происходит через ваш телефон. Емеил необходим для получения заявок, предложений и документов. Никто не видит ваши личные контактные данные. Укажите фамилию и имя, загрузите свое фото, чтобы другим участникам платформы было удобно к вам обращаться в переписке.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+    <include src="./modal/translation.html"></include>
+
+    <include src="./modal/popup-saved.html"></include>
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+<script>
+
+    // callback for translation
+
+    functions.contenteditable.translate = function (el) {
+        let el_parent = $(el).closest('.contenteditable-item');
+        console.log(el_parent);
+
+        functions.modal.show('translation'); // альтернатива - если бы у кнопки был атрибут data-open-modal="translation"
+    };
+</script>
+
+</body>
+</html>

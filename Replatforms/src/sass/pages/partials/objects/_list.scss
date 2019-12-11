@@ -1,5 +1,10 @@
 .objects-list {
-
+  @include mq($from: tablet_sm) {
+    margin-bottom: $padding-xl;
+  }
+  @include mq($until: tablet_sm) {
+    margin-bottom: $padding-md;
+  }
   &--sections {
 
   }
