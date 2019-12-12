@@ -48,6 +48,9 @@
       height: 0;
       padding-bottom: 57.5%;
       position: relative;
+      .listing_item-box--lg & {
+        padding-bottom: 65.77%;
+      }
       .img {
         position: absolute;
         @extend %full_block;

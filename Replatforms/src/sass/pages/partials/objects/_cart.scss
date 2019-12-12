@@ -88,6 +88,51 @@
         max-width: 80%;
       }
     }
+    &--custom {
+      display: flex;
+      align-items: center;
+      @include mq($from: mobile_xl) {
+        justify-content: flex-end;
+      }
+      @include mq($until: mobile_xl) {
+        flex-wrap: wrap;
+      }
+      .btn_custom {
+        @extend %btn_reset;
+        transition: all 0.25s;
+        padding: 0 24px;
+        border-radius: 8px;
+        color: $white;
+        @include mq($from: mobile_xl) {
+          margin-left: $padding_sm;
+        }
+        @include mq(mobile_sm, mobile_xl) {
+          margin: 0 $padding_sm $padding_sm 0;
+        }
+        @include mq($until: mobile_sm) {
+          width: 100%;
+          margin: 0 0 $padding_sm 0;
+        }
+        &-submit {
+          background-color: $ui-02;
+          @include hover(){
+            background-color: darken($ui-02, 8);
+          }
+        }
+        &-reject {
+          background-color: $ui-03;
+          @include hover(){
+            background-color: darken($ui-03, 8);
+          }
+        }
+        &-rework {
+          background-color: $text-04;
+          @include hover(){
+            background-color: darken($text-04, 8);
+          }
+        }
+      }
+    }
   }
   &-form {
     &--map {

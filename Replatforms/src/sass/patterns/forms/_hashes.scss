@@ -1,0 +1,123 @@
+.hashtag {
+  &-input {
+    display: flex;
+    align-items: center;
+    &--fieldset {
+      position: relative;
+      width: 100%;
+      input {
+        padding: 0 40px 0 12px;
+      }
+    }
+    &--field {
+    
+    }
+    &--remove {
+      @extend %btn_reset;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+      color: $brand-02;
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      .has-text & {
+        display: flex;
+      }
+    }
+    &--enter {
+      @extend %btn_reset;
+      display: flex;
+      height: 48px;
+      width: 48px;
+      border-radius: 4px;
+      background-color: $brand-02;
+      color: $white;
+      align-items: center;
+      justify-content: center;
+      margin-left: $padding-sm;
+      flex-shrink: 0;
+      opacity: 0.7;
+      pointer-events: none;
+      .has-text & {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  &-list {
+    margin-top: $gutter-x2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &--item {
+      position: relative;
+      box-shadow: 0 4px 8px 0 rgba($black,0.16);
+      
+      line-height: (24/16);
+      white-space: nowrap;
+      margin-bottom: $padding-sm;
+      margin-right: $padding-sm;
+      @include mq($from: tablet_sm) {
+        padding: 0 112px 0 $padding;
+        font-size: $font;
+      }
+      @include mq($until: tablet_sm) {
+        padding: 0 88px 0 12px;
+        font-size: 12px;
+      }
+      &_text {
+        display: flex;
+        
+        align-items: center;
+        @include mq($from: tablet_sm) {
+          height: 56px;
+        }
+        @include mq($until: tablet_sm) {
+          height: 40px;
+        }
+      }
+      
+      &_input {
+        display: none;
+      }
+      &_cta {
+        position: absolute;
+        
+        display: flex;
+        align-items: center;
+        @include mq($from: tablet_sm) {
+          top: $padding_sm;
+          right: $padding_sm;
+        }
+        @include mq($until: tablet_sm) {
+          top: 4px;
+          right: 4px;
+        }
+      }
+      &_btn {
+        @extend %btn_reset;
+        background-color: $white;
+        
+        color: $brand-02;
+        margin-left: $padding-sm;
+        border: 1px solid $brand-02;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mq($from: tablet_sm) {
+          width: 40px;
+          height: 40px;
+        }
+        @include mq($until: tablet_sm) {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}

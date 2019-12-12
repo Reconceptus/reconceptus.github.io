@@ -26,6 +26,7 @@ let contenteditable = {
             text: 'key_benefits-list--item_text',
             textarea: 'key_benefits-list--item_textarea',
         },
+        name: 'benefits[]',
     },
     init: function() {
         c_input.addEventListener('input', () => {
@@ -88,6 +89,7 @@ let contenteditable = {
         functions.sticky_sidebar.reCalculate();
     },
     insertItem: function(
+        fieldName = this.data.name,
         translateCallback,
         wrap_class = this.data.classes.wrap,
         cta_class = this.data.classes.cta,
@@ -105,7 +107,9 @@ let contenteditable = {
             '">' +
             _value +
             '</div>' +
-            '<textarea class="contenteditable-item-textarea ' +
+            '<textarea name="' +
+            fieldName +
+            '" class="contenteditable-item-textarea ' +
             textarea_class +
             '">' +
             _value +
@@ -144,6 +148,7 @@ let contenteditable = {
         $(c_list).prepend(itemCode);
         this.clearInput();
         functions.sticky_sidebar.reCalculate();
+        if (!!translateCallback) return translateCallback;
     },
 };
 

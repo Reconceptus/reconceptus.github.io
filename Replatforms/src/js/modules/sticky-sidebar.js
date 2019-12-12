@@ -51,7 +51,6 @@ const sticky_sidebar = {
                 : $sidebarWrap.outerHeight() - 0.4 * window.innerWidth;
     },
     changeMargin: function() {
-        if ($sidebar.hasClass('temp-sticky')) return false;
         // if (this.params.height > this.params.wrapperHeight) {
         //     $sidebar.removeClass('sticky').attr('style', '');
         //     return;
@@ -87,16 +86,24 @@ const sticky_sidebar = {
     translate: function(event) {
         if ($sidebar.length < 1) return false;
         if ($sidebar.hasClass('sticky')) {
-            if (event == 'add') {
+            if (event === 'add') {
                 $sidebar.addClass('temp-sticky').css({
                     transform:
                         'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
                 });
             } else {
                 $sidebar.removeClass('temp-sticky');
+                this.resetInners();
+                this.changeMargin();
             }
         } else if ($sidebar.hasClass('no-drops')) {
-            return false;
+            if (event === 'add') {
+                $sidebar.addClass('temp-sticky');
+            } else {
+                $sidebar.removeClass('temp-sticky');
+                this.resetInners();
+                this.changeMargin();
+            }
         } else return false;
     },
     reCalculate: function() {
@@ -113,11 +120,14 @@ const sticky_sidebar = {
         this.changeMargin();
 
         $(window).scroll(() => {
+            if ($sidebar.hasClass('temp-sticky')) return false;
             this.params.scrollTop = $(window).scrollTop();
+            this.resetInners();
             this.changeMargin();
         });
 
         $(window).resize(() => {
+            if ($sidebar.hasClass('temp-sticky')) return false;
             this.resetInners();
             this.changeMargin();
         });

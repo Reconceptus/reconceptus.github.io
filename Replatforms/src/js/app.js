@@ -24,6 +24,7 @@ window.functions = {
     listing_views: require('./modules/listing-views'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     contenteditable: require('./modules/contenteditable'),
+    hasheditable: require('./modules/hasheditable'),
 };
 
 // scripts
@@ -89,6 +90,9 @@ $(document).ready(() => {
     }
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();
+    }
+    if ($('.hasheditable-box').length > 0) {
+        functions.hasheditable.init();
     }
 
     /* --------------------------------- document resize --------------------------------- */

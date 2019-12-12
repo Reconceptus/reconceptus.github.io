@@ -80,7 +80,7 @@
       transform: translateY(0);
       opacity: 1;
     }
-    .modal_close {
+    .modal_close.icon {
       @extend %btn_reset;
       position: absolute;
       top: $gutter-x2;
@@ -103,6 +103,12 @@
       }
       &--text {
 
+      }
+      &--cta {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
       }
     }
   }

@@ -12,4 +12,5 @@ window.functions = {
     listing_views: require('./modules/listing-views'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     contenteditable: require('./modules/contenteditable'),
+    hasheditable: require('./modules/hasheditable'),
 };

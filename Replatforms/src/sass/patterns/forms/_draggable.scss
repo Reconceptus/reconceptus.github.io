@@ -32,7 +32,7 @@
       cursor: move;
       position: absolute;
       background: $text-02;
-
+      box-shadow: 0 4px 8px 0 rgba($black,0.16);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -78,7 +78,7 @@
           border-radius: 50%;
           background-color: $white;
           padding: 8px;
-
+          box-shadow: 0 2px 4px 0 rgba($black,0.16);
         }
       }
     }

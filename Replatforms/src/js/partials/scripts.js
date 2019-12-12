@@ -61,6 +61,9 @@ $(document).ready(() => {
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();
     }
+    if ($('.hasheditable-box').length > 0) {
+        functions.hasheditable.init();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 
