@@ -1,0 +1,269 @@
+<include src="../templates/head.html" title="Профиль"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box composing-box--no_bg">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <h1 class="h1 color-font-brand-01">Профиль</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="object_cart content content--lg">
+                <form action="#">
+                    <div class="content-row flex-wrap sidebar-sticky-wrap">
+                        <div class="content-col col-pull-1 col-pull-xl-0 col-8 col-lg-12">
+                            <div class="object_cart-main no-margin">
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Что вы ищите?</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Телефон:</div>
+                                                    <input type="text" placeholder="Введите номер телефона">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Емейл:</div>
+                                                    <input type="text" placeholder="Введите емейл">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Фамилия:</div>
+                                                    <input type="text" placeholder="Введите фамилию">
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Имя:</div>
+                                                    <input type="text" placeholder="Введите имя">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-label">Загрузите фото профиля:</div>
+                                        <div class="draggable">
+
+                                            <!--    в этом боксе должно находится всё, что связано с загрузкой файла и перетаскиванием айтемов  -->
+                                            <!--    код ниже - в .draggable_box - чисто для демонстрации, можно его снести, потом подстилю  -->
+
+                                            <div class="draggable_box">
+                                                <div class="draggable_box-figure">
+                                                    <figure class="draggable_box-figure--text">
+                                                        Перетащите сюда файлы или нажмите, чтобы выбрать
+                                                    </figure>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="text-box">
+                                            <p>Регистрация и авторизация аккаунта происходит через ваш телефон. Емеил необходим для получения заявок, предложений и документов. Никто не видит ваши личные контактные данные. Укажите фамилию и имя, загрузите свое фото, чтобы другим участникам платформы было удобно к вам обращаться в переписке. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Настройки аккаунта</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-select">
+                                                    <div class="form-label">Язык:</div>
+                                                    <select name="buy">
+                                                        <option value="Купить">Русский</option>
+                                                        <option value="Продать">Английский</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Валюта:</div>
+                                                    <input id="autoComplete2" type="text" placeholder="Валюта">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-select">
+                                                    <div class="form-label">Единица площади:</div>
+                                                    <select name="sell">
+                                                        <option value="Метры">Метры</option>
+                                                        <option value="Футы">Футы</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-label">Оповещения на email:</div>
+                                                <div class="content-row flex-wrap">
+                                                    <div class="form-checkbox content-col">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Оповещать о сообщениях в чате</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Оповещать о заявках </span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Оповещать о результатах активного поиска</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-checkbox content-col">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="repairs_class">
+                                                            <span class="checkbox-label">Оповещать о новостях платформы</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="object_cart-section">
+                                    <h3 class="h2">Смена пароля</h3>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Текущий пароль:</div>
+                                                    <input type="password" placeholder="Введите текущий пароль">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Новый пароль:</div>
+                                                    <input type="password" placeholder="Введите Новый пароль">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <div class="form-input">
+                                                    <div class="form-label">Повторите пароль:</div>
+                                                    <input type="password" placeholder="Повторите пароль">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset--responsive">
+                                        <div class="form-field--columns">
+                                            <div class="form-field--col">
+                                                <button type="submit" class="btn btn--md btn--orange">Сменить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="content-col col-3 col-xl-4 col-lg-3 object_cart-sidebar--wrap">
+                            <div class="sidebar-sticky object_cart-sidebar">
+                                <div class="object_cart-sidebar--cta">
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            onclick="window.history.go(-1); return false;"
+                                            type="button">
+                                        close
+                                    </button>
+                                    <button class="btn btn--md btn--grey object_cart-sidebar--btn"
+                                            type="button"
+                                            data-open-modal="popup-saved"
+                                    >
+                                        <i class="icon icon_size-2">
+                                            <svg><use xlink:href="#icon-save"/></svg>
+                                        </i>
+                                        save
+                                    </button>
+                                </div>
+                                <div class="object_cart-sidebar--data">
+                                    <div class="object_cart-sidebar--img">
+                                        <img src="assets/images/listing/item03.jpg" alt="item">
+                                    </div>
+                                    <div class="object_cart-sidebar--text">
+                                        Текст пояснения. Регистрация и авторизация аккаунта происходит через ваш телефон. Емеил необходим для получения заявок, предложений и документов. Никто не видит ваши личные контактные данные. Укажите фамилию и имя, загрузите свое фото, чтобы другим участникам платформы было удобно к вам обращаться в переписке.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+    <include src="./modal/popup-saved.html"></include>
+</div>
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

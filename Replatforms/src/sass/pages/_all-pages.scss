@@ -13,6 +13,16 @@
     padding-bottom: $padding-md;
   }
 
+  &.composing-box--no_bg {
+
+    @include mq($from: tablet_xl) {
+      padding-bottom: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      padding-bottom: 80px;
+    }
+  }
+
   &.composing-box--bg_static {
     background-color: $brand-01;
 

@@ -46,6 +46,8 @@ Styleguide styleguide.typography.text-box
     margin-bottom: $padding-md;
   }
   p {
-    margin-bottom: $padding-md;
+    &:not(:last-child){
+      margin-bottom: $padding-md;
+    }
   }
 }

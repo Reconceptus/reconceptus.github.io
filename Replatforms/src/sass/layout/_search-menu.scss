@@ -101,7 +101,7 @@
       width: 100%;
       border-color: $brand-01;
       border-width: 1px;
-
+      outline: none;
 
       border-radius: 0;
       @include mq($from: tablet_sm) {

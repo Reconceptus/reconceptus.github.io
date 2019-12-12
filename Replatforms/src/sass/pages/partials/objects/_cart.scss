@@ -14,7 +14,9 @@
   }
   &-main {
     @include mq($from: desktop_sm) {
-      margin-top: -1*$padding-xxl;
+      &:not(.no-margin){
+        margin-top: -1*$padding-xxl;
+      }
     }
     //@include mq($until: tablet_xl) {
     //  margin-top: -1*$padding-xl;
@@ -48,9 +50,19 @@
       margin-bottom: $padding-lg;
     }
     .form-checkbox {
-      @include mq($from: mobile_xl) {
-        &:not(:nth-last-child(1)):not(:nth-last-child(2)){
-          margin-bottom: $padding-sm;
+
+      &.col-6 {
+        @include mq($from: mobile_xl) {
+          &:not(:nth-last-child(1)):not(:nth-last-child(2)){
+            margin-bottom: $padding-sm;
+          }
+        }
+      }
+      &:not(.col-6) {
+        @include mq($from: mobile_xl) {
+          &:not(:last-child){
+            margin-bottom: $padding-sm;
+          }
         }
       }
       @include mq($until: mobile_xl) {
@@ -134,6 +146,22 @@
       }
     }
   }
+  &-submit {
+    margin-top: $padding-xl;
+    .btn {
+      padding: 0 $gutter-x2;
+      height: 80px;
+      font-size: $font-md;
+      border-radius: 8px;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22arrow_forward_ios-24px%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_72%22%20data-name%3D%22Path%2072%22%20d%3D%22M5.88%2C4.12%2C13.76%2C12%2C5.88%2C19.88%2C8%2C22%2C18%2C12%2C8%2C2Z%22%20fill%3D%22%23fff%22/%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_73%22%20data-name%3D%22Path%2073%22%20d%3D%22M0%2C0H24V24H0Z%22%20fill%3D%22none%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-position: calc(100% - 32px) center;
+      background-size: 21px auto;
+      @include mq($until: mobile_sm) {
+        justify-content: flex-start;
+      }
+    }
+  }
   &-form {
     &--map {
       width: 100%;
@@ -176,6 +204,7 @@
     }
     @include mq($from: desktop_sm) {
       padding: $padding-xl 0;
+
     }
     @include mq($until: desktop_sm) {
       display: flex;
@@ -183,6 +212,7 @@
     }
     @include mq(tablet_sm, desktop_sm) {
       padding: $padding-md 0;
+
     }
     &--wrap {
       @include mq($until: desktop_sm) {
