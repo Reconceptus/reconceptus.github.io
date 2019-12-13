@@ -25,6 +25,7 @@ window.functions = {
     sticky_sidebar: require('./modules/sticky-sidebar'),
     contenteditable: require('./modules/contenteditable'),
     hasheditable: require('./modules/hasheditable'),
+    gallery_carousel: require('./modules/gallery-carousel'),
 };
 
 // scripts

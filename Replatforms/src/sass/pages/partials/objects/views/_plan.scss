@@ -1,0 +1,11 @@
+.object_page-view_plan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  padding: $padding-md;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

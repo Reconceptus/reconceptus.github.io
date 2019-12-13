@@ -1,0 +1,9 @@
+.object_page-view_map {
+  .map {
+    @extend %full_block;
+    img[src*='map-mark-lg']{
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
