@@ -1,8 +1,16 @@
-<include src="../templates/head.html" title="Страница объекта"></include>
+<include src="../templates/head.html" title="Страница объекта превью"></include>
 
     <div class="container">
 
-        <include src="../templates/header.html" user="unregister"></include>
+        <div class="object_page-preview" id="header">
+            <button class="object_page-preview--back"
+                    onclick="window.close(); return false;"
+                    type="button">
+                <i class="icon icon_size-3">
+                    <svg><use xlink:href="#icon-close_lg"/></svg>
+                </i>
+            </button>
+        </div>
 
         <div id="main" class="main">
 
@@ -298,45 +306,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pack-page">
-                        <div class="content-row">
-                            <div class="content-col col-pull-3 col-9  col-pull-wd-2 col-wd-10  col-pull-lg-1 col-lg-11 col-pull-xs-0 col-xs-12 ">
-                                <a href="results.html" class="pack-page--link">to search results</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="listing_carousel-box">
-                    <div class="listing_carousel-title">Просмотрено или похожие</div>
-                    <div class="owl-carousel listing_carousel">
-                        <include src="./listing/listing-item.html"
-                                 img="assets/images/listing/item01.jpg"
-                                 title="Дизайн"
-                                 data="data-item=001"
-                        ></include>
-                        <include src="./listing/listing-item.html"
-                                 img="assets/images/listing/item02.jpg"
-                                 title="Город, индекс или цена"
-                                 liked="liked"
-                                 data="data-item=002"
-                        ></include>
-                        <include src="./listing/listing-item.html"
-                                 img="assets/images/listing/item03.jpg"
-                                 title="Отдых в аппараментах Патонг Тауэр"
-                                 data="data-item=003"
-                        ></include>
-                        <include src="./listing/listing-item.html"
-                                 img="assets/images/listing/item04.jpg"
-                                 title="Отдых в аппараментах Патонг Тауэр"
-                                 data="data-item=004"
-                        ></include>
-                        <include src="./listing/listing-item.html"
-                                 img="assets/images/listing/item05.jpg"
-                                 title="Отдых в аппараментах Патонг Тауэр"
-                                 data="data-item=004"
-                        ></include>
-                    </div>
                 </div>
 
             </div>
@@ -350,14 +319,8 @@
 </div>
 
 
-<include src="../templates/burger-menu.html"></include>
-<include src="../templates/search.html"></include>
-
 <div class="modal">
     <div class="modal_blur modal_close"></div>
-    <include src="./modal/signin.html"></include>
-    <include src="./modal/signup.html"></include>
-    <include src="./modal/reset-password.html"></include>
 </div>
 
 
@@ -368,9 +331,8 @@
 <script>
     functions.gallery_carousel();
 </script>
-<script>
-    functions.listing_carousel();
-</script>
+
+
 
 </body>
 </html>

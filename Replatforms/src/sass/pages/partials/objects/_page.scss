@@ -15,6 +15,37 @@
   @include mq($until: tablet_sm) {
     padding-top: $padding;
   }
+  &-preview {
+    position: fixed;
+
+    right: $gutter-x2;
+    z-index: 20;
+    @include mq($from: ($content-lg + 2*$gutter-x2 + $padding)){
+      right: calc(50% - #{$content-lg}/2);
+    }
+    @include mq($from: tablet_sm) {
+      top: $padding-lg;
+    }
+    @include mq($until: tablet_sm) {
+      top: $padding-md;
+    }
+    &--back {
+      @extend %btn_reset;
+      border: 1px solid $brand-02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $brand-02;
+      @include mq($from: tablet_sm) {
+        width: $header-height;
+        height: $header-height;
+      }
+      @include mq($until: tablet_sm) {
+        width: $padding-lg;
+        height: $padding-lg;
+      }
+    }
+  }
   &-info {
 
     @include mq($from: tablet_sm) {

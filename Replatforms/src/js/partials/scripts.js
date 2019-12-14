@@ -26,15 +26,16 @@ $(document).ready(() => {
 
     documentClick();
     getWindowSizes();
-    functions.header_shadow();
-    functions.burger.init();
-    functions.search.init();
+
     functions.modal.init();
     functions.dropdown();
     functions.scroll_top();
     functions.expander();
 
-    if ($('[data-owl="blog"]').length > 0) {
+    if ($('.header').length > 0) {
+        functions.header_shadow();
+        functions.burger.init();
+        functions.search.init();
     }
     if ($('#map').length > 0) {
         functions.markers();
