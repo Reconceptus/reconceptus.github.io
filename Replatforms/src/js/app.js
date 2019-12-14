@@ -23,6 +23,7 @@ window.functions = {
     expander: require('./modules/expander'),
     listing_views: require('./modules/listing-views'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
+    sticky_cta: require('./modules/sticky-cta'),
     contenteditable: require('./modules/contenteditable'),
     hasheditable: require('./modules/hasheditable'),
     gallery_carousel: require('./modules/gallery-carousel'),
@@ -90,6 +91,9 @@ $(document).ready(() => {
     }
     if ($('.sidebar-sticky').length > 0) {
         functions.sticky_sidebar.init();
+    }
+    if ($('.cta-sticky-wrap').length > 0) {
+        functions.sticky_cta.init();
     }
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();

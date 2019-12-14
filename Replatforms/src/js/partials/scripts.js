@@ -59,6 +59,9 @@ $(document).ready(() => {
     if ($('.sidebar-sticky').length > 0) {
         functions.sticky_sidebar.init();
     }
+    if ($('.cta-sticky-wrap').length > 0) {
+        functions.sticky_cta.init();
+    }
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();
     }

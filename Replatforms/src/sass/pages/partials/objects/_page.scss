@@ -101,10 +101,118 @@
     }
   }
   &-general {
-  
+    position: relative;
+    @include mq($from: desktop_xl) {
+      &:not(:last-child){
+        margin-bottom: $padding-xxl;
+      }
+    }
+    @include mq(tablet_xl, desktop_xl) {
+      &:not(:last-child){
+        margin-bottom: $padding-xxl - $padding-lg;
+      }
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      &:not(:last-child){
+        margin-bottom: $padding-xxl - $padding-lg;
+      }
+    }
+    @include mq($until: tablet_sm) {
+      &:not(:last-child){
+        margin-bottom: $padding-xl;
+      }
+    }
   }
   &-cta {
-  
+    z-index: 2;
+
+    @include mq($from: tablet_xl) {
+      margin-left: $padding;
+    }
+    @include mq($from: tablet_sm) {
+      position: absolute;
+      padding: 20vh 0 $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      padding-bottom: $padding-md;
+      display: inline-flex;
+    }
+    &--box {
+      @include mq($until: tablet_sm) {
+        height: 80px;
+      }
+    }
+    &--buttons {
+      background-color: $brand-05;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 16px 0 rgba($black,0.16);
+      @include mq($from: desktop_sm) {
+        width: 88px;
+        padding: $padding 0;
+        flex-direction: column;
+      }
+      @include mq(tablet_sm, desktop_sm) {
+        width: 60px;
+        padding: $padding_sm 0;
+        flex-direction: column;
+      }
+      @include mq($until: tablet_sm) {
+        padding: $padding_sm;
+      }
+      @include mq($until: mobile_sm) {
+        transition: all 0.15s;
+        transform-origin: 24px 24px;
+        .icon {
+          transition: all 0.15s;
+        }
+        .sticky & {
+          transform: rotate(90deg);
+          .icon {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+    &--link {
+      border-radius: 50%;
+      background-color: $brand-01;
+      color: $brand-02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px 0 rgba($black,0.16);
+      @include mq($from: desktop_sm) {
+        width: 56px;
+        height: 56px;
+        &:not(:last-child){
+          margin-bottom: $padding;
+        }
+      }
+      @include mq(tablet_sm, desktop_sm) {
+        width: 47px;
+        height: 47px;
+        &:not(:last-child){
+          margin-bottom: $padding_sm;
+        }
+      }
+      @include mq($until: tablet_sm) {
+        width: 32px;
+        height: 32px;
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+        &:not(:last-child){
+          margin-right: $padding_sm;
+        }
+      }
+
+      .icon-like {
+        color: $link;
+      }
+    }
   }
   &-view {
     position: relative;
@@ -168,9 +276,53 @@
       opacity: 0;
       pointer-events: none;
       z-index: -1;
+
     }
     &--box {
       @extend %full_block;
+      .gallery-carousel, .item {
+        height: 100%;
+      }
+      .owl-stage-outer,
+      .owl-stage,
+      .owl-item {
+        height: 100%;
+      }
+      .arrow {
+        position: absolute;
+        @extend %btn_reset;
+
+        top: 0;
+        bottom: 0;
+        @include mq($from: tablet_sm) {
+          margin: auto 0 auto calc(50vw + 33.3333%);
+          width: 72px;
+          height: 72px;
+        }
+        @include mq($until: tablet_sm) {
+          margin: auto 0;
+          right: $gutter-x2;
+          width: 60px;
+          height: 60px;
+        }
+        &-prev {
+          color: $link;
+          pointer-events: none;
+          z-index: 1;
+          &:after {
+            @extend .pseudo-content;
+            @extend .icon-arrow_down;
+            @extend .icon-arrow_down--md;
+            transform: translate(-50%,-50%) rotate(-135deg);
+          }
+        }
+        &-next {
+          background-color: $white;
+          box-shadow: 0 4px 8px 0 rgba($black,0.16);
+          transition: all 0.3s;
+
+        }
+      }
     }
   }
   &-main {
@@ -196,18 +348,27 @@
 
       @include mq($from: desktop_xl) {
         padding-left: (100%/7);
-        margin-bottom: $padding-xxl;
+
+        &:not(:last-child){
+          margin-bottom: $padding-xxl;
+        }
       }
       @include mq(tablet_xl, desktop_xl) {
         padding-left: (100%/8);
-        margin-bottom: $padding-xxl - $padding-lg;
+        &:not(:last-child){
+          margin-bottom: $padding-xxl - $padding-lg;
+        }
       }
       @include mq(tablet_sm, tablet_xl) {
         padding-left: (100%/12);
-        margin-bottom: $padding-xxl - $padding-lg;
+        &:not(:last-child){
+          margin-bottom: $padding-xxl - $padding-lg;
+        }
       }
       @include mq($until: tablet_sm) {
-        margin-bottom: $padding-xl;
+        &:not(:last-child){
+          margin-bottom: $padding-xl;
+        }
       }
 
     }
@@ -330,13 +491,15 @@
     &--sidebar {
 
       @include mq($from: tablet_xl) {
-        padding: $padding-lg 0 $padding-lg $gutter;
+        padding: $padding-lg 0 $padding-lg $padding-lg;
       }
       @include mq(tablet_sm, tablet_xl) {
         padding-left: (100%/12);
+        margin-top: $padding-xxl - $padding-lg;
         margin-bottom: $padding-xxl - $padding-lg;
       }
       @include mq($until: tablet_sm) {
+        margin-top: $padding-xl;
         margin-bottom: $padding-xl;
       }
       .h3 {
@@ -355,10 +518,10 @@
 
           position: relative;
           margin-bottom: $padding_sm;
-          @include mq($from: mobile_sm) {
+          @include mq($from: desktop_xl) {
             padding-left: $padding-lg;
           }
-          @include mq($until: mobile_sm) {
+          @include mq($until: desktop_xl) {
             padding-left: $padding-md;
           }
           &:before {
