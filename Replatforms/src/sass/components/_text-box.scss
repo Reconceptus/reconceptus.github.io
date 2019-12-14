@@ -47,7 +47,18 @@ Styleguide styleguide.typography.text-box
   }
   p {
     &:not(:last-child){
-      margin-bottom: $padding-md;
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+  }
+  a {
+    color: $link;
+    @include hover(){
+      color: darken($link, 8);
     }
   }
 }

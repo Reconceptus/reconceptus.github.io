@@ -37,6 +37,16 @@
       margin-bottom: $padding-md;
     }
   }
+  &--grow {
+    flex-grow: 1;
+    &_wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    &_field {
+      height: 100%;
+    }
+  }
 }
 .form-fieldset {
   &:not(:last-child){

@@ -14,11 +14,20 @@
   .arrow {
     position: absolute;
     @extend %btn_reset;
-    width: 72px;
-    height: 72px;
+
     top: 0;
     bottom: 0;
-    margin: auto 0 auto calc(50vw + 33.3333%);
+    @include mq($from: tablet_sm) {
+      margin: auto 0 auto calc(50vw + 33.3333%);
+      width: 72px;
+      height: 72px;
+    }
+    @include mq($until: tablet_sm) {
+      margin: auto 0;
+      right: $gutter-x2;
+      width: 60px;
+      height: 60px;
+    }
     &-prev {
       color: $link;
       pointer-events: none;

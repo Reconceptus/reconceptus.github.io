@@ -35,6 +35,9 @@
     }
     @include hover(){
       box-shadow: 0 4px 16px 0 rgba($black,0.16);
+      .listing_carousel & {
+        box-shadow: none;
+      }
     }
     &-box {
       margin-bottom: $gutter-x2;
@@ -216,6 +219,28 @@
           right: $padding;
         }
       }
+    }
+  }
+  &_carousel {
+    &-box {
+      margin-top: $padding-xl;
+    }
+    &-title {
+      font-size: 24px;
+      color: $text-03;
+      margin-bottom: $padding-lg;
+    }
+    &.owl-carousel {
+      .owl-stage-outer,
+      .owl-stage {
+        display: flex;
+      }
+    }
+    .owl-item {
+      height: 100%;
+    }
+    .owl-nav {
+      display: none;
     }
   }
 }

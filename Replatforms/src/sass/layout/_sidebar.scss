@@ -7,5 +7,14 @@
     &.temp-sticky {
       position: relative;
     }
+    &-static {
+      &-md {
+        @include mq($until: tablet_xl) {
+          position: static !important;
+          width: auto !important;
+          transform: none !important;
+        }
+      }
+    }
   }
 }

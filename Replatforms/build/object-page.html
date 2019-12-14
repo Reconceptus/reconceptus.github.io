@@ -129,7 +129,7 @@
                                 </div>
                                 <div class="object_page-info--stuff">
                                     <a href="https://www.google.com.ua/maps/@55.8651078,37.6648656,16.38z?hl=ru" target="_blank" class="icon icon_size-3"><svg><use xlink:href="#icon-mark"/></svg></a>
-                                    SW8 · Embassy Gardens · 4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot ·2024
+                                    <span>SW8</span> · <span>Embassy Gardens</span> · <span>4 bed</span> · <span>2 ath</span> · <span>2,704 ft²</span> · <span>7,840 ft² lot</span> · <span>2024</span>
                                 </div>
                             </div>
                         </div>
@@ -199,6 +199,7 @@
                                             <div id="map" class="map"></div>
                                             <script type="text/javascript">
                                                 var map, marker,
+                                                    markerURL = './assets/images/map-mark-lg.png',
                                                     defaultLatLng = {lat: 55.762300, lng: 37.632070};
 
                                                 function initMap() {
@@ -217,12 +218,19 @@
                                                         position: LatLng,
                                                         map: map,
                                                         icon: {
-                                                            url: './assets/images/map-mark-lg.png',
+                                                            url: markerURL,
                                                             size: new google.maps.Size(180, 180)
                                                         }
                                                     });
 
-                                                }
+
+                                                    google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
+                                                        var markerEl = document.getElementById('map'),
+                                                            markerParent = markerEl.querySelectorAll('[src="'+markerURL+'"]');
+                                                        markerParent[0].closest('div').classList.add('marker-parent')
+                                                        markerParent[1].closest('div').classList.add('marker-parent')
+                                                    });
+                                                };
                                             </script>
                                             <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
                                             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
@@ -231,9 +239,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="object_page-main--descr sidebar-sticky-wrap">
-                                <div class="content-row">
-                                    <div class="content-col col-pull-2 col-pull-xl-0 col-7 col-lg-12">
+                            <div class="object_page-main--descr">
+                                <div class="content-row flex-wrap sidebar-sticky-wrap">
+                                    <div class="content-col col-pull-2 col-7 col-pull-wd-1 col-wd-8 col-pull-xl-0 col-xl-8 col-md-12">
                                         <div class="object_page-main--about">
                                             <div class="object_page-main--short_info">
                                                 Коротко заключение специалиста либо ключевое преимущество. Woodberry Down is the perfect setting for residents keen to stay in shape and enjoy an active lifestyle. The vast, green parks provide fantastic space for runners, and the sailing reservoir is open to kayaks and canoes. Other activities include a climbing wall and a trim trail, catering both to child's play.
@@ -293,9 +301,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="content-col col-3 col-xl-4 col-lg-3">
-                                        <div class="object_page-main--sidebar sidebar-sticky">
-                                            <div class="object_page-main--sidebar_img"></div>
+
+                                    <div class="content-col col-3 col-xl-4 col-md-12">
+                                        <div class="object_page-main--sidebar sidebar-sticky sidebar-sticky-static-md">
+                                            <div class="object_page-main--sidebar_img">
+                                                <img src="assets/images/objects/object-icon01.png" alt="object">
+                                            </div>
                                             <h3 class="h3">Объект прошел полную проверку</h3>
                                             <ul class="object_page-main--sidebar_list">
                                                 <li>Проверка объекта на месте</li>
@@ -307,24 +318,234 @@
                                     </div>
                                 </div>
 
-
-
-
                             </div>
-
                         </div>
 
                     </div>
                     <div class="object_page-form">
-
+                        <div class="content-row flex-justify--center">
+                            <div class="content-col col-8 col-xl-10 col-sm-12">
+                                <h3 class="h2">Напишите продавцу</h3>
+                                <div class="object_page-form--subtitle text-box"><a href="#">Авторизируйтесь</a> и пишите продавцу сразу в чат, минуя форму ниже.</div>
+                                <form action="#">
+                                    <div>
+                                        <div class="flex-box flex-wrap form-field--columns">
+                                            <div class="form-field--col form-field--grow_wrap">
+                                                <div class="form-field form-field--grow">
+                                                    <div class="form-textarea digits-relative form-field--grow_field form-field--grow_wrap">
+                                                        <div class="form-label">Сообщение:</div>
+                                                        <textarea rows="6" class="form-field--grow" placeholder="Ваше сообщение"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <div class="form-checkbox">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="approve">
+                                                            <span class="checkbox-label">Я даю свое согласие на обработку персональных данных, соглашаюсь с условиями и политикой конфиденциальности и принимаю условия публичной оферты.</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field--col">
+                                                <div class="form-field">
+                                                    <div class="form-select">
+                                                        <div class="form-label">Тема вашего обращения:</div>
+                                                        <select name="theme">
+                                                            <option value="Узнать больше информации">Узнать больше информации</option>
+                                                            <option value="Узнать меньше информации">Узнать меньше информации</option>
+                                                            <option value="Тема вашего обращения">Тема вашего обращения</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <div class="form-label">Информация о вас:</div>
+                                                    <div class="form-input">
+                                                        <input type="text" placeholder="Представьтесь">
+                                                    </div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <div class="form-input">
+                                                        <input type="text" placeholder="Телефон">
+                                                    </div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <div class="form-input">
+                                                        <input type="text" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="object_page-form--submit">
+                                        <button type="submit" class="btn btn--full btn--orange">send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="object_page-back">
-
+                    <div class="pack-page">
+                        <div class="content-row">
+                            <div class="content-col col-pull-3 col-9  col-pull-wd-2 col-wd-10  col-pull-lg-1 col-lg-11 col-pull-xs-0 col-xs-12 ">
+                                <a href="#" class="pack-page--link">to search results</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="listing_carousel">
-
+                <div class="listing_carousel-box">
+                    <div class="listing_carousel-title">Просмотрено или похожие</div>
+                    <div class="owl-carousel listing_carousel">
+                        <div class="listing_item " data-item=001>
+                            <div class="listing_item-figure">
+                                <div class="listing_item-img">
+                                    <a href="object-page.html" class="img">
+                                        <img src="assets/images/listing/item01.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="listing_item-hashes item-hashes">
+                                    <span class="hash hash-premium">premium</span>
+                                    <span class="hash hash-pro">pro</span>
+                                    <span class="hash hash-new">new building</span>
+                                </div>
+                                <div class='listing_item-check'>
+                                    <span class='listing_item-check--new'>новый</span>
+                                    <label class='listing_item-check--label' for=""></label>
+                                </div>
+                            </div>
+                            <div class="listing_item-data">
+                                <a class="listing_item-data--title" href="object-page.html">Дизайн</a>
+                                <div class="listing_item-data--descr">
+                                    4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
+                                </div>
+                                <div class="listing_item-data--price">
+                                    £1,100,000
+                                </div>
+                                <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
+                                    <svg><use xlink:href="#icon-like"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="listing_item " data-item=002>
+                            <div class="listing_item-figure">
+                                <div class="listing_item-img">
+                                    <a href="object-page.html" class="img">
+                                        <img src="assets/images/listing/item02.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="listing_item-hashes item-hashes">
+                                    <span class="hash hash-premium">premium</span>
+                                    <span class="hash hash-pro">pro</span>
+                                    <span class="hash hash-new">new building</span>
+                                </div>
+                                <div class='listing_item-check'>
+                                    <span class='listing_item-check--new'>новый</span>
+                                    <label class='listing_item-check--label' for=""></label>
+                                </div>
+                            </div>
+                            <div class="listing_item-data">
+                                <a class="listing_item-data--title" href="object-page.html">Город, индекс или цена</a>
+                                <div class="listing_item-data--descr">
+                                    4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
+                                </div>
+                                <div class="listing_item-data--price">
+                                    £1,100,000
+                                </div>
+                                <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 liked">
+                                    <svg><use xlink:href="#icon-like"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="listing_item " data-item=003>
+                            <div class="listing_item-figure">
+                                <div class="listing_item-img">
+                                    <a href="object-page.html" class="img">
+                                        <img src="assets/images/listing/item03.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="listing_item-hashes item-hashes">
+                                    <span class="hash hash-premium">premium</span>
+                                    <span class="hash hash-pro">pro</span>
+                                    <span class="hash hash-new">new building</span>
+                                </div>
+                                <div class='listing_item-check'>
+                                    <span class='listing_item-check--new'>новый</span>
+                                    <label class='listing_item-check--label' for=""></label>
+                                </div>
+                            </div>
+                            <div class="listing_item-data">
+                                <a class="listing_item-data--title" href="object-page.html">Отдых в аппараментах Патонг Тауэр</a>
+                                <div class="listing_item-data--descr">
+                                    4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
+                                </div>
+                                <div class="listing_item-data--price">
+                                    £1,100,000
+                                </div>
+                                <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
+                                    <svg><use xlink:href="#icon-like"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="listing_item " data-item=004>
+                            <div class="listing_item-figure">
+                                <div class="listing_item-img">
+                                    <a href="object-page.html" class="img">
+                                        <img src="assets/images/listing/item04.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="listing_item-hashes item-hashes">
+                                    <span class="hash hash-premium">premium</span>
+                                    <span class="hash hash-pro">pro</span>
+                                    <span class="hash hash-new">new building</span>
+                                </div>
+                                <div class='listing_item-check'>
+                                    <span class='listing_item-check--new'>новый</span>
+                                    <label class='listing_item-check--label' for=""></label>
+                                </div>
+                            </div>
+                            <div class="listing_item-data">
+                                <a class="listing_item-data--title" href="object-page.html">Отдых в аппараментах Патонг Тауэр</a>
+                                <div class="listing_item-data--descr">
+                                    4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
+                                </div>
+                                <div class="listing_item-data--price">
+                                    £1,100,000
+                                </div>
+                                <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
+                                    <svg><use xlink:href="#icon-like"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="listing_item " data-item=004>
+                            <div class="listing_item-figure">
+                                <div class="listing_item-img">
+                                    <a href="object-page.html" class="img">
+                                        <img src="assets/images/listing/item05.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="listing_item-hashes item-hashes">
+                                    <span class="hash hash-premium">premium</span>
+                                    <span class="hash hash-pro">pro</span>
+                                    <span class="hash hash-new">new building</span>
+                                </div>
+                                <div class='listing_item-check'>
+                                    <span class='listing_item-check--new'>новый</span>
+                                    <label class='listing_item-check--label' for=""></label>
+                                </div>
+                            </div>
+                            <div class="listing_item-data">
+                                <a class="listing_item-data--title" href="object-page.html">Отдых в аппараментах Патонг Тауэр</a>
+                                <div class="listing_item-data--descr">
+                                    4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
+                                </div>
+                                <div class="listing_item-data--price">
+                                    £1,100,000
+                                </div>
+                                <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
+                                    <svg><use xlink:href="#icon-like"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -863,7 +1084,9 @@
 <script>
     functions.gallery_carousel();
 </script>
-
+<script>
+    functions.listing_carousel();
+</script>
 
 </body>
 </html>

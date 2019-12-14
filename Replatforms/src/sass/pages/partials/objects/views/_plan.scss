@@ -3,7 +3,12 @@
   align-items: center;
   justify-content: center;
   background-color: $white;
-  padding: $padding-md;
+  @include mq($from: mobile_sm) {
+    padding: $padding-md;
+  }
+  @include mq($until: mobile_sm) {
+    padding: $gutter-x2;
+  }
   img {
     max-width: 100%;
     max-height: 100%;

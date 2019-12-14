@@ -26,6 +26,7 @@ window.functions = {
     contenteditable: require('./modules/contenteditable'),
     hasheditable: require('./modules/hasheditable'),
     gallery_carousel: require('./modules/gallery-carousel'),
+    listing_carousel: require('./modules/listing-carousel'),
 };
 
 // scripts

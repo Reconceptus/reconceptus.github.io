@@ -5,26 +5,66 @@
 @import "views/map";
 
 .object_page {
-  padding-top: 80px;
+
+  @include mq($from: desktop_xl) {
+    padding-top: 80px;
+  }
+  @include mq(tablet_sm, desktop_xl) {
+    padding-top: $padding-lg;
+  }
+  @include mq($until: tablet_sm) {
+    padding-top: $padding;
+  }
   &-info {
-    font-size: 24px;
+
+    @include mq($from: tablet_sm) {
+      font-size: 24px;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: $font;
+    }
     &--general {
       display: flex;
       align-items: center;
-      margin-bottom: $padding-lg;
+
+      @include mq($from: tablet_sm) {
+        margin-bottom: $padding-lg;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $gutter-x2;
+      }
+      @include mq($until: mobile_xl) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       .item-hashes {
-        margin-left: $gutter-x2;
+
+        @include mq($from: mobile_xl) {
+          margin-left: $gutter-x2;
+        }
+        @include mq($until: mobile_xl) {
+          margin-top: $padding;
+        }
       }
     }
     &--stuff {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: $padding-lg;
+      span {
+        white-space: nowrap;
+        margin: 0 4px;
+      }
       .icon {
         color: $text-03;
-        margin-right: 4px;
+
+        flex-shrink: 0;
         @include hover(){
           color: $link;
+        }
+        @include mq($until: mobile_xl) {
+          align-self: flex-start;
         }
       }
     }
@@ -44,24 +84,49 @@
       &_list {
         display: flex;
         align-items: center;
+        li {
+          @include mq($until: mobile_sm) {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+        }
         label {
           display: flex;
           align-items: center;
-          font-size: $font;
           font-weight: 500;
           height: 32px;
-          padding: 0 $gutter-x2;
           background-color: $white;
           cursor: pointer;
+          @include mq($from: mobile_sm) {
+            padding: 0 $gutter-x2;
+            font-size: $font;
+          }
+          @include mq($until: mobile_sm) {
+            width: 100%;
+            padding: 0 $padding_sm;
+            font-size: 12px;
+            justify-content: center;
+            text-align: center;
+          }
         }
       }
     }
     &--sections {
-      width: 100%;
+
       height: 0;
-      padding-bottom: 56%;
+
       overflow: hidden;
       position: relative;
+      @include mq($from: mobile_sm) {
+        width: 100%;
+        padding-bottom: 56%;
+      }
+      @include mq($until: mobile_sm) {
+        width: 100vw;
+        padding-bottom: 56vw;
+        margin-left: -1*$gutter-x2;
+      }
     }
     &--section {
       position: absolute;
@@ -79,26 +144,84 @@
   }
   &-main {
     &--descr {
-      padding-top: $padding-xl;
+
+      @include mq($from: desktop_xl) {
+        padding-top: $padding-xl;
+      }
     }
     &--about {
-      padding-top: $padding-xxl + $padding-lg;
+
+      @include mq($from: desktop_xl) {
+        padding-top: $padding-xxl + $padding-lg;
+      }
+      @include mq(mobile_sm, desktop_xl) {
+        padding-top: $padding-xl;
+      }
+      @include mq($until: mobile_sm) {
+        padding-top: $padding-lg;
+      }
     }
     &--section {
-      padding-left: (100%/7);
-      margin-bottom: $padding-xxl;
+
+      @include mq($from: desktop_xl) {
+        padding-left: (100%/7);
+        margin-bottom: $padding-xxl;
+      }
+      @include mq(tablet_xl, desktop_xl) {
+        padding-left: (100%/8);
+        margin-bottom: $padding-xxl - $padding-lg;
+      }
+      @include mq(tablet_sm, tablet_xl) {
+        padding-left: (100%/12);
+        margin-bottom: $padding-xxl - $padding-lg;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
+
     }
     &--short_info {
-      font-size: $font-lg;
+
       color: $brand-01;
-      margin-bottom: 2*$padding-xxl;
-      padding-right: (100%/7);
+
+
+      @include mq($from: desktop_xl) {
+        padding-right: (100%/7);
+        margin-bottom: 2*$padding-xxl;
+      }
+      @include mq(tablet_sm, desktop_xl) {
+        padding-right: (100%/8);
+        margin-bottom: $padding-xxl;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
+
+
+      @include mq($from: desktop_xl) {
+        font-size: $font-lg;
+      }
+      @include mq(mobile_sm, desktop_xl) {
+        font-size: 28px;
+      }
+      @include mq($until: mobile_sm) {
+        font-size: $font-md;
+      }
     }
     &--benefits {
       font-size: $font-md;
       border-left: 8px solid $link;
       padding-top: $padding_sm;
       padding-bottom: $padding_sm;
+      @include mq($until: tablet_sm) {
+        padding-left: (100%/12);
+      }
+      @include mq($from: mobile_sm) {
+        font-size: $font-md;
+      }
+      @include mq($until: mobile_sm) {
+        font-size: 18px;
+      }
       li {
         &:not(:last-child){
           margin-bottom: $padding;
@@ -113,8 +236,14 @@
         margin-bottom: $padding-md;
       }
       ul {
-        columns: 3 auto;
+
         column-gap: $gutter-x2;
+        @include mq($from: mobile_xl) {
+          columns: 3 auto;
+        }
+        @include mq(mobile_sm, mobile_xl) {
+          columns: 2 auto;
+        }
         li {
           page-break-inside: avoid;
           break-inside: avoid;
@@ -145,16 +274,137 @@
           background-color: #f5f5f5;
         }
         td {
-          height: 48px;
-          padding: 0 $padding-md;
-          &:first-child {
-            width: 33%;
+
+
+          @include mq($from: mobile_xl) {
+            padding: 0 $padding-md;
+            &:first-child {
+              width: 33%;
+            }
           }
+          @include mq(mobile_sm, mobile_xl) {
+            padding: 0 $gutter;
+          }
+          @include mq($from: mobile_sm) {
+            height: 48px;
+          }
+          @include mq($until: mobile_sm) {
+            padding: $padding $gutter;
+            font-size: 14px;
+          }
+
         }
       }
     }
     &--sidebar {
-      padding: $padding-lg 0;
+
+      @include mq($from: tablet_xl) {
+        padding: $padding-lg 0 $padding-lg $gutter;
+      }
+      @include mq(tablet_sm, tablet_xl) {
+        padding-left: (100%/12);
+        margin-bottom: $padding-xxl - $padding-lg;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
+      .h3 {
+        margin-bottom: 24px;
+      }
+      &_img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: $padding;
+        img {
+          @extend %full_block;
+        }
+      }
+      &_list {
+        li {
+
+          position: relative;
+          margin-bottom: $padding_sm;
+          @include mq($from: mobile_sm) {
+            padding-left: $padding-lg;
+          }
+          @include mq($until: mobile_sm) {
+            padding-left: $padding-md;
+          }
+          &:before {
+            @extend .pseudo-content;
+            width: 24px;
+            height: 24px;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22done-24px%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_54%22%20data-name%3D%22Path%2054%22%20d%3D%22M0%2C0H24V24H0Z%22%20fill%3D%22none%22/%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_55%22%20data-name%3D%22Path%2055%22%20d%3D%22M9%2C16.2%2C4.8%2C12%2C3.4%2C13.4%2C9%2C19%2C21%2C7%2C19.6%2C5.6Z%22%20fill%3D%22%2353545d%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 18px auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  &-form {
+
+    background-color: $white;
+
+    @include mq($from: desktop_sm) {
+      padding: $padding-xxl 0;
+      border-radius: $padding-xl 0 $padding-xl $padding-xl;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      padding: ($padding-xxl - $padding-lg) 0;
+      border-radius: $padding-xl 0 $padding-xl $padding-xl;
+    }
+    @include mq(mobile_sm, tablet_sm) {
+      padding: $padding-md $gutter-x2;
+      border-radius: $padding 0 $padding $padding;
+    }
+    @include mq($until: mobile_sm) {
+      padding: $padding-md $gutter-x2;
+      margin: 0 -1*$gutter-x2;
+    }
+    .h2 {
+
+      @include mq($from: tablet_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding;
+      }
+    }
+    .form-field--grow_wrap {
+      @include mq($until: tablet_sm) {
+        order: 2;
+      }
+    }
+    &--subtitle {
+
+      @include mq($from: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-md;
+      }
+    }
+    &--submit {
+      @include mq($from: tablet_sm) {
+        margin-top: $padding-lg;
+      }
+      .btn {
+        height: 80px;
+        padding: 0 $gutter-x2;
+        font-size: $font-md;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22Component_68_494%22%20data-name%3D%22Component%2068%20%u2013%20494%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2221%22%20height%3D%2218%22%20viewBox%3D%220%200%2021%2018%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_59%22%20data-name%3D%22Path%2059%22%20d%3D%22M4.01%2C6.03l7.51%2C3.22L4%2C8.25l.01-2.22m7.5%2C8.72L4%2C17.97V15.75l7.51-1M2.01%2C3%2C2%2C10l15%2C2L2%2C14l.01%2C7L23%2C12Z%22%20transform%3D%22translate%28-2%20-3%29%22%20fill%3D%22%23fff%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 32px) center;
+        background-size: 21px auto;
+        @include mq($until: mobile_sm) {
+          justify-content: flex-start;
+        }
+      }
     }
   }
 }
