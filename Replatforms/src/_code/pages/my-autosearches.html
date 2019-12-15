@@ -1,0 +1,133 @@
+<include src="../templates/head.html" title="Мои автопоиски"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <div class="profile_heading">
+                                    <h1 class="h1 color-font-brand-01">Мои автопоиски</h1>
+                                    <a href="auto-search.html" class="profile_heading-add_button">
+                                        <i class="icon">
+                                            <svg><use xlink:href="#icon-plus"/></svg>
+                                        </i>
+                                        <span class="profile_heading-add_button--text">создать новый</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-sorting">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="profile_table-sorting--list">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">active</a>
+                                    <a href="#">empty</a>
+                                    <a href="#">completed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_table-main">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="profile_table-head--cell">date</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">title</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">results</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">creator</span>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="profile_table-head--cell sort sort-down">status</a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="profile_table-body">
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="25"
+                                         creator="Arnold Schwarzenegger"
+                                ></include>
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="324"
+                                         creator="Maria Peterson"
+                                ></include>
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="23"
+                                         creator="Frances Xavier Warde"
+                                ></include>
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="43"
+                                         creator="Arnold Schwarzenegger"
+                                ></include>
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="543"
+                                         creator="Maria Peterson"
+                                ></include>
+                                <include src="./profile/my-autosearches-row.html"
+                                         title="2"
+                                         creator="Frances Xavier Warde"
+                                ></include>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Карточка объектов</title>
+    <title>Мои объекты</title>
     <meta name="author" content="enenkoff@mail.ru">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -91,7 +91,7 @@
 
         <div id="main" class="main">
 
-            <section class="composing-box composing-box--bg_static">
+            <section class="composing-box">
                 <div class="content content--lg">
                     <div class="content-row">
                         <div class="content-col col-pull-1 col-pull-lg-0 col-11">
@@ -102,60 +102,18 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="composing-heading">
                         <div class="content-row">
                             <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
-                                <h1 class="h1 color-font-text-01">Что вы хотите продать?</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="objects-list">
-                        <div class="content-row">
-                            <div class="content-col col-pull-1 col-pull-lg-0 col-10 col-lg-12">
-                                <div class="objects-list--sections">
-                                    <div class="content-row flex-wrap">
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object01.jpg" alt="Апартаменты">
-                                                    <figcaption >Апартаменты</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object02.jpg" alt="Жилой Комплекс">
-                                                    <figcaption >Жилой Комплекс</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="user-object.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object03.jpg" alt="Дом с землей (юзер все блоки)">
-                                                    <figcaption >Дом с землей (юзер все блоки)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="manager-object.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object04.jpg" alt="Землю (адм)">
-                                                    <figcaption>Землю (адм)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/listing/item02.jpg" alt="Коммерческий объект (1 стр)">
-                                                    <figcaption >Коммерческий объект (1 стр)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="profile_heading">
+                                    <h1 class="h1 color-font-brand-01">Мои объекты</h1>
+                                    <a href="objects.html" class="profile_heading-add_button">
+                                        <i class="icon">
+                                            <svg><use xlink:href="#icon-plus"/></svg>
+                                        </i>
+                                        <span class="profile_heading-add_button--text">add object</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -164,6 +122,676 @@
                 </div>
 
             </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-sorting">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="profile_table-sorting--list">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">problem</a>
+                                    <a href="#">not published</a>
+                                    <a href="#">active</a>
+                                    <a href="#">sold</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_table-main">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="profile_table-head--cell">date</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">object</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">creator</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">statistics</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">applications</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">catalog</span>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="profile_table-head--cell sort sort-down">status</a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="profile_table-body">
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">заголок, индекс, город</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Arnold Schwarzenegger
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">Дом Эннисов Фрэнка Ллойда Райта, 343434, Копенгаген</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Maria Peterson
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">One Superior Place, 1 W Superior St, Chicago, IL, 60654</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Frances Xavier Warde
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">заголок, индекс, город</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Arnold Schwarzenegger
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">Дом Эннисов Фрэнка Ллойда Райта, 343434, Копенгаген</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Maria Peterson
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date">
+                                            21.12.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_object">
+                                            <figure>
+                                                <img src="assets/images/listing/item02.jpg" alt="item">
+                                            </figure>
+                                            <div class="profile_table-body--cell">
+                                                <div class="cell-list_item cell-title color-font-brand-01">One Superior Place, 1 W Superior St, Chicago, IL, 60654</div>
+                                                <div>
+                                                    <div class="cell-list_item">£1,100,000</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Frances Xavier Warde
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-eye"/></svg>
+                                                        </i>
+                                                        45 234
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-like"/></svg>
+                                                        </i>
+                                                        12467
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                            <div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-chat"/></svg>
+                                                        </i>
+                                                        201
+                                                    </div>
+                                                </div>
+                                                <div class="cell-list_item">
+                                                    <div class="cell-icon_text color-font-brand-01">
+                                                        <i class="icon icon_size-2 color-font-brand-02">
+                                                            <svg><use xlink:href="#icon-phone"/></svg>
+                                                        </i>
+                                                        12
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                            cottage
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <a target="_blank" href="object-page.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-link"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
         <footer class="footer" id="footer">
@@ -663,8 +1291,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">

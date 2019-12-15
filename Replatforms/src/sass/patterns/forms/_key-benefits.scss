@@ -112,16 +112,7 @@
         }
       }
       &_btn {
-        @extend %btn_reset;
-        background-color: $white;
-        width: 40px;
-        height: 40px;
-        color: $brand-02;
         margin-left: $padding-sm;
-        border: 1px solid $brand-02;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
     }
   }

@@ -1,0 +1,140 @@
+<include src="../templates/head.html" title="Мои объекты"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <div class="profile_heading">
+                                    <h1 class="h1 color-font-brand-01">Мои объекты</h1>
+                                    <a href="objects.html" class="profile_heading-add_button">
+                                        <i class="icon">
+                                            <svg><use xlink:href="#icon-plus"/></svg>
+                                        </i>
+                                        <span class="profile_heading-add_button--text">add object</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-sorting">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="profile_table-sorting--list">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">problem</a>
+                                    <a href="#">not published</a>
+                                    <a href="#">active</a>
+                                    <a href="#">sold</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_table-main">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="profile_table-head--cell">date</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">object</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">creator</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">statistics</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">applications</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">catalog</span>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="profile_table-head--cell sort sort-down">status</a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="profile_table-body">
+                                <include src="./profile/my-objects-row.html"
+                                         title="заголок, индекс, город"
+                                         creator="Arnold Schwarzenegger"
+                                ></include>
+                                <include src="./profile/my-objects-row.html"
+                                         title="Дом Эннисов Фрэнка Ллойда Райта, 343434, Копенгаген"
+                                         creator="Maria Peterson"
+                                ></include>
+                                <include src="./profile/my-objects-row.html"
+                                         title="One Superior Place, 1 W Superior St, Chicago, IL, 60654"
+                                         creator="Frances Xavier Warde"
+                                ></include>
+                                <include src="./profile/my-objects-row.html"
+                                         title="заголок, индекс, город"
+                                         creator="Arnold Schwarzenegger"
+                                ></include>
+                                <include src="./profile/my-objects-row.html"
+                                         title="Дом Эннисов Фрэнка Ллойда Райта, 343434, Копенгаген"
+                                         creator="Maria Peterson"
+                                ></include>
+                                <include src="./profile/my-objects-row.html"
+                                         title="One Superior Place, 1 W Superior St, Chicago, IL, 60654"
+                                         creator="Frances Xavier Warde"
+                                ></include>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

@@ -45,4 +45,35 @@
       border-width: 3px;
     }
   }
+  &-bordered {
+    @extend %btn_reset;
+    background-color: $white;
+    min-width: 40px;
+    height: 40px;
+    color: $brand-02;
+    border: 1px solid $brand-02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    .inline-text {
+      display: block;
+      color: $brand-01;
+      white-space: nowrap;
+      @include mq($from: tablet_xl) {
+        padding: 0 $gutter-x2;
+      }
+      @include mq($until: tablet_xl) {
+        padding: 0 $padding;
+      }
+    }
+    @include hover(){
+      color: darken($brand-02, 8);
+      border-color: darken($brand-02, 8);
+      .inline-text {
+        color: darken($brand-01, 8);
+      }
+    }
+
+  }
 }

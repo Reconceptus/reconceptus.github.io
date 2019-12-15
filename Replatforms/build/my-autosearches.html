@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Карточка объектов</title>
+    <title>Мои автопоиски</title>
     <meta name="author" content="enenkoff@mail.ru">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -91,7 +91,7 @@
 
         <div id="main" class="main">
 
-            <section class="composing-box composing-box--bg_static">
+            <section class="composing-box">
                 <div class="content content--lg">
                     <div class="content-row">
                         <div class="content-col col-pull-1 col-pull-lg-0 col-11">
@@ -102,60 +102,18 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="composing-heading">
                         <div class="content-row">
                             <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
-                                <h1 class="h1 color-font-text-01">Что вы хотите продать?</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="objects-list">
-                        <div class="content-row">
-                            <div class="content-col col-pull-1 col-pull-lg-0 col-10 col-lg-12">
-                                <div class="objects-list--sections">
-                                    <div class="content-row flex-wrap">
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object01.jpg" alt="Апартаменты">
-                                                    <figcaption >Апартаменты</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object02.jpg" alt="Жилой Комплекс">
-                                                    <figcaption >Жилой Комплекс</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="user-object.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object03.jpg" alt="Дом с землей (юзер все блоки)">
-                                                    <figcaption >Дом с землей (юзер все блоки)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="manager-object.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/objects/object04.jpg" alt="Землю (адм)">
-                                                    <figcaption>Землю (адм)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                        <div class="objects-list--section content-col">
-                                            <a href="object-cart.html" class="objects-list--section_link">
-                                                <figure>
-                                                    <img src="assets/images/listing/item02.jpg" alt="Коммерческий объект (1 стр)">
-                                                    <figcaption >Коммерческий объект (1 стр)</figcaption>
-                                                </figure>
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="profile_heading">
+                                    <h1 class="h1 color-font-brand-01">Мои автопоиски</h1>
+                                    <a href="auto-search.html" class="profile_heading-add_button">
+                                        <i class="icon">
+                                            <svg><use xlink:href="#icon-plus"/></svg>
+                                        </i>
+                                        <span class="profile_heading-add_button--text">создать новый</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -164,6 +122,369 @@
                 </div>
 
             </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-sorting">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="profile_table-sorting--list">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">active</a>
+                                    <a href="#">empty</a>
+                                    <a href="#">completed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_table-main">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="profile_table-head--cell">date</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">title</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">results</span>
+                                    </th>
+                                    <th>
+                                        <span class="profile_table-head--cell">creator</span>
+                                    </th>
+                                    <th>
+                                        <a href="#" class="profile_table-head--cell sort sort-down">status</a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="profile_table-body">
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">25</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Arnold Schwarzenegger
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">324</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Maria Peterson
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">23</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Frances Xavier Warde
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">43</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Arnold Schwarzenegger
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">543</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Maria Peterson
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                            <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                            <div class="cell-title color-font-brand-01">21.12.19</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                            <div class="cell-title color-font-brand-01">2</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                            <div class="cell-title color-font-brand-01">15/115</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                            Frances Xavier Warde
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell">
+                                            <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                            <div class="cell-title color-font-brand-01">active</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta">
+                                            <a target="_blank" href="results.html" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">смотреть </span>
+                                                    результаты
+                                                </span>
+                                            </a>
+                                            <a target="_blank" href="user-object.html" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-edit"></use></svg>
+                                                </i>
+                                            </a>
+                                            <button type="button" class="icon-bordered">
+                                                <i class="icon icon_size-2">
+                                                    <svg><use xlink:href="#icon-remove"></use></svg>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
         <footer class="footer" id="footer">
@@ -663,8 +984,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
