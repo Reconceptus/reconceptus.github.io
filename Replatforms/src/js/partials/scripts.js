@@ -68,6 +68,9 @@ $(document).ready(() => {
     if ($('.hasheditable-box').length > 0) {
         functions.hasheditable.init();
     }
+    if ($('.text-box').length > 0) {
+        functions.text_box();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

@@ -45,6 +45,13 @@ Styleguide styleguide.typography.text-box
     margin-top: $padding-md;
     margin-bottom: $padding-md;
   }
+  h3 {
+    font-size: 32px;
+    line-height: (48/32);
+    font-weight: 400;
+    margin-top: $padding-md;
+    margin-bottom: $padding-md;
+  }
   p {
     &:not(:last-child){
       @include mq($from: mobile_sm) {
@@ -59,6 +66,36 @@ Styleguide styleguide.typography.text-box
     color: $link;
     @include hover(){
       color: darken($link, 8);
+    }
+  }
+  .img {
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+      &:first-of-type {
+        border-radius: 140px 0 0 0;
+        overflow: hidden;
+      }
+      &:last-of-type {
+        border-radius: 0 0 140px 0;
+        overflow: hidden;
+      }
+    }
+    @include mq($until: desktop_sm) {
+      width: 100%;
+    }
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
   }
 }

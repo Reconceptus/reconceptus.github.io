@@ -6,6 +6,7 @@ window.functions = {
     filter: require('./modules/filter'),
     ovh: require('./modules/ovh'),
     scroll_top: require('./modules/scroll-top'),
+    text_box: require('./modules/text-box'),
     dropdown: require('./modules/dropdown'),
     markers: require('./modules/markers'),
     expander: require('./modules/expander'),
