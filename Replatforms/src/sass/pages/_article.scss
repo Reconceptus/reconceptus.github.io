@@ -3,6 +3,15 @@
   @include mq($from: tablet_sm) {
     padding-top: 80px;
   }
+  
+  &-static {
+    @include mq($from: tablet_sm) {
+      padding-top: 80px;
+    }
+    @include mq($until: tablet_sm) {
+      padding-top: $padding-lg;
+    }
+  }
 
   &-wrap {
     @include mq($until: desktop_sm) {
