@@ -1,0 +1,43 @@
+.sorting {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  @include mq($from: mobile_xl) {
+    margin-bottom: $gutter-x2;
+  }
+  @include mq($until: mobile_xl) {
+    padding-bottom: $gutter;
+    margin-bottom: $gutter;
+    width: 100%;
+    overflow: auto;
+  }
+  a {
+    color: inherit;
+    position: relative;
+    margin-right: $padding-md;
+    &:after {
+      @extend .pseudo-content;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: $link;
+      transition: all 0.2s;
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    &.active {
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @include hover(){
+      &:after {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

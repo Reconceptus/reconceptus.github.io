@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Каталог объектов</title>
+    <title>Аналитика превью статей</title>
     <meta name="author" content="enenkoff@mail.ru">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -91,7 +91,7 @@
 
         <div id="main" class="main">
 
-            <section class="composing-box">
+            <section class="composing-box composing-box--bg_static">
                 <div class="content content--lg">
                     <div class="content-row">
                         <div class="content-col col-pull-1 col-pull-lg-0 col-11">
@@ -102,11 +102,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="composing-heading">
-                        <div class="content-row">
-                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
-                                <h1 class="h1 color-font-brand-01">Searching results <sub>24</sub></h1>
-                            </div>
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                            <h1 class="h1 color-font-text-01">Аналитика</h1>
                         </div>
                     </div>
 
@@ -115,472 +113,252 @@
             </section>
 
             <div class="main_box content content--lg">
-                <div class="listing">
-                    <input type="radio" checked id="view_listing" class="listing_filter-checker" name="listing_view">
-                    <input type="radio"  id="view_map" class="listing_filter-checker" name="listing_view">
-                    <div class="listing_filter">
+
+                <div class="page_box">
+                    <div class="analytic_page">
                         <div class="content-row">
                             <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
-                                <div class="listing_filter-field">
-                                    <button type="button" id="filters" class="listing_filter-button">фильтровать</button>
-                                    <div class="mobile-hidden listing_filter-sorting">
-                                        <a href="#" class="active">сверху новые</a>
-                                        <a href="#">сверху популярные</a>
-                                        <a href="#">сверху меньшая цена</a>
-                                    </div>
-                                    <label for="view_listing" class="mobile-hidden listing_filter-checker--label">
-                                        <i class="icon icon_size-2">
-                                            <svg><use xlink:href="#icon-view_listing"/></svg>
-                                        </i>
-                                    </label>
-                                    <label for="view_map" class="mobile-hidden listing_filter-checker--label">
-                                        <i class="icon icon_size-2">
-                                            <svg><use xlink:href="#icon-view_map"/></svg>
-                                        </i>
-                                    </label>
+                                <div class="sorting">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">problem</a>
+                                    <a href="#">not published</a>
+                                    <a href="#">active</a>
+                                    <a href="#">sold</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="listing_sidebar" id="filtersBar">
-                        <button class="mobile-visible listing_sidebar-close filters_close icon icon_size-3" type="button">
-                            <svg><use xlink:href="#icon-close_lg"/></svg>
-                        </button>
-                        <form action="#">
-                            <div class="content content--lg">
-                                <div class="content-row">
-                                    <div class="content-col col-3 col-sm-12">
-                                        <div class="listing_sidebar-blur filters_close"></div>
-                                        <div class="listing_sidebar-aside">
-                                            <div class="listing_sidebar-form pl-sidebar-scroll">
-                                                <div class="listing_sidebar-fieldset">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Estimated completion:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="completion">
-                                                                <span class="checkbox-label">Completed</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="completion">
-                                                                <span class="checkbox-label">Not completed</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Type:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="type">
-                                                                <span class="checkbox-label">Studio</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="type">
-                                                                <span class="checkbox-label">Apartment</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="type">
-                                                                <span class="checkbox-label">Penthouse</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Asking price:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-range">
-                                                            <span class="measure">&euro;</span>
-                                                            <div class="form-input"><input type="number" placeholder="min"></div>
-                                                            <span class="dash"></span>
-                                                            <div class="form-input"><input type="number" placeholder="max"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Area:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-range">
-                                                            <span class="measure">M<sup>2</sup></span>
-                                                            <div class="form-input"><input type="number" placeholder="Min"></div>
-                                                            <span class="dash"></span>
-                                                            <div class="form-input"><input type="number" placeholder="Max"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Bedrooms:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-radio_line">
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bedrooms">
-                                                                <span class="radio_line-label">1</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bedrooms">
-                                                                <span class="radio_line-label">2</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bedrooms">
-                                                                <span class="radio_line-label">3</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bedrooms">
-                                                                <span class="radio_line-label">4</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bedrooms">
-                                                                <span class="radio_line-label">5+</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Bathrooms:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-radio_line">
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bathrooms">
-                                                                <span class="radio_line-label">1</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bathrooms">
-                                                                <span class="radio_line-label">2</span>
-                                                            </label>
-                                                            <label class="radio_line-item">
-                                                                <input type="radio" name="bathrooms">
-                                                                <span class="radio_line-label">3+</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Floor:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-range">
-                                                            <div class="form-input"><input type="number" placeholder="Min"></div>
-                                                            <span class="dash"></span>
-                                                            <div class="form-input"><input type="number" placeholder="Max"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset flex-align_items--center">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Storeys:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-range">
-                                                            <div class="form-input"><input type="number" placeholder="Min"></div>
-                                                            <span class="dash"></span>
-                                                            <div class="form-input"><input type="number" placeholder="Max"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="listing_sidebar-fieldset">
-                                                    <div class="listing_sidebar-fieldset--label">
-                                                        Development facilities:
-                                                    </div>
-                                                    <div class="listing_sidebar-fieldset--element">
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">24 hour Concierge</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Swimming pool</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Spa</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Gym</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Private Cinema</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Underground Parking</span>
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-checkbox">
-                                                            <label class="checkbox-item">
-                                                                <input type="checkbox" name="facilities">
-                                                                <span class="checkbox-label">Private Garden</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                        <div class="content-row">
+                            <div class="content-col">
+                                <div class="analytic_list">
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">23</div>
+                                                september, 2019
                                             </div>
-                                            <div class="listing_sidebar-actions">
-                                                <button type="submit" class="btn btn--md btn--full btn--orange">filter</button>
-                                                <button type="reset" class="btn btn--md btn--full btn--white">clear filter</button>
+                                            <div class="analytic_item-title">
+                                                Residental property market
                                             </div>
-                                        </div>
+                                            <div class="analytic_item-descr">
+                                                Real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">17</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Having Queen Elizabeth II as your next door neighbour
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                If you wish to experience the spirit of royal Britain, its majesty and grace, then be sure to visit the Westminster 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">5</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Knightsbridge - London
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                The name of the Knightsbridge district has become a synonym of wealth, elegant taste, and diversity. This is an international centre for shopping, 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">2</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Buy-to-let Mortgages Explained
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                When you buy a property as an investment, you won't be able to fund your purchase with a typical residential mortgage. Instead, you'll need a 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">7</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum earum esse hic incidunt labore laudantium nesciunt nihil quisquam? Dignissimos ducimus hic mollitia rerum.
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">23</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Residental property market
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                Real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">17</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Having Queen Elizabeth II as your next door neighbour
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                If you wish to experience the spirit of royal Britain, its majesty and grace, then be sure to visit the Westminster 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">5</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Knightsbridge - London
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                The name of the Knightsbridge district has become a synonym of wealth, elegant taste, and diversity. This is an international centre for shopping, 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">2</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Buy-to-let Mortgages Explained
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                When you buy a property as an investment, you won't be able to fund your purchase with a typical residential mortgage. Instead, you'll need a 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">7</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Lorem ipsum dolor sit amet, consectetur
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum earum esse hic incidunt labore laudantium nesciunt nihil quisquam? Dignissimos ducimus hic mollitia rerum.
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">23</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Residental property market
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                Real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="analytic_list-item">
+                                        <a href="article.html" class="analytic_item">
+                                            <div class="analytic_item-date">
+                                                <div class="analytic_item-date--day">17</div>
+                                                september, 2019
+                                            </div>
+                                            <div class="analytic_item-title">
+                                                Having Queen Elizabeth II as your next door neighbour
+                                            </div>
+                                            <div class="analytic_item-descr">
+                                                If you wish to experience the spirit of royal Britain, its majesty and grace, then be sure to visit the Westminster 
+                                            </div>
+                                            <div class="analytic_item-btn">
+                                                <div class="analytic_item-btn--arrow"></div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
 
-                    <div class="listing_tabs">
-                        <div class="listing_items">
-                            <div class="content-row flex-wrap">
-                                <div class="listing_item-box listing_item-box--lg content-col col-6 col-xs-12">
-                                    <div class="listing_item " data-item=001>
-                                        <div class="listing_item-figure">
-                                            <div class="listing_item-img">
-                                                <a href="object-page.html" class="img">
-                                                    <img src="assets/images/listing/item01.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="listing_item-hashes item-hashes">
-                                                <span class="hash hash-premium">premium</span>
-                                                <span class="hash hash-pro">pro</span>
-                                                <span class="hash hash-new">new building</span>
-                                            </div>
-                                            <div class='listing_item-check'>
-                                                <span class='listing_item-check--new'>новый</span>
-                                                <label class='listing_item-check--label' for=""></label>
-                                            </div>
-                                        </div>
-                                        <div class="listing_item-data">
-                                            <a class="listing_item-data--title" href="object-page.html">Дизайн</a>
-                                            <div class="listing_item-data--descr">
-                                                4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
-                                            </div>
-                                            <div class="listing_item-data--price">
-                                                £1,100,000
-                                            </div>
-                                            <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
-                                                <svg><use xlink:href="#icon-like"/></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="listing_item-box listing_item-box--lg content-col col-6 col-xs-12">
-                                    <div class="listing_item " data-item=002>
-                                        <div class="listing_item-figure">
-                                            <div class="listing_item-img">
-                                                <a href="object-page.html" class="img">
-                                                    <img src="assets/images/listing/item02.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="listing_item-hashes item-hashes">
-                                                <span class="hash hash-premium">premium</span>
-                                                <span class="hash hash-pro">pro</span>
-                                                <span class="hash hash-new">new building</span>
-                                            </div>
-                                            <div class='listing_item-check'>
-                                                <span class='listing_item-check--new'>новый</span>
-                                                <label class='listing_item-check--label' for=""></label>
-                                            </div>
-                                        </div>
-                                        <div class="listing_item-data">
-                                            <a class="listing_item-data--title" href="object-page.html">Город, индекс или цена</a>
-                                            <div class="listing_item-data--descr">
-                                                4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
-                                            </div>
-                                            <div class="listing_item-data--price">
-                                                £1,100,000
-                                            </div>
-                                            <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 liked">
-                                                <svg><use xlink:href="#icon-like"/></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="listing_item-box listing_item-box--lg content-col col-6 col-xs-12">
-                                    <div class="listing_item " data-item=003>
-                                        <div class="listing_item-figure">
-                                            <div class="listing_item-img">
-                                                <a href="object-page.html" class="img">
-                                                    <img src="assets/images/listing/item03.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="listing_item-hashes item-hashes">
-                                                <span class="hash hash-premium">premium</span>
-                                                <span class="hash hash-pro">pro</span>
-                                                <span class="hash hash-new">new building</span>
-                                            </div>
-                                            <div class='listing_item-check'>
-                                                <span class='listing_item-check--new'>новый</span>
-                                                <label class='listing_item-check--label' for=""></label>
-                                            </div>
-                                        </div>
-                                        <div class="listing_item-data">
-                                            <a class="listing_item-data--title" href="object-page.html">Отдых в аппараментах Патонг Тауэр</a>
-                                            <div class="listing_item-data--descr">
-                                                4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
-                                            </div>
-                                            <div class="listing_item-data--price">
-                                                £1,100,000
-                                            </div>
-                                            <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
-                                                <svg><use xlink:href="#icon-like"/></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="listing_item-box listing_item-box--lg content-col col-6 col-xs-12">
-                                    <div class="listing_item " data-item=004>
-                                        <div class="listing_item-figure">
-                                            <div class="listing_item-img">
-                                                <a href="object-page.html" class="img">
-                                                    <img src="assets/images/listing/item04.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="listing_item-hashes item-hashes">
-                                                <span class="hash hash-premium">premium</span>
-                                                <span class="hash hash-pro">pro</span>
-                                                <span class="hash hash-new">new building</span>
-                                            </div>
-                                            <div class='listing_item-check'>
-                                                <span class='listing_item-check--new'>новый</span>
-                                                <label class='listing_item-check--label' for=""></label>
-                                            </div>
-                                        </div>
-                                        <div class="listing_item-data">
-                                            <a class="listing_item-data--title" href="object-page.html">Отдых в аппараментах Патонг Тауэр</a>
-                                            <div class="listing_item-data--descr">
-                                                4 bed · 2 ath · 2,704 ft² · 7,840 ft² lot
-                                            </div>
-                                            <div class="listing_item-data--price">
-                                                £1,100,000
-                                            </div>
-                                            <a href="javascript:void(0);" class="listing_item-data--cta icon icon_size-4 ">
-                                                <svg><use xlink:href="#icon-like"/></svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--pagination BEGIN-->
-
-                            <div class="pagination">
-                                <span class="prev"></span>
-                                <a href="#" class="current">1</a>
-                                <a href="#">2</a>
-                                <span>...</span>
-                                <a href="#">6</a>
-                                <a href="#" class="next"></a>
-                            </div>
-
-                            <!--pagination END-->
-                        </div>
-                        <div class="listing_map">
-                            <div data-map="listing_map-box">
-                                <div id="map" class="listing_map-box--frame"></div>
-                                <script type="text/javascript">
-                                    var map;
-                                    function initMap() {
-
-                                        var mapOptions = {
-                                            mapTypeControl: false,
-                                            streetViewControl: false
-                                        };
-                                        map = new google.maps.Map(document.getElementById('map'), mapOptions );
-
-                                        var locations = [
-                                            {lat: 55.762300, lng: 37.632070},
-                                            {lat: 55.762149, lng: 37.628363},
-                                            {lat: 55.760199, lng: 37.631710},
-                                            {lat: 55.760917, lng: 37.632568}
-                                        ];
-
-
-                                        // число в url в конце соответствует значению дата-аттрибута data-item в каждом из айтемов листинга
-                                        // это может быть не обязательно число, а любой другой уникальный ключ.
-                                        // ключи нужны для того, чтоб отображать превьюхи на карте
-                                        // скрипт вначале берёт ключ из url иконки, потом ищет соответствующий айтем в листинге и клонит его на карту
-
-                                        var icons = [
-                                            {
-                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker001',
-                                                size: new google.maps.Size(72, 72)
-                                            },
-                                            {
-                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker002',
-                                                size: new google.maps.Size(72, 72)
-                                            },
-                                            {
-                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker003',
-                                                size: new google.maps.Size(72, 72)
-                                            },
-                                            {
-                                                url: './assets/svg/partials/map-mark.svg?i=custom_marker004',
-                                                size: new google.maps.Size(72, 72)
-                                            }
-                                        ];
-
-                                        var marker;
-                                        var bounds  = new google.maps.LatLngBounds();
-
-                                        for(var i = 0; i < locations.length; i++){
-                                            marker = new google.maps.Marker({
-                                                position: locations[i],
-                                                map: map,
-                                                icon: icons[i]
-                                            });
-                                            var loc = new google.maps.LatLng(locations[i].lat, locations[i].lng);
-                                            bounds.extend(loc);
-                                        }
-
-                                        map.fitBounds(bounds);
-                                        map.panToBounds(bounds);
-
-                                        google.maps.event.addListenerOnce(map, 'idle', function() {
-                                            var getZoom = map.zoom;
-                                            map.setZoom(getZoom-2);
-                                        });
-
-                                    }
-                                </script>
-                                <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
-                                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8&callback=initMap"></script>
 
                             </div>
                         </div>
-                    </div>
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <!--pagination BEGIN-->
 
+                                <div class="pagination">
+                                    <span class="prev"></span>
+                                    <a href="#" class="current">1</a>
+                                    <a href="#">2</a>
+                                    <span>...</span>
+                                    <a href="#">6</a>
+                                    <a href="#" class="next"></a>
+                                </div>
+
+                                <!--pagination END-->
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+
             </div>
 
         </div>
@@ -1083,8 +861,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
