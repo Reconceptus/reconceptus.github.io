@@ -29,6 +29,7 @@ window.functions = {
     hasheditable: require('./modules/hasheditable'),
     gallery_carousel: require('./modules/gallery-carousel'),
     listing_carousel: require('./modules/listing-carousel'),
+    articles_carousel: require('./modules/articles-carousel'),
 };
 
 // scripts

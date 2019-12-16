@@ -15,8 +15,6 @@
       padding-top: $padding-lg;
     }
     &-item {
-      
-      
       @include mq($from: desktop_xl) {
         padding-left: calc(100%/12);
         width: 25%;
@@ -36,6 +34,14 @@
         width: 100%;
         margin-bottom: $padding-xl;
       }
+    }
+  }
+  &_carousel {
+    @include mq($from: tablet_xl) {
+      margin-top: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      margin-top: 80px;
     }
   }
 }
