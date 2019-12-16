@@ -32,6 +32,7 @@ $header-height: 88px;
       color: $link;
       position: relative;
       z-index: 21;
+      .composing-box--bg_alternate &,
       .composing-box--bg_static & {
         color: $white;
       }
