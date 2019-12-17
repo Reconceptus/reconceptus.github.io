@@ -1,0 +1,78 @@
+<include src="../templates/head.html" title="Карточка объектов"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box composing-box--bg_static">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="error_page">
+                        <div class="content-row flex-justify--center">
+                            <div class="content-col">
+                                <div class="error_page-head">
+                                    <div class="error_page-bg">
+                                        <div class="custom_bg-part">
+                                            <div class="custom_bg-part--top"></div>
+                                            <div class="custom_bg-part--bottom"></div>
+                                        </div>
+                                    </div>
+                                    <div class="error_page-type">
+                                        <span>4</span>
+                                        <span>0</span>
+                                        <span>4</span>
+                                    </div>
+                                </div>
+
+                                <div class="error_page-main">
+                                    <div class="error_page-title">Страница не найдена</div>
+                                    <div class="error_page-subtitle">Текст ошибки. REplatforms is free from language barrier and always ready to listen and work with your requests</div>
+                                    <div class="error_page-cta">
+                                        <a href="index.html" class="btn btn--md btn--white">на главную</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

@@ -14,6 +14,7 @@
   width: 100%;
   margin-bottom: $padding-md;
   &--columns {
+    flex-wrap: wrap;
     @include mq($from: tablet_xl) {
       margin: 0 -24px;
       display: flex;
@@ -35,6 +36,9 @@
     }
     @include mq($until: tablet_sm) {
       margin-bottom: $padding-md;
+    }
+    &:not(:nth-child(1)):not(:nth-child(2)){
+      margin-top: $gutter-x2;
     }
   }
   &--grow {

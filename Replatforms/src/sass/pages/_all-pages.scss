@@ -4,6 +4,9 @@
 @import "article";
 @import "analytics";
 @import "faq";
+@import "user";
+@import "error";
+@import "chat";
 @import "partials/analytics/items";
 
 .composing-box {
@@ -29,6 +32,15 @@
 
   &.composing-box--bg_static {
     background-color: $brand-01;
+
+    @include mq($from: tablet_xl) {
+      padding-bottom: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      padding-bottom: $padding-xl;
+    }
+  }
+  &.composing-box--bg_user {
 
     @include mq($from: tablet_xl) {
       padding-bottom: $padding-xxl;

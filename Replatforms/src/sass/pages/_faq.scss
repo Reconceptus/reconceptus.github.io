@@ -66,10 +66,10 @@
       background-color: $white;
       display: none;
       @include mq($from: mobile_xl) {
-        padding: 20px 12.5%;
+        padding: $padding-md 12.5% 56px;
       }
       @include mq($until: mobile_xl) {
-        padding: $padding 12.5%;
+        padding: $gutter-x2 12.5% $padding-lg;
       }
     }
     .faq-item--question {

@@ -1,0 +1,125 @@
+$gradient_top_bottom: linear-gradient(to bottom, $brand-02 0%, $brand-01 100%);
+$gradient_bottom_top: linear-gradient(to bottom, $brand-01 0%, $brand-02 100%);
+
+@keyframes top-right {
+  0% {
+    border-radius: 70px 0;
+  }
+  20% {
+    border-radius: 70px 0;
+  }
+  40% {
+    border-radius: 70px 70px 70px 0;
+  }
+  60% {
+    border-radius: 70px 70px 70px 0;
+  }
+  80% {
+    border-radius: 70px;
+  }
+  100% {
+    border-radius: 70px 0;
+  }
+}
+@keyframes top-left {
+  0% {
+    border-radius: 0 70px;
+  }
+  40% {
+    border-radius: 0 70px;
+  }
+  60% {
+    border-radius: 70px 70px 0 70px;
+  }
+  80% {
+    border-radius: 70px 70px 0 70px;
+  }
+  100% {
+    border-radius: 0 70px;
+  }
+}
+@keyframes bottom-left {
+  0% {
+    border-radius: 70px 0;
+  }
+  20% {
+    border-radius: 70px 0;
+  }
+  40% {
+    border-radius: 70px 0 70px 70px;
+  }
+  60% {
+    border-radius: 70px 0 70px 70px;
+  }
+  80% {
+    border-radius: 70px;
+  }
+  100% {
+    border-radius: 70px 0;
+  }
+}
+@keyframes bottom-right {
+  0% {
+    border-radius: 0 70px;
+  }
+  40% {
+    border-radius: 0 70px;
+  }
+  60% {
+    border-radius: 0 70px 70px 70px;
+  }
+  80% {
+    border-radius: 70px;
+  }
+  100% {
+    border-radius: 0 70px;
+  }
+}
+
+.custom_bg {
+  &-part {
+    width: 280px;
+    height: 280px;
+    &--top,
+    &--bottom {
+      width: 100%;
+      height: 140px;
+      position: relative;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 140px;
+        height: 140px;
+      }
+    }
+    &--top {
+      &:before {
+        top: 0;
+        left: 0;
+        animation: top-left 6s infinite linear;
+        background: $gradient_bottom_top;
+      }
+      &:after {
+        top: 0;
+        right: 0;
+        background: $gradient_top_bottom;
+        animation: top-right 6s infinite linear;
+      }
+    }
+    &--bottom {
+      &:before {
+        bottom: 0;
+        left: 0;
+        animation: bottom-left 6s infinite linear;
+        background: $gradient_bottom_top;
+      }
+      &:after {
+        bottom: 0;
+        right: 0;
+        animation: bottom-right 6s infinite linear;
+        background: $gradient_bottom_top;
+      }
+    }
+  }
+}

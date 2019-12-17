@@ -1,0 +1,80 @@
+<include src="../templates/head.html" title="Фавориты"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="unregister"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-11 col-pull-lg-0 col-md-12">
+                                <h1 class="h1 color-font-brand-01">Мои фавориты <sub>0</sub></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="listing">
+                    <div class="listing_placeholder">
+                        <div class="content-row flex-wrap">
+                            <div class="content-col col-pull-1 col-4 col-pull-lg-0 col-lg-5 col-md-10 col-xs-12">
+                                <div class="text-box">
+                                    <p>Ваша подборка понравившихся объектов пуста. Для того, чтобы добавить объект в подборку, нажмите на сердечко на превью объекта или на странице объекта. Данный функционал доступен всем авторизованным пользователям. Для
+                                        <a href="index.html">поиска</a> недвижимости воспользуйтесь поиском на <a href="index.html">главной</a> или в меню. </p>
+                                </div>
+                                <div class="listing_placeholder-action">
+                                    <a href="#" class="btn btn--orange btn--md">Авторизация</a>
+                                </div>
+                            </div>
+                            <div class="content-col col-pull-1 col-6 col-pull-md-0 col-md-10 col-xs-12">
+                                <div class="listing_placeholder-img">
+                                    <img src="assets/images/listing/placeholder.png" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>
