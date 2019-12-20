@@ -1,5 +1,113 @@
 .chat_box {
-  &-messages {
+  &-users {
+
+  }
+  &-user {
+    background-color: $white;
+    padding: $padding $gutter-x2;
+    margin-bottom: $padding_sm;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &.current {
+      background-color: $link;
+    }
+    &--img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: $gutter-x2;
+      img {
+        @extend %full_block;
+        object-fit: cover;
+      }
+    }
+    &--info {
+      font-size: $font;
+      margin-right: $gutter-x2;
+    }
+    &--name {
+      font-weight: 600;
+      color: $text-04;
+      .current & {
+        color: $white;
+      }
+    }
+    &--role {
+      color: $text-03;
+      .current & {
+        color: $white;
+      }
+    }
+    &--messages {
+      color: $white;
+      line-height: 24px;
+      padding: 0 $gutter;
+      background-color: $ui-01;
+      border-radius: 20px;
+      margin-left: auto;
+    }
+  }
+  &-main {
     background-color: $link;
+    padding: $gutter-x2 calc(100%/9) 160px;
+  }
+  &-messages {
+    width: 736px;
+  }
+  &-message {
+    display: flex;
+    margin-bottom: $gutter-x2;
+    align-items: flex-start;
+    &.answer {
+      flex-direction: row-reverse;
+      align-items: flex-end;
+    }
+    &--ava {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: $padding_sm -1*$padding 0 0;
+      flex-shrink: 0;
+      .answer & {
+        margin: 0 0 $padding_sm -1*$padding;
+      }
+      img {
+        position: relative;
+        @extend %full_block;
+        object-fit: cover;
+      }
+    }
+    &--field {
+      background-color: #F2E6DB;
+      padding: $gutter-x2 $padding-md;
+      border-radius: 0 $gutter-x2 $gutter-x2 $gutter-x2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 620px;
+      .answer & {
+        background-color: $white;
+        border-radius: $gutter-x2 $gutter-x2 0 $gutter-x2;
+      }
+    }
+    &--user {
+      font-weight: 600;
+      color: $text-04;
+      margin-right: $padding;
+      margin-bottom: $padding;
+    }
+    &--date {
+      color: $text-03;
+      margin-bottom: $padding;
+    }
+    &--text {
+      width: 100%;
+    }
+  }
+  &-answer {
+
   }
 }
