@@ -57,10 +57,19 @@ $(document).ready(() => {
         functions.listing_views();
     }
     if ($('.sidebar-sticky').length > 0) {
-        functions.sticky_sidebar.init();
+        const headerAllow = $('.sidebar-sticky').attr('data-header-ignore');
+        functions.sticky_sidebar.init(headerAllow);
+    }
+    if ($('.chat_box').length > 0) {
+        $('.chat_box-user').click(function() {
+            $('#show_users').prop('checked', false);
+        });
     }
     if ($('.cta-sticky-wrap').length > 0) {
         functions.sticky_cta.init();
+    }
+    if ($('.message-sticky-wrap').length > 0) {
+        functions.sticky_message.init();
     }
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();

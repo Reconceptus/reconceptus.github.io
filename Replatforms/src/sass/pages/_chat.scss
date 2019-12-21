@@ -1,23 +1,109 @@
 .chat_box {
+  position: relative;
+  @include mq($from: tablet_sm) {
+    margin-bottom: $padding-xl;
+  }
+  @include mq($until: tablet_sm) {
+    margin-bottom: $padding-md;
+  }
+  @include mq($until: mobile_xl) {
+    margin-left: -1*$gutter-x2;
+    margin-right: -1*$gutter-x2;
+  }
   &-users {
+    @include mq($until: tablet_xl) {
+      position: absolute;
+      z-index: 1;
+      padding: $gutter-x2;
+    }
+    &--mobile {
+      &_check {
+        @extend %hidden_input;
+      }
+      &_btn {
 
+        @include mq($from: tablet_xl) {
+          display: none;
+        }
+        @include mq(mobile_xl, tablet_xl) {
+          width: 60px;
+          height: 60px;
+          display: block;
+        }
+        @include mq($until: mobile_xl) {
+          width: 40px;
+          height: 40px;
+          display: block;
+        }
+      }
+      &_bulls,
+      &_close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        border-width: 1px;
+        border-style: solid;
+        box-shadow: 0 4px 8px 0 rgba($black,0.16);
+      }
+      &_bulls {
+        @include mq($until: tablet_xl) {
+          border-color: $white;
+          color: $white;
+          background-color: $brand-01;
+        }
+      }
+      &_close {
+        @include mq($until: tablet_xl) {
+          padding: $padding;
+          display: none;
+          border-color: $brand-01;
+          color: $brand-01;
+
+        }
+        @include mq($until: mobile_xl) {
+          padding: $padding_sm;
+        }
+      }
+    }
   }
   &-user {
     background-color: $white;
-    padding: $padding $gutter-x2;
+
     margin-bottom: $padding_sm;
     display: flex;
     align-items: center;
     cursor: pointer;
+    @include mq($from: desktop_sm) {
+      padding: $padding $gutter-x2;
+    }
+    @include mq($until: desktop_sm) {
+      padding: $gutter;
+      position: relative;
+    }
     &.current {
       background-color: $link;
+    }
+    &--list {
+      @include mq($until: tablet_xl) {
+        display: none;
+        margin-top: $gutter-x2;
+      }
     }
     &--img {
       width: 56px;
       height: 56px;
       border-radius: 50%;
       overflow: hidden;
-      margin-right: $gutter-x2;
+
+      flex-shrink: 0;
+      @include mq($from: desktop_sm) {
+        margin-right: $gutter-x2;
+      }
+      @include mq($until: desktop_sm) {
+        margin-right: $gutter;
+      }
       img {
         @extend %full_block;
         object-fit: cover;
@@ -43,18 +129,44 @@
     &--messages {
       color: $white;
       line-height: 24px;
-      padding: 0 $gutter;
+
       background-color: $ui-01;
       border-radius: 20px;
       margin-left: auto;
+      @include mq($from: desktop_sm) {
+        padding: 0 $gutter;
+      }
+      @include mq($until: desktop_sm) {
+        position: absolute;
+        top: $gutter;
+        right: $gutter;
+        padding: 0 $padding_sm;
+      }
     }
   }
   &-main {
+
+    @include mq($from: tablet_xl) {
+      padding: $gutter-x2 calc(100%/9) 160px;
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      padding: $gutter-x2 $gutter-x2 160px $padding-xxl;
+    }
+    @include mq(mobile_xl, mobile_xl) {
+      padding: $gutter-x2 $gutter-x2 160px $padding-xxl;
+    }
+    @include mq($until: mobile_xl) {
+      padding: 88px $gutter-x2 160px;
+    }
+  }
+  &-main_box {
     background-color: $link;
-    padding: $gutter-x2 calc(100%/9) 160px;
+    position: relative;
+    min-height: 50vh;
   }
   &-messages {
     width: 736px;
+    max-width: 100%;
   }
   &-message {
     display: flex;
@@ -107,7 +219,93 @@
       width: 100%;
     }
   }
-  &-answer {
+  &-send {
 
+    @include mq($from: tablet_xl) {
+      padding: $gutter-x2 calc(100%/9);
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      padding: $gutter-x2 $gutter-x2 $gutter-x2 $padding-xxl;
+    }
+    @include mq($until: mobile_xl) {
+      padding: $gutter-x2;
+    }
+    &_wrap {
+      background-color: #c1844c;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 8px 20px 0 rgba($black,0.26);
+      &:not(.sticky){
+        left: 0;
+        right: 0;
+      }
+    }
+    &--fieldset {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    &--textarea {
+      height: 88px;
+      width: 100%;
+      border: 1px solid $brand-02;
+      border-radius: 4px;
+      resize: none;
+      margin-right: $padding_sm;
+      padding: $padding;
+    }
+    &--submit {
+      @extend %btn_reset;
+
+      flex-shrink: 0;
+      border-radius: 50%;
+      background-color: $text-04;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22Component_68_494%22%20data-name%3D%22Component%2068%20%u2013%20494%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2221%22%20height%3D%2218%22%20viewBox%3D%220%200%2021%2018%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_59%22%20data-name%3D%22Path%2059%22%20d%3D%22M4.01%2C6.03l7.51%2C3.22L4%2C8.25l.01-2.22m7.5%2C8.72L4%2C17.97V15.75l7.51-1M2.01%2C3%2C2%2C10l15%2C2L2%2C14l.01%2C7L23%2C12Z%22%20transform%3D%22translate%28-2%20-3%29%22%20fill%3D%22%23CFAE7F%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include mq($from: mobile_xl) {
+        width: 88px;
+        height: 88px;
+        background-size: 36px auto;
+      }
+      @include mq($until: mobile_xl) {
+        width: 48px;
+        height: 48px;
+        background-size: 24px auto;
+      }
+    }
+  }
+}
+
+.message-sticky {
+  &.sticky {
+    position: fixed;
+    z-index: 5;
+  }
+  &.no-drops {
+    bottom: auto;
+  }
+}
+
+#show_users {
+  @include mq($until: tablet_xl) {
+    &:checked ~ .chat_box-content {
+      .chat_box-users {
+        position: relative;
+        .chat_box-users--mobile_bulls {
+          display: none;
+        }
+        .chat_box-users--mobile_close {
+          display: flex;
+        }
+      }
+      .chat_box-user--list {
+        display: block;
+      }
+      .message-content {
+        display: none;
+      }
+    }
   }
 }

@@ -25,6 +25,7 @@ window.functions = {
     listing_views: require('./modules/listing-views'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     sticky_cta: require('./modules/sticky-cta'),
+    sticky_message: require('./modules/sticky-message'),
     contenteditable: require('./modules/contenteditable'),
     hasheditable: require('./modules/hasheditable'),
     gallery_carousel: require('./modules/gallery-carousel'),
@@ -92,10 +93,19 @@ $(document).ready(() => {
         functions.listing_views();
     }
     if ($('.sidebar-sticky').length > 0) {
-        functions.sticky_sidebar.init();
+        const headerAllow = $('.sidebar-sticky').attr('data-header-ignore');
+        functions.sticky_sidebar.init(headerAllow);
+    }
+    if ($('.chat_box').length > 0) {
+        $('.chat_box-user').click(function() {
+            $('#show_users').prop('checked', false);
+        });
     }
     if ($('.cta-sticky-wrap').length > 0) {
         functions.sticky_cta.init();
+    }
+    if ($('.message-sticky-wrap').length > 0) {
+        functions.sticky_message.init();
     }
     if ($('.contenteditable-box').length > 0) {
         functions.contenteditable.init();

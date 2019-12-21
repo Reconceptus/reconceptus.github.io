@@ -13,6 +13,7 @@ window.functions = {
     listing_views: require('./modules/listing-views'),
     sticky_sidebar: require('./modules/sticky-sidebar'),
     sticky_cta: require('./modules/sticky-cta'),
+    sticky_message: require('./modules/sticky-message'),
     contenteditable: require('./modules/contenteditable'),
     hasheditable: require('./modules/hasheditable'),
     gallery_carousel: require('./modules/gallery-carousel'),

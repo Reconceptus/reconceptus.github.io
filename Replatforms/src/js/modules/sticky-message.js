@@ -1,17 +1,17 @@
-const $sidebarWrap = $('.sidebar-sticky-wrap'),
-    $sidebar = $('.sidebar-sticky');
+const $messageWrap = $('.message-sticky-wrap'),
+    $message = $('.message-sticky');
 
-const sticky_sidebar = {
+const sticky_message = {
     params: {
         offsetTop: 0,
         wrapperHeight: 0,
-        marginTop: 0,
+        scrollTop: 0,
+        winHeight: 0,
         height: 0,
         width: 0,
         heightChangingTime: 500,
-        scrollTop: 0,
         allowMargin: 0,
-        padding: 48,
+        padding: 0,
         allowPadding: 0,
         maxMargin: 0,
         headerIgnore: false,
@@ -19,11 +19,11 @@ const sticky_sidebar = {
         breakpoint: 0, // 799
     },
     resetInners: function() {
-        this.params.offsetTop = $sidebarWrap.offset().top;
+        this.params.offsetTop = $messageWrap.offset().top;
 
-        this.params.height = $sidebar.outerHeight();
-        this.params.width = $sidebar.parent().width();
-        this.params.headerHeight = this.params.headerIgnore ? 0 : $('#header').outerHeight();
+        this.params.height = $message.outerHeight();
+        this.params.width = $message.parent().width();
+        this.params.headerHeight = 0;
 
         this.params.allowPadding =
             window.innerWidth > this.params.breakpoint ? this.params.padding : 0;
@@ -31,16 +31,17 @@ const sticky_sidebar = {
 
         this.params.wrapperHeight =
             window.innerWidth > this.params.breakpoint
-                ? $sidebarWrap.outerHeight()
-                : $sidebarWrap.outerHeight() - 0.4 * window.innerWidth;
+                ? $messageWrap.outerHeight()
+                : $messageWrap.outerHeight() - 0.4 * window.innerWidth;
     },
     setInners: function() {
-        this.params.offsetTop = $sidebarWrap.offset().top;
+        this.params.offsetTop = $messageWrap.offset().top;
 
         this.params.scrollTop = $(window).scrollTop();
-        this.params.height = $sidebar.outerHeight();
-        this.params.width = $sidebar.parent().width();
-        this.params.headerHeight = this.params.headerIgnore ? 0 : $('#header').outerHeight();
+        this.params.winHeight = $(window).height();
+        this.params.height = $message.outerHeight();
+        this.params.width = $message.parent().width();
+        this.params.headerHeight = 0;
 
         this.params.allowPadding =
             window.innerWidth > this.params.breakpoint ? this.params.padding : 0;
@@ -48,21 +49,20 @@ const sticky_sidebar = {
 
         this.params.wrapperHeight =
             window.innerWidth > this.params.breakpoint
-                ? $sidebarWrap.outerHeight()
-                : $sidebarWrap.outerHeight() - 0.4 * window.innerWidth;
+                ? $messageWrap.outerHeight()
+                : $messageWrap.outerHeight() - 0.4 * window.innerWidth;
     },
     changeMargin: function() {
-        // if (this.params.height > this.params.wrapperHeight) {
-        //     $sidebar.removeClass('sticky').attr('style', '');
-        //     return;
-        // }
-        if (this.params.offsetTop < this.params.scrollTop + this.params.allowMargin) {
+        if (
+            this.params.offsetTop + this.params.wrapperHeight >
+            this.params.scrollTop + this.params.winHeight
+        ) {
             this.params.marginTop =
                 this.params.scrollTop + this.params.allowMargin - this.params.offsetTop;
             this.params.maxMargin = this.params.wrapperHeight - this.params.height;
 
             if (this.params.marginTop + this.params.height > this.params.wrapperHeight) {
-                $sidebar
+                $message
                     .removeClass('sticky')
                     .addClass('no-drops')
                     .css({
@@ -71,37 +71,37 @@ const sticky_sidebar = {
                         width: this.params.width + 'px',
                     });
             } else {
-                $sidebar
+                $message
                     .addClass('sticky')
                     .removeClass('no-drops')
                     .css({
-                        top: this.params.allowMargin + 'px',
+                        // top: this.params.allowMargin + 'px',
                         width: this.params.width + 'px',
-                        transform: 'translateY(0)',
+                        // transform: 'translateY(0)',
                     });
             }
         } else {
-            $sidebar.removeClass('sticky').attr('style', '');
+            $message.removeClass('sticky').attr('style', '');
         }
     },
     translate: function(event) {
-        if ($sidebar.length < 1) return false;
-        if ($sidebar.hasClass('sticky')) {
+        if ($message.length < 1) return false;
+        if ($message.hasClass('sticky')) {
             if (event === 'add') {
-                $sidebar.addClass('temp-sticky').css({
+                $message.addClass('temp-sticky').css({
                     transform:
                         'translateY(' + (this.params.marginTop - this.params.allowMargin) + 'px)',
                 });
             } else {
-                $sidebar.removeClass('temp-sticky');
+                $message.removeClass('temp-sticky');
                 this.resetInners();
                 this.changeMargin();
             }
-        } else if ($sidebar.hasClass('no-drops')) {
+        } else if ($message.hasClass('no-drops')) {
             if (event === 'add') {
-                $sidebar.addClass('temp-sticky');
+                $message.addClass('temp-sticky');
             } else {
-                $sidebar.removeClass('temp-sticky');
+                $message.removeClass('temp-sticky');
                 this.resetInners();
                 this.changeMargin();
             }
@@ -123,18 +123,19 @@ const sticky_sidebar = {
         this.changeMargin();
 
         $(window).scroll(() => {
-            if ($sidebar.hasClass('temp-sticky')) return false;
+            if ($message.hasClass('temp-sticky')) return false;
             this.params.scrollTop = $(window).scrollTop();
             this.resetInners();
             this.changeMargin();
         });
 
         $(window).resize(() => {
-            if ($sidebar.hasClass('temp-sticky')) return false;
+            if ($message.hasClass('temp-sticky')) return false;
+            this.params.winHeight = $(window).height();
             this.resetInners();
             this.changeMargin();
         });
     },
 };
 
-module.exports = sticky_sidebar;
+module.exports = sticky_message;
