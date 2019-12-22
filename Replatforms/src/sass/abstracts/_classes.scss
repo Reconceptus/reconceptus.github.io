@@ -81,6 +81,12 @@
   }
 }
 
+.position {
+  &-relative {
+    position: relative;
+  }
+}
+
 .pseudo-content {
   content: "";
 }

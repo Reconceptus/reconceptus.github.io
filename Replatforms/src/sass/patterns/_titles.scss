@@ -34,6 +34,20 @@ Styleguide styleguide.typography.headings
       font-size: 36px;
     }
   }
+  &--lg {
+    font-size: 80px;
+    line-height: (96/80);
+    font-weight: 300;
+    @include mq($from: desktop_sm) {
+      font-size: 80px;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      font-size: 56px;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: 40px;
+    }
+  }
 }
 .h2 {
   font-size: 32px;

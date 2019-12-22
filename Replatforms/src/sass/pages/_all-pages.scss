@@ -7,10 +7,10 @@
 @import "user";
 @import "error";
 @import "chat";
+@import "service";
 @import "partials/analytics/items";
 
 .composing-box {
-
   @include mq($from: tablet_sm) {
     padding-top: $padding-lg;
     padding-bottom: $padding-md;
