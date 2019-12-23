@@ -80,6 +80,9 @@ $(document).ready(() => {
     if ($('.text-box').length > 0) {
         functions.text_box();
     }
+    if ($('.home_bg').length > 0) {
+        functions.home_bg();
+    }
 
     /* --------------------------------- document resize --------------------------------- */
 

@@ -60,18 +60,8 @@ Styleguide styleguide.typography.headings
   font-weight: 400;
 }
 
-//.title {
-//  font-weight: 500;
-//  &--lg {
-//    font-size: 32px;
-//  }
-//  &--md {
-//    font-size: 28px;
-//  }
-//  &--sm {
-//    font-size: 22px;
-//  }
-//  &--xs {
-//    font-size: 18px;
-//  }
-//}
+.title {
+  &--sub {
+    margin-top: $padding-md;
+  }
+}

@@ -19,4 +19,5 @@ window.functions = {
     gallery_carousel: require('./modules/gallery-carousel'),
     listing_carousel: require('./modules/listing-carousel'),
     articles_carousel: require('./modules/articles-carousel'),
+    home_bg: require('./modules/home-bg'),
 };

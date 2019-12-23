@@ -31,6 +31,7 @@ window.functions = {
     gallery_carousel: require('./modules/gallery-carousel'),
     listing_carousel: require('./modules/listing-carousel'),
     articles_carousel: require('./modules/articles-carousel'),
+    home_bg: require('./modules/home-bg'),
 };
 
 // scripts
@@ -115,6 +116,9 @@ $(document).ready(() => {
     }
     if ($('.text-box').length > 0) {
         functions.text_box();
+    }
+    if ($('.home_bg').length > 0) {
+        functions.home_bg();
     }
 
     /* --------------------------------- document resize --------------------------------- */

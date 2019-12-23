@@ -177,6 +177,7 @@ module.exports = function(gulp, plugins) {
                 'svg:copy',
                 'fonts:copy',
                 'json:copy',
+                'media:copy',
                 'html:build',
                 'js:build',
                 'img:optimize',
