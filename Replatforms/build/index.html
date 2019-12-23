@@ -90,10 +90,14 @@
 
 
         <div id="main" class="main">
+
+            <!--    на блок home_bg нужно сделать на бэке проверку на девайс.. если мобилка или планшет - не показывать его вообще    -->
+            <!--    я его стилями скрыл для мобилы/планшета, но без проверки видео будет просто зря подгружаться    -->
+
             <div class="home_bg">
                 <div class="content content--lg">
                     <div class="content-row flex-justify--right">
-                        <div class="content-col col-5">
+                        <div class="content-col col-5 col-md-3">
                             <div class="home_bg-video_frame">
                                 <video muted autoplay loop>
                                     <source src="assets/media/videohive-earth.mp4" type="video/mp4">
@@ -126,7 +130,7 @@
                         </div>
                         <div class="composing-heading">
                             <div class="content-row">
-                                <div class="content-col col-pull-1 col-5 col-pull-lg-0 col-lg-12">
+                                <div class="content-col col-pull-1 col-5 col-pull-lg-0 col-lg-7 col-md-9 col-sm-12">
                                     <h1 class="h1--sm color-font-brand-01">Imagine world <br>of Real Estate without boundaries…</h1>
                                     <div class="title--sub h3 color-font-brand-01">We will carefully guide you through propech reality</div>
                                 </div>
@@ -171,7 +175,7 @@
                     <div class="content content--lg">
                         <div class="home_page-short_info text-box">
                             <div class="content-row">
-                                <div class="content-col col-pull-1 col-pull-lg-0 col-6 col-lg-12">
+                                <div class="content-col col-pull-1 col-pull-lg-0 col-6 col-lg-7 col-md-9 col-sm-12">
                                     <div class="h2">Любые операции с недвижимостью по всему миру. </div>
                                     <div class="h2">Идеально <a href="#">для риэлторов</a>.</div>
                                 </div>
@@ -185,17 +189,17 @@
                             </figure>
                             <div class="home_page-video_gallery--list">
                                 <div class="home_page-video_gallery--item">
-                                    <div class="home_page-video_gallery--item_img" data-video-src="https://www.youtube.com/watch?v=tiMNy1DJ2d8">
+                                    <div class="home_page-video_gallery--item_img" data-open-modal="video" data-video-src="tiMNy1DJ2d8">
                                         <img src="https://img.youtube.com/vi/tiMNy1DJ2d8/maxresdefault.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="home_page-video_gallery--item">
-                                    <div class="home_page-video_gallery--item_img" data-video-src="https://www.youtube.com/watch?v=WojIaFsnLGk">
+                                    <div class="home_page-video_gallery--item_img" data-open-modal="video" data-video-src="WojIaFsnLGk">
                                         <img src="https://img.youtube.com/vi/WojIaFsnLGk/maxresdefault.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="home_page-video_gallery--item">
-                                    <div class="home_page-video_gallery--item_img" data-video-src="https://www.youtube.com/watch?v=eBZ7AWMfuKA">
+                                    <div class="home_page-video_gallery--item_img" data-open-modal="video" data-video-src="eBZ7AWMfuKA">
                                         <img src="https://img.youtube.com/vi/eBZ7AWMfuKA/maxresdefault.jpg" alt="">
                                     </div>
                                 </div>
@@ -217,10 +221,10 @@
                                 </ul>
                                 <div class="home_page-tabs--sections">
                                     <div class="home_page-tabs--section" data-section="homepage_tab_01">
-                                        <div class="content-row">
-                                            <div class="content-col col-pull-1 col-3">
+                                        <div class="content-row flex-wrap">
+                                            <div class="content-col col-pull-1 col-3 col-pull-lg-0 col-lg-4 col-sm-12">
                                                 <div class="home_page-tabs--section_figure">
-                                                    <figure data-video-src="https://www.youtube.com/watch?v=tiMNy1DJ2d8">
+                                                    <figure data-open-modal="video" data-video-src="tiMNy1DJ2d8">
                                                         <img src="https://img.youtube.com/vi/tiMNy1DJ2d8/maxresdefault.jpg" alt="">
                                                     </figure>
                                                 </div>
@@ -231,7 +235,7 @@
                                                     <a href="#" class="btn btn--md btn--orange">read more</a>
                                                 </div>
                                             </div>
-                                            <div class="content-col col-pull-1 col-6">
+                                            <div class="content-col col-pull-1 col-6 col-lg-7 col-sm-12 col-pull-sm-0">
                                                 <ul class="home_page-tabs--section_list">
                                                     <li>
                                                         <div class="home_page-tabs--section_list_num">1.</div>
@@ -270,8 +274,8 @@
                                         </div>
                                     </div>
                                     <div class="home_page-tabs--section" data-section="homepage_tab_02">
-                                        <div class="content-row">
-                                            <div class="content-col col-pull-1 col-3">
+                                        <div class="content-row flex-wrap">
+                                            <div class="content-col col-pull-1 col-3 col-pull-lg-0 col-lg-4  col-sm-12">
                                                 <div class="home_page-tabs--section_text text-box">
                                                     <p>Текст про услугу очень коротко. he real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by periodic fluctuations in the leading indicators of business activity caused by the imbalance of supply and demand. The real estate market is particularly prone to cyclicality since often supply does not keep pace with the rapidly changing demand.</p>
                                                 </div>
@@ -279,7 +283,7 @@
                                                     <a href="#" class="btn btn--md btn--orange">read more</a>
                                                 </div>
                                             </div>
-                                            <div class="content-col col-pull-1 col-6">
+                                            <div class="content-col col-pull-1 col-6 col-lg-7 col-sm-12 col-pull-sm-0">
                                                 <ul class="home_page-tabs--section_list">
                                                     <li>
                                                         <div class="home_page-tabs--section_list_num">1.</div>
@@ -318,10 +322,10 @@
                                         </div>
                                     </div>
                                     <div class="home_page-tabs--section" data-section="homepage_tab_03">
-                                        <div class="content-row">
-                                            <div class="content-col col-pull-1 col-3">
+                                        <div class="content-row flex-wrap">
+                                            <div class="content-col col-pull-1 col-3 col-pull-lg-0 col-lg-4 col-sm-12">
                                                 <div class="home_page-tabs--section_figure">
-                                                    <figure data-video-src="https://www.youtube.com/watch?v=eBZ7AWMfuKA">
+                                                    <figure data-open-modal="video" data-video-src="eBZ7AWMfuKA">
                                                         <img src="https://img.youtube.com/vi/eBZ7AWMfuKA/maxresdefault.jpg" alt="">
                                                     </figure>
                                                 </div>
@@ -332,7 +336,7 @@
                                                     <a href="#" class="btn btn--md btn--orange">read more</a>
                                                 </div>
                                             </div>
-                                            <div class="content-col col-pull-1 col-6">
+                                            <div class="content-col col-pull-1 col-6 col-lg-7 col-sm-12 col-pull-sm-0">
                                                 <ul class="home_page-tabs--section_list">
                                                     <li>
                                                         <div class="home_page-tabs--section_list_num">1.</div>
@@ -359,8 +363,8 @@
                                         </div>
                                     </div>
                                     <div class="home_page-tabs--section" data-section="homepage_tab_04">
-                                        <div class="content-row">
-                                            <div class="content-col col-pull-1 col-3">
+                                        <div class="content-row flex-wrap">
+                                            <div class="content-col col-pull-1 col-3 col-pull-lg-0 col-lg-4 col-sm-12">
                                                 <div class="home_page-tabs--section_text text-box">
                                                     <p>Текст про услугу очень коротко. he real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by periodic fluctuations in the leading indicators of business activity caused by the imbalance of supply and demand. The real estate market is particularly prone to cyclicality since often supply does not keep pace with the rapidly changing demand.</p>
                                                 </div>
@@ -368,7 +372,7 @@
                                                     <a href="#" class="btn btn--md btn--orange">read more</a>
                                                 </div>
                                             </div>
-                                            <div class="content-col col-pull-1 col-6">
+                                            <div class="content-col col-pull-1 col-6 col-lg-7 col-sm-12 col-pull-sm-0">
                                                 <ul class="home_page-tabs--section_list">
                                                     <li>
                                                         <div class="home_page-tabs--section_list_num">1.</div>
@@ -403,8 +407,8 @@
                                         </div>
                                     </div>
                                     <div class="home_page-tabs--section" data-section="homepage_tab_05">
-                                        <div class="content-row">
-                                            <div class="content-col col-pull-1 col-3">
+                                        <div class="content-row flex-wrap">
+                                            <div class="content-col col-pull-1 col-3 col-pull-lg-0 col-lg-4 col-sm-12">
                                                 <div class="home_page-tabs--section_text text-box">
                                                     <p>Текст про услугу очень коротко. he real estate market, like the economy as a whole, is developing cyclically, and its cycles are determined by periodic fluctuations in the leading indicators of business activity caused by the imbalance of supply and demand. The real estate market is particularly prone to cyclicality since often supply does not keep pace with the rapidly changing demand.</p>
                                                 </div>
@@ -412,7 +416,7 @@
                                                     <a href="#" class="btn btn--md btn--orange">read more</a>
                                                 </div>
                                             </div>
-                                            <div class="content-col col-pull-1 col-6">
+                                            <div class="content-col col-pull-1 col-6 col-lg-7 col-sm-12 col-pull-sm-0">
                                                 <ul class="home_page-tabs--section_list">
                                                     <li>
                                                         <div class="home_page-tabs--section_list_num">1.</div>
@@ -785,6 +789,245 @@
         </div>
     </div>
 </div>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <div class="modal_container" data-modal="signin">
+        <div class="content content--lg">
+            <div class="content-row">
+                <div class="content-col col-5 col-sm-12">
+                    <div class="modal_box-close modal_close"></div>
+                    <div class="modal_box">
+                        <button class="modal_close icon icon_size-3" type="button">
+                            <svg><use xlink:href="#icon-close_lg"/></svg>
+                        </button>
+                        <div class="modal_box-main">
+                            <h3 class="modal_box-main--title h2">Вход</h3>
+                            <form action="#">
+                                <div class="form-fieldset">
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <input type="text" name="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="form-input form-password">
+                                            <input type="password" name="password" placeholder="Пароль">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-fieldset">
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <div class="form-label">Войти через аккаунт</div>
+                                            <div class="socials">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-google"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-facebook"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-instagram"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-twitter"/></svg>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="form-checkbox">
+                                            <label class="checkbox-item">
+                                                <input type="checkbox" name="remember" checked>
+                                                <span class="checkbox-label">запомнить меня</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="form-field">
+                                        <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
+                                    </div>
+                                    <div class="flex-box flex-justify--space">
+                                        <a href="javascript:void(0);" data-open-modal="signup" class="link_simple">регистрация</a>
+                                        <a href="javascript:void(0);" data-open-modal="reset_password" class="link_simple">забыл пароль</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal_container" data-modal="signup">
+        <div class="content content--lg">
+            <div class="content-row">
+                <div class="content-col col-5 col-sm-12">
+                    <div class="modal_box-close modal_close"></div>
+                    <div class="modal_box">
+                        <button class="modal_close icon icon_size-3" type="button">
+                            <svg><use xlink:href="#icon-close_lg"/></svg>
+                        </button>
+                        <div class="modal_box-main">
+                            <h3 class="modal_box-main--title h2">Регистрация</h3>
+                            <form action="#">
+                                <div class="form-fieldset">
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <input type="text" name="name" placeholder="Представьтесь">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <input type="text" name="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="form-input form-password">
+                                            <input type="password" name="password" placeholder="Пароль">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-fieldset">
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <div class="form-label">Войти через аккаунт</div>
+                                            <div class="socials">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-google"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-facebook"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-instagram"/></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="icon icon_size-4">
+                                                            <svg><use xlink:href="#icon-social-twitter"/></svg>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="form-checkbox">
+                                            <label class="checkbox-item">
+                                                <input type="checkbox" name="remember" checked>
+                                                <span class="checkbox-label">запомнить меня</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="form-field">
+                                        <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
+                                    </div>
+                                    <div class="flex-box">
+                                        <a href="javascript:void(0);" data-open-modal="signin" class="link_simple">вход</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal_container" data-modal="reset_password">
+        <div class="content content--lg">
+            <div class="content-row">
+                <div class="content-col col-5 col-sm-12">
+                    <div class="modal_box-close modal_close"></div>
+                    <div class="modal_box">
+                        <button class="modal_close icon icon_size-3" type="button">
+                            <svg><use xlink:href="#icon-close_lg"/></svg>
+                        </button>
+                        <div class="modal_box-main">
+                            <h3 class="modal_box-main--title h2">Сброс пароля</h3>
+                            <form action="#">
+                                <div class="form-fieldset">
+                                    <div class="form-field">
+                                        <div class="form-input">
+                                            <div class="form-label">Напишите емейл, указанный при регистрации:</div>
+                                            <input type="text" name="email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+    <!--                                <button type="submit" class="btn btn&#45;&#45;md btn&#45;&#45;full btn&#45;&#45;orange">дальше</button>-->
+                                    <button type="button"
+                                            data-open-modal="reset_password_success"
+                                            class="btn btn--md btn--full btn--orange">
+                                        дальше
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal_container" data-modal="reset_password_success">
+        <div class="content content--lg">
+            <div class="content-row">
+                <div class="content-col col-5 col-sm-12">
+                    <div class="modal_box-close modal_close"></div>
+                    <div class="modal_box">
+                        <button class="modal_close icon icon_size-3" type="button">
+                            <svg><use xlink:href="#icon-close_lg"/></svg>
+                        </button>
+                        <div class="modal_box-main">
+                            <h3 class="modal_box-main--title h2">Сброс пароля</h3>
+                            <div class="form-label">На ваш емейл выслано письмо с инструкций для сброса пароля.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal_container centered" data-modal="video">
+        <div class="content content--lg">
+            <div class="content-row flex-justify--center">
+                <div class="content-col">
+                    <div class="modal_box-close modal_close"></div>
+                    <div class="modal_box full">
+                        <button class="modal_close icon icon_size-3" type="button">
+                            <svg><use xlink:href="#icon-close_lg"/></svg>
+                        </button>
+
+                        <div class="modal_box-main modal_box-main--video">
+                            <iframe src="" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -811,6 +1054,8 @@
 
 
 </script>
+
+
 
 
 <!--script-->

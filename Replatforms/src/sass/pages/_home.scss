@@ -6,6 +6,9 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    @include mq($until: tablet_sm) {
+      display: none;
+    }
     &-video_frame {
       width: 100%;
       height: 100vh;
@@ -54,9 +57,10 @@
     &-fieldset {
       display: flex;
 
-      box-shadow: 0 0 32px 18px $white;
+      
       @include mq($from: tablet_sm) {
         border-radius: 0 40px 40px 0;
+        box-shadow: 0 0 32px 18px $white;
       }
       @include mq($until: tablet_sm) {
         flex-direction: column;
@@ -127,25 +131,37 @@
         flex-shrink: 0;
       }
       &_wrap {
-        margin-top: $padding-xxl;
-        margin-bottom: 80px;
         position: relative;
-        border-radius: 0 100px 100px 0;
-        padding: $padding-lg $padding-lg $padding-lg 0;
-        background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
-        &:before {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          right: 100%;
-          width: 50vw;
-          background-color: $white;
+        
+        @include mq(tablet_sm, tablet_xl) {
+          margin-bottom: 80px;
         }
+        @include mq($from: tablet_sm) {
+          padding: $padding-lg $padding-lg $padding-lg 0;
+          margin-top: $padding-xxl;
+          background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
+          border-radius: 0 100px 100px 0;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            width: 50vw;
+            background-color: $white;
+          }
+        }
+        @include mq($until: tablet_sm) {
+          margin: $padding-xl 0 0;
+        }
+        
       }
     }
   }
   &_arrow {
+    @include mq($until: tablet_xl) {
+      display: none;
+    }
     &-down {
       width: 48px;
       height: 96px;
@@ -157,20 +173,55 @@
   }
   &_section {
     &:not(:last-child){
-      margin-bottom: 2*$padding-xxl;
+      
+      @include mq($from: desktop_xl) {
+        margin-bottom: 2*$padding-xxl;
+      }
+      @include mq(tablet_sm, desktop_xl) {
+        margin-bottom: $padding-xxl;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
     }
   }
   &_page {
     position: relative;
     &-main {
-      padding: 2*$padding-xxl 0 $padding-xxl;
+      
+      @include mq($from: desktop_xl) {
+        padding: 2*$padding-xxl 0 $padding-xxl;
+      }
+      @include mq(tablet_xl, desktop_xl) {
+        padding: $padding-xxl 0;
+      }
+      @include mq($until: tablet_xl) {
+        padding: $padding-xl 0 $padding-xxl;
+      }
     }
     &-short_info {
-      margin-bottom: $padding-xxl;
+      
+      @include mq($from: tablet_sm) {
+        margin-bottom: $padding-xxl;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: $padding-xl;
+      }
+      @include mq($until: mobile_xl) {
+        .h2 {
+          font-size: $font-md;
+        }
+      }
     }
     &-video_gallery {
       position: relative;
-      padding-bottom: $padding-xxl;
+      
+      @include mq($from: tablet_xl) {
+        padding-bottom: $padding-xxl;
+      }
+      @include mq(mobile_xl, tablet_xl) {
+        padding-bottom: $padding-xl;
+      }
       figure {
         width: 100%;
         height: 0;
@@ -183,30 +234,61 @@
         left: 0;
         right: 0;
         bottom: 0;
-        border-radius: 0 150px 0 0;
         overflow: hidden;
+        @include mq($from: tablet_sm) {
+          border-radius: 0 150px 0 0;
+        }
+        @include mq($until: tablet_sm) {
+          border-radius: 0 $padding-xl 0 0;
+        }
       }
       img {
         @extend %full_block;
         object-fit: cover;
       }
       &--list {
-        position: absolute;
-        bottom: 0;
+        
         display: flex;
-        left: calc(100%/12);
-        right: calc(100%/12);
+        
+        @include mq($from: tablet_xl) {
+          left: calc(100%/12);
+          right: calc(100%/12);
+          position: absolute;
+          bottom: 0;
+        }
+        @include mq(mobile_xl, tablet_xl) {
+          left: $gutter-x2;
+          right: $gutter-x2;
+          position: absolute;
+          bottom: 0;
+        }
+        @include mq($until: mobile_xl) {
+          flex-wrap: wrap;
+          margin-top: -1*$gutter-x2;
+        }
       }
       &--item {
-        width: 20%;
-        padding: 0 $gutter;
+        @include mq($from: mobile_xl) {
+          width: 20%;
+          padding: 0 $gutter;
+        }
+        @include mq($until: mobile_xl) {
+          width: 50%;
+          padding: 0 6px $gutter;
+        }
         &_img {
           width: 100%;
           height: 0;
-          padding-bottom: 208%;
+          
           position: relative;
           box-shadow: 0 16px 32px 0 rgba($black,0.16);
           cursor: pointer;
+          @include mq($from: mobile_xl) {
+            padding-bottom: 208%;
+          }
+          @include mq($until: mobile_xl) {
+            padding-bottom: 50%;
+          }
           img {
             position: absolute;
             top: 0;
@@ -225,11 +307,14 @@
       }
       &--list {
         display: flex;
+        @include mq($until: mobile_xl) {
+          flex-wrap: wrap;
+        }
       }
       &--label {
         width: 100%;
         max-width: calc(100%/6);
-        height: 96px;
+        
         display: flex;
         align-items: center;
         justify-content: center;
@@ -240,16 +325,46 @@
         background-color: $text-04;
         color: $text-03;
         transition: all 0.2s;
+        @include mq($from: desktop_sm) {
+          height: 96px;
+          font-size: $font-lg;
+        }
+        @include mq(tablet_sm, desktop_sm) {
+          height: 64px;
+          font-size: $font-md;
+        }
+        @include mq($until: tablet_sm) {
+          height: $padding-lg;
+          font-size: $font;
+        }
+        @include mq($until: mobile_xl) {
+          max-width: none;
+        }
         @include hover(){
           background-color: darken($text-04,8);
         }
       }
       &--section {
         display: none;
-        padding: $padding-xxl 0;
+        
         background-color: $white;
+        @include mq($from: desktop_sm) {
+          padding: $padding-xxl 0;
+        }
+        @include mq(tablet_sm, desktop_sm) {
+          padding: $padding-xl $gutter-x2;
+        }
+        @include mq(mobile_xl, tablet_sm) {
+          padding: $padding-lg $gutter-x2;
+        }
+        @include mq($until: mobile_xl) {
+          padding: $gutter-x2;
+        }
         &_figure {
           margin-bottom: $padding-lg;
+          @include mq($until: tablet_sm) {
+            max-width: 360px;
+          }
           figure {
             width: 100%;
             height: 0;
@@ -273,11 +388,26 @@
         &_list {
           display: flex;
           flex-wrap: wrap;
+          @include mq($until: tablet_sm) {
+            margin-top: $padding-lg;
+          }
           li {
             width: 100%;
-            max-width: 33.3333%;
-            padding-right: $gutter-x2;
-            margin-bottom: $padding-lg;
+            
+            
+            @include mq($from: tablet_xl) {
+              max-width: 33.3333%;
+              padding-right: $gutter-x2;
+              margin-bottom: $padding-lg;
+            }
+            @include mq(mobile_xl, tablet_xl) {
+              max-width: 50%;
+              padding-right: $gutter-x2;
+              margin-bottom: $padding-lg;
+            }
+            @include mq($until: mobile_xl) {
+              margin-bottom: $gutter-x2;
+            }
           }
           &_num {
             font-size: $font-lg;
@@ -288,17 +418,38 @@
     }
     &-about {
       &--title {
-        margin-bottom: $padding-xxl;
+        
+        @include mq($from: desktop_sm) {
+          margin-bottom: $padding-xxl;
+        }
+        @include mq(mobile_xl, desktop_sm) {
+          margin-bottom: $padding-xl;
+        }
+        @include mq($until: mobile_xl) {
+          font-size: $font-md;
+          margin-bottom: $padding-lg;
+        }
       }
       &--video {
-        margin-bottom: 60px;
+        @include mq($from: mobile_xl) {
+          margin-bottom: 60px;
+        }
+        @include mq($until: mobile_xl) {
+          margin-bottom: $padding-md;
+        }
         &_frame {
           width: 100%;
           height: 0;
           padding-bottom: 66%;
           overflow: hidden;
           position: relative;
-          border-radius: 150px 0 0 0;
+          
+          @include mq($from: tablet_sm) {
+            border-radius: 150px 0 0 0;
+          }
+          @include mq($until: tablet_sm) {
+            border-radius: $padding-xl 0 0 0;
+          }
           iframe {
             position: absolute;
             top: 0;

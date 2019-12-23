@@ -6,12 +6,14 @@ const modal = {
     modal: {
         data: '',
         isOpened: false,
+        video: '',
     },
     init: function() {
         $modalBtn.click(e => {
             e.preventDefault;
             // this.close();
             this.modal.data = e.target.dataset.openModal;
+            this.modal.video = e.target.dataset.videoSrc;
             if (this.modal.isOpened) {
                 this.reopen();
             } else {
@@ -20,11 +22,30 @@ const modal = {
         });
         $modalClose.click(e => {
             e.preventDefault;
+
+            if (this.modal.data == 'video') {
+                let videoBox = $('[data-modal="' + this.modal.data + '"]').find(
+                    '.modal_box-main--video',
+                );
+                videoBox.html('');
+            }
+
             this.modal.data = '';
             this.close();
         });
     },
     open: function() {
+        if (this.modal.data == 'video') {
+            let videoBox = $('[data-modal="' + this.modal.data + '"]').find(
+                '.modal_box-main--video',
+            );
+            videoBox.html(
+                '<iframe frameborder="0" src="https://www.youtube.com/embed/' +
+                    this.modal.video +
+                    '?mode=opaque&amp;rel=0&amp;autohide=1&amp;showinfo=0&amp;wmode=transparent"></iframe>',
+            );
+        }
+
         $('[data-modal="' + this.modal.data + '"]').addClass('visible');
         $('[data-modal="' + this.modal.data + '"]').addClass('current');
         functions.ovh.add();

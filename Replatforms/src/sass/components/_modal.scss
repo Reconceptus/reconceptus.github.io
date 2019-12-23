@@ -72,6 +72,12 @@
       &.wide {
         padding: $padding-xxl 20%;
       }
+      &.full {
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        max-width: calc(100vw - 2*#{$padding-lg});
+      }
     }
     @include mq($until: mobile_xl) {
       height: 100vh;
@@ -104,8 +110,13 @@
       &--title {
         margin-bottom: $padding-md;
       }
-      &--text {
-
+      &--video {
+        height: 100%;
+        iframe {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
       }
       &--cta {
         margin-top: 40px;
