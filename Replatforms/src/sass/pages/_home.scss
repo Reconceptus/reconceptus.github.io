@@ -137,7 +137,8 @@
           padding: $padding-lg $padding-lg $padding-lg 0;
           margin-top: $padding-xxl;
           margin-bottom: 80px;
-          background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
+          //background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
+          background-color: rgba($white,0.2);
           border-radius: 0 100px 100px 0;
           &:before {
             content: "";
@@ -146,7 +147,7 @@
             bottom: 0;
             right: 100%;
             width: 50vw;
-            background-color: $white;
+            background-color: rgba($white,0.2);
           }
         }
         @include mq($until: tablet_sm) {
