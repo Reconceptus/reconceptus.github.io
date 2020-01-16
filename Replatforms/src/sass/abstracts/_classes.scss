@@ -94,13 +94,6 @@
   display: none !important;
 }
 
-.invalid {
-  color: rgba(255,128,124,.5);
-  input, textarea {background-color: rgba(255,128,125,1)}
-  display: flex;
-}
-
-
 .desktop-hidden {
   @include mq($from: tablet_xl) {
     display: none !important;

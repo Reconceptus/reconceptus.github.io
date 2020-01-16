@@ -83,6 +83,9 @@ $(document).ready(() => {
     if ($('.home_bg').length > 0) {
         functions.home_bg();
     }
+    // if ($('[data-form]').length > 0) {
+    //     functions.validation.setDefaults();
+    // }
 
     /* --------------------------------- document resize --------------------------------- */
 

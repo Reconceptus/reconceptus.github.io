@@ -776,18 +776,22 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main">
+                        <div class="modal_box-main" data-form="signin">
                             <h3 class="modal_box-main--title h2">Вход</h3>
                             <form action="#">
                                 <div class="form-fieldset">
                                     <div class="form-field">
-                                        <div class="form-input">
-                                            <input type="text" name="email" placeholder="Email">
+                                        <div class="form-field--element">
+                                            <div class="form-input">
+                                                <input type="text" name="email" placeholder="Email">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-field">
-                                        <div class="form-input form-password">
-                                            <input type="password" name="password" placeholder="Пароль">
+                                        <div class="form-field--element">
+                                            <div class="form-input form-password">
+                                                <input type="password" name="password" placeholder="Пароль">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -855,23 +859,29 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main">
+                        <div class="modal_box-main" data-form="signup">
                             <h3 class="modal_box-main--title h2">Регистрация</h3>
                             <form action="#">
                                 <div class="form-fieldset">
                                     <div class="form-field">
-                                        <div class="form-input">
-                                            <input type="text" name="name" placeholder="Представьтесь">
+                                        <div class="form-field--element">
+                                            <div class="form-input">
+                                                <input type="text" name="name" placeholder="Представьтесь">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-field">
-                                        <div class="form-input">
-                                            <input type="text" name="email" placeholder="Email">
+                                        <div class="form-field--element">
+                                            <div class="form-input">
+                                                <input type="text" name="email" placeholder="Email">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-field">
-                                        <div class="form-input form-password">
-                                            <input type="password" name="password" placeholder="Пароль">
+                                        <div class="form-field--element">
+                                            <div class="form-input form-password">
+                                                <input type="password" name="password" placeholder="Пароль">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -938,21 +948,22 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main">
+                        <div class="modal_box-main" data-form="reset-password">
                             <h3 class="modal_box-main--title h2">Сброс пароля</h3>
                             <form action="#">
                                 <div class="form-fieldset">
                                     <div class="form-field">
-                                        <div class="form-input">
-                                            <div class="form-label">Напишите емейл, указанный при регистрации:</div>
-                                            <input type="text" name="email" placeholder="Email">
+                                        <div class="form-field--element">
+                                            <div class="form-input">
+                                                <div class="form-label">Напишите емейл, указанный при регистрации:</div>
+                                                <input type="text" name="email" placeholder="Email">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-actions">
     <!--                                <button type="submit" class="btn btn&#45;&#45;md btn&#45;&#45;full btn&#45;&#45;orange">дальше</button>-->
-                                    <button type="button"
-                                            data-open-modal="reset_password_success"
+                                    <button type="submit"
                                             class="btn btn--md btn--full btn--orange">
                                         дальше
                                     </button>
@@ -991,52 +1002,62 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main">
+                        <div class="modal_box-main" data-form="request">
                             <h3 class="modal_box-main--title h2 color-font-brand-01">Request</h3>
                             <form action="#">
                                 <div>
                                     <div class="flex-box flex-wrap form-field--columns">
                                         <div class="form-field--col form-field--grow_wrap">
-                                            <div class="form-field form-field--grow">
+                                            <div class="form-field form-field--element form-field--grow">
                                                 <div class="form-textarea digits-relative form-field--grow_field form-field--grow_wrap">
                                                     <div class="form-label">Сообщение:</div>
-                                                    <textarea rows="6" class="form-field--grow" placeholder="Ваше сообщение"></textarea>
+                                                    <textarea rows="6" class="form-field--grow" name="message" placeholder="Ваше сообщение"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-field">
-                                                <div class="form-checkbox">
-                                                    <label class="checkbox-item">
-                                                        <input type="checkbox" name="approve">
-                                                        <span class="checkbox-label">Я даю свое согласие на обработку персональных данных, соглашаюсь с условиями и политикой конфиденциальности и принимаю условия публичной оферты.</span>
-                                                    </label>
+                                                <div class="form-field--element">
+                                                    <div class="form-checkbox">
+                                                        <label class="checkbox-item">
+                                                            <input type="checkbox" name="approve">
+                                                            <span class="checkbox-label">Я даю свое согласие на обработку персональных данных, соглашаюсь с условиями и политикой конфиденциальности и принимаю условия публичной оферты.</span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-field--col">
                                             <div class="form-field">
-                                                <div class="form-select">
-                                                    <div class="form-label">Тема вашего обращения:</div>
-                                                    <select name="theme">
-                                                        <option value="Узнать больше информации">Узнать больше информации</option>
-                                                        <option value="Узнать меньше информации">Узнать меньше информации</option>
-                                                        <option value="Тема вашего обращения">Тема вашего обращения</option>
-                                                    </select>
+                                                <div class="form-field--element">
+                                                    <div class="form-select">
+                                                        <div class="form-label">Тема вашего обращения:</div>
+                                                        <select name="theme">
+                                                            <option value="Тема 1">Тема 1</option>
+                                                            <option value="Узнать больше информации">Узнать больше информации</option>
+                                                            <option value="Узнать меньше информации">Узнать меньше информации</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-field">
-                                                <div class="form-label">Информация о вас:</div>
-                                                <div class="form-input">
-                                                    <input type="text" placeholder="Представьтесь">
+                                                <div class="form-field--element">
+                                                    <div class="form-label">Информация о вас:</div>
+                                                    <div class="form-input">
+                                                        <input type="text" name="name" placeholder="Представьтесь">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-field">
-                                                <div class="form-input">
-                                                    <input type="text" placeholder="Телефон">
+                                                <div class="form-field--element">
+                                                    <div class="form-input">
+                                                        <input type="text" name="tel" placeholder="Телефон">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-field">
-                                                <div class="form-input">
-                                                    <input type="text" placeholder="Email">
+                                                <div class="form-field--element">
+                                                    <div class="form-input">
+                                                        <input type="text" name="email" placeholder="Email">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1086,9 +1107,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
 <script src="assets/js/app.min.js"></script>
-
 
 <script>
     // AutoComplete
@@ -1106,6 +1127,80 @@
         }
     });
 
+</script>
+
+<script>
+
+    // modal sign-up validation (if needed)
+
+    $('[data-form="signup"] form').validate({
+        ...functions.validation.defaults,
+        rules: {
+            name: {required: true},
+            email: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            name: {required: "This field is required"},
+            email: {required: "This field is required"},
+            password: {required: "This field is required"}
+        },
+        submitHandler: function (form) {
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
+</script>
+
+<script>
+
+    // modal sign-in validation (if needed)
+
+    $('[data-form="signin"] form').validate({
+        ...functions.validation.defaults,
+        rules: {
+            email: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            email: {required: "This field is required"},
+            password: {required: "This field is required"}
+        },
+        submitHandler: function (form) {
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
+</script>
+
+<script>
+
+    // modal reset-password validation (if needed)
+
+    $('[data-form="reset-password"] form').validate({
+        ...functions.validation.defaults,
+        rules: {
+            email: {required: true}
+        },
+        messages: {
+            email: {required: "This field is required"}
+        },
+        submitHandler: function (form) {
+
+            functions.modal.show('reset_password_success');
+
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
 
 </script>
 
@@ -1115,6 +1210,36 @@
 <script>
     /*    init carousel for gallery (class .gallery-carousel)    */
     functions.gallery_carousel();
+</script>
+
+<script>
+
+    // request validation
+
+    $('[data-form="request"] form').validate({
+        ...functions.validation.defaults,
+        rules: {
+            message: {required: true},
+            approve: {required: true},
+            name: {required: true},
+            tel: {required: true},
+            email: {required: true}
+        },
+        messages: {
+            message: {required: "This field is required"},
+            approve: {required: ""},
+            name: {required: "This field is required"},
+            tel: {required: "This field is required"},
+            email: {required: "This field is required"}
+        },
+        submitHandler: function (form) {
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
 </script>
 
 </body>

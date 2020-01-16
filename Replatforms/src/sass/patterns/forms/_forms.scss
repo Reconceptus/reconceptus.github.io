@@ -13,6 +13,18 @@
 .form-field {
   width: 100%;
   margin-bottom: $padding-md;
+  &--element {
+    position: relative;
+  }
+  &--error {
+    position: absolute;
+    top: 100%;
+    left: $padding;
+    font-size: 12px;
+    .invalid & {
+      color: $ui-03;
+    }
+  }
   &--columns {
     flex-wrap: wrap;
     @include mq($from: tablet_xl) {

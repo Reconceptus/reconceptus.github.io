@@ -18,23 +18,29 @@
                         </div>
                     </div>
 
-                    <div class="user_form">
+                    <div class="user_form" data-form="signup-static">
                         <h3 class="modal_box-main--title h2">Регистрация</h3>
                         <form action="#">
                             <div class="form-fieldset">
                                 <div class="form-field">
-                                    <div class="form-input">
-                                        <input type="text" name="name" placeholder="Представьтесь">
+                                    <div class="form-field--element">
+                                        <div class="form-input">
+                                            <input type="text" name="name" placeholder="Представьтесь">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-field">
-                                    <div class="form-input">
-                                        <input type="text" name="email" placeholder="Email">
+                                    <div class="form-field--element">
+                                        <div class="form-input">
+                                            <input type="text" name="email" placeholder="Email">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-field">
-                                    <div class="form-input form-password">
-                                        <input type="password" name="password" placeholder="Пароль">
+                                    <div class="form-field--element">
+                                        <div class="form-input form-password">
+                                            <input type="password" name="password" placeholder="Пароль">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -110,10 +116,33 @@
     <include src="./modal/reset-password.html"></include>
 </div>
 
-
-
-
 <include src="../templates/scripts.html"></include>
+
+<script>
+
+    // sign-up validation
+
+    $('[data-form="signup-static"] form').validate({
+        ...functions.validation.defaults,
+        rules: {
+            name: {required: true},
+            email: {required: true},
+            password: {required: true}
+        },
+        messages: {
+            name: {required: "This field is required"},
+            email: {required: "This field is required"},
+            password: {required: "This field is required"}
+        },
+        submitHandler: function (form) {
+//            if (form.valid()){
+//                form.submit();
+//            }
+            return false;
+        }
+    })
+
+</script>
 
 
 </body>

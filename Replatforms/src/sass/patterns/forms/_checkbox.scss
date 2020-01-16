@@ -29,7 +29,7 @@
       &:before {
         border: 2px solid $brand-02;
         .invalid & {
-          //background-color: $clr-invalid-lt;
+          border-color: $ui-03;
         }
       }
       &:after {
