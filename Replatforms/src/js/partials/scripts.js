@@ -87,6 +87,9 @@ $(document).ready(() => {
     //     functions.validation.setDefaults();
     // }
 
+    $('link[href*=bootstrap]')[0].disabled = true;
+    $('link[href*=fileinput]')[0].disabled = true;
+
     /* --------------------------------- document resize --------------------------------- */
 
     $(window).resize(() => {
