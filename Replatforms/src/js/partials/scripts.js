@@ -42,12 +42,24 @@ $(document).ready(() => {
     }
     if ($('.pl-nav-scroll').length > 0) {
         if ($('html').hasClass('desktop')) {
-            $('.pl-nav-scroll').mCustomScrollbar({ theme: 'light' });
+            $('.pl-nav-scroll').each(function() {
+                let _this = $(this);
+                _this.mCustomScrollbar({ theme: 'light' });
+
+                if (_this.hasClass('modal_box-main--overflow')) {
+                    $(window).resize(function() {
+                        _this.mCustomScrollbar('update');
+                    });
+                }
+            });
         }
     }
     if ($('.pl-sidebar-scroll').length > 0) {
         if ($('html').hasClass('desktop')) {
-            $('.pl-sidebar-scroll').mCustomScrollbar({ theme: 'dark-3' });
+            $('.pl-sidebar-scroll').each(function() {
+                let _this = $(this);
+                _this.mCustomScrollbar({ theme: 'dark-3' });
+            });
         }
     }
     if ($('.listing_sidebar').length > 0) {

@@ -107,6 +107,19 @@
       overflow: auto;
       margin-right: -10%;
       padding-right: 10%;
+      &--overflow {
+        .desktop & {
+          flex-grow: 1;
+          overflow: hidden;
+          margin-right: -10%;
+          .mCustomScrollBox {
+            padding-right: 10%;
+          }
+          .mCSB_inside>.mCSB_container {
+            margin-right: 0;
+          }
+        }
+      }
       &--title {
         margin-bottom: $padding-md;
       }
@@ -131,4 +144,30 @@
 
 [data-open-modal] * {
   pointer-events: none;
+}
+
+[data-open-modal="video"] {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: $white;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20292%22%20d%3D%22M10%2C8.64%2C15.27%2C12%2C10%2C15.36V8.64M8%2C5V19l11-7Z%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px auto;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    @include mq($from: mobile_sm) {
+      width: 56px;
+      height: 56px;
+    }
+    @include mq($until: mobile_sm) {
+      width: 36px;
+      height: 36px;
+    }
+  }
 }

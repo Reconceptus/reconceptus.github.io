@@ -876,74 +876,77 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main" data-form="signin">
-                            <h3 class="modal_box-main--title h2">Вход</h3>
-                            <form action="#">
-                                <div class="form-fieldset">
-                                    <div class="form-field">
-                                        <div class="form-field--element">
+                        <div class="pl-nav-scroll modal_box-main--overflow">
+                            <div class="modal_box-main" data-form="signin">
+                                <h3 class="modal_box-main--title h2">Вход</h3>
+                                <form action="#">
+                                    <div class="form-fieldset">
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input">
+                                                    <input type="text" name="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input form-password">
+                                                    <input type="password" name="password" placeholder="Пароль">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field">
                                             <div class="form-input">
-                                                <input type="text" name="email" placeholder="Email">
+                                                <div class="form-label">Войти через аккаунт</div>
+                                                <div class="socials">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-google"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-instagram"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="form-checkbox">
+                                                <label class="checkbox-item">
+                                                    <input type="checkbox" name="remember" checked>
+                                                    <span class="checkbox-label">запомнить меня</span>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-field">
-                                        <div class="form-field--element">
-                                            <div class="form-input form-password">
-                                                <input type="password" name="password" placeholder="Пароль">
-                                            </div>
+                                    <div class="form-actions">
+                                        <div class="form-field">
+                                            <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
+                                        </div>
+                                        <div class="flex-box flex-justify--space">
+                                            <a href="javascript:void(0);" data-open-modal="signup" class="link_simple">регистрация</a>
+                                            <a href="javascript:void(0);" data-open-modal="reset_password" class="link_simple">забыл пароль</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-fieldset">
-                                    <div class="form-field">
-                                        <div class="form-input">
-                                            <div class="form-label">Войти через аккаунт</div>
-                                            <div class="socials">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-google"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-facebook"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-instagram"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-twitter"/></svg>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-field">
-                                        <div class="form-checkbox">
-                                            <label class="checkbox-item">
-                                                <input type="checkbox" name="remember" checked>
-                                                <span class="checkbox-label">запомнить меня</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <div class="form-field">
-                                        <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
-                                    </div>
-                                    <div class="flex-box flex-justify--space">
-                                        <a href="javascript:void(0);" data-open-modal="signup" class="link_simple">регистрация</a>
-                                        <a href="javascript:void(0);" data-open-modal="reset_password" class="link_simple">забыл пароль</a>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -959,80 +962,82 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main" data-form="signup">
-                            <h3 class="modal_box-main--title h2">Регистрация</h3>
-                            <form action="#">
-                                <div class="form-fieldset">
-                                    <div class="form-field">
-                                        <div class="form-field--element">
+                        <div class="pl-nav-scroll modal_box-main--overflow">
+                            <div class="modal_box-main" data-form="signup">
+                                <h3 class="modal_box-main--title h2">Регистрация</h3>
+                                <form action="#">
+                                    <div class="form-fieldset">
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input">
+                                                    <input type="text" name="name" placeholder="Представьтесь">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input">
+                                                    <input type="text" name="email" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input form-password">
+                                                    <input type="password" name="password" placeholder="Пароль">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-fieldset">
+                                        <div class="form-field">
                                             <div class="form-input">
-                                                <input type="text" name="name" placeholder="Представьтесь">
+                                                <div class="form-label">Войти через аккаунт</div>
+                                                <div class="socials">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-google"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-instagram"/></svg>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="icon icon_size-4">
+                                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-field">
+                                            <div class="form-checkbox">
+                                                <label class="checkbox-item">
+                                                    <input type="checkbox" name="remember" checked>
+                                                    <span class="checkbox-label">запомнить меня</span>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-field">
-                                        <div class="form-field--element">
-                                            <div class="form-input">
-                                                <input type="text" name="email" placeholder="Email">
-                                            </div>
+                                    <div class="form-actions">
+                                        <div class="form-field">
+                                            <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
+                                        </div>
+                                        <div class="flex-box">
+                                            <a href="javascript:void(0);" data-open-modal="signin" class="link_simple">вход</a>
                                         </div>
                                     </div>
-                                    <div class="form-field">
-                                        <div class="form-field--element">
-                                            <div class="form-input form-password">
-                                                <input type="password" name="password" placeholder="Пароль">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-fieldset">
-                                    <div class="form-field">
-                                        <div class="form-input">
-                                            <div class="form-label">Войти через аккаунт</div>
-                                            <div class="socials">
-                                                <ul>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-google"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-facebook"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-instagram"/></svg>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="icon icon_size-4">
-                                                            <svg><use xlink:href="#icon-social-twitter"/></svg>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-field">
-                                        <div class="form-checkbox">
-                                            <label class="checkbox-item">
-                                                <input type="checkbox" name="remember" checked>
-                                                <span class="checkbox-label">запомнить меня</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <div class="form-field">
-                                        <button type="submit" class="btn btn--md btn--full btn--orange">войти</button>
-                                    </div>
-                                    <div class="flex-box">
-                                        <a href="javascript:void(0);" data-open-modal="signin" class="link_simple">вход</a>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1048,27 +1053,29 @@
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main" data-form="reset-password">
-                            <h3 class="modal_box-main--title h2">Сброс пароля</h3>
-                            <form action="#">
-                                <div class="form-fieldset">
-                                    <div class="form-field">
-                                        <div class="form-field--element">
-                                            <div class="form-input">
-                                                <div class="form-label">Напишите емейл, указанный при регистрации:</div>
-                                                <input type="text" name="email" placeholder="Email">
+                        <div class="pl-nav-scroll modal_box-main--overflow">
+                            <div class="modal_box-main" data-form="reset-password">
+                                <h3 class="modal_box-main--title h2">Сброс пароля</h3>
+                                <form action="#">
+                                    <div class="form-fieldset">
+                                        <div class="form-field">
+                                            <div class="form-field--element">
+                                                <div class="form-input">
+                                                    <div class="form-label">Напишите емейл, указанный при регистрации:</div>
+                                                    <input type="text" name="email" placeholder="Email">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-actions">
-    <!--                                <button type="submit" class="btn btn&#45;&#45;md btn&#45;&#45;full btn&#45;&#45;orange">дальше</button>-->
-                                    <button type="submit"
-                                            class="btn btn--md btn--full btn--orange">
-                                        дальше
-                                    </button>
-                                </div>
-                            </form>
+                                    <div class="form-actions">
+        <!--                                <button type="submit" class="btn btn&#45;&#45;md btn&#45;&#45;full btn&#45;&#45;orange">дальше</button>-->
+                                        <button type="submit"
+                                                class="btn btn--md btn--full btn--orange">
+                                            дальше
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

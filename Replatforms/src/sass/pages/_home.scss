@@ -446,8 +446,11 @@
           @include mq($from: tablet_sm) {
             border-radius: 150px 0 0 0;
           }
-          @include mq($until: tablet_sm) {
+          @include mq(mobile_sm, tablet_sm) {
             border-radius: $padding-xl 0 0 0;
+          }
+          @include mq($until: mobile_sm) {
+            border-radius: $padding-md 0 0 0;
           }
           iframe {
             position: absolute;
