@@ -125,8 +125,8 @@ $(document).ready(() => {
     //     functions.validation.setDefaults();
     // }
 
-    $('link[href*=bootstrap]')[0].disabled = true;
-    $('link[href*=fileinput]')[0].disabled = true;
+    if ($('link[href*=bootstrap]').length > 0) $('link[href*=bootstrap]')[0].disabled = true;
+    if ($('link[href*=fileinput]').length > 0) $('link[href*=fileinput]')[0].disabled = true;
 
     /* --------------------------------- document resize --------------------------------- */
 
