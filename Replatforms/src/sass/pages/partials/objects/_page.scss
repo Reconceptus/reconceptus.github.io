@@ -212,6 +212,11 @@
       .icon-like {
         color: $link;
       }
+      &.liked {
+        .icon-like {
+          color: $brand-02;
+        }
+      }
     }
   }
   &-view {

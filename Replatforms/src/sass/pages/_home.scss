@@ -123,8 +123,9 @@
           font-size: $font-md;
         }
         @include mq($until: mobile_xl) {
-          height: 48px;
+          //height: 48px;
           font-size: 20px;
+          height: 72px;
         }
       }
       .btn {
@@ -226,6 +227,9 @@
         height: 0;
         padding-bottom: 66%;
         position: relative;
+        @include mq($until: mobile_xl) {
+          display: none;
+        }
       }
       .img {
         position: absolute;
@@ -261,9 +265,13 @@
           position: absolute;
           bottom: 0;
         }
-        @include mq($until: mobile_xl) {
+        @include mq(mobile_sm, mobile_xl) {
           flex-wrap: wrap;
-          margin-top: -1*$gutter-x2;
+          margin: 0 -6px;
+        }
+        @include mq($until: mobile_sm) {
+          margin: 0 -24px;
+          flex-direction: column;
         }
       }
       &--item {
@@ -271,9 +279,15 @@
           width: 20%;
           padding: 0 $gutter;
         }
-        @include mq($until: mobile_xl) {
+        @include mq(mobile_sm, mobile_xl) {
           width: 50%;
           padding: 0 6px $gutter;
+        }
+        @include mq($until: mobile_sm) {
+          width: 100%;
+          &:not(:last-child){
+            padding: 0 0 $gutter;
+          }
         }
         &_img {
           width: 100%;

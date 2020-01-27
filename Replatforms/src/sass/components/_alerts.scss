@@ -4,7 +4,9 @@
   flex-direction: column;
   background: $white;
   box-shadow: 0 4px 32px 0 rgba($black,0.16);
-
+  &.static {
+    position: absolute;
+  }
   font-weight: 400;
   z-index: 3;
 
