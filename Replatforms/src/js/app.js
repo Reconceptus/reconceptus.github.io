@@ -67,7 +67,6 @@ $(document).ready(() => {
 
     functions.modal.init();
     functions.dropdown();
-    functions.scroll_top();
     functions.expander();
 
     if ($('.header').length > 0) {
@@ -77,6 +76,9 @@ $(document).ready(() => {
     }
     if ($('#map').length > 0) {
         functions.markers();
+    }
+    if ($('.footer_scroll-btn').length > 0) {
+        functions.scroll_top();
     }
     if ($('.pl-nav-scroll').length > 0) {
         if ($('html').hasClass('desktop')) {

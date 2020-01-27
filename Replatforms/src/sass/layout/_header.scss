@@ -2,7 +2,7 @@ $header-height: 88px;
 
 .header {
   position: fixed;
-
+  &.static {position: absolute;}
   right: $gutter-x2;
   z-index: 20;
   @include mq($from: ($content-lg + 2*$gutter-x2 + $padding)){

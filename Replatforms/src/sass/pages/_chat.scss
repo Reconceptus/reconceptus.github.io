@@ -1,10 +1,11 @@
 .chat_box {
   position: relative;
+  margin-bottom: -1*$padding-md;
   @include mq($from: tablet_sm) {
-    margin-bottom: $padding-xl;
+    //margin-bottom: $padding-xl;
   }
   @include mq($until: tablet_sm) {
-    margin-bottom: $padding-md;
+    //margin-bottom: $padding-md;
   }
   @include mq($until: mobile_xl) {
     margin-left: -1*$gutter-x2;
@@ -146,17 +147,11 @@
   }
   &-main {
 
-    @include mq($from: tablet_xl) {
+    @include mq($from: tablet_sm) {
       padding: $gutter-x2 calc(100%/9) 160px;
     }
-    @include mq(mobile_xl, tablet_xl) {
-      padding: $gutter-x2 $gutter-x2 160px $padding-xxl;
-    }
-    @include mq(mobile_xl, mobile_xl) {
-      padding: $gutter-x2 $gutter-x2 160px $padding-xxl;
-    }
-    @include mq($until: mobile_xl) {
-      padding: 88px $gutter-x2 160px;
+    @include mq($until: tablet_sm) {
+      padding: 88px $gutter-x2 72px;
     }
   }
   &-main_box {
@@ -224,11 +219,11 @@
     @include mq($from: tablet_xl) {
       padding: $gutter-x2 calc(100%/9);
     }
-    @include mq(mobile_xl, tablet_xl) {
+    @include mq(tablet_sm, tablet_xl) {
       padding: $gutter-x2 $gutter-x2 $gutter-x2 $padding-xxl;
     }
-    @include mq($until: mobile_xl) {
-      padding: $gutter-x2;
+    @include mq($until: tablet_sm) {
+      padding: $gutter;
     }
     &_wrap {
       background-color: #c1844c;
@@ -246,13 +241,21 @@
       width: 100%;
     }
     &--textarea {
-      height: 88px;
+
       width: 100%;
       border: 1px solid $brand-02;
       border-radius: 4px;
       resize: none;
       margin-right: $padding_sm;
-      padding: $padding;
+
+      @include mq($from: tablet_sm) {
+        height: 88px;
+        padding: $padding;
+      }
+      @include mq($until: tablet_sm) {
+        height: 42px;
+        padding: 8px;
+      }
     }
     &--submit {
       @extend %btn_reset;
@@ -264,15 +267,17 @@
       background-repeat: no-repeat;
       background-position: center;
 
-      @include mq($from: mobile_xl) {
+      @include mq($from: tablet_sm) {
         width: 88px;
         height: 88px;
         background-size: 36px auto;
       }
       @include mq($until: mobile_xl) {
-        width: 48px;
-        height: 48px;
         background-size: 24px auto;
+      }
+      @include mq($until: tablet_sm) {
+        height: 42px;
+        width: 42px;
       }
     }
   }
@@ -293,15 +298,13 @@
     &:checked ~ .chat_box-content {
       .chat_box-users {
         position: relative;
-        .chat_box-users--mobile_bulls {
+        .chat_box-users--mobile_btn {
           display: none;
-        }
-        .chat_box-users--mobile_close {
-          display: flex;
         }
       }
       .chat_box-user--list {
         display: block;
+        margin-top: 0;
       }
       .message-content {
         display: none;

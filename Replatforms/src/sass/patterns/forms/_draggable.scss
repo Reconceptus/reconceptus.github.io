@@ -82,6 +82,9 @@
       }
     }
   }
+  .fileinput-remove {
+    display: none;
+  }
   .file-no-browse {
     @extend %hidden_input;
   }
@@ -175,6 +178,7 @@
       background-color: $white;
       padding: 8px;
       box-shadow: 0 2px 4px 0 rgba($black,0.16);
+      &.kv-file-zoom,
       &.kv-file-upload {
         display: none;
       }
