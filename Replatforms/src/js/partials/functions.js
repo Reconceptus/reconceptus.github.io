@@ -21,4 +21,5 @@ window.functions = {
     articles_carousel: require('./modules/articles-carousel'),
     home_bg: require('./modules/home-bg'),
     validation: require('./modules/validation'),
+    shifting_text: require('./modules/shifting-text'),
 };

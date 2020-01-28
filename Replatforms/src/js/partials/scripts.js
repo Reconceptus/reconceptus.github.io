@@ -97,6 +97,9 @@ $(document).ready(() => {
     if ($('.home_bg').length > 0) {
         functions.home_bg();
     }
+    if ($('.shifting-box').length > 0) {
+        functions.shifting_text();
+    }
     // if ($('[data-form]').length > 0) {
     //     functions.validation.setDefaults();
     // }

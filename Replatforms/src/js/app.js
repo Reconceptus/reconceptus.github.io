@@ -33,6 +33,7 @@ window.functions = {
     articles_carousel: require('./modules/articles-carousel'),
     home_bg: require('./modules/home-bg'),
     validation: require('./modules/validation'),
+    shifting_text: require('./modules/shifting-text'),
 };
 
 // scripts
@@ -134,6 +135,9 @@ $(document).ready(() => {
     }
     if ($('.home_bg').length > 0) {
         functions.home_bg();
+    }
+    if ($('.shifting-box').length > 0) {
+        functions.shifting_text();
     }
     // if ($('[data-form]').length > 0) {
     //     functions.validation.setDefaults();

@@ -8,7 +8,7 @@
     position: absolute;
   }
   font-weight: 400;
-  z-index: 3;
+  z-index: 10;
 
   @include mq($from: 1848px) {
     left: calc(50vw + 900px);
