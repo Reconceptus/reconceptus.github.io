@@ -1,3 +1,66 @@
+/**
+Buttons
+
+Description:
+  You can use buttons in the frontend with .btn class (necessarily) and combinations of following CSS Classes:
+  
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-colors:
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs">btn--orange</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange_border btn--xs">btn--orange_border</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--white btn--xs">btn--white</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--grey btn--xs">btn--grey</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-sizes:
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs">btn--xs</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--sm">btn--sm</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--md">btn--md</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--lg">btn--lg</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-styles:
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs btn--rounded">btn--rounded</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto nowrap">
+      Button-width:
+    </div>
+    <div class="content-col">
+      <button class="btn btn--orange btn--xs btn--full">btn--full</button>
+    </div>
+  </div>
+
+Weight: 4
+
+Styleguide styleguide.buttons
+ */
+
 .btn {
   @extend %btn_reset;
   display: inline-flex;

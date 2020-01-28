@@ -2,23 +2,41 @@
 Text-box
 
 Markup:
-<div class="content-row">
+  <div class="content-row">
     <div class="content-col col-8">
       <div class="text-box">
         <h1>H1 Text Heading</h1>
-        <p>Основной набор.  Nine Elms Point is a huge residential complex, which consists of 645 stylish studios,
+        <p>Nine Elms Point is a huge residential complex, which consists of 645 stylish studios,
           as well as apartments with one, two, three or four bedrooms and penthouses, spaciously located in seven
-          distinctive buildings, which includes two striking towers. From the balconies or terraces of most apartments,
-          there is a view to the inner garden of the complex. All apartments have spacious rooms, open plan kitchen
-          and living room and large panoramic windows that will fill your home with natural light.
+          distinctive buildings, which includes two striking towers.
         </p>
         <h2>H2 Text Heading</h2>
-        <p>Living at Nine Elms Point is very ссылка в статье convenient, as the future metro station Nine Elms will
+        <p>Living at Nine Elms Point is very convenient, as the future metro station Nine Elms will
           be located just at your doorstep, as well as the large Sainsbury supermarket. Despite the fact that the complex
           is located in the first zone of London, you can relax from the busy city life, as there is so much green space.
-          Nine Elms Point development provides residents with access to a fitness suite, a 24-hour concierge service,
-          a business centre and a private dining room available to hire.
         </p>
+        <h3>H3 Text Heading</h3>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ul>
+        <p>
+          This is <strong>strong text</strong> </br>
+          This is <i>italic text</i>.</br>
+          This is an <a href="#">example of link</a>.
+        </p>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ol>
+        <blockquote>
+          Living at Nine Elms Point is very convenient, as the future metro station Nine Elms will
+          be located just at your doorstep
+        </blockquote>
       </div>
     </div>
   </div>

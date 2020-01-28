@@ -20,6 +20,9 @@
   &-col {
     padding: 0 $gutter;
     width: 100%;
+    &--auto {
+      width: auto;
+    }
   }
 }
 
@@ -79,6 +82,10 @@
   &-wrap {
     flex-wrap: wrap;
   }
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .position {
