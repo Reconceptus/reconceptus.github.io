@@ -214,4 +214,35 @@ Styleguide styleguide.typography.text-box
       height: auto;
     }
   }
+  .video {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    margin-right: 0;
+
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+      padding-bottom: 80%;
+    }
+    @include mq($until: desktop_sm) {
+      width: 100%;
+      padding-bottom: 65%;
+    }
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

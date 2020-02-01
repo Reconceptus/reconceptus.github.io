@@ -109,6 +109,11 @@
                                                         });
 
                                                         google.maps.event.addListener(marker, 'drag', changeInputs);
+                                                        google.maps.event.addListener(map, "click", function (event) {
+                                                            changeInputs(event);
+                                                            var _LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng);
+                                                            marker.setPosition(_LatLng);
+                                                        });
 
                                                         function setMarkerPosition(mark,ref) {
 
@@ -129,6 +134,17 @@
                                                             setMarkerPosition(marker,'lng')
                                                         });
 
+                                                        if (navigator.geolocation) {
+                                                            navigator.geolocation.getCurrentPosition(function(position) {
+                                                                currentLatLng.lat = position.coords.latitude;
+                                                                currentLatLng.lng = position.coords.longitude;
+
+                                                                var _LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng)
+                                                                map.setCenter(_LatLng);
+                                                                marker.setPosition(_LatLng)
+                                                            });
+                                                        }
+
                                                     }
                                                     function changeInputs(event) {
                                                         input_lat.value = event.latLng.lat();
@@ -137,6 +153,8 @@
                                                         currentLatLng.lat = input_lat.value;
                                                         currentLatLng.lng = input_lng.value;
                                                     }
+
+
 
                                                 </script>
                                                 <!-- API KEY: AIzaSyAAD-B9376l6EOzcwdz4hqGgg31zYWAZE8-->
@@ -678,6 +696,42 @@
                                         <div class="form-input">
                                             <div class="form-label">Официальное название объекта, если имеется:</div>
                                             <input type="text" placeholder="Label">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-field" data-select2-id="4">
+                                        <div class="form-group field-product-tags" data-select2-id="3">
+                                            <label class="form-label" for="product-tags">Additionally</label>
+                                            <span id="parent-s2-togall-product-tags" style="display:none"></span><input
+                                                type="hidden" name="Product[tags]" value="">
+                                            <select id="product-tags"
+                                                    class="form-control select2-hidden-accessible"
+                                                    name="Product[tags][]"
+                                                    multiple="" size="4"
+                                                    data-s2-options="s2options_c4acac00"
+                                                    data-krajee-select2="select2_51996079"
+                                                    style="width: 1px; height: 1px; visibility: hidden;"
+                                                    data-select2-id="product-tags"
+                                                    tabindex="-1"
+                                                    aria-hidden="true">
+                                                <option value="1" data-select2-id="12">Pro</option>
+                                                <option value="2" data-select2-id="13">Premium</option>
+                                            </select>
+                                            <span
+                                                class="select2 select2-container select2-container--krajee select2-container--below select2-container--focus"
+                                                dir="ltr" data-select2-id="1" style="width: 100%;"><span
+                                                class="selection"><span
+                                                class="select2-selection select2-selection--multiple" role="combobox"
+                                                aria-haspopup="true" aria-expanded="false" tabindex="-1"
+                                                aria-disabled="false"><ul class="select2-selection__rendered"><li
+                                                class="select2-search select2-search--inline"><input
+                                                class="select2-search__field" type="search" tabindex="0"
+                                                autocomplete="off" autocorrect="off" autocapitalize="none"
+                                                spellcheck="false" role="searchbox" aria-autocomplete="list"
+                                                placeholder="" style="width: 0.75em;"></li></ul></span></span><span
+                                                class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+                                            <div class="help-block"></div>
                                         </div>
                                     </div>
 

@@ -5,6 +5,10 @@ let text_box = function() {
             let _this = $(this);
             _this.wrap('<figure class="img"></figure>');
         });
+        _this.find('iframe').each(function() {
+            let _this = $(this);
+            _this.wrap('<figure class="video"></figure>');
+        });
     });
 };
 
