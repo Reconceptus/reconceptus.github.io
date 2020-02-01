@@ -177,7 +177,7 @@
           display: flex;
         }
         @include mq($until: mobile_sm) {
-          flex-wrap: wrap;
+          //flex-wrap: wrap;
         }
         &_date {
           @include mq($until: tablet_xl) {
@@ -198,7 +198,9 @@
           }
           @include mq($until: mobile_sm) {
             font-weight: 500;
-            width: 100%;
+            //width: 100%;
+            width: auto;
+            margin-right: 20px;
             margin-bottom: $padding_sm;
           }
         }
@@ -227,10 +229,15 @@
           }
           .figure {
             flex-shrink: 0;
-            width: 120px;
-            height: 120px;
-            margin-right: $gutter-x2;
-
+            @include mq($from: mobile_sm) {
+              width: 120px;
+              height: 120px;
+              margin-right: $gutter-x2;
+            }
+            @include mq($until: mobile_sm) {
+              width: 100%;
+              height: calc(50vw - 40px);
+            }
           }
           img {
             @extend %full_block;
