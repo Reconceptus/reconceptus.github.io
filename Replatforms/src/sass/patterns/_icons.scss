@@ -1,5 +1,82 @@
+/**
+CSS styles
+
+Description:
+  You can add styles for icons using following CSS Classes:
+
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Sizes:
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-1 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-1
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-2
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-3 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-3
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-4 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-4
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-5 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-5
+      </div>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Borders:
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon-bordered">
+          <i class="icon_size-2">
+            <svg><use xlink:href="#icon-logo"/></svg>
+          </i>
+        </i>
+        icon-bordered
+      </div>
+    </div>
+  </div>
+
+Weight: 1
+
+Styleguide styleguide.icons.css
+ */
+
 .icon {
   &_size {
+    &-1 {
+      width: 12px;
+      height: 12px;
+    }
     &-2 {
       width: 24px;
       height: 24px;

@@ -137,87 +137,143 @@
         <div class="content-row">
             <div class="content-col col-12">
 
-                    <section id="styleguide-colorpalette-text" class="__block __block--3">
+                    <section id="styleguide-icons-css" class="__block __block--3">
 
-                        <h3 class="__h3">Text Colors</h3>
+                        <h3 class="__h3">CSS styles</h3>
 
                             <small class="__file">
-                                Source: <code>abstracts/_colors.scss</code>, line 108
+                                Source: <code>patterns/_icons.scss</code>, line 1
                             </small>
 
                             <span class="__description">
                                 <p>Description:
-You can use all font/bg colors in the frontend with following CSS Classes: .color-font-text-01 or .color-bg-text-01</p>
+You can add styles for icons using following CSS Classes:</p>
 
                             </span>
 
                             <div class="__rendered">
                                     <div class="__rendered-example">
-                                          <div class="content-row">
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-01">$text-01</div>
-      <ul class="swatch-details">
-          <li>#FFFFFF</li>
-      </ul>
+                                          <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Sizes:
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-02">$text-02</div>
-      <ul class="swatch-details">
-          <li>#F5F5F5</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-1 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-1
+      </div>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-03">$text-03</div>
-      <ul class="swatch-details">
-          <li>#A8A9AD</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-2
+      </div>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-04">$text-04</div>
-      <ul class="swatch-details">
-          <li>#53545D</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-3 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-3
+      </div>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-05">$text-05</div>
-      <ul class="swatch-details">
-          <li>#212121</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-4 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-4
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-5 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-5
+      </div>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Borders:
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon-bordered">
+          <i class="icon_size-2">
+            <svg><use xlink:href="#icon-logo"/></svg>
+          </i>
+        </i>
+        icon-bordered
+      </div>
     </div>
   </div>
                                     </div>
                             </div>
                                 <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
-                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row&quot;&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-01&quot;&gt;$text-01&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#FFFFFF&lt;/li&gt;
-      &lt;/ul&gt;
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      Sizes:
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-02&quot;&gt;$text-02&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#F5F5F5&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon_size-1 color-font-brand-02&quot;&gt;
+          &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+        &lt;/i&gt;
+        icon_size-1
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-03&quot;&gt;$text-03&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#A8A9AD&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon_size-2 color-font-brand-02&quot;&gt;
+          &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+        &lt;/i&gt;
+        icon_size-2
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-04&quot;&gt;$text-04&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#53545D&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon_size-3 color-font-brand-02&quot;&gt;
+          &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+        &lt;/i&gt;
+        icon_size-3
+      &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-05&quot;&gt;$text-05&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#212121&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon_size-4 color-font-brand-02&quot;&gt;
+          &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+        &lt;/i&gt;
+        icon_size-4
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon_size-5 color-font-brand-02&quot;&gt;
+          &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+        &lt;/i&gt;
+        icon_size-5
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      Borders:
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;link_icon&quot;&gt;
+        &lt;i class&#x3D;&quot;icon icon-bordered&quot;&gt;
+          &lt;i class&#x3D;&quot;icon_size-2&quot;&gt;
+            &lt;svg&gt;&lt;use xlink:href&#x3D;&quot;#icon-logo&quot;/&gt;&lt;/svg&gt;
+          &lt;/i&gt;
+        &lt;/i&gt;
+        icon-bordered
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;</code>
                                 </div></pre>

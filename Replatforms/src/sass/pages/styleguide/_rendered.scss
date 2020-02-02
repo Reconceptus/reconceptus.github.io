@@ -16,6 +16,21 @@
     font-size: 14px;
     font-style: italic;
   }
-  
- 
+
+}
+
+.__show-markup {
+  display: flex;
+  height: 32px;
+  line-height: 28px;
+  outline: none;
+  align-items: center;
+  width: 100px;
+  justify-content: center;
+  color: #c1844c;
+  border: 2px solid #c1844c;
+  margin-left: calc(10% - 40px);
+  & + .code {
+    margin-top: 20px;
+  }
 }

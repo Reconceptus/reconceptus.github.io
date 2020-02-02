@@ -137,87 +137,123 @@
         <div class="content-row">
             <div class="content-col col-12">
 
-                    <section id="styleguide-colorpalette-text" class="__block __block--3">
+                    <section id="styleguide-cta-buttons" class="__block __block--3">
 
-                        <h3 class="__h3">Text Colors</h3>
+                        <h3 class="__h3">Buttons</h3>
 
                             <small class="__file">
-                                Source: <code>abstracts/_colors.scss</code>, line 108
+                                Source: <code>patterns/_buttons.scss</code>, line 1
                             </small>
 
                             <span class="__description">
                                 <p>Description:
-You can use all font/bg colors in the frontend with following CSS Classes: .color-font-text-01 or .color-bg-text-01</p>
+You can use buttons in the frontend with .btn class (necessarily) and combinations of following CSS Classes:</p>
 
                             </span>
 
                             <div class="__rendered">
                                     <div class="__rendered-example">
-                                          <div class="content-row">
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-01">$text-01</div>
-      <ul class="swatch-details">
-          <li>#FFFFFF</li>
-      </ul>
+                                          <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-colors:
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-02">$text-02</div>
-      <ul class="swatch-details">
-          <li>#F5F5F5</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs">btn--orange</button>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-03">$text-03</div>
-      <ul class="swatch-details">
-          <li>#A8A9AD</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange_border btn--xs">btn--orange_border</button>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-04">$text-04</div>
-      <ul class="swatch-details">
-          <li>#53545D</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--white btn--xs">btn--white</button>
     </div>
-    <div class="content-col col-2">
-      <div class="swatch-preview color-font-text-05">$text-05</div>
-      <ul class="swatch-details">
-          <li>#212121</li>
-      </ul>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--grey btn--xs">btn--grey</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-sizes:
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs">btn--xs</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--sm">btn--sm</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--md">btn--md</button>
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--lg">btn--lg</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Button-styles:
+    </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--orange btn--xs btn--rounded">btn--rounded</button>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto nowrap">
+      Button-width:
+    </div>
+    <div class="content-col">
+      <button class="btn btn--orange btn--xs btn--full">btn--full</button>
     </div>
   </div>
                                     </div>
                             </div>
                                 <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
-                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row&quot;&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-01&quot;&gt;$text-01&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#FFFFFF&lt;/li&gt;
-      &lt;/ul&gt;
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      Button-colors:
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-02&quot;&gt;$text-02&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#F5F5F5&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--xs&quot;&gt;btn--orange&lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-03&quot;&gt;$text-03&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#A8A9AD&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange_border btn--xs&quot;&gt;btn--orange_border&lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-04&quot;&gt;$text-04&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#53545D&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--white btn--xs&quot;&gt;btn--white&lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
-      &lt;div class&#x3D;&quot;swatch-preview color-font-text-05&quot;&gt;$text-05&lt;/div&gt;
-      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
-          &lt;li&gt;#212121&lt;/li&gt;
-      &lt;/ul&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--grey btn--xs&quot;&gt;btn--grey&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      Button-sizes:
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--xs&quot;&gt;btn--xs&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--sm&quot;&gt;btn--sm&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--md&quot;&gt;btn--md&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--lg&quot;&gt;btn--lg&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      Button-styles:
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--xs btn--rounded&quot;&gt;btn--rounded&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto nowrap&quot;&gt;
+      Button-width:
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn--orange btn--xs btn--full&quot;&gt;btn--full&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;</code>
                                 </div></pre>
