@@ -1,0 +1,473 @@
+<include src="../templates/head.html" title="Мои объекты"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-main">
+                        <div id="w0">
+                            <div class="summary">Showing <b>1-10</b> of <b>10</b> items.</div>
+                            <div class="profile_table-main--auto">
+
+
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Preview</th>
+                                    <th><a href="/en/manager/objects?sort=name" data-sort="-name">Name</a></th>
+                                    <th><a href="/en/manager/objects?sort=address" data-sort="address">Address</a></th>
+                                    <th><a href="/en/manager/objects?sort=user.email" data-sort="user.email">Email</a>
+                                    </th>
+                                    <th style="width:190px;"><a href="/en/manager/objects?sort=price" data-sort="price">Price</a>
+                                    </th>
+                                    <th><a href="/en/manager/objects?sort=status" data-sort="status">Status</a></th>
+                                    <th><a href="/en/manager/objects?sort=partition_id" data-sort="partition_id">Category</a>
+                                    </th>
+                                    <th><a href="/en/manager/objects?sort=manager_id" data-sort="manager_id">Manager</a>
+                                    </th>
+                                    <th class="action-column">&nbsp;</th>
+                                </tr>
+                                <tr id="w0-filters" class="filters">
+                                    <td>&nbsp;</td>
+                                    <td><input type="text" class="form-control" name="ProductSearch[name]" value="">
+                                    </td>
+                                    <td><input type="text" class="form-control" name="ProductSearch[address]" value="">
+                                    </td>
+                                    <td><input type="text" class="form-control" name="broker"></td>
+                                    <td><input type="number" class="form-control" name="min" value=""
+                                               style="width:45%; float:left"><input type="number" class="form-control"
+                                                                                    name="max" value=""
+                                                                                    style="width:45%;"></td>
+                                    <td><select class="form-control" name="ProductSearch[status]">
+                                        <option value=""></option>
+                                        <option value="0">Disabled</option>
+                                        <option value="1">Active</option>
+                                        <option value="2">Sold out</option>
+                                        <option value="4">Waiting moderation</option>
+                                        <option value="5">Rejected</option>
+                                    </select></td>
+                                    <td><select class="form-control" name="ProductSearch[partition_id]">
+                                        <option value=""></option>
+                                        <option value="1">buildings</option>
+                                        <option value="2">apartments</option>
+                                        <option value="3">houses</option>
+                                        <option value="4">land</option>
+                                        <option value="5">commercial</option>
+                                    </select></td>
+                                    <td><select class="form-control" name="ProductSearch[manager_id]">
+                                        <option value=""></option>
+                                        <option value="1">admin</option>
+                                        <option value="2">suhov.a.s@ya.ru</option>
+                                        <option value="3">proforg@list.ru</option>
+                                        <option value="4">reconcept@mail.ru</option>
+                                    </select></td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-key="24">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200130165807/400_400_1580403487_Cf.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/24">2 комнатная квартира в Солманово</a></td>
+                                    <td>Одинцовский городской округ, Moscow Oblast, Central Federal District, Russia
+                                    </td>
+                                    <td>proforg@list.ru</td>
+                                    <td>5600000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td>proforg@list.ru</td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=24"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/24" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=24"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="22">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200125130736/400_400_1579957656_EJ.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/22">Дом</a></td>
+                                    <td>Basmanny District, Central Administrative Okrug, Moscow, Central Federal
+                                        District, Russia
+                                    </td>
+                                    <td>reconcept@mail.ru</td>
+                                    <td>300000</td>
+                                    <td>Disabled</td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=22"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/22" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=22"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="21">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200125131810/400_400_1579958290_Wx.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/21">3-комнатная квартира в Одинцово</a></td>
+                                    <td>Moscow, Central Administrative Okrug, Moscow, Central Federal District, Russia
+                                    </td>
+                                    <td>proforg@list.ru</td>
+                                    <td>10000000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=21"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/21" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=21"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="20">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/images/no-image.svg" alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/20">323244</a></td>
+                                    <td>Moscow, Central Administrative Okrug, Moscow, Central Federal District, Russia
+                                    </td>
+                                    <td>arplanstest@mail.ru</td>
+                                    <td>200000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td>admin</td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=20"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/20" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=20"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="19">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/images/no-image.svg" alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/19">Red Red 2</a></td>
+                                    <td>Молодёново, Одинцовский городской округ, Moscow Oblast, Central Federal
+                                        District, Russia
+                                    </td>
+                                    <td>venodon@gmail.com</td>
+                                    <td>130000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=19"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/19" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=19"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="18">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200119180134/400_400_1579456894_-F.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/18">Что в имени тебе моем!</a></td>
+                                    <td>Khimki, Khimki Urban Okrug, Moscow Oblast, Central Federal District, Russia</td>
+                                    <td>proforg@list.ru</td>
+                                    <td>10000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=18"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/18" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=18"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="17">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200117091004/400_400_1579252204_iS.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/17">Two bedroom apartment, 4th Floor, Meranti
+                                        house, Goodman fields!</a></td>
+                                    <td>Shchyolkovsky District, Moscow Oblast, Central Federal District, Russia</td>
+                                    <td>reconcept@mail.ru</td>
+                                    <td>1200000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=17"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/17" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=17"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="16">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200117091032/400_400_1579252232_Oi.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/16">A lavish 3 bedroom apartment in Knightsbridge
+                                        Court Юзер</a></td>
+                                    <td>City district Stupino, Moscow Oblast, Central Federal District, Russia</td>
+                                    <td>reconcept@mail.ru</td>
+                                    <td>100000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=16"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/16" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=16"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="6">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200115134746/400_400_1579096066_zj.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/apartments/6">fdgdfgdfg</a></td>
+                                    <td>Михайловское сельское поселение, Dorogobuzhsky District, Smolensk Oblast,
+                                        Central Federal District, Russia
+                                    </td>
+                                    <td>suhov.a.s@ya.ru</td>
+                                    <td>111</td>
+                                    <td>Disabled</td>
+                                    <td>apartments</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=6"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/apartments/6" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=6"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr data-key="3">
+                                    <td>
+                                        <div class="profile_table-body--cell_object"><a class="figure"><img
+                                                src="https://replatforms.com/uploads/images/Image/200116153116/400_400_1579188676_q3.jpg"
+                                                alt=""></a></div>
+                                    </td>
+                                    <td><a href="/catalog/houses/3">Дом в Москве м.Новопеределкино чудеса да и
+                                        только!</a></td>
+                                    <td>Ново-Переделкино, Novo-Peredelkino District, Western Administrative Okrug,
+                                        Moscow, Central Federal District, 119634, Russia
+                                    </td>
+                                    <td>proforg@list.ru</td>
+                                    <td>1000000</td>
+                                    <td><span style="color:#008000;">Active</span></td>
+                                    <td>houses</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                     href="/en/profile/update?id=3"
+                                                                                     data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-edit"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/catalog/houses/3" data-pjax="0"><i
+                                                class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-link"></use>
+                                            </svg>
+                                        </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=3"
+                                                    data-pjax="0"><i class="icon icon_size-2">
+                                            <svg>
+                                                <use xlink:href="#icon-remove"></use>
+                                            </svg>
+                                        </i></a></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

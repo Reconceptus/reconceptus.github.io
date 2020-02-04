@@ -68,18 +68,90 @@
         @include mq($until: tablet_xl) {
           display: none;
         }
+        tr {
+          &:last-child {
+            th {
+              border-bottom: 24px solid #f5f5f5;
+            }
+          }
+        }
         th {
           font-weight: 500;
           text-align: left;
           height: 40px;
-
-          border-bottom: 24px solid #f5f5f5;
           box-sizing: content-box;
           @include mq($from: desktop_xl) {
             padding: 0 $padding 0 $padding-md;
           }
           @include mq($until: desktop_xl) {
             padding: 0 $padding;
+          }
+          [data-sort] {
+            color: inherit;
+            display: inline-block;
+            position: relative;
+            padding-right: 40px;
+            &:after {
+              @extend .pseudo-content;
+              @extend .icon-arrow_down;
+              @extend .icon-arrow_down--sm;
+              top: 50%;
+              right: 0;
+              transform: translate(0,-50%) rotate(-45deg);
+            }
+          }
+          [data-sort^="-"] {
+            &:after {
+              transform: translate(0,-50%) rotate(135deg);
+              margin-top: 4px;
+            }
+          }
+          [data-sort*="address"] {
+            margin-right: 10vw;
+          }
+        }
+        .filters {
+          background: transparent;
+          td {
+            border-bottom: 24px solid #f5f5f5;
+            box-sizing: content-box;
+            @include mq($from: desktop_xl) {
+              padding: 4px 0 12px 32px;
+            }
+            @include mq($until: desktop_xl) {
+              padding: 8px $padding;
+            }
+          }
+          input {
+            display: block;
+            width: 100%;
+            height: 32px;
+            border: 1px solid $brand-02;
+            border-radius: 4px;
+            padding: 0 5px;
+            background: $white;
+            outline: none;
+            -moz-appearance:textfield;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+          select {
+            display: block;
+            width: 100%;
+            height: 32px;
+            border: 1px solid $brand-02;
+            border-radius: 4px;
+            background-color: $white;
+            outline: none;
+            appearance: none;
+            background-position: 96% center;
+            background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212%22%20height%3D%227.41%22%20viewBox%3D%220%200%2012%207.41%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_54%22%20data-name%3D%22Path%2054%22%20d%3D%22M8.59%2C16.59%2C13.17%2C12%2C8.59%2C7.41%2C10%2C6l6%2C6-6%2C6Z%22%20transform%3D%22translate%2818%20-8.59%29%20rotate%2890%29%22%20fill%3D%22%23C1844C%22/%3E%0D%0A%3C/svg%3E%0D%0A");
+            background-repeat: no-repeat;
+            background-size: 12px 7px;
+            padding: 0 16px 0 5px;
           }
         }
       }
@@ -106,22 +178,29 @@
             max-width: 50%;
           }
         }
-      }
-      td {
+        td {
 
-        background-color: $white;
-        @include mq($from: desktop_xl) {
-          padding: 0 $padding 0 $padding-md;
-        }
-        @include mq($until: desktop_xl) {
-          padding: 0 $padding;
-        }
-        @include mq($from: tablet_xl) {
-          height: 104px;
-          &:last-child {
-            width: 1px;
+          background-color: $white;
+          @include mq($from: desktop_xl) {
+            padding: 0 $padding 0 $padding-md;
+          }
+          @include mq($until: desktop_xl) {
+            padding: 0 $padding;
+          }
+          @include mq($from: tablet_xl) {
+            height: 104px;
+            &:last-child {
+              width: 1px;
+            }
           }
         }
+      }
+
+      &--auto {
+        margin: 0 -24px;
+        padding: 0 24px;
+        overflow: auto;
+
       }
     }
     &-head {
@@ -268,5 +347,16 @@
         }
       }
     }
+
+    .summary {
+      margin-bottom: $gutter-x2;
+      @include mq($from: desktop_sm) {
+        padding-left: calc(10% - #{$gutter-x2});
+      }
+    }
+    thead {
+
+    }
+
   }
 }
