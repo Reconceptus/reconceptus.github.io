@@ -9,6 +9,12 @@
     padding: 0 12px;
     background: $white;
     outline: none;
+    -moz-appearance:textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
     &:focus {
       border-color: $ui-01;
       box-shadow: 0 0 0 1px $ui-01 inset !important;
@@ -71,18 +77,6 @@
       color: $ui-02;
     }
   }
-  &--message {
-    //font-size: 12px;
-    //position: absolute;
-    //top: 60px;
-    //
-    //@include mq($from: tablet) {
-    //  left: $padding-md;
-    //}
-    //@include mq($until: tablet) {
-    //  left: 0;
-    //}
-  }
   &.filled {
     //input {
     //  .valid & {
@@ -97,7 +91,7 @@
     //  transform: translateY(-106%) scale(0.75);
     //}
   }
-  &_label {
-
+  .address-variants {
+    display: none;
   }
 }

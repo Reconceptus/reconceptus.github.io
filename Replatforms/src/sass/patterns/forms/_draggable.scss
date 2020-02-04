@@ -90,7 +90,12 @@
   }
   .file-drop-zone-title {
     color: $text;
-    font-size: $font-md;
+    @include mq($from: mobile_sm) {
+      font-size: $font-md;
+    }
+    @include mq($until: mobile_sm) {
+      font-size: $font;
+    }
   }
   .file-drop-zone {
     cursor: pointer;
