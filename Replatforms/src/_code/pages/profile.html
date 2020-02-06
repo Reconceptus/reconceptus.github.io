@@ -220,7 +220,26 @@
                                     </button>
                                     <button class="btn btn--md btn--grey object_cart-sidebar--btn"
                                             type="button"
-                                            data-open-modal="popup-saved"
+                                            onclick="functions.modal.custom('popup-custom','warning',{
+                                                title:'Сохранено',
+                                                text:'Данные сохранены',
+                                                buttons:[
+                                                    {
+                                                        value: 'no, thanks',
+                                                        style: 'link',
+                                                        callback: function(){
+                                                            functions.modal.close();
+                                                        }
+                                                    },
+                                                    {
+                                                        value: 'confirm',
+                                                        style: 'button',
+                                                        callback: function(){
+                                                            functions.modal.close();
+                                                        }
+                                                    }
+                                                ]
+                                                })"
                                     >
                                         <i class="icon icon_size-2">
                                             <svg><use xlink:href="#icon-save"/></svg>
@@ -260,6 +279,7 @@
     <include src="./modal/signup.html"></include>
     <include src="./modal/reset-password.html"></include>
     <include src="./modal/popup-saved.html"></include>
+    <include src="./modal/popup-custom.html"></include>
 </div>
 
 <include src="../templates/scripts.html"></include>
