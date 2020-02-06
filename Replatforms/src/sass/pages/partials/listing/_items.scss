@@ -120,7 +120,7 @@
       }
       &--cta {
         position: absolute;
-
+        cursor: pointer;
         color: $white;
         @include mq($from: desktop_sm) {
           top: 40px;

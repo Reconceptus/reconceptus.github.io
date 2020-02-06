@@ -100,6 +100,9 @@ $(document).ready(() => {
     if ($('.shifting-box').length > 0) {
         functions.shifting_text();
     }
+    if ($('input[type=number]').length > 0) {
+        functions.input_number();
+    }
     // if ($('[data-form]').length > 0) {
     //     functions.validation.setDefaults();
     // }

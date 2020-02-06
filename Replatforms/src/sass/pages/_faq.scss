@@ -62,7 +62,7 @@
       }
     }
     &--answer {
-
+      @extend .text-box;
       background-color: $white;
       display: none;
       @include mq($from: mobile_xl) {

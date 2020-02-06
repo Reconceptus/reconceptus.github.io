@@ -22,4 +22,5 @@ window.functions = {
     home_bg: require('./modules/home-bg'),
     validation: require('./modules/validation'),
     shifting_text: require('./modules/shifting-text'),
+    input_number: require('./modules/input-number'),
 };

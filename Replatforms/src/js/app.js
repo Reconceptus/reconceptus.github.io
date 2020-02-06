@@ -34,6 +34,7 @@ window.functions = {
     home_bg: require('./modules/home-bg'),
     validation: require('./modules/validation'),
     shifting_text: require('./modules/shifting-text'),
+    input_number: require('./modules/input-number'),
 };
 
 // scripts
@@ -138,6 +139,9 @@ $(document).ready(() => {
     }
     if ($('.shifting-box').length > 0) {
         functions.shifting_text();
+    }
+    if ($('input[type=number]').length > 0) {
+        functions.input_number();
     }
     // if ($('[data-form]').length > 0) {
     //     functions.validation.setDefaults();
