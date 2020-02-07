@@ -116,6 +116,11 @@
                                                 Forms
                                             </a>
                                         </li>
+                                        <li class="__navigation-item __navigation-item--1.6.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-forms-inputs">
+                                                Inputs
+                                            </a>
+                                        </li>
                                         <li class="__navigation-item __navigation-item--1.7" data-depth="2">
                                             <a href="section-styleguide.html#styleguide-widgets">
                                                 Widgets
@@ -1605,11 +1610,6 @@ The grid consists of 12 columns wrapped in one row. Each column can contain also
                                 Source: <code>abstracts/_mixins.scss</code>, line 65
                             </small>
 
-                            <span class="__description">
-                                <p>Description:
-The grid consists of 12 columns wrapped in one row. Each column can contain also row with columns.</p>
-  <p>There is the list of classes for grid:</p>
-                            </span>
 
                             <div class="__rendered">
                                     <div class="__rendered-example">
@@ -1715,6 +1715,136 @@ The grid consists of 12 columns wrapped in one row. Each column can contain also
                             </small>
 
 
+                    </section>
+                    <section id="styleguide-forms-inputs" class="__block __block--3">
+
+                        <h3 class="__h3">Inputs</h3>
+
+                            <small class="__file">
+                                Source: <code>patterns/forms/_forms.scss</code>, line 97
+                            </small>
+
+
+                            <div class="__rendered">
+                                    <div class="__rendered-example">
+                                          <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-input">
+        <div class="form-label">Label:</div>
+        <input type="text" placeholder="Placeholder">
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-select">
+        <div class="form-label">Label:</div>
+        <select>
+          <option value="">Select an option</option>
+          <option value="option01">option01</option>
+          <option value="option02">option02</option>
+          <option value="option03">option03</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-label">Label:</div>
+      <div class="form-range">
+        <div class="form-input"><input type="text" placeholder="min"></div>
+        <span class="dash"></span>
+        <div class="form-input"><input type="text" placeholder="max"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="form-checkbox content-col col-5">
+      <label class="checkbox-item">
+        <input type="checkbox" name="checkbox">
+        <span class="checkbox-label">Checkbox value</span>
+      </label>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+        <div class="form-radio_line">
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">1</span>
+          </label>
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">2</span>
+          </label>
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">3+</span>
+          </label>
+        </div>
+    </div>
+  </div>
+                                    </div>
+                            </div>
+                                <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-5&quot;&gt;
+      &lt;div class&#x3D;&quot;form-input&quot;&gt;
+        &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Placeholder&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-5&quot;&gt;
+      &lt;div class&#x3D;&quot;form-select&quot;&gt;
+        &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+        &lt;select&gt;
+          &lt;option value&#x3D;&quot;&quot;&gt;Select an option&lt;/option&gt;
+          &lt;option value&#x3D;&quot;option01&quot;&gt;option01&lt;/option&gt;
+          &lt;option value&#x3D;&quot;option02&quot;&gt;option02&lt;/option&gt;
+          &lt;option value&#x3D;&quot;option03&quot;&gt;option03&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-5&quot;&gt;
+      &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-range&quot;&gt;
+        &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;min&quot;&gt;&lt;/div&gt;
+        &lt;span class&#x3D;&quot;dash&quot;&gt;&lt;/span&gt;
+        &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;max&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;form-checkbox content-col col-5&quot;&gt;
+      &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+        &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;checkbox&quot;&gt;
+        &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Checkbox value&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-5&quot;&gt;
+        &lt;div class&#x3D;&quot;form-radio_line&quot;&gt;
+          &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+            &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+            &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;1&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+            &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+            &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;2&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+            &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+            &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;3+&lt;/span&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code>
+                                </div></pre>
                     </section>
                     <section id="styleguide-widgets" class="__block __block--2">
 

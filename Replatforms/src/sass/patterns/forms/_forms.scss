@@ -93,3 +93,70 @@
   color: $text;
   line-height: 24px;
 }
+
+/**
+Inputs
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-input">
+        <div class="form-label">Label:</div>
+        <input type="text" placeholder="Placeholder">
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-select">
+        <div class="form-label">Label:</div>
+        <select>
+          <option value="">Select an option</option>
+          <option value="option01">option01</option>
+          <option value="option02">option02</option>
+          <option value="option03">option03</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-label">Label:</div>
+      <div class="form-range">
+        <div class="form-input"><input type="text" placeholder="min"></div>
+        <span class="dash"></span>
+        <div class="form-input"><input type="text" placeholder="max"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="form-checkbox content-col col-5">
+      <label class="checkbox-item">
+        <input type="checkbox" name="checkbox">
+        <span class="checkbox-label">Checkbox value</span>
+      </label>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+        <div class="form-radio_line">
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">1</span>
+          </label>
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">2</span>
+          </label>
+          <label class="radio_line-item">
+            <input type="radio" name="radio">
+            <span class="radio_line-label">3+</span>
+          </label>
+        </div>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.forms.inputs
+ */
