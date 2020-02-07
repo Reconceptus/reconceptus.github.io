@@ -1,3 +1,53 @@
+/**
+Breakpoints
+
+Description:
+  <div data-markup="hide"></div>
+  There is the list of breakpoints in the project. You can use them with next classes for grid columns:
+  
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col col-8">
+      <table class="grid-table">
+        <tr>
+          <td></td>
+          <td><strong>Extra extra small</strong></td>
+          <td><strong>Extra small</strong></td>
+          <td><strong>Small</strong></td>
+          <td><strong>Medium</strong></td>
+          <td><strong>Large</strong></td>
+          <td><strong>Extra Large</strong></td>
+          <td><strong>Wide</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Window width</strong></td>
+          <td>&lt; 480px</td>
+          <td>&lt; 600px</td>
+          <td>&lt; 800px</td>
+          <td>&lt; 1025px</td>
+          <td>&lt; 1281px</td>
+          <td>&lt; 1421px</td>
+          <td>&lt; 1725px</td>
+        </tr>
+        <tr>
+          <td><strong>Class prefix</strong></td>
+          <td class="color-font-brand-01">-xx-</td>
+          <td class="color-font-brand-01">-xs-</td>
+          <td class="color-font-brand-01">-sm-</td>
+          <td class="color-font-brand-01">-md-</td>
+          <td class="color-font-brand-01">-lg-</td>
+          <td class="color-font-brand-01">-xl-</td>
+          <td class="color-font-brand-01">-wd-</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+Weight: 1
+
+Styleguide styleguide.grid.breakpoints
+ */
+
 $mq-breakpoints: (
         mobile_sm:  480px,  // xx
         mobile_xl:  600px,  // xs
@@ -11,6 +61,61 @@ $mq-breakpoints: (
 @import "mixins/mq";
 @import "mixins/class-generator";
 @import "mixins/grid";
+
+/**
+Grid examples
+
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-2">
+      <div class="grid-col">.content-col .col-2</div>
+    </div>
+    <div class="content-col col-4">
+      <div class="grid-col">.content-col .col-4</div>
+    </div>
+    <div class="content-col col-6">
+      <div class="grid-col">.content-col .col-6</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-pull-1 col-2">
+      <div class="grid-col">.content-col .col-pull-1 .col-2</div>
+    </div>
+    <div class="content-col col-3">
+      <div class="grid-col">.content-col .col-3</div>
+    </div>
+    <div class="content-col col-pull-2 col-2">
+      <div class="grid-col">.content-col .col-pull-2 .col-2</div>
+    </div>
+    <div class="content-col col-2">
+      <div class="grid-col">.content-col .col-2</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col content-col--auto">
+      <div class="grid-col">.content-col .content-col--auto {column width depends of content}</div>
+    </div>
+    <div class="content-col">
+      <div class="grid-col">.content-col</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-4 col-pull-1 col-pull-xl-0">
+      <div class="grid-col">.content-col .col-4 .col-pull-1 .col-pull-xl-0</div>
+    </div>
+    <div class="content-col col-3 col-md-2">
+      <div class="grid-col">.content-col .col-3 .col-md-2</div>
+    </div>
+    <div class="content-col col-4 col-pull-md-1 col-md-5">
+      <div class="grid-col">.content-col .col-4 .col-pull-md-1 .col-md-5</div>
+    </div>
+  </div>
+
+Weight: 3
+
+Styleguide styleguide.grid.examples
+ */
 
 @mixin fonts($name,$file,$weight,$style){
   @font-face {
@@ -29,3 +134,4 @@ $mq-breakpoints: (
     }
   }
 }
+

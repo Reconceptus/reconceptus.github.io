@@ -1,3 +1,65 @@
+/**
+Column classes
+
+<div data-markup="hide"></div>
+
+Description:
+  The grid consists of 12 columns wrapped in one row. Each column can contain also row with columns.
+  <p>There is the list of classes for grid:</p>
+  
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col col-8">
+      <table class="grid-table">
+        <tr>
+          <td><strong>Class</strong></td>
+          <td><strong>Styles</strong></td>
+          <td><strong>Description</strong></td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-row</strong></td>
+          <td>margin: 0 -12px; <br>display: flex;</td>
+          <td>This is a wrapper of columns</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-col</strong></td>
+          <td>padding: 0 12px;<br>width: 100%;</td>
+          <td>Necessary class for each column</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-col--auto</strong></td>
+          <td>width: auto;</td>
+          <td>Additional class for column if you don't need width:100%</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-{n}</strong></td>
+          <td>max-width: {value that depends on <i>n</i>}%</td>
+          <td>Class for column - shows the column size (f.e. <strong class="nowrap">.col-6</strong> means that the column width is 6 of 12 = 50%)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-{mod}-{n}</strong></td>
+          <td>max-width: {value that depends on <i>n</i> for mquery <i>mod</i>}%</td>
+          <td>Class for column - shows the column size for specific window width (f.e. <strong class="nowrap">.col-lg-6</strong> means that the column width is 6 of 12 = 50% for window width < 1281px)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-pull-{n}</strong></td>
+          <td>margin-left: {value that depends on <i>n</i>}%</td>
+          <td>Class for column - set margin-left for the column (f.e. <strong class="nowrap">.col-pull-3</strong> means that the column's margin-left is 3 of 12 = 25%)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-pull-{mod}-{n}</strong></td>
+          <td>margin-left: {value that depends on <i>n</i> for mquery <i>mod</i>}%</td>
+          <td>Class for column - set margin-left for the column for specific window width (f.e. <strong class="nowrap">.col-pull-lg-3</strong> means that the column's margin-left is 3 of 12 = 25% for window width < 1281px)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.grid.classes
+ */
+
 .content {
   margin: 0 auto;
   box-sizing: border-box;
