@@ -157,22 +157,108 @@
         <div class="content-row">
             <div class="content-col col-12">
 
-                    <section id="vue-documentation" class="__block __block--2">
+                    <section id="styleguide-grid-examples" class="__block __block--3">
 
-                        <h2 class="__h2">JS Documentation</h2>
+                        <h3 class="__h3">Grid examples</h3>
 
                             <small class="__file">
-                                Source: <code>pages/_styleguide.scss</code>, line 92
+                                Source: <code>abstracts/_mixins.scss</code>, line 65
                             </small>
 
 
                             <div class="__rendered">
                                     <div class="__rendered-example">
-                                          <vue-documentation></vue-documentation>
+                                          <div class="content-row">
+    <div class="content-col col-2">
+      <div class="grid-col">.content-col .col-2</div>
+    </div>
+    <div class="content-col col-4">
+      <div class="grid-col">.content-col .col-4</div>
+    </div>
+    <div class="content-col col-6">
+      <div class="grid-col">.content-col .col-6</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-pull-1 col-2">
+      <div class="grid-col">.content-col .col-pull-1 .col-2</div>
+    </div>
+    <div class="content-col col-3">
+      <div class="grid-col">.content-col .col-3</div>
+    </div>
+    <div class="content-col col-pull-2 col-2">
+      <div class="grid-col">.content-col .col-pull-2 .col-2</div>
+    </div>
+    <div class="content-col col-2">
+      <div class="grid-col">.content-col .col-2</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col content-col--auto">
+      <div class="grid-col">.content-col .content-col--auto {column width depends of content}</div>
+    </div>
+    <div class="content-col">
+      <div class="grid-col">.content-col</div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-4 col-pull-1 col-pull-xl-0">
+      <div class="grid-col">.content-col .col-4 .col-pull-1 .col-pull-xl-0</div>
+    </div>
+    <div class="content-col col-3 col-md-2">
+      <div class="grid-col">.content-col .col-3 .col-md-2</div>
+    </div>
+    <div class="content-col col-4 col-pull-md-1 col-md-5">
+      <div class="grid-col">.content-col .col-4 .col-pull-md-1 .col-md-5</div>
+    </div>
+  </div>
                                     </div>
                             </div>
                                 <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
-                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;vue-documentation&gt;&lt;/vue-documentation&gt;</code>
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-4&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-6&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-6&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-pull-1 col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-pull-1 .col-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-3&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-pull-2 col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-pull-2 .col-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-2&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col content-col--auto&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .content-col--auto {column width depends of content}&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-4 col-pull-1 col-pull-xl-0&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-4 .col-pull-1 .col-pull-xl-0&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-3 col-md-2&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-3 .col-md-2&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-4 col-pull-md-1 col-md-5&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-col&quot;&gt;.content-col .col-4 .col-pull-md-1 .col-md-5&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code>
                                 </div></pre>
                     </section>
 

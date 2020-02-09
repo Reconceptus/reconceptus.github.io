@@ -51,15 +51,6 @@ Styleguide styleguide.icons
 /**
 Grid
 
-Grid framework based on Bootstrap, which follows stand alone grid setup provided by Bootstrap
-https://github.com/twbs/bootstrap/blob/v4-dev/scss/bootstrap-grid.scss. we made some changes for project scope:
-<ul>
-<li>class "row" changed to "o-grid"</li>
-<li>class "col-*" changed to "o-grid__item"</li>
-<li>clean up of bootstrap variables.scss for having grid variables only</li>
-<li>NOTE: usage similar to bootstrap with sm, md, lg modifier</li>
-</ul>
-
 Weight: 5
 
 Styleguide styleguide.grid
@@ -68,7 +59,7 @@ Styleguide styleguide.grid
 /**
 Forms
 
-Weight: 7
+Weight: 6
 
 Styleguide styleguide.forms
  */
@@ -351,6 +342,14 @@ Markup:
           <svg><use xlink:href="#icon-social-twitter"/></svg>
         </i>
         icon-social-twitter
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-warning"/></svg>
+        </i>
+        icon-warning
       </div>
     </div>
   </div>

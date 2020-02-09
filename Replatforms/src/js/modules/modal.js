@@ -52,6 +52,48 @@ const modal = {
         $modal.addClass('opened');
         this.modal.isOpened = true;
     },
+    custom: function(attr, type, data) {
+        this.modal.data = attr;
+        let titleIcon = '';
+        switch (type) {
+            case 'success':
+                titleIcon = '<svg><use xlink:href="#icon-check"/></svg>';
+                break;
+            case 'warning':
+                titleIcon = '<svg><use xlink:href="#icon-warning"/></svg>';
+                break;
+        }
+
+        let _modal = $('[data-modal="' + this.modal.data + '"]');
+        _modal.find('.popup_box').addClass(type);
+        _modal
+            .find('.title-icon')
+            .attr('data-title-icon', type)
+            .html(titleIcon);
+        _modal.find('.title-text').text(data.title);
+        _modal.find('.popup_box-main--text').text(data.text);
+        _modal.find('.popup_box-main--buttons').html('');
+
+        if (!!data.buttons) {
+            data.buttons.forEach(function(item) {
+                let btn = document.createElement('button');
+                $(btn).text(item.value);
+                switch (item.style) {
+                    case 'link':
+                        $(btn).addClass('link_simple');
+                        break;
+                    case 'button':
+                        $(btn).addClass('btn btn--orange btn--xs');
+                        break;
+                }
+                $(btn).click(item.callback);
+
+                _modal.find('.popup_box-main--buttons').append(btn);
+            });
+        }
+
+        this.open();
+    },
     reopen: function() {
         $('[data-modal]').removeClass('current');
         setTimeout(() => {
