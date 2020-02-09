@@ -17,6 +17,34 @@
       z-index: 1;
       padding: $gutter-x2;
     }
+    &--wrapper {
+
+      @include mq($from: tablet_xl) {
+        max-height: calc(100vh - 96px);
+        .mobile &,
+        .tablet & {
+          overflow: auto;
+        }
+      }
+
+      .mCustomScrollBox {
+        margin-right: -12px;
+        padding-right: 12px;
+        max-width: calc(100% + 12px);
+      }
+      .mCSB_inside>.mCSB_container {
+        margin-right: 0;
+      }
+      .mCSB_scrollTools .mCSB_draggerRail {
+        border-radius: 0;
+      }
+      .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        border-radius: 0;
+      }
+      .mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: $brand-03;
+      }
+    }
     &--mobile {
       &_check {
         @extend %hidden_input;

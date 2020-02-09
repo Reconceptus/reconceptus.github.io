@@ -61,6 +61,10 @@ $(document).ready(() => {
             $('.pl-sidebar-scroll').each(function() {
                 let _this = $(this);
                 _this.mCustomScrollbar({ theme: 'dark-3' });
+
+                $(window).resize(function() {
+                    _this.mCustomScrollbar('update');
+                });
             });
         }
     }
@@ -77,7 +81,11 @@ $(document).ready(() => {
     if ($('.chat_box').length > 0) {
         $('.chat_box-user').click(function() {
             $('#show_users').prop('checked', false);
+            $('html, body').scrollTop('99999');
         });
+        setTimeout(function() {
+            $('html, body').scrollTop('99999');
+        }, 300);
     }
     if ($('.cta-sticky-wrap').length > 0) {
         functions.sticky_cta.init();

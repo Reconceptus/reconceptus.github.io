@@ -7,11 +7,36 @@
       width: 100%;
       height: 800px;
     }
+
   }
   img[src*='map-mark']{
     @extend %full_block;
     max-width: 100% !important;
     max-height: 100%;
+  }
+  @include mq($from: tablet_sm) {
+    .gm-bundled-control-on-bottom {
+      width: 56px;
+      height: 112px;
+      bottom: 0 !important;
+      right: 0 !important;
+      & > div {
+        width: 100%;
+        height: 100%;
+        & > div {
+          min-width: 100%;
+          min-height: 100%;
+          & > div {
+            margin: 0 auto !important;
+          }
+        }
+      }
+    }
+    .gm-control-active {
+      min-width: 56px;
+      min-height: 56px;
+    }
+
   }
   .map-item {
     overflow: visible !important;

@@ -15,6 +15,14 @@ let markers = function() {
             _this.after(cloneItem);
         }
     });
+
+    $('#map').on('click', function(e) {
+        let _target = $(e.target);
+
+        if (_target.closest('.map-item').length == 0) {
+            $('#map .map-item').removeClass('visible');
+        }
+    });
 };
 
 module.exports = markers;
