@@ -183,6 +183,10 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 4px 0 rgba($black,0.16);
+      @include hover(){
+        color: $brand-01;
+        background-color: $brand-02;
+      }
       @include mq($from: desktop_sm) {
         width: 56px;
         height: 56px;
@@ -210,11 +214,40 @@
       }
 
       .icon-like {
-        color: $link;
+        path {
+          transition: fill 0.2s;
+        }
+        &--dynamic {
+          fill: $link;
+        }
+        
+      }
+      @include hover(){
+        .icon-like {
+          &--static {
+            fill: $link;
+          }
+          &--dynamic {
+            fill: $brand-02;
+          }
+        }
       }
       &.liked {
+        background-color: $brand-02;
         .icon-like {
-          color: $brand-02;
+          &--static {
+            fill: $link;
+          }
+          &--dynamic {
+            fill: $link;
+          }
+        }
+        @include hover(){
+          .icon-like {
+            &--dynamic {
+              fill: $link;
+            }
+          }
         }
       }
     }
