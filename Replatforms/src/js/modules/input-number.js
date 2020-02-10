@@ -4,10 +4,7 @@ let input_number = function() {
             let _this = $(this),
                 _JSinput = document.createElement('input'),
                 _input = $(_JSinput);
-            _this
-                .addClass('hide')
-                .closest('.form-input')
-                .append(_input);
+            _this.addClass('hide').after(_input);
             _input.attr({
                 value: _this.val(),
                 placeholder: _this.attr('placeholder'),
