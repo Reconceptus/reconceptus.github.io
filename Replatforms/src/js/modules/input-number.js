@@ -5,18 +5,21 @@ let input_number = function() {
                 _JSinput = document.createElement('input'),
                 _input = $(_JSinput);
             _this.addClass('hide').after(_input);
-            _input.attr({
-                value: _this.val(),
-                placeholder: _this.attr('placeholder'),
-                class: 'numeric',
-            });
+            _input
+                .attr({
+                    value: _this.val(),
+                    placeholder: _this.attr('placeholder'),
+                    class: 'numeric',
+                })
+                .change(function() {
+                    _this.blur();
+                });
             let cleave = new Cleave(_input, {
                 numeral: true,
                 delimiter: ' ',
                 numeralThousandsGroupStyle: 'thousand',
                 onValueChanged: function(e) {
                     _this.val(e.target.rawValue);
-                    _this.blur();
                 },
             });
         });
