@@ -71,6 +71,7 @@
       padding: 96px 20% 48px;
       &.wide {
         padding: $padding-xxl 20%;
+        min-width: 80vw;
       }
       &.full {
         padding: 0;
