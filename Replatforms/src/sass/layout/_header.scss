@@ -185,13 +185,11 @@ $header-height: 88px;
         &_count {
           color: $white;
           background: $ui-01;
-
           font-weight: 500;
           position: absolute;
           bottom: 50%;
           left: 100%;
           border-radius: 10px;
-
           transform: translate(-14px, -18px);
           @include mq($from: tablet_sm) {
             font-size: 14px;
