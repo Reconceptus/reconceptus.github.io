@@ -151,6 +151,13 @@ $(document).ready(() => {
     if ($('input[type=number]').length > 0) {
         functions.input_number();
     }
+    if ($('.profile_table-main').length > 0) {
+        $('.profile_table-main').each(function() {
+            $(this)
+                .find('table')
+                .wrap('<div class="profile_table-main--auto"></div>');
+        });
+    }
     // if ($('[data-form]').length > 0) {
     //     functions.validation.setDefaults();
     // }
