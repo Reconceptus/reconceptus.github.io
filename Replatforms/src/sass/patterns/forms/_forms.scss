@@ -80,6 +80,180 @@
   }
 }
 
+/**
+Columns
+
+Description: Use follow classes for columns:<br>
+  <p><u>WITHOUT COLUMNS</u></p>
+  <p><strong>.form-fieldset</strong> - wrapper for input group</p>
+  <p><strong>.form-field</strong> - wrapper for input row</p>
+  <p><strong>.form-field--element</strong> - wrapper for input element</p>
+  <p><u>WITH COLUMNS</u></p>
+  <strong>.form-fieldset--responsive</strong> - wrapper for inputs row (you can also wrap row with <i>.form-field</i>) <br>
+  <strong>.form-field--columns</strong> - wrapper for columns <br>
+  <strong>.form-field--col</strong> - one column (max-width: 50%) <br>
+
+Markup:
+  <h3 class="h3">WITHOUT COLUMNS</h3>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-fieldset">
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-input">
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-range">
+              <div class="form-input"><input type="number" placeholder="min"></div>
+              <span class="dash"></span>
+              <div class="form-input"><input type="number" placeholder="max"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset">
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-select">
+              <select>
+                <option value="">Select an option</option>
+                <option value="option01">option01</option>
+                <option value="option02">option02</option>
+                <option value="option03">option03</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-radio_line">
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">1</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">2</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">3</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">4</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">5+</span>
+            </label>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="h3">WITH COLUMNS</h3>
+  <div class="content-row">
+    <div class="content-col col-8">
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-input">
+              <div class="form-label">Label:</div>
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-input">
+              <div class="form-label">Label:</div>
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="form-range">
+              <div class="form-input"><input type="number" placeholder="min"></div>
+              <span class="dash"></span>
+              <div class="form-input"><input type="number" placeholder="max"></div>
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="form-select">
+              <select>
+                <option value="">Select an option</option>
+                <option value="option01">option01</option>
+                <option value="option02">option02</option>
+                <option value="option03">option03</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="content-row flex-wrap">
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">24 hour Concierge</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Swimming pool</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Spa</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Gym</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Private Cinema</span>
+                  </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-checkbox">
+                <label class="checkbox-item">
+                    <input type="checkbox" name="approve">
+                    <span class="checkbox-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolore eaque exercitationem expedita fuga fugiat harum itaque nobis nulla omnis, quaerat quas reprehenderit sapiente vero.</span>
+                </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.forms.columns
+ */
+
 .form-label {
   font-size: $font;
   color: $text;
@@ -101,7 +275,7 @@ Markup:
   <div class="content-row">
     <div class="content-col col-5">
       <div class="form-input">
-        <div class="form-label">Label:</div>
+        <div class="form-label">Input text:</div>
         <input type="text" placeholder="Placeholder">
       </div>
     </div>
@@ -109,7 +283,7 @@ Markup:
   <div class="content-row">
     <div class="content-col col-5">
       <div class="form-select">
-        <div class="form-label">Label:</div>
+        <div class="form-label">Select:</div>
         <select>
           <option value="">Select an option</option>
           <option value="option01">option01</option>
@@ -121,11 +295,39 @@ Markup:
   </div>
   <div class="content-row">
     <div class="content-col col-5">
-      <div class="form-label">Label:</div>
+      <div class="form-label">Input number range:</div>
       <div class="form-range">
-        <div class="form-input"><input type="text" placeholder="min"></div>
+        <div class="form-input"><input type="number" placeholder="min"></div>
         <span class="dash"></span>
-        <div class="form-input"><input type="text" placeholder="max"></div>
+        <div class="form-input"><input type="number" placeholder="max"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-textarea digits-relative">
+          <div class="form-label">Textarea:</div>
+          <textarea rows="6" placeholder="Please enter a message"></textarea>
+          <div class="digits">0/1000</div>
+      </div>
+    </div>
+  </div>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-label">Radio buttons:</div>
+      <div class="form-radio_line">
+        <label class="radio_line-item">
+          <input type="radio" name="radio">
+          <span class="radio_line-label">1</span>
+        </label>
+        <label class="radio_line-item">
+          <input type="radio" name="radio">
+          <span class="radio_line-label">2</span>
+        </label>
+        <label class="radio_line-item">
+          <input type="radio" name="radio">
+          <span class="radio_line-label">3+</span>
+        </label>
       </div>
     </div>
   </div>
@@ -137,26 +339,8 @@ Markup:
       </label>
     </div>
   </div>
-  <div class="content-row">
-    <div class="content-col col-5">
-        <div class="form-radio_line">
-          <label class="radio_line-item">
-            <input type="radio" name="radio">
-            <span class="radio_line-label">1</span>
-          </label>
-          <label class="radio_line-item">
-            <input type="radio" name="radio">
-            <span class="radio_line-label">2</span>
-          </label>
-          <label class="radio_line-item">
-            <input type="radio" name="radio">
-            <span class="radio_line-label">3+</span>
-          </label>
-        </div>
-    </div>
-  </div>
 
-Weight: 2
+Weight: 1
 
 Styleguide styleguide.forms.inputs
  */

@@ -137,6 +137,10 @@
               -webkit-appearance: none;
               margin: 0;
             }
+            &.numeric {
+              float: left;
+              width: 45%;
+            }
           }
           select {
             display: block;

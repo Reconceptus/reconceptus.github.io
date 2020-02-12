@@ -52,6 +52,18 @@ const modal = {
         $modal.addClass('opened');
         this.modal.isOpened = true;
     },
+    handleOpen: function(attr) {
+        this.modal.data = attr;
+        if (this.modal.isOpened) {
+            this.reopen();
+        } else {
+            this.open();
+        }
+    },
+    handleClose: function() {
+        this.modal.data = '';
+        this.close();
+    },
     custom: function(attr, type, data) {
         this.modal.data = attr;
         let titleIcon = '';

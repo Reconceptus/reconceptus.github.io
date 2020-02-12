@@ -126,16 +126,6 @@
                                                 Columns
                                             </a>
                                         </li>
-                                        <li class="__navigation-item __navigation-item--1.7" data-depth="2">
-                                            <a href="section-styleguide.html#styleguide-widgets">
-                                                Widgets
-                                            </a>
-                                        </li>
-                                        <li class="__navigation-item __navigation-item--1.8" data-depth="2">
-                                            <a href="section-styleguide.html#styleguide-utilities">
-                                                Utilities
-                                            </a>
-                                        </li>
                                 </ul>
                         </li>
                         <li class="__navigation-item __navigation-item--1">
@@ -162,15 +152,340 @@
         <div class="content-row">
             <div class="content-col col-12">
 
-                    <section id="styleguide-widgets" class="__block __block--2">
+                    <section id="styleguide-forms-columns" class="__block __block--3">
 
-                        <h2 class="__h2">Widgets</h2>
+                        <h3 class="__h3">Columns</h3>
 
                             <small class="__file">
-                                Source: <code>pages/_styleguide.scss</code>, line 67
+                                Source: <code>patterns/forms/_forms.scss</code>, line 83
                             </small>
 
+                            <span class="__description">
+                                <p>Description: Use follow classes for columns:<br></p>
+  <p><u>WITHOUT COLUMNS</u></p>
+  <p><strong>.form-fieldset</strong> - wrapper for input group</p>
+  <p><strong>.form-field</strong> - wrapper for input row</p>
+  <p><strong>.form-field--element</strong> - wrapper for input element</p>
+  <p><u>WITH COLUMNS</u></p>
+  <strong>.form-fieldset--responsive</strong> - wrapper for inputs row (you can also wrap row with <i>.form-field</i>) <br>
+  <strong>.form-field--columns</strong> - wrapper for columns <br>
+  <strong>.form-field--col</strong> - one column (max-width: 50%) <br>
+                            </span>
 
+                            <div class="__rendered">
+                                    <div class="__rendered-example">
+                                          <h3 class="h3">WITHOUT COLUMNS</h3>
+  <div class="content-row">
+    <div class="content-col col-5">
+      <div class="form-fieldset">
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-input">
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-range">
+              <div class="form-input"><input type="number" placeholder="min"></div>
+              <span class="dash"></span>
+              <div class="form-input"><input type="number" placeholder="max"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset">
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-select">
+              <select>
+                <option value="">Select an option</option>
+                <option value="option01">option01</option>
+                <option value="option02">option02</option>
+                <option value="option03">option03</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <div class="form-field--element">
+            <div class="form-radio_line">
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">1</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">2</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">3</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">4</span>
+            </label>
+            <label class="radio_line-item">
+              <input type="radio" name="radio">
+              <span class="radio_line-label">5+</span>
+            </label>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="h3">WITH COLUMNS</h3>
+  <div class="content-row">
+    <div class="content-col col-8">
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-input">
+              <div class="form-label">Label:</div>
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-input">
+              <div class="form-label">Label:</div>
+              <input type="text" placeholder="Input text">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="form-range">
+              <div class="form-input"><input type="number" placeholder="min"></div>
+              <span class="dash"></span>
+              <div class="form-input"><input type="number" placeholder="max"></div>
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="form-select">
+              <select>
+                <option value="">Select an option</option>
+                <option value="option01">option01</option>
+                <option value="option02">option02</option>
+                <option value="option03">option03</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-fieldset--responsive">
+        <div class="form-field--columns">
+          <div class="form-field--col">
+            <div class="form-label">Label:</div>
+            <div class="content-row flex-wrap">
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">24 hour Concierge</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Swimming pool</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Spa</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Gym</span>
+                  </label>
+              </div>
+              <div class="form-checkbox content-col col-6 col-xs-12">
+                  <label class="checkbox-item">
+                      <input type="checkbox" name="development_facilities">
+                      <span class="checkbox-label">Private Cinema</span>
+                  </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-field--col">
+            <div class="form-checkbox">
+                <label class="checkbox-item">
+                    <input type="checkbox" name="approve">
+                    <span class="checkbox-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolore eaque exercitationem expedita fuga fugiat harum itaque nobis nulla omnis, quaerat quas reprehenderit sapiente vero.</span>
+                </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+                                    </div>
+                            </div>
+                                <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;h3 class&#x3D;&quot;h3&quot;&gt;WITHOUT COLUMNS&lt;/h3&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-5&quot;&gt;
+      &lt;div class&#x3D;&quot;form-fieldset&quot;&gt;
+        &lt;div class&#x3D;&quot;form-field&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--element&quot;&gt;
+            &lt;div class&#x3D;&quot;form-input&quot;&gt;
+              &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input text&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-field&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--element&quot;&gt;
+            &lt;div class&#x3D;&quot;form-range&quot;&gt;
+              &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;min&quot;&gt;&lt;/div&gt;
+              &lt;span class&#x3D;&quot;dash&quot;&gt;&lt;/span&gt;
+              &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;max&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-fieldset&quot;&gt;
+        &lt;div class&#x3D;&quot;form-field&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--element&quot;&gt;
+            &lt;div class&#x3D;&quot;form-select&quot;&gt;
+              &lt;select&gt;
+                &lt;option value&#x3D;&quot;&quot;&gt;Select an option&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option01&quot;&gt;option01&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option02&quot;&gt;option02&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option03&quot;&gt;option03&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;form-field&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--element&quot;&gt;
+            &lt;div class&#x3D;&quot;form-radio_line&quot;&gt;
+            &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+              &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+              &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;1&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+              &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+              &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;2&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+              &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+              &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;3&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+              &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+              &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;4&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label class&#x3D;&quot;radio_line-item&quot;&gt;
+              &lt;input type&#x3D;&quot;radio&quot; name&#x3D;&quot;radio&quot;&gt;
+              &lt;span class&#x3D;&quot;radio_line-label&quot;&gt;5+&lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h3 class&#x3D;&quot;h3&quot;&gt;WITH COLUMNS&lt;/h3&gt;
+  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-8&quot;&gt;
+      &lt;div class&#x3D;&quot;form-fieldset--responsive&quot;&gt;
+        &lt;div class&#x3D;&quot;form-field--columns&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-input&quot;&gt;
+              &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+              &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input text&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-input&quot;&gt;
+              &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+              &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input text&quot;&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-fieldset--responsive&quot;&gt;
+        &lt;div class&#x3D;&quot;form-field--columns&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-range&quot;&gt;
+              &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;min&quot;&gt;&lt;/div&gt;
+              &lt;span class&#x3D;&quot;dash&quot;&gt;&lt;/span&gt;
+              &lt;div class&#x3D;&quot;form-input&quot;&gt;&lt;input type&#x3D;&quot;number&quot; placeholder&#x3D;&quot;max&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-select&quot;&gt;
+              &lt;select&gt;
+                &lt;option value&#x3D;&quot;&quot;&gt;Select an option&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option01&quot;&gt;option01&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option02&quot;&gt;option02&lt;/option&gt;
+                &lt;option value&#x3D;&quot;option03&quot;&gt;option03&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-fieldset--responsive&quot;&gt;
+        &lt;div class&#x3D;&quot;form-field--columns&quot;&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-label&quot;&gt;Label:&lt;/div&gt;
+            &lt;div class&#x3D;&quot;content-row flex-wrap&quot;&gt;
+              &lt;div class&#x3D;&quot;form-checkbox content-col col-6 col-xs-12&quot;&gt;
+                  &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                      &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;development_facilities&quot;&gt;
+                      &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;24 hour Concierge&lt;/span&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;form-checkbox content-col col-6 col-xs-12&quot;&gt;
+                  &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                      &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;development_facilities&quot;&gt;
+                      &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Swimming pool&lt;/span&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;form-checkbox content-col col-6 col-xs-12&quot;&gt;
+                  &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                      &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;development_facilities&quot;&gt;
+                      &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Spa&lt;/span&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;form-checkbox content-col col-6 col-xs-12&quot;&gt;
+                  &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                      &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;development_facilities&quot;&gt;
+                      &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Gym&lt;/span&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;form-checkbox content-col col-6 col-xs-12&quot;&gt;
+                  &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                      &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;development_facilities&quot;&gt;
+                      &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Private Cinema&lt;/span&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-field--col&quot;&gt;
+            &lt;div class&#x3D;&quot;form-checkbox&quot;&gt;
+                &lt;label class&#x3D;&quot;checkbox-item&quot;&gt;
+                    &lt;input type&#x3D;&quot;checkbox&quot; name&#x3D;&quot;approve&quot;&gt;
+                    &lt;span class&#x3D;&quot;checkbox-label&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolore eaque exercitationem expedita fuga fugiat harum itaque nobis nulla omnis, quaerat quas reprehenderit sapiente vero.&lt;/span&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code>
+                                </div></pre>
                     </section>
 
             </div>
