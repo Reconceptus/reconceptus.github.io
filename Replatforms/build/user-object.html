@@ -172,9 +172,9 @@
                                             <div class="form-label">Укажите точку на карте:</div>
                                             <div class="object_cart-form--map">
                                                 <div id="map" class="object_cart-form--map_frame"></div>
-                                                <script type="text/javascript">
+                                                <!--<script type="text/javascript">
                                                     var map, marker,
-                                                        defaultLatLng = {lat: 55.762300, lng: 37.632070},
+                                                        defaultLatLng = {lat: 51.520300, lng: 0.000001},
                                                         currentLatLng = {},
                                                         input_lat = document.getElementById('form_map_lat'),
                                                         input_lng = document.getElementById('form_map_lng');
@@ -245,6 +245,100 @@
 
                                                         currentLatLng.lat = input_lat.value;
                                                         currentLatLng.lng = input_lng.value;
+                                                    }
+
+
+
+                                                </script>-->
+                                                <script type="text/javascript">
+
+                                                    var map, marker,
+                                                        lat = 51.520300,
+                                                        lng = 0.000001,
+                                                        defaultLatLng = {lat: lat, lng: lng},
+                                                        currentLatLng = {},
+                                                        input_lat = document.getElementById('form_map_lat'),
+                                                        input_lng = document.getElementById('form_map_lng');
+
+                                                    function initMap() {
+
+                                                        var LatLng = new google.maps.LatLng(defaultLatLng.lat, defaultLatLng.lng);
+                                                        var mapOptions = {
+                                                            mapTypeControl: false,
+                                                            streetViewControl: false,
+                                                            scrollwheel: false,
+                                                            zoom: 15,
+                                                            center: LatLng
+                                                        };
+                                                        map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+                                                        marker = new google.maps.Marker({
+                                                            position: LatLng,
+                                                            map: map,
+                                                            editable: true,
+                                                            icon: {
+                                                                url: './assets/images/map-set-mark.png',
+                                                                size: new google.maps.Size(72, 72)
+                                                            },
+                                                            draggable: true
+                                                        });
+
+                                                        google.maps.event.addListener(marker, 'dragend', changeInputs);
+                                                        google.maps.event.addListener(map, "click", function (event) {
+                                                            changeInputs(event);
+                                                            var _LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng);
+                                                            marker.setPosition(_LatLng);
+                                                        });
+
+                                                        function setMarkerPosition(mark, ref) {
+
+                                                            if (!input_lat.value) currentLatLng.lat = defaultLatLng.lat;
+                                                            if (!input_lng.value) currentLatLng.lng = defaultLatLng.lng;
+                                                            if (ref == 'lat') currentLatLng.lat = +input_lat.value;
+                                                            if (ref == 'lng') currentLatLng.lng = +input_lng.value;
+
+                                                            var LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng)
+                                                            map.setCenter(LatLng);
+                                                            mark.setPosition(LatLng)
+                                                        }
+
+                                                        input_lat.addEventListener('change', function () {
+                                                            setMarkerPosition(marker, 'lat')
+                                                        });
+                                                        input_lng.addEventListener('change', function () {
+                                                            setMarkerPosition(marker, 'lng')
+                                                        });
+                                                        if (navigator.geolocation) {
+                                                            navigator.geolocation.getCurrentPosition(function (position) {
+                                                                currentLatLng.lat = position.coords.latitude;
+                                                                currentLatLng.lng = position.coords.longitude;
+                                                                if (!lat && !lng) {
+                                                                    var _LatLng = new google.maps.LatLng(currentLatLng.lat, currentLatLng.lng)
+                                                                    map.setCenter(_LatLng);
+                                                                    marker.setPosition(_LatLng)
+                                                                }
+                                                            });
+                                                        }
+                                                    }
+
+                                                    function getAddress(lat, lng) {
+                                                        $.post('/' + lang + '/address/coordinates', {lat: lat, lng: lng}).done(function (data) {
+                                                            if (data.status === 'success') {
+                                                                $('#suggest').val(data.address);
+                                                                $('.address-result').text(data.address);
+                                                            } else {
+                                                                $('.address-result').text("We can't get address of this location");
+                                                            }
+                                                        });
+                                                    }
+
+                                                    function changeInputs(event) {
+                                                        input_lat.value = event.latLng.lat();
+                                                        input_lng.value = event.latLng.lng();
+
+                                                        currentLatLng.lat = input_lat.value;
+                                                        currentLatLng.lng = input_lng.value;
+                                                        setTimeout(() => getAddress(currentLatLng.lat, currentLatLng.lng), 1000);
                                                     }
 
 
