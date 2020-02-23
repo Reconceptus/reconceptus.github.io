@@ -24,8 +24,6 @@
   }
   &-section {
     background-color: $white;
-
-
     @include mq($from: tablet_xl) {
       padding: $padding-xl $padding-lg;
     }
@@ -54,9 +52,55 @@
     .h2 {
       margin-bottom: $padding-lg;
     }
-    .form-checkbox {
-
-    
+    &--tabs {
+      .tab-checker {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .tab-label {
+        @extend %btn_reset;
+        display: inline-flex;
+        cursor: pointer;
+        font-size: $font;
+        position: relative;
+        font-weight: 500;
+        @include mq($from: tablet_sm) {
+          margin-right: $gutter-x2;
+        }
+        @include mq($until: tablet_sm) {
+          margin-right: $gutter;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: $brand-02;
+          opacity: 0;
+          transition: all 0.2s;
+        }
+        @include hover(){
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+      .tab-section {
+        display: none;
+      }
+      .tab-checker:checked + .tab-label {
+        &:after {
+          opacity: 1;
+        }
+      }
     }
   }
   &-cta {

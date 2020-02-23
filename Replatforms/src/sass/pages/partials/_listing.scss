@@ -10,6 +10,7 @@ $listing_size: 56px;
   &_tabs {
     display: flex;
     width: 100%;
+    position: relative;
   }
   &_placeholder {
 
@@ -53,6 +54,11 @@ $listing_size: 56px;
   .listing_filter-user_cta {
     display: none;
   }
+}
+#view_listing:checked ~ .listing_tabs .listing_map {
+  position: absolute;
+  top: 0;
+  left: 100%;
 }
 #view_listing:checked ~ .listing_tabs .listing_map-box--frame {
   //position: absolute !important;

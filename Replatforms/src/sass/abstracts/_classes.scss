@@ -156,6 +156,10 @@ Styleguide styleguide.grid.classes
   }
 }
 
+.language-item.translatable {
+  border-bottom: 2px dotted $brand-01;
+  cursor: pointer;
+}
 .pseudo-content {
   content: "";
 }
