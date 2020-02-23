@@ -693,14 +693,48 @@
             <div class="content-row flex-justify--center">
                 <div class="content-col">
                     <div class="modal_box-close modal_close"></div>
-                    <div class="modal_box static">
+                    <div class="modal_box wide">
                         <button class="modal_close icon icon_size-3" type="button">
                             <svg><use xlink:href="#icon-close_lg"/></svg>
                         </button>
-                        <div class="modal_box-main">
-                            <h3 class="modal_box-main--title h2">Перевод тeкста</h3>
-                            <div class="modal_box-main--text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto autem delectus dicta doloremque dolorum exercitationem, expedita libero minima, perferendis perspiciatis provident quibusdam quo quos sed, similique suscipit ullam! Consequatur deserunt dolor eum excepturi maiores natus quos sapiente suscipit velit.
+                        <div class="pl-nav-scroll modal_box-main--overflow">
+                            <div class="modal_box-main" data-form="request">
+                                <div class="object_cart-section--tabs">
+                                    <input type="radio" id="tab001" class="tab-checker" checked name="tab">
+                                    <label for="tab001" class="tab-label">english</label>
+                                    <input type="radio" id="tab002" class="tab-checker" name="tab">
+                                    <label for="tab002" class="tab-label">russian</label>
+                                    <input type="radio" id="tab003" class="tab-checker" name="tab">
+                                    <label for="tab003" class="tab-label">estonian</label>
+                                    <div class="tab-section" style="display: block">
+                                        <form action="#">
+                                            <div class="form-fieldset--responsive">
+                                                <div class="form-field--columns">
+                                                    <div class="form-field--col">
+                                                        <div class="form-field--element">
+                                                            <div class="form-textarea">
+                                                                <div class="form-label">Ресурс:</div>
+                                                                <textarea rows="8" name="text" placeholder="Текст"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-field--col">
+                                                        <div class="form-field--element">
+                                                            <div class="form-textarea">
+                                                                <div class="form-label">Перевод:</div>
+                                                                <textarea rows="8"  name="translate" placeholder="Перевод текста"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-fieldset--responsive flex-box flex-justify--right">
+                                                <button type="button" class="btn btn--sm btn--white">отменить</button>
+                                                <button type="submit" class="btn btn--sm btn--orange">сохранить</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

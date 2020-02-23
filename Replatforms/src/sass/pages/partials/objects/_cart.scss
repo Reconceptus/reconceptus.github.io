@@ -95,6 +95,12 @@
       }
       .tab-section {
         display: none;
+        @include mq($from: tablet_sm) {
+          margin-top: $padding-lg;
+        }
+        @include mq($until: tablet_sm) {
+          margin-top: $padding-md;
+        }
       }
       .tab-checker:checked + .tab-label {
         &:after {

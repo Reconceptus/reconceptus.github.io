@@ -33,6 +33,9 @@
   &_container {
     will-change: opacity;
     transition: opacity 0.2s, transform 0.2s;
+    @include mq($until: mobile_xl) {
+      width: 100%;
+    }
     &.centered {
       margin: auto;
     }
@@ -132,6 +135,7 @@
           flex-direction: column;
           flex-grow: 1;
           height: 100%;
+          overflow: hidden;
         }
       }
       &--title {
