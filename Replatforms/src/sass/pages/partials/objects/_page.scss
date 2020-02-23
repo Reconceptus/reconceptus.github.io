@@ -80,11 +80,9 @@
     }
     &--stuff {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       margin-bottom: $padding-lg;
       span {
-        white-space: nowrap;
         margin: 0 4px;
       }
       .icon {

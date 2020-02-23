@@ -9,6 +9,12 @@ let text_box = function() {
             let _this = $(this);
             _this.wrap('<figure class="video"></figure>');
         });
+        _this.find('li').each(function() {
+            let _this = $(this);
+            if (_this.text().length < 1) {
+                _this.remove();
+            }
+        });
     });
 
     $('.faq-item--answer').each(function() {

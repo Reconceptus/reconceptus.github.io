@@ -93,6 +93,11 @@ $header-height: 88px;
       & > * {
         margin-right: $gutter-x2;
       }
+      &--add {
+        @include mq($until: tablet_xl) {
+          display: none !important;
+        }
+      }
       &--auth {
         position: relative;
         display: flex;

@@ -8,15 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding-right: 80px !important;
+    //padding-right: 80px !important;
     z-index: 0;
     li {
 
     }
     .re-icon {
       display: inline-flex;
-      width: 40px;
-      height: 40px;
       border: 1px solid $brand-02;
       box-sizing: border-box !important;
       padding: 0 !important;
@@ -25,6 +23,14 @@
       position: relative;
       margin: 0 $padding-sm $padding-sm 0 !important;
       color: transparent;
+      @include mq($from: mobile_xl) {
+        width: 40px;
+        height: 40px;
+      }
+      @include mq($until: mobile_xl) {
+        width: 36px;
+        height: 36px;
+      }
       &:after {
         @extend .pseudo-content;
         width: 100%;
@@ -39,13 +45,25 @@
       @include hover(){
         background: none;
       }
+      &.redactor-act {
+        background-color: rgba($brand-02,0.25);
+      }
     }
   }
   .redactor-editor {
     min-height: 200px;
     border: 1px solid $brand-02;
     border-radius: 4px;
-
+    ul {
+      li {
+        list-style: disc;
+      }
+    }
+    ol {
+      li {
+        list-style: decimal-leading-zero;
+      }
+    }
   }
 
   .re-translate {
@@ -53,13 +71,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    display: inline-flex;
+    //display: inline-flex;
     width: 40px;
     height: 40px;
     border: 1px solid $brand-02;
     align-items: center;
     justify-content: center;
     color: $brand-02;
+    display: none;
   }
 
   .re-unorderedlist:after {
