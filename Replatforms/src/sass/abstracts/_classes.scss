@@ -157,7 +157,7 @@ Styleguide styleguide.grid.classes
 }
 
 .language-item.translatable {
-  border-bottom: 2px dotted $brand-01;
+  border-bottom: 2px dotted $brand-01 !important;
   cursor: pointer;
 }
 .pseudo-content {

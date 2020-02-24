@@ -23,7 +23,6 @@
   "lint-staged": {
     "*.(js)": [
       "yarn prettier",
-      "build-styleguide",
       "git add"
     ]
   },

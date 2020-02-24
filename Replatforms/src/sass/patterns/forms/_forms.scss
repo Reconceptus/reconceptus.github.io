@@ -62,6 +62,10 @@
     &_field {
       height: 100%;
     }
+    .field-feedback-text {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 .form-fieldset {

@@ -82,6 +82,7 @@
       display: flex;
       align-items: center;
       margin-bottom: $padding-lg;
+      flex-wrap: wrap;
       span {
         margin: 0 4px;
       }
@@ -94,6 +95,9 @@
         }
         @include mq($until: mobile_xl) {
           align-self: flex-start;
+        }
+        & + span {
+          max-width: calc(100% - 40px);
         }
       }
     }
