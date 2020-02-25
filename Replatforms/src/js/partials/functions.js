@@ -23,4 +23,5 @@ window.functions = {
     validation: require('./modules/validation'),
     shifting_text: require('./modules/shifting-text'),
     input_number: require('./modules/input-number'),
+    init: require('./modules/init'),
 };

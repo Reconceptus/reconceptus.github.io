@@ -328,5 +328,26 @@
     
     }
   }
-
+  &-socials {
+    ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin: 0 $gutter-x2 $gutter 0;
+      .icon {
+        margin-right: $gutter;
+        color: $brand-02;
+      }
+      &.added {
+        color: $ui-02;
+        .icon {
+          color: inherit;
+        }
+      }
+    }
+  }
 }

@@ -35,6 +35,7 @@ window.functions = {
     validation: require('./modules/validation'),
     shifting_text: require('./modules/shifting-text'),
     input_number: require('./modules/input-number'),
+    init: require('./modules/init'),
 };
 
 // scripts
@@ -83,30 +84,10 @@ $(document).ready(() => {
         functions.scroll_top();
     }
     if ($('.pl-nav-scroll').length > 0) {
-        if ($('html').hasClass('desktop')) {
-            $('.pl-nav-scroll').each(function() {
-                let _this = $(this);
-                _this.mCustomScrollbar({ theme: 'light' });
-
-                if (_this.hasClass('modal_box-main--overflow')) {
-                    $(window).resize(function() {
-                        _this.mCustomScrollbar('update');
-                    });
-                }
-            });
-        }
+        functions.init.plNavScroll();
     }
     if ($('.pl-sidebar-scroll').length > 0) {
-        if ($('html').hasClass('desktop')) {
-            $('.pl-sidebar-scroll').each(function() {
-                let _this = $(this);
-                _this.mCustomScrollbar({ theme: 'dark-3' });
-
-                $(window).resize(function() {
-                    _this.mCustomScrollbar('update');
-                });
-            });
-        }
+        functions.init.plSidebarScroll();
     }
     if ($('.listing_sidebar').length > 0) {
         functions.filter.init();
@@ -152,15 +133,18 @@ $(document).ready(() => {
         functions.input_number();
     }
     if ($('.profile_table-main').length > 0) {
-        $('.profile_table-main').each(function() {
-            $(this)
-                .find('table')
-                .wrap('<div class="profile_table-main--auto"></div>');
-        });
+        functions.init.tableWrap();
     }
-    // if ($('[data-form]').length > 0) {
-    //     functions.validation.setDefaults();
-    // }
+
+    $('.form-password--show').click(function() {
+        let _parent = $(this).parent();
+        _parent.toggleClass('show-password');
+        if (_parent.hasClass('show-password')) {
+            _parent.find('input').attr('type', 'text');
+        } else {
+            _parent.find('input').attr('type', 'password');
+        }
+    });
 
     if ($('link[href*=bootstrap]').length > 0) $('link[href*=bootstrap]')[0].disabled = true;
     if ($('link[href*=fileinput]').length > 0) $('link[href*=fileinput]')[0].disabled = true;

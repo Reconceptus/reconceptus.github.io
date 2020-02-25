@@ -5,7 +5,9 @@
     flex-wrap: wrap;
   }
   li {
-    margin-right: $gutter-x2;
+    &:not(:last-child){
+      margin-right: $gutter-x2;
+    }
   }
   a {
     display: flex;
