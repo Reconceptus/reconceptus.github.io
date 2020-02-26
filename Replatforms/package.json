@@ -17,14 +17,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn build:styleguide",
-      "post-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "build:styleguide",
+      "pre-push": "git add . && git commit --amend --no-edit"
     }
   },
   "lint-staged": {
     "*.(js)": [
       "yarn prettier",
-      "git add ."
+      "git add"
     ]
   },
   "devDependencies": {
