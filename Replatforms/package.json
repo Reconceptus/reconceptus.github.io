@@ -13,17 +13,17 @@
     "lint": "eslint --debug src/js/app-lnt.js --debug src/js/modules/*.js",
     "lint:write": "eslint --debug src/js/app-lnt.js --fix --debug src/js/modules/*.js --fix",
     "prettier": "prettier --write src/js/modules/*.js --write src/js/partials/*.js",
-    "build-styleguide": "node ./node_modules/kss/bin/kss --config styleguide/styleguide-config.json"
+    "build:styleguide": "node ./node_modules/kss/bin/kss --config styleguide/styleguide-config.json"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "yarn build:styleguide"
     }
   },
   "lint-staged": {
     "*.(js)": [
       "yarn prettier",
-      "yarn build-styleguide",
       "git add"
     ]
   },
