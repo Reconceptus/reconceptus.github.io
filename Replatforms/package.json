@@ -17,8 +17,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "yarn build:styleguide"
+      "pre-commit": "yarn build:styleguide",
+      "post-commit": "lint-staged"
     }
   },
   "lint-staged": {
