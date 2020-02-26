@@ -54,7 +54,28 @@
                         <div class="object_page-cta--box">
                             <div class="object_page-cta cta-sticky">
                                 <div class="object_page-cta--buttons">
-                                    <a href="javascript:void(0);" class="object_page-cta--link">
+                                    <a href="javascript:void(0);"
+                                       class="object_page-cta--link"
+                                       onclick="functions.modal.info('modal-info',{
+                                            title:'Авторизуйтесь чтобы продолжить',
+                                            buttons:[
+                                                {
+                                                    value: 'Регистрация',
+                                                    style: 'link',
+                                                    callback: function(){
+                                                        functions.modal.handleOpen('signup');
+                                                    }
+                                                },
+                                                {
+                                                    value: 'Войти',
+                                                    style: 'button',
+                                                    callback: function(){
+                                                        functions.modal.handleOpen('signin');
+                                                    }
+                                                }
+                                            ]
+                                        })"
+                                    >
                                         <i class="icon icon-like icon_size-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
                                                 <path d="M20,36.9l-3.1-2.8c-8.8-8-14.6-13.2-14.6-20c0-2.7,1-5.2,2.9-7.1s4.4-3,7.1-3h0.2C15.3,4,18,5.1,20,7 c2-1.9,4.7-3,7.5-3h0.1c5.5,0,10,4.5,10.1,10v0.2c0,6.7-5.8,12-14.5,19.9l-0.1,0.1L20,36.9z" class="icon-like--static"/>
@@ -410,6 +431,7 @@
     <include src="./modal/signin.html"></include>
     <include src="./modal/signup.html"></include>
     <include src="./modal/reset-password.html"></include>
+    <include src="./modal/modal-info.html"></include>
 </div>
 
 

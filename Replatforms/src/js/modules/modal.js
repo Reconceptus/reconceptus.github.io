@@ -106,6 +106,35 @@ const modal = {
 
         this.open();
     },
+    info: function(attr, data) {
+        this.modal.data = attr;
+
+        let _modal = $('[data-modal="' + this.modal.data + '"]');
+
+        _modal.find('.modal_box-main--title').text(data.title);
+        _modal.find('.modal_box-main--text').text(data.text);
+        _modal.find('.modal_box-main--cta').html('');
+
+        if (!!data.buttons) {
+            data.buttons.forEach(function(item) {
+                let btn = document.createElement('button');
+                $(btn).text(item.value);
+                switch (item.style) {
+                    case 'link':
+                        $(btn).addClass('link_simple');
+                        break;
+                    case 'button':
+                        $(btn).addClass('btn btn--orange btn--xs');
+                        break;
+                }
+                $(btn).click(item.callback);
+
+                _modal.find('.modal_box-main--cta').append(btn);
+            });
+        }
+
+        this.open();
+    },
     reopen: function() {
         $('[data-modal]').removeClass('current');
         setTimeout(() => {

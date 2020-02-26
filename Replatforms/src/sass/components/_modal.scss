@@ -39,6 +39,10 @@
     &.centered {
       margin: auto;
     }
+    &.v_centered {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
     &:not(.visible){
       display: none;
     }
@@ -154,6 +158,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        a,
+        button {
+          &:not(:first-child){
+            margin: 0 0 0 $gutter-x2;
+          }
+        }
       }
     }
   }
