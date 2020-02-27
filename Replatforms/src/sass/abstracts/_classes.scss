@@ -149,6 +149,14 @@ Styleguide styleguide.grid.classes
 .nowrap {
   white-space: nowrap;
 }
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
 
 .position {
   &-relative {

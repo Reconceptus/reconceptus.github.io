@@ -7,31 +7,57 @@
     height: 100%;
     overflow: hidden;
     @include mq($until: tablet_sm) {
-      display: none;
+      //display: none;
+      position: absolute;
     }
     &-video_frame {
       width: 100%;
       height: 100vh;
       position: relative;
       transform: translateY(50vh);
+      @include mq($until: tablet_sm) {
+        //display: none;
+        width: calc(25vw + 150px);
+        height: 50vw;
+        transform: translate(calc(17.5vw - 108px), calc(455px - 15vw));
+      }
     }
     video {
       //width: 1420px;
-      width: 195%;
+
       position: absolute;
       top: 0;
       right: 100%;
       transform-origin: right top;
       transform: rotate(-90deg) translateX(50%);
+      @include mq($from: tablet_xl) {
+        width: 195%;
+      }
+      @include mq($until: tablet_xl) {
+        width: 205%;
+      }
+      @include mq($until: tablet_sm) {
+        width: 100%;
+      }
     }
     &-video_shape {
       position: absolute;
       left: 0;
       top: 0;
-      width: 195%;
       height: 0;
-      padding-bottom: 195%;
       transform: translateY(-50%);
+      @include mq($from: tablet_xl) {
+        width: 195%;
+        padding-bottom: 195%;
+      }
+      @include mq($until: tablet_xl) {
+        width: 205%;
+        padding-bottom: 205%;
+      }
+      @include mq($until: tablet_sm) {
+        width: 100%;
+        padding-bottom: 100%;
+      }
       figure {
         position: absolute;
         top: 0;

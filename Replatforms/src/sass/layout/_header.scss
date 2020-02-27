@@ -91,11 +91,18 @@ $header-height: 88px;
         }
       }
       & > * {
-        margin-right: $gutter-x2;
+        @include mq($from: mobile_sm) {
+          margin-right: $gutter-x2;
+        }
+        @include mq($until: mobile_sm) {
+          margin-right: 10px;
+        }
       }
       &--add {
-        @include mq($until: tablet_xl) {
-          display: none !important;
+        @include mq($until: tablet_sm) {
+          span {
+            display: none;
+          }
         }
       }
       &--auth {

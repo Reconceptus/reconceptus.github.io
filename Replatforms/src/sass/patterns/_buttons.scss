@@ -68,6 +68,7 @@ Styleguide styleguide.cta.buttons
   justify-content: center;
   transition: all 0.18s;
   font-weight: 500;
+  cursor: pointer;
   &--orange {
     color: $white;
     background-color: $link;

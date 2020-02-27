@@ -110,6 +110,19 @@
       }
     }
   }
+  &-check {
+    &_tab {
+      &:checked ~ .object_cart-check_box {
+        display: block;
+      }
+      &:checked ~ .object_cart-check_btn {
+        display: none;
+      }
+    }
+    &_box {
+      display: none;
+    }
+  }
   &-cta {
 
     @include mq($from: tablet_xl) {
