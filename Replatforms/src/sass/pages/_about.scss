@@ -1,0 +1,48 @@
+.about_box {
+  position: relative;
+
+  @include mq($from: desktop_sm) {
+    margin-bottom: $padding-xxl;
+  }
+  @include mq(tablet_xl, desktop_sm) {
+    margin-bottom: $padding-xl;
+  }
+  @include mq($until: tablet_xl) {
+    margin-bottom: $padding-lg;
+  }
+  .text-box {
+    position: relative;
+    z-index: 1;
+    @include mq($from: desktop_sm) {
+      font-size: $font-lg;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      font-size: $font-md;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: $font;
+    }
+  }
+  &-aside {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include mq(tablet_xl, desktop_sm) {
+      margin-top: $padding-xl;
+    }
+    @include mq($until: tablet_xl) {
+      margin-top: $padding-lg;
+    }
+    .pattern {
+      position: absolute;
+      top: -140px;
+      right: 0;
+      transform: translateX(-50%);
+    }
+  }
+  &-auth {
+    margin-bottom: 100px;
+    position: relative;
+  }
+}
