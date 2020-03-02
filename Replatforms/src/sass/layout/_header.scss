@@ -89,18 +89,21 @@ $header-height: 88px;
         @include hover(){
           color: darken($link, 8);
         }
+        @include mq($until: mobile_sm) {
+          margin-right: 2px;
+        }
       }
       & > * {
         @include mq($from: mobile_sm) {
           margin-right: $gutter-x2;
         }
         @include mq($until: mobile_sm) {
-          margin-right: 10px;
+          margin-right: 5px;
         }
       }
       &--add {
         @include mq($until: tablet_sm) {
-          span {
+          .link-text {
             display: none;
           }
         }
@@ -114,6 +117,10 @@ $header-height: 88px;
             left: 0;
             top: 50%;
             right: auto;
+            @include mq($until: mobile_sm) {
+              width: 6px;
+              height: 6px;
+            }
           }
         }
         .dropdown_list {
@@ -141,9 +148,14 @@ $header-height: 88px;
         }
         &_profile {
           @extend %btn_reset;
-          padding-left: $gutter-x2;
           position: relative;
           color: $link;
+          @include mq($from: mobile_sm) {
+            padding-left: $gutter-x2;
+          }
+          @include mq($until: mobile_sm) {
+            padding-left: $gutter;
+          }
         }
         &_img {
           display: block;
@@ -182,6 +194,7 @@ $header-height: 88px;
             font-size: 12px;
             line-height: 24px;
             padding: 0 5px;
+            z-index: 1;
           }
         }
         &_drop {
@@ -190,10 +203,20 @@ $header-height: 88px;
             align-items: center;
             justify-content: center;
           }
+          .dropdown_list {
+            left: auto;
+            right: 0;
+            margin-top: 12px;
+          }
         }
       }
       &--rel {
         position: relative;
+        @include mq($until: tablet_sm) {
+          .link-text {
+            display: none;
+          }
+        }
         &_count {
           color: $white;
           background: $ui-01;
@@ -202,16 +225,17 @@ $header-height: 88px;
           bottom: 50%;
           left: 100%;
           border-radius: 10px;
-          transform: translate(-14px, -18px);
           @include mq($from: tablet_sm) {
             font-size: 14px;
             line-height: 32px;
             padding: 0 10px;
+            transform: translate(-14px, -18px);
           }
           @include mq($until: tablet_sm) {
             font-size: 12px;
             line-height: 24px;
             padding: 0 5px;
+            transform: translate(-14px, -6px);
           }
         }
       }

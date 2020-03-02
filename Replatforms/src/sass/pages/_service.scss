@@ -441,7 +441,13 @@
       }
     }
     &-cta {
-      margin-top: $padding-xl;
+      
+      @include mq($from: tablet_sm) {
+        margin-top: 2*$padding-xl;
+      }
+      @include mq($until: tablet_sm) {
+        margin-top: $padding-xl;
+      }
       .btn {
         padding: 0 $gutter-x2;
         height: 80px;

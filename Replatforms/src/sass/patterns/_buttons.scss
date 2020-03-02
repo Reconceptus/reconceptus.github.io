@@ -132,3 +132,37 @@ Styleguide styleguide.cta.buttons
 
 
 }
+
+a#toggle-translate {
+  
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  
+  @extend %btn_reset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s;
+  cursor: pointer;
+  font-size: 16px;
+  height: 40px;
+  font-weight: 500;
+  padding: 0 24px;
+  border: 1px solid $link;
+  background: $white;
+  color: $link;
+  @include hover(){
+    border-color: darken($link, 8);
+    color: darken($link, 8);
+  }
+  &.active {
+    color: $white;
+    background-color: $link;
+    @include hover(){
+      color: $white;
+      background-color: darken($link, 8);
+    }
+  }
+}
+

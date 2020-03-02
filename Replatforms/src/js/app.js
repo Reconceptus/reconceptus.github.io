@@ -61,6 +61,10 @@ $(document).ready(() => {
             //     lang.removeClass('active')
             // }
         });
+
+        $(document).on('click', '#toggle-translate', function() {
+            $(this).toggleClass('active');
+        });
     }
 
     /* --------------------------------- document load --------------------------------- */
