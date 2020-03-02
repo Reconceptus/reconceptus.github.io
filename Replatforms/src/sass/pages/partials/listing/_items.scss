@@ -121,7 +121,7 @@
       &--cta {
         position: absolute;
         cursor: pointer;
-        color: $white;
+        color: transparent;
         @include mq($from: desktop_sm) {
           top: 40px;
           right: 24px;
@@ -138,10 +138,10 @@
           right: -8px;
         }
         @include hover(){
-          color: $brand-02;
+          color: $ui-01;
         }
         &.liked {
-          color: $brand-02;
+          color: $ui-01;
         }
       }
     }

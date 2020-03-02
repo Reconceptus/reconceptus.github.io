@@ -179,7 +179,7 @@
     }
     &--link {
       border-radius: 50%;
-      background-color: $brand-01;
+      background-color: $white;
       color: $brand-02;
       display: flex;
       align-items: center;
@@ -187,8 +187,7 @@
       cursor: pointer;
       box-shadow: 0 2px 4px 0 rgba($black,0.16);
       @include hover(){
-        color: $brand-01;
-        background-color: $brand-02;
+        color: $ui-01;
       }
       @include mq($from: desktop_sm) {
         width: 56px;
@@ -221,35 +220,27 @@
           transition: fill 0.2s;
         }
         &--dynamic {
-          fill: $link;
+          fill: $white;
         }
         
       }
       @include hover(){
         .icon-like {
           &--static {
-            fill: $link;
+            fill: $ui-01;
           }
           &--dynamic {
-            fill: $brand-02;
+            fill: $ui-01;
           }
         }
       }
       &.liked {
-        background-color: $brand-02;
         .icon-like {
           &--static {
-            fill: $link;
+            fill: $ui-01;
           }
           &--dynamic {
-            fill: $link;
-          }
-        }
-        @include hover(){
-          .icon-like {
-            &--dynamic {
-              fill: $link;
-            }
+            fill: $ui-01;
           }
         }
       }
