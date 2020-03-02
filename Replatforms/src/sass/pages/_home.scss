@@ -519,10 +519,15 @@
 
 
 #homepage_tab_01:checked ~ .home_page-tabs--box [for="homepage_tab_01"],
+#homepage_tab_1:checked ~ .home_page-tabs--box [for="homepage_tab_1"],
 #homepage_tab_02:checked ~ .home_page-tabs--box [for="homepage_tab_02"],
+#homepage_tab_2:checked ~ .home_page-tabs--box [for="homepage_tab_2"],
 #homepage_tab_03:checked ~ .home_page-tabs--box [for="homepage_tab_03"],
+#homepage_tab_3:checked ~ .home_page-tabs--box [for="homepage_tab_3"],
 #homepage_tab_04:checked ~ .home_page-tabs--box [for="homepage_tab_04"],
-#homepage_tab_05:checked ~ .home_page-tabs--box [for="homepage_tab_05"] {
+#homepage_tab_4:checked ~ .home_page-tabs--box [for="homepage_tab_4"],
+#homepage_tab_05:checked ~ .home_page-tabs--box [for="homepage_tab_05"],
+#homepage_tab_5:checked ~ .home_page-tabs--box [for="homepage_tab_5"] {
   background-color: $white;
   color: $text-04;
   @include hover(){
@@ -530,9 +535,14 @@
   }
 }
 #homepage_tab_01:checked ~ .home_page-tabs--box [data-section="homepage_tab_01"],
+#homepage_tab_1:checked ~ .home_page-tabs--box [data-section="homepage_tab_1"],
 #homepage_tab_02:checked ~ .home_page-tabs--box [data-section="homepage_tab_02"],
+#homepage_tab_2:checked ~ .home_page-tabs--box [data-section="homepage_tab_2"],
 #homepage_tab_03:checked ~ .home_page-tabs--box [data-section="homepage_tab_03"],
+#homepage_tab_3:checked ~ .home_page-tabs--box [data-section="homepage_tab_3"],
 #homepage_tab_04:checked ~ .home_page-tabs--box [data-section="homepage_tab_04"],
-#homepage_tab_05:checked ~ .home_page-tabs--box [data-section="homepage_tab_05"] {
+#homepage_tab_4:checked ~ .home_page-tabs--box [data-section="homepage_tab_4"],
+#homepage_tab_05:checked ~ .home_page-tabs--box [data-section="homepage_tab_05"],
+#homepage_tab_5:checked ~ .home_page-tabs--box [data-section="homepage_tab_5"] {
   display: block;
 }

@@ -1,5 +1,5 @@
 .draggable {
-  border: 1px solid $brand-01;
+  border: 1px solid $brand-02;
   //font-size: 0;
   display: block;
   border-radius: 4px;
@@ -78,6 +78,7 @@
           background-color: $white;
           padding: 8px;
           box-shadow: 0 2px 4px 0 rgba($black,0.16);
+
         }
       }
     }
@@ -196,25 +197,63 @@
   }
   .file-thumbnail-footer {
     position: absolute;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
+
     display: flex;
     justify-content: space-between;
     color: $brand-02;
+    @include mq($from: tablet_xl) {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+    @include mq($until: tablet_xl) {
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+    }
     .btn {
       border-radius: 50%;
       background-color: $white;
-      padding: 8px;
+
       box-shadow: 0 2px 4px 0 rgba($black,0.16);
-      &.kv-file-zoom,
+      margin-left: 4px;
+      @include mq($from: wide) {
+        padding: 8px;
+      }
+      @include mq(tablet_sm, wide) {
+        padding: 4px;
+      }
+      @include mq(mobile_sm, tablet_sm) {
+        padding: 8px;
+      }
+      @include mq($until: mobile_sm) {
+        padding: 4px;
+      }
+      &.kv-file-remove {
+        order: 1;
+      }
       &.kv-file-upload {
         display: none;
       }
     }
     .glyphicon {
-      width: 24px;
-      height: 24px;
+
+      @include mq($from: desktop_xl) {
+        width: 24px;
+        height: 24px;
+      }
+      @include mq(desktop_sm, desktop_xl) {
+        width: 18px;
+        height: 18px;
+      }
+      @include mq(mobile_sm, desktop_sm) {
+        width: 24px;
+        height: 24px;
+      }
+      @include mq($until: mobile_sm) {
+        width: 18px;
+        height: 18px;
+      }
       &-trash {
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23c1844c%22%20d%3D%22M16%2C9V19H8V9h8M14.5%2C3h-5l-1%2C1H5V6H19V4H15.5ZM18%2C7H6V19a2.006%2C2.006%2C0%2C0%2C0%2C2%2C2h8a2.006%2C2.006%2C0%2C0%2C0%2C2-2Z%22%20/%3E%3C/svg%3E');
         background-repeat: no-repeat;
@@ -223,6 +262,12 @@
       }
       &-move {
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23C1844C%22%3E%3Cpath%20d%3D%22m10%209h4v-3h3l-5-5-5%205h3m-1%204h-3v-3l-5%205%205%205v-3h3m14-2l-5-5v3h-3v4h3v3m-4-2h-4v3h-3l5%205%205-5h-3%22%20/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+      }
+      &-zoom-in {
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23C1844C%22%20%3E%3Cpath%20d%3D%22M15.5%2014h-.79l-.28-.27C15.41%2012.59%2016%2011.11%2016%209.5%2016%205.91%2013.09%203%209.5%203S3%205.91%203%209.5%205.91%2016%209.5%2016c1.61%200%203.09-.59%204.23-1.57l.27.28v.79l5%204.99L20.49%2019l-4.99-5zm-6%200C7.01%2014%205%2011.99%205%209.5S7.01%205%209.5%205%2014%207.01%2014%209.5%2011.99%2014%209.5%2014z%22/%3E%3Cpath%20d%3D%22M12%2010h-2v2H9v-2H7V9h2V7h1v2h2v1z%22/%3E%3C/svg%3E');
         background-repeat: no-repeat;
         background-position: center;
         background-size: 100% auto;
@@ -243,11 +288,22 @@
       border-radius: 50%;
       display: inline-flex;
       background-color: $white;
-      padding: 8px;
       box-shadow: 0 2px 4px 0 rgba($black,0.16);
       align-items: center;
       justify-content: center;
       order: -1;
+      @include mq($from: wide) {
+        padding: 8px;
+      }
+      @include mq(tablet_sm, wide) {
+        padding: 4px;
+      }
+      @include mq(mobile_sm, tablet_sm) {
+        padding: 8px;
+      }
+      @include mq($until: mobile_sm) {
+        padding: 4px;
+      }
     }
   }
 

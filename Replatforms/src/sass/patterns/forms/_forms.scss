@@ -26,6 +26,10 @@
       color: $ui-03;
     }
   }
+  .help-block {
+    color: $ui-03;
+    font-size: 12px;
+  }
   &--columns {
     flex-wrap: wrap;
     @include mq($from: tablet_xl) {
@@ -66,6 +70,7 @@
     .field-feedback-text {
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
   }
   &--mob_flex {

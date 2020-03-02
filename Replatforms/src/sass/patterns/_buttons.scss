@@ -21,6 +21,9 @@ Markup:
     <div class="content-col content-col--auto">
       <button class="btn btn--grey btn--xs">btn--grey</button>
     </div>
+    <div class="content-col content-col--auto">
+      <button class="btn btn--violet btn--xs">btn--violet</button>
+    </div>
   </div>
   <div class="content-row flex-align_items--center">
     <div class="content-col content-col--auto">
@@ -99,6 +102,13 @@ Styleguide styleguide.cta.buttons
       background-color: darken($text-04, 8);
     }
   }
+  &--violet {
+    background-color: $ui-01;
+    color: $white;
+    @include hover(){
+      background-color: darken($ui-01, 8);
+    }
+  }
   &--xs {
     font-size: 16px;
     height: 40px;
@@ -134,7 +144,7 @@ Styleguide styleguide.cta.buttons
 }
 
 a#toggle-translate {
-  
+  z-index: 20;
   bottom: 0;
   left: 0;
   position: fixed;

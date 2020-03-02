@@ -125,7 +125,10 @@ $(document).ready(() => {
         functions.hasheditable.init();
     }
     if ($('.text-box').length > 0) {
-        functions.text_box();
+        functions.text_box.initText();
+    }
+    if ($('.faq-item--answer').length > 0) {
+        functions.text_box.initFAQ();
     }
     if ($('.home_bg').length > 0) {
         functions.home_bg();
