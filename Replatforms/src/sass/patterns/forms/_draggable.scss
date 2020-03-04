@@ -122,6 +122,45 @@
     width: 100%;
     font-size: 0;
     display: block;
+    & > .kv-zoom-cache {
+      @include mq($from: tablet_sm) {
+        &:nth-child(10):last-child {
+          pointer-events: none;
+          height: 48px;
+          opacity: 0;
+          overflow: hidden;
+          position: relative;
+          z-index: -1;
+          display: block !important;
+        }
+      }
+      @include mq(mobile_xl, tablet_sm) {
+        &:nth-child(6):last-child,
+        &:nth-child(12):last-child {
+          pointer-events: none;
+          height: 48px;
+          opacity: 0;
+          overflow: hidden;
+          position: relative;
+          z-index: -1;
+          display: block !important;
+        }
+      }
+      @include mq($until: mobile_xl) {
+        &:nth-child(4):last-child,
+        &:nth-child(8):last-child,
+        &:nth-child(12):last-child,
+        &:nth-child(16):last-child {
+          pointer-events: none;
+          height: 48px;
+          opacity: 0;
+          overflow: hidden;
+          position: relative;
+          z-index: -1;
+          display: block !important;
+        }
+      }
+    }
   }
   .file-preview-frame {
     display: inline-block;
@@ -136,7 +175,7 @@
       width: 33.3333%;
       padding-bottom: 33.3333%;
     }
-    @include mq($until: tablet_sm) {
+    @include mq($until: mobile_xl) {
       width: 50%;
       padding-bottom: 50%;
     }
@@ -320,6 +359,13 @@
       display: none;
     }
   }
+
+  .kv-upload-progress {
+    text-align: center;
+    color: $brand-01;
+    font-weight: 500;
+  }
+
   
 }
 

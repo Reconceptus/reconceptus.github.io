@@ -35,6 +35,8 @@ $(document).ready(() => {
     functions.dropdown();
     functions.expander();
 
+    functions.modal.checkForAlerts();
+
     if ($('.header').length > 0) {
         functions.header_shadow();
         functions.burger.init();

@@ -11,19 +11,22 @@
   z-index: 10;
 
   @include mq($from: 1848px) {
-    left: calc(50vw + 900px);
-    transform: translateX(-100%);
+    //left: calc(50vw + 900px);
+    right: calc(50% - 900px);
+    //transform: translateX(-100%);
   }
   @include mq($until: 1848px) {
     right: 24px;
   }
   @include mq($from: tablet_sm) {
 
-    top: 160px;
+    //top: 160px;
+    bottom: 48px;
     max-height: calc(100vh - 2*#{$padding-lg});
   }
   @include mq(mobile_xl, tablet_sm) {
-    top: 104px;
+    //top: 104px;
+    bottom: 32px;
     max-height: calc(100vh - 2*#{$gutter-x2});
 
   }
@@ -36,8 +39,10 @@
   }
   @include mq($until: mobile_xl) {
     border-radius: 24px 0 24px 24px;
-    padding: 32px 12px 12px;
-    top: 104px;
+    //padding: 32px 12px 12px;
+    padding: 16px 16px 12px 12px;
+    //top: 104px;
+    bottom: 24px;
     width: 160px;
     font-size: 16px;
   }
@@ -63,10 +68,14 @@
     background-size: 100% auto;
     background-position: center;
     @include mq($until: mobile_xl) {
-      top: 12px;
-      right: 12px;
-      width: 24px;
-      height: 24px;
+      //top: 12px;
+      //right: 12px;
+      //width: 24px;
+      //height: 24px;
+      top: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
     }
   }
   .text {

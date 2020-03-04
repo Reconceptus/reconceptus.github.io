@@ -160,6 +160,14 @@ const modal = {
             this.open();
         }
     },
+    checkForAlerts: function() {
+        setTimeout(() => {
+            this.removeAlert();
+        }, 4000);
+    },
+    removeAlert: function() {
+        $('.alert').fadeOut(2000);
+    },
 };
 
 module.exports = modal;
