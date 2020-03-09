@@ -21,6 +21,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+%img_fit {
+  @extend %full_block;
+  object-fit: cover;
+}
 %btn_reset {
   background: none;
   border: none;

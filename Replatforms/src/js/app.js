@@ -65,6 +65,10 @@ $(document).ready(() => {
         $(document).on('click', '#toggle-translate', function() {
             $(this).toggleClass('active');
         });
+        $(document).on('click', '.scroll-to-partnership_page', function() {
+            let pageOffset = $('.partnership_page').offset().top;
+            $('body,html').animate({ scrollTop: pageOffset + 'px' }, 'fast');
+        });
     }
 
     /* --------------------------------- document load --------------------------------- */
