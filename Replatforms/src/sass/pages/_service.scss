@@ -312,8 +312,14 @@
           color: $text-03;
         }
         &_title {
-          font-size: $font-md;
+
           margin-bottom: $padding;
+          @include mq($from: mobile_xl) {
+            font-size: $font-md;
+          }
+          @include mq($until: mobile_xl) {
+            font-size: 20px;
+          }
         }
         &_text {
 

@@ -25,6 +25,9 @@
         color: $white;
         padding: $padding;
         transition: background-color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       @include hover(){
         color: darken($link, 8);

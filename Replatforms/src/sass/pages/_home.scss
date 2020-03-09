@@ -159,11 +159,10 @@
       }
       &_wrap {
         position: relative;
-      
         @include mq($from: tablet_sm) {
           padding: $padding-lg $padding-lg $padding-lg 0;
-          margin-top: $padding-xxl;
-          margin-bottom: 80px;
+          margin-top: 100px;
+          margin-bottom: 72px;
           //background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
           background-color: rgba($white,0.2);
           border-radius: 0 100px 100px 0;
@@ -189,12 +188,16 @@
       display: none;
     }
     &-down {
-      width: 48px;
-      height: 96px;
+      //width: 48px;
+      //height: 96px;
+      display: block;
+      width: 32px;
+      height: 64px;
       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2249.414%22%20height%3D%2296.707%22%20viewBox%3D%220%200%2049.414%2096.707%22%3E%0D%0A%20%20%3Cg%20id%3D%22Group_2060%22%20data-name%3D%22Group%202060%22%20transform%3D%22translate%28-223.293%20-888%29%22%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_43%22%20data-name%3D%22Line%2043%22%20y2%3D%2296%22%20transform%3D%22translate%28248%20888%29%22%20fill%3D%22none%22%20stroke%3D%22%23cfae7f%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_44%22%20data-name%3D%22Line%2044%22%20x2%3D%2224%22%20y2%3D%2224%22%20transform%3D%22translate%28224%20960%29%22%20fill%3D%22none%22%20stroke%3D%22%23cfae7f%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_45%22%20data-name%3D%22Line%2045%22%20x1%3D%2224%22%20y2%3D%2224%22%20transform%3D%22translate%28248%20960%29%22%20fill%3D%22none%22%20stroke%3D%22%23cfae7f%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
       background-repeat: no-repeat;
       background-size: 100% auto;
       background-position: center;
+      @extend %btn_reset;
     }
   }
   &_section {

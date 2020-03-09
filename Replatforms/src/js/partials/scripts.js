@@ -28,6 +28,10 @@ $(document).ready(() => {
             let pageOffset = $('.partnership_page').offset().top;
             $('body,html').animate({ scrollTop: pageOffset + 'px' }, 'fast');
         });
+        $(document).on('click', '.scroll-to-home_main', function() {
+            let pageOffset = $('.home_page-main').offset().top;
+            $('body,html').animate({ scrollTop: pageOffset + 120 + 'px' }, 'fast');
+        });
     }
 
     /* --------------------------------- document load --------------------------------- */
