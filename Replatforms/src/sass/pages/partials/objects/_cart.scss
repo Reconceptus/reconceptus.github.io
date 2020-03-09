@@ -344,21 +344,47 @@
   &-socials {
     ul {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
     li {
       display: flex;
       align-items: center;
-      margin: 0 $gutter-x2 $gutter 0;
+      &:not(:last-child){
+        margin-bottom: $gutter-x2;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        color: $text-05;
+        padding-left: 32px;
+        position: relative;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23A8A9AD%22%20d%3D%22M19%2C13H13v6H11V13H5V11h6V5h2v6h6Z%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        background-size: 24px auto;
+        @include hover(){
+          color: $brand-01;
+          background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23CFAE7F%22%20d%3D%22M19%2C13H13v6H11V13H5V11h6V5h2v6h6Z%22/%3E%3C/svg%3E');
+          .icon {
+            color: $brand-02;
+          }
+        }
+      }
       .icon {
         margin-right: $gutter;
-        color: $brand-02;
+        color: $text-03;
+        transition: all 0.25s;
       }
       &.added {
-        color: $ui-02;
+        a {
+          color: $ui-02;
+          background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23689F38%22%20d%3D%22M9%2C16.2%2C4.8%2C12%2C3.4%2C13.4%2C9%2C19%2C21%2C7%2C19.6%2C5.6Z%22/%3E%3C/svg%3E');
+          @include hover(){
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23CFAE7F%22%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012%2019%206.41z%22/%3E%3C/svg%3E');
+          }
+        }
         .icon {
-          color: inherit;
+          color: $ui-02;
         }
       }
     }
