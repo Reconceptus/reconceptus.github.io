@@ -14,6 +14,11 @@
 @import "partials/analytics/items";
 
 .composing-box {
+  position: relative;
+  overflow: hidden;
+  & > .content {
+    position: relative;
+  }
   @include mq($from: tablet_sm) {
     padding-top: $padding-lg;
     padding-bottom: $padding-md;
@@ -60,6 +65,13 @@
     }
     @include mq($until: tablet_xl) {
       padding-bottom: $padding-xl;
+    }
+    .pattern_frame {
+      position: absolute;
+      width: 1920px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100vh;
     }
   }
 }

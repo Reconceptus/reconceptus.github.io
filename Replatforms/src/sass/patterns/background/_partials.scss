@@ -21,15 +21,27 @@ $pt-size-lg: 280px;
   &-fill {
     &--to_right {
       background: $gradient_left_right;
+      &_dark {
+        background: $gradient_dark_left_right;
+      }
     }
     &--to_left {
       background: $gradient_right_left;
+      &_dark {
+        background: $gradient_dark_right_left;
+      }
     }
     &--to_bottom {
       background: $gradient_top_bottom;
+      &_dark {
+        background: $gradient_dark_top_bottom;
+      }
     }
     &--to_top {
       background: $gradient_bottom_top;
+      &_dark {
+        background: $gradient_dark_bottom_top;
+      }
     }
   }
   &-radius {

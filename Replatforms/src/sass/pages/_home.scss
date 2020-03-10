@@ -17,9 +17,12 @@
       transform: translateY(50vh);
       @include mq($until: tablet_sm) {
         //display: none;
-        width: calc(25vw + 150px);
+        //width: calc(25vw + 150px);
         height: 50vw;
-        transform: translate(calc(17.5vw - 108px), calc(455px - 15vw));
+        //transform: translate(calc(17.5vw - 108px), calc(455px - 15vw));
+
+        width: calc(60vw + 150px);
+        transform: translate(calc(0.5vw - 108px), calc(680px - 28vw));
       }
     }
     video {
@@ -80,6 +83,9 @@
     }
   }
   &_search {
+    @include mq($until: tablet_sm) {
+      margin-top: 140px;
+    }
     &-fieldset {
       display: flex;
 
@@ -216,6 +222,11 @@
   }
   &_page {
     position: relative;
+    .shifting-box {
+      @include mq(mobile_sm, tablet_sm) {
+        max-width: 50vw;
+      }
+    }
     &-main {
       
       @include mq($from: desktop_xl) {

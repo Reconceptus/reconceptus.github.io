@@ -3,6 +3,11 @@ $gradient_bottom_top: linear-gradient(to bottom, $brand-01 0%, $brand-02 100%);
 $gradient_left_right: linear-gradient(to right, $brand-02 0%, $brand-01 100%);
 $gradient_right_left: linear-gradient(to right, $brand-01 0%, $brand-02 100%);
 
+$gradient_dark_top_bottom: linear-gradient(to bottom, $brand-06 0%, $brand-03 100%);
+$gradient_dark_bottom_top: linear-gradient(to bottom, $brand-03 0%, $brand-06 100%);
+$gradient_dark_left_right: linear-gradient(to right, $brand-06 0%, $brand-03 100%);
+$gradient_dark_right_left: linear-gradient(to right, $brand-03 0%, $brand-06 100%);
+
 @import "custom-bg";
 @import "partials";
 @import "type-3";
