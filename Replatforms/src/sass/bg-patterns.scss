@@ -2,3 +2,14 @@
 @import "base/base";
 @import "layout/main";
 @import "patterns/background/backgrounds";
+
+* {
+  overflow: hidden;
+}
+.pattern {
+  margin: 0 auto;
+  width: 100%;
+}
+.bg_pattern {
+  margin: 12px;
+}

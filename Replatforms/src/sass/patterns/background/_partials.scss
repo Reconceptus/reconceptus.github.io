@@ -16,7 +16,18 @@ $pt-size-lg: 280px;
     &--lg {
       width: $pt-size-lg;
       height: $pt-size-lg;
+      &_half {
+        &_v {
+          width: 0.5*$pt-size-lg;
+          height: $pt-size-lg;
+        }
+        &_h {
+          width: $pt-size-lg;
+          height: 0.5*$pt-size-lg;
+        }
+      }
     }
+
   }
   &-fill {
     &--to_right {
