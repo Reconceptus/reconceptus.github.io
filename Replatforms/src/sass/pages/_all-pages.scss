@@ -15,8 +15,11 @@
 
 .composing-box {
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   & > .content {
+    position: relative;
+  }
+  & + * {
     position: relative;
   }
   @include mq($from: tablet_sm) {
@@ -66,13 +69,7 @@
     @include mq($until: tablet_xl) {
       padding-bottom: $padding-xl;
     }
-    .pattern_frame {
-      position: absolute;
-      width: 1920px;
-      left: 50%;
-      transform: translateX(-50%);
-      height: 100vh;
-    }
+
   }
 }
 .composing-heading {

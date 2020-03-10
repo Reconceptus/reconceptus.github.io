@@ -10,8 +10,7 @@
     margin-top: -128px;
   }
   @include mq($until: tablet_sm) {
-    //margin-top: -72px;
-    margin-top: -48px;
+    margin-top: -72px;
   }
   &-main {
     @include mq($from: desktop_sm) {
@@ -282,12 +281,8 @@
       padding: $padding-md 0;
 
     }
-    @include mq($until: tablet_sm) {
-      position: static !important;
-      width: auto !important;
-    }
     &--wrap {
-      @include mq(tablet_sm, desktop_sm) {
+      @include mq($until: desktop_sm) {
         order: -1;
 
         margin-left: auto;
@@ -299,9 +294,8 @@
         height: 128px;
       }
       @include mq($until: tablet_sm) {
-        //height: 72px;
-        min-width: 100%;
-        margin: $padding-lg 0 0;
+        height: 72px;
+
       }
     }
     &--cta {
@@ -393,17 +387,42 @@
         color: $text-03;
         transition: all 0.25s;
       }
+      .icon-sub {
+        position: relative;
+        white-space: nowrap;
+        span {
+          transition: opacity 0.25s;
+          user-select: none;
+        }
+        .hover {
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
       &.added {
         a {
           color: $ui-02;
           background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23689F38%22%20d%3D%22M9%2C16.2%2C4.8%2C12%2C3.4%2C13.4%2C9%2C19%2C21%2C7%2C19.6%2C5.6Z%22/%3E%3C/svg%3E');
           @include hover(){
             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23CFAE7F%22%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012%2019%206.41z%22/%3E%3C/svg%3E');
+            .icon-sub {
+              .static {
+                opacity: 0;
+              }
+              .hover {
+                opacity: 1;
+                pointer-events: auto;
+              }
+            }
           }
         }
         .icon {
           color: $ui-02;
         }
+
       }
     }
   }

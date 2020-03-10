@@ -601,11 +601,6 @@
         margin-bottom: $padding;
       }
     }
-    .form-field--grow_wrap {
-      @include mq($until: tablet_sm) {
-        order: 2;
-      }
-    }
     &--subtitle {
 
       @include mq($from: tablet_sm) {

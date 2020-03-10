@@ -13,5 +13,26 @@ $gradient_dark_right_left: linear-gradient(to right, $brand-03 0%, $brand-06 100
 @import "type-3";
 
 .pattern {
-
+  &_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  &_frame {
+    position: absolute;
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+    height: 100vh;
+    transform-origin: center top;
+    @include mq(mobile_xl, tablet_xl){
+      transform: scale(0.7);
+    }
+    @include mq($until: mobile_xl){
+      transform: scale(0.55);
+    }
+  }
 }

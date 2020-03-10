@@ -63,6 +63,9 @@
     &_wrap {
       display: flex;
       flex-direction: column;
+      @include mq($until: tablet_sm) {
+        order: 1;
+      }
     }
     &_field {
       height: 100%;
