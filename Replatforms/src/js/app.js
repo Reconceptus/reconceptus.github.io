@@ -177,4 +177,6 @@ $(document).ready(() => {
     $(window).scroll(e => {
         functions.header_shadow();
     });
+
+    $('.preloader').fadeOut(400);
 });
