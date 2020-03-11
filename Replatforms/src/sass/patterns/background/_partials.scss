@@ -32,26 +32,46 @@ $pt-size-lg: 280px;
   &-fill {
     &--to_right {
       background: $gradient_left_right;
+      &---p1 {background: $gradient_left_right_p1;}
+      &---p2 {background: $gradient_left_right_p2;}
+
       &_dark {
         background: $gradient_dark_left_right;
+        &---p1 {background: $gradient_dark_left_right_p1;}
+        &---p2 {background: $gradient_dark_left_right_p2;}
       }
     }
     &--to_left {
       background: $gradient_right_left;
+      &---p1 {background: $gradient_right_left_p1;}
+      &---p2 {background: $gradient_right_left_p2;}
+
       &_dark {
         background: $gradient_dark_right_left;
+        &---p1 {background: $gradient_dark_right_left_p1;}
+        &---p2 {background: $gradient_dark_right_left_p2;}
       }
     }
     &--to_bottom {
       background: $gradient_top_bottom;
+      &---p1 {background: $gradient_top_bottom_p1;}
+      &---p2 {background: $gradient_top_bottom_p2;}
+
       &_dark {
         background: $gradient_dark_top_bottom;
+        &---p1 {background: $gradient_dark_top_bottom_p1;}
+        &---p2 {background: $gradient_dark_top_bottom_p2;}
       }
     }
     &--to_top {
       background: $gradient_bottom_top;
+      &---p1 {background: $gradient_bottom_top_p1;}
+      &---p2 {background: $gradient_bottom_top_p2;}
+
       &_dark {
         background: $gradient_dark_bottom_top;
+        &---p1 {background: $gradient_dark_bottom_top_p1;}
+        &---p2 {background: $gradient_dark_bottom_top_p2;}
       }
     }
   }

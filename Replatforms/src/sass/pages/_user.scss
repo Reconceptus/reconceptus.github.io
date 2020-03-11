@@ -15,6 +15,9 @@
     @include mq($until: mobile_sm) {
       padding: $padding-md $gutter-x2;
       margin: 0 -1*$gutter-x2;
+      .socials ul {
+        flex-wrap: nowrap;
+      }
     }
   }
 }
