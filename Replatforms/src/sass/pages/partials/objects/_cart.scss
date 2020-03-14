@@ -52,6 +52,11 @@
     .h2 {
       margin-bottom: $padding-lg;
     }
+    &--data {
+      @include mq($from: desktop_sm) {
+        display: none;
+      }
+    }
     &--tabs {
       position: relative;
       .tab-checker {

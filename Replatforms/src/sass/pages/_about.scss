@@ -39,6 +39,18 @@
       top: -140px;
       right: 0;
       transform: translateX(-50%);
+      @include mq(mobile_xl, desktop_sm) {
+        opacity: .75;
+        transform: scale(0.75);
+        transform-origin: left center;
+        right: 48px;
+      }
+      @include mq($until: mobile_xl) {
+        transform: scale(0.5);
+        transform-origin: right center;
+        opacity: 0.6;
+        right: 48px;
+      }
     }
   }
   &-auth {

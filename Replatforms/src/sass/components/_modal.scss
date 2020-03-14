@@ -79,6 +79,10 @@
       &.wide {
         padding: $padding-xxl 20%;
         min-width: 80vw;
+        @media screen and (max-height: 960px) {
+          padding-top: calc(12vh - 24px);
+          padding-bottom: calc(12vh - 24px);
+        }
       }
       &.full {
         padding: 0;
