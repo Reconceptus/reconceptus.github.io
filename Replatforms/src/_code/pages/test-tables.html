@@ -1,0 +1,2049 @@
+<include src="../templates/head.html" title="Мои автопоиски"></include>
+
+    <div class="container">
+
+        <include src="../templates/header.html" user="register"></include>
+
+        <div id="main" class="main">
+
+            <section class="composing-box">
+                <div class="content content--lg">
+                    <div class="content-row">
+                        <div class="content-col col-pull-1 col-pull-lg-0 col-11">
+                            <div class="header_logo">
+                                <a href="index.html" class="icon header_logo-link">
+                                    <svg><use xlink:href="#icon-logo"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="composing-heading">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-md-12">
+                                <div class="profile_heading">
+                                    <h1 class="h1 color-font-brand-01">Мои автопоиски</h1>
+                                    <a href="auto-search.html" class="profile_heading-add_button">
+                                        <i class="icon">
+                                            <svg><use xlink:href="#icon-plus"/></svg>
+                                        </i>
+                                        <span class="profile_heading-add_button--text">создать новый</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="main_box content content--lg">
+                <div class="profile_table">
+                    <div class="profile_table-sorting">
+                        <div class="content-row">
+                            <div class="content-col col-pull-1 col-pull-lg-0 col-11 col-lg-12">
+                                <div class="profile_table-sorting--list sorting">
+                                    <a href="#" class="active">all</a>
+                                    <a href="#">active</a>
+                                    <a href="#">empty</a>
+                                    <a href="#">completed</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_table-main">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th><a href="/en/manager/feedback?sort=text" data-sort="text">Message</a></th>
+                                <th><a href="/en/manager/feedback?sort=name" data-sort="name">Name</a></th>
+                                <th><a href="/en/manager/feedback?sort=phone" data-sort="phone">Phone</a></th>
+                                <th><a href="/en/manager/feedback?sort=email" data-sort="email">Email</a></th>
+                                <th><a href="/en/manager/feedback?sort=category_id" data-sort="category_id">Request
+                                    category</a></th>
+                                <th><a href="/en/manager/feedback?sort=answer" data-sort="answer">Status</a></th>
+                            </tr>
+                            <tr id="w0-filters" class="filters">
+                                <td>&nbsp;</td>
+                                <td><input type="text" class="form-control" name="FeedbackSearch[text]"></td>
+                                <td><input type="text" class="form-control" name="FeedbackSearch[name]"></td>
+                                <td><input type="text" class="form-control" name="FeedbackSearch[phone]"></td>
+                                <td><input type="text" class="form-control" name="FeedbackSearch[email]"></td>
+                                <td><select class="form-control" name="FeedbackSearch[category_id]">
+                                    <option value=""></option>
+                                    <option value="1">Cooperation</option>
+                                    <option value="3">Buy</option>
+                                    <option value="2">Sell</option>
+                                    <option value="0">Need help</option>
+                                </select></td>
+                                <td><select class="form-control" name="FeedbackSearch[answer]">
+                                    <option value=""></option>
+                                    <option value="new">new</option>
+                                    <option value="answered">answered</option>
+                                </select></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr data-id="2" style="color:#A34CAB" data-key="2">
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Created at</div>
+                                        <div class="cell-title">2020-03-08 01:57:58</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Message</div>
+                                        <div class="cell-title">Cool website!
+
+                                            My name’s Eric, and I just found your site...
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User name</div>
+                                        <div class="cell-title">Eric Jones</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User phone</div>
+                                        <div class="cell-title">416-385-3200</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User email</div>
+                                        <div class="cell-title">eric@talkwithwebvisitor.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Need help</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">new</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr onclick="openModal(1, &quot;sdfsdfsdfsdfsdf&quot;, &quot;ываывавы&quot;)" data-id="1"
+                                style="" data-key="1">
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Created at</div>
+                                        <div class="cell-title">2020-03-02 13:51:41</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Message</div>
+                                        <div class="cell-title">sdfsdfsdfsdfsdf</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User name</div>
+                                        <div class="cell-title">asfsadf</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User phone</div>
+                                        <div class="cell-title">32423423</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">User email</div>
+                                        <div class="cell-title">sdfagasgasd@dsfsdfsdfsd.sdffsd</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Need help</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">answered</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Preview</th>
+                                <th><a href="/en/manager/objects?sort=name" data-sort="name">Name</a></th>
+                                <th><a href="/en/manager/objects?sort=address" data-sort="address">Address</a></th>
+                                <th><a href="/en/manager/objects?sort=user.email" data-sort="user.email">Email</a></th>
+                                <th style="width:190px;"><a href="/en/manager/objects?sort=price" data-sort="price">Price</a>
+                                </th>
+                                <th><a href="/en/manager/objects?sort=status" data-sort="status">Status:</a></th>
+                                <th><a href="/en/manager/objects?sort=partition_id"
+                                       data-sort="partition_id">Category</a></th>
+                                <th><a href="/en/manager/objects?sort=manager_id" data-sort="manager_id">Manager</a>
+                                </th>
+                                <th class="action-column">&nbsp;</th>
+                            </tr>
+                            <tr id="w0-filters" class="filters">
+                                <td>&nbsp;</td>
+                                <td><input type="text" class="form-control" name="ProductSearch[name]" value=""></td>
+                                <td><input type="text" class="form-control" name="ProductSearch[address]" value=""></td>
+                                <td><input type="text" class="form-control" name="broker"></td>
+                                <td><input type="number" class="form-control hide" name="min" value=""
+                                           style="width:45%; float:left"><input value="" class="numeric"><input
+                                        type="number" class="form-control hide" name="max" value=""
+                                        style="width:45%;"><input value="" class="numeric"></td>
+                                <td><select class="form-control" name="ProductSearch[status]">
+                                    <option value=""></option>
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Active</option>
+                                    <option value="2">Sold out</option>
+                                    <option value="4">Waiting moderation</option>
+                                    <option value="5">Rejected</option>
+                                </select></td>
+                                <td><select class="form-control" name="ProductSearch[partition_id]">
+                                    <option value=""></option>
+                                    <option value="1">Apartments</option>
+                                    <option value="2">Houses</option>
+                                    <option value="3">Land</option>
+                                    <option value="4">Buildings</option>
+                                    <option value="5">Сommercial</option>
+                                </select></td>
+                                <td><select class="form-control" name="ProductSearch[manager_id]">
+                                    <option value=""></option>
+                                    <option value="1">admin</option>
+                                    <option value="2">support</option>
+                                    <option value="3">Reconcept@mail.ru</option>
+                                    <option value="11">proforg@list.ru</option>
+                                </select></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-key="21">
+                                <td style="">
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/21/400_400_1584091446_Qw.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/apartments/21">Апартамента 2 англ</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Tverskaya St, 6с1, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">157847</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Apartments</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=21"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=21" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/apartments/21" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=21"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="20">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/20/400_400_1584091215_II.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/buildings/20">Комплекс 3 англ</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Bobrov Pereulok, 6с3, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Buildings</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=20"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=20" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/buildings/20" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=20"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="19">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/19/400_400_1584090994_zR.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/land/19">Земля англ </a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Ulitsa Malaya Lubyanka, 12/7 строение 8, Moskva,
+                                            Russia
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">100</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Land</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=19"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=19" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/land/19" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=19"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="18">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/18/400_400_1584089807_T-.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/houses/18">Исторический дом англ </a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">улица Рождественка д 5/7 стр 1, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">1009</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Houses</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=18"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=18" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/houses/18" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=18"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="17">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/17/400_400_1584088368_HU.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/commercial/17">Полный диапазон
+                                            англ</a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Mokhovaya St, 11 строение 48, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">100</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Сommercial</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=17"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=17" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/commercial/17" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=17"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="16">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/16/400_400_1584087291_4e.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/buildings/16">Комплекс2 англ</a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Mokhovaya St, 11, строен. 2, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Buildings</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=16"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=16" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/buildings/16" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=16"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="15">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/uploads/images/Product/15/400_400_1584086945_6D.jpg"
+                                            alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/buildings/15">Полный диапазон англ</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Вестибюль ст.м. "Театральная, Moskva, Russia</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Buildings</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=15"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=15" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/buildings/15" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=15"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="14">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/images/no-image.svg" alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/buildings/14">ЖК ООО</a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">venodon@gmail.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Buildings</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=14"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=14" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/buildings/14" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=14"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            <tr data-key="5">
+                                <td>
+                                    <div class="profile_table-body--cell_object"><a class="figure"><img
+                                            src="https://replatforms.com/images/no-image.svg" alt=""></a></div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Name</div>
+                                        <div class="cell-title"><a href="/catalog/apartments/5">ALEXANDR YAKOVLEV</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Address</div>
+                                        <div class="cell-title">Железногорск</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">saae21@gmail.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Price</div>
+                                        <div class="cell-title">3000000</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title">Disabled</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title">Apartments</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Category</div>
+                                        <div class="cell-title"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta"><a class="icon-bordered"
+                                                                                 href="/en/manager/logs?LogProductSearch%5Bproduct_id%5D=5"
+                                                                                 data-pjax="0">Logs</a> <a
+                                            class="icon-bordered" href="/en/profile/update?id=5" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-edit"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/catalog/apartments/5" data-pjax="0"><i
+                                            class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-link"></use>
+                                        </svg>
+                                    </i></a> <a class="icon-bordered" href="/en/profile/delete-object?id=5"
+                                                data-pjax="0"><i class="icon icon_size-2">
+                                        <svg>
+                                            <use xlink:href="#icon-remove"></use>
+                                        </svg>
+                                    </i></a></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    <a href="/en/manager/selections?sort=id"
+                                       class="profile_table-head--cell                            ">
+                                        <span class="language-item" data-category="site"
+                                              data-hash="9a0a4f0869ab12a21407047290750e7a" data-language_id="en"
+                                              data-params="[]">By date</span> </a>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">title</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">results</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">creator</span>
+                                </th>
+                                <th>
+                                    <a href="/en/manager/selections?sort=status"
+                                       class="profile_table-head--cell                            ">
+                                        <span class="language-item" data-category="site"
+                                              data-hash="d7eecd470361c10a07f61185c6e7d8d8" data-language_id="en"
+                                              data-params="[]">By status</span> </a>
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody class="profile_table-body">
+                            <tr>
+                                <td>
+                                    <div class="profile_table-body--cell profile_table-body--cell_date_title">
+                                        <div class="profile_table-body--cell_title desktop-hidden">date</div>
+                                        <div class="cell-title">13.03.20</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">title</div>
+                                        <div class="cell-title"><a class="color-font-brand-01"
+                                                                   href="/selection/27">27</a></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">results</div>
+                                        <div class="cell-title"><a class="color-font-brand-01" href="/en/selection/27">0/0</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">creator</div>
+                                        <div class="cell-title color-font-brand-01">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                        <div class="cell-title color-font-brand-01">Active</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta">
+                                        <a target="_blank" href="/en/selection/27" class="icon-bordered">
+                                                <span class="inline-text">
+                                                    <span class="tablet-hidden">view </span>
+                                                    results
+                                                </span>
+                                        </a>
+                                        <a target="_blank" href="/en/selection/edit?id=27" class="icon-bordered">
+                                            <i class="icon icon_size-2">
+                                                <svg>
+                                                    <use xlink:href="#icon-edit"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                        <a href="/en/selection/delete?id=27" class="icon-bordered">
+                                            <i class="icon icon_size-2">
+                                                <svg>
+                                                    <use xlink:href="#icon-remove"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col style="width:120px">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th width="120"><a href="/en/manager/users?sort=image" data-sort="image">Image</a></th>
+                                <th><a href="/en/manager/users?sort=email" data-sort="email">Email</a></th>
+                                <th><a href="/en/manager/users?sort=last_name" data-sort="last_name">Last name</a></th>
+                                <th><a href="/en/manager/users?sort=status" data-sort="status">Status:</a></th>
+                                <th><a href="/en/manager/users?sort=role" data-sort="role">Role</a></th>
+                                <th>Objects.</th>
+                                <th>Selections.</th>
+                                <th class="action-column">&nbsp;</th>
+                            </tr>
+                            <tr id="w0-filters" class="filters">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><input type="text" class="form-control" name="UserSearch[email]"></td>
+                                <td><input type="text" class="form-control" name="UserSearch[last_name]"></td>
+                                <td><select class="form-control" name="UserSearch[status]">
+                                    <option value=""></option>
+                                    <option value="10">Active</option>
+                                    <option value="0">Disabled</option>
+                                </select></td>
+                                <td><select class="form-control" name="UserSearch[role]">
+                                    <option value=""></option>
+                                    <option value="admin">admin</option>
+                                    <option value="manager">manager</option>
+                                    <option value="user">user</option>
+                                </select></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-key="1">
+                                <td>1</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com/uploads/images/User/1582806444_52.jpg"
+                                                                       alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">venodon@gmail.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">admin</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">admin</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">4 - 1/0/0/0/3</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">7</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/5MFqmCp2KGIePrdZDOI-3EM3L_cbiT"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="2">
+                                <td>2</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">suhov.a.s@yandex.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">support</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">admin</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/OjylyTGCKG76GZNw8DY8hXvm-o5o7f"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="3">
+                                <td>3</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com/uploads/images/User/20200305/1583418736_wm.jpg"
+                                                                       alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Reconcept@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Елена Петрова</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">manager</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">16 - 7/0/0/0/9</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">20</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/MSRdU3MxvRw05xJkSFrzqGkOMO6ORc"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="4">
+                                <td>4</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">Vesnin_sergey@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Веснин Сергей</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/yx9tGiwfiSSYoK-HNLuC7k4LysFBUn"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="5">
+                                <td>5</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">sportinnovacii@yandex.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Тест2 Тест</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/UsAmVYpLdiLPzPJLp8M95Y5uT9tUHu"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="6">
+                                <td>6</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">arplanstest@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Тест 3 Тест</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/GzX5lOoqlQ9umCoiQ3DV24YLOCzA6d"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="7">
+                                <td>7</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">arplanstest2@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Тест 3 Тест</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/3FopLEzb2VpY2ebzoNSOPc1x1tmNnu"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="8">
+                                <td>8</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">indy-man@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Тест4 Тест</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/YUDvWAch0ucbwCzl2Cm757as-T4J8m"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="9">
+                                <td>9</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">reconcept2@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Петя Петров</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/AQvBEwiT06jiqDV8NyN_zfnciZzThi"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="10">
+                                <td>10</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">reconcept3@mail.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Вася Васильев</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/JE1br4UaI0-YWUtFPXDRRKrPV07loZ"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="11">
+                                <td>11</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com/uploads/images/User/11.jpg"
+                                                                       alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">proforg@list.ru</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Коньков Сергей</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">manager</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/uPQOre3_9dcVA8W84fAt9lBPG9CK0S"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="12">
+                                <td>12</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">johndoe@test.test</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Doe John</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/T1Twe2Ukd9PGRFH1jCy0t76RgsOzwu"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="13">
+                                <td>13</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com/uploads/images/User/13.jpg"
+                                                                       alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">saae21@gmail.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Яковлев Александр</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">1 - 0/0/1/0/0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/eIzRPurzWTjx1_6V9W1-Oq3vbHw-HK"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="14">
+                                <td>14</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">John@test.test</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">Doe John</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/LCBHP8xsv8RFLZigA8R5knPLcvsgIY"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="15">
+                                <td>15</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">test@test.test</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">test test</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/51ZRxgaeX10xTGvL-a3eHdoUVipfVv"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="16">
+                                <td>16</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com" alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">test@test1.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title">test test</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/0zi1JPuFhwJOAOKsW1CSV_qNhktvc7"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            <tr data-key="17">
+                                <td>17</td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <div class="figure&quot;"><img class="admin-grid-image"
+                                                                       src="https://replatforms.com/uploads/images/User/17.jpg"
+                                                                       alt=""></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Email</div>
+                                        <div class="cell-title">geogatedproject318@gmail.com</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Full Name</div>
+                                        <div class="cell-title"> Akira</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Status:</div>
+                                        <div class="cell-title"><span style="color:#008000;">Active</span></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Role</div>
+                                        <div class="cell-title">user</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Objects</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">Selections</div>
+                                        <div class="cell-title">0</div>
+                                    </div>
+                                </td>
+                                <td><a class="object_page-cta--link" href="/en/message/uIg3h-b4c_8EfMKlfI8CN9AxR5feY9"
+                                       data-pjax="0"><i class="icon icon_size-3">
+                                    <svg>
+                                        <use xlink:href="#icon-chat"></use>
+                                    </svg>
+                                </i></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>
+                                    <span class="profile_table-head--cell">date</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">object</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">statistics</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">applications</span>
+                                </th>
+                                <th>
+                                    <span class="profile_table-head--cell">catalog</span>
+                                </th>
+                                <th>
+                                    <a href="#" class="profile_table-head--cell sort sort-down">status</a>
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="w0" class="profile_table-body">
+                            <tr>
+                                <td>
+                                    <div class="profile_table-body--cell profile_table-body--cell_date">
+                                        13.03.20
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_object">
+                                        <a class="figure" href="/catalog/buildings/14">
+                                            <img src="/images/no-image.svg" alt="ЖК ООО">
+                                        </a>
+                                        <div class="profile_table-body--cell">
+                                            <div class="cell-list_item cell-title">
+                                                <a href="/catalog/buildings/14" class="color-font-brand-01">ЖК ООО</a>
+                                            </div>
+                                            <div>
+                                                <div class="cell-list_item">100 $ - 200 $</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">statistics</div>
+                                        <div class="cell-list_item--wrapper">
+                                            <div class="cell-list_item">
+                                                <div class="cell-icon_text">
+                                                    <i class="icon icon_size-2 color-font-brand-02">
+                                                        <svg>
+                                                            <use xlink:href="#icon-eye"></use>
+                                                        </svg>
+                                                    </i>
+                                                    11
+                                                </div>
+                                            </div>
+                                            <div class="cell-list_item">
+                                                <div class="cell-icon_text">
+                                                    <i class="icon icon_size-2 color-font-brand-02">
+                                                        <svg>
+                                                            <use xlink:href="#icon-like"></use>
+                                                        </svg>
+                                                    </i>
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">applications</div>
+                                        <div>
+                                            <div class="cell-list_item">
+                                                <div class="cell-icon_text color-font-brand-01">
+                                                    <i class="icon icon_size-2 color-font-brand-02">
+                                                        <svg>
+                                                            <use xlink:href="#icon-chat"></use>
+                                                        </svg>
+                                                    </i>
+                                                    0
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">catalog</div>
+                                        Buildings
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell">
+                                        <div class="profile_table-body--cell_title desktop-hidden">status</div>
+                                        <div class="cell-title color-font-brand-01">Active</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="profile_table-body--cell_cta">
+                                        <a target="_blank" href="/en/profile/update?id=14" class="icon-bordered">
+                                            <i class="icon icon_size-2">
+                                                <svg>
+                                                    <use xlink:href="#icon-edit"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                        <a target="_blank" href="/catalog/buildings/14" class="icon-bordered">
+                                            <i class="icon icon_size-2">
+                                                <svg>
+                                                    <use xlink:href="#icon-link"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                        <a href="/en/profile/delete-object?id=14" class="icon-bordered">
+                                            <i class="icon icon_size-2">
+                                                <svg>
+                                                    <use xlink:href="#icon-remove"></use>
+                                                </svg>
+                                            </i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <include src="../templates/footer.html"></include>
+
+    </div>
+
+</div>
+
+
+<include src="../templates/burger-menu.html"></include>
+<include src="../templates/search.html"></include>
+
+<div class="modal">
+    <div class="modal_blur modal_close"></div>
+    <include src="./modal/signin.html"></include>
+    <include src="./modal/signup.html"></include>
+    <include src="./modal/reset-password.html"></include>
+</div>
+
+
+<include src="../templates/scripts.html"></include>
+
+
+</body>
+</html>

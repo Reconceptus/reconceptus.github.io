@@ -181,6 +181,14 @@
             flex-direction: column;
             padding: 0 $gutter $gutter-x2;
             position: relative;
+            td {
+              &:first-child {
+                padding-top: 20px;
+              }
+              &:last-child {
+                padding-bottom: 20px;
+              }
+            }
           }
           @include mq(tablet_sm, tablet_xl) {
             max-width: 50%;
@@ -254,6 +262,13 @@
           }
           @include mq($until: desktop_sm) {
             margin-bottom: $padding_sm;
+            margin-right: $padding_sm;
+          }
+        }
+        &--wrapper {
+          @include mq($until: tablet_xl) {
+            display: flex;
+            flex-wrap: wrap;
           }
         }
       }
@@ -276,11 +291,13 @@
           }
         }
         &_title {
+          white-space: nowrap;
           @include mq(mobile_sm, tablet_xl) {
             flex-shrink: 0;
             width: 120px;
             margin-right: $gutter-x2;
             font-weight: 500;
+
           }
           @include mq($until: mobile_sm) {
             font-weight: 500;
@@ -305,12 +322,18 @@
               flex-direction: column;
               padding-top: $padding-md;
             }
+            .figure {
+              margin-bottom: 20px;
+            }
           }
           @include mq($until: mobile_sm) {
             margin-top: 24px;
             flex-direction: column;
             .profile_table-body--cell {
               flex-direction: column;
+            }
+            .figure {
+              margin-bottom: 20px;
             }
           }
           .figure {
@@ -354,6 +377,17 @@
             }
           }
         }
+        .cell-title {
+          a {
+            font-weight: 500;
+            color: $brand-01;
+          }
+          @include mq($until: tablet_xl) {
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+
       }
     }
 
