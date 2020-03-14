@@ -26,10 +26,7 @@
       color: $ui-03;
     }
   }
-  .help-block {
-    color: $ui-03;
-    font-size: 12px;
-  }
+
   &--columns {
     flex-wrap: wrap;
     @include mq($from: tablet_xl) {
@@ -99,6 +96,15 @@
         margin-bottom: $padding-md;
       }
     }
+  }
+
+}
+
+.help-block {
+  color: $ui-03;
+  font-size: 12px;
+  @include mq($until: mobile_sm){
+    line-height: 1.2;
   }
 }
 

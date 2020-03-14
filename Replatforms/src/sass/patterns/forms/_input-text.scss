@@ -54,6 +54,9 @@
       position: absolute;
       top: 100%;
       left: $padding;
+      @include mq($until: mobile_sm){
+        left: 8px;
+      }
     }
   }
   .has-success {

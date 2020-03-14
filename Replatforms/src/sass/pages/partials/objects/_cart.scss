@@ -126,10 +126,10 @@
   &-cta {
 
     @include mq($from: tablet_xl) {
-      margin-top: $padding-xxl;
+      margin-top: $padding-lg;
     }
     @include mq($until: tablet_xl) {
-      margin-top: $padding-xl;
+      margin-top: $padding-md;
     }
     .btn {
       padding: 0 $gutter-x2;

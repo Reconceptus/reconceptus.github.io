@@ -55,7 +55,7 @@ $mq-breakpoints: (
         tablet_xl:  1025px, // md
         desktop_sm: 1281px, // lg
         desktop_xl: 1421px, // xl
-        wide:    1725px     // wd
+        wide:       1725px  // wd
 ) !default;
 
 @import "mixins/mq";

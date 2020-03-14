@@ -10,8 +10,9 @@
     flex-shrink: 0;
     width: 24px;
     height: 1px;
-    margin: 0 $padding;
+    margin: 0 $padding 24px;
     background: $brand-02;
+    align-self: flex-end;
   }
   .form-input {
     width: 100%;
