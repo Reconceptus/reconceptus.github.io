@@ -28,8 +28,8 @@
     top: 0;
     bottom: 0;
     opacity: 0;
-    background-color: rgba($black,0.3);
-    transition: opacity 0.35s;
+    background-color: rgba($black,0.1);
+    transition: opacity 1s;
     pointer-events: none;
     .opened & {
       opacity: 1;

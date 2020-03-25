@@ -2,15 +2,9 @@ html {
   min-height: 100%;
   font-size: $font;
   &.ovh {
-    overflow: hidden;
-    &.mobile,
-    &.tablet {
-      height: 100%;
-      body {
-        overflow: hidden;
-        height: 100%;
-      }
-    }
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
   }
   //@include media(hover,1201){font-size: 16px;}
   //@include breakpoints(1025,1200){font-size: 16px;}
@@ -45,10 +39,9 @@ svg {
 
 
   @include mq($from: tablet) {
-    transition: filter 0.5s;
-    will-change: filter;
+    transition: opacity 0.5s;
     .blured & {
-      filter: blur(4px);
+      opacity: 0.3;
     }
   }
 
@@ -65,6 +58,14 @@ svg {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  @include mq($from: tablet) {
+    transition: all 0.3s;
+    transform-origin: top right;
+    &.blured {
+      transition: all 0.4s ease 0.1s;
+      transform: scale(0.9);
+    }
+  }
  }
 
 .container {

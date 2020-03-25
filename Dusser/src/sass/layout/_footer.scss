@@ -4,11 +4,10 @@
 
   position: relative;
   @include mq($from: tablet) {
-    transition: filter 0.5s;
-    will-change: filter;
+    transition: opacity 0.5s;
     padding-top: 85px;
     .blured & {
-      filter: blur(4px);
+      opacity: 0.3;
     }
   }
   @include mq($until: tablet) {

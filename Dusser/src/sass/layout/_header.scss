@@ -10,10 +10,9 @@
     top: 0;
   }
   @include mq($from: tablet) {
-    transition: filter 0.5s;
-    will-change: filter;
+    transition: opacity 0.5s;
     .blured & {
-      filter: blur(4px);
+      opacity: 0.3;
     }
   }
   &-logo {
@@ -276,6 +275,7 @@
         font-weight: 600;
         font-size: 48px;
         margin-right: $padding-lg;
+        white-space: nowrap;
       }
     }
     &--total {

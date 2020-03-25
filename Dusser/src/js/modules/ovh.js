@@ -1,13 +1,18 @@
-let scroll_top;
 const ovh = {
     add: function() {
-        scroll_top = $(window).scrollTop();
+        let scroll_top = window.pageYOffset || document.documentElement.scrollTop;
         setTimeout(function() {
             $('html').addClass('ovh');
-        }, 300);
+            $('body')
+                .css('margin-top', -1 * scroll_top + 'px')
+                .attr('data-scroll', scroll_top);
+        }, 50);
     },
     remove: function() {
+        let scroll_top = $('body').attr('data-scroll');
+
         $('html').removeClass('ovh');
+        $('body').attr({ style: '', 'data-scroll': '' });
         $(window).scrollTop(scroll_top);
     },
 };
