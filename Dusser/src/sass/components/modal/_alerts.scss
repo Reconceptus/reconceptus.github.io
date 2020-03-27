@@ -7,8 +7,16 @@
   @include mq($from: 1680px){
     left: calc(50% + 1680px/2 - 32px);
   }
-  @include mq($until: 1680px){
-    right: 32px;
+  @include mq(desktop, 1680px){
+    right: $padding-xl;
+  }
+  @include mq(tablet, desktop) {
+    right: $padding-lg;
+    bottom: $padding-lg;
+  }
+  @include mq($until: tablet) {
+    right: $padding-md;
+    bottom: $padding-md;
   }
   &:not(.active){
     z-index: -1;
@@ -25,6 +33,12 @@
     width: 300px;
     @include mq($from: 1680px){
       transform: translateX(-100%);
+    }
+    @include mq($until: tablet) {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 20px 20px 0 20px;
+      padding: 8px 12px 8px 8px;
     }
     &[data-alert-type="success"] {
       background-color: $white;
@@ -49,14 +63,22 @@
     height: 60px;
     border-radius: 50%;
     padding: 18px;
-
     margin-right: 20px;
     flex-shrink: 0;
     align-self: flex-start;
+    @include mq($until: tablet) {
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+      margin-right: 10px;
+    }
   }
   &-text {
     font-size: 20px;
     line-height: 1.5;
     align-self: center;
+    @include mq($until: tablet) {
+      font-size: 14px;
+    }
   }
 }
