@@ -29,6 +29,7 @@ window.functions = {
     textbox: require('./modules/textbox'),
     popup: require('./modules/popup'),
     orders_table: require('./modules/orders-table'),
+    alert: require('./modules/alert'),
 };
 
 // scripts
