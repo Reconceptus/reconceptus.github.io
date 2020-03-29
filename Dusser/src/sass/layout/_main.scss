@@ -60,9 +60,14 @@ svg {
   min-height: 100vh;
   @include mq($from: tablet) {
     transition: all 0.3s;
-    transform-origin: top right;
+    &.right-origin {
+      transform-origin: top right;
+    }
+    &.left-origin {
+      transform-origin: top left;
+    }
     &.blured {
-      transition: all 0.4s ease 0.1s;
+      transition: transform 0.4s ease 0.1s;
       transform: scale(0.9);
     }
   }

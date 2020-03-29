@@ -15,6 +15,7 @@ const burger = {
         }
     },
     open: function() {
+        $wrapper.classList.add('right-origin');
         functions.ovh.add();
         functions.sticky_sidebar.translate('add');
         $burgerMenu.classList.add('opened');
@@ -25,6 +26,7 @@ const burger = {
         $wrapper.classList.remove('blured');
         functions.sticky_sidebar.translate('remove');
         functions.ovh.remove();
+        $wrapper.classList.remove('right-origin');
     },
 };
 

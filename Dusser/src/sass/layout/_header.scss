@@ -24,8 +24,13 @@
     }
     .burger {
       @extend %btn_reset;
-      margin-right: $padding-lg;
       flex-shrink: 0;
+      @include mq($from: mobile_xl) {
+        margin-right: $padding-lg;
+      }
+      @include mq($until: mobile_xl) {
+        margin-right: 16px;
+      }
     }
   }
   &-domain {
@@ -164,7 +169,7 @@
     display: flex;
     align-items: center;
     @include mq($until: mobile) {
-      display: none;
+      //display: none;
     }
     .link-icon {
       display: inline-flex;
@@ -186,10 +191,15 @@
         line-height: $padding-lg;
         padding: 0 $padding;
       }
-      @include mq($until: desktop_md) {
+      @include mq(mobile_xl, desktop_md) {
         font-size: 12px;
         padding: 0 6px;
         line-height: 20px;
+      }
+      @include mq($until: mobile_xl) {
+        font-size: 10px;
+        padding: 0 4px;
+        line-height: 16px;
       }
     }
     &--close {
@@ -215,8 +225,11 @@
       @include mq($from: desktop_md) {
         margin-left: $padding-xl;
       }
-      @include mq($until: desktop_md) {
+      @include mq(mobile_xl, desktop_md) {
         margin-left: $padding-lg;
+      }
+      @include mq($until: mobile_xl) {
+        margin-left: 12px;
       }
       @include hover(){
         .header-personal_info--short:not(.added-item) {
@@ -286,6 +299,9 @@
       font-weight: 500;
       cursor: default;
       color: $text;
+      @include mq($until: mobile_xl) {
+        display: none;
+      }
       .summ {
 
         white-space: nowrap;

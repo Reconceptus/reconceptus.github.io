@@ -19,7 +19,7 @@ const auth = {
     },
     open: function(check) {
         if ($authMenu == null) return false;
-
+        $wrapper.classList.add('left-origin');
         functions.ovh.add();
         functions.sticky_sidebar.translate('add');
         $authMenu.classList.add('opened');
@@ -32,6 +32,7 @@ const auth = {
         $wrapper.classList.remove('blured');
         functions.sticky_sidebar.translate('remove');
         functions.ovh.remove();
+        $wrapper.classList.remove('left-origin');
     },
 };
 
