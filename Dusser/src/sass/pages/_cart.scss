@@ -204,22 +204,48 @@
       margin-left: -1*$padding-lg;
     }
     @include mq(tablet, desktop_md) {
-      margin-left: -1*$padding-md;
+      margin-left: -12px;
     }
     @include mq(mobile_xl, tablet) {
       margin-top: -1*$padding-md;
       margin-bottom: -1*$padding-md;
-      margin-left: -1*$padding-lg;
+      margin-left: -28px;
     }
     @include mq($until: mobile_xl) {
-      margin-top: -1*$padding;
-      margin-left: -1*$padding-md;
+      margin-top: 12px;
+      margin-left: 0;
+      margin-bottom: 24px;
+    }
+    @include mq($until: mobile) {
+      flex-direction: column;
+      align-items: flex-start;
     }
     &--img {
-      height: 128px;
-      width: 128px;
       position: relative;
       flex-shrink: 0;
+      @include mq($from: tablet) {
+        height: 96px;
+        width: 96px;
+      }
+      @include mq(mobile_xl, tablet) {
+        height: 128px;
+        width: 128px;
+      }
+      @include mq($from: mobile_xl) {
+        margin: 16px;
+      }
+      @include mq(mobile, mobile_xl) {
+        margin-right: 24px;
+      }
+      @include mq($until: mobile_xl) {
+        height: 128px;
+        width: 128px;
+        margin-bottom: 12px;
+
+      }
+      @include mq($until: mobile) {
+
+      }
     }
     &--img_box {
       width: 100%;
@@ -293,10 +319,12 @@
     &--old_price {
       font-size: $font;
       text-decoration: line-through;
+      white-space: nowrap;
     }
     &--actual_price {
       font-size: 20px;
       font-weight: 600;
+      white-space: nowrap;
     }
     &--remove {
       width: $padding-lg;

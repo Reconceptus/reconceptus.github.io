@@ -13,6 +13,9 @@ $textBoxMargin: $padding-md;
     &:not(:last-child){
       margin-bottom: 24px;
     }
+    &:not(:first-child){
+      margin-top: 32px;
+    }
   }
   h3 {
     @include mq($from: tablet) {
@@ -25,6 +28,9 @@ $textBoxMargin: $padding-md;
     &:not(:last-child){
       margin-bottom: 24px;
     }
+    &:not(:first-child){
+      margin-top: 32px;
+    }
   }
   h4 {
     font-weight: 500;
@@ -36,6 +42,9 @@ $textBoxMargin: $padding-md;
     }
     &:not(:last-child){
       margin-bottom: 24px;
+    }
+    &:not(:first-child){
+      margin-top: 32px;
     }
   }
   ol {
@@ -116,6 +125,8 @@ $textBoxMargin: $padding-md;
       left: 0;
       width: 100%;
       height: 100%;
+      min-width: 100%;
+      min-height: 100%;
     }
   }
 
@@ -130,16 +141,16 @@ $textBoxMargin: $padding-md;
     }
     @include mq($from: tablet) {
       font-size: $font-md;
-      margin-top: 56px;
+      margin-top: 120px;
       &:not(:last-child){
-        margin-bottom: 56px;
+        margin-bottom: 120px;
       }
     }
     @include mq($until: tablet) {
       font-size: 20px;
-      margin-top: 40px;
+      margin-top: 60px;
       &:not(:last-child){
-        margin-bottom: 40px;
+        margin-bottom: 60px;
       }
     }
 
@@ -154,16 +165,10 @@ $textBoxMargin: $padding-md;
     }
   }
   a {
-    color: inherit;
-    background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    padding: 2px 0;
-    transition: background-size .3s;
+    color: $sale;
     position: relative;
-    background-size: 75% 2px;
     @include hover(){
-      background-size: 100% 2px;
+      color: darken($sale,5);
     }
   }
 }
