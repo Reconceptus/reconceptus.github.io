@@ -256,8 +256,7 @@
     }
     @include mq($until: mobile_xl) {
       font-size: 14px;
-      order: -1;
-      margin-bottom: $padding-xxl;
+      margin-top: $padding-xxl;
     }
     &--item {
 

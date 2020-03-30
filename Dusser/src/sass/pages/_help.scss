@@ -66,9 +66,10 @@
     .btn-expand {
       height: auto;
       flex-shrink: 0;
+      background: transparent;
+      color: $tag;
       @include mq($from: tablet) {
         min-height: 72px;
-
       }
       @include mq(mobile, tablet) {
         min-height: 60px;
@@ -82,26 +83,26 @@
       display: flex;
       align-items: center;
       @include mq($from: tablet) {
-        padding: $padding $padding-xxl;
+        padding: 16px $padding-xxl;
       }
       @include mq(mobile, tablet) {
-        padding: $padding $padding-md;
+        padding: 12px $padding-md;
       }
       @include mq($until: mobile) {
-        padding: $padding;
+        padding: 12px 16px;
       }
     }
   }
   &-answer {
 
     @include mq($from: tablet) {
-      padding: $padding-xl 0;
+      padding: $padding-xl 8px;
     }
     @include mq(mobile, tablet) {
-      padding: $padding-lg 0;
+      padding: $padding-lg 8px;
     }
     @include mq($until: mobile) {
-      padding: $padding-md 0;
+      padding: $padding-md 8px;
     }
   }
 }
