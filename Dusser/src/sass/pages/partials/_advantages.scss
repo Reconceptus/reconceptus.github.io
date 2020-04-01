@@ -1,0 +1,52 @@
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1*$padding-sm;
+  &-item {
+    width: 100%;
+    display: flex;
+    @include mq($from: tablet) {
+      max-width: calc( 100%/3 );
+      padding: $padding-xl calc( 100%/12 ) $padding-xl $padding-sm;
+    }
+    @include mq(tablet, desktop_md) {
+      flex-direction: column;
+    }
+    @include mq($until: tablet) {
+      padding: $padding $padding-sm;
+      &:not(:last-child){
+        margin-bottom: $padding-lg;
+      }
+    }
+    @include mq($until: mobile) {
+      flex-direction: column;
+    }
+  }
+  &-icon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: $padding-xl;
+    @include mq(tablet, desktop_md) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: mobile) {
+      margin-bottom: $padding-lg;
+    }
+    img {
+      @extend %fullBlock;
+      @extend %img_fit;
+    }
+  }
+  &-title {
+    font-size: 20px;
+    @include mq($from: tablet) {
+      margin-bottom: $padding-lg;
+    }
+    @include mq($until: tablet) {
+      margin-bottom: $padding-md;
+    }
+  }
+}

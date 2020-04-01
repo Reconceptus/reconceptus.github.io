@@ -203,15 +203,8 @@
       margin-bottom: $padding-md;
       a {
         color: $text;
-        background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
-        background-position: 0 100%;
-        background-repeat: no-repeat;
-        background-size: 0 2px;
-        padding: 2px 0;
-        transition: background-size .3s;
-        position: relative;
         @include hover(){
-          background-size: 98% 2px;
+          color: $sale;
         }
       }
     }
@@ -233,6 +226,9 @@
       .actual-price {
         font-size: 20px;
         font-weight: 600;
+      }
+      @include hover(){
+        color: $sale;
       }
     }
     &--icons {
@@ -264,6 +260,22 @@
       @include hover(){
         color: $sale;
       }
+    }
+  }
+  &-cta {
+    text-align: center;
+    @include mq($from: desktop) {
+      margin-top: 64px;
+    }
+    @include mq(mobile_xl, desktop) {
+      margin-top: $padding-xxl;
+    }
+    @include mq($until: mobile_xl) {
+      margin-top: $padding-lg;
+    }
+    .btn {
+      width: 100%;
+      max-width: 500px;
     }
   }
 }

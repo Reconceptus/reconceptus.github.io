@@ -43,6 +43,9 @@ $(document).ready(() => {
             });
         }
     }
+    if ($('[data-parallax]').length > 0) {
+        functions.parallax();
+    }
     if ($('.range-slider').length > 0) {
         functions.no_ui_slider();
     }

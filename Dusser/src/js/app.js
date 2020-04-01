@@ -30,6 +30,7 @@ window.functions = {
     popup: require('./modules/popup'),
     orders_table: require('./modules/orders-table'),
     alert: require('./modules/alert'),
+    parallax: require('./modules/parallax'),
 };
 
 // scripts
@@ -77,6 +78,9 @@ $(document).ready(() => {
                 $(this).mCustomScrollbar();
             });
         }
+    }
+    if ($('[data-parallax]').length > 0) {
+        functions.parallax();
     }
     if ($('.range-slider').length > 0) {
         functions.no_ui_slider();

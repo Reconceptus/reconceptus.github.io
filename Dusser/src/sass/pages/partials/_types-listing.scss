@@ -1,0 +1,155 @@
+.types {
+  &-banner {
+    position: relative;
+    margin-top: $padding-lg;
+    &--img {
+
+      width: 100%;
+      @include mq($from: tablet) {
+        height: 400px;
+      }
+      @include mq($until: tablet) {
+        height: 240px;
+      }
+      img {
+        @extend %fullBlock;
+        @extend %img_fit;
+      }
+    }
+    &--title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: $padding-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: $white;
+    }
+  }
+  &-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $padding-xl 0;
+    .link {
+      margin-right: $padding-xl;
+      color: $tag;
+      &:after {
+        height: 1px;
+        background: none;
+        border-bottom: 1px dashed currentColor;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @include hover(){
+        &:after {
+          opacity: 0;
+          transform: translateY($padding-sm);
+        }
+      }
+    }
+  }
+  &-heading {
+    &:not(:first-child){
+      @include mq($from: desktop) {
+        margin-top: 64px;
+      }
+      @include mq($until: desktop) {
+        margin-top: $padding-xl;
+      }
+    }
+  }
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1*$padding-sm;
+  }
+  &-item {
+    padding: 0 $padding-sm;
+    margin-bottom: $padding;
+    width: 100%;
+
+    @include mq($from: desktop) {
+      max-width: calc( 100%/4 );
+    }
+    @include mq(tablet, desktop) {
+      max-width: calc( 100%/4 );
+    }
+    @include mq(mobile, tablet) {
+      max-width: calc( 100%/2 );
+    }
+    &--section {
+      background-color: $white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s;
+      @include hover(){
+        box-shadow: 0 20px 20px 0 rgba($black, 0.16);
+        .listing-carousel & {
+          box-shadow: 0 4px 4px 0 rgba($black, 0.16);
+        }
+      }
+    }
+    &--img {
+      position: relative;
+    }
+    &--img_box {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      picture,
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+    &--data {
+
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include mq($from: desktop_xl) {
+        padding: 20px $padding-lg;
+      }
+      @include mq($until: desktop_xl) {
+        padding: $padding-md;
+      }
+    }
+    &--title {
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 600;
+      margin-bottom: $padding-md;
+      a {
+        color: $text;
+        @include hover(){
+          color: $sale;
+        }
+      }
+    }
+    &--cta {
+      margin-top: auto;
+      width: 100%;
+      @include mq($until: desktop) {
+        .btn {
+          font-size: 14px;
+          padding: 0 4px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

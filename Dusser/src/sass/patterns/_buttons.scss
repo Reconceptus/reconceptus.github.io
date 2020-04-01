@@ -7,6 +7,7 @@
   transition: all 0.18s;
   outline: none;
   letter-spacing: 2px;
+  white-space: nowrap;
   &-link {
     color: $tag;
     @extend %btn_reset;
@@ -62,7 +63,7 @@
     padding: 0 $padding-lg;
     font-weight: 600;
     @include hover(){
-
+      background-color: darken($sale,5);
     }
   }
   &-red-fill {

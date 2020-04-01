@@ -7,19 +7,21 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: $btn-red;
+    background-color: $sale;
     opacity: 0;
     transform: translateY($padding-sm);
     transition: all 0.25s;
     pointer-events: none;
   }
   @include hover(){
+    color: $sale;
     &:after {
       opacity: 1;
       transform: translateY(0);
     }
   }
   &.active {
+    color: $sale;
     &:after {
       opacity: 1;
       transform: translateY(0);

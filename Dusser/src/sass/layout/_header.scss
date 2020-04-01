@@ -66,15 +66,25 @@
       width: 33.33%;
       padding: 0 $padding;
     }
+    @include mq(tablet, desktop) {
+      right: $padding-lg;
+      &.active {
+        width: calc(100% - #{2*$padding-lg});
+      }
+    }
+    @include mq($until: tablet) {
+      right: $padding-md;
+      &.active {
+        width: calc(100% - #{2*$padding-md});
+      }
+    }
     @include mq($until: desktop) {
       position: absolute;
       bottom: 4px;
-      right: $padding-md;
       width: 30px;
       transition: width 0.2s;
       z-index: 1;
       &.active {
-        width: calc(100% - 32px);
         .header-search--opener {
           pointer-events: none;
         }

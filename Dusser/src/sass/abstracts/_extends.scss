@@ -3,6 +3,10 @@
   height: 100%;
   display: block;
 }
+%img_fit {
+  @extend %fullBlock;
+  object-fit: cover;
+}
 %valign {
   display: inline-block;
   vertical-align: middle;

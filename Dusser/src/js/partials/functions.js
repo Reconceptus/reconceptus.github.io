@@ -16,4 +16,5 @@ window.functions = {
     popup: require('./modules/popup'),
     orders_table: require('./modules/orders-table'),
     alert: require('./modules/alert'),
+    parallax: require('./modules/parallax'),
 };

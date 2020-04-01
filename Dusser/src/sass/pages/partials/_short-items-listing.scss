@@ -46,15 +46,8 @@
       margin-bottom: $padding-sm;
       a, .a {
         color: $text;
-        background: linear-gradient(to bottom, $btn-red 0%, $btn-red 100%);
-        background-position: 0 100%;
-        background-repeat: no-repeat;
-        background-size: 0 2px;
-        padding: 2px 0;
-        transition: background-size .3s;
-        position: relative;
         @include hover(){
-          background-size: 98% 2px;
+          color: $sale;
         }
       }
     }
@@ -68,6 +61,9 @@
       font-weight: 600;
       line-height: 24px;
       white-space: nowrap;
+      @include hover(){
+        color: $sale;
+      }
     }
     &--icons {
       display: flex;

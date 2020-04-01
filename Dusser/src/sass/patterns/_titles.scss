@@ -20,6 +20,15 @@
       margin-left: $padding;
     }
   }
+  &-xl {
+    font-weight: 600;
+    @include mq($from: tablet) {
+      font-size: 48px;
+    }
+    @include mq($until: tablet) {
+      font-size: $font-lg;
+    }
+  }
   &-lg {
     font-weight: 500;
     color: $tag;
@@ -47,5 +56,54 @@
     font-weight: 500;
     text-transform: uppercase;
     color: $tag;
+  }
+}
+
+.img-heading {
+  position: relative;
+  &--bg {
+    @include mq($from: desktop) {
+      bottom: -56px;
+    }
+    @include mq($until: desktop) {
+      bottom: -16px;
+    }
+    @include mq($from: tablet) {
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: -50vw;
+      right: -50vw;
+      background-size: 100vw auto;
+      background-position: center 45%;
+    }
+    @include mq($until: tablet) {
+      display: none;
+    }
+
+
+  }
+  .title-heading {
+    position: relative;
+    @include mq($from: desktop) {
+      justify-content: center;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @include mq($from: tablet) {
+      padding: 56px 0;
+    }
+    @include mq($until: tablet) {
+      padding: $padding-lg 0;
+    }
+    @include mq($from: mobile) {
+      max-width: 60%;
+    }
+    //@include mq($until: mobile) {
+    //  max-width: 85%;
+    //}
+  }
+  & + * {
+    position: relative;
   }
 }
