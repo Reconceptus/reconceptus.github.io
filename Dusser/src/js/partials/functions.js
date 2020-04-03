@@ -17,4 +17,5 @@ window.functions = {
     orders_table: require('./modules/orders-table'),
     alert: require('./modules/alert'),
     parallax: require('./modules/parallax'),
+    search: require('./modules/search'),
 };

@@ -90,11 +90,15 @@
         }
         .header-search--fieldset input {
           opacity: 1;
-          padding: 0 2*$padding-lg 0 $padding-lg;
+          pointer-events: auto;
+          padding: 0 60px 0 $padding-lg;
         }
         .header-search--btn {
           background: transparent;
           pointer-events: auto;
+        }
+        .header-search--reset {
+          display: flex;
         }
       }
     }
@@ -119,9 +123,7 @@
       width: 100%;
       display: flex;
       position: relative;
-      @include mq($until: desktop) {
 
-      }
       input {
         width: 100%;
         border: none;
@@ -131,7 +133,7 @@
         outline: none;
         @include mq($from: desktop) {
           height: 40px;
-          padding: 0 2*$padding-lg 0 $padding-lg;
+          padding: 0 75px 0 $padding-lg;
         }
         @include mq($until: desktop) {
           height: 30px;
@@ -139,6 +141,12 @@
           opacity: 0;
           pointer-events: none;
           transition: all 0.2s;
+        }
+        &:focus {
+          & ~ .header-search--reset {
+            opacity: 1;
+            pointer-events: auto;
+          }
         }
       }
     }
@@ -160,6 +168,33 @@
         width: 30px;
         height: 30px;
         background: $white;
+      }
+    }
+    &--reset {
+      @extend %btn_reset;
+      color: $text;
+      position: absolute;
+      width: 28px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 40px;
+      top: 0;
+      opacity: 0;
+      pointer-events: none;
+      @include mq($until: desktop) {
+        height: 30px;
+        right: 30px;
+        display: none;
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+      .filled & {
+        opacity: 1;
+        pointer-events: auto;
       }
     }
   }

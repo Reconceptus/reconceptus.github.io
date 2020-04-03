@@ -70,6 +70,9 @@ $(document).ready(() => {
     if ($('.orders_table').length > 0) {
         functions.orders_table.init();
     }
+    if ($('#search').length > 0) {
+        functions.search();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()
