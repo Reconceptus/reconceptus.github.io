@@ -1,22 +1,26 @@
 <li class="short_listing-item">
-    <div class="short_listing-item--img">
-        <include src="./elements/img.html"
-                 title="@@title"
-                 class="short_listing-item--img_box"
-                 imgUrl="item-05"
-        ></include>
-    </div>
-    <div class="short_listing-item--data">
-        <div class="short_listing-item--heading">
-            <include src="./elements/title.html" class="short_listing-item--title" title="@@title"></include>
-            <div class="short_listing-item--category">
-                Краситель
+    <a href="catalog-item.html" class="short_listing-item--link">
+        <div class="short_listing-item--img">
+            <div class="short_listing-item--img_box">
+                <picture>
+                    <source type="image/webp" srcset="assets/images/items/item-05.webp">
+                    <source type="image/jpeg" srcset="assets/images/items/item-05.jpg">
+                    <img src="assets/images/items/item-05.jpg" alt="@@title">
+                </picture>
             </div>
         </div>
-        <a href="catalog-item.html" class="short_listing-item--price">
-            3456&#x20bd;
-        </a>
-    </div>
+        <div class="short_listing-item--data">
+            <div class="short_listing-item--heading">
+                <div class="short_listing-item--title">@@title</div>
+                <div class="short_listing-item--category">
+                    Краситель
+                </div>
+            </div>
+            <span class="short_listing-item--price">
+                3456&#x20bd;
+            </span>
+        </div>
+    </a>
     <div class="short_listing-item--icons">
         <i class="icon icon-like liked">
             <svg xmlns="http://www.w3.org/2000/svg">

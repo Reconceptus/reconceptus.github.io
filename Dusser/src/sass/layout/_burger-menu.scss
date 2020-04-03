@@ -90,9 +90,11 @@
     flex-shrink: 0;
     @include mq($from: desktop) {
       height: 88px;
+      margin-bottom: 96px;
     }
     @include mq($until: desktop) {
       height: 62px;
+      margin-bottom: 24px;
     }
     .burger_close {
       @extend %btn_reset;

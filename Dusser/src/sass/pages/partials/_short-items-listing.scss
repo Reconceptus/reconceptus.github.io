@@ -7,6 +7,15 @@
     align-items: center;
     padding-right: $padding-md;
     margin-bottom: $padding-sm;
+    &--link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: $text;
+      @include hover(){
+        color: $sale;
+      }
+    }
     &--img {
       position: relative;
       width: 120px;
@@ -40,30 +49,19 @@
       padding-right: $padding;
     }
     &--title {
-      font-size: $font;
+      font-size: 20px;
       line-height: 24px;
       font-weight: 500;
       margin-bottom: $padding-sm;
-      a, .a {
-        color: $text;
-        @include hover(){
-          color: $sale;
-        }
-      }
     }
     &--category {
       font-size: $font;
-      color: $tag;
     }
     &--price {
-      color: $text;
       font-size: 20px;
       font-weight: 600;
       line-height: 24px;
       white-space: nowrap;
-      @include hover(){
-        color: $sale;
-      }
     }
     &--icons {
       display: flex;
