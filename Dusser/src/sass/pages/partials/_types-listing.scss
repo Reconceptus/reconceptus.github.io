@@ -88,11 +88,14 @@
       display: flex;
       flex-direction: column;
       transition: all 0.25s;
+      color: $text;
       @include hover(){
+        color: $sale;
         box-shadow: 0 20px 20px 0 rgba($black, 0.16);
         .listing-carousel & {
           box-shadow: 0 4px 4px 0 rgba($black, 0.16);
         }
+
       }
     }
     &--img {
@@ -133,12 +136,6 @@
       line-height: 24px;
       font-weight: 600;
       margin-bottom: $padding-md;
-      a {
-        color: $text;
-        @include hover(){
-          color: $sale;
-        }
-      }
     }
     &--cta {
       margin-top: auto;
