@@ -6,7 +6,7 @@ const gallery_carousel = function() {
             itemsCount = carousel.find('.item').length;
 
         carousel.owlCarousel({
-            dots: false,
+            dots: true,
             navText: ['', ''],
             navClass: ['arrow arrow-prev', 'arrow arrow-next'],
             items: 1,

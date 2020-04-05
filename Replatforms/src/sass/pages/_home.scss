@@ -229,10 +229,7 @@
     }
     &-main {
       
-      @include mq($from: desktop_xl) {
-        padding: 2*$padding-xxl 0 $padding-xxl;
-      }
-      @include mq(tablet_xl, desktop_xl) {
+      @include mq($from: tablet_xl) {
         padding: $padding-xxl 0;
       }
       @include mq($until: tablet_xl) {

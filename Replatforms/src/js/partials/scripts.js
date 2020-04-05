@@ -111,6 +111,33 @@ $(document).ready(() => {
     if ($('.profile_table-main').length > 0) {
         functions.init.tableWrap();
     }
+    if ($('.key_benefits-input--field').length > 0) {
+        $('.key_benefits-input--field').keyup(function(e) {
+            let parent = $(this).closest('.has-text');
+            if (e.which == 13) {
+                if (parent.length > 0) {
+                    parent.find('.key_benefits-input--enter').click();
+                }
+            }
+        });
+    }
+    if ($('.draggable').length > 0) {
+        $.getScript(
+            'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js',
+            function() {
+                $('.draggable').on('click', '.kv-file-zoom', function(e) {
+                    e.preventDefault;
+                    let image = $(this)
+                        .closest('.kv-preview-thumb')
+                        .find('.kv-preview-data')
+                        .attr('src');
+                    $.fancybox.open({
+                        src: image,
+                    });
+                });
+            },
+        );
+    }
 
     $('.form-password--show').click(function() {
         let _parent = $(this).parent();

@@ -22,7 +22,7 @@ let contenteditable = {
         classes: {
             wrap: 'key_benefits-list--item',
             cta: 'key_benefits-list--item_cta',
-            btn: 'key_benefits-list--item_btn',
+            btn: 'key_benefits-list--item_btn icon-bordered',
             text: 'key_benefits-list--item_text',
             textarea: 'key_benefits-list--item_textarea',
         },
@@ -32,6 +32,12 @@ let contenteditable = {
         c_input.addEventListener('input', () => {
             this.change();
         });
+        // $(window).keydown(function(event){
+        //     if(event.keyCode == 13) {
+        //         event.preventDefault();
+        //         return false;
+        //     }
+        // });
     },
     change: function() {
         let _value = c_input.value;
