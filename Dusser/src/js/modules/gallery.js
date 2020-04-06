@@ -91,6 +91,15 @@ const gallery = function(selector) {
             }
         });
 
+        galleryMain.click(function () {
+            if($(window).width() >= 800 ){
+                let currentSrc = $('.gallery-dots--item.current', _this).find('img').attr('src');
+                $.fancybox.open({
+                    src: currentSrc
+                })
+            }
+        });
+
         if (device.type == 'mobile' || device.type == 'tablet') {
             galleryMain.swipe({
                 allowPageScroll: 'vertical',

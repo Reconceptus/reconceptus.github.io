@@ -1,0 +1,19 @@
+.common-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include mq($from: desktop) {
+    margin: 40px 0;
+  }
+  @include mq($until: desktop) {
+    margin: $padding-lg 0;
+  }
+  .item {
+    @include mq($from: desktop) {
+      margin-right: $padding-xl;
+    }
+    @include mq($until: desktop) {
+      margin-right: $padding-md;
+    }
+  }
+}

@@ -103,6 +103,10 @@
         .listing-carousel & {
           box-shadow: 0 4px 4px 0 rgba($black, 0.16);
         }
+        .listing-item--prices,
+        .listing-item--title {
+          color: $sale;
+        }
       }
     }
     &--img {
@@ -201,11 +205,9 @@
       line-height: 24px;
       font-weight: 600;
       margin-bottom: $padding-md;
+      color: $text;
       a {
-        color: $text;
-        @include hover(){
-          color: $sale;
-        }
+        color: inherit;
       }
     }
     &--descr {
@@ -226,9 +228,6 @@
       .actual-price {
         font-size: 20px;
         font-weight: 600;
-      }
-      @include hover(){
-        color: $sale;
       }
     }
     &--icons {

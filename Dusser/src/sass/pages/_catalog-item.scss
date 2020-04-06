@@ -113,7 +113,7 @@
     }
   }
   &-sidebar {
-    background: $bg-green;
+    background: #FCEBDD;
     height: 100%;
 
     @include mq($from: desktop_xl) {
@@ -189,6 +189,14 @@
           margin-bottom: $padding-md;
         }
       }
+    }
+  }
+  &-spin {
+    .text {
+      font-size: 20px;
+    }
+    .form-spinner {
+      padding: $padding-lg 0;
     }
   }
 }

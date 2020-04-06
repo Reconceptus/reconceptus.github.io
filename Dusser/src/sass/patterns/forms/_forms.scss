@@ -2,11 +2,15 @@
 @import "select";
 @import "checkbox";
 @import "checkbox-color";
+@import "spinner";
 
 .form-field {
   width: 100%;
   &--md {
     margin-bottom: $padding-md;
+  }
+  &--xl {
+    margin-bottom: $padding-lg;
   }
   &--lg {
     margin-bottom: 40px;

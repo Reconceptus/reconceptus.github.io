@@ -73,6 +73,9 @@ $(document).ready(() => {
     if ($('#search').length > 0) {
         functions.search();
     }
+    if ($('#search').length > 0) {
+        functions.search();
+    }
 
     // $('.link-auth-open').click(() => {
     //     functions.auth.open()
