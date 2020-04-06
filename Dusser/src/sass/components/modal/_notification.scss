@@ -33,6 +33,9 @@
     }
     background-color: $white;
     position: relative;
+    &:not(:last-child){
+      margin-bottom: 24px;
+    }
     .close {
       position: absolute;
       top: -6px;
@@ -48,12 +51,19 @@
       box-shadow: 0 0 4px 0 rgba($text, 0.5);
       cursor: pointer;
     }
+    &.error {
+      background-color: #FFCDD2;
+      .notification-icon {
+        background-color: $white;
+        color: #FF5252;
+      }
+    }
   }
   &-main {
     display: flex;
   }
   &-icon {
-    background-color: #E4FFF9;
+    background-color: #FCEBDD;
     color: $sale;
     width: 60px;
     height: 60px;

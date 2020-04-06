@@ -1515,6 +1515,21 @@
 <!--notification BEGIN-->
 
 <div class="notification">
+    <div class="notification-section error" >
+        <span class="close">
+            <i class="icon">
+                <svg><use xlink:href="#icon-close"/></svg>
+            </i>
+        </span>
+        <div class="notification-main">
+            <i class="icon notification-icon">
+                <svg><use xlink:href="#icon-info"/></svg>
+            </i>
+            <div class="notification-text">
+                Lorem ipsum dolor sit amet
+            </div>
+        </div>
+    </div>
     <div class="notification-section" >
         <span class="close">
             <i class="icon">
@@ -1633,23 +1648,11 @@
 <script>
     $('[data-open-modal="catalog-item"]').click(function () {
 
-        $(".modal-section--box[data-modal='catalog-item']")
-            .load("modal-catalog-item.html",function () {
+        functions.fn.modal('catalog-item','modal-catalog-item.html',{},function () {
+            functions.gallery("[data-modal='catalog-item']");
+            functions.spinner.apply($('[data-modal="catalog-item"] .spinner'));
+        });
 
-                functions.gallery("[data-modal='catalog-item']");
-
-                $('[data-form="add-to-cart-modal"] form').validate({
-                    ...functions.validation.defaults,
-                    rules: {count: {required: true}},
-                    messages: {count: {required: ""}},
-                    submitHandler: function (form) {
-                        // if (form.valid()){
-                        // SUBMIT form script
-                        // }
-                        return false;
-                    }
-                })
-            });
     });
 </script>
 <!--script for add html to catalog-item modal: END-->

@@ -34,7 +34,7 @@
                     '<div class="header-personal_info--actions form-buttons">' +
                     '<a href="' +
                     item.popup.link_order +
-                    '" class="btn btn-red">' +
+                    '" class="btn btn-red btn--sm">' +
                     item.popup.btn_order +
                     '</a>' +
                     '<a href="javascript:void(0);" class="btn-link link u-nowrap close">' +

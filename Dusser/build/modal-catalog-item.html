@@ -81,16 +81,17 @@
                     </div>
                     <div class="validate-form" data-form="add-to-cart-modal">
                         <form action="#">
-                            <div class="form-field form-field--md">
-                                <div class="form-select form-select--white">
-                                    <select name="count" class="has-border">
-                                        <option value="">Укажите количество</option>
-                                        <option value="100">100</option>
-                                        <option value="200">200</option>
-                                        <option value="300">300</option>
-                                        <option value="400">400</option>
-                                    </select>
+                            <div class="form-field form-field--xl catalog_item-spin">
+                                <div class="text">Укажите количество:</div>
+                                <div class="form-spinner spinner">
+                                    <button type="button" class="form-spinner--btn minus"></button>
+                                    <span class="form-spinner--total">
+                                        <span class="total">12</span>
+                                        <input type="number" class="total-value" value=12>
+                                    </span>
+                                    <button type="button" class="form-spinner--btn plus"></button>
                                 </div>
+                                <div class="text">Общая сумма: $ 2809</div>
                             </div>
                             <div class="form-field form-field--lg modal_catalog-form_actions">
                                 <button class="btn btn-red-fill btn--sm btn--full">В корзину</button>

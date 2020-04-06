@@ -14,7 +14,6 @@ let scrollTop = $(window).scrollTop(),
 // functions
 window.functions = {
     ovh: require('./modules/ovh'),
-    fn: require('./modules/fn'),
     burger: require('./modules/burger'),
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
@@ -33,7 +32,7 @@ window.functions = {
     alert: require('./modules/alert'),
     parallax: require('./modules/parallax'),
     search: require('./modules/search'),
-
+    fn: require('./modules/fn'),
 };
 
 // scripts
@@ -92,7 +91,7 @@ $(document).ready(() => {
         functions.gallery('.gallery');
     }
     if ($('.spinner').length > 0) {
-        functions.spinner();
+        functions.spinner.init();
     }
     if ($('.fn-expand-table-box').length > 0) {
         functions.table_expander();

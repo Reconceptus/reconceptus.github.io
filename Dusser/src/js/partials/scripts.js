@@ -53,7 +53,7 @@ $(document).ready(() => {
         functions.gallery('.gallery');
     }
     if ($('.spinner').length > 0) {
-        functions.spinner();
+        functions.spinner.init();
     }
     if ($('.fn-expand-table-box').length > 0) {
         functions.table_expander();

@@ -8,6 +8,10 @@ const fn = {
         $('[data-modal=' + data + ']').addClass('active');
         functions.ovh.add();
         $('.modal').addClass('opened');
+    },
+    modal: function (data,file,settings,callback) {
+        $(".modal-section--box[data-modal="+data+"]")
+            .load(file,callback);
     }
 };
 

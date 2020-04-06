@@ -660,7 +660,10 @@
                                         <div class="text">Укажите количество:</div>
                                         <div class="form-spinner spinner">
                                             <button type="button" class="form-spinner--btn minus"></button>
-                                            <span class="form-spinner--total total" data-total="12"></span>
+                                            <span class="form-spinner--total">
+                                                <span class="total">12</span>
+                                                <input type="number" class="total-value" value=12>
+                                            </span>
                                             <button type="button" class="form-spinner--btn plus"></button>
                                         </div>
                                         <div class="text">Общая сумма: $ 2809</div>
@@ -1661,23 +1664,11 @@
 <script>
     $('[data-open-modal="catalog-item"]').click(function () {
 
-        $(".modal-section--box[data-modal='catalog-item']")
-            .load("modal-catalog-item.html",function () {
+        functions.fn.modal('catalog-item','modal-catalog-item.html',{},function () {
+            functions.gallery("[data-modal='catalog-item']");
+            functions.spinner.apply($('[data-modal="catalog-item"] .spinner'));
+        });
 
-                functions.gallery("[data-modal='catalog-item']");
-
-                $('[data-form="add-to-cart-modal"] form').validate({
-                    ...functions.validation.defaults,
-                    rules: {count: {required: true}},
-                    messages: {count: {required: ""}},
-                    submitHandler: function (form) {
-                        // if (form.valid()){
-                        // SUBMIT form script
-                        // }
-                        return false;
-                    }
-                })
-            });
     });
 </script>
 <!--script for add html to catalog-item modal: END-->

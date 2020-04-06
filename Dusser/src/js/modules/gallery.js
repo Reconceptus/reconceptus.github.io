@@ -92,6 +92,8 @@ const gallery = function(selector) {
         });
 
         galleryMain.click(function () {
+            if($(this).closest('.catalog_item').length < 1) return false;
+
             if($(window).width() >= 800 ){
                 let currentSrc = $('.gallery-dots--item.current', _this).find('img').attr('src');
                 $.fancybox.open({

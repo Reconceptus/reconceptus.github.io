@@ -1,6 +1,5 @@
 window.functions = {
     ovh: require('./modules/ovh'),
-    fn: require('./modules/fn'),
     burger: require('./modules/burger'),
     auth: require('./modules/auth'),
     scroll_top: require('./modules/scroll-top'),
@@ -19,5 +18,5 @@ window.functions = {
     alert: require('./modules/alert'),
     parallax: require('./modules/parallax'),
     search: require('./modules/search'),
-
+    fn: require('./modules/fn'),
 };

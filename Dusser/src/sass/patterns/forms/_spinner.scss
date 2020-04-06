@@ -17,6 +17,7 @@
     background-repeat: no-repeat;
     background-size: 16px auto;
     background-position: center;
+    flex-shrink: 0;
     &.plus {
       background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%20enable-background%3D%22new%200%200%2016%2016%22%3E%3Cg%20fill%3D%22%23546e7a%22%3E%3Cpath%20d%3D%22m0%207h16v2h-16z%22/%3E%3Cpath%20d%3D%22m7%200h2v16h-2z%22/%3E%3C/g%3E%3C/svg%3E');
     }
@@ -25,14 +26,31 @@
     }
   }
   &--total {
+    position: relative;
     font-size: 20px;
     font-weight: 600;
     margin: 0 12px;
-    &:after {
-      content: attr(data-total);
-      display: inline-flex;
-      width: 24px;
-      justify-content: center;
+    .total {
+      display: block;
+      opacity: 0;
+      pointer-events: none;
+      min-width: 30px;
+    }
+    .total-value {
+      background: transparent;
+      outline: none;
+      border: none;
+      appearance: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
     }
   }
 }
