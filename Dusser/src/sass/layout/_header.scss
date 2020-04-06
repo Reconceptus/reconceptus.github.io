@@ -215,6 +215,26 @@
           pointer-events: auto;
         }
       }
+      .show-auth-menu {
+        display: none;
+      }
+      @include mq($until: desktop) {
+        &.is-active {
+          .header-profile--auth_drop {
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+        .show-auth-menu {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+      }
       &_drop {
         z-index: 1;
         transition: opacity 0.25s;
@@ -222,13 +242,20 @@
         pointer-events: none;
         position: absolute;
         background: $white;
-        width: 528px;
         top: 100%;
-        right: -1*$padding;
+
         box-shadow: 0 10px 20px 0 rgba($text,0.5);
         padding: 0 $padding-xl $padding-xl;
+        @include mq($from: desktop) {
+          width: 528px;
+          right: -1*$padding;
+        }
         @include mq($until: desktop) {
-          display: none !important;
+          width: 92vw;
+          max-width: 380px;
+          right: -80px;
+          max-height: 86vh;
+          overflow: auto;
         }
       }
       &_menu {

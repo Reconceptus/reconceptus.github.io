@@ -9,6 +9,7 @@
     overflow: hidden;
   }
   &-main {
+    width: 100%;
     overflow: auto;
     @include mq($until: mobile) {
 
