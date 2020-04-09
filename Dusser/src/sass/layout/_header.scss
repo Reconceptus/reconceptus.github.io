@@ -19,8 +19,11 @@
 
     display: flex;
     align-items: center;
-    @include mq($from: desktop) {
+    @include mq($from: desktop_md) {
       width: 30%;
+    }
+    @include mq(desktop, desktop_md) {
+      width: 36%;
     }
     .burger {
       @extend %btn_reset;
@@ -30,6 +33,85 @@
       }
       @include mq($until: mobile_xl) {
         margin-right: 16px;
+      }
+    }
+  }
+  &-language {
+    font-size: $font;
+    font-weight: 500;
+    position: relative;
+    @include mq($from: desktop_md) {
+      margin-left: 48px;
+      margin-right: 24px;
+    }
+    @include mq(tablet, desktop_md) {
+      margin-right: 24px;
+      margin-left: 2vw;
+    }
+    @include mq(mobile, tablet) {
+      margin: 0 24px;
+    }
+    @include mq($until: mobile) {
+      margin: 0 16px;
+    }
+    @include hover(){
+      .header-language--list {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+    &.is-active {
+      @include mq($until: desktop) {
+        .header-language--list {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    &--selected {
+      cursor: pointer;
+    }
+    &--list {
+      box-shadow: 0 20px 20px 0 rgba($text,0.4);
+      padding: $padding-lg;
+      position: absolute;
+      top: 50%;
+
+      left: 50%;
+      background-color: $white;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      @include mq($from: desktop) {
+        transform: translate(-50%, 44px);
+        &:before {
+          position: absolute;
+          content: "";
+          bottom: 100%;
+          left: 0;
+          right: 0;
+          height: 44px;
+        }
+      }
+      @include mq($until: desktop) {
+        transform: translate(-50%, 24px);
+      }
+
+      li {
+        &:not(:last-child){
+          margin-bottom: 16px;
+        }
+      }
+      a {
+        color: inherit;
+        @include hover(){
+          color: $sale;
+        }
+        &.selected {
+          pointer-events: none;
+          color: $sale;
+        }
       }
     }
   }
@@ -209,10 +291,22 @@
       display: inline-flex;
       @extend %btn_reset;
       position: relative;
+
       @include hover(){
         .header-profile--auth_drop {
           opacity: 1;
           pointer-events: auto;
+        }
+        .icon {
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 0;
+            bottom: 0;
+            width: 32px;
+          }
         }
       }
       .show-auth-menu {
@@ -354,6 +448,16 @@
           opacity: 1;
           pointer-events: auto;
         }
+        .link-icon {
+          &:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 0;
+            bottom: 0;
+            width: 32px;
+          }
+        }
       }
     }
     &--short {
@@ -399,6 +503,19 @@
         display: none !important;
       }
     }
+    &--amount {
+      margin-top: $padding-lg;
+      &_title {
+        font-size: $font;
+        color: $tag;
+      }
+      .summ {
+        font-weight: 600;
+        font-size: 48px;
+        margin-right: $padding-lg;
+        white-space: nowrap;
+      }
+    }
     &--actions {
       margin-top: $padding-lg;
       &_title {
@@ -409,11 +526,10 @@
     &--buttons {
       display: flex;
       align-items: center;
-      .summ {
-        font-weight: 600;
-        font-size: 48px;
-        margin-right: $padding-lg;
-        white-space: nowrap;
+      .btn {
+        &:not(:last-child){
+          margin-right: 12px;
+        }
       }
     }
     &--total {
@@ -428,7 +544,6 @@
         display: none;
       }
       .summ {
-
         white-space: nowrap;
         @include mq($from: desktop_md) {
           font-size: $font;

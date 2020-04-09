@@ -1,8 +1,14 @@
 .burger {
-  width: 32px;
-  height: 32px;
   cursor: pointer;
   position: relative;
+  @include mq($from: mobile) {
+    width: 32px;
+    height: 32px;
+  }
+  @include mq($until: mobile) {
+    width: 28px;
+    height: 30px;
+  }
   span {
     height: 4px;
     width: 100%;

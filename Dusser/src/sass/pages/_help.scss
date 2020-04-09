@@ -80,16 +80,20 @@
     }
     .question {
 
+      font-weight: 500;
       display: flex;
       align-items: center;
       @include mq($from: tablet) {
         padding: 16px $padding-xxl;
+        font-size: 20px;
       }
       @include mq(mobile, tablet) {
         padding: 12px $padding-md;
+        font-size: 18px;
       }
       @include mq($until: mobile) {
         padding: 12px 16px;
+        font-size: 18px;
       }
     }
   }

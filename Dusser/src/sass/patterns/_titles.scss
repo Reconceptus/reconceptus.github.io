@@ -19,6 +19,17 @@
       align-self: flex-end;
       margin-left: $padding;
     }
+    &--lg {
+      @include mq($from: desktop_md) {
+        padding: 64px 0;
+      }
+      @include mq(tablet, desktop_md) {
+        padding: 40px 0;
+      }
+      @include mq($until: tablet) {
+        padding: 24px 0;
+      }
+    }
   }
   &-xl {
     font-weight: 600;

@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   @include mq($from: desktop) {
-    margin: 40px 0;
+    margin: $padding-xl 0;
   }
   @include mq($until: desktop) {
     margin: $padding-lg 0;

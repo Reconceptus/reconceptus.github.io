@@ -9,6 +9,11 @@
     @include mq($until: desktop) {
       flex-wrap: wrap;
     }
+    @include mq($until: tablet) {
+      .catalog_item-data--about_wrap {
+        display: none;
+      }
+    }
   }
   &-data {
     padding: 0 $padding-sm;
@@ -39,12 +44,15 @@
         padding: $padding-md;
       }
       &_wrap {
-        padding: 0 $padding-sm;
+
 
         @include mq($from: tablet) {
           width: calc(4*100%/9);
+          padding: 0 $padding-sm;
         }
         @include mq($until: tablet) {
+          margin-bottom: 16px;
+          margin-top: 16px;
         }
       }
       dl {
@@ -129,8 +137,8 @@
       padding: $padding-md;
     }
     &--wrap {
-
       padding: 0 $padding-sm;
+
       @include mq($from: desktop) {
         width: 25%;
       }

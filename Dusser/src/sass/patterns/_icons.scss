@@ -8,9 +8,13 @@
       width: $font-lg;
       height: $font-lg;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile, desktop_md) {
       width: 28px;
       height: 28px;
+    }
+    @include mq($until: mobile) {
+      width: 20px;
+      height: 20px;
     }
   }
   &-view {
@@ -30,9 +34,13 @@
       width: $font-lg;
       height: $font-lg;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile, desktop_md) {
       width: 28px;
       height: 28px;
+    }
+    @include mq($until: mobile) {
+      width: 20px;
+      height: 20px;
     }
   }
   &-basket {
@@ -42,9 +50,13 @@
       width: 28px;
       height: 28px;
     }
-    @include mq($until: desktop_md) {
+    @include mq(mobile, desktop_md) {
       width: $padding-lg;
       height: $padding-lg;
+    }
+    @include mq($until: mobile) {
+      width: 18px;
+      height: 18px;
     }
   }
   &-search {

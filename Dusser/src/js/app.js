@@ -118,6 +118,12 @@ $(document).ready(() => {
             $('.header-profile--auth').toggleClass('is-active')
         }
     });
+    $('.header-language--selected').click(function(e) {
+        if($(window).width() < 1024){
+            e.preventDefault;
+            $('.header-language').toggleClass('is-active')
+        }
+    });
 
     $(document).on('click', '[data-open-modal]', function() {
         let modalData = $(this).attr('data-open-modal');

@@ -82,6 +82,9 @@
     @include mq(mobile, tablet) {
       max-width: calc( 100%/2 );
     }
+    @include mq($until: mobile) {
+      margin-bottom: 16px;
+    }
     &--section {
       background-color: $white;
       height: 100%;
@@ -135,7 +138,13 @@
       font-size: 20px;
       line-height: 24px;
       font-weight: 600;
-      margin-bottom: $padding-md;
+      @include mq($from: desktop) {
+        margin-bottom: $padding-xl;
+      }
+      @include mq($until: desktop) {
+        margin-bottom: $padding-lg;
+      }
+
     }
     &--cta {
       margin-top: auto;

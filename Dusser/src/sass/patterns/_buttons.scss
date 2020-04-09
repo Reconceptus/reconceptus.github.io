@@ -26,7 +26,7 @@
   }
   &-red {
     color: $btn-red;
-    text-transform: uppercase;
+    text-transform: lowercase;
     background-color: transparent;
     font-size: $font;
     font-weight: 600;
@@ -38,6 +38,18 @@
     @include hover(){
       color: $white;
       background-color: $btn-red;
+    }
+  }
+  &-white {
+    color: $btn-red;
+    text-transform: lowercase;
+    background-color: transparent;
+    font-size: $font;
+    font-weight: 600;
+    padding: 0 $padding-lg;
+    border: 2px solid transparent;
+    @include hover(){
+      color: darken($btn-red, 10);
     }
   }
   &-green {
