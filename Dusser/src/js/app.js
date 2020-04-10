@@ -162,3 +162,51 @@ $(document).ready(() => {
 
     $(window).scroll(() => {});
 });
+
+
+// OPEN ALERT
+// functions.alert.open('hello world', 'error', 'info');
+
+// OPEN POPUP
+/*
+functions.popup('hello world', 'description',
+    [
+        {
+            title: 'agree',
+            class: 'btn btn-red btn--md',
+            fn: function () {
+                alert('hello')
+            }
+        },
+        {
+            title: 'close',
+            class: 'btn btn-red btn--md',
+            fn: function () {
+                functions.fn.closeModal();
+            }
+        }
+    ]
+);
+*/
+
+// OPEN MODAL
+/*
+functions.fn.modal('catalog-item',
+    {type: 'file', file: 'modal-catalog-item.html'},
+    {},
+    function () {
+        functions.gallery("[data-modal='catalog-item']");
+        functions.spinner.apply($('[data-modal="catalog-item"] .spinner'));
+    }
+);
+
+OR
+
+functions.fn.modal('catalog-item',
+    {type: 'code', code: '<div class="modal-container content content--md"></div>'},
+    {},
+    function () {
+        alert('hello')
+    }
+);
+*/

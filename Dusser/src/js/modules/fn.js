@@ -9,9 +9,19 @@ const fn = {
         functions.ovh.add();
         $('.modal').addClass('opened');
     },
-    modal: function (data,file,settings,callback) {
-        $(".modal-section--box[data-modal="+data+"]")
-            .load(file,callback);
+    modal: function (data,content,settings,callback) {
+
+        if(content.type == 'file'){
+            $(".modal-section--box[data-modal="+data+"]")
+                .load(content.file,callback);
+        }
+        if(content.type == 'code'){
+            $(".modal-section--box[data-modal="+data+"]").html(content.code);
+            setTimeout(()=>{
+                callback();
+            },100)
+        }
+
     }
 };
 

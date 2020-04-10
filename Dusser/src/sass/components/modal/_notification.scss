@@ -19,7 +19,7 @@
   }
   &-section {
     padding: 20px;
-    box-shadow: 0 0 20px 0 rgba($black,0.4);
+    box-shadow: 0 20px 20px 0 rgba($text,0.3);
     border-radius: 48px 48px 0 48px;
     width: 300px;
     @include mq($from: 1680px){

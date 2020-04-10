@@ -1686,15 +1686,20 @@
 <!--script for add html to catalog-item modal: BEGIN-->
 <script>
     $('[data-open-modal="catalog-item"]').click(function () {
-
-        functions.fn.modal('catalog-item','modal-catalog-item.html',{},function () {
-            functions.gallery("[data-modal='catalog-item']");
-            functions.spinner.apply($('[data-modal="catalog-item"] .spinner'));
+        //
+        // functions.fn.modal('catalog-item',{type: 'file', file: 'modal-catalog-item.html'},{},function () {
+        //     functions.gallery("[data-modal='catalog-item']");
+        //     functions.spinner.apply($('[data-modal="catalog-item"] .spinner'));
+        // });
+        functions.fn.modal('catalog-item',{type: 'code', code: '<div class="modal-container content content--md"><div class="modal-wrap"><button class="modal-close close desktop-hidden"><i class="icon icon-close"><svg xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"/></svg></i></button><div class="modal_catalog-box"><h1>hello</h1></div></div></div>'},{},function () {
+            alert('hello')
         });
 
     });
 </script>
 <!--script for add html to catalog-item modal: END-->
+
+
 
 </body>
 </html>

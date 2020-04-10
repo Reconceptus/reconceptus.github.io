@@ -1,23 +1,22 @@
 .custom_modal {
-  padding: 95px $padding-xxl $padding-xxl;
   display: flex;
   @include mq($from: mobile) {
     max-height: 95vh;
+    padding: 40px 56px 32px 48px;
   }
   @include mq($until: mobile) {
     height: 100vh;
     overflow: hidden;
+    padding: 95px $padding-xxl $padding-xxl;
   }
   &-main {
     width: 100%;
     overflow: auto;
-    @include mq($until: mobile) {
 
-    }
   }
   &-title {
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 20px;
   }
   &-text {
@@ -26,13 +25,35 @@
   &-actions {
     display: flex;
     justify-content: flex-end;
+    .btn-red {
+      & + .btn-red {
+        @include mq($from: 420px) {
+          margin-left: 16px;
+        }
+        @include mq($until: 420px) {
+          margin-top: 16px;
+        }
+      }
+    }
+    @include mq($until: 420px) {
+      flex-direction: column;
+      .btn {
+        width: 100%;
+      }
+    }
   }
   .icon-close {
     width: 28px;
     height: 28px;
   }
   .modal-close {
-    right: 75px;
-    top: 32px;
+    @include mq($from: mobile) {
+      right: 75px;
+      top: 32px;
+    }
+    @include mq($until: mobile) {
+      right: 40px;
+      top: 16px;
+    }
   }
 }
