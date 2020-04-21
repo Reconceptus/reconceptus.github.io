@@ -869,6 +869,17 @@ $(document).ready(function () {
 
     });
 
+    /*
+     ============= toggle ref link
+    */
+
+    $(document).on('click','.ref-link--toggle',function () {
+        var _this = $(this),
+            _ref = _this.closest('.ref-link');
+
+        _ref.toggleClass('hidden');
+    });
+
     /* --------------------------------- document load --------------------------------- */
 
     documentClick();

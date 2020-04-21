@@ -1,8 +1,11 @@
 @import "project-tabs/tabs";
 
 .project-page {
-  padding: 2*$padding_sm 0 0;
+  padding: $padding_sm 0 0;
   margin-bottom: $padding_sm;
+  @include media(screen,600){
+    padding: 0;
+  }
   &--head {
     align-items: stretch;
     @include media(hover,1601){
