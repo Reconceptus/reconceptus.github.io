@@ -168,7 +168,7 @@
         @include mq($from: tablet_sm) {
           padding: $padding-lg $padding-lg $padding-lg 0;
           margin-top: 100px;
-          margin-bottom: 72px;
+          margin-bottom: 68px;
           //background: linear-gradient(to right, $white 0%, rgba($white,0.2) 75%);
           background-color: rgba($white,0.2);
           border-radius: 0 100px 100px 0;
@@ -230,9 +230,12 @@
     &-main {
       
       @include mq($from: tablet_xl) {
-        padding: $padding-xxl 0;
+        padding: 0 0 $padding-xxl 0;
       }
-      @include mq($until: tablet_xl) {
+      @include mq(tablet_sm, tablet_xl) {
+        padding: 0 0 $padding-xxl;
+      }
+      @include mq($until: tablet_sm) {
         padding: $padding-xl 0 $padding-xxl;
       }
     }

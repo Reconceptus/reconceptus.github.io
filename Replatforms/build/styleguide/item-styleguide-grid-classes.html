@@ -217,7 +217,7 @@ The grid consists of 12 columns wrapped in one row. Each column can contain also
   </div>
                                     </div>
                             </div>
-                                <pre class="prettyprint linenums lang-html"><button class="__show-markup" type="button">SHOW CODE
+                                <pre class="prettyprint linenums lang-html language-html"><button class="__show-markup" type="button">SHOW CODE
                                 </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row flex-align_items--center&quot;&gt;
     &lt;div class&#x3D;&quot;content-col col-8&quot;&gt;
       &lt;table class&#x3D;&quot;grid-table&quot;&gt;
@@ -278,6 +278,9 @@ The grid consists of 12 columns wrapped in one row. Each column can contain also
 <footer class="__footer"></footer>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+<style> :not(pre)>code[class*=language-] { padding: 0; border-radius: 0; white-space: pre; } </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
 <script>
     $(document).on('click', 'a[href*="#"]', function() {
         setTimeout(() => {

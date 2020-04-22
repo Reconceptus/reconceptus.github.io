@@ -15,20 +15,46 @@ Markup:
           be located just at your doorstep, as well as the large Sainsbury supermarket. Despite the fact that the complex
           is located in the first zone of London, you can relax from the busy city life, as there is so much green space.
         </p>
-        <h3>H3 Text Heading</h3>
         <ul>
           <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
           magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
         </ul>
+        <h3>H3 Text Heading</h3>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ol>
         <p>
           This is <strong>strong text</strong> </br>
           This is <i>italic text</i>.</br>
           This is an <a href="#">example of link</a>.
         </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+              magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+            </ul>
+          </li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ul>
         <ol>
-          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <ol>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+              magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+            </ol>
+          </li>
           <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
           magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
           <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
@@ -97,10 +123,21 @@ Styleguide styleguide.typography.text-box
         margin-bottom: $gutter-x2;
       }
     }
+    ul, ol {
+      @include mq($from: mobile_sm) {
+        margin-top: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-top: $gutter-x2;
+      }
+    }
     li {
       position: relative;
+      @include mq($from: tablet_sm) {
+        padding-left: 48px;
+      }
       @include mq($until: tablet_sm) {
-        padding-left: $gutter;
+        padding-left: 40px;
       }
       @include mq($from: mobile_sm) {
         margin-bottom: $padding-md;
@@ -111,14 +148,7 @@ Styleguide styleguide.typography.text-box
       
       &:before {
         position: absolute;
-        right: 100%;
-        
-        @include mq($from: tablet_sm) {
-          margin-right: $padding_sm;
-        }
-        @include mq($until: tablet_sm) {
-        
-        }
+        left: 0;
       }
     }
   }
@@ -133,7 +163,7 @@ Styleguide styleguide.typography.text-box
           width: 24px;
         }
         @include mq($until: tablet_sm) {
-          width: 12px;
+          width: 16px;
         }
       }
     }
@@ -141,11 +171,22 @@ Styleguide styleguide.typography.text-box
   ol {
     counter-reset: item;
     li {
+      counter-reset: subitem;
       &:before {
         content: counter(item,decimal-leading-zero) '.';
         counter-increment: item;
         @include mq($until: tablet_sm) {
           margin-right: -4px;
+        }
+      }
+      ol {
+        counter-reset: none;
+      }
+      li {
+        counter-reset: none;
+        &:before {
+          content: counter(item,decimal-leading-zero) '.' counter(subitem) '';
+          counter-increment: subitem;
         }
       }
     }
