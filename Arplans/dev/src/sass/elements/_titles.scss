@@ -10,6 +10,11 @@
     @include breakpoints(601,1024){font-size: 9.5rem;}
     @include media(screen,600){font-size: 7.5rem;}
   }
+  &.title-xl {
+    font-weight: 600;
+    @include media(hover,601){font-size: 10rem;}
+    @include media(screen,600){font-size: 7rem;}
+  }
   &.title-md {
     font-weight: 600;
     @include media(hover,601){font-size: 8rem;}

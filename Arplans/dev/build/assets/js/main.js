@@ -872,12 +872,19 @@ $(document).ready(function () {
     /*
      ============= toggle ref link
     */
+    if($('.ref-link').length > 0){
+        if(localStorage.reflink == 'hidden'){
+            $('.ref-link').addClass('hidden')
+        }
+    }
 
     $(document).on('click','.ref-link--toggle',function () {
         var _this = $(this),
             _ref = _this.closest('.ref-link');
 
         _ref.toggleClass('hidden');
+
+        localStorage.reflink = _ref.hasClass('hidden') ? 'hidden' : 'shown'
     });
 
     /* --------------------------------- document load --------------------------------- */

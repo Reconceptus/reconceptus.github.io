@@ -265,15 +265,13 @@ Styleguide styleguide.typography.text-box
     @include mq($until: desktop_sm) {
       width: 33.3333%;
     }
-    &:not(:last-child){
-      @include mq($from: mobile_sm) {
-        margin-bottom: $padding-md;
-        margin-right: $padding-md;
-      }
-      @include mq($until: mobile_sm) {
-        margin-bottom: $gutter-x2;
-        margin-right: $gutter-x2;
-      }
+    @include mq($from: mobile_sm) {
+      margin-bottom: $padding-md;
+      margin-right: $padding-md;
+    }
+    @include mq($until: mobile_sm) {
+      margin-bottom: $gutter-x2;
+      margin-right: $gutter-x2;
     }
 
     img {
