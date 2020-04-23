@@ -255,6 +255,33 @@ Styleguide styleguide.typography.text-box
       height: auto;
     }
   }
+  .img-left {
+    float: left;
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+
+      width: 50%;
+    }
+    @include mq($until: desktop_sm) {
+      width: 33.3333%;
+    }
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+        margin-right: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+        margin-right: $gutter-x2;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
   .text-img {
     &:not(:last-child){
       @include mq($from: mobile_sm) {
