@@ -6586,6 +6586,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
 
 .bg-head--project {
   text-align: center;
+  color: #FFF;
 }
 
 .bg-head--text {
@@ -11065,7 +11066,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .title.title-xl {
-    font-size: 7rem;
+    font-size: 6rem;
   }
 
   .title.title-md {
@@ -11259,7 +11260,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .bg-head--project {
-    padding: 30px 0 10px;
+    padding: 20px;
   }
 
   .bg-head--text {
@@ -13797,7 +13798,7 @@ html:not([dir=rtl]) .range .noUi-horizontal .noUi-handle {
   }
 
   .bg-head--project {
-    padding: 40px 20px 10px;
+    padding: 40px 20px;
   }
 
   .bg-head--text {

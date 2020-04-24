@@ -290,27 +290,27 @@ https://github.com/kss-node/kss-node.</p>
 </code></pre>
 <p><strong>Usage</strong></p>
 <pre class="hljs"><code class="language-scss"><span class="hljs-selector-class">.element</span> {
-  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$from</span>: mobile) {
+  <span class="hljs-keyword">@include</span> mq(<span class="hljs-variable">$from</span>: mobile) {
     <span class="hljs-attribute">color</span>: red;
   }
-  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$until</span>: tablet) {
+  <span class="hljs-keyword">@include</span> mq(<span class="hljs-variable">$until</span>: tablet) {
     <span class="hljs-attribute">color</span>: blue;
   }
-  @<span class="hljs-keyword">include</span> mq(mobile, tablet) {
+  <span class="hljs-keyword">@include</span> mq(mobile, tablet) {
     <span class="hljs-attribute">color</span>: green;
   }
-  @<span class="hljs-keyword">include</span> mq(<span class="hljs-variable">$from</span>: tablet, <span class="hljs-variable">$and</span>: <span class="hljs-string">'(orientation: landscape)'</span>) {
+  <span class="hljs-keyword">@include</span> mq(<span class="hljs-variable">$from</span>: tablet, <span class="hljs-variable">$and</span>: <span class="hljs-string">'(orientation: landscape)'</span>) {
     <span class="hljs-attribute">color</span>: teal;
   }
-  @<span class="hljs-keyword">include</span> mq(<span class="hljs-number">950px</span>) {
+  <span class="hljs-keyword">@include</span> mq(<span class="hljs-number">950px</span>) {
     <span class="hljs-attribute">color</span>: hotpink;
   }
-  @<span class="hljs-keyword">include</span> mq(tablet, <span class="hljs-variable">$media-type</span>: screen) {
+  <span class="hljs-keyword">@include</span> mq(tablet, <span class="hljs-variable">$media-type</span>: screen) {
     <span class="hljs-attribute">color</span>: hotpink;
   }
   <span class="hljs-comment">// Advanced use:</span>
   <span class="hljs-variable">$my-breakpoints</span>: (L: <span class="hljs-number">900px</span>, XL: <span class="hljs-number">1200px</span>);
-  @<span class="hljs-keyword">include</span> mq(L, <span class="hljs-variable">$breakpoints</span>: <span class="hljs-variable">$my-breakpoints</span>, <span class="hljs-variable">$static-breakpoint</span>: L) {
+  <span class="hljs-keyword">@include</span> mq(L, <span class="hljs-variable">$breakpoints</span>: <span class="hljs-variable">$my-breakpoints</span>, <span class="hljs-variable">$static-breakpoint</span>: L) {
     <span class="hljs-attribute">color</span>: hotpink;
   }
 }
