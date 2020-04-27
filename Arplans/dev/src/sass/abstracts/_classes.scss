@@ -164,10 +164,10 @@
 }
 
 @keyframes anim_bg {
-  from {
+  0% {
     transform: translateX(0%);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
@@ -183,6 +183,7 @@
     bottom: 0;
   }
   &:before {
+    will-change: transform;
     content: "";
     position: absolute;
     z-index: -1;
@@ -194,7 +195,11 @@
     background: -moz-linear-gradient(left, $bg_blue_dark 0%, $link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
     background: -webkit-linear-gradient(left, $bg_blue_dark 0%,$link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
     background: linear-gradient(to right, $bg_blue_dark 0%,$link 25%, $bg_blue_dark 50%, $link 75%, $bg_blue_dark 100%);
-    animation: anim_bg 8s infinite linear;
+    animation: anim_bg 8s infinite linear alternate;
+    .mobile &,
+    .tablet & {
+      animation: none;
+    }
   }
 }
 
