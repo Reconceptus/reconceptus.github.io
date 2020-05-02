@@ -64,24 +64,31 @@ input[type="text"] {
 
     font-family: $font-yeseva;
     color: $white;
-    @include media(hover,1025){
+    @include media(hover,1381){
       line-height: 128px;
       height: 128px;
-      padding: 0 $padding 0 $padding+128px;
+      padding: 0 (218px - 128px) 0 218px;
+      font-size: $px*11.52rem;
+      border-bottom: 3px solid $white;
+    }
+    @include breakpoints(1025,1380){
+      line-height: 128px;
+      height: 128px;
+      padding: 0 77px 0 (77px + 128px);
       font-size: $px*11.52rem;
       border-bottom: 3px solid $white;
     }
     @include breakpoints(768,1024){
       line-height: 80px;
       height: 80px;
-      padding: 0 $padding;
+      padding: 0 70px 0 25px;
       font-size: $px*8rem;
       border-bottom: 2px solid $white;
     }
     @include media(screen,767){
       line-height: 40px;
       height: 40px;
-      padding: 0 15px;
+      padding: 0 60px 0 15px;
       font-size: $px*5rem;
       border-bottom: 1px solid $white;
     }

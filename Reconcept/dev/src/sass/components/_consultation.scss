@@ -91,6 +91,7 @@
     @include media(hover, 1025) {
       font-size: $px*48rem;
       span {
+        will-change: transform;
         animation: blurText 6s linear infinite;
         &:nth-child(1) {animation-delay: 0s;}
         &:nth-child(2) {animation-delay: 0.3s;}

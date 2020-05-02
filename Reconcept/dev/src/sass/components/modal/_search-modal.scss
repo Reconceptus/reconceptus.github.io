@@ -3,6 +3,7 @@
   .search-form {
     .input-box {
       position: relative;
+      overflow: hidden;
       input {
         position: relative;
         z-index: 1;
@@ -12,11 +13,25 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 3*$padding+128px;
-      right: 3*$padding+128px;
       align-items: center;
       justify-content: center;
       display: none;
+      @include media(hover,1381){
+        left: 218px;
+        right: 218px;
+      }
+      @include breakpoints(1025,1380){
+        left: (77px + 128px);
+        right: (77px + 128px);
+      }
+      @include breakpoints(768,1024){
+        left: 25px;
+        right: 150px;
+      }
+      @include media(screen,767){
+        left: 15px;
+        right: 100px;
+      }
       &.visible {
         display: flex;
       }
@@ -25,11 +40,22 @@
       position: relative;
       max-width: 100%;
       .text {
-        font-size: $px*11.52rem;
         font-family: $font-yeseva;
         opacity: 0;
         pointer-events: none;
         white-space: pre-wrap;
+        @include media(hover,1381){
+          font-size: $px*11.52rem;
+        }
+        @include breakpoints(1025,1380){
+          font-size: $px*11.52rem;
+        }
+        @include breakpoints(768,1024){
+          font-size: $px*8rem;
+        }
+        @include media(screen,767){
+          font-size: $px*5rem;
+        }
       }
       .reset {
         position: absolute;

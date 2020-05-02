@@ -13,6 +13,31 @@
   .person {
     width: 100%;
     line-height: 1.5;
+    @include media(hover,1381){
+      .img {
+        height: 300px;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    @include breakpoints(1025,1380){
+      .img {
+        height: 24vw;
+        width: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .img {
+      flex-shrink: 0;
+    }
     img {
       display: block;
       width: 100%;

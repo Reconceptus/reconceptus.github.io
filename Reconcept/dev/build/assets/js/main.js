@@ -454,10 +454,10 @@ $(document).ready(function () {
         $('.support-modal').addClass('active');
     });
 
-    $modal.find('.close').on('click',function () {
+    $(document).on('click','.modal .close',function () {
         project.ovhDisable();
-        $modal.find('.successful').removeClass('successful');
-        $modal.removeClass('active');
+        $('.modal').find('.successful').removeClass('successful');
+        $('.modal').removeClass('active');
     });
 
     /*

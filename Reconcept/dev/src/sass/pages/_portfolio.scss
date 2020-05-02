@@ -156,6 +156,9 @@
       height: 64px;
       @include media(hover,1025){
         font-weight: 700;
+        height: auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
       }
     }
     &-arrow {
