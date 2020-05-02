@@ -300,10 +300,20 @@ project.fixedSidebar = function() {
         setFixPosition();
     });
 
-    $(window).scroll(function () {
-        setOffsets();
-        setFixPosition();
-    });
+    var isScrolling;
+    window.addEventListener('scroll', function(event) {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(function(){
+            setOffsets();
+            setFixPosition();
+        }, 10);
+    }, false);
+
+
+    // $(window).scroll(function () {
+    //     setOffsets();
+    //     setFixPosition();
+    // });
 
     setTimeout(function () {
         setOffsets();
