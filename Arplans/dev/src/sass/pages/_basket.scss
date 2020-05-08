@@ -58,6 +58,16 @@
         @include media(screen,1024){
           padding: 10px $padding_sm;
         }
+        input {
+          background-color: $white;
+          height: 40px;
+          line-height: 40px;
+          color: $border;
+          font-size: 3.5rem;
+          padding: 0 20px;
+          border: 1px solid RGBA(178,185,193,.5);
+          outline: none;
+        }
         .form-title {
           color: $text;
           margin-bottom: 15px;
