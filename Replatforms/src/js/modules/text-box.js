@@ -4,11 +4,19 @@ const text_box = {
             let _this = $(this);
             _this.find('img').each(function() {
                 let _this = $(this);
+
                 if (_this.css('float') == 'left') {
                     _this.removeAttr('style');
                     _this.wrap('<figure class="img-left"></figure>');
                 } else {
                     _this.wrap('<figure class="img"></figure>');
+                }
+
+                if (_this.closest('p').length > 0) {
+                    let _thisParent = _this.closest('p'),
+                        _thisHTML = _thisParent.html();
+                    _thisParent.after(_thisHTML);
+                    _thisParent.remove();
                 }
             });
             _this.find('iframe').each(function() {

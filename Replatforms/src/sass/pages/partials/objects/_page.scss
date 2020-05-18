@@ -444,14 +444,14 @@
       }
 
 
-      @include mq($from: desktop_xl) {
-        font-size: $font-lg;
-      }
-      @include mq(mobile_sm, desktop_xl) {
-        font-size: 28px;
-      }
-      @include mq($until: mobile_sm) {
+      @include mq($from: desktop_sm) {
         font-size: $font-md;
+      }
+      @include mq(tablet_sm, desktop_sm) {
+        font-size: 20px;
+      }
+      @include mq($until: tablet_sm) {
+        font-size: $font;
       }
     }
     &--benefits {

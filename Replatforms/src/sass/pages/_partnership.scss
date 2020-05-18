@@ -11,10 +11,11 @@
     position: relative;
     z-index: 1;
     @include mq($from: desktop_sm) {
-      font-size: $font-lg;
+      font-size: $font-md;
+      max-width: 85%;
     }
     @include mq(tablet_sm, desktop_sm) {
-      font-size: $font-md;
+      font-size: 20px;
     }
     @include mq($until: tablet_sm) {
       font-size: $font;
@@ -23,6 +24,7 @@
   &-arrow {
     height: 75px;
     position: relative;
+    display: none;
     .arrow {
       @extend %btn_reset;
       width: 48px;

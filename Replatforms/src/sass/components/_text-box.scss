@@ -83,19 +83,25 @@ Styleguide styleguide.typography.text-box
     
   }
   h2 {
-    color: $link;
-    font-size: 48px;
-    line-height: (64/48);
-    font-weight: 300;
+    //color: $link;
+    //font-size: 48px;
+    //line-height: (64/48);
+    //font-weight: 300;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
-  }
-  h3 {
     font-size: 32px;
     line-height: (48/32);
     font-weight: 400;
+  }
+  h3 {
+    //font-size: 32px;
+    //line-height: (48/32);
+    //font-weight: 400;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
+    font-size: 24px;
+    line-height: (40/24);
+    font-weight: 400;
   }
   p {
     min-height: 24px;
@@ -198,16 +204,16 @@ Styleguide styleguide.typography.text-box
     line-height: (64/48);
     position: relative;
     @include mq($from: tablet_sm) {
-      font-size: 48px;
-      margin: 100px 0;
+      font-size: $font-lg;
+      margin: $padding-xl 0;
     }
     @include mq(mobile_sm, tablet_sm) {
-      font-size: $font-lg;
+      font-size: 30px;
       margin: $padding-xl 0;
       padding-left: $gutter;
     }
     @include mq($until: mobile_sm) {
-      font-size: 28px;
+      font-size: $font-md;
       margin: $padding-lg 0;
       padding-left: $gutter;
     }
@@ -259,8 +265,7 @@ Styleguide styleguide.typography.text-box
     float: left;
     @include mq($from: desktop_sm) {
       margin-left: -33.3333%;
-
-      width: 50%;
+      width: 33.3333%;
     }
     @include mq($until: desktop_sm) {
       width: 33.3333%;

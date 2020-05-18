@@ -14,10 +14,10 @@
     position: relative;
     z-index: 1;
     @include mq($from: desktop_sm) {
-      font-size: $font-lg;
+      font-size: $font-md;
     }
     @include mq(tablet_sm, desktop_sm) {
-      font-size: $font-md;
+      font-size: 20px;
     }
     @include mq($until: tablet_sm) {
       font-size: $font;
