@@ -271,7 +271,7 @@ Styleguide styleguide.typography.text-box
     @include mq($until: desktop_sm) {
       width: 33.3333%;
     }
-    @include mq($from: mobile_sm) {
+    @include mq(mobile_sm, desktop_sm) {
       margin-bottom: $padding-md;
       margin-right: $padding-md;
     }
