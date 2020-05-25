@@ -574,6 +574,14 @@
 
   }
 
+  &-compilation {
+    .add-service--list {
+      flex-wrap: wrap;
+    }
+    .contact-page--partners {
+      margin: 0;
+    }
+  }
 
 }
 

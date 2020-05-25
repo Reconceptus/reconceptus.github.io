@@ -110,22 +110,40 @@
       column-gap: 2*$padding_sm;
       @include media(hover,1367){
         columns: 8 auto;
+        .projects-compilation & {
+          columns: 2 auto;
+        }
       }
       @include breakpoints(1201,1366){
         columns: 6 auto;
+        .projects-compilation & {
+          columns: 2 auto;
+        }
       }
       @include breakpoints(1025,1200){
         columns: 5 auto;
+        .projects-compilation & {
+          columns: 2 auto;
+        }
       }
       @include breakpoints(768,1024){
         columns: 4 auto;
+        .projects-compilation & {
+          columns: 2 auto;
+        }
       }
       @include breakpoints(601,767){
         columns: 3 auto;
+        .projects-compilation & {
+          columns: 1;
+        }
       }
       @include media(screen,600){
         columns: 2 auto;
         column-gap: $padding_sm;
+        .projects-compilation & {
+          columns: 1;
+        }
       }
       li {
         padding: 5px 0;
