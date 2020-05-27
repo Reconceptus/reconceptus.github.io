@@ -258,10 +258,13 @@
   }
   &--slider {
     width: 100%;
-    padding-top: 75%;
+    padding-top: 60%;
     position: relative;
     @include media(screen,1366){
       margin-bottom:  $padding_sm;
+    }
+    @include media(screen,600){
+      padding-top: 75%;
     }
   }
   &--reviews {
