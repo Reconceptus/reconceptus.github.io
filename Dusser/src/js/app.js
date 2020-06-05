@@ -119,9 +119,17 @@ $(document).ready(() => {
         }
     });
     $('.header-language--selected').click(function(e) {
+        $('.header-currency').removeClass('is-active')
         if($(window).width() < 1024){
             e.preventDefault;
             $('.header-language').toggleClass('is-active')
+        }
+    });
+    $('.header-currency--selected').click(function(e) {
+        $('.header-language').removeClass('is-active')
+        if($(window).width() < 1024){
+            e.preventDefault;
+            $('.header-currency').toggleClass('is-active')
         }
     });
 

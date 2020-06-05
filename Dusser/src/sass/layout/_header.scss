@@ -23,7 +23,7 @@
       width: 30%;
     }
     @include mq(desktop, desktop_md) {
-      width: 36%;
+      width: 40%;
     }
     .burger {
       @extend %btn_reset;
@@ -40,11 +40,11 @@
     font-size: $font;
     font-weight: 500;
     position: relative;
-    @include mq($from: desktop_md) {
+    @include mq($from: desktop_xl) {
       margin-left: 48px;
       margin-right: 24px;
     }
-    @include mq(tablet, desktop_md) {
+    @include mq(tablet, desktop_xl) {
       margin-right: 24px;
       margin-left: 2vw;
     }
@@ -63,6 +63,85 @@
     &.is-active {
       @include mq($until: desktop) {
         .header-language--list {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    &--selected {
+      cursor: pointer;
+    }
+    &--list {
+      box-shadow: 0 20px 20px 0 rgba($text,0.4);
+      padding: $padding-lg;
+      position: absolute;
+      top: 50%;
+
+      left: 50%;
+      background-color: $white;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      @include mq($from: desktop) {
+        transform: translate(-50%, 44px);
+        &:before {
+          position: absolute;
+          content: "";
+          bottom: 100%;
+          left: 0;
+          right: 0;
+          height: 44px;
+        }
+      }
+      @include mq($until: desktop) {
+        transform: translate(-50%, 24px);
+      }
+
+      li {
+        &:not(:last-child){
+          margin-bottom: 16px;
+        }
+      }
+      a {
+        color: inherit;
+        @include hover(){
+          color: $sale;
+        }
+        &.selected {
+          pointer-events: none;
+          color: $sale;
+        }
+      }
+    }
+  }
+  &-currency {
+    font-size: $font;
+    font-weight: 500;
+    position: relative;
+    @include mq($from: desktop_md) {
+      margin-left: 0;
+      margin-right: 24px;
+    }
+    @include mq(tablet, desktop_md) {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+    @include mq(mobile, tablet) {
+      margin: 0 24px 0 0;
+    }
+    @include mq($until: mobile) {
+      margin: 0 16px 0 0;
+    }
+    @include hover(){
+      .header-currency--list {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+    &.is-active {
+      @include mq($until: desktop) {
+        .header-currency--list {
           opacity: 1;
           pointer-events: auto;
         }

@@ -112,6 +112,12 @@
       }
     }
     &--img {
+      @include mq($from: desktop_xl) {
+        padding: $padding-xl;
+      }
+      @include mq($until: desktop_xl) {
+        padding: $padding-lg;
+      }
       position: relative;
     }
     &--img_box {
@@ -203,9 +209,9 @@
       }
     }
     &--title {
-      font-size: 20px;
+      font-size: 16px;
       line-height: 24px;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: $padding-md;
       color: $text;
       a {

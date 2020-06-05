@@ -1,3 +1,39 @@
 @import "burger";
 @import "logo";
 @import "range";
+
+#toggle-translate {
+  display: block;
+  position: fixed;
+  line-height: 48px;
+  bottom: 0;
+  left: 0;
+  color: #ff5252;
+  text-transform: lowercase;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 24px;
+  border: 2px solid #ff5252;
+  z-index: 999;
+}
+
+.to-admin-panel {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 100;
+  background: none;
+  border: none;
+  a {
+    color: #ff5252;
+    text-transform: uppercase;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 24px;
+    border: 2px solid #ff5252;
+    line-height: 32px;
+    display: block;
+  }
+}

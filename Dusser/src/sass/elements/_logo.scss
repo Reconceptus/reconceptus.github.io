@@ -14,8 +14,8 @@
       height: 32px;
     }
     @include mq($until: mobile) {
-      width: 100px;
-      height: 28px;
+      width: 80px;
+      height: 22px;
     }
   }
 }
