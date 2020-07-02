@@ -21,3 +21,15 @@
     margin: 0;
   }
 }
+
+.sb-scroll {
+  .mCSB_scrollTools {
+    width: 7px;
+  }
+  .mCS-minimal.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #B0BEC5 !important;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}

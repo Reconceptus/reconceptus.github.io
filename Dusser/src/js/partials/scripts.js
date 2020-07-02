@@ -44,6 +44,13 @@ $(document).ready(() => {
             });
         }
     }
+    if ($('.sb-scroll').length > 0) {
+        if ($('html').hasClass('desktop')) {
+            $('.sb-scroll').each(function() {
+                $(this).mCustomScrollbar({ theme: 'minimal' });
+            });
+        }
+    }
     if ($('[data-parallax]').length > 0) {
         functions.parallax();
     }

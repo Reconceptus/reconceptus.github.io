@@ -146,7 +146,8 @@
     }
     &--fieldset {
       @include mq(mobile, desktop) {
-        width: 50%;
+        width: 100%;
+        max-width: 600px;
         padding: 0 $padding-md;
         .sticky & {
           padding: 0 $padding-lg;
