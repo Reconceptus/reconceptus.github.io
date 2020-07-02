@@ -36,17 +36,19 @@
                                 <span></span>
                             </button>
                             <a href="index.html" class="logo">
-                                <img src="assets/svg/partials/logo.svg" alt="DUZZER" class="logo-img">
+                                DUZZER.NET
                             </a>
                             <div class="header-domain">
-                                бетонный агрегатор
+                                Товары для производств напрямую от производителей
                             </div>
+
+                        </div>
+                        <div class="header-partials">
                             <div class="header-language">
-                                <span class="header-language--selected">RU</span>
+                                <span class="header-language--selected" data-lang="ru">RU</span>
                                 <ul class="header-language--list">
-                                    <li><a href="#" class="selected">RU</a></li>
-                                    <li><a href="#">EN</a></li>
-                                    <li><a href="#">FR</a></li>
+                                    <li><a href="#" class="selected" data-lang="ru">RU</a></li>
+                                    <li><a href="#" data-lang="en">EN</a></li>
                                 </ul>
                             </div>
                             <div class="header-currency">
@@ -57,27 +59,35 @@
                                     <li><a href="#">₽</a></li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="header-search" id="search">
-                            <div class="header-search--opener"></div>
-                            <form action="/">
-                                <div class="header-search--fieldset">
-                                    <input type="text" placeholder="Поиск по товарам">
-                                    <button class="header-search--reset" type="reset">
-                                        <i class="icon">
-                                            <svg><use xlink:href="#icon-close"/></svg>
-                                        </i>
-                                    </button>
-                                    <button class="header-search--btn">
-                                        <i class="icon icon-search">
-                                            <svg xmlns="http://www.w3.org/2000/svg">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
-                                            </svg>
-                                        </i>
-                                    </button>
+                            <div class="header-search" id="search">
+                                <div class="header-search--opener">
+                                    <i class="icon icon-search">
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                        </svg>
+                                    </i>
                                 </div>
-                            </form>
+                                <form action="/">
+                                    <div class="header-search--fieldset">
+                                        <input type="text" placeholder="Поиск по товарам">
+                                        <button class="header-search--reset" type="reset">
+                                            <i class="icon">
+                                                <svg><use xlink:href="#icon-close"/></svg>
+                                            </i>
+                                        </button>
+                                        <button class="header-search--btn">
+                                            <span class="text">найти</span>
+                                            <i class="icon icon-search">
+                                                <svg xmlns="http://www.w3.org/2000/svg">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"/>
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
+
                         <div class="header-profile">
                             <div class="header-profile--auth" >
                                 <a href="profile.html" class="icon icon-auth">

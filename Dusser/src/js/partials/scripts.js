@@ -17,6 +17,7 @@ $(document).ready(() => {
             var targ = $(e.target);
             if (targ.parents('.header-search').length == 0) {
                 $search.removeClass('active');
+                $header.removeClass('search-enabled');
             }
         });
     }
@@ -108,6 +109,7 @@ $(document).ready(() => {
 
     $(document).on('click', '.header-search--opener', function() {
         $search.addClass('active');
+        $header.addClass('search-enabled');
         $search.find('input').focus();
     });
 

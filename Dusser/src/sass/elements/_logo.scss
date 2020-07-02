@@ -1,8 +1,14 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  color: $btn-red;
-  font-size: $font-md;
+  color: $text-dark;
+  font-weight: 600;
+  @include mq($from: mobile) {
+    font-size: $font-md;
+  }
+  @include mq($until: mobile) {
+    font-size: 12px;
+  }
   &-img {
 
     @include mq($from: desktop) {

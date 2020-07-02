@@ -1,5 +1,6 @@
 const $html = document.documentElement,
-    $search = $('#search');
+    $search = $('#search'),
+    $header = $('#header');
 let scrollTop = $(window).scrollTop(),
     winWidth,
     winHeight;
