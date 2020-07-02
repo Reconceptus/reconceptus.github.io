@@ -33,6 +33,7 @@ window.functions = {
     alert: require('./modules/alert'),
     parallax: require('./modules/parallax'),
     search: require('./modules/search'),
+    filter_selector: require('./modules/filter-selector'),
     fn: require('./modules/fn'),
 };
 
@@ -113,6 +114,10 @@ $(document).ready(() => {
     if ($('#search').length > 0) {
         functions.search();
     }
+    if ($('#filter-selector').length > 0) {
+        functions.filter_selector();
+    }
+
 
     $('.show-auth-menu').click(function(e) {
         if($(window).width() < 1024){

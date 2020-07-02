@@ -595,656 +595,166 @@
                                         <label for="open_filters" class="btn open_filters-btn">Фильтры <i></i></label>
                                         <div class="form">
                                             <form action="#">
-                                                <div class="sidebar-filters" id="filter-selector">
-                                                    <div class="sidebar-filters--fieldset selected-filters">
-                                                        <h4 class="sidebar-filters--title title-reg">Выбрано <span class="filters-count"></span></h4>
-                                                        <div class="list">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="sidebar-filters--fieldset fn-expand-box expanded">
-                                                        <h4 class="sidebar-filters--title title-reg fn-expand-btn">Цена</h4>
-                                                        <div class="fn-expand-data">
-                                                            <div class="range">
-                                                                <div class="range-slider"
-                                                                     data-range-min="100"
-                                                                     data-range-max="1000"
-                                                                     data-range-step="50"
-                                                                     data-range-start="500,800"
-                                                                >
-                                                                    <div class="no-ui-slider" id="uuu" ></div>
-                                                                    <div class="range-slider--inputs">
-                                                                        <input type="number" value="500" >
-                                                                        <span class="dash"></span>
-                                                                        <input type="number" value="800">
-                                                                    </div>
+                                                <div class="sidebar-filters">
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Цена</h4>
+                                                        <div class="range">
+                                                            <div class="range-slider"
+                                                                 data-range-min="100"
+                                                                 data-range-max="1000"
+                                                                 data-range-step="50"
+                                                                 data-range-start="500,800"
+                                                            >
+                                                                <div class="no-ui-slider" id="uuu" ></div>
+                                                                <div class="range-slider--inputs">
+                                                                    <input type="number" value="500" >
+                                                                    <span class="dash"></span>
+                                                                    <input type="number" value="800">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="sidebar-filters--fieldset fn-expand-box">
-                                                        <h4 class="sidebar-filters--title title-reg fn-expand-btn">Толщина, М</h4>
-                                                        <div class="fn-expand-data" style="display: none;">
-                                                            <div class="range">
-                                                                <div class="range-slider"
-                                                                     data-range-min="20"
-                                                                     data-range-max="80"
-                                                                     data-range-step="5"
-                                                                     data-range-start="35,55"
-                                                                >
-                                                                    <div class="no-ui-slider"></div>
-                                                                    <div class="range-slider--inputs">
-                                                                        <input type="number" value="35">
-                                                                        <span class="dash"></span>
-                                                                        <input type="number" value="55">
-                                                                    </div>
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Толщина, М</h4>
+                                                        <div class="range">
+                                                            <div class="range-slider"
+                                                                 data-range-min="20"
+                                                                 data-range-max="80"
+                                                                 data-range-step="5"
+                                                                 data-range-start="35,55"
+                                                            >
+                                                                <div class="no-ui-slider"></div>
+                                                                <div class="range-slider--inputs">
+                                                                    <input type="number" value="35">
+                                                                    <span class="dash"></span>
+                                                                    <input type="number" value="55">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="sidebar-filters--fieldset fn-expand-box">
-                                                        <h4 class="sidebar-filters--title title-reg fn-expand-btn">Габариты, см</h4>
-                                                        <div class="fn-expand-data" style="display: none;">
-                                                            <div class="sidebar-filters--checkbox_set">
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="size">
-                                                                        <span class="checkbox-label">30х60х8</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="size">
-                                                                        <span class="checkbox-label">50х50х6</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="size">
-                                                                        <span class="checkbox-label">30х90х8</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="size">
-                                                                        <span class="checkbox-label">60х60х8</span>
-                                                                    </label>
-                                                                </div>
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Габариты, см</h4>
+                                                        <div class="sidebar-filters--checkbox_set">
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">30х60х8</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">50х50х6</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">30х90х8</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label class="checkbox-item">
+                                                                    <input type="checkbox" name="size">
+                                                                    <span class="checkbox-label">60х60х8</span>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="sidebar-filters--fieldset fn-expand-box">
-                                                        <h4 class="sidebar-filters--title title-reg fn-expand-btn">Коллекция</h4>
-                                                        <div class="fn-expand-data" style="display: none;">
-                                                            <div class="sidebar-filters--checkbox_set">
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="67">
-                                                                        <span class="checkbox-label">Сланец фигурный</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="68">
-                                                                        <span class="checkbox-label">Кирпич Манхэттен</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="69">
-                                                                        <span class="checkbox-label">Кирипич Венеция</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="70">
-                                                                        <span class="checkbox-label">Травертин 10х10х1 см</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="71">
-                                                                        <span class="checkbox-label">Турецкий травертин</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="72">
-                                                                        <span class="checkbox-label">Бут новый</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="73">
-                                                                        <span class="checkbox-label">Шинон</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="74">
-                                                                        <span class="checkbox-label">Сланец скала</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="75">
-                                                                        <span class="checkbox-label">Сланец рифейский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="76">
-                                                                        <span class="checkbox-label">Альпийский сланец</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="77">
-                                                                        <span class="checkbox-label">Бостон</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="78">
-                                                                        <span class="checkbox-label">Клермон</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="79">
-                                                                        <span class="checkbox-label">Сланец Аппалачи</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="80">
-                                                                        <span class="checkbox-label">Сланец тонкослойный</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="81">
-                                                                        <span class="checkbox-label">Грот</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="82">
-                                                                        <span class="checkbox-label">Сланец алтайский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="83">
-                                                                        <span class="checkbox-label">Сланец киммерийский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="84">
-                                                                        <span class="checkbox-label">Сланец карпатский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="85">
-                                                                        <span class="checkbox-label">Старый замок</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="86">
-                                                                        <span class="checkbox-label">Известняк торцованный</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="87">
-                                                                        <span class="checkbox-label">Леон</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="88">
-                                                                        <span class="checkbox-label">Танвальд</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="89">
-                                                                        <span class="checkbox-label">Акко</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="90">
-                                                                        <span class="checkbox-label">Верона</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="91">
-                                                                        <span class="checkbox-label">Мелкий сланец</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="92">
-                                                                        <span class="checkbox-label">Скальник</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="93">
-                                                                        <span class="checkbox-label">Доломит</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="94">
-                                                                        <span class="checkbox-label">Тонкий пласт</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="95">
-                                                                        <span class="checkbox-label">Ортика</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="96">
-                                                                        <span class="checkbox-label">Песчаник</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="97">
-                                                                        <span class="checkbox-label">Травертин</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="98">
-                                                                        <span class="checkbox-label">Известняковая груда</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="99">
-                                                                        <span class="checkbox-label">Утёс</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="100">
-                                                                        <span class="checkbox-label">Речной камень</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="101">
-                                                                        <span class="checkbox-label">Неаполь</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="102">
-                                                                        <span class="checkbox-label">Бут</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="103">
-                                                                        <span class="checkbox-label">Кирпич со швом</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="104">
-                                                                        <span class="checkbox-label">Ригельный кирпич 43 см</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="105">
-                                                                        <span class="checkbox-label">Кирпич Амеро</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="106">
-                                                                        <span class="checkbox-label">Кирпич сталинградский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="107">
-                                                                        <span class="checkbox-label">Мегалит</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="108">
-                                                                        <span class="checkbox-label">Кирпич Петра</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="109">
-                                                                        <span class="checkbox-label">Заводской кирпич</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="110">
-                                                                        <span class="checkbox-label">Венский клинкер</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="111">
-                                                                        <span class="checkbox-label">Кирпич шамотный</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="112">
-                                                                        <span class="checkbox-label">Клинкер</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="113">
-                                                                        <span class="checkbox-label">Кирпич старый короткий</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="114">
-                                                                        <span class="checkbox-label">Немецкий кирпич</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="115">
-                                                                        <span class="checkbox-label">Кирпич вертикальный </span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="116">
-                                                                        <span class="checkbox-label">Кирпич классик</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="117">
-                                                                        <span class="checkbox-label">Кирпич классический</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="118">
-                                                                        <span class="checkbox-label">Уральский скол</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="119">
-                                                                        <span class="checkbox-label">Баварская кладка</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="120">
-                                                                        <span class="checkbox-label">Кирпич лофт</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="121">
-                                                                        <span class="checkbox-label">Кирпич Манхэттен</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="122">
-                                                                        <span class="checkbox-label">Кирпич 3D мозаик</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="123">
-                                                                        <span class="checkbox-label">Кирпич модерн</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="124">
-                                                                        <span class="checkbox-label">Античное дерево</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="125">
-                                                                        <span class="checkbox-label">Старый кирпич</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="126">
-                                                                        <span class="checkbox-label">Кирпич колотый</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="127">
-                                                                        <span class="checkbox-label">Кирпич римский</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="128">
-                                                                        <span class="checkbox-label">Кирпич Старая Прага</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="129">
-                                                                        <span class="checkbox-label">Клинкер гладкий</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="130">
-                                                                        <span class="checkbox-label">Рижский кирпич</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="131">
-                                                                        <span class="checkbox-label">Аврора</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="132">
-                                                                        <span class="checkbox-label">Китайская керамика</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="133">
-                                                                        <span class="checkbox-label">Марина</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="134">
-                                                                        <span class="checkbox-label">Формы «Парк Горького»</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="135">
-                                                                        <span class="checkbox-label">Тайная вечеря</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="136">
-                                                                        <span class="checkbox-label">Листок</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="137">
-                                                                        <span class="checkbox-label">Корзинка</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="138">
-                                                                        <span class="checkbox-label">Лабиринт</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="139">
-                                                                        <span class="checkbox-label">Китай</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="140">
-                                                                        <span class="checkbox-label">Крест</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="141">
-                                                                        <span class="checkbox-label">Меч</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="142">
-                                                                        <span class="checkbox-label">Лев</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="143">
-                                                                        <span class="checkbox-label">Рыцарь</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="144">
-                                                                        <span class="checkbox-label">Письмена Майя</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="145">
-                                                                        <span class="checkbox-label">Мозайка Аббаси</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="146">
-                                                                        <span class="checkbox-label">Календарь Майя</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="147">
-                                                                        <span class="checkbox-label">Лев и окантовка</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="148">
-                                                                        <span class="checkbox-label">Восточный дракон</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="149">
-                                                                        <span class="checkbox-label">Иероглифы фен-шуй</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="150">
-                                                                        <span class="checkbox-label">Молдинг</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="151">
-                                                                        <span class="checkbox-label">Древесный скол</span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="form-checkbox">
-                                                                    <label class="checkbox-item">
-                                                                        <input type="checkbox" name="collections_of_molds_for_production_of_cultured_stone_and_bricks" class="js-filter-checkbox" data-filter="8" data-item="152">
-                                                                        <span class="checkbox-label">Кора</span>
-                                                                    </label>
-                                                                </div>
+                                                    <div class="sidebar-filters--fieldset">
+                                                        <h4 class="sidebar-filters--title title-reg">Цвета</h4>
+                                                        <div class="colors">
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #D8E6EE"></span>
+                                                                </label>
                                                             </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="sidebar-filters--fieldset fn-expand-box">
-                                                        <h4 class="sidebar-filters--title title-reg fn-expand-btn">Цвета</h4>
-                                                        <div class="fn-expand-data" style="display: none;">
-                                                            <div class="colors">
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #D8E6EE"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #8DABAC"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #7AA6BC"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #CDF2A9"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #436170"></span>
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox_color">
-                                                                    <label class="checkbox_color-item">
-                                                                        <input type="checkbox" name="color">
-                                                                        <span class="checkbox_color-label" style="background: #453F71"></span>
-                                                                    </label>
-                                                                </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #8DABAC"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #7AA6BC"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #CDF2A9"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #436170"></span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="checkbox_color">
+                                                                <label class="checkbox_color-item">
+                                                                    <input type="checkbox" name="color">
+                                                                    <span class="checkbox_color-label" style="background: #453F71"></span>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="sidebar-filters--fieldset sidebar-filters--btnset u-align-center">
+                                                        <button type="button" class="btn btn--full btn-red btn--md">в корзину</button>
                                                         <button type="reset" class="btn btn--full btn-white btn--md">сбросить фильтр</button>
                                                     </div>
                                                 </div>
                                             </form>
+                                        </div>
+                                    </div>
+                                    <div class="sidebar-section sidebar-section--categories tablet-hidden">
+                                        <div class="sidebar_categories">
+                                            <ul class="sidebar_categories-list">
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <a href="javascript:void(0);" class="sidebar_categories-title fn-expand-btn">Тротуарная плитка</a>
+                                                    <ul class="sidebar_categories-sublist fn-expand-data">
+                                                        <li class="sidebar_categories-item fn-expand-box">
+                                                            <a href="javascript:void(0);" class="sidebar_categories-title fn-expand-btn">Тротуарная плитка 1</a>
+                                                            <ul class="sidebar_categories-sublist fn-expand-data">
+                                                                <li class="sidebar_categories-item">
+                                                                    <a href="category.html" class="sidebar_categories-title fn-expand-btn">Искусственный камень</a>
+                                                                </li>
+                                                                <li class="sidebar_categories-item">
+                                                                    <a href="category.html" class="sidebar_categories-title fn-expand-btn">Забор</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sidebar_categories-item">
+                                                            <a href="category.html" class="sidebar_categories-title fn-expand-btn">Тротуарная плитка 2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="sidebar_categories-item">
+                                                    <a href="category.html" class="sidebar_categories-title fn-expand-btn">Фасадный камень</a>
+                                                </li>
+                                                <li class="sidebar_categories-item fn-expand-box">
+                                                    <a href="javascript:void(0);" class="sidebar_categories-title fn-expand-btn">Декоративный камень</a>
+                                                    <ul class="sidebar_categories-sublist fn-expand-data">
+                                                        <li class="sidebar_categories-item fn-expand-box">
+                                                            <a href="javascript:void(0);" class="sidebar_categories-title fn-expand-btn">Бетонные смеси</a>
+                                                            <ul class="sidebar_categories-sublist fn-expand-data">
+                                                                <li class="sidebar_categories-item">
+                                                                    <a href="category.html" class="sidebar_categories-title fn-expand-btn">Цемент</a>
+                                                                </li>
+                                                                <li class="sidebar_categories-item">
+                                                                    <a href="category.html" class="sidebar_categories-title fn-expand-btn">Добавки</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sidebar_categories-item">
+                                                            <a href="category.html" class="sidebar_categories-title fn-expand-btn">Добавки</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>

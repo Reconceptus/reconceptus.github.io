@@ -74,6 +74,10 @@ $(document).ready(() => {
     if ($('#search').length > 0) {
         functions.search();
     }
+    if ($('#filter-selector').length > 0) {
+        functions.filter_selector();
+    }
+
 
     $('.show-auth-menu').click(function(e) {
         if($(window).width() < 1024){

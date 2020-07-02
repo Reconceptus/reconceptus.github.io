@@ -18,5 +18,7 @@ window.functions = {
     alert: require('./modules/alert'),
     parallax: require('./modules/parallax'),
     search: require('./modules/search'),
+    filter_selector: require('./modules/filter-selector'),
     fn: require('./modules/fn'),
 };
+
