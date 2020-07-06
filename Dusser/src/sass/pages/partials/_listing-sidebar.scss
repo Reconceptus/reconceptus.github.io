@@ -57,6 +57,10 @@
             padding-right: 30px;
             position: relative;
             display: inline-block;
+            white-space: nowrap;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
             @include hover(){
               color: $sale;
             }
