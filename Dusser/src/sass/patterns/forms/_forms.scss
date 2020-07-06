@@ -6,14 +6,15 @@
 
 .form-field {
   width: 100%;
+  padding: 7px 0;
   &--md {
-    margin-bottom: $padding-md;
+    margin-bottom: $padding-md - 15px;
   }
   &--xl {
-    margin-bottom: $padding-lg;
+    margin-bottom: $padding-lg - 15px;
   }
   &--lg {
-    margin-bottom: 40px;
+    margin-bottom: 40px - 15px;
     //margin-bottom: $padding-xl;
   }
 }
