@@ -19,14 +19,14 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "post-commit": "yarn build:styleguide build:prod",
+      "post-commit": "yarn build:styleguide",
       "pre-push": "git add . && git commit --amend --no-edit"
     }
   },
   "lint-staged": {
     "*.(js)": [
       "yarn prettier",
-      "yarn gulp build:prod",
+      "yarn build:prod",
       "git add"
     ]
   },
