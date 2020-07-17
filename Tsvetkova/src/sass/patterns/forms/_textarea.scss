@@ -1,0 +1,65 @@
+.form-textarea {
+  position: relative;
+  textarea {
+    resize: none;
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid $brand-02;
+    border-radius: 4px;
+    padding: 12px;
+    background: $white;
+    outline: none;
+    &:focus {
+      border-color: $ui-01;
+      box-shadow: 0 0 0 1px $ui-01 inset !important;
+    }
+    .invalid & {
+      border-color: $ui-02;
+      box-shadow: 0 0 0 1px $ui-02 inset !important;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%3E%3Cpath%20d%3D%22M11%2C15h2v2H11Zm0-8h2v6H11Zm.99-5A10%2C10%2C0%2C1%2C0%2C22%2C12%2C10%2C10%2C0%2C0%2C0%2C11.99%2C2ZM12%2C20a8%2C8%2C0%2C1%2C1%2C8-8A8%2C8%2C0%2C0%2C1%2C12%2C20Z%22%20transform%3D%22translate%280-.059%29%22%20fill%3D%22%23c62828%22/%3E%3C/g%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+      background-position: 97% 12px;
+      padding-right: 40px;
+    }
+    .valid & {
+      border-color: $ui-02;
+      box-shadow: 0 0 0 1px $ui-02 inset !important;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M9%2C16.2%2C4.8%2C12%2C3.4%2C13.4%2C9%2C19%2C21%2C7%2C19.6%2C5.6Z%22%20fill%3D%22%23689f38%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-size: 24px auto;
+      background-position: 97% 12px;
+      padding-right: 40px;
+    }
+  }
+  &--message {
+    //font-size: 12px;
+    //position: absolute;
+    //top: 60px;
+    //
+    //@include mq($from: tablet) {
+    //  left: $padding-md;
+    //}
+    //@include mq($until: tablet) {
+    //  left: 0;
+    //}
+  }
+  &.filled {
+    //input {
+    //  .valid & {
+    //    box-shadow: 0 -2px 0 0 $sale inset;
+    //    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22/%3E%3Cpath%20fill%3D%22%2317CE88%22%20d%3D%22M9%2016.2L4.8%2012l-1.4%201.4L9%2019%2021%207l-1.4-1.4L9%2016.2z%22/%3E%3C/svg%3E');
+    //    background-repeat: no-repeat;
+    //    background-size: 22px auto;
+    //    background-position: 98% center;
+    //  }
+    //}
+    //.form-input--label {
+    //  transform: translateY(-106%) scale(0.75);
+    //}
+  }
+  &_label {
+
+  }
+}

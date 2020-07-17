@@ -1,0 +1,32 @@
+.item-hashes {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  pointer-events: none;
+  .hash {
+    line-height: $font-md;
+
+    color: $white;
+    padding: 0 $padding;
+    cursor: default;
+    white-space: nowrap;
+    @include mq($from: tablet_sm) {
+      margin-right: $padding-sm;
+    }
+    @include mq($from: mobile_sm) {
+      font-size: $font;
+    }
+    @include mq($until: mobile_sm) {
+      font-size: 12px;
+    }
+    &-premium {
+      background: $brand-01;
+    }
+    &-pro {
+      background: $brand-03;
+    }
+    &-new {
+      background: $text-05;
+    }
+  }
+}

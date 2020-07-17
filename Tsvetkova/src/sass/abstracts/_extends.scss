@@ -1,0 +1,33 @@
+@mixin fullBlock(){
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@mixin resetBtn(){
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+}
+
+@mixin bgCover(){
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin imgFit(){
+  @include fullBlock;
+  object-fit: cover;
+}
+
+@mixin hiddenInput(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  opacity: 0;
+}

@@ -1,0 +1,42 @@
+.analytic_item {
+  color: $text-04;
+  display: flex;
+  flex-direction: column;
+  &-date {
+    font-size: $font;
+    color: $text-03;
+    margin-bottom: $padding_sm;
+    transition: color 0.3s;
+    &--day {
+      font-size: 80px;
+      font-weight: 300;
+      line-height: (72/80);
+    }
+  }
+  &-title {
+    font-size: $font-lg;
+    margin-bottom: $padding_sm;
+  }
+  &-descr {
+    font-size: $font;
+    line-height: (24/16);
+    margin-bottom: $gutter-x2;
+  }
+  &-btn {
+    &--arrow {
+      width: 40px;
+      height: 40px;
+      border: 1px solid $link;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%3Cg%20id%3D%22keyboard_backspace-24px%22%20transform%3D%22translate%2824%2024%29%20rotate%28180%29%22%3E%0D%0A%20%20%20%20%3Cpath%20id%3D%22Path_65%22%20data-name%3D%22Path%2065%22%20d%3D%22M0%2C0H24V24H0Z%22%20fill%3D%22none%22/%3E%0D%0A%20%20%20%20%3Cpath%20id%3D%22Path_66%22%20data-name%3D%22Path%2066%22%20d%3D%22M21%2C11H6.83l3.58-3.59L9%2C6%2C3%2C12l6%2C6%2C1.41-1.41L6.83%2C13H21Z%22%20fill%3D%22%23c1844c%22/%3E%0D%0A%20%20%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px auto;
+    }
+  }
+  @include hover(){
+    color: $link;
+    .analytic_item-date {
+      color: $link;
+    }
+  }
+}

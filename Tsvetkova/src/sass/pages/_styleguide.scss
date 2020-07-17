@@ -1,0 +1,336 @@
+$global-spacing: 16px !default;
+$sidbar-width: 300px !default;
+
+@import './styleguide/block';
+@import './styleguide/main';
+@import './styleguide/sidebar';
+@import './styleguide/navigation';
+@import './styleguide/rendered';
+@import './styleguide/prettify';
+@import './styleguide/elements';
+
+/**
+Styleguide
+
+Styleguide styleguide
+ */
+
+/**
+Colors
+
+Weight: 1
+
+Styleguide styleguide.colorpalette
+ */
+
+/**
+Typography
+
+Weight: 2
+
+Styleguide styleguide.typography
+ */
+
+/**
+CTA
+
+Weight: 3
+
+Styleguide styleguide.cta
+ */
+
+
+/**
+Icons
+
+Weight: 4
+
+Styleguide styleguide.icons
+ */
+
+/**
+Grid
+
+Weight: 5
+
+Styleguide styleguide.grid
+ */
+
+/**
+Forms
+
+Weight: 6
+
+Styleguide styleguide.forms
+ */
+
+
+/**
+JS Documentation
+
+Markup:
+  <vue-documentation></vue-documentation>
+
+Styleguide vue.documentation
+ */
+
+
+
+/**
+SVG
+
+<div data-markup="hide"></div>
+
+Description:
+  You can add svg icon using ID and follow code:
+  <xmp><svg><use xlink:href="#ID"/></svg></xmp>
+  inside icon tag
+
+Markup:
+  <div class="content-row flex-wrap">
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon-logo
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-auth"/></svg>
+        </i>
+        icon-auth
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-search"/></svg>
+        </i>
+        icon-search
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-mark"/></svg>
+        </i>
+        icon-mark
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-phone"/></svg>
+        </i>
+        icon-phone
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-help"/></svg>
+        </i>
+        icon-help
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-add"/></svg>
+        </i>
+        icon-add
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-edit"/></svg>
+        </i>
+        icon-edit
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-save"/></svg>
+        </i>
+        icon-save
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-remove"/></svg>
+        </i>
+        icon-remove
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-close_sm"/></svg>
+        </i>
+        icon-close_sm
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-close_lg"/></svg>
+        </i>
+        icon-close_lg
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-eye"/></svg>
+        </i>
+        icon-eye
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-link"/></svg>
+        </i>
+        icon-link
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-thumb"/></svg>
+        </i>
+        icon-thumb
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-text-01">
+          <svg><use xlink:href="#icon-like"/></svg>
+        </i>
+        icon-like
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-like"/></svg>
+        </i>
+        icon-like
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-translate"/></svg>
+        </i>
+        icon-translate
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-check"/></svg>
+        </i>
+        icon-check
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-checks"/></svg>
+        </i>
+        icon-checks
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-plus"/></svg>
+        </i>
+        icon-plus
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-move"/></svg>
+        </i>
+        icon-move
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-view_listing"/></svg>
+        </i>
+        icon-view_listing
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-view_map"/></svg>
+        </i>
+        icon-view_map
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-chat"/></svg>
+        </i>
+        icon-chat
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-social-facebook"/></svg>
+        </i>
+        icon-social-facebook
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-social-google"/></svg>
+        </i>
+        icon-social-google
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-social-instagram"/></svg>
+        </i>
+        icon-social-instagram
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-social-twitter"/></svg>
+        </i>
+        icon-social-twitter
+      </div>
+    </div>
+    <div class="content-col col-2">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-warning"/></svg>
+        </i>
+        icon-warning
+      </div>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.icons.svg
+ */

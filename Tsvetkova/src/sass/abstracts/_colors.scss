@@ -1,0 +1,162 @@
+/**
+Brand Colors
+
+Description:
+  You can use all font/bg colors in the frontend with following CSS Classes: .color-font-brand-01 or .color-bg-brand-01
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-brand-01"></div>
+      <ul class="swatch-details">
+          <li>#C1844C</li>
+          <li><strong>$brand-01</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-brand-02"></div>
+      <ul class="swatch-details">
+          <li>#CFAE7F</li>
+          <li><strong>$brand-02</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-brand-03"></div>
+      <ul class="swatch-details">
+          <li>#5A3A32</li>
+          <li><strong>$brand-03</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-brand-04"></div>
+      <ul class="swatch-details">
+          <li>#884E46</li>
+          <li><strong>$brand-04</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-brand-05"></div>
+      <ul class="swatch-details">
+          <li>#798A69</li>
+          <li><strong>$brand-05</strong></li>
+      </ul>
+    </div>
+  </div>
+
+Weight: 1
+
+Styleguide styleguide.colorpalette.brand
+ */
+$brand-01: #6B8455;
+$brand-02: #DEEBDC;
+
+$brand-03: #DEEBDC;
+$brand-05: #DEEBDC;
+
+
+@include color-class($brand-01, 'brand-01');
+@include color-class($brand-02, 'brand-02');
+
+
+
+
+/**
+UI Colors
+
+Description:
+  You can use all font/bg colors in the frontend with following CSS Classes: .color-font-ui-01 or .color-bg-ui-01
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-ui-01"></div>
+      <ul class="swatch-details">
+          <li>#C1844C</li>
+          <li><strong>$ui-01</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-ui-02"></div>
+      <ul class="swatch-details">
+          <li>#CFAE7F</li>
+          <li><strong>$ui-02</strong></li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-bg-ui-03"></div>
+      <ul class="swatch-details">
+          <li>#5A3A32</li>
+          <li><strong>$ui-03</strong></li>
+      </ul>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.colorpalette.ui
+ */
+$ui-01: #F5F5F5;
+$ui-02: #DE5959;
+$ui-03: #DE5959;
+
+
+@include color-class($ui-01, 'ui-01');
+@include color-class($ui-02, 'ui-02');
+
+
+
+/**
+Text Colors
+
+Description:
+  You can use all font/bg colors in the frontend with following CSS Classes: .color-font-text-01 or .color-bg-text-01
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-01">$text-01</div>
+      <ul class="swatch-details">
+          <li>#FFFFFF</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-02">$text-02</div>
+      <ul class="swatch-details">
+          <li>#F5F5F5</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-03">$text-03</div>
+      <ul class="swatch-details">
+          <li>#A8A9AD</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-04">$text-04</div>
+      <ul class="swatch-details">
+          <li>#53545D</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-05">$text-05</div>
+      <ul class="swatch-details">
+          <li>#212121</li>
+      </ul>
+    </div>
+  </div>
+
+Weight: 3
+
+Styleguide styleguide.colorpalette.text
+ */
+$text-01: #131313;
+$text-02: #757575;
+
+$text-03: #757575;
+$text-04: #757575;
+$text-05: #757575;
+
+
+@include color-class($text-01, 'text-01');
+@include color-class($text-02, 'text-02');
+

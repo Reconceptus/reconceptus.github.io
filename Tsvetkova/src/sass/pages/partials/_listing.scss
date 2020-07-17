@@ -1,0 +1,73 @@
+$listing_size: 56px;
+
+@import "listing/sort";
+@import "listing/map";
+@import "listing/items";
+@import "listing/sidebar";
+
+.listing {
+  position: relative;
+  &_tabs {
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+  &_placeholder {
+
+    @include mq($from: tablet_sm) {
+      padding-top: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      padding-top: $padding-md;
+    }
+    &-action {
+      margin-top: $padding-lg;
+    }
+    &-img {
+      @include mq($until: tablet_xl) {
+        margin-top: $padding-xl;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+#view_listing:checked ~ .listing_filter [for="view_listing"],
+#view_map:checked ~ .listing_filter [for="view_map"]{
+  background: $link;
+  color: $white;
+}
+#view_map:checked ~ .listing_filter {
+  .listing_filter-sorting {
+    * {
+      display: none;
+    }
+    @include mq($until: tablet_xl) {
+      display: none;
+    }
+  }
+  .listing_filter-user_cta {
+    display: none;
+  }
+}
+#view_listing:checked ~ .listing_tabs .listing_map {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+#view_listing:checked ~ .listing_tabs .listing_map-box--frame {
+  //position: absolute !important;
+  //left: 0;
+  //top: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+#view_map:checked ~ .listing_tabs .listing_items {
+  display: none;
+}

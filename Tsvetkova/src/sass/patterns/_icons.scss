@@ -1,0 +1,160 @@
+/**
+CSS styles
+
+Description:
+  You can add styles for icons using following CSS Classes:
+
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Sizes:
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-1 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-1
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-2 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-2
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-3 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-3
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-4 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-4
+      </div>
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon_size-5 color-font-brand-02">
+          <svg><use xlink:href="#icon-logo"/></svg>
+        </i>
+        icon_size-5
+      </div>
+    </div>
+  </div>
+  <div class="content-row flex-align_items--center">
+    <div class="content-col content-col--auto">
+      Borders:
+    </div>
+    <div class="content-col content-col--auto">
+      <div class="link_icon">
+        <i class="icon icon-bordered">
+          <i class="icon_size-2">
+            <svg><use xlink:href="#icon-logo"/></svg>
+          </i>
+        </i>
+        icon-bordered
+      </div>
+    </div>
+  </div>
+
+Weight: 1
+
+Styleguide styleguide.icons.css
+ */
+
+.icon {
+  &_size {
+    &-1 {
+      width: 12px;
+      height: 12px;
+    }
+    &-2 {
+      width: 24px;
+      height: 24px;
+    }
+    &-3 {
+      width: 32px;
+      height: 32px;
+    }
+    &-4 {
+      width: 40px;
+      height: 40px;
+    }
+    &-5 {
+      width: 56px;
+      height: 56px;
+    }
+  }
+  &-arrow_down {
+    border-style: none none solid solid;
+    border-color: currentColor;
+    transform: translate(50%,-50%) rotate(-45deg);
+    position: absolute;
+    &--sm {
+      width: 9px;
+      height: 9px;
+      border-width: 2px;
+    }
+    &--md {
+      width: 12px;
+      height: 12px;
+      border-width: 3px;
+    }
+  }
+  &-arrow_up {
+    border-style: none none solid solid;
+    border-color: currentColor;
+    transform: translate(50%,-50%) rotate(135deg);
+    position: absolute;
+    &--sm {
+      width: 9px;
+      height: 9px;
+      border-width: 2px;
+    }
+    &--md {
+      width: 12px;
+      height: 12px;
+      border-width: 3px;
+    }
+  }
+  &-bordered {
+    @include resetBtn;
+    background-color: $white;
+    min-width: 40px;
+    height: 40px;
+    color: $brand-02;
+    border: 1px solid $brand-02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    .inline-text {
+      display: block;
+      color: $brand-01;
+      white-space: nowrap;
+      @include mq($from: tablet_xl) {
+        padding: 0 $gutter-x2;
+      }
+      @include mq($until: tablet_xl) {
+        padding: 0 $padding;
+      }
+    }
+    @include hover(){
+      color: darken($brand-02, 8);
+      border-color: darken($brand-02, 8);
+      .inline-text {
+        color: darken($brand-01, 8);
+      }
+    }
+
+  }
+}

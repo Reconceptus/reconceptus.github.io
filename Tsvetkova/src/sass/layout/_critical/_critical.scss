@@ -1,0 +1,153 @@
+
+// ====================== layout ======================
+
+html {
+  min-height: 100%;
+  font-size: $font;
+}
+body {
+  line-height: 1.4;
+  font-weight: 400;
+  color: $text;
+  font-family: $font_family;
+  &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    background-color: $brand-01;
+    z-index: 10;
+  }
+}
+svg {
+  @include fullBlock;
+  fill: currentColor;
+}
+
+// ====================== header ======================
+
+$header-height: 120px;
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  text-transform: uppercase;
+  font-size: $font;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+.header-title {
+  display: flex;
+  &_inner {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $text-02;
+    padding-left: $gutter-x2;
+    align-self: flex-end;
+    margin-bottom: $padding;
+  }
+}
+.header-logo {
+  width: 256px;
+  font-size: 0;
+  margin-right: $gutter-x2;
+  align-self: center;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+.header-nav {
+  height: $header-height;
+  display: flex;
+  background-color: $bg;
+  &_box {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding-top: 8px;
+  }
+}
+
+// ====================== nav ======================
+
+.nav {
+  display: flex;
+  ul {
+    display: flex;
+    align-items: flex-end;
+  }
+  li {
+    margin-left: $gutter-x2;
+    margin-bottom: $padding;
+    height: 48px;
+    display: flex;
+    align-items: center;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+// ====================== main ======================
+
+.main {
+  padding-top: $header-height;
+  width: 100%;
+  flex: 1 0 auto;
+  background-color: $bg;
+}
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .wrapper & {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+// ====================== footer ======================
+
+.footer {
+  flex-shrink: 0;
+  background-color: $text-01;
+  color: $white;
+}
+.footer-inner {
+  &_text {
+    font-size: 20px;
+  }
+}
+.footer-logo {
+  font-size: 0;
+  color: inherit;
+  width: 256px;
+  display: block;
+  height: 85px;
+  margin-bottom: 40px;
+}
+.footer-auth {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 12px;
+  a {
+    color: inherit;
+  }
+}

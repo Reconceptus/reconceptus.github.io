@@ -1,0 +1,169 @@
+.search_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  transition: transform 0.4s;
+  will-change: transform;
+  opacity: 0;
+  &.opened {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  &-blur {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba($text,0.3);
+    transition: opacity 0.35s;
+    pointer-events: none;
+    .opened & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &-wrap {
+    position: relative;
+    overflow: auto;
+    max-height: 100vh;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+
+    @include mq($from: tablet_sm) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-md;
+    }
+    .search_close {
+      @include resetBtn;
+      border: 1px solid $brand-02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $brand-02;
+      @include mq($from: tablet_sm) {
+        width: $header-height;
+        height: $header-height;
+      }
+      @include mq($until: tablet_sm) {
+        width: $padding-lg;
+        height: $padding-lg;
+      }
+    }
+  }
+  &-form {
+    position: relative;
+    background: $white;
+    transition: opacity 0.25s, transform 0.25s;
+    opacity: 0;
+    transform: translateY(-100%);
+    box-shadow: 0 4px 32px 0 rgba($black,0.16);
+    @include mq($from: tablet_sm) {
+      padding-top: $padding-lg;
+      padding-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      padding-top: $gutter-x2;
+      padding-bottom: $gutter-x2;
+    }
+    .opened & {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    select {
+      appearance: none;
+      background-position: 96% center;
+      background-image: url("data:image/svg+xml;charset=US-ASCII, %3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2212%22%20height%3D%227.41%22%20viewBox%3D%220%200%2012%207.41%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_54%22%20data-name%3D%22Path%2054%22%20d%3D%22M8.59%2C16.59%2C13.17%2C12%2C8.59%2C7.41%2C10%2C6l6%2C6-6%2C6Z%22%20transform%3D%22translate%2818%20-8.59%29%20rotate%2890%29%22%20fill%3D%22%23C1844C%22/%3E%0D%0A%3C/svg%3E%0D%0A");
+      background-repeat: no-repeat;
+      background-size: 12px 7px;
+      padding: 0 2*$gutter-x2 0 $gutter-x2;
+    }
+    input {
+      padding: 0 $gutter-x2 0 2*$gutter-x2;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2214%22%20height%3D%2220%22%20viewBox%3D%220%200%2014%2020%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_38%22%20data-name%3D%22Path%2038%22%20d%3D%22M12%2C2A7%2C7%2C0%2C0%2C0%2C5%2C9c0%2C5.25%2C7%2C13%2C7%2C13s7-7.75%2C7-13A7%2C7%2C0%2C0%2C0%2C12%2C2Zm0%2C9.5A2.5%2C2.5%2C0%2C1%2C1%2C14.5%2C9%2C2.5%2C2.5%2C0%2C0%2C1%2C12%2C11.5Z%22%20transform%3D%22translate%28-5%20-2%29%22%20fill%3D%22%23a8a9ad%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-size: 14px 20px;
+      background-position: 16px center;
+    }
+    select,
+    input {
+      background-color: $white;
+      width: 100%;
+      border-color: $brand-01;
+      border-width: 1px;
+      outline: none;
+
+      border-radius: 0;
+      @include mq($from: tablet_sm) {
+        border-style: solid none solid solid;
+      }
+      @include mq($until: tablet_sm) {
+        border-style: solid solid none solid;
+      }
+      @include mq($from: mobile_xl) {
+        height: 72px;
+        font-size: $font-md;
+      }
+      @include mq($until: mobile_xl) {
+        height: 72px;
+        font-size: 20px;
+      }
+    }
+    .btn {
+      flex-shrink: 0;
+    }
+    &--fieldset {
+      display: flex;
+      @include mq($from: tablet_sm) {
+
+      }
+      @include mq($until: tablet_sm) {
+        flex-direction: column;
+        max-width: 480px;
+        margin: 0 auto;
+      }
+      & > * {
+        &:first-child {
+
+          @include mq($from: tablet_sm) {
+            border-radius: 40px 0 0 40px;
+          }
+          @include mq($until: tablet_sm) {
+            border-radius: 20px 20px 0 0;
+          }
+        }
+        &:last-child {
+
+          @include mq($from: tablet_sm) {
+            border-radius: 0 40px 40px 0;
+          }
+          @include mq($until: tablet_sm) {
+            border-radius: 0 0 20px 20px;
+          }
+        }
+      }
+    }
+    &--actions {
+      color: $link;
+      display: inline-flex;
+      align-items: center;
+      @include mq($until: tablet_xl) {
+        margin-top: 24px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+}
+

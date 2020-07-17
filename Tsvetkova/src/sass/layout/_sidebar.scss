@@ -1,0 +1,20 @@
+.sidebar {
+  &-sticky {
+    &.sticky {
+      position: fixed;
+      z-index: 5;
+    }
+    &.temp-sticky {
+      position: relative;
+    }
+    &-static {
+      &-md {
+        @include mq($until: tablet_xl) {
+          position: static !important;
+          width: auto !important;
+          transform: none !important;
+        }
+      }
+    }
+  }
+}

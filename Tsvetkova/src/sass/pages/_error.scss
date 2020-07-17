@@ -1,0 +1,62 @@
+.error_page {
+  color: $white;
+  &-bg {
+    display: flex;
+    justify-content: center;
+  }
+  &-head {
+    position: relative;
+    @include mq($from: tablet_sm) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-lg;
+    }
+  }
+  &-type {
+    position: absolute;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 80px;
+    line-height: (72/80);
+    font-weight: 300;
+    width: 220px;
+    justify-content: space-between;
+  }
+  &-main {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  &-title {
+
+    font-weight: 300;
+
+    @include mq($from: tablet_sm) {
+      font-size: 56px;
+      margin-bottom: $padding-lg;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: $font-lg;
+      margin-bottom: $padding-md;
+    }
+  }
+  &-subtitle {
+    font-size: $font;
+    line-height: (24/16);
+    @include mq($from: tablet_sm) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: $padding-lg;
+    }
+  }
+  &-cta {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,53 @@
+.dropdown {
+  position: relative;
+  font-weight: 500;
+  display: inline-flex;
+  &_selected {
+    color: inherit;
+    font-size: $font;
+    position: relative;
+    padding-right: $gutter-x2;
+    cursor: pointer;
+    &:after {
+
+      right: 12px;
+      top: 11px;
+    }
+  }
+  &_list {
+    z-index: 1;
+    color: $link;
+    background: $white;
+    position: absolute;
+    top: 100%;
+    box-shadow: 0 2px 4px 0 rgba($black,0.16);
+
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    @include mq($from: tablet_sm) {
+      left: calc(100% - #{$gutter-x2});
+      padding: $padding $padding-md;
+    }
+    @include mq($until: tablet_sm) {
+      left: 0;
+      padding: $padding;
+    }
+    .active & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    li {
+      &:not(:last-child){
+        margin-bottom: $padding;
+      }
+    }
+    .link {
+      color: inherit;
+      @include hover(){
+        color: darken($link, 8);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.user {
+  &_form {
+    max-width: 736px;
+    margin: 0 auto;
+    background-color: $white;
+    box-shadow: 0 4px 32px 0 rgba($black,0.16);
+    @include mq($from: tablet_sm) {
+      padding: 96px 152px $padding-lg;
+      border-radius: 60px 0 60px 60px;
+    }
+    @include mq(mobile_sm, tablet_sm) {
+      border-radius: $padding-md 0 $padding-md $padding-md;
+      padding: $padding-xl 10% $padding-lg;
+    }
+    @include mq($until: mobile_sm) {
+      padding: $padding-md $gutter-x2;
+      margin: 0 -1*$gutter-x2;
+      .socials ul {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}

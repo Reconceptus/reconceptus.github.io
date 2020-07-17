@@ -101,9 +101,10 @@
           color: $tag;
           background-color: $bg-green;
           font-size: $font;
-          line-height: $font-lg;
+          line-height: 48px;
           display: block;
           transition: none;
+          border: 2px solid $icon;
           .sticky & {
             @include mq(tablet, desktop) {
               margin: 0 -1*$padding-lg;
@@ -159,6 +160,7 @@
       }
       @include mq($until: mobile) {
         padding: 0 $padding-md;
+        width: 100%;
         .sticky & {
           padding: 0 $padding-lg;
         }
@@ -196,12 +198,20 @@
         .form-checkbox {
           min-width: 50%;
           padding-right: $padding-md;
+          width: 100%;
         }
       }
     }
     &--btnset {
       @include mq($until: desktop) {
         width: 100%;
+      }
+      .btn-show-results {
+        white-space: normal;
+        line-height: 1.2;
+        min-height: 48px;
+        align-items: center;
+        padding: 8px 24px;
       }
     }
     &--title {

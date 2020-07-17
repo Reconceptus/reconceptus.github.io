@@ -1,0 +1,362 @@
+/**
+Text-box
+
+Markup:
+  <div class="content-row">
+    <div class="content-col col-8">
+      <div class="text-box">
+        <h1>H1 Text Heading</h1>
+        <p>Nine Elms Point is a huge residential complex, which consists of 645 stylish studios,
+          as well as apartments with one, two, three or four bedrooms and penthouses, spaciously located in seven
+          distinctive buildings, which includes two striking towers.
+        </p>
+        <h2>H2 Text Heading</h2>
+        <p>Living at Nine Elms Point is very convenient, as the future metro station Nine Elms will
+          be located just at your doorstep, as well as the large Sainsbury supermarket. Despite the fact that the complex
+          is located in the first zone of London, you can relax from the busy city life, as there is so much green space.
+        </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ul>
+        <h3>H3 Text Heading</h3>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ol>
+        <p>
+          This is <strong>strong text</strong> </br>
+          This is <i>italic text</i>.</br>
+          This is an <a href="#">example of link</a>.
+        </p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+              magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+            </ul>
+          </li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ul>
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <ol>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+              magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+            </ol>
+          </li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa cum dolor est fugiat,
+          magni modi odio porro quae! Commodi doloremque excepturi rerum.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia?</li>
+        </ol>
+        <blockquote>
+          Living at Nine Elms Point is very convenient, as the future metro station Nine Elms will
+          be located just at your doorstep
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.typography.text-box
+ */
+
+.text-box {
+  font-size: 16px;
+  line-height: 1.5;
+  h1 {
+    @extend .h1;
+    color: $link;
+    margin-top: $padding-md;
+    margin-bottom: $padding-md;
+    
+  }
+  h2 {
+    //color: $link;
+    //font-size: 48px;
+    //line-height: (64/48);
+    //font-weight: 300;
+    margin-top: $padding-md;
+    margin-bottom: $padding-md;
+    font-size: 32px;
+    line-height: (48/32);
+    font-weight: 400;
+  }
+  h3 {
+    //font-size: 32px;
+    //line-height: (48/32);
+    //font-weight: 400;
+    margin-top: $padding-md;
+    margin-bottom: $padding-md;
+    font-size: 24px;
+    line-height: (40/24);
+    font-weight: 400;
+  }
+  p {
+    min-height: 24px;
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+  }
+  a {
+    color: $link;
+    @include hover(){
+      color: darken($link, 8);
+    }
+  }
+  ul, ol {
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+    ul, ol {
+      @include mq($from: mobile_sm) {
+        margin-top: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-top: $gutter-x2;
+      }
+    }
+    li {
+      position: relative;
+      @include mq($from: tablet_sm) {
+        padding-left: 48px;
+      }
+      @include mq($until: tablet_sm) {
+        padding-left: 40px;
+      }
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+      
+      &:before {
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  ul {
+    li {
+      &:before {
+        content: "";
+        height: 1px;
+        top: 12px;
+        background-color: $link;
+        @include mq($from: tablet_sm) {
+          width: 24px;
+        }
+        @include mq($until: tablet_sm) {
+          width: 16px;
+        }
+      }
+    }
+  }
+  ol {
+    counter-reset: item;
+    li {
+      counter-reset: subitem;
+      &:before {
+        content: counter(item,decimal-leading-zero) '.';
+        counter-increment: item;
+        @include mq($until: tablet_sm) {
+          margin-right: -4px;
+        }
+      }
+      ol {
+        counter-reset: none;
+      }
+      li {
+        counter-reset: none;
+        &:before {
+          content: counter(item,decimal-leading-zero) '.' counter(subitem) '';
+          counter-increment: subitem;
+        }
+      }
+    }
+  }
+  blockquote {
+    
+    font-weight: 300;
+    color: $link;
+    line-height: (64/48);
+    position: relative;
+    @include mq($from: tablet_sm) {
+      font-size: $font-lg;
+      margin: $padding-xl 0;
+    }
+    @include mq(mobile_sm, tablet_sm) {
+      font-size: 30px;
+      margin: $padding-xl 0;
+      padding-left: $gutter;
+    }
+    @include mq($until: mobile_sm) {
+      font-size: $font-md;
+      margin: $padding-lg 0;
+      padding-left: $gutter;
+    }
+    &:before {
+      content: "\0022";
+      position: absolute;
+      top: 12px;
+      right: 100%;
+      
+      @include mq($from: tablet_sm) {
+        margin-right: $gutter-x2;
+      }
+      @include mq($until: tablet_sm) {
+      
+      }
+    }
+  }
+  .img {
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+      &:first-of-type {
+        border-radius: 140px 0 0 0;
+        overflow: hidden;
+      }
+      &:last-of-type {
+        border-radius: 0 0 140px 0;
+        overflow: hidden;
+      }
+    }
+    @include mq($until: desktop_sm) {
+      width: 100%;
+    }
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .img-left {
+    float: left;
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+      width: 33.3333%;
+      transform: translateX(-32px);
+    }
+    @include mq($until: desktop_sm) {
+      width: 33.3333%;
+    }
+    @include mq(mobile_sm, desktop_sm) {
+      margin-bottom: $padding-md;
+      margin-right: $padding-md;
+    }
+    @include mq($until: mobile_sm) {
+      margin-bottom: $gutter-x2;
+      margin-right: $gutter-x2;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .text-img {
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .video {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    margin-right: 0;
+
+    @include mq($from: desktop_sm) {
+      margin-left: -33.3333%;
+      padding-bottom: 80%;
+    }
+    @include mq($until: desktop_sm) {
+      width: 100%;
+      padding-bottom: 65%;
+    }
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+  .text-video {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    margin-right: 0;
+    width: 100%;
+    padding-bottom: 65%;
+    &:not(:last-child){
+      @include mq($from: mobile_sm) {
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        margin-bottom: $gutter-x2;
+      }
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+}

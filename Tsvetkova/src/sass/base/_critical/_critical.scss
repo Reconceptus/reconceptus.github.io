@@ -1,0 +1,32 @@
+
+// ====================== normalize ======================
+
+* {margin: 0; padding: 0;}
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+ol,ul {
+  list-style: none;
+}
+a {
+  background-color: transparent;
+  text-decoration: none;
+}
+strong {
+  font-weight: bold;
+}
+iframe,
+img {
+  border-style: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+// ====================== typography ======================
+
+$font_family: 'Montserrat', sans-serif;

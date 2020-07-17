@@ -1,0 +1,86 @@
+.faq {
+  .sorting {
+
+    @include mq($from: mobile_xl) {
+      margin-bottom: $padding-xl;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: $padding-md;
+    }
+  }
+  &-wrap {
+    .pagination {
+
+      @include mq($from: mobile_xl) {
+        margin-top: $padding-xxl - $gutter-x2;
+      }
+      @include mq($until: mobile_xl) {
+        margin-top: $padding-xl;
+      }
+    }
+  }
+  &-item {
+    margin-bottom: $gutter-x2;
+    &--question {
+
+      background-color: rgba($white,0.5);
+
+      line-height: (40/24);
+
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s ease 0.2s;
+      @include mq($from: mobile_xl) {
+        min-height: 80px;
+        padding: 20px 12.5% 20px 40px;
+        font-size: $font-md;
+      }
+      @include mq($until: mobile_xl) {
+        min-height: 40px;
+        font-size: 20px;
+        padding: $gutter 12.5% $gutter $padding;
+      }
+      &:after {
+
+
+        top: 50%;
+        color: $link;
+        transition: all 0.25s;
+        @include mq($from: mobile_xl) {
+          right: $padding-md;
+        }
+        @include mq($until: mobile_xl) {
+          right: $padding;
+        }
+      }
+      .expanded & {
+        background-color: $white;
+        color: $link;
+        transition: all 0.3s;
+      }
+    }
+    &--answer {
+      @extend .text-box;
+      background-color: $white;
+      display: none;
+      @include mq($from: mobile_xl) {
+        padding: $padding-md 12.5% 56px;
+      }
+      @include mq($until: mobile_xl) {
+        padding: $gutter-x2 12.5% $padding-lg;
+      }
+    }
+    .faq-item--question {
+      &:after {
+        transform: translate(0,-50%) rotate(-45deg);
+      }
+    }
+    &.expanded {
+      .faq-item--question {
+        &:after {
+          transform: translate(0,-50%) rotate(-225deg);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.key_benefits {
+  &-input {
+    display: flex;
+    align-items: center;
+    &--fieldset {
+      position: relative;
+      width: 100%;
+      input {
+        padding: 0 40px 0 12px;
+      }
+    }
+    &--field {
+    
+    }
+    &--remove {
+      @include resetBtn;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+      color: $brand-02;
+      height: 40px;
+      width: 40px;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      .has-text & {
+        display: flex;
+      }
+    }
+    &--enter {
+      @include resetBtn;
+      display: flex;
+      height: 48px;
+      width: 48px;
+      border-radius: 4px;
+      background-color: $brand-02;
+      color: $white;
+      align-items: center;
+      justify-content: center;
+      margin-left: $padding-sm;
+      flex-shrink: 0;
+      opacity: 0.7;
+      pointer-events: none;
+      .has-text & {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+  &-list {
+    margin-top: $padding-lg;
+    &--item,
+    &--item_textarea {
+
+      @include mq($from: tablet_sm) {
+        padding: $padding 180px $padding 40px;
+      }
+      @include mq($until: tablet_sm) {
+        padding: 64px $padding $padding $padding;
+      }
+    }
+    &--item {
+      position: relative;
+      box-shadow: 0 4px 8px 0 rgba($black,0.16);
+      min-height: 72px;
+      font-size: 24px;
+      line-height: (40/24);
+      &:not(:last-child){
+        margin-bottom: $padding-sm;
+      }
+      &_text {
+        .editing & {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      &_textarea {
+        @include resetBtn;
+        position: absolute;
+        top: 0;
+        left: 0;
+        resize: none;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+        .editing & {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+      &_cta {
+        position: absolute;
+        top: $padding;
+        right: $padding;
+        display: flex;
+        align-items: center;
+        .editing {
+          &-text-btn {
+            display: none;
+            .editing & {
+              display: flex;
+            }
+          }
+          &-item-btn {
+            .editing & {
+              display: none;
+            }
+          }
+        }
+      }
+      &_btn {
+        margin-left: $padding-sm;
+      }
+    }
+  }
+}

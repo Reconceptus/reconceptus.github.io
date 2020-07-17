@@ -1,0 +1,38 @@
+html {
+  &.ovh {
+    //overflow: hidden;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
+  }
+
+}
+body {
+
+}
+
+a {
+  transition: all 0.3s;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  &_box {
+    @include mq($from: tablet_xl) {
+      padding-bottom: $padding-xxl;
+    }
+    @include mq($until: tablet_xl) {
+      padding-bottom: 80px;
+    }
+  }
+}
+.wrapper {
+
+}
+
+.container {
+
+}
+
+

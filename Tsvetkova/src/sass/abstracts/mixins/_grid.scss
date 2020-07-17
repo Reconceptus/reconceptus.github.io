@@ -1,0 +1,67 @@
+@mixin grid-generator($size, $grid-columns) {
+    @if $size == false {
+        @for $i from 1 through $grid-columns {
+            .col-#{$i} {
+                max-width: calc(#{$i}*100%/#{$grid-columns})
+            }
+        }
+    }
+    @else {
+        @for $i from 1 through $grid-columns {
+            .col-#{$size}-#{$i} {
+                max-width: calc(#{$i}*100%/#{$grid-columns})
+            }
+        }
+    }
+}
+
+@mixin pull-generator($size, $grid-columns) {
+    @if $size == false {
+        @for $i from 0 through ($grid-columns - 1) {
+            .col-pull-#{$i} {
+                margin-left: calc(#{$i}*100%/#{$grid-columns})
+            }
+        }
+    }
+    @else {
+        @for $i from 0 through ($grid-columns - 1) {
+            .col-pull-#{$size}-#{$i} {
+                margin-left: calc(#{$i}*100%/#{$grid-columns})
+            }
+        }
+    }
+}
+
+@mixin respond-from($media) {
+    @if $media == xx {
+        @include mq($until: mobile_sm) {
+            @content;
+        }
+    } @else if $media == xs {
+        @include mq($until: mobile_xl) {
+            @content;
+        }
+    } @else if $media == sm {
+        @include mq($until: tablet_sm) {
+            @content;
+        }
+    } @else if $media == md {
+        @include mq($until: tablet_xl) {
+            @content;
+        }
+    } @else if $media == lg {
+        @include mq($until: desktop_sm) {
+            @content;
+        }
+    } @else if $media == xl {
+        @include mq($until: desktop_xl) {
+            @content;
+        }
+    } @else if $media == wd {
+        @include mq($until: wide) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

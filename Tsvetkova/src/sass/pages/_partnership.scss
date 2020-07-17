@@ -1,0 +1,177 @@
+.partnership_head {
+
+  @include mq($from: desktop_sm) {
+    padding-top: 100px;
+  }
+  .composing-heading {
+    position: relative;
+    z-index: 1;
+  }
+  .text-box {
+    position: relative;
+    z-index: 1;
+    @include mq($from: desktop_sm) {
+      font-size: $font-md;
+      max-width: 85%;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      font-size: 20px;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: $font;
+    }
+  }
+  &-arrow {
+    height: 75px;
+    position: relative;
+    display: none;
+    .arrow {
+      @include resetBtn;
+      width: 48px;
+      height: 96px;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2249.414%22%20height%3D%2296.707%22%20viewBox%3D%220%200%2049.414%2096.707%22%3E%0D%0A%20%20%3Cg%20id%3D%22Group_2060%22%20data-name%3D%22Group%202060%22%20transform%3D%22translate%28-223.293%20-888%29%22%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_43%22%20data-name%3D%22Line%2043%22%20y2%3D%2296%22%20transform%3D%22translate%28248%20888%29%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_44%22%20data-name%3D%22Line%2044%22%20x2%3D%2224%22%20y2%3D%2224%22%20transform%3D%22translate%28224%20960%29%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%20%20%3Cline%20id%3D%22Line_45%22%20data-name%3D%22Line%2045%22%20x1%3D%2224%22%20y2%3D%2224%22%20transform%3D%22translate%28248%20960%29%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222%22/%3E%0D%0A%20%20%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+      position: absolute;
+      top: 48px;
+      left: 0;
+    }
+  }
+  &-aside {
+    margin-right: -1*$gutter;
+    min-height: 280px;
+    position: relative;
+    @include mq($until: desktop_sm) {
+      display: none;
+    }
+    .pattern {
+      position: absolute;
+      justify-content: flex-end;
+      top: -175px;
+      right: 0;
+      width: 950px;
+    }
+    .bg_pattern {
+      margin: $gutter;
+    }
+  }
+}
+
+.partnership_page {
+  padding-top: 96px;
+  @include mq($from: mobile_xl) {
+    padding-bottom: $padding-xxl;
+  }
+  @include mq($until: mobile_xl) {
+    padding-bottom: 96px;
+  }
+  &-quote {
+    @include mq($from: desktop_sm) {
+      margin-bottom: 2*$padding-xxl;
+    }
+    @include mq(mobile_xl, desktop_sm) {
+      margin-bottom: $padding-xxl;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: $padding-xl;
+    }
+
+    @include mq($from: tablet_xl) {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20width%3D%22584.001%22%20height%3D%22584%22%20viewBox%3D%220%200%20584.001%20584%22%3E%0D%0A%20%20%3Cdefs%3E%0D%0A%20%20%20%20%3ClinearGradient%20id%3D%22linear-gradient%22%20x1%3D%220.5%22%20x2%3D%220.5%22%20y2%3D%221%22%20gradientUnits%3D%22objectBoundingBox%22%3E%0D%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23f5f5f5%22/%3E%0D%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23fff%22/%3E%0D%0A%20%20%20%20%3C/linearGradient%3E%0D%0A%20%20%3C/defs%3E%0D%0A%20%20%3Cpath%20id%3D%22Subtraction_3%22%20data-name%3D%22Subtraction%203%22%20d%3D%22M10343%2C1465a294.161%2C294.161%2C0%2C0%2C1-58.849-5.932%2C290.417%2C290.417%2C0%2C0%2C1-104.413-43.937%2C292.869%2C292.869%2C0%2C0%2C1-105.793-128.472%2C290.518%2C290.518%2C0%2C0%2C1-17.014-54.811%2C294.836%2C294.836%2C0%2C0%2C1%2C0-117.7%2C290.368%2C290.368%2C0%2C0%2C1%2C43.937-104.412%2C292.839%2C292.839%2C0%2C0%2C1%2C128.472-105.793%2C290.525%2C290.525%2C0%2C0%2C1%2C54.812-17.014%2C294.848%2C294.848%2C0%2C0%2C1%2C117.7%2C0%2C290.412%2C290.412%2C0%2C0%2C1%2C104.413%2C43.936%2C292.866%2C292.866%2C0%2C0%2C1%2C105.793%2C128.471%2C290.531%2C290.531%2C0%2C0%2C1%2C17.014%2C54.812%2C294.836%2C294.836%2C0%2C0%2C1%2C0%2C117.7%2C290.372%2C290.372%2C0%2C0%2C1-43.937%2C104.412%2C292.838%2C292.838%2C0%2C0%2C1-128.472%2C105.794%2C290.49%2C290.49%2C0%2C0%2C1-54.812%2C17.015A294.137%2C294.137%2C0%2C0%2C1%2C10343%2C1465Zm0-486c-106.972%2C0-194%2C87.029-194%2C194s87.027%2C194%2C194%2C194%2C194-87.027%2C194-194S10449.973%2C979%2C10343%2C979Z%22%20transform%3D%22translate%28-10050.999%20-881%29%22%20fill%3D%22url%28%23linear-gradient%29%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-position: calc(300%/12) 0;
+      background-size: auto 85%;
+    }
+    @include mq($until: tablet_xl) {
+
+    }
+    &--custom_figure {
+      @include mq($from: tablet_xl) {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+        margin-top: $padding-xxl + 88px + 56px;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border-radius: 0 0 50% 0;
+          background: linear-gradient(to bottom, $brand-02 0%, $brand-01 100%);
+        }
+      }
+      @include mq($until: tablet_xl) {
+        display: none;
+      }
+
+    }
+    &--img {
+      width: $padding-xxl;
+      height: $padding-xxl;
+      border-radius: 50%;
+      overflow: hidden;
+
+      @include mq($from: desktop_sm) {
+        margin-bottom: 56px;
+        margin-top: 88px;
+      }
+      @include mq(tablet_xl, desktop_sm) {
+        margin-bottom: $padding-lg;
+        margin-top: $padding-md;
+      }
+      @include mq($until: tablet_xl) {
+        margin-bottom: $padding-lg;
+      }
+      img {
+        @include fullBlock;
+        object-fit: cover;
+      }
+    }
+    &--text {
+      font-weight: 300;
+      color: $link;
+      line-height: (64/48);
+      position: relative;
+      @include mq($from: tablet_sm) {
+        font-size: 48px;
+        margin-bottom: $padding-md;
+      }
+      @include mq(mobile_sm, tablet_sm) {
+        font-size: $font-lg;
+        padding-left: $gutter;
+        margin-bottom: $padding-md;
+      }
+      @include mq($until: mobile_sm) {
+        font-size: 28px;
+        padding-left: $gutter;
+        margin-bottom: $gutter-x2;
+      }
+      &:before {
+        content: "\0022";
+        position: absolute;
+        top: 12px;
+        right: 100%;
+        @include mq($from: tablet_sm) {
+          margin-right: $gutter-x2;
+        }
+
+      }
+    }
+  }
+  &-subsection {
+    @include mq($from: desktop_sm) {
+      &:not(:last-child){
+        margin-bottom: 104px;
+      }
+    }
+    @include mq($until: desktop_sm) {
+      &:not(:last-child){
+        margin-bottom: $padding-xl;
+      }
+    }
+  }
+}

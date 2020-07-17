@@ -1,0 +1,118 @@
+.text_editor {
+
+  &-box {
+    position: relative;
+  }
+  .redactor-toolbar {
+    box-shadow: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    //padding-right: 80px !important;
+    z-index: 0;
+    li {
+
+    }
+    .re-icon {
+      display: inline-flex;
+      border: 1px solid $brand-02;
+      box-sizing: border-box !important;
+      padding: 0 !important;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 0 $padding-sm $padding-sm 0 !important;
+      color: transparent;
+      @include mq($from: mobile_xl) {
+        width: 40px;
+        height: 40px;
+      }
+      @include mq($until: mobile_xl) {
+        width: 36px;
+        height: 36px;
+      }
+      &:after {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px auto;
+      }
+      @include hover(){
+        background: none;
+      }
+      &.redactor-act {
+        background-color: rgba($brand-02,0.25);
+      }
+    }
+  }
+  .redactor-editor {
+    min-height: 200px;
+    border: 1px solid $brand-02;
+    border-radius: 4px;
+    ul {
+      li {
+        list-style: disc;
+      }
+    }
+    ol {
+      li {
+        list-style: decimal-leading-zero;
+      }
+    }
+  }
+
+  .re-translate {
+    @include resetBtn;
+    position: absolute;
+    top: 0;
+    right: 0;
+    //display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $brand-02;
+    align-items: center;
+    justify-content: center;
+    color: $brand-02;
+    display: none;
+  }
+
+  .re-unorderedlist:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20212%22%20d%3D%22M4%2010.5A1.5%201.5%200%201%200%205.5%2012%201.5%201.5%200%200%200%204%2010.5m0-6A1.5%201.5%200%201%200%205.5%206%201.5%201.5%200%200%200%204%204.5m0%2012A1.5%201.5%200%201%200%205.5%2018%201.5%201.5%200%200%200%204%2016.5M7%2019H21V17H7m0-4H21V11H7M7%205V7H21V5%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+  .re-image:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20208%22%20d%3D%22M21%2C19V5a2.006%2C2.006%2C0%2C0%2C0-2-2H5A2.006%2C2.006%2C0%2C0%2C0%2C3%2C5V19a2.006%2C2.006%2C0%2C0%2C0%2C2%2C2H19A2.006%2C2.006%2C0%2C0%2C0%2C21%2C19ZM8.5%2C13.5%2C11%2C16.51%2C14.5%2C12%2C19%2C18H5Z%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+  .re-video:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20222%22%20d%3D%22M18%2C4l2%2C4H17L15%2C4H13l2%2C4H12L10%2C4H8l2%2C4H7L5%2C4H4A2%2C2%2C0%2C0%2C0%2C2.01%2C6L2%2C18a2.006%2C2.006%2C0%2C0%2C0%2C2%2C2H20a2.006%2C2.006%2C0%2C0%2C0%2C2-2V4Z%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+  .re-orderedlist:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20218%22%20d%3D%22M2%2C17H4v.5H3v1H4V19H2v1H5V16H2ZM3%2C8H4V4H2V5H3ZM2%2C11H3.8L2%2C13.1V14H5V13H3.2L5%2C10.9V10H2ZM7%2C5V7H21V5ZM7%2C19H21V17H7Zm0-6H21V11H7Z%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+  .re-link:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20data-name%3D%22Path%20207%22%20d%3D%22M3.9%2012A3.1%203.1%200%200%201%207%208.9h4V7H7A5%205%200%200%200%207%2017h4V15.1H7A3.1%203.1%200%200%201%203.9%2012M8%2013h8V11H8m9-4H13V8.9h4a3.1%203.1%200%201%201%200%206.2H13V17h4A5%205%200%200%200%2017%207%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+  .re-formatting:after {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20enable-background%3D%22new%200%200%2024%2024%22%3E%3Cpath%20d%3D%22M9.6%2C13.8v6.1H12V6.5h2.4v13.4h2.4V6.5h2.4V4.1H9.6C6.9%2C4.1%2C4.7%2C6.3%2C4.7%2C9S6.9%2C13.8%2C9.6%2C13.8z%22%20fill%3D%22%23cfae7f%22/%3E%3C/svg%3E');
+  }
+
+  .re-formatting,
+  .re-deleted,
+  .re-outdent,
+  .re-indent,
+  .re-table,
+  .re-alignment,
+  .re-horizontalrule,
+  .re-fontcolor,
+  .re-backcolor,
+  .re-fontfamily,
+  .re-fontsize,
+  .re-fullscreen,
+  .re-textdirection {
+    //display: none !important;
+  }
+
+}

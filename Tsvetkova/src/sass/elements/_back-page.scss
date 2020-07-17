@@ -1,0 +1,34 @@
+.back-page {
+
+  @include mq($from: desktop_sm) {
+    padding: $padding-xxl 0 $padding-xl 0;
+  }
+  @include mq(tablet_sm, desktop_sm) {
+    padding: ($padding-xxl - $padding-lg) 0 $padding-xl 0;
+  }
+  @include mq($until: tablet_sm) {
+    padding: $padding-xl 0 $padding;
+  }
+  &--link {
+    color: $text;
+    position: relative;
+    display: inline-flex;
+    padding-left: $padding-md;
+    text-transform: uppercase;
+    font-weight: 500;
+    &:before {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20id%3D%22keyboard_backspace-24px%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_65%22%20data-name%3D%22Path%2065%22%20d%3D%22M0%2C0H24V24H0Z%22%20fill%3D%22none%22/%3E%0D%0A%20%20%3Cpath%20id%3D%22Path_66%22%20data-name%3D%22Path%2066%22%20d%3D%22M21%2C11H6.83l3.58-3.59L9%2C6%2C3%2C12l6%2C6%2C1.41-1.41L6.83%2C13H21Z%22%20fill%3D%22%2353545d%22/%3E%0D%0A%3C/svg%3E%0D%0A');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+      top: 0;
+      left: 0;
+    }
+    @include hover(){
+      color: darken($text, 8);
+    }
+  }
+}

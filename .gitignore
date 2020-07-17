@@ -1,5 +1,6 @@
 .idea
 node_modules/
+dev/
 app-lnt.js
 
 yarn.lock

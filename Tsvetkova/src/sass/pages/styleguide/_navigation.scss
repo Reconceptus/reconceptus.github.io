@@ -1,0 +1,84 @@
+.__navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  .__dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+    padding: 0.5em;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .__navigation-item {
+    padding: $global-spacing/8 0;
+    list-style: none;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:hover {
+      & > .__dropdown {
+        display: block;
+      }
+    }
+    a {
+      color: #C1844C;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover, &:focus {
+        color: #000;
+      }
+    }
+
+  }
+
+}
+
+.__navigation-child {
+  margin: $global-spacing/4;
+  display: flex;
+  align-items: center;
+  .__navigation-item {
+    font-size: 16px;
+    margin-right: 15px;
+    a {
+      color: #C1844C;
+      font-weight: normal;
+    }
+
+  }
+
+  [class*="__navigation-item--1.1."],
+  [class*="__navigation-item--1.2."],
+  [class*="__navigation-item--1.3."],
+  [class*="__navigation-item--1.4."],
+  [class*="__navigation-item--1.5."],
+  [class*="__navigation-item--1.6."],
+  [class*="__navigation-item--1.7."],
+  [class*="__navigation-item--1.8."],
+  [class*="__navigation-item--1.9."],
+  [class*="__navigation-item--1.10."],
+  [class*="__navigation-item--1.11."],
+  [class*="__navigation-item--2.2."] {
+    font-size: 14px;
+    padding-left: $global-spacing/2;
+
+    a {
+      color: #4a8ec2;
+    }
+
+  }
+}
+
+
+
+

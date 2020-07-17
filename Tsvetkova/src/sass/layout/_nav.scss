@@ -1,0 +1,23 @@
+.nav {
+  a {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+      height: 0;
+      background-color: currentColor;
+      opacity: 0;
+      transition: all 0.25s;
+      transform: translateY(40px);
+    }
+    @include hover(){
+      &:before {
+        height: 4px;
+        opacity: 1;
+      }
+    }
+  }
+}

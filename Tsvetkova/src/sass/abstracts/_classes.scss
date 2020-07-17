@@ -1,0 +1,189 @@
+/**
+Column classes
+
+<div data-markup="hide"></div>
+
+Description:
+  The grid consists of 12 columns wrapped in one row. Each column can contain also row with columns.
+  <p>There is the list of classes for grid:</p>
+  
+Markup:
+  <div class="content-row flex-align_items--center">
+    <div class="content-col col-8">
+      <table class="grid-table">
+        <tr>
+          <td><strong>Class</strong></td>
+          <td><strong>Styles</strong></td>
+          <td><strong>Description</strong></td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-row</strong></td>
+          <td>margin: 0 -12px; <br>display: flex;</td>
+          <td>This is a wrapper of columns</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-col</strong></td>
+          <td>padding: 0 12px;<br>width: 100%;</td>
+          <td>Necessary class for each column</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.content-col--auto</strong></td>
+          <td>width: auto;</td>
+          <td>Additional class for column if you don't need width:100%</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-{n}</strong></td>
+          <td>max-width: {value that depends on <i>n</i>}%</td>
+          <td>Class for column - shows the column size (f.e. <strong class="nowrap">.col-6</strong> means that the column width is 6 of 12 = 50%)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-{mod}-{n}</strong></td>
+          <td>max-width: {value that depends on <i>n</i> for mquery <i>mod</i>}%</td>
+          <td>Class for column - shows the column size for specific window width (f.e. <strong class="nowrap">.col-lg-6</strong> means that the column width is 6 of 12 = 50% for window width < 1281px)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-pull-{n}</strong></td>
+          <td>margin-left: {value that depends on <i>n</i>}%</td>
+          <td>Class for column - set margin-left for the column (f.e. <strong class="nowrap">.col-pull-3</strong> means that the column's margin-left is 3 of 12 = 25%)</td>
+        </tr>
+        <tr>
+          <td><strong class="color-font-brand-01">.col-pull-{mod}-{n}</strong></td>
+          <td>margin-left: {value that depends on <i>n</i> for mquery <i>mod</i>}%</td>
+          <td>Class for column - set margin-left for the column for specific window width (f.e. <strong class="nowrap">.col-pull-lg-3</strong> means that the column's margin-left is 3 of 12 = 25% for window width < 1281px)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+Weight: 2
+
+Styleguide styleguide.grid.classes
+ */
+
+$maxWidth: $content-lg + 2*$gutter-x2;
+
+.content {
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0 $gutter-x2;
+  &--lg {
+    max-width: $maxWidth;
+  }
+  &--md {
+    //max-width: 1710px;
+  }
+  &--sm {
+    //max-width: 980px;
+  }
+  &-row {
+    margin: 0 -1*$gutter;
+    display: flex;
+  }
+  &-col {
+    padding: 0 $gutter;
+    width: 100%;
+    &--auto {
+      width: auto;
+    }
+  }
+}
+
+@include respond-from(ALL) {
+  @include grid-generator(false, 12);
+  @include pull-generator(false, 12);
+}
+@include respond-from(wd) {
+  @include grid-generator(wd, 12);
+  @include pull-generator(wd, 12);
+}
+@include respond-from(xl) {
+  @include grid-generator(xl, 12);
+  @include pull-generator(xl, 12);
+}
+@include respond-from(lg) {
+  @include grid-generator(lg, 12);
+  @include pull-generator(lg, 12);
+}
+@include respond-from(md) {
+  @include grid-generator(md, 12);
+  @include pull-generator(md, 12);
+}
+@include respond-from(sm) {
+  @include grid-generator(sm, 12);
+  @include pull-generator(sm, 12);
+}
+@include respond-from(xs) {
+  @include grid-generator(xs, 12);
+  @include pull-generator(xs, 12);
+}
+@include respond-from(xx) {
+  @include grid-generator(xx, 12);
+  @include pull-generator(xx, 12);
+}
+
+.flex {
+  &-box {
+    display: flex;
+  }
+  &-align_items {
+    &--center {
+      align-items: center;
+    }
+  }
+  &-justify {
+    &--right {
+      justify-content: flex-end;
+    }
+    &--center {
+      justify-content: center;
+    }
+    &--space {
+      justify-content: space-between;
+    }
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.ovh {
+  overflow: hidden;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.hidden-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+
+.hide {
+  display: none !important;
+}
+
+.desktop-hidden {
+  @include mq($from: tablet_xl) {
+    display: none !important;
+  }
+}
+.tablet-hidden {
+  @include mq($until: tablet_xl) {
+    display: none !important;
+  }
+}
+.mobile-visible {
+  @include mq($from: tablet_sm) {
+    display: none !important;
+  }
+}
+.mobile-hidden {
+  @include mq($until: tablet_sm) {
+    display: none !important;
+  }
+}

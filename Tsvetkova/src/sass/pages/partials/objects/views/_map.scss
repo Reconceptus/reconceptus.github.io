@@ -1,0 +1,19 @@
+.object_page-view_map {
+  .map {
+    @include fullBlock;
+    img[src*='map-mark-lg']{
+      @include mq($from: tablet_xl) {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      @include mq($until: tablet_xl) {
+        width: 60% !important;
+        height: 60% !important;
+        margin: 20% !important;
+      }
+    }
+    .marker-parent {
+      transform: translateY(50%);
+    }
+  }
+}
