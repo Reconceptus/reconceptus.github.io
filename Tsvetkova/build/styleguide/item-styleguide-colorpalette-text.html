@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KSS Style Guide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./../assets/css/styles.min.css"/>
+<link rel="stylesheet" href="./../assets/css/styleguide.min.css"/>
+
+</head>
+
+<body>
+<div style="display:none"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-add" viewBox="0 0 24 24"><path d="M13,7H11v4H7v2h4v4h2V13h4V11H13ZM12,2A10,10,0,1,0,22,12,10.016,10.016,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.011,8.011,0,0,1,12,20Z"/></symbol><symbol id="icon-auth" viewBox="0 0 24 24"><path d="M21 3.01H3c-1.1 0-2 .9-2 2V9h2V4.99h18v14.03H3V15H1v4.01c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98v-14c0-1.11-.9-2-2-2zM11 16l4-4-4-4v3H1v2h10v3z"/></symbol><symbol id="icon-chat" viewBox="0 0 32 32"><path d="M4.8,4.8H27.2V21.6H6.438L4.8,23.238V4.8M4.8,2A2.8,2.8,0,0,0,2.014,4.8L2,30l5.6-5.6H27.2A2.808,2.808,0,0,0,30,21.6V4.8A2.808,2.808,0,0,0,27.2,2ZM7.6,16H18.8v2.8H7.6Zm0-4.2H24.4v2.8H7.6Zm0-4.2H24.4v2.8H7.6Z"/></symbol><symbol id="icon-check" viewBox="0 0 24 24"><path d="M9,16.2,4.8,12,3.4,13.4,9,19,21,7,19.6,5.6Z"/></symbol><symbol id="icon-checks" viewBox="0 0 24 24"><path d="M18,7,16.59,5.59l-6.34,6.34,1.41,1.41Zm4.24-1.41L11.66,16.17,7.48,12,6.07,13.41,11.66,19l12-12ZM.41,13.41,6,19l1.41-1.41L1.83,12Z"/></symbol><symbol id="icon-close_lg" viewBox="0 0 35.36 35.36"><g transform="matrix(.70711-.70711.70711.70711-7.32 17.68)"><path d="m-6.32 16.68h48v2h-48z"/><path d="m16.68-6.32h2v48h-2z"/></g></symbol><symbol id="icon-close_sm" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></symbol><symbol id="icon-edit" viewBox="0 0 24 24"><path d="M3,17.25V21H6.75L17.81,9.94,14.06,6.19ZM5.92,19H5v-.92l9.06-9.06.92.92ZM20.71,5.63,18.37,3.29a1,1,0,0,0-1.41,0L15.13,5.12l3.75,3.75,1.83-1.83a1,1,0,0,0,0-1.41Z"/></symbol><symbol id="icon-eye" viewBox="0 0 24 24"><path d="M12 6a9.77 9.77 0 0 1 8.82 5.5 9.822 9.822 0 0 1 -17.64 0A9.77 9.77 0 0 1 12 6m0-2A11.827 11.827 0 0 0 1 11.5a11.817 11.817 0 0 0 22 0A11.827 11.827 0 0 0 12 4m0 5a2.5 2.5 0 1 1 -2.5 2.5A2.5 2.5 0 0 1 12 9m0-2a4.5 4.5 0 1 0 4.5 4.5A4.507 4.507 0 0 0 12 7"/></symbol><symbol id="icon-help" viewBox="0 0 24 24"><g transform="translate(-4-2)"><circle cx="15.6" cy="6.2" r="2"/><path d="m19.5 10.3c-.6-.7-1.4-1.1-2.4-1.1h-2.5c-2.8 0-5-2.2-5-5h-2c0 3.1 2 5.8 5 6.7v13.3h2v-6h2v6h2v-11.9l4 3.9 1.4-1.4-4.5-4.5"/></g></symbol><symbol id="icon-like" viewBox="0 0 40 40"><path d="m27.6 4c-2.9 0-5.6 1.1-7.6 3-2-1.9-4.7-3-7.5-3h-.2c-2.7 0-5.2 1.1-7.1 3-1.9 1.9-2.9 4.4-2.9 7.1 0 6.8 5.8 12 14.6 20l3.1 2.8 3.1-2.7.1-.1c8.7-7.9 14.5-13.2 14.5-19.9v-.2c-.1-5.5-4.6-10-10.1-10m8.1 10.2c0 5.8-5.5 10.8-14 18.4l-1.7 1.6-1.8-1.6c-8.3-7.6-13.9-12.6-13.9-18.4 0-2.2.8-4.2 2.3-5.8 1.5-1.5 3.5-2.4 5.7-2.4h.2c2.5 0 5 1.1 6.7 3.1l.8.9.7-.9c1.7-1.9 4.2-3.1 6.8-3.1h.1c4.4 0 8.1 3.6 8.1 8v.2" fill="#cfae7f"/><path d="M20,36.9l-3.1-2.8c-8.8-8-14.6-13.2-14.6-20c0-2.7,1-5.2,2.9-7.1s4.4-3,7.1-3h0.2C15.3,4,18,5.1,20,7 c2-1.9,4.7-3,7.5-3h0.1c5.5,0,10,4.5,10.1,10v0.2c0,6.7-5.8,12-14.5,19.9l-0.1,0.1L20,36.9z"/></symbol><symbol id="icon-link" viewBox="0 0 24 24"><path d="M17,7H13V9h4a3,3,0,0,1,0,6H13v2h4A5,5,0,0,0,17,7Zm-6,8H7A3,3,0,0,1,7,9h4V7H7A5,5,0,0,0,7,17h4ZM8,11h8v2H8Z"/></symbol><symbol id="icon-logo" viewBox="0 0 88 88"><g><path d="m88 2.3h-21.2c.7.6 1.3 1.3 1.9 1.9 3.1 3.4 5.5 7.3 7.1 11.5h12.2"/><path d="M88,38.7h-9.7c-0.5,4.7-1.9,9.3-4.1,13.5H88"/><path d="m88 74.5h-19.7c-3.4 0-6.6-1.6-8.6-4.2l-7.5-10.7c11.3-4.2 17.2-14.6 17.2-26.8v-2.3c0-15.9-10.1-29.1-28.8-28.8h-40.6v1.3c0 6.8 5.5 12.3 12.2 12.3h28.7c10.2 0 14.8 6.7 14.8 14.8v3.3c0 8-4.4 13.8-14.4 14.6-.2 0-.4 0-.6 0h-40.7v40h13.5v-26.4h23.6l11.6 16.5c4.3 5.8 10.8 9.4 18 9.9h21.3"/></g></symbol><symbol id="icon-mark" viewBox="0 0 32 32"><path d="M14.333 2A9.327 9.327 0 0 0 5 11.333c0 7 9.333 17.333 9.333 17.333s9.333-10.333 9.333-17.333A9.327 9.327 0 0 0 14.333 2m0 12.667a3.333 3.333 0 1 1 3.333 -3.333A3.335 3.335 0 0 1 14.333 14.667" transform="translate(1.667.667)"/></symbol><symbol id="icon-move" viewBox="0 0 24 24"><path d="m10 9h4v-3h3l-5-5-5 5h3m-1 4h-3v-3l-5 5 5 5v-3h3m14-2l-5-5v3h-3v4h3v3m-4-2h-4v3h-3l5 5 5-5h-3"/></symbol><symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6.54,5a12.312,12.312,0,0,0,.45,2.59l-1.2,1.2A14.826,14.826,0,0,1,5.03,5H6.54M16.4,17.02a12.753,12.753,0,0,0,2.6.45v1.49a15.426,15.426,0,0,1-3.8-.75l1.2-1.19M7.5,3H4A1,1,0,0,0,3,4,17,17,0,0,0,20,21a1,1,0,0,0,1-1V16.51a1,1,0,0,0-1-1,11.407,11.407,0,0,1-3.57-.57.839.839,0,0,0-.31-.05,1.024,1.024,0,0,0-.71.29l-2.2,2.2a15.149,15.149,0,0,1-6.59-6.59l2.2-2.2a1,1,0,0,0,.25-1.02A11.36,11.36,0,0,1,8.5,4,1,1,0,0,0,7.5,3Z"/></symbol><symbol id="icon-plus" viewBox="0 0 24 24"><path d="M19,13H13v6H11V13H5V11h6V5h2v6h6Z"/></symbol><symbol id="icon-remove" viewBox="0 0 24 24"><path d="M16,9V19H8V9h8M14.5,3h-5l-1,1H5V6H19V4H15.5ZM18,7H6V19a2.006,2.006,0,0,0,2,2h8a2.006,2.006,0,0,0,2-2Z"/></symbol><symbol id="icon-save" viewBox="0 0 24 24"><path d="M17,3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V7Zm2,16H5V5H16.17L19,7.83Zm-7-7a3,3,0,1,0,3,3A3,3,0,0,0,12,12ZM6,6h9v4H6Z"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z"/></symbol><symbol id="icon-social-facebook" viewBox="0 0 56.693 56.693"><path d="m28.347 5.157c-13.6 0-24.625 11.03-24.625 24.625 0 13.6 11.03 24.623 24.625 24.623 13.6 0 24.625-11.02 24.625-24.623 0-13.598-11.03-24.625-24.625-24.625m6.517 24.522h-4.264c0 6.814 0 15.207 0 15.207h-6.32c0 0 0-8.307 0-15.207h-3.01v-5.369h3.01v-3.479c0-2.49 1.182-6.377 6.379-6.377l4.68.018v5.215c0 0-2.846 0-3.398 0-.555 0-1.34.277-1.34 1.461v3.163h4.818l-.555 5.368"/></symbol><symbol id="icon-social-google" viewBox="0 0 56.6934 56.6934"><path d="m28.07 4.155c-13.601 0-24.625 11.02-24.625 24.623s11.02 24.625 24.625 24.625 24.625-11.03 24.625-24.625-11.02-24.623-24.625-24.623m2.331 31.1c-2.552 3.59-7.675 4.639-11.672 3.1-4.01-1.528-6.852-5.765-6.514-10.09.088-5.285 4.947-9.914 10.232-9.737 2.532-.118 4.913.985 6.852 2.532-.828.94-1.685 1.847-2.601 2.694-2.332-1.611-5.648-2.072-7.979-.211-3.336 2.307-3.487 7.754-.279 10.237 3.12 2.831 9.02 1.425 9.879-2.91-1.954-.029-3.914 0-5.868-.064-.005-1.166-.001-2.332-.005-3.497 3.267-.001 6.534-.015 9.806.001.196 2.743-.167 5.662-1.852 7.93m14.09-5.02c-.975.001-1.949.015-2.929.024-.001.98-.015 1.954-.02 2.929-.975 0-1.944 0-2.919 0-.001-.975-.001-1.949-.02-2.924-.975-.001-1.954-.02-2.929-.029 0-.97 0-1.94 0-2.914.975-.001 1.949-.015 2.929-.02.005-.98.015-1.954.025-2.929.97 0 1.94 0 2.914 0 .005.975.001 1.954.02 2.929.975.001 1.954.001 2.929.02 0 .97 0 1.945 0 2.914"/></symbol><symbol id="icon-social-instagram" viewBox="0 0 56.7 56.7"><circle cx="28.1" cy="30" r="4.4"/><path d="m33.6 19.2h-11c-1.6 0-3 .5-3.9 1.4-.9.9-1.4 2.3-1.4 3.9v11c0 1.6.5 3 1.5 4 1 .9 2.3 1.4 3.9 1.4h10.9c1.6 0 3-.5 3.9-1.4 1-.9 1.5-2.3 1.5-3.9v-11c0-1.6-.5-2.9-1.4-3.9-1-1-2.3-1.5-4-1.5m-5.5 17.6c-3.8 0-6.8-3.1-6.8-6.8 0-3.8 3.1-6.8 6.8-6.8s6.9 3 6.9 6.8c0 3.8-3.1 6.8-6.9 6.8m7.1-12.3c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6 1.6.7 1.6 1.6-.7 1.6-1.6 1.6"/><path d="m28.3 5.2c-13.6 0-24.6 11-24.6 24.6 0 13.6 11 24.6 24.6 24.6 13.6 0 24.6-11 24.6-24.6.1-13.6-11-24.6-24.6-24.6m13.1 30.4c0 2.3-.8 4.3-2.2 5.7-1.4 1.4-3.4 2.1-5.6 2.1h-10.9c-2.2 0-4.2-.7-5.6-2.1-1.5-1.4-2.2-3.4-2.2-5.7v-11c0-4.6 3.1-7.8 7.8-7.8h11c2.3 0 4.2.8 5.6 2.2 1.4 1.4 2.1 3.3 2.1 5.6v11"/></symbol><symbol id="icon-social-twitter" viewBox="0 0 56.693 56.693"><path d="m28.348 5.157c-13.6 0-24.625 11.03-24.625 24.625 0 13.6 11.03 24.623 24.625 24.623 13.6 0 24.623-11.02 24.623-24.623 0-13.598-11.02-24.625-24.623-24.625m12.404 19.66c.013.266.018.533.018.803 0 8.201-6.242 17.656-17.656 17.656-3.504 0-6.767-1.027-9.513-2.787.486.057.979.086 1.48.086 2.908 0 5.584-.992 7.707-2.656-2.715-.051-5.01-1.846-5.796-4.311.378.074.767.111 1.167.111.566 0 1.114-.074 1.635-.217-2.84-.57-4.979-3.08-4.979-6.084 0-.027 0-.053.0001-.08.836.465 1.793.744 2.811.777-1.666-1.115-2.761-3.01-2.761-5.166 0-1.137.306-2.204.84-3.12 3.061 3.754 7.634 6.225 12.792 6.483-.106-.453-.161-.928-.161-1.414 0-3.426 2.778-6.205 6.206-6.205 1.785 0 3.397.754 4.529 1.959 1.414-.277 2.742-.795 3.941-1.506-.465 1.45-1.448 2.666-2.73 3.433 1.257-.15 2.453-.484 3.565-.977-.83 1.247-1.883 2.34-3.096 3.215"/></symbol><symbol id="icon-thumb" viewBox="0 0 24 24"><path d="M1,21H5V9H1ZM23,10a2.006,2.006,0,0,0-2-2H14.69l.95-4.57.03-.32a1.505,1.505,0,0,0-.44-1.06L14.17,1,7.59,7.59A1.955,1.955,0,0,0,7,9V19a2.006,2.006,0,0,0,2,2h9a1.987,1.987,0,0,0,1.84-1.22l3.02-7.05A1.976,1.976,0,0,0,23,12Z"/></symbol><symbol id="icon-translate" viewBox="0 0 24 24"><path d="M12.87,15.07l-2.54-2.51.03-.03A17.519,17.519,0,0,0,14.07,6H17V4H10V2H8V4H1V5.99H12.17A15.713,15.713,0,0,1,9,11.35,15.645,15.645,0,0,1,6.69,8h-2a17.562,17.562,0,0,0,2.98,4.56L2.58,17.58,4,19l5-5,3.11,3.11.76-2.04ZM18.5,10h-2L12,22h2l1.12-3h4.75L21,22h2Zm-2.62,7,1.62-4.33L19.12,17H15.88Z"/></symbol><symbol id="icon-view_listing" viewBox="0 0 24 24"><path d="M4,5V18H21V5ZM14,7v3.5H11V7ZM6,7H9v3.5H6Zm0,9V12.5H9V16Zm5,0V12.5h3V16Zm8,0H16V12.5h3Zm-3-5.5V7h3v3.5Z"/></symbol><symbol id="icon-view_map" viewBox="0 0 24 24"><path d="M20.5,3l-.16.03L15,5.1,9,3,3.36,4.9A.5.5,0,0,0,3,5.38V20.5a.5.5,0,0,0,.5.5l.16-.03L9,18.9,15,21l5.64-1.9a.5.5,0,0,0,.36-.48V3.5A.5.5,0,0,0,20.5,3ZM10,5.47l4,1.4V18.53l-4-1.4ZM5,6.46,8,5.45v11.7L5,18.31ZM19,17.54l-3,1.01V6.86L19,5.7Z"/></symbol><symbol id="icon-warning" viewBox="0 0 22 19"><path d="m1 21h22l-11-19m1 16h-2v-2h2m0-2h-2v-4h2" transform="translate(-1-2)"/></symbol></svg> </div>
+<aside class="__sidebar">
+    <div class="content content--lg">
+        <div class="content-row flex-align_items--center">
+            <div class="content-col col-1">
+                <div class="__logo"><img src="./../assets/svg/partials/logo.svg"></div>
+            </div>
+            <div class="content-col col-11">
+                <ul class="__navigation">
+                    <li class="">
+                        <a href="./index.html">Documentation</a>
+                    </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--1.1" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-colorpalette">
+                                                Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-brand">
+                                                Brand Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-ui">
+                                                UI Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.1.3" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-colorpalette-text">
+                                                Text Colors
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-typography">
+                                                Typography
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-headings">
+                                                Headings
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.2.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-typography-text-box">
+                                                Text-box
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.3" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-cta">
+                                                CTA
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.3.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-cta-links">
+                                                Links
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.3.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-cta-buttons">
+                                                Buttons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.4" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-icons">
+                                                Icons
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.4.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-icons-css">
+                                                CSS styles
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.4.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-icons-svg">
+                                                SVG
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-grid">
+                                                Grid
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-grid-breakpoints">
+                                                Breakpoints
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-grid-classes">
+                                                Column classes
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.5.3" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-grid-examples">
+                                                Grid examples
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.6" data-depth="2">
+                                            <a href="section-styleguide.html#styleguide-forms">
+                                                Forms
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.6.1" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-forms-inputs">
+                                                Inputs
+                                            </a>
+                                        </li>
+                                        <li class="__navigation-item __navigation-item--1.6.2" data-depth="3">
+                                            <a href="section-styleguide.html#styleguide-forms-columns">
+                                                Columns
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="__navigation-item __navigation-item--1">
+                                <ul class="__navigation-child">
+                                        <li class="__navigation-item __navigation-item--2.1" data-depth="2">
+                                            <a href="section-vue.html#vue-documentation">
+                                                JS Documentation
+                                            </a>
+                                        </li>
+                                </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</aside>
+
+<main class="__main" id="js-app">
+
+    <div class="content content--lg">
+        <div class="content-row">
+            <div class="content-col col-12">
+
+                    <section id="styleguide-colorpalette-text" class="__block __block--3">
+
+                        <h3 class="__h3">Text Colors</h3>
+
+                            <small class="__file">
+                                Source: <code>../src/sass/abstracts/_colors.scss</code>, line 108
+                            </small>
+
+                            <span class="__description">
+                                <p>Description:
+You can use all font/bg colors in the frontend with following CSS Classes: .color-font-text-01 or .color-bg-text-01</p>
+
+                            </span>
+
+                            <div class="__rendered">
+                                    <div class="__rendered-example">
+                                          <div class="content-row">
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-01">$text-01</div>
+      <ul class="swatch-details">
+          <li>#FFFFFF</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-02">$text-02</div>
+      <ul class="swatch-details">
+          <li>#F5F5F5</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-03">$text-03</div>
+      <ul class="swatch-details">
+          <li>#A8A9AD</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-04">$text-04</div>
+      <ul class="swatch-details">
+          <li>#53545D</li>
+      </ul>
+    </div>
+    <div class="content-col col-2">
+      <div class="swatch-preview color-font-text-05">$text-05</div>
+      <ul class="swatch-details">
+          <li>#212121</li>
+      </ul>
+    </div>
+  </div>
+                                    </div>
+                            </div>
+                                <pre class="prettyprint linenums lang-html language-html"><button class="__show-markup" type="button">SHOW CODE
+                                </button><div style="display:none;" class="code"><code data-language="html">  &lt;div class&#x3D;&quot;content-row&quot;&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;swatch-preview color-font-text-01&quot;&gt;$text-01&lt;/div&gt;
+      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
+          &lt;li&gt;#FFFFFF&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;swatch-preview color-font-text-02&quot;&gt;$text-02&lt;/div&gt;
+      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
+          &lt;li&gt;#F5F5F5&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;swatch-preview color-font-text-03&quot;&gt;$text-03&lt;/div&gt;
+      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
+          &lt;li&gt;#A8A9AD&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;swatch-preview color-font-text-04&quot;&gt;$text-04&lt;/div&gt;
+      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
+          &lt;li&gt;#53545D&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;content-col col-2&quot;&gt;
+      &lt;div class&#x3D;&quot;swatch-preview color-font-text-05&quot;&gt;$text-05&lt;/div&gt;
+      &lt;ul class&#x3D;&quot;swatch-details&quot;&gt;
+          &lt;li&gt;#212121&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code>
+                                </div></pre>
+                    </section>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<footer class="__footer"></footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+<style> :not(pre)>code[class*=language-] { padding: 0; border-radius: 0; white-space: pre; } </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+<script>
+    $(document).on('click', 'a[href*="#"]', function() {
+        setTimeout(() => {
+            var st = $(window).scrollTop()
+            $(window).scrollTop(st - 130)
+        }, 0);
+    });
+    let indexes = [];
+    $('.__navigation-child [data-depth="2"]').each(function(){
+        var _this = $(this);
+        indexes.push(_this.index());
+        if(_this.next().attr('data-depth') == 3){
+            _this.append('<div class="__dropdown"></div>')
+
+            var thisClass = _this.attr('class');
+
+            var _allNext = _this.nextAll('[class*="'+thisClass+'"]');
+            $('div', _this).append(_allNext)
+        }
+    })
+    $('.__show-markup').click(function(){
+        $(this).closest('pre').find('.code').slideToggle(300);
+    })
+    $('[data-markup="hide"]').closest('.__block').find('.prettyprint').hide();
+    $('.__block--1').remove()
+</script>
+</body>
+</html>
