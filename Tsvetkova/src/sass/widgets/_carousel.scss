@@ -75,7 +75,7 @@
         color: $white;
         align-self: flex-end;
         font-weight: 400;
-        font-size: 48px;
+        font-size: 3*$font-md;
         bottom: 10%;
         padding: 40px 0;
         &:before {
@@ -89,7 +89,7 @@
         }
       }
       .projects-carousel & {
-        font-size: 20px;
+        font-size: $font-lg;
         font-weight: 400;
         color: $text;
         margin-top: 20px;

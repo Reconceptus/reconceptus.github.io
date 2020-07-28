@@ -15,10 +15,11 @@ $padding-xxl: 8*$padding;   // 128px
 $gutter: 12px;              // 12px
 $gutter-x2: 2*$gutter;      // 24px
 
-$font: 16px;
-$font-sm: 0.5*$font;        // 8px
-$font-md: 1.5*$font;        // 24px
-$font-lg: 2*$font;          // 32px
+$font: 14px;                // 14px
+$font-sm: $font - 2px;      // 12px
+$font-md: $font + 2px;      // 16px
+$font-lg: $font + 4px;      // 18px
+$font-xl: $font + 6px;      // 20px
 
 $content-lg: 1800px;
 

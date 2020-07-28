@@ -9,7 +9,7 @@
   }
   &_question {
     position:relative;
-    font-size: 20px;
+    font-size: $font-lg;
     font-weight: 600;
     line-height: (32/20);
     padding: 40px calc(100% / 6) 40px 0;
@@ -21,9 +21,9 @@
       counter-increment: item;
       right: 100%;
       position: absolute;
-      top: 56px;
+      top: 52px;
       transform: translateY(-50%);
-      font-size: $font-lg;
+      font-size: 2*$font;
       color: $link;
       margin-right: $gutter-x2;
     }

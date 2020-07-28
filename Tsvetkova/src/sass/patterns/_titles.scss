@@ -64,7 +64,7 @@ Styleguide styleguide.typography.headings
 //
 .title {
   &--lg {
-    font-size: 48px;
+    font-size: 3*$font-md;
     line-height: (56/48);
     font-weight: 500;
     margin-bottom: 80px;

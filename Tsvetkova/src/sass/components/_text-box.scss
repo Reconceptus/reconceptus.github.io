@@ -73,7 +73,7 @@ Styleguide styleguide.typography.text-box
  */
 
 .text-box {
-  font-size: 20px;
+  font-size: $font-lg;
   line-height: (32/20);
   h1 {
     //@extend .h1;
@@ -89,7 +89,7 @@ Styleguide styleguide.typography.text-box
     //font-weight: 300;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
-    font-size: 32px;
+    font-size: 2*$font-md;
     line-height: (48/32);
     font-weight: 400;
   }
@@ -99,7 +99,7 @@ Styleguide styleguide.typography.text-box
     //font-weight: 400;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
-    font-size: 24px;
+    font-size: 2*$font-sm;
     line-height: (40/24);
     font-weight: 400;
   }
@@ -208,7 +208,7 @@ Styleguide styleguide.typography.text-box
       margin: $padding-xl 0;
     }
     @include mq(mobile_sm, tablet_sm) {
-      font-size: 30px;
+      font-size: $font-lg;
       margin: $padding-xl 0;
       padding-left: $gutter;
     }
