@@ -72,106 +72,41 @@ Styleguide styleguide.cta.buttons
   transition: all 0.18s;
   font-weight: 500;
   cursor: pointer;
-  &--orange {
-    color: $white;
-    background-color: $link;
+  text-transform: uppercase;
+  &--light {
+    color: $text;
     @include hover(){
-      background-color: darken($link, 8);
-    }
-    &_border {
-      border: 1px solid $link;
-      background: $white;
-      color: $link;
-      @include hover(){
-        border-color: darken($link, 8);
-        color: darken($link, 8);
-      }
-    }
-  }
-  &--white {
-    background-color: $white;
-    color: $link;
-    @include hover(){
-      color: darken($link, 8);
-    }
-  }
-  &--grey {
-    background-color: $text-01;
-    color: $white;
-    @include hover(){
-      background-color: darken($text-01, 8);
-    }
-  }
-  &--violet {
-    background-color: $ui-01;
-    color: $white;
-    @include hover(){
-      background-color: darken($ui-01, 8);
+      color: $white;
+      background-color: $text;
     }
   }
   &--xs {
-    font-size: 16px;
-    height: 40px;
-    font-weight: 500;
-    padding: 0 24px;
+
   }
   &--sm {
-    font-size: 16px;
-    font-weight: 500;
-    height: 48px;
-    padding: 0 32px;
+
   }
   &--md {
     font-size: 16px;
-    font-weight: 500;
     height: 56px;
-    padding: 0 32px;
+    padding: 0 60px;
+    letter-spacing: 2px;
   }
   &--lg {
-    font-size: 24px;
-    font-weight: 500;
-    height: 72px;
-    padding: 0 40px;
+
   }
   &--full {
     width: 100%;
   }
   &--rounded {
-    border-radius: $padding-xl;
+
+  }
+  &--bordered {
+    border: 1px solid currentColor;
   }
 
 
 }
 
-a#toggle-translate {
-  z-index: 20;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  @include resetBtn;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.18s;
-  cursor: pointer;
-  font-size: 16px;
-  height: 40px;
-  font-weight: 500;
-  padding: 0 24px;
-  border: 1px solid $link;
-  background: $white;
-  color: $link;
-  @include hover(){
-    border-color: darken($link, 8);
-    color: darken($link, 8);
-  }
-  &.active {
-    color: $white;
-    background-color: $link;
-    @include hover(){
-      color: $white;
-      background-color: darken($link, 8);
-    }
-  }
-}
+
 

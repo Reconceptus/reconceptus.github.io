@@ -66,6 +66,17 @@ $header-height: 120px;
   height: $header-height;
   display: flex;
   background-color: $bg;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: transform 0.2s ease, box-shadow 0.1s ease 0.1s;
+  box-shadow: 0 0 4px 0 rgba($black,0.3);
+  .simple-header & {
+    transform: translateY(-105%);
+    box-shadow: none;
+  }
   &_box {
     width: 100%;
     display: flex;

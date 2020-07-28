@@ -10,18 +10,33 @@ let scrollTop, winWidth, winHeight;
 
 // functions
 window.fn = {
-    win: require('./modules/win'),
+    headerScroll: require('./modules/header-scroll'),
+    expander: require('./modules/expander'),
     introCarousel: require('./modules/intro-carousel'),
+    projectsCarousel: require('./modules/projects-carousel'),
+    bannersCarousel: require('./modules/banners-carousel'),
 };
 
 const modules = [
     {
-        selector: 'main',
-        name: 'win',
+        selector: '.header',
+        name: 'headerScroll',
+    },
+    {
+        selector: '.expander',
+        name: 'expander',
     },
     {
         selector: '.intro-carousel',
         name: 'introCarousel',
+    },
+    {
+        selector: '.projects-carousel',
+        name: 'projectsCarousel',
+    },
+    {
+        selector: '.banners-carousel',
+        name: 'bannersCarousel',
     },
 ];
 

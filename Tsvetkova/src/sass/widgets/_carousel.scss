@@ -5,43 +5,95 @@
   &-cell {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
     display: flex;
+    .intro-carousel & {
+      width: 100%;
+      height: 100%;
+    }
+    .projects-carousel & {
+      width: 25%;
+      margin-right: $gutter-x2;
+    }
+    .banners-carousel & {
+      height: 100%;
+      align-items: center;
+      overflow: initial;
+    }
+    &_link {
+      display: block;
+      width: 100%;
+      .banners-carousel & {
+        margin: 0 28px;
+        display: inline-flex;
+        width: auto;
+        transition: all 2.5s;
+        pointer-events: all;
+      }
+    }
+    &_figure {
+      .projects-carousel & {
+        width: 100%;
+        height: 0;
+        padding-bottom: 67%;
+        position: relative;
+        overflow: hidden;
+      }
+    }
     &_img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      @include fullBlock;
-      &:before {
-        content: "";
+      display: block;
+      .intro-carousel &,
+      .projects-carousel & {
         position: absolute;
         top: 0;
         left: 0;
         @include fullBlock;
-        background-color: rgba($black, 0.36);
+      }
+      .intro-carousel & {
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include fullBlock;
+          background-color: rgba($black, 0.36);
+        }
       }
       img {
-        @include imgFit;
+        .intro-carousel &,
+        .projects-carousel & {
+          @include imgFit;
+        }
+        .banners-carousel & {
+          display: block;
+        }
       }
     }
     &_title {
-      position: relative;
-      color: $white;
-      align-self: flex-end;
-      font-weight: 400;
-      font-size: 48px;
-      bottom: 10%;
-      padding: 40px 0;
-      &:before {
-        content: "";
-        top: 0;
-        left: 0;
-        position: absolute;
-        height: 8px;
-        width: calc(100% / 6);
-        background-color: currentColor;
+      .intro-carousel & {
+        position: relative;
+        color: $white;
+        align-self: flex-end;
+        font-weight: 400;
+        font-size: 48px;
+        bottom: 10%;
+        padding: 40px 0;
+        &:before {
+          content: "";
+          top: 0;
+          left: 0;
+          position: absolute;
+          height: 8px;
+          width: calc(100% / 6);
+          background-color: currentColor;
+        }
       }
+      .projects-carousel & {
+        font-size: 20px;
+        font-weight: 400;
+        color: $text;
+        margin-top: 20px;
+      }
+
     }
   }
 }
@@ -78,3 +130,119 @@
   }
 }
 
+.projects-carousel {
+  max-width: 100%;
+  margin: 0 auto;
+  .flickity-viewport {
+    overflow: initial;
+  }
+  .flickity-button {
+    background-color: $text;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.25s;
+    @include mq($from: $maxWidth){
+      width: 120px;
+      height: 120px;
+      top: calc(276px / 2);
+    }
+    @include mq($until: $maxWidth){
+      width: 6vw;
+      height: 6vw;
+      top: 7.4vw;
+    }
+    &:active {
+      opacity: 1;
+    }
+    &:disabled {
+      opacity: 0.9;
+      pointer-events: auto;
+    }
+    &.next {
+      left: 0;
+      right: auto;
+      transform: translate(-50%, -50%);
+      margin-left: -1*$gutter;
+      @include hover(){
+        &:not(:disabled) {
+          transform: translate(-50%, -50%) rotate(45deg);
+          .flickity-button-icon {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    &.previous {
+      display: none;
+    }
+    .flickity-button-icon {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      fill: $white;
+      transition: all 0.25s;
+      @include mq($from: $maxWidth){
+        width: 24px;
+        height: 24px;
+      }
+      @include mq($until: $maxWidth){
+        width: 20%;
+        height: 20%;
+      }
+    }
+  }
+}
+
+.banners-carousel {
+  height: 152px;
+  background-color: $white;
+  &:not(.flickity-enabled){
+    display: inline-flex;
+  }
+  .static-banners & {
+    background-color: transparent;
+  }
+  .flickity-viewport {
+    display: flex;
+    pointer-events: none;
+  }
+  .flickity-slider {
+    transform: none !important;
+    display: flex;
+    position: static;
+    width: auto;
+    background-color: $white;
+    padding: 0 27px;
+  }
+  .carousel-cell {
+    position: static !important;
+    .static-banners & {
+      order: 0 !important;
+      margin: 0 !important;
+      .carousel-cell_link {
+        opacity: 1 !important;
+      }
+    }
+    &.is-selected {
+      transition: margin 2s ease-in-out 1s;
+      .pointered & {
+        transition: margin 0.3s;
+      }
+      .carousel-cell_link {
+        opacity: 0;
+        .paused & {
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+      &[style*='margin-left: 0px']{
+        .carousel-cell_link {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}

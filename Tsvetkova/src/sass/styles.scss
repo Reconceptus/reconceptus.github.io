@@ -19,9 +19,21 @@
 @import "layout/footer";
 
 //  patterns
+@import "patterns/titles";
+@import "patterns/buttons";
+@import "patterns/icons";
 
 //  elements
 @import "elements/main-banner";
+@import "elements/faq";
+
+//  components
+@import "components/text-box";
+@import "components/cta";
+@import "components/expander";
+
+//  pages
+@import "pages/home";
 
 //  widgets
 @import "widgets/carousel";

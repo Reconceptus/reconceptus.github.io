@@ -73,10 +73,10 @@ Styleguide styleguide.typography.text-box
  */
 
 .text-box {
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 20px;
+  line-height: (32/20);
   h1 {
-    @extend .h1;
+    //@extend .h1;
     color: $link;
     margin-top: $padding-md;
     margin-bottom: $padding-md;
@@ -107,7 +107,7 @@ Styleguide styleguide.typography.text-box
     min-height: 24px;
     &:not(:last-child){
       @include mq($from: mobile_sm) {
-        margin-bottom: $padding-md;
+        margin-bottom: $gutter-x2;
       }
       @include mq($until: mobile_sm) {
         margin-bottom: $gutter-x2;

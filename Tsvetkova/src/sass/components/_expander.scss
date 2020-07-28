@@ -1,0 +1,14 @@
+.expander {
+  &:not(.expanded){
+    .expander-box {
+      max-height: 0 !important;
+    }
+  }
+  &-box {
+    transition: all 0.3s;
+    overflow: hidden;
+    &_inner {
+
+    }
+  }
+}
