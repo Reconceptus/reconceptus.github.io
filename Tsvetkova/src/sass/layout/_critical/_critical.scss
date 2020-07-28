@@ -112,7 +112,7 @@ $header-height: 120px;
   padding-top: $header-height;
   width: 100%;
   flex: 1 0 auto;
-  background-color: $bg;
+
 }
 .wrapper {
   display: flex;
@@ -120,11 +120,12 @@ $header-height: 120px;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  background-color: $bg;
 }
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  //height: 100vh;
   .wrapper & {
     width: 100%;
     padding: 0;
@@ -135,6 +136,8 @@ $header-height: 120px;
 
 .footer {
   flex-shrink: 0;
+}
+.footer-box {
   background-color: $text-01;
   color: $white;
 }
@@ -158,6 +161,7 @@ $header-height: 120px;
   justify-content: flex-end;
   align-items: flex-end;
   font-size: 12px;
+  padding: 0 2*$gutter-x2;
   a {
     color: inherit;
   }

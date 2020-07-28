@@ -9,6 +9,7 @@
     .intro-carousel & {
       width: 100%;
       height: 100%;
+      display: block;
     }
     .projects-carousel & {
       width: 25%;
@@ -109,12 +110,8 @@
     left: 0;
     right: 0;
     display: flex;
-    @include mq($from: $maxWidth){
-      padding: 0 $gutter-x2;
-    }
-    @include mq($until: $maxWidth){
-      padding: 0 2*$gutter-x2;
-    }
+    padding: 0 $gutter;
+
     .dot {
       width: 8px;
       height: 8px;

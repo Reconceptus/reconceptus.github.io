@@ -1,6 +1,9 @@
-.footer {
+.footer-box {
   position: relative;
   padding: 160px 0 85px;
+  background-repeat: no-repeat;
+  background-image: url("../svg/bg/crumbs-footer.svg");
+  background-position: calc(100% - 90px) bottom;
 }
 
 .footer-inner {
