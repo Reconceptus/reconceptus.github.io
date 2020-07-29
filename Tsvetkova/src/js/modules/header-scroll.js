@@ -9,6 +9,8 @@ const headerScroll = {
         delta: 5,
     },
     init() {
+        if (!document.documentElement.classList.contains('desktop')) return false;
+
         setInterval(() => {
             if (this.data.isScroll) {
                 this.hasScrolled();

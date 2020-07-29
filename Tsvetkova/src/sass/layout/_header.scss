@@ -3,22 +3,11 @@
 }
 
 .header-contact {
-  height: 56px;
-  background-color: $white;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 0 4px 0 rgba($black,0.3);
-  &_list {
-    display: flex;
-    align-items: center;
+
+  @include mq($from: tablet_xl){
+
   }
-  &_item {
-    margin-right: $padding-md;
-  }
+
   &_link {
     display: inline-flex;
     align-items: center;

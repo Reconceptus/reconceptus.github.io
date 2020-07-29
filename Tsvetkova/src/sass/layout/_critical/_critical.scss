@@ -29,6 +29,7 @@ svg {
 // ====================== header ======================
 
 $header-height: 120px;
+$header-height-mobile: 56px;
 .header {
   position: fixed;
   left: 0;
@@ -41,6 +42,13 @@ $header-height: 120px;
 }
 .header-title {
   display: flex;
+  @include mq($until: tablet_xl){
+    position: absolute;
+    top: $header-height-mobile/2;
+    transform: translateY(-50%);
+    left: $gutter-x2;
+    z-index: 1;
+  }
   &_inner {
     height: 48px;
     display: flex;
@@ -49,13 +57,21 @@ $header-height: 120px;
     padding-left: $gutter-x2;
     align-self: flex-end;
     margin-bottom: $padding;
+    @include mq($until: tablet_xl){
+      display: none;
+    }
   }
 }
 .header-logo {
-  width: 256px;
   font-size: 0;
-  margin-right: $gutter-x2;
   align-self: center;
+  @include mq($from: tablet_xl){
+    width: 256px;
+    margin-right: $gutter-x2;
+  }
+  @include mq($until: tablet_xl){
+    width: 140px;
+  }
   img {
     display: block;
     width: 100%;
@@ -63,19 +79,26 @@ $header-height: 120px;
   }
 }
 .header-nav {
-  height: $header-height;
-  display: flex;
-  background-color: $bg;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  transition: transform 0.2s ease, box-shadow 0.1s ease 0.1s;
-  box-shadow: 0 0 4px 0 rgba($black,0.3);
-  .simple-header & {
-    transform: translateY(-105%);
-    box-shadow: none;
+  @include mq($from: tablet_xl){
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 0 4px 0 rgba($black,0.3);
+    background-color: $bg;
+    height: $header-height;
+    transition: transform 0.2s ease, box-shadow 0.1s ease 0.1s;
+    .simple-header & {
+      transform: translateY(-105%);
+      box-shadow: none;
+    }
+  }
+  @include mq($until: tablet_xl){
+    //display: none;
+    //height: 100vh;
+    //background-color: $brand-01;
   }
   &_box {
     width: 100%;
@@ -86,10 +109,50 @@ $header-height: 120px;
   }
 }
 
+.header-contact {
+  height: $header-height-mobile;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 4px 0 rgba($black,0.3);
+  @include mq($until: tablet_xl){
+
+  }
+  &_list {
+    display: flex;
+    align-items: center;
+    @include mq($until: tablet_xl){
+      justify-content: flex-end;
+    }
+  }
+  &_item {
+    @include mq($from: tablet_xl){
+      margin-right: $padding-md;
+    }
+    @include mq($until: tablet_xl){
+      margin-left: $padding-md;
+    }
+  }
+}
+
 // ====================== nav ======================
 
 .nav {
   display: flex;
+  @include mq($until: tablet_xl){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: $brand-01;
+    display: none;
+  }
   ul {
     display: flex;
     align-items: flex-end;
@@ -109,10 +172,14 @@ $header-height: 120px;
 // ====================== main ======================
 
 .main {
-  padding-top: $header-height;
   width: 100%;
   flex: 1 0 auto;
-
+  @include mq($from: tablet_xl){
+    padding-top: $header-height;
+  }
+  @include mq($until: tablet_xl){
+    padding-top: $header-height-mobile;
+  }
 }
 .wrapper {
   display: flex;
