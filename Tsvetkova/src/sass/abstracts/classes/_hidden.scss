@@ -1,0 +1,21 @@
+
+.desktop-hidden {
+    @include mq($from: tablet_xl) {
+        display: none !important;
+    }
+}
+.tablet-hidden {
+    @include mq($until: tablet_xl) {
+        display: none !important;
+    }
+}
+.mobile-visible {
+    @include mq($from: tablet_sm) {
+        display: none !important;
+    }
+}
+.mobile-hidden {
+    @include mq($until: tablet_sm) {
+        display: none !important;
+    }
+}

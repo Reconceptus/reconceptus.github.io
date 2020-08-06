@@ -64,19 +64,22 @@ Styleguide styleguide.typography.headings
 //
 .title {
   &--lg {
-    font-size: 3*$font-md;
+
     line-height: (56/48);
     font-weight: 500;
-    margin-bottom: 80px;
-    //@include mq($from: desktop_sm) {
-    //  font-size: 80px;
-    //}
-    //@include mq(tablet_sm, desktop_sm) {
-    //  font-size: 56px;
-    //}
-    //@include mq($until: tablet_sm) {
-    //  font-size: 40px;
-    //}
+
+    @include mq($from: tablet_xl){
+      font-size: 3*$font-md;
+      margin-bottom: 80px;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      font-size: 2*$font-md;
+      margin-bottom: 48px;
+    }
+    @include mq($until: mobile_xl){
+      font-size: 2*$font-sm;
+      margin-bottom: 32px;
+    }
   }
   &--sub {
     margin-top: $padding-md;

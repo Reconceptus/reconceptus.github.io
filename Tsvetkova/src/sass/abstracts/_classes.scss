@@ -62,12 +62,21 @@ Styleguide styleguide.grid.classes
 
 $maxWidth: $content-lg + 2*$gutter-x2;
 
+@import "classes/grid";
+@import "classes/flex";
+@import "classes/hidden";
+
 .content {
   margin: 0 auto;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  padding: 0 $gutter-x2;
+  @include mq($from: mobile_xl){
+    padding: 0 $gutter-x2;
+  }
+  @include mq($until: mobile_xl){
+    padding: 0 16px 0 $gutter-x2;
+  }
   &--lg {
     max-width: $maxWidth;
   }
@@ -90,64 +99,6 @@ $maxWidth: $content-lg + 2*$gutter-x2;
   }
 }
 
-@include respond-from(ALL) {
-  @include grid-generator(false, 12);
-  @include pull-generator(false, 12);
-}
-@include respond-from(wd) {
-  @include grid-generator(wd, 12);
-  @include pull-generator(wd, 12);
-}
-@include respond-from(xl) {
-  @include grid-generator(xl, 12);
-  @include pull-generator(xl, 12);
-}
-@include respond-from(lg) {
-  @include grid-generator(lg, 12);
-  @include pull-generator(lg, 12);
-}
-@include respond-from(md) {
-  @include grid-generator(md, 12);
-  @include pull-generator(md, 12);
-}
-@include respond-from(sm) {
-  @include grid-generator(sm, 12);
-  @include pull-generator(sm, 12);
-}
-@include respond-from(xs) {
-  @include grid-generator(xs, 12);
-  @include pull-generator(xs, 12);
-}
-@include respond-from(xx) {
-  @include grid-generator(xx, 12);
-  @include pull-generator(xx, 12);
-}
-
-.flex {
-  &-box {
-    display: flex;
-  }
-  &-align_items {
-    &--center {
-      align-items: center;
-    }
-  }
-  &-justify {
-    &--right {
-      justify-content: flex-end;
-    }
-    &--center {
-      justify-content: center;
-    }
-    &--space {
-      justify-content: space-between;
-    }
-  }
-  &-wrap {
-    flex-wrap: wrap;
-  }
-}
-
 .ovh {
   overflow: hidden;
 }
@@ -165,25 +116,4 @@ $maxWidth: $content-lg + 2*$gutter-x2;
 
 .hide {
   display: none !important;
-}
-
-.desktop-hidden {
-  @include mq($from: tablet_xl) {
-    display: none !important;
-  }
-}
-.tablet-hidden {
-  @include mq($until: tablet_xl) {
-    display: none !important;
-  }
-}
-.mobile-visible {
-  @include mq($from: tablet_sm) {
-    display: none !important;
-  }
-}
-.mobile-hidden {
-  @include mq($until: tablet_sm) {
-    display: none !important;
-  }
 }

@@ -36,7 +36,7 @@
                         <div class="header-title">
                             <a href="/index.html" class="header-logo">
                                 <span>Цветкова</span>
-                                <img src="assets/svg/partials/logo.svg" alt="Цветкова">
+                                <svg><use xlink:href="#icon-logo"/></svg>
                             </a>
                             <div class="header-title_inner">студия уюта</div>
                         </div>
@@ -53,20 +53,24 @@
             </div>
             <div class="header-contact">
                 <div class="content content--lg">
-                    <ul class="header-contact_list">
-                        <li class="header-contact_item">
-                            <a href="mailto:mail@mail.ru" class="header-contact_link">
-                                <i class="icon icon--md"><svg><use xlink:href="#icon-mail"/></svg></i>
-                                напишите нам
-                            </a>
-                        </li>
-                        <li class="header-contact_item">
-                            <a href="tel:79275065926" class="header-contact_link">
-                                <i class="icon icon--md"><svg><use xlink:href="#icon-phone"/></svg></i>
-                                +7 927 506-59-26
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="header-contact_inner">
+                        <ul class="header-contact_list">
+                            <li class="header-contact_item">
+                                <a href="mailto:mail@mail.ru" class="header-contact_link">
+                                    <i class="icon icon--md"><svg><use xlink:href="#icon-mail"/></svg></i>
+                                    <span class="text">напишите нам</span>
+                                </a>
+                            </li>
+                            <li class="header-contact_item">
+                                <a href="tel:79275065926" class="header-contact_link">
+                                    <i class="icon icon--md"><svg><use xlink:href="#icon-phone"/></svg></i>
+                                    <span class="text">+7 927 506-59-26</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <button class="burger-button" id="burger" type="button"><span></span></button>
+                        <div class="header-bg" id="closeMenu"></div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -85,7 +89,7 @@
                                     <img src="assets/images/slider/home-slider01.jpg" alt="">
                                 </picture>
                                 <div class="content-row h100">
-                                    <div class="content-col col-pull-2 col-6 flex-box">
+                                    <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-6 col-lg-7 col-md-9 col-sm-10 col-xs-12 flex-box">
                                         <h3 class="carousel-cell_title">Идеальный текстиль для вашего дома и бизнеса</h3>
                                     </div>
                                 </div>
@@ -97,7 +101,7 @@
                                     <img src="assets/images/slider/home-slider02.jpg" alt="">
                                 </picture>
                                 <div class="content-row h100">
-                                    <div class="content-col col-pull-2 col-6 flex-box">
+                                    <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-6 col-lg-7 col-md-9 col-sm-10 col-xs-12 flex-box">
                                         <h3 class="carousel-cell_title">Раскроем потенциал вашего интерьера правильным текстилем </h3>
                                     </div>
                                 </div>
@@ -109,10 +113,11 @@
                                     <img src="assets/images/slider/home-slider03.jpg" alt="">
                                 </picture>
                                 <div class="content-row h100">
-                                    <div class="content-col col-pull-2 col-6 flex-box">
+                                    <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-6 col-lg-7 col-md-9 col-sm-10 col-xs-12 flex-box">
                                         <h3 class="carousel-cell_title">Вдохнём уют в коммерческое пространство</h3>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,7 +127,7 @@
             <section class="home-intro">
                 <div class="content content--lg">
                     <div class="content-row">
-                        <div class="content-col col-pull-2 col-5">
+                        <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-5 col-lg-7 col-md-9 col-sm-10 col-xs-12">
                             <div class="text-box">
                                 <p>Индивидуальный пошив в Волгограде: современные шторы, римские шторы, моторизированные шторы и жалюзи, шторы для высоких окон, покрывала, подушки, мебельные чехлы, аксессуары, постельное белье. Весь домашний текстиль от эскиза до монтажа.</p>
                                 <p>Выезжаем на замеры и монтаж по всей Волгоградской области. </p>
@@ -135,7 +140,7 @@
             <div class="home-projects-carousel">
                 <div class="content content--lg">
                     <div class="content-row">
-                        <div class="content-col col-pull-1 col-11">
+                        <div class="content-col col-pull-1 col-pull-xs-0 col-11 col-xs-12">
                             <section class="projects-carousel carousel">
                                 <div class="carousel-cell">
                                     <a href="/project.html" class="carousel-cell_link">
@@ -270,14 +275,14 @@
                     </div>
                     <div class="content content--lg">
                         <div class="content-row">
-                            <div class="content-col col-pull-2 col-10">
+                            <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-10 col-lg-11 col-xs-12">
                                 <h2 class="title--lg">Как мы работаем</h2>
                             </div>
                         </div>
                     </div>
                     <div class="content content--lg">
                         <div class="content-row">
-                            <div class="content-col col-pull-1 col-7">
+                            <div class="content-col col-pull-1 col-pull-xs-0 col-7 col-md-9 col-sm-10 col-xs-12">
                                 <div class="faq-box">
                                     <div class="faq-box_item expander expanded">
                                         <div class="faq-box_question expander-toggle">Замер окон и окружающего пространства</div>
@@ -307,7 +312,7 @@
                 <div class="home-about_advantages">
                     <div class="content content--lg">
                         <div class="content-row">
-                            <div class="content-col col-pull-2 col-5">
+                            <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-5 col-lg-7 col-md-9 col-sm-10 col-xs-12">
                                 <div class="home-about_advantages-item">
                                     <h3 class="title--lg">Любой масштаб проекта </h3>
                                     <div class="text-box">
@@ -332,7 +337,7 @@
             <div class="home-banners-carousel">
                 <div class="content content--lg">
                     <div class="content-row">
-                        <div class="content-col col-pull-1 col-11 banners-carousel_wrapper">
+                        <div class="content-col col-pull-1 col-pull-xs-0 col-11 col-12 banners-carousel_wrapper">
                             <div class="home-banners-carousel_inner">
                                 <div class="banners-carousel carousel">
                                     <div class="carousel-cell">
@@ -447,8 +452,8 @@
         <footer class="footer" id="footer">
             <div class="content content--lg">
                 <div class="footer-box">
-                    <div class="content-row">
-                        <div class="content-col col-pull-2 col-5">
+                    <div class="content-row flex-wrap">
+                        <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-5 col-lg-7 col-md-9 col-sm-10 col-xs-12">
                             <div class="footer-inner">
                                 <a href="/index.html" class="footer-logo icon">
                                     <span>Цветкова</span>
@@ -459,7 +464,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="content-col col-5">
+                        <div class="content-col col-pull-md-1 col-pull-xs-0 col-5 col-lg-4 col-md-11 col-xs-12">
                             <div class="footer-auth">
                                 <p>Сайт создан в <a href="https://reconcept.ru" target="_blank">Reconcept</a></p>
                             </div>

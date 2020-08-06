@@ -1,9 +1,25 @@
+.footer {
+  @include mq($until: mobile_xl){
+    overflow: hidden;
+  }
+}
+
 .footer-box {
   position: relative;
-  padding: 160px 0 85px;
+
   background-repeat: no-repeat;
   background-image: url("../svg/bg/crumbs-footer.svg");
   background-position: calc(100% - 90px) bottom;
+  @include mq($from: tablet_xl){
+    padding: 160px 0 85px;
+  }
+  @include mq(mobile_xl, tablet_xl){
+    padding: 100px 0 40px;
+  }
+  @include mq($until: mobile_xl){
+    padding: 60px 16px 40px;
+    margin: 0 -16px;
+  }
 }
 
 .footer-inner {
@@ -25,9 +41,14 @@
 }
 
 .footer-logo {
-
+  @include mq($until: tablet_sm){
+    width: 180px;
+    height: 180px/$logo-prop;
+  }
 }
 
 .footer-auth {
-
+  @include mq($until: tablet_xl){
+    margin-top: 24px;
+  }
 }

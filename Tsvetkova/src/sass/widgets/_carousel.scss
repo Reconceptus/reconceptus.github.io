@@ -10,10 +10,23 @@
       width: 100%;
       height: 100%;
       display: block;
+      @include mq($until: mobile_xl){
+        padding: 0 16px 0 $gutter-x2;
+      }
     }
     .projects-carousel & {
-      width: 25%;
-      margin-right: $gutter-x2;
+      @include mq($from: tablet_xl){
+        width: 25%;
+        margin-right: $gutter-x2;
+      }
+      @include mq(mobile_xl, tablet_xl){
+        width: 33%;
+        margin-right: $gutter-x2;
+      }
+      @include mq($until: mobile_xl){
+        width: 200px;
+        margin-right: $gutter-x2;
+      }
     }
     .banners-carousel & {
       height: 100%;
@@ -24,11 +37,16 @@
       display: block;
       width: 100%;
       .banners-carousel & {
-        margin: 0 28px;
         display: inline-flex;
         width: auto;
         transition: all 2.5s;
         pointer-events: all;
+        @include mq($from: tablet_xl){
+          margin: 0 28px;
+        }
+        @include mq($until: tablet_xl){
+          margin: 0 4vw;
+        }
       }
     }
     &_figure {
@@ -66,6 +84,10 @@
         }
         .banners-carousel & {
           display: block;
+          @include mq($until: tablet_xl){
+            max-width: 26vw;
+            max-height: 14vw;
+          }
         }
       }
     }
@@ -75,9 +97,18 @@
         color: $white;
         align-self: flex-end;
         font-weight: 400;
-        font-size: 3*$font-md;
+
         bottom: 10%;
         padding: 40px 0;
+        @include mq($from: tablet_xl){
+          font-size: 3*$font-md;
+        }
+        @include mq(mobile_xl, tablet_xl){
+          font-size: 2*$font-md;
+        }
+        @include mq($until: mobile_xl){
+          font-size: $font-xl;
+        }
         &:before {
           content: "";
           top: 0;
@@ -89,10 +120,18 @@
         }
       }
       .projects-carousel & {
-        font-size: $font-lg;
+
         font-weight: 400;
         color: $text;
-        margin-top: 20px;
+
+        @include mq($from: tablet_sm){
+          font-size: $font-lg;
+          margin-top: 20px;
+        }
+        @include mq($until: tablet_sm){
+          font-size: $font-md;
+          margin-top: 12px;
+        }
       }
 
     }
@@ -118,7 +157,15 @@
       background-color: $bg;
       margin: 0 $gutter-x2 0 0;
       &:first-child {
-        margin-left: calc(100% / 6) !important;
+        @include mq($from: desktop_sm){
+          margin-left: calc(100% / 6) !important;
+        }
+        @include mq(mobile_xl, desktop_sm){
+          margin-left: calc(100% / 12) !important;
+        }
+        @include mq($until: mobile_xl){
+          margin-left: 16px !important;
+        }
       }
       &:not(.is-selected) {
         opacity: 0.5;
@@ -143,10 +190,20 @@
       height: 120px;
       top: calc(276px / 2);
     }
-    @include mq($until: $maxWidth){
+    @include mq(tablet_xl, $maxWidth){
       width: 6vw;
       height: 6vw;
       top: 7.4vw;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      width: 6vw;
+      height: 6vw;
+      top: 9.7vw;
+    }
+    @include mq($until: mobile_xl){
+      width: 32px;
+      height: 32px;
+      top: 67px;
     }
     &:active {
       opacity: 1;
@@ -159,7 +216,10 @@
       left: 0;
       right: auto;
       transform: translate(-50%, -50%);
-      margin-left: -1*$gutter;
+      @include mq($from: mobile_xl){
+        margin-left: -1*$gutter;
+      }
+
       @include hover(){
         &:not(:disabled) {
           transform: translate(-50%, -50%) rotate(45deg);
@@ -193,8 +253,13 @@
 }
 
 .banners-carousel {
-  height: 152px;
   background-color: $white;
+  @include mq($from: tablet_xl){
+    height: 152px;
+  }
+  @include mq($until: tablet_xl){
+    height: 20vw;
+  }
   &:not(.flickity-enabled){
     display: inline-flex;
   }

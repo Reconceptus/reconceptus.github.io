@@ -1,7 +1,9 @@
-const headerScroll = {
+const headerEvents = {
     data: {
         el: {
             wrapper: document.getElementById('wrapper'),
+            burger: document.getElementById('burger'),
+            closeMenu: document.getElementById('closeMenu'),
         },
         isScroll: Boolean,
         minScrollTop: 120,
@@ -9,6 +11,8 @@ const headerScroll = {
         delta: 5,
     },
     init() {
+        this.burger();
+
         if (!document.documentElement.classList.contains('desktop')) return false;
 
         setInterval(() => {
@@ -22,14 +26,26 @@ const headerScroll = {
             this.data.isScroll = true;
         });
     },
+    burger() {
+        this.data.el.burger.addEventListener('click', () => {
+            this.data.el.wrapper.classList.add('menu-enabled');
+        });
+        this.data.el.closeMenu.addEventListener('click', () => {
+            this.data.el.wrapper.classList.remove('menu-enabled');
+        });
+    },
     hasScrolled() {
         let scrollTop = window.pageYOffset;
 
         if (Math.abs(this.data.prevScrollTop - scrollTop) <= this.data.delta) return;
 
-        if (scrollTop > this.data.prevScrollTop && scrollTop > this.data.minScrollTop) {
+        if (scrollTop <= this.data.minScrollTop) {
+            this.data.el.wrapper.classList.remove('simple-header', 'less-header');
+        } else if (scrollTop > this.data.prevScrollTop && scrollTop > this.data.minScrollTop) {
             this.data.el.wrapper.classList.add('simple-header');
+            this.data.el.wrapper.classList.add('less-header');
         } else {
+            this.data.el.wrapper.classList.add('less-header');
             this.data.el.wrapper.classList.remove('simple-header');
         }
 
@@ -37,4 +53,4 @@ const headerScroll = {
     },
 };
 
-module.exports = headerScroll;
+module.exports = headerEvents;

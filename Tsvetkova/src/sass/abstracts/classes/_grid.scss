@@ -1,0 +1,32 @@
+@include respond-from(ALL) {
+    @include grid-generator(false, 12);
+    @include pull-generator(false, 12);
+}
+@include respond-from(wd) {
+    @include grid-generator(wd, 12);
+    @include pull-generator(wd, 12);
+}
+@include respond-from(xl) {
+    @include grid-generator(xl, 12);
+    @include pull-generator(xl, 12);
+}
+@include respond-from(lg) {
+    @include grid-generator(lg, 12);
+    @include pull-generator(lg, 12);
+}
+@include respond-from(md) {
+    @include grid-generator(md, 12);
+    @include pull-generator(md, 12);
+}
+@include respond-from(sm) {
+    @include grid-generator(sm, 12);
+    @include pull-generator(sm, 12);
+}
+@include respond-from(xs) {
+    @include grid-generator(xs, 12);
+    @include pull-generator(xs, 12);
+}
+@include respond-from(xx) {
+    @include grid-generator(xx, 12);
+    @include pull-generator(xx, 12);
+}

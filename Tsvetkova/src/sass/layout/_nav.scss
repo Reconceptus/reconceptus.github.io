@@ -1,4 +1,28 @@
 .nav {
+  @include mq($until: tablet_xl){
+    top: 0;
+    left: 0;
+    right: 30%;
+    bottom: 0;
+    z-index: 5;
+    background-color: $brand-01;
+    transition: transform 0.35s, opacity 0.35s;
+    color: $white;
+    padding-top: $header-height-mobile;
+    padding-left: 32px;
+    box-shadow: 0 0 12px 0 rgba($black,0.3);
+    .menu-enabled & {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0);
+    }
+  }
+  ul {
+    @include mq($until: tablet_xl){
+      flex-direction: column;
+      padding: 24px 0;
+    }
+  }
   a {
     position: relative;
     &:before {

@@ -49,13 +49,13 @@ Styleguide styleguide.grid.breakpoints
  */
 
 $mq-breakpoints: (
-        mobile_sm:  480px,  // xx
-        mobile_xl:  600px,  // xs
-        tablet_sm:  800px,  // sm
+        mobile_sm:  481px,  // xx
+        mobile_xl:  601px,  // xs
+        tablet_sm:  801px,  // sm
         tablet_xl:  1025px, // md
         desktop_sm: 1281px, // lg
         desktop_xl: 1421px, // xl
-        wide:       1725px  // wd
+        wide:       1801px  // wd
 ) !default;
 
 @import "mixins/mq";

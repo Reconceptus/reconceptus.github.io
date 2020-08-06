@@ -5,7 +5,7 @@
                 <div class="header-title">
                     <a href="/index.html" class="header-logo">
                         <span>Цветкова</span>
-                        <img src="assets/svg/partials/logo.svg" alt="Цветкова">
+                        <svg><use xlink:href="#icon-logo"/></svg>
                     </a>
                     <div class="header-title_inner">студия уюта</div>
                 </div>
@@ -22,20 +22,24 @@
     </div>
     <div class="header-contact">
         <div class="content content--lg">
-            <ul class="header-contact_list">
-                <li class="header-contact_item">
-                    <a href="mailto:mail@mail.ru" class="header-contact_link">
-                        <i class="icon icon--md"><svg><use xlink:href="#icon-mail"/></svg></i>
-                        напишите нам
-                    </a>
-                </li>
-                <li class="header-contact_item">
-                    <a href="tel:79275065926" class="header-contact_link">
-                        <i class="icon icon--md"><svg><use xlink:href="#icon-phone"/></svg></i>
-                        +7 927 506-59-26
-                    </a>
-                </li>
-            </ul>
+            <div class="header-contact_inner">
+                <ul class="header-contact_list">
+                    <li class="header-contact_item">
+                        <a href="mailto:mail@mail.ru" class="header-contact_link">
+                            <i class="icon icon--md"><svg><use xlink:href="#icon-mail"/></svg></i>
+                            <span class="text">напишите нам</span>
+                        </a>
+                    </li>
+                    <li class="header-contact_item">
+                        <a href="tel:79275065926" class="header-contact_link">
+                            <i class="icon icon--md"><svg><use xlink:href="#icon-phone"/></svg></i>
+                            <span class="text">+7 927 506-59-26</span>
+                        </a>
+                    </li>
+                </ul>
+                <button class="burger-button" id="burger" type="button"><span></span></button>
+                <div class="header-bg" id="closeMenu"></div>
+            </div>
         </div>
     </div>
 </header>

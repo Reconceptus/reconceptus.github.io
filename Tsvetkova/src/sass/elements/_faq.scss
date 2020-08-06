@@ -12,41 +12,75 @@
     font-size: $font-lg;
     font-weight: 600;
     line-height: (32/20);
-    padding: 40px calc(100% / 6) 40px 0;
+
     display: flex;
     align-items: center;
     cursor: pointer;
+    @include mq($from: mobile_sm){
+      padding: 40px calc(100% / 6) 40px 0;
+    }
+    @include mq($until: mobile_sm){
+      padding: 24px 32px 24px 0;
+    }
     &:before {
       content: counter(item, decimal-leading-zero);
       counter-increment: item;
       right: 100%;
       position: absolute;
-      top: 52px;
       transform: translateY(-50%);
-      font-size: 2*$font;
+
       color: $link;
-      margin-right: $gutter-x2;
+      @include mq($from: mobile_sm){
+        top: 52px;
+        margin-right: $gutter-x2;
+        font-size: 2*$font;
+      }
+      @include mq($until: mobile_sm){
+        margin-right: 16px;
+        top: 38px;
+        font-size: $font-xl;
+      }
     }
     &:after {
       content: "";
       position: absolute;
-      top: 48px;
+
       width: 14px;
       height: 14px;
       border-style: none solid solid none;
       border-width: 3px;
       border-color: currentColor;
-      right: 32px;
+
       transform: rotate(45deg);
       transition: all 0.25s;
+      @include mq($from: mobile_sm){
+        top: 48px;
+        right: 32px;
+      }
+      @include mq($until: mobile_sm){
+        top: 28px;
+        right: 12px;
+      }
       .expanded & {
         transform: rotate(-135deg);
-        top: 52px;
+
+        @include mq($from: mobile_sm){
+          top: 52px;
+        }
+        @include mq($until: mobile_sm){
+          top: 36px;
+        }
       }
     }
   }
   &_answer {
-    padding: 0 calc(100% / 6) 0 0;
+
+    @include mq($from: mobile_sm){
+      padding: 0 calc(100% / 6) 0 0;
+    }
+    @include mq($until: mobile_sm){
+      padding: 0 24px 0 0;
+    }
     .text-box {
       padding-bottom: 40px;
     }

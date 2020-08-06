@@ -1,5 +1,5 @@
 window.fn = {
-    headerScroll: require('./modules/header-scroll'),
+    headerEvents: require('./modules/header-events'),
     expander: require('./modules/expander'),
     introCarousel: require('./modules/intro-carousel'),
     projectsCarousel: require('./modules/projects-carousel'),
@@ -9,7 +9,7 @@ window.fn = {
 const modules = [
     {
         selector: '.header',
-        name: 'headerScroll',
+        name: 'headerEvents',
     },
     {
         selector: '.expander',
