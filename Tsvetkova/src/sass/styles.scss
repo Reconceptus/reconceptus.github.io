@@ -24,8 +24,11 @@
 @import "patterns/icons";
 
 //  elements
+@import "elements/_critical/critical";
 @import "elements/main-banner";
 @import "elements/faq";
+@import "elements/hashes";
+@import "elements/pagination";
 
 //  components
 @import "components/text-box";
@@ -33,7 +36,9 @@
 @import "components/expander";
 
 //  pages
+@import "pages/_critical/critical";
 @import "pages/home";
+@import "pages/projects";
 
 //  widgets
 @import "widgets/carousel";

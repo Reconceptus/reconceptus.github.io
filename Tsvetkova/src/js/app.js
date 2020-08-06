@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ------------------------------- modules ------------------------------- */
 
     modules.map(module => {
-        !!module.selector.length ? fn[module.name].init() : '';
+        !!document.querySelector(module.selector) ? fn[module.name].init() : '';
     });
 
     /* ------------------------------- get window values ------------------------------- */

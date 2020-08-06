@@ -35,7 +35,18 @@
       background-color: currentColor;
       opacity: 0;
       transition: all 0.25s;
-      transform: translateY(40px);
+      @include mq($from: tablet_xl){
+        transform: translateY(40px);
+      }
+      @include mq($until: tablet_xl){
+        transform: translateY(24px);
+      }
+    }
+    &.active {
+      &:before {
+        height: 4px;
+        opacity: 1;
+      }
     }
     @include hover(){
       &:before {

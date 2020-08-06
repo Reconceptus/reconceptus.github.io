@@ -1,0 +1,36 @@
+// ====================== elements ======================
+
+.hashes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: $font;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  @include mq($from: tablet_sm){
+    font-size: $font;
+  }
+  @include mq($until: tablet_sm){
+    font-size: $font-sm;
+  }
+  @include mq($until: mobile_sm){
+    letter-spacing: 1px;
+  }
+  li {
+    @include mq($from: tablet_sm){
+      margin-right: $padding-md;
+      margin-bottom: $padding;
+    }
+    @include mq($until: tablet_sm){
+      margin-right: $gutter-x2;
+      margin-bottom: $gutter;
+    }
+  }
+  a {
+    color: $text-02;
+
+  }
+}

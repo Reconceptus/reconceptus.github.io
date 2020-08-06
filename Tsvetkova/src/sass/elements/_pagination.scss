@@ -1,0 +1,37 @@
+.pagination {
+
+  font-size: $font-lg;
+  display: flex;
+  @include mq($from: tablet_xl){
+    margin-top: 80px;
+  }
+  @include mq(mobile_xl, tablet_xl){
+    margin-top: 60px;
+  }
+  @include mq($until: mobile_xl){
+    margin-top: 40px;
+  }
+  span, a {
+    height: 48px;
+    width: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-right: 4px;
+    color: inherit;
+    &.active {
+      cursor: default;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: currentColor;
+      }
+    }
+  }
+}

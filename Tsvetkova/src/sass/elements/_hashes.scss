@@ -1,0 +1,10 @@
+.hashes {
+  a {
+    &.active {
+      color: $text;
+    }
+    @include hover(){
+      color: $text;
+    }
+  }
+}
