@@ -33,6 +33,10 @@
       align-items: center;
       overflow: initial;
     }
+    .gallery-carousel & {
+      height: 100%;
+      width: 100%;
+    }
     &_link {
       display: block;
       width: 100%;
@@ -57,6 +61,24 @@
         position: relative;
         overflow: hidden;
       }
+      .gallery-carousel & {
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        .intro-carousel &,
+        .projects-carousel &,
+        .gallery-carousel & {
+          @include imgFit;
+        }
+        .banners-carousel & {
+          display: block;
+          @include mq($until: tablet_xl){
+            max-width: 26vw;
+            max-height: 14vw;
+          }
+        }
+      }
     }
     &_img {
       display: block;
@@ -77,19 +99,7 @@
           background-color: rgba($black, 0.36);
         }
       }
-      img {
-        .intro-carousel &,
-        .projects-carousel & {
-          @include imgFit;
-        }
-        .banners-carousel & {
-          display: block;
-          @include mq($until: tablet_xl){
-            max-width: 26vw;
-            max-height: 14vw;
-          }
-        }
-      }
+
     }
     &_title {
       .intro-carousel & {
@@ -305,6 +315,87 @@
         }
       }
 
+    }
+  }
+}
+
+.gallery-carousel {
+  width: 100%;
+  height: 0;
+  padding-bottom: 74%;
+  .flickity-viewport {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .flickity-button {
+    background-color: $text;
+    border-radius: 0;
+    outline: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.25s;
+    @include mq($from: $maxWidth){
+      width: 120px;
+      height: 120px;
+    }
+    @include mq(tablet_xl, $maxWidth){
+      width: 6vw;
+      height: 6vw;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      width: 6vw;
+      height: 6vw;
+    }
+    @include mq($until: mobile_xl){
+      width: 32px;
+      height: 32px;
+    }
+    &:active {
+      opacity: 1;
+    }
+    &:disabled {
+      opacity: 0.9;
+      pointer-events: auto;
+    }
+    &.next {
+      left: 0;
+      right: auto;
+      transform: translate(-50%, -50%);
+      @include mq($from: mobile_xl){
+        margin-left: -1*$gutter;
+      }
+
+      @include hover(){
+        &:not(:disabled) {
+          transform: translate(-50%, -50%) rotate(45deg);
+          .flickity-button-icon {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+    &.previous {
+      display: none;
+    }
+    .flickity-button-icon {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      fill: $white;
+      transition: all 0.25s;
+      @include mq($from: $maxWidth){
+        width: 24px;
+        height: 24px;
+      }
+      @include mq($until: $maxWidth){
+        width: 20%;
+        height: 20%;
+      }
     }
   }
 }

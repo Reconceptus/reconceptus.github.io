@@ -1,49 +1,48 @@
-const text_box = {
-    initText: function() {
-        $('.text-box').each(function() {
-            let _this = $(this);
-            _this.find('img').each(function() {
-                let _this = $(this);
-
-                if (_this.css('float') == 'left') {
-                    _this.removeAttr('style');
-                    _this.wrap('<figure class="img-left"></figure>');
-                } else {
-                    _this.wrap('<figure class="img"></figure>');
-                }
-
-                if (_this.closest('p').length > 0) {
-                    let _thisParent = _this.closest('p'),
-                        _thisHTML = _thisParent.html();
-                    _thisParent.after(_thisHTML);
-                    _thisParent.remove();
-                }
-            });
-            _this.find('iframe').each(function() {
-                let _this = $(this);
-                _this.wrap('<figure class="video"></figure>');
-            });
-            _this.find('li').each(function() {
-                let _this = $(this);
-                if (_this.text().length < 1) {
-                    _this.remove();
-                }
-            });
-        });
+const textBox = {
+    data: {
+        el: {
+            textBox: 'text-box',
+        },
     },
-    initFAQ: function() {
-        $('.faq-item--answer').each(function() {
-            let _this = $(this);
-            _this.find('img').each(function() {
-                let _this = $(this);
-                _this.wrap('<figure class="text-img"></figure>');
-            });
-            _this.find('iframe').each(function() {
-                let _this = $(this);
-                _this.wrap('<figure class="text-video"></figure>');
-            });
-        });
+    init() {
+        let textBoxes = document.getElementsByClassName(this.data.el.textBox);
+
+        for (let t = 0; t < textBoxes.length; t++) {
+            this.parseTextBox(textBoxes[t]);
+        }
+    },
+    parseTextBox(box) {
+        let images = box.getElementsByTagName('img');
+        if (images) {
+            for (let i = 0; i < images.length; i++) {
+                this.replaceImage(images[i], box);
+            }
+        }
+
+        let iframes = box.getElementsByTagName('iframe');
+        if (iframes) {
+            for (let i = 0; i < iframes.length; i++) {
+                this.replaceIframe(iframes[i], box);
+            }
+        }
+    },
+    replaceImage(img, parent) {
+        if (img.style.float) {
+            let float = img.style.float,
+                figure = document.createElement('figure');
+
+            parent.insertBefore(figure, img);
+            figure.appendChild(img);
+            figure.classList.add('align-' + float);
+        }
+    },
+    replaceIframe(img, parent) {
+        let video = document.createElement('div');
+
+        parent.insertBefore(video, img);
+        video.appendChild(img);
+        video.classList.add('video');
     },
 };
 
-module.exports = text_box;
+module.exports = textBox;

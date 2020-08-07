@@ -4,6 +4,8 @@ window.fn = {
     introCarousel: require('./modules/intro-carousel'),
     projectsCarousel: require('./modules/projects-carousel'),
     bannersCarousel: require('./modules/banners-carousel'),
+    galleryCarousel: require('./modules/gallery-carousel'),
+    textBox: require('./modules/text-box'),
 };
 
 const modules = [
@@ -24,8 +26,16 @@ const modules = [
         name: 'projectsCarousel',
     },
     {
+        selector: '.gallery-carousel',
+        name: 'galleryCarousel',
+    },
+    {
         selector: '.banners-carousel',
         name: 'bannersCarousel',
+    },
+    {
+        selector: '.text-box',
+        name: 'textBox',
     },
 ];
 

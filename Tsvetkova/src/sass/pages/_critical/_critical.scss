@@ -1,7 +1,6 @@
 // ====================== pages ======================
 
 .page-section {
-
   @include mq($from: tablet_xl){
     padding-top: 146px;
     padding-bottom: 96px;
@@ -15,13 +14,31 @@
     padding-bottom: 60px;
   }
 }
+.text-section {
+  @include mq($from: tablet_xl){
+    padding-top: 146px;
+    padding-bottom: 96px;
+  }
+  @include mq(tablet_sm, tablet_xl){
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include mq(mobile_xl, tablet_sm){
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  @include mq($until: mobile_xl) {
+    margin: 0 -16px 0 -24px;
+  }
+}
+
+
 
 .projects-listing {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   &_item {
-
     @include mq($from: mobile_xl){
       width: calc(500% / 11);
     }
@@ -68,4 +85,49 @@
     font-size: 20px;
     font-weight: 400;
   }
+}
+
+.article-page {
+  position: relative;
+  background-color: $white;
+  @include mq($from: desktop_sm) {
+    padding: 78px 40% 12px 10%;
+  }
+  @include mq(tablet_sm, desktop_sm) {
+    padding: 78px 30% 12px 10%;
+  }
+  @include mq(mobile_xl, tablet_sm) {
+    padding: 60px 10% 12px 10%;
+  }
+  @include mq($until: mobile_xl) {
+    padding: 40px 16px 12px 24px;
+  }
+  @include mq($from: tablet_sm){
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 50vw;
+      background-color: $white;
+    }
+  }
+  @include mq($from: mobile_xl) {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: none solid solid;
+      border-width: 34px;
+      border-color: $text transparent;
+      transform: rotate(-45deg) translate(-24px,-24px);
+      transform-origin: center 0;
+    }
+  }
+
+
 }
