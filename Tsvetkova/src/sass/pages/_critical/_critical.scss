@@ -351,3 +351,41 @@
     }
   }
 }
+
+.error-page {
+  position: relative;
+  @include mq($from: tablet_sm) {
+    margin: 80px 0;
+  }
+  @include mq($until: tablet_sm) {
+    margin: 60px 0;
+  }
+  &_bg {
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //width: 100%;
+    @include mq($until: tablet_sm) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &_text {
+    font-size: 20px;
+    line-height: (32/20);
+    @include mq($from: tablet_sm) {
+      padding: 2vw 0 64px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    a {
+      color: inherit;
+    }
+  }
+}
