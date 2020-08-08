@@ -17,6 +17,7 @@ window.fn = {
     bannersCarousel: require('./modules/banners-carousel'),
     galleryCarousel: require('./modules/gallery-carousel'),
     textBox: require('./modules/text-box'),
+    validation: require('./modules/validation'),
 };
 
 const modules = [
@@ -47,6 +48,10 @@ const modules = [
     {
         selector: '.text-box',
         name: 'textBox',
+    },
+    {
+        selector: '.custom-form',
+        name: 'validation',
     },
 ];
 

@@ -1,0 +1,75 @@
+<include src="../layout/head.html" title="Вход"></include>
+
+    <div class="container">
+
+        <include src="../layout/header.html"></include>
+
+        <main id="main" class="main">
+
+            <div class="page-section">
+                <div class="user-page">
+                    <div class="content content--lg">
+                        <div class="content-row">
+                            <div class="content-col col-pull-2 col-pull-lg-1 col-pull-xs-0 col-5 col-lg-7 col-md-9 col-sm-10 col-xs-12">
+                                <h1 class="title--lg">Вход</h1>
+                                <div class="custom-form">
+                                    <form action="#">
+                                        <fieldset class="fieldset">
+                                            <div class="input-text">
+                                                <input type="text" name="login" placeholder="*Логин">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="fieldset">
+                                            <div class="input-text">
+                                                <input type="password" name="password" placeholder="*Пароль">
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="fieldset">
+                                            <a href="reset-password.html" class="link">Сброс пароля</a>
+                                        </fieldset>
+                                        <fieldset class="fieldset">
+                                            <button class="btn btn--light btn--bordered btn--md">Войти</button>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <include src="../layout/footer.html"></include>
+
+    </div>
+
+</div>
+
+<include src="../layout/scripts.html"></include>
+
+
+
+<!--script-->
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // first parameter - selector
+        // second parameter - rules for mandatory inputs [names] (https://validatejs.org/ - other rules)
+        // third parameter - action if validation is ok (form.submit if nothing)
+
+        fn.validate(".custom-form form",{
+            login: {
+                presence: true
+            },
+            password: {
+                presence: true
+            }
+        })
+    })
+</script>
+
+
+</body>
+</html>
