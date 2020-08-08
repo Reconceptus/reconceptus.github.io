@@ -31,6 +31,20 @@
     margin: 0 -16px 0 -24px;
   }
 }
+.project-section {
+  @include mq($from: tablet_xl){
+    padding-bottom: 146px;
+  }
+  @include mq(tablet_sm, tablet_xl){
+    padding-bottom: 100px;
+  }
+  @include mq($until: tablet_sm){
+    padding-bottom: 60px;
+  }
+  @include mq($until: mobile_xl) {
+    margin: 0 -16px 0 -24px;
+  }
+}
 
 
 
@@ -130,4 +144,97 @@
   }
 
 
+}
+
+.project {
+  &-bg {
+    width: 100%;
+    height: 0;
+    padding-bottom: 40%;
+    position: relative;
+    overflow: hidden;
+    &_figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &_img {
+      @include fullBlock;
+    }
+    img {
+      @include imgFit;
+    }
+  }
+  &-head {
+
+
+    @include mq($from: tablet_xl) {
+      margin-top: 16vw;
+      transform: translateY(-50%);
+      .layout-main & {
+        display: none;
+      }
+    }
+    @include mq($until: tablet_xl) {
+      padding: $gutter-x2 0;
+      display: flex;
+      align-items: center;
+      .layout-aside & {
+        display: none;
+      }
+    }
+    @include mq($until: mobile_xl) {
+      padding: $gutter-x2;
+    }
+
+    &_img {
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      @include mq($from: tablet_xl) {
+        width: 100%;
+        padding-bottom: 100%;
+        height: 0;
+      }
+      @include mq(mobile_xl, tablet_xl) {
+        width: 150px;
+        height: 150px;
+      }
+      @include mq($until: mobile_xl) {
+        width: 100px;
+        height: 100px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include imgFit;
+      }
+    }
+    &_name {
+      font-size: $font;
+      @include mq($from: tablet_xl) {
+        padding: 24px 12px 0;
+      }
+      @include mq($until: tablet_xl) {
+        margin-left: $gutter-x2;
+        max-width: 240px;
+      }
+    }
+  }
+}
+
+.page-projects-carousel {
+  @include mq($from: tablet_xl){
+    margin-bottom: 146px;
+  }
+  @include mq(tablet_sm, tablet_xl){
+    margin-bottom: 100px;
+  }
+  @include mq($until: tablet_sm){
+    margin-bottom: 60px;
+  }
 }
