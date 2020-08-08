@@ -264,3 +264,90 @@
     }
   }
 }
+
+.posts-listing {
+  .post-item {
+    margin-bottom: 48px;
+    background-color: $white;
+    display: flex;
+    @include mq($from: tablet_xl) {
+
+    }
+    @include mq($until: tablet_xl) {
+      flex-wrap: wrap-reverse;
+    }
+    &_content {
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include mq($from: tablet_xl) {
+        width: 50%;
+      }
+      @include mq($until: tablet_xl) {
+        width: 100%;
+      }
+      @include mq($from: mobile_xl) {
+        padding: 48px;
+        font-size: 20px;
+      }
+      @include mq($until: mobile_xl) {
+        padding: 24px;
+        font-size: 16px;
+      }
+    }
+    &_date {
+      display: block;
+
+      @include mq($from: mobile_xl) {
+        margin-bottom: 40px;
+      }
+      @include mq($until: mobile_xl) {
+        margin-bottom: 24px;
+      }
+    }
+    &_title {
+      font-weight: 400;
+      line-height: (32/20);
+      @include mq($from: mobile_xl) {
+        margin-bottom: 40px;
+      }
+      @include mq($until: mobile_xl) {
+        margin-bottom: 32px;
+      }
+      a {
+        color: inherit;
+      }
+    }
+    &_readmore {
+      display: inline-flex;
+      margin-top: auto;
+      color: $link;
+      box-shadow: 0 1px 0 0 currentColor;
+    }
+    &_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include fullBlock;
+      &-box {
+        width: 50%;
+
+        overflow: hidden;
+        position: relative;
+        @include mq($from: tablet_xl) {
+          width: 50%;
+          padding-bottom: 25%;
+        }
+        @include mq($until: tablet_xl) {
+          width: 100%;
+          height: 0;
+          padding-bottom: 50%;
+        }
+      }
+      img {
+        @include imgFit;
+      }
+    }
+  }
+}
