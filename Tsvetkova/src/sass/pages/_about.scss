@@ -1,0 +1,401 @@
+.about-page {
+  &_intro {
+    @include mq($from: tablet_xl) {
+      margin-bottom: 72px;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      margin-bottom: 40px;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: 40px;
+    }
+    .text-box {
+      @include mq($until: mobile_xl){
+        padding-right: 16px;
+      }
+    }
+    .gallery-slider {
+      @include mq($from: desktop_sm) {
+        margin: 80px -80% 80px -20%;
+      }
+      @include mq(tablet_xl, desktop_sm) {
+        margin: 80px -30% 80px -20%;
+      }
+      @include mq(mobile_xl, tablet_xl) {
+        margin: 60px -40% 60px 0;
+      }
+      @include mq($until: mobile_xl) {
+        margin: 60px 0 40px;
+        width: calc(100% - 16px);
+      }
+    }
+  }
+  &_methods {
+
+    @include mq($from: tablet_xl) {
+      margin-bottom: 184px;
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      margin-bottom: 60px;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: 40px;
+    }
+    &-listing {
+
+      background-color: $text-01;
+      color: $white;
+      background-repeat: no-repeat;
+      background-image: url("../svg/bg/crumbs-methods.svg");
+      background-position: center 220px;
+      background-size: 1600px auto;
+      @include mq($from: tablet_xl) {
+        margin-top: 156px;
+      }
+      @include mq($until: tablet_xl) {
+        margin-top: 100px;
+      }
+    }
+    .methods {
+      counter-reset: item;
+      @include mq($from: tablet_xl) {
+        margin: -96px -24px 0 ;
+      }
+      @include mq($until: tablet_xl) {
+        margin-top: -60px;
+      }
+    }
+    .method {
+      display: flex;
+
+      @include mq($from: tablet_xl) {
+        margin-bottom: 146px;
+      }
+      @include mq(mobile_xl, tablet_xl) {
+        margin-bottom: 100px;
+      }
+      @include mq($until: mobile_xl) {
+        position: relative;
+        margin-bottom: 80px;
+      }
+      &-img {
+
+        height: 0;
+        overflow: hidden;
+        position: relative;
+
+        box-shadow: 0 24px 24px 0 $black;
+        z-index: 1;
+        flex-shrink: 0;
+        @include mq($from: tablet_xl) {
+          margin: -40px 0 0 10%;
+          width: 20%;
+          padding-bottom: 20%;
+        }
+        @include mq(tablet_sm, tablet_xl) {
+          margin: -40px 0 0 0;
+          width: 20%;
+          padding-bottom: 20%;
+        }
+        @include mq(mobile_xl, tablet_sm) {
+          margin: -40px -20% 0 0;
+          width: 40%;
+          padding-bottom: 40%;
+        }
+        @include mq($until: mobile_xl) {
+          width: 120px;
+          height: 120px;
+          position: absolute;
+          top: -40px;
+          left: 0;
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include imgFit;
+        }
+      }
+      &-description {
+        background-color: $white;
+        color: $text;
+        position: relative;
+        font-size: 20px;
+        box-shadow: 0 24px 24px 0 $black;
+        border-bottom-right-radius: 90px;
+        @include mq($from: desktop_sm) {
+          padding: 88px 14%;
+        }
+        @include mq($until: desktop_sm) {
+          padding: 60px 10%;
+        }
+        @include mq($from: tablet_xl) {
+          width: 70%;
+        }
+        @include mq($until: tablet_xl) {
+          flex-grow: 1;
+        }
+        @include mq(mobile_xl, tablet_sm) {
+          padding: 40px 0;
+        }
+        @include mq($until: mobile_xl) {
+          padding: 110px 0 30px;
+          border-bottom-right-radius: 40px;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 20%;
+          height: 8px;
+          background-color: $link;
+          @include mq($from: desktop_sm) {
+            left: 20%;
+          }
+          @include mq(tablet_sm, desktop_sm) {
+            left: 15%;
+          }
+          @include mq(mobile_xl, tablet_sm) {
+            left: 25%;
+          }
+          @include mq($until: mobile_xl) {
+            left: 120px;
+            width: 25%;
+          }
+        }
+      }
+      &-title {
+        position: relative;
+        @include mq($from: tablet_sm) {
+          font-size: 28px;
+          margin-bottom: 48px;
+        }
+        @include mq(mobile_xl, tablet_sm) {
+          font-size: 22px;
+          margin-bottom: 32px;
+          padding: 0 24px 0 30%;
+          min-height: calc(34vw - 80px);
+        }
+        @include mq($until: mobile_xl) {
+          font-size: 22px;
+          margin-bottom: 24px;
+          padding: 0 16px;
+        }
+        &:before {
+          content: counter(item,decimal-leading-zero);
+          counter-increment: item;
+          color: $link;
+          @include mq($from: tablet_sm) {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            margin-right: $gutter-x2;
+          }
+          @include mq(mobile_xl, tablet_sm) {
+            display: block;
+            margin-bottom: $gutter;
+          }
+          @include mq($until: mobile_xl) {
+            position: absolute;
+            left: 160px;
+            top: -80px;
+          }
+        }
+      }
+      &-text {
+        @include mq(mobile_xl, tablet_sm) {
+          padding: 0 $gutter-x2;
+          font-size: $font-md;
+        }
+        @include mq($until: mobile_xl) {
+          padding: 0 16px;
+          font-size: $font-md;
+        }
+      }
+    }
+    .quotes {
+      position: relative;
+
+      @include mq($from: tablet_xl) {
+        margin-right: -20%;
+        margin-bottom: 244px;
+      }
+      @include mq(tablet_sm, tablet_xl) {
+        margin-bottom: 100px;
+      }
+      @include mq(mobile_xl, tablet_sm) {
+        margin-bottom: 60px;
+      }
+      @include mq($until: mobile_xl) {
+        margin-bottom: 40px;
+      }
+      &-logo {
+
+        @include mq($from: mobile_xl) {
+          width: 40vw;
+          height: 40vw/$logo-prop;
+          margin: 0 auto 36px;
+        }
+        @include mq($until: mobile_xl) {
+          width: 60vw;
+          height: 60vw/$logo-prop;
+          margin: 0 auto 40px;
+        }
+      }
+      &-text {
+        margin: 0 auto;
+        color: $text-02;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 54px;
+        position: relative;
+        @include mq($from: tablet_xl) {
+          width: 40%;
+        }
+        @include mq(tablet_sm, tablet_xl) {
+          width: 50%;
+        }
+        @include mq(mobile_xl, tablet_sm) {
+          width: 60%;
+        }
+        @include mq($until: mobile_xl) {
+          width: 85%;
+          padding-top: 32px;
+        }
+        &:before {
+          content: "\0022";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+        }
+      }
+      &-bg {
+        position: absolute;
+        right: 75%;
+        width: 33%;
+        top: 6vw;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        @include mq($until: mobile_xl) {
+          display: none;
+        }
+      }
+    }
+  }
+  &_story {
+
+    @include mq($from: tablet_xl) {
+      margin-bottom: 114px;
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      margin-bottom: 60px;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: 40px;
+    }
+    @include mq($until: mobile_xl) {
+      padding: 0 16px 0 24px;
+    }
+    .about-page_story-title {
+      @include mq($from: tablet_xl) {
+        .author-image {
+          display: none;
+        }
+      }
+      @include mq($until: tablet_xl) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        .title--lg {
+          margin: 0;
+        }
+      }
+    }
+    .about-page_story-inner {
+      @include mq($until: tablet_xl) {
+        .author-image {
+          display: none;
+        }
+      }
+    }
+    .author-image {
+      height: 0;
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      @include mq($from: desktop_sm) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include mq($from: tablet_xl) {
+        width: 90%;
+        padding-bottom: 90%;
+      }
+      @include mq($until: tablet_xl) {
+        width: 25vw;
+        padding-bottom: 25vw;
+        margin-right: 24px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include imgFit;
+      }
+    }
+  }
+  &_collage {
+
+    @include mq($from: tablet_xl) {
+      margin-bottom: 144px;
+    }
+    @include mq(mobile_xl, tablet_xl) {
+      margin-bottom: 60px;
+    }
+    @include mq($until: mobile_xl) {
+      margin-bottom: 40px;
+      padding: 0 16px 0 24px;
+    }
+    .patterns {
+      display: flex;
+      margin: 0 -12px;
+      flex-wrap: wrap;
+    }
+    .pattern {
+      height: 0;
+      position: relative;
+      @include mq($from: mobile_xl) {
+        width: 25%;
+        padding-bottom: 25%;
+      }
+      @include mq($until: mobile_xl) {
+        width: 50%;
+        padding-bottom: 50%;
+      }
+      &-figure {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        overflow: hidden;
+        &.type-1 {
+          border-radius: 50%;
+        }
+        &.type-2 {
+          border-radius: 0 0 25% 0;
+        }
+        &.type-3 {
+          border-radius: 50% 0 0 50%;
+        }
+      }
+      img {
+        @include imgFit;
+      }
+    }
+  }
+}

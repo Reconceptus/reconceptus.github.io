@@ -238,3 +238,29 @@
     margin-bottom: 60px;
   }
 }
+
+.about-page {
+  @include mq($until: mobile_xl){
+    margin: 0 -16px 0 -24px;
+  }
+  &_banner {
+    .main-banner {
+      @include mq($until: tablet_sm){
+        min-height: 320px;
+        height: 50vw;
+      }
+    }
+  }
+  &_intro {
+    position: relative;
+    &-bg {
+      margin-top: -3vw;
+      margin-bottom: -9vw;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

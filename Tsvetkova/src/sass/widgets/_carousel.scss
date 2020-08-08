@@ -65,20 +65,7 @@
         height: 100%;
         width: 100%;
       }
-      img {
-        .intro-carousel &,
-        .projects-carousel &,
-        .gallery-carousel & {
-          @include imgFit;
-        }
-        .banners-carousel & {
-          display: block;
-          @include mq($until: tablet_xl){
-            max-width: 26vw;
-            max-height: 14vw;
-          }
-        }
-      }
+
     }
     &_img {
       display: block;
@@ -99,7 +86,20 @@
           background-color: rgba($black, 0.36);
         }
       }
-
+    }
+    img {
+      .intro-carousel &,
+      .projects-carousel &,
+      .gallery-carousel & {
+        @include imgFit;
+      }
+      .banners-carousel & {
+        display: block;
+        @include mq($until: tablet_xl){
+          max-width: 26vw;
+          max-height: 14vw;
+        }
+      }
     }
     &_title {
       .intro-carousel & {
