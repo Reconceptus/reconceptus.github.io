@@ -1,0 +1,22 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    display: block;
+    min-height: 56px;
+    resize: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $text;
+    font-size: 16px;
+    padding: 16px 2*$gutter-x2 16px $gutter-x2;
+    background-color: $white;
+    outline: none;
+    transition: box-shadow 0.2s;
+    background-repeat: no-repeat;
+    &:active,
+    &:focus {
+      box-shadow: 0 -2px 0 0 $text inset;
+    }
+  }
+}

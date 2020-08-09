@@ -393,3 +393,35 @@
 .user-page {
 
 }
+
+.contact-page {
+  &_address {
+    margin-bottom: 114px;
+    line-height: (32/20);
+    @include mq($from: mobile_xl) {
+      font-size: $font-lg;
+    }
+    @include mq($until: mobile_xl) {
+      font-size: $font-md;
+    }
+    p {
+      min-height: 24px;
+      &:not(:last-child){
+        @include mq($from: mobile_sm) {
+          margin-bottom: $gutter-x2;
+        }
+        @include mq($until: mobile_sm) {
+          margin-bottom: $gutter-x2;
+        }
+      }
+    }
+    a {
+      color: inherit;
+    }
+    .link {
+      font-size: inherit;
+      font-weight: 500;
+      color: $link;
+    }
+  }
+}
