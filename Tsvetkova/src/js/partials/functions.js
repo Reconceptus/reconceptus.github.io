@@ -7,6 +7,7 @@ window.fn = {
     galleryCarousel: require('./modules/gallery-carousel'),
     textBox: require('./modules/text-box'),
     validation: require('./modules/validation'),
+    sidebar: require('./modules/sidebar'),
 };
 
 const modules = [
@@ -41,6 +42,10 @@ const modules = [
     {
         selector: '.custom-form',
         name: 'validation',
+    },
+    {
+        selector: '.layout-aside',
+        name: 'sidebar',
     },
 ];
 

@@ -1,23 +1,7 @@
 import validate from 'validate.js';
 // source: view-source:https://validatejs.org/examples.html
 const validation = {
-    data: {
-        el: {
-            selector: '.gallery-carousel',
-            cellClassName: 'carousel-cell',
-            buttonClassName: 'flickity-prev-next-button',
-        },
-        options: {
-            accessibility: false,
-            setGallerySize: false,
-            wrapAround: true,
-            draggable: false,
-            percentPosition: true,
-            prevNextButtons: true,
-            pauseAutoPlayOnHover: false,
-            pageDots: false,
-        },
-    },
+    data: {},
     init() {
         let _this = this;
 
@@ -36,7 +20,6 @@ const validation = {
                 });
             }
         };
-
     },
     handleFormSubmit(form, params, callback) {
         var errors = validate(form, params);
@@ -56,7 +39,7 @@ const validation = {
         this.resetFormGroup(formGroup);
         if (errors) {
             formGroup.classList.add('has-error');
-        } else if(params.presence) {
+        } else if (params.presence) {
             formGroup.classList.add('has-success');
         }
     },

@@ -34,3 +34,166 @@
 
   }
 }
+
+.sharing {
+  display: flex;
+
+  @include mq($from: tablet_sm) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @include mq($until: tablet_sm) {
+    align-items: center;
+  }
+  .layout-aside & {
+    @include mq($from: tablet_xl) {
+      padding: 140px 0;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      padding: 100px 0;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      padding: $gutter-x2 0;
+      .blog-page & {
+        margin-top: 40px;
+      }
+    }
+    @include mq($until: mobile_xl) {
+      .text-section & {
+        padding: $gutter-x2 16px $gutter-x2 24px;
+      }
+      .blog-page & {
+        margin-top: 40px;
+      }
+    }
+  }
+  .layout-aside.sticky-sharing & {
+
+
+    @include mq($from: tablet_xl) {
+      top: 140px - 56px;
+      position: fixed;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      top: 100px - 56px;
+      position: fixed;
+    }
+    @include mq($until: tablet_sm) {
+
+    }
+  }
+  .layout-aside.bottom-sharing & {
+
+    @include mq($from: tablet_sm) {
+      margin-top: auto;
+    }
+  }
+  li {
+
+    @include mq($from: tablet_sm) {
+      margin: $gutter 0;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      margin: 0 $gutter-x2 0 0;
+    }
+    @include mq($until: mobile_xl) {
+      margin: 0 $gutter 0 0;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    color: $text-02;
+
+    @include mq($from: tablet_xl) {
+      font-size: $font-md;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      font-size: $font;
+      flex-direction: column;
+    }
+    @include mq($until: tablet_sm) {
+      font-size: $font;
+    }
+  }
+  i {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: rgba($text-02, 0.5);
+    transition: all 0.2s;
+    @include mq($from: tablet_xl) {
+      width: 56px;
+      height: 56px;
+      margin-right: 10px;
+    }
+    @include mq(tablet_sm, tablet_xl) {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+    }
+    @include mq($until: mobile_xl) {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      svg {
+        transform: scale(0.6);
+      }
+    }
+  }
+  .icon-fb {
+    @include hover(){
+      background-color: #1877F2;
+    }
+    @include mq($until: tablet_xl) {
+      background-color: #1877F2;
+    }
+    svg {
+      width: 13px;
+      height: 24px;
+    }
+  }
+  .icon-tw {
+    @include hover(){
+      background-color: #1DA1F2;
+    }
+    @include mq($until: tablet_xl) {
+      background-color: #1DA1F2;
+    }
+    svg {
+      width: 24px;
+      height: 20px;
+    }
+  }
+  .icon-pt {
+    @include hover(){
+      background-color: #BD081C;
+    }
+    @include mq($until: tablet_xl) {
+      background-color: #BD081C;
+    }
+    svg {
+      width: 20px;
+      height: 24px;
+    }
+  }
+  .icon-vk {
+    @include hover(){
+      background-color: #4680C2;
+    }
+    @include mq($until: tablet_xl) {
+      background-color: #4680C2;
+    }
+    svg {
+      width: 24px;
+      height: 14px;
+    }
+  }
+}

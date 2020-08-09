@@ -20,5 +20,8 @@
     }
     &-wrap {
         flex-wrap: wrap;
+        &--reverse {
+            flex-wrap: wrap-reverse;
+        }
     }
 }
