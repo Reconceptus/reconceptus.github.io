@@ -41,7 +41,7 @@
                                         </fieldset>
                                         <fieldset class="fieldset">
                                             <div class="textarea">
-                                                <textarea rows="4" name="message" placeholder="*Ваше сообщение"></textarea>
+                                                <textarea rows="4" name="message" placeholder="Ваше сообщение"></textarea>
                                             </div>
                                         </fieldset>
                                         <fieldset class="fieldset">
@@ -138,12 +138,14 @@
                 presence: true
             },
             mail: {
-                presence: true
+                presence: true,
+                email: true
             },
             message: {
-                presence: true
+                presence: false
             },
             agreement: {
+                presence: true,
                 inclusion: {
                     within: [true]
                 }

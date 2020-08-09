@@ -120,9 +120,9 @@
                                             <div class="checkbox">
                                                 <label>
                                                     <input type="checkbox" name="agreement">
-                                                    <span class="checkbox-text">Даю согласие на обработку <a
-                                                            href="#">персональных данных</a> и соглашаюсь с <a
-                                                            href="#">политикой конфиденциальности</a></span>
+                                                    <span class="text">Даю согласие на обработку <a
+                                                            href="#" class="link">персональных данных</a> и соглашаюсь с <a
+                                                            href="#" class="link">политикой конфиденциальности</a></span>
                                                 </label>
                                             </div>
                                         </fieldset>
@@ -132,8 +132,49 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="content-col col-5 col-lg-4">
+                            <div class="content-col col-5 col-lg-4 mobile-hidden">
+                                <div class="contact-page_bg">
+                                    <img src="assets/svg/bg/hand-and-handset.svg" alt="Контакты">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="contact-page_map">
+                <div class="content content--lg">
+                    <div class="content-row flex-wrap">
+                        <div class="content-col col-2 col-lg-12">
+                            <div class="contact-page_map-title">Рады встрече!</div>
+                        </div>
+                        <div class="content-col col-5 col-lg-6 col-sm-12">
+                            <figure class="contact-page_map-img">
+                                <img src="assets/images/slider/projects-slider05.jpg" alt="Рады встрече">
+                            </figure>
+                        </div>
+                        <div class="content-col col-5 col-lg-6 col-sm-12">
+                            <div class="contact-page_map-frame">
+                                <div class="map">
+                                    <div id="map" class="map-box"></div>
+                                    <script type="text/javascript">
+                                        var map;
+                                        function initMap() {
+
+                                            var mapOptions = {
+                                                zoom: 16,
+                                                scrollwheel: false,
+                                                disableDefaultUI: true,
+                                                center: new google.maps.LatLng(48.710415, 44.521480)
+                                            };
+                                            map = new google.maps.Map(document.getElementById('map'), mapOptions );
+
+                                        }
+                                    </script>
+                                    <!-- API key from another project!!! -->
+                                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6PFq1z3G7_YGiZl1KUuVVH_kxI2YAdaA&callback=initMap"></script>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -210,7 +251,9 @@
                 presence: true
             },
             agreement: {
-                presence: true
+                inclusion: {
+                    within: [true]
+                }
             }
         })
     })

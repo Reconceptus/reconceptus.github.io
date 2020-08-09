@@ -32,52 +32,11 @@ const validation = {
             for (let i = 0; i < inputs.length; ++i) {
                 inputs.item(i).addEventListener('change', function(ev) {
                     var errors = validate(Form, params) || {};
-                    _this.showErrorsForInput(this, errors[this.name]);
+                    _this.showErrorsForInput(this, errors[this.name], params[this.name]);
                 });
             }
         };
 
-        var constraints = {
-            email: {
-                // Email is required
-                presence: true,
-                // and must be an email (duh)
-                email: true,
-            },
-            password: {
-                // Password is also required
-                presence: true,
-                // And must be at least 5 characters long
-                length: {
-                    minimum: 5,
-                },
-            },
-            'confirm-password': {
-                // You need to confirm your password
-                presence: true,
-                // and it needs to be equal to the other password
-                equality: {
-                    attribute: 'password',
-                    message: '^The passwords does not match',
-                },
-            },
-            login: {
-                // You need to pick a username too
-                presence: true,
-                // And it must be between 3 and 20 characters long
-                length: {
-                    minimum: 3,
-                    maximum: 20,
-                },
-                format: {
-                    // We don't allow anything that a-z and 0-9
-                    pattern: '[a-z0-9]+',
-                    // but we don't care if the username is uppercase or lowercase
-                    flags: 'i',
-                    message: 'can only contain a-z and 0-9',
-                },
-            },
-        };
     },
     handleFormSubmit(form, params, callback) {
         var errors = validate(form, params);
@@ -89,15 +48,15 @@ const validation = {
             }
         }
         form.querySelectorAll('input[name], textarea[name], select[name]').forEach(item => {
-            this.showErrorsForInput(item, errors && errors[item.name]);
+            this.showErrorsForInput(item, errors && errors[item.name], params[item.name]);
         });
     },
-    showErrorsForInput(input, errors) {
+    showErrorsForInput(input, errors, params) {
         let formGroup = input.parentNode;
         this.resetFormGroup(formGroup);
         if (errors) {
             formGroup.classList.add('has-error');
-        } else {
+        } else if(params.presence) {
             formGroup.classList.add('has-success');
         }
     },
