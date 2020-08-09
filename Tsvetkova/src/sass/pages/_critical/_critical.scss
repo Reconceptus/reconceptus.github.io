@@ -396,13 +396,19 @@
 
 .contact-page {
   &_address {
-    margin-bottom: 114px;
+
     line-height: (32/20);
     @include mq($from: mobile_xl) {
       font-size: $font-lg;
     }
     @include mq($until: mobile_xl) {
       font-size: $font-md;
+    }
+    @include mq($from: tablet_sm) {
+      margin-bottom: 114px;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: 80px;
     }
     p {
       min-height: 24px;
@@ -424,4 +430,22 @@
       color: $link;
     }
   }
+  &_bg {
+    margin-left: auto;
+    @include mq($from: desktop_sm) {
+      width: 80%;
+    }
+    @include mq($until: desktop_sm) {
+      width: 100%;
+    }
+    @include mq($until: tablet_sm) {
+      display: none;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
 }

@@ -88,7 +88,7 @@ const validation = {
                 form.submit();
             }
         }
-        form.querySelectorAll('input[name], select[name]').forEach(item => {
+        form.querySelectorAll('input[name], textarea[name], select[name]').forEach(item => {
             this.showErrorsForInput(item, errors && errors[item.name]);
         });
     },

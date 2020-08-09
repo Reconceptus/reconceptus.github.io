@@ -1,8 +1,16 @@
 @import "input-text";
 @import "textarea";
+@import "checkbox";
 
 .custom-form {
   .fieldset {
-    margin-bottom: 48px;
+    &:not(:last-child){
+      @include mq($from: tablet_sm) {
+        margin-bottom: 48px;
+      }
+      @include mq($until: tablet_sm) {
+        margin-bottom: 32px;
+      }
+    }
   }
 }

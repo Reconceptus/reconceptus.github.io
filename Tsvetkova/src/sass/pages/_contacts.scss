@@ -1,0 +1,95 @@
+.contact-page {
+  &_map {
+    background-color: $link;
+    background-repeat: no-repeat;
+    background-image: url("../svg/bg/crumbs-contacts.svg");
+    background-position: center 112px;
+    background-size: 1720px auto;
+    @include mq($from: desktop_sm) {
+      padding: 144px 0;
+      margin-bottom: 48px;
+    }
+    @include mq(tablet_sm, desktop_sm) {
+      padding: 100px 0;
+      margin-bottom: 48px;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      padding: 60px 0;
+      margin-bottom: 24px;
+    }
+    @include mq($until: mobile_xl) {
+      padding: 60px 0;
+    }
+    &-title {
+      color: $white;
+      position: relative;
+      padding-top: 32px;
+      font-size: 20px;
+      @include mq($until: desktop_sm) {
+        margin-bottom: 40px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background-color: currentColor;
+        @include mq($from: desktop_sm) {
+          width: 50%;
+        }
+        @include mq($until: desktop_sm) {
+          width: calc(100% / 12);
+          min-width: 80px;
+        }
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 40px 40px 0 #4C6536;
+      @include mq($from: tablet_sm) {
+        padding-bottom: 100%;
+        border-bottom-left-radius: 90px;
+      }
+      @include mq($until: tablet_sm) {
+        padding-bottom: 50%;
+        border-top-right-radius: 10vw;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include imgFit;
+      }
+    }
+    &-frame {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 40px 40px 0 #4C6536;
+      @include mq($from: tablet_sm) {
+        margin-top: 20%;
+        border-top-right-radius: 90px;
+        padding-bottom: 100%;
+      }
+      @include mq($until: tablet_sm) {
+        padding-bottom: 50%;
+        border-bottom-left-radius: 10vw;
+      }
+      .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include imgFit;
+      }
+      .map-box {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

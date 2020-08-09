@@ -19,4 +19,22 @@
       box-shadow: 0 -2px 0 0 $text inset;
     }
   }
+  &.has-error {
+    textarea {
+      border-color: $ui-02;
+      box-shadow: 0 -2px 0 0 $ui-02 inset;
+      background-size: 20px 20px;
+      background-position: calc(100% - 16px) 16px;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20d%3D%22M11%2C15h2v2H11Zm0-8h2v6H11Zm.99-5A10%2C10%2C0%2C1%2C0%2C22%2C12%2C10%2C10%2C0%2C0%2C0%2C11.99%2C2ZM12%2C20a8%2C8%2C0%2C1%2C1%2C8-8A8%2C8%2C0%2C0%2C1%2C12%2C20Z%22%20transform%3D%22translate%28-2-2%29%22%20fill%3D%22%23de5959%22/%3E%3C/svg%3E');
+    }
+  }
+  &.has-success {
+    textarea {
+      border-color: $brand-01;
+      box-shadow: 0 -2px 0 0 $brand-01 inset;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M9%2C16.2%2C4.8%2C12%2C3.4%2C13.4%2C9%2C19%2C21%2C7%2C19.6%2C5.6Z%22%20fill%3D%22%236b8455%22/%3E%3C/svg%3E');
+      background-size: 24px 24px;
+      background-position: calc(100% - 16px) 14px;
+    }
+  }
 }
