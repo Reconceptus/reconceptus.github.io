@@ -19,6 +19,7 @@ window.fn = {
     textBox: require('./modules/text-box'),
     validation: require('./modules/validation'),
     sidebar: require('./modules/sidebar'),
+    lightbox: require('./modules/lightbox'),
 };
 
 const modules = [
@@ -57,6 +58,10 @@ const modules = [
     {
         selector: '.layout-aside',
         name: 'sidebar',
+    },
+    {
+        selector: '[data-fslightbox]',
+        name: 'lightbox',
     },
 ];
 

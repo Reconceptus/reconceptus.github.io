@@ -65,3 +65,87 @@
     }
   }
 }
+
+.fslightbox-container {
+  .fslightbox-slide-number-container {
+    display: none;
+  }
+  .fslightbox-toolbar {
+    background: none !important;
+    margin: 24px;
+  }
+  .fslightbox-toolbar-button {
+    padding: 8px;
+    &:first-child {display: none}
+  }
+  .fslightbox-slide-btn-container-previous {
+    left: 7vw;
+    .fslightbox-slide-btn {
+      &:after {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+  .fslightbox-slide-btn-container-next {
+    right: 7vw;
+    .fslightbox-slide-btn {
+      &:after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .fslightbox-slide-btn-container {
+    padding: 0;
+  }
+  .fslightbox-slide-btn {
+    background-color: #131313;
+    border-radius: 0;
+    outline: 0;
+    pointer-events: none;
+    @include mq($from: $maxWidth){
+      width: 120px;
+      height: 120px;
+      top: calc(276px / 2);
+    }
+    @include mq(tablet_xl, $maxWidth){
+      width: 6vw;
+      height: 6vw;
+      top: 7.4vw;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      width: 6vw;
+      height: 6vw;
+      top: 9.7vw;
+    }
+    @include mq($until: mobile_xl){
+      width: 32px;
+      height: 32px;
+      top: 67px;
+    }
+    svg {
+      display: none;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 15%;
+      height: 15%;
+      border-style: solid solid none none;
+      border-width: 2px;
+      border-color: $white;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .fslightbox-source-outer[style*='X(0px)']{
+    transition: all 0.3s;
+  }
+}
+.fslightbox-open {
+  body {
+    margin-right: 0 !important;
+  }
+}

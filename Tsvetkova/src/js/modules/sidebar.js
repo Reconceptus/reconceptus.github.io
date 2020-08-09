@@ -30,7 +30,7 @@ const sidebar = {
         this.data.options.sharingHeight = sharing.offsetHeight;
         this.data.options.sidebarOffset = sidebar.offsetTop;
         this.data.options.winScrollTop = window.pageYOffset;
-        console.log(this.data.options);
+
         if (
             this.data.options.winScrollTop + this.data.options.offsetDelta >
             this.data.options.sidebarOffset
