@@ -40,13 +40,9 @@ const headerEvents = {
         if (Math.abs(this.data.prevScrollTop - scrollTop) <= this.data.delta) return;
 
         if (scrollTop <= this.data.minScrollTop) {
-            this.data.el.wrapper.classList.remove('simple-header', 'less-header');
-        } else if (scrollTop > this.data.prevScrollTop && scrollTop > this.data.minScrollTop) {
-            this.data.el.wrapper.classList.add('simple-header');
-            this.data.el.wrapper.classList.add('less-header');
-        } else {
-            this.data.el.wrapper.classList.add('less-header');
             this.data.el.wrapper.classList.remove('simple-header');
+        } else {
+            this.data.el.wrapper.classList.add('simple-header');
         }
 
         this.data.prevScrollTop = scrollTop;

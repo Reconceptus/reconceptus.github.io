@@ -11,10 +11,11 @@
       height: 100%;
       display: block;
       @include mq($until: mobile_xl){
-        padding: 0 16px 0 $gutter-x2;
+        padding: 0 16px;
       }
     }
     .projects-carousel & {
+      overflow: initial;
       @include mq($from: tablet_xl){
         width: 25%;
         margin-right: $gutter-x2;
@@ -52,6 +53,14 @@
           margin: 0 4vw;
         }
       }
+      .projects-carousel & {
+        @include hover(){
+          .carousel-cell_figure {
+            box-shadow: 0 8px 12px 0 rgba($text,0.3);
+            transform: translateY(-4px);
+          }
+        }
+      }
     }
     &_figure {
       .projects-carousel & {
@@ -60,6 +69,7 @@
         padding-bottom: 67%;
         position: relative;
         overflow: hidden;
+        transition: all 0.2s;
       }
       .gallery-carousel & {
         height: 100%;

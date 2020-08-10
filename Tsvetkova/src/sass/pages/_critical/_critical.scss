@@ -28,7 +28,7 @@
     padding-bottom: 24px;
   }
   @include mq($until: mobile_xl) {
-    margin: 0 -16px 0 -24px;
+    margin: 0 -16px;
   }
 }
 .project-section {
@@ -42,7 +42,7 @@
     padding-bottom: 60px;
   }
   @include mq($until: mobile_xl) {
-    margin: 0 -16px 0 -24px;
+    margin: 0 -16px;
   }
 }
 
@@ -77,6 +77,12 @@
     display: block;
     width: 100%;
     color: inherit;
+    @include hover(){
+      .projects-listing_figure {
+        box-shadow: 0 8px 16px 0 rgba($text,0.3);
+        transform: translateY(-4px);
+      }
+    }
   }
   &_figure {
     width: 100%;
@@ -85,6 +91,7 @@
     position: relative;
     overflow: hidden;
     margin-bottom: $gutter-x2;
+    transition: all 0.2s;
   }
   &_img {
     position: absolute;
@@ -114,7 +121,7 @@
     padding: 60px 10% 12px 10%;
   }
   @include mq($until: mobile_xl) {
-    padding: 40px 16px 12px 24px;
+    padding: 40px 16px 12px 16px;
   }
   @include mq($from: tablet_sm){
     &:after {
@@ -150,9 +157,15 @@
   &-bg {
     width: 100%;
     height: 0;
-    padding-bottom: 40%;
+
     position: relative;
     overflow: hidden;
+    @include mq($from: mobile_xl){
+      padding-bottom: 40%;
+    }
+    @include mq($until: mobile_xl){
+      padding-bottom: 100%;
+    }
     &_figure {
       position: absolute;
       top: 0;
@@ -186,7 +199,8 @@
       }
     }
     @include mq($until: mobile_xl) {
-      padding: $gutter-x2;
+      padding: $gutter-x2 16px;
+      background-color: $white;
     }
 
     &_img {
@@ -241,7 +255,7 @@
 
 .about-page {
   @include mq($until: mobile_xl){
-    margin: 0 -16px 0 -24px;
+    margin: 0 -16px;
   }
   &_banner {
     .main-banner {
@@ -270,8 +284,10 @@
     margin-bottom: 48px;
     background-color: $white;
     display: flex;
-    @include mq($from: tablet_xl) {
-
+    transition: all 0.2s;
+    @include hover(){
+      box-shadow: 0 8px 16px 0 rgba($text,0.3);
+      transform: translateY(-4px);
     }
     @include mq($until: tablet_xl) {
       flex-wrap: wrap-reverse;

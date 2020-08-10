@@ -44,6 +44,11 @@
         }
       }
     }
+    &-imgbox {
+      @include mq($until: tablet_sm) {
+        order: 2;
+      }
+    }
     &-img {
       width: 100%;
       height: 0;
@@ -56,7 +61,7 @@
       }
       @include mq($until: tablet_sm) {
         padding-bottom: 50%;
-        border-top-right-radius: 10vw;
+        border-bottom-left-radius: 10vw;
       }
       img {
         position: absolute;
@@ -78,7 +83,8 @@
       }
       @include mq($until: tablet_sm) {
         padding-bottom: 50%;
-        border-bottom-left-radius: 10vw;
+        border-top-right-radius: 10vw;
+        margin-bottom: 40px;
       }
       .map {
         position: absolute;

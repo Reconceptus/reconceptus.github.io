@@ -10,16 +10,19 @@ body {
   font-weight: 400;
   color: $text;
   font-family: $font_family;
-  &:before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 8px;
-    background-color: $brand-01;
-    z-index: 10;
+  @include mq($from: mobile_xl){
+    &:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 8px;
+      background-color: $brand-01;
+      z-index: 10;
+    }
   }
+
 }
 svg {
   @include fullBlock;
@@ -47,7 +50,7 @@ $logo-prop: 256/84;
     position: absolute;
     top: $header-height-mobile/2;
     transform: translateY(-50%);
-    left: $gutter-x2;
+    left: 16px;
     z-index: 1;
   }
   &_inner {
@@ -99,12 +102,12 @@ $logo-prop: 256/84;
     left: 0;
     right: 0;
     z-index: 1;
-    box-shadow: 0 0 4px 0 rgba($black,0.3);
     background-color: $bg;
     height: $header-height;
     transition: transform 0.2s ease, box-shadow 0.1s ease 0.1s, height 0.2s ease;
     .less-header & {
       height: 80px;
+      box-shadow: 0 0 4px 0 rgba($black,0.3);
     }
     .simple-header & {
       transform: translateY(-105%);
@@ -294,7 +297,6 @@ $logo-prop: 256/84;
 .footer-auth {
   display: flex;
   width: 100%;
-
   justify-content: flex-end;
   align-items: flex-end;
   font-size: $font-sm;
@@ -303,6 +305,9 @@ $logo-prop: 256/84;
   }
   @include mq($from: mobile_xl){
     padding: 0 2*$gutter-x2;
+  }
+  @include mq($until: mobile_xl){
+    color: $text-02;
   }
   a {
     color: inherit;

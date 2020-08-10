@@ -108,6 +108,7 @@
           position: absolute;
           top: -40px;
           left: 0;
+          box-shadow: 0 20px 20px 0 rgba($black, 0.5);
         }
         img {
           position: absolute;
@@ -224,10 +225,10 @@
         margin-bottom: 100px;
       }
       @include mq(mobile_xl, tablet_sm) {
-        margin-bottom: 60px;
+        margin-bottom: 80px;
       }
       @include mq($until: mobile_xl) {
-        margin-bottom: 40px;
+        margin-bottom: 70px;
       }
       &-logo {
 
@@ -298,7 +299,7 @@
       margin-bottom: 40px;
     }
     @include mq($until: mobile_xl) {
-      padding: 0 16px 0 24px;
+      padding: 0 16px;
     }
     .about-page_story-title {
       @include mq($from: tablet_xl) {
@@ -358,7 +359,7 @@
     }
     @include mq($until: mobile_xl) {
       margin-bottom: 40px;
-      padding: 0 16px 0 24px;
+      padding: 0 16px;
     }
     .patterns {
       display: flex;

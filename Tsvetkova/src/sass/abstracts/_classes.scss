@@ -75,7 +75,7 @@ $maxWidth: $content-lg + 2*$gutter-x2;
     padding: 0 $gutter-x2;
   }
   @include mq($until: mobile_xl){
-    padding: 0 16px 0 $gutter-x2;
+    padding: 0 16px;
   }
   &--lg {
     max-width: $maxWidth;
