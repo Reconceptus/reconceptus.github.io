@@ -13,8 +13,8 @@ const sidebar = {
         },
     },
     init() {
-        let sidebar = document.querySelector(this.data.el.sidebar);
-        let sharing = document.querySelector(this.data.el.sidebar + ' ' + this.data.el.sharing);
+        const sidebar = document.querySelector(this.data.el.sidebar);
+        const sharing = document.querySelector(`${this.data.el.sidebar} ${this.data.el.sharing}`);
         if (sharing) {
             this.stickySharing(sidebar, sharing);
             window.addEventListener('resize', () => {

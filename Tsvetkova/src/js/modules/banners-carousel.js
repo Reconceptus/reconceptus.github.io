@@ -25,11 +25,11 @@ const bannersCarousel = {
         },
     },
     init() {
-        const carouselBox = document.querySelector(this.data.el.selector),
-            carouselCells = carouselBox.getElementsByClassName(this.data.el.cellClassName),
-            carouselWrapper = document.querySelector(this.data.el.wrapper);
+        const carouselBox = document.querySelector(this.data.el.selector);
+        const carouselCells = carouselBox.getElementsByClassName(this.data.el.cellClassName);
+        const carouselWrapper = document.querySelector(this.data.el.wrapper);
 
-        var flkty,
+        let flkty,
             cellsLength = carouselCells.length,
             order = 1;
 
@@ -38,20 +38,20 @@ const bannersCarousel = {
                 this.data.el.selector,
                 Object.assign({}, this.data.options, {
                     on: {
-                        ready: function() {
-                            carouselCells[0].style.marginLeft =
-                                -1 * carouselCells[0].offsetWidth + 'px';
-                            setTimeout(function() {
+                        ready() {
+                            carouselCells[0].style.marginLeft = `${-1 *
+                                carouselCells[0].offsetWidth}px`;
+                            setTimeout(() => {
                                 carouselCells[0].style.marginLeft = 0;
                             }, 3000);
                         },
-                        change: function(index) {
+                        change(index) {
                             const i = index == 0 ? cellsLength - 1 : index - 1;
                             order++;
                             carouselCells[i].style.order = order;
-                            carouselCells[index].style.marginLeft =
-                                -1 * carouselCells[index].offsetWidth + 'px';
-                            setTimeout(function() {
+                            carouselCells[index].style.marginLeft = `${-1 *
+                                carouselCells[index].offsetWidth}px`;
+                            setTimeout(() => {
                                 carouselCells[index].style.marginLeft = 0;
                             }, 3000);
                         },
@@ -59,22 +59,22 @@ const bannersCarousel = {
                 }),
             );
 
-            flkty.on('pointerDown', function() {
+            flkty.on('pointerDown', () => {
                 carouselWrapper.classList.add('pointered');
                 setTimeout(() => {
                     flkty.playPlayer();
                     carouselWrapper.classList.remove('pointered');
 
-                    let selectedCell = carouselBox.getElementsByClassName('is-selected')[0];
-                    selectedCell.style.marginLeft = -1 * selectedCell.offsetWidth + 'px';
-                    setTimeout(function() {
+                    const selectedCell = carouselBox.getElementsByClassName('is-selected')[0];
+                    selectedCell.style.marginLeft = `${-1 * selectedCell.offsetWidth}px`;
+                    setTimeout(() => {
                         selectedCell.style.marginLeft = 0;
                     }, 3000);
                 }, 3000);
             });
 
-            let cellsWidth = this.getCellsWidth(flkty.getCellElements());
-            let wrapperWidth = this.getWrapperWidth(carouselWrapper);
+            let cellsWidth = this.getCellsWidth(flkty.getCellElements()),
+                wrapperWidth = this.getWrapperWidth(carouselWrapper);
 
             if (cellsWidth > wrapperWidth) {
                 carouselWrapper.classList.remove('static-banners');

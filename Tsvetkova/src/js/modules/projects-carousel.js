@@ -27,8 +27,8 @@ const introCarousel = {
         }
     },
     flkty() {
-        var flkty = new Flickity(this.data.el.selector, this.data.options);
-        flkty.on('change', function(index) {});
+        const flkty = new Flickity(this.data.el.selector, this.data.options);
+        flkty.on('change', index => {});
     },
 };
 

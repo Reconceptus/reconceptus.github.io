@@ -35,7 +35,7 @@ const headerEvents = {
         });
     },
     hasScrolled() {
-        let scrollTop = window.pageYOffset;
+        const scrollTop = window.pageYOffset;
 
         if (Math.abs(this.data.prevScrollTop - scrollTop) <= this.data.delta) return;
 

@@ -5,21 +5,21 @@ const textBox = {
         },
     },
     init() {
-        let textBoxes = document.getElementsByClassName(this.data.el.textBox);
+        const textBoxes = document.getElementsByClassName(this.data.el.textBox);
 
         for (let t = 0; t < textBoxes.length; t++) {
             this.parseTextBox(textBoxes[t]);
         }
     },
     parseTextBox(box) {
-        let images = box.getElementsByTagName('img');
+        const images = box.getElementsByTagName('img');
         if (images) {
             for (let i = 0; i < images.length; i++) {
                 this.replaceImage(images[i], box);
             }
         }
 
-        let iframes = box.getElementsByTagName('iframe');
+        const iframes = box.getElementsByTagName('iframe');
         if (iframes) {
             for (let i = 0; i < iframes.length; i++) {
                 this.replaceIframe(iframes[i], box);
@@ -33,11 +33,11 @@ const textBox = {
 
             parent.insertBefore(figure, img);
             figure.appendChild(img);
-            figure.classList.add('align-' + float);
+            figure.classList.add(`align-${float}`);
         }
     },
     replaceIframe(img, parent) {
-        let video = document.createElement('div');
+        const video = document.createElement('div');
 
         parent.insertBefore(video, img);
         video.appendChild(img);

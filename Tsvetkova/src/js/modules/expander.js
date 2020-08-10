@@ -20,10 +20,10 @@ const expander = {
             box = exp.getElementsByClassName(this.data.el.box)[0],
             boxInner = exp.getElementsByClassName(this.data.el.boxInner)[0];
 
-        box.style.maxHeight = boxInner.offsetHeight + 'px';
+        box.style.maxHeight = `${boxInner.offsetHeight}px`;
 
-        window.addEventListener('resize', function(event) {
-            box.style.maxHeight = boxInner.offsetHeight + 'px';
+        window.addEventListener('resize', event => {
+            box.style.maxHeight = `${boxInner.offsetHeight}px`;
         });
 
         toggler.addEventListener('click', () => {

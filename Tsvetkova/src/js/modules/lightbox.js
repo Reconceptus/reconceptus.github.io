@@ -9,10 +9,10 @@ const lightbox = {
         options: {},
     },
     init() {
-        let galleries = document.querySelectorAll(this.data.el.galleryName);
+        const galleries = document.querySelectorAll(this.data.el.galleryName);
 
         galleries.forEach(item => {
-            let name = item.dataset[this.data.el.galleryNameAttr];
+            const name = item.dataset[this.data.el.galleryNameAttr];
             fsLightboxInstances[name].props.onOpen = () => {
                 this.slideTransformChecker(name);
             };
@@ -28,7 +28,7 @@ const lightbox = {
 
         btnNext.addEventListener('mousedown', () => {
             for (let i = 0; i < slides.length; i++) {
-                let currentTransform = slides[i].style.transform;
+                const currentTransform = slides[i].style.transform;
                 if (currentTransform == 'translateX(0px)') {
                     if (i == slides.length - 1) {
                         let nextSlideTransform = slides[0].style.transform;
