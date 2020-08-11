@@ -21,7 +21,7 @@ const ovh = {
         document.body.dataset.scroll = '';
         document.getElementById('header').style.marginTop = '';
 
-        window.scrollTo({top: scrollTop});
+        window.scrollTo({ top: scrollTop });
     },
 };
 

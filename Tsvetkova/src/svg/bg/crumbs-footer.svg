@@ -1,113 +1,735 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="428.62" viewBox="0 0 824 428.622">
     <g fill-rule="evenodd">
-        <path d="m305 146.38l15.556-26.378v2.029l2.706-2.029v1.691l3.043-1.691 1.015 2.029 3.382-1.691-9.807 23-1.353-.676-1.015 1.015-1.353-.677-2.029 1.353-1.69-1.353-2.029 1.691h-1.353l-2.367.338"
-              transform="translate(329.06 89.84)" fill="#131313"/>
-        <path d="m162.69 199.37l7.1-2.367-3.382 9.131-5.409-2.031"
-              transform="translate(141.42 111.56)" fill="#deebdc"/>
-        <g fill="#131313">
-            <path d="m169.71 265.76l6.764-3.72-3.382-3.044h-6.087l.676 6.425"
-                  transform="translate(147.88 143.57)"/>
-            <path d="M207.4,233.116,203,225l9.807,4.735v4.058l-2.029-2.705.338,3.382-1.691-1.353-.676,1.691Z"
-                  transform="translate(180.48 130.66)"/>
-        </g>
-        <g fill="#954c2e">
-            <path d="m170 290.03l4.4-2.029 3.382 1.353-.676 3.72-3.044.676-1.015-2.705-2.705 2.029"
-                  transform="translate(174.64 80.16)"/>
-            <path d="m223.72 135l2.705 2.367-1.015 6.425-4.4-.338-1.01-3.381 1.691-.338-1.353-4.4"
-                  transform="translate(187.86 72.46)"/>
-        </g>
-        <path d="M1.353,2.029,0,25.364l1.691-2.029L3.72,26.716l.338-2.029L5.411,26.04l1.015-1.691L8.116,26.04,9.807,10.484l-1.015.338L8.116,6.764,7.44,7.778,6.425,0,4.4,3.044,3.382.676Z"
-              transform="matrix(.90631.42262-.42262.90631 564.84 291.29)" fill="#4c6536"/>
-        <g fill="#deebdc">
-            <path d="m297 224.38l8.455-3.382 5.749 3.044 2.367 4.4h-3.382l-2.367-3.382-2.367 3.044-1.691-1.353h-2.364l-1.691-1.353"
-                  transform="translate(286.47 122.47)"/>
-            <path d="m266 151.03l.676 4.735 2.367-1.353 3.044-2.029-2.029-3.382"
-                  transform="translate(226.23 77.9)"/>
-        </g>
-        <g fill="#954c2e">
-            <path d="m282 241.01l.676 4.058 4.058-1.353-1.014-3.72"
-                  transform="translate(236.01 128.02)"/>
-            <path d="m386.76 246l-6.764 2.705 4.4 9.469 3.382-3.72"
-                  transform="translate(416.95 150.47)"/>
-            <path d="m339 321.7l1.691-2.367 1.015 2.367 2.705-2.705 2.367 5.749-3.382.676-1.015-1.691-2.367 2.367v-2.701"
-                  transform="translate(314.85-27.06)"/>
-        </g>
-        <path d="m256.06 94l-4.058 3.72 4.058 5.411 6.764-2.367-4.4-2.367-.338-2.029-1.684-2.03"
-              transform="translate(226.79 47.42)" fill="#131313"/>
-        <path d="m302 115v4.058l1.691 1.691 3.382-2.367-.676-3.044-2.029 1.015"
-              transform="translate(270.58 4.898)" fill="#954c2e"/>
-        <path d="m163 86.69l6.087 19.614 2.705-1.353-2.367-17.247-2.025 1.015-1.695-3.72"
-              transform="translate(176.88 81.17)" fill="#6b8455"/>
-        <path d="m111.68 101l8.455 6.087-1.353 4.4-6.764-2.367-1.014-5.753"
-              transform="translate(97.89 53.28)" fill="#131313"/>
-        <g fill="#deebdc">
-            <path d="m71.03 178.4l8.116-4.4 6.087.676-2.032 5.749-7.44-1.353-6.76 4.397"
-                  transform="translate(13.565 190.11)"/>
-            <path d="m217.09 53l-6.087 8.793 4.735 3.382 1.353-5.749 2.367 6.764.338-5.073-.338-5.749"
-                  transform="translate(209.08 32.66)"/>
-        </g>
-        <path d="M307.705,42.029,305,54.88l1.691-1.015.676,4.058,1.015-1.691s.338,1.691.676,1.353a7.392,7.392,0,0,1,1.015-1.691l4.058-15.218-2.705,1.691L308.72,40Z"
-              transform="translate(207.97 2.659)" fill="#f5f5f5"/>
-        <path d="m123 48.749l5.073 7.778 4.735-5.411-2.368-8.116s-2.705 5.073-3.382 5.411c-.676 0-4.058.338-4.058.338"
-              transform="translate(109.36-34.884)" fill="#954c2e"/>
-        <path d="m184.68 21.367l-.676 7.778 3.044.676 4.058-5.749-4.058-5.072"
-              transform="translate(158.39-19)" fill="#deebdc"/>
         <path d="M52,44l6.087,9.469,5.073-7.44-5.411-1.353v2.367L55.382,44Z"
-              transform="translate(-34.415-35.545)" fill="#954c2e"/>
-        <path d="m35 87.44l1.015-7.44 3.72 2.029 7.44 3.044v5.073l-4.4-3.044-1.353 5.073-2.02-3.72-1.691 2.029-1.353-2.705"
-              transform="translate(-23.16 41.4)" fill="#131313"/>
-        <path d="M5.749,0,1.691,3.72,3.382,7.1,1.691,11.5,0,17.585l3.382,4.058.338-4.058,3.72-3.72L4.735,10.822,8.793,7.44,7.1,5.411,9.807,3.382Z"
-              transform="matrix(.602-.799.799.602 206.8 79.01)" fill="#6b8455"/>
+              transform="translate(-34.415-35.545)" fill="#954c2e">
+            <animate id="an001" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0s;an002.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an002" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an001.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="M1.353,4.058,4.058,0,11.5.338l1.353,2.367,6.764.676L17.585,6.087l-4.4-1.015L10.484,3.044l-3.72.676L5.749,2.029,3.72,8.455,2.367,5.411,0,6.764Z"
-              transform="matrix(.809.588-.588.809 74.79 117.77)" fill="#f5f5f5"/>
+              transform="matrix(.809.588-.588.809 74.79 117.77)" fill="#f5f5f5">
+            <animate id="an003" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0.5s;an004.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an004" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an003.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m305 146.38l15.556-26.378v2.029l2.706-2.029v1.691l3.043-1.691 1.015 2.029 3.382-1.691-9.807 23-1.353-.676-1.015 1.015-1.353-.677-2.029 1.353-1.69-1.353-2.029 1.691h-1.353l-2.367.338"
+              transform="translate(329.06 89.84)" fill="#131313">
+            <animate id="an005" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1s;an006.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an006" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an005.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m162.69 199.37l7.1-2.367-3.382 9.131-5.409-2.031"
+              transform="translate(141.42 111.56)" fill="#deebdc">
+            <animate id="an007" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1.5s;an008.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an008" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an007.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m170 290.03l4.4-2.029 3.382 1.353-.676 3.72-3.044.676-1.015-2.705-2.705 2.029"
+              transform="translate(174.64 80.16)">
+            <animate id="an009" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2s;an010.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an010" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an009.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m223.72 135l2.705 2.367-1.015 6.425-4.4-.338-1.01-3.381 1.691-.338-1.353-4.4"
+              transform="translate(187.86 72.46)">
+            <animate id="an011" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2.5s;an012.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an012" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an011.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="M1.353,2.029,0,25.364l1.691-2.029L3.72,26.716l.338-2.029L5.411,26.04l1.015-1.691L8.116,26.04,9.807,10.484l-1.015.338L8.116,6.764,7.44,7.778,6.425,0,4.4,3.044,3.382.676Z"
+              transform="matrix(.90631.42262-.42262.90631 564.84 291.29)" fill="#4c6536">
+            <animate id="an013" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3s;an014.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an014" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an013.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#deebdc" d="m297 224.38l8.455-3.382 5.749 3.044 2.367 4.4h-3.382l-2.367-3.382-2.367 3.044-1.691-1.353h-2.364l-1.691-1.353"
+              transform="translate(286.47 122.47)">
+            <animate id="an015" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3.5s;an016.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an016" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an015.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#deebdc" d="m266 151.03l.676 4.735 2.367-1.353 3.044-2.029-2.029-3.382"
+              transform="translate(226.23 77.9)">
+            <animate id="an017" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4s;an018.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an018" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an017.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m282 241.01l.676 4.058 4.058-1.353-1.014-3.72"
+              transform="translate(236.01 128.02)">
+            <animate id="an019" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4.5s;an020.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an020" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an019.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m386.76 246l-6.764 2.705 4.4 9.469 3.382-3.72"
+              transform="translate(416.95 150.47)">
+            <animate id="an021" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5s;an022.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an022" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an021.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m339 321.7l1.691-2.367 1.015 2.367 2.705-2.705 2.367 5.749-3.382.676-1.015-1.691-2.367 2.367v-2.701"
+              transform="translate(314.85-27.06)">
+            <animate id="an023" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5.5s;an024.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an024" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an023.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m256.06 94l-4.058 3.72 4.058 5.411 6.764-2.367-4.4-2.367-.338-2.029-1.684-2.03"
+              transform="translate(226.79 47.42)" fill="#131313">
+            <animate id="an025" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0s;an026.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an026" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an025.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m302 115v4.058l1.691 1.691 3.382-2.367-.676-3.044-2.029 1.015"
+              transform="translate(270.58 4.898)" fill="#954c2e">
+            <animate id="an027" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0.5s;an028.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an028" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an027.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m163 86.69l6.087 19.614 2.705-1.353-2.367-17.247-2.025 1.015-1.695-3.72"
+              transform="translate(176.88 81.17)" fill="#6b8455">
+            <animate id="an029" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1s;an030.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an030" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an029.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m111.68 101l8.455 6.087-1.353 4.4-6.764-2.367-1.014-5.753"
+              transform="translate(97.89 53.28)" fill="#131313">
+            <animate id="an021" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1.5s;an032.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an032" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an031.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#deebdc" d="m71.03 178.4l8.116-4.4 6.087.676-2.032 5.749-7.44-1.353-6.76 4.397"
+              transform="translate(13.565 190.11)">
+            <animate id="an033" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2s;an034.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an034" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an033.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#deebdc" d="m217.09 53l-6.087 8.793 4.735 3.382 1.353-5.749 2.367 6.764.338-5.073-.338-5.749"
+              transform="translate(209.08 32.66)">
+            <animate id="an035" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2.5s;an036.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an036" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an035.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="M307.705,42.029,305,54.88l1.691-1.015.676,4.058,1.015-1.691s.338,1.691.676,1.353a7.392,7.392,0,0,1,1.015-1.691l4.058-15.218-2.705,1.691L308.72,40Z"
+              transform="translate(207.97 2.659)" fill="#f5f5f5">
+            <animate id="an037" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3s;an038.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an038" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an037.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m123 48.749l5.073 7.778 4.735-5.411-2.368-8.116s-2.705 5.073-3.382 5.411c-.676 0-4.058.338-4.058.338"
+              transform="translate(109.36-34.884)" fill="#954c2e">
+            <animate id="an039" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3.5s;an040.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an040" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an039.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m184.68 21.367l-.676 7.778 3.044.676 4.058-5.749-4.058-5.072"
+              transform="translate(158.39-19)" fill="#deebdc">
+            <animate id="an041" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4s;an042.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an042" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an041.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="m35 87.44l1.015-7.44 3.72 2.029 7.44 3.044v5.073l-4.4-3.044-1.353 5.073-2.02-3.72-1.691 2.029-1.353-2.705"
+              transform="translate(-23.16 41.4)" fill="#131313">
+            <animate id="an043" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4.5s;an044.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an044" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an043.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path d="M5.749,0,1.691,3.72,3.382,7.1,1.691,11.5,0,17.585l3.382,4.058.338-4.058,3.72-3.72L4.735,10.822,8.793,7.44,7.1,5.411,9.807,3.382Z"
+              transform="matrix(.602-.799.799.602 206.8 79.01)" fill="#6b8455">
+            <animate id="an045" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5s;an046.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an046" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an045.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="M37.676,221.691,41.4,220l5.749.676.338,1.691-7.1,4.058-.338-2.029-2.705.338.676-1.353L37,222.029Z"
-              transform="translate(-24.487 119.51)" fill="#131313"/>
+              transform="translate(-24.487 119.51)" fill="#131313">
+            <animate id="an047" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5.5s;an048.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an048" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an047.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m12 177.37l4.735-2.367 3.382 2.705-1.692 1.695"
-              transform="translate(-7.942 89.16)" fill="#954c2e"/>
+              transform="translate(-7.942 89.16)" fill="#954c2e">
+            <animate id="an049" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0s;an050.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an050" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an049.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m0 208.43l1.353-4.4 4.396-2.025 6.425 1.015-1.015 1.691h-3.381l-.678 4.058-2.367-1.353-1.013 1.014"
-              transform="translate(0 109.54)" fill="#131313"/>
+              transform="translate(0 109.54)" fill="#131313">
+            <animate id="an051" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0.5s;an052.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an052" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an051.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m10.705 268.06l10.146-4.058-1.351 2.705 1.691.338-1.355 1.357 5.749 1.015-16.909 6.085 2.029-2.705-2.705-.34 2.029-1.015-1.691-2.029"
-              transform="translate(13.08 110.01)" fill="#deebdc"/>
+              transform="translate(13.08 110.01)" fill="#deebdc">
+            <animate id="an053" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1s;an054.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an054" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an053.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m83 231.18l3.044-8.793.676 2.705 2.029-6.087-1.349 8.793 2.705-.338-2.029 2.029v4.735l-3.382-2.367-1.353 2.705"
-              transform="translate(75.08 141.51)" fill="#131313"/>
-        <g fill="#954c2e">
-            <path d="m108 281.74l1.691-4.735 4.058 2.029v3.382l-5.073 3.044"
-                  transform="translate(91.48 90.06)"/>
-            <path d="m128.01 228l-1.015 6.764 4.4.676 1.015-5.411"
-                  transform="translate(194.29 25.16)"/>
-        </g>
+              transform="translate(75.08 141.51)" fill="#131313">
+            <animate id="an055" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1.5s;an056.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an056" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an055.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m108 281.74l1.691-4.735 4.058 2.029v3.382l-5.073 3.044"
+              transform="translate(91.48 90.06)">
+            <animate id="an057" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2s;an058.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an058" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an057.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#954c2e" d="m128.01 228l-1.015 6.764 4.4.676 1.015-5.411"
+              transform="translate(194.29 25.16)">
+            <animate id="an059" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2.5s;an060.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an060" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an059.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m7 326.38l5.073-3.382 2.705 3.382-2.367 2.705-2.029-2.029-1.353 2.029"
-              transform="translate(48.2 52.22)" fill="#131313"/>
+              transform="translate(48.2 52.22)" fill="#131313">
+            <animate id="an061" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3s;an062.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an062" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an061.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m35 354.72l2.029-3.72 2.367 1.353.676 4.058-3.382 1.015"
-              transform="translate(109.92 53.5)" fill="#deebdc"/>
+              transform="translate(109.92 53.5)" fill="#deebdc">
+            <animate id="an063" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3.5s;an064.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an064" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an063.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m124.04 351.91l-3.044-10.822 3.044 3.044-.677-9.131 3.382 3.044 4.058 10.484-4.4-1.015.676 2.705"
-              transform="translate(160.47 63.58)" fill="#131313"/>
+              transform="translate(160.47 63.58)" fill="#131313">
+            <animate id="an065" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4s;an066.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an066" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an065.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m172 345.16l5.749-11.16 1.691 8.793-3.382-1.015"
-              transform="translate(145.6 62.717)" fill="#757575"/>
+              transform="translate(145.6 62.717)" fill="#757575">
+            <animate id="an067" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="4.5s;an068.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an068" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an067.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="M248.058,373.425,244,367l3.72.676,5.411,1.353-3.044,2.029Z"
-              transform="translate(213.66 26.15)" fill="#deebdc"/>
-        <g fill="#757575">
-            <path d="m182.37 385.78l7.1-2.029-2.703-5.749-6.764 1.353"
-                  transform="translate(226.06 28.01)"/>
-            <path d="M353.735,371.778,349,364l5.073,3.044.338-2.705,2.367,4.4Z"
-                  transform="translate(310.51 38.799)"/>
-        </g>
+              transform="translate(213.66 26.15)" fill="#deebdc">
+            <animate id="an069" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5s;an070.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an070" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an069.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#757575" d="m182.37 385.78l7.1-2.029-2.703-5.749-6.764 1.353"
+              transform="translate(226.06 28.01)">
+            <animate id="an071" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="5.5s;an072.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an072" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an071.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
+        <path fill="#757575" d="M353.735,371.778,349,364l5.073,3.044.338-2.705,2.367,4.4Z"
+              transform="translate(310.51 38.799)">
+            <animate id="an073" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="0.5s;an074.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an074" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an073.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m259.06 20l-4.058 5.073 2.367 5.749 3.72-2.367"
-              transform="translate(216.87-19.662)" fill="#954c2e"/>
+              transform="translate(216.87-19.662)" fill="#954c2e">
+            <animate id="an075" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1s;an076.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an076" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an075.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m367.45 68.34l-5.75-.338-2.705 6.087 3.72-3.382v1.353"
-              transform="translate(386.27-25.423)" fill="#f5f5f5"/>
+              transform="translate(386.27-25.423)" fill="#f5f5f5">
+            <animate id="an077" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="1.5s;an078.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an078" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an077.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m426.91 90h-14.542l.676 1.691-3.043 1.691 9.807.676"
-              transform="translate(397.09 40.2)" fill="#954c2e"/>
+              transform="translate(397.09 40.2)" fill="#954c2e">
+            <animate id="an079" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2s;an080.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an080" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an079.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m424 152.38l4.735-3.382v1.353l2.029-.676-.338 1.015 4.4-.676-6.764 3.72-.676-.676-.676.338-.338-1.015"
-              transform="translate(387.83 74.78)" fill="#131313"/>
+              transform="translate(387.83 74.78)" fill="#131313">
+            <animate id="an081" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="2.5s;an082.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an082" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an081.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m376.75 174.81l-5.749-8.454 5.073 2.367v-3.72l7.44 9.131-5.073-1.691.676 2.029"
-              transform="translate(422.9 92.86)" fill="#954c2e"/>
+              transform="translate(422.9 92.86)" fill="#954c2e">
+            <animate id="an083" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3s;an084.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an084" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an083.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
         <path d="m430 234.38l3.382-3.382 4.058 4.4-3.044 2.029-1.353-2.705"
-              transform="translate(383.86 126.04)" fill="#deebdc"/>
-        <g fill="#131313">
-            <path d="m375 223.04l6.425-.338-.676-2.706" transform="translate(420.25 111.93)"/>
-            <path d="M395.764,314.749l-1.353-5.411-3.044,1.353L389,309v3.382l1.015,3.72,2.367-2.367,2.029,2.367Z"
-                  transform="translate(410.99 112.52)"/>
-        </g>
+              transform="translate(383.86 126.04)" fill="#deebdc">
+            <animate id="an085" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="3.5s;an086.end"
+                     from="1"
+                     to="0"
+                     dur="3s"
+            ></animate>
+            <animate id="an086" attributeType="CSS"
+                     attributeName="opacity"
+                     begin="an085.end"
+                     from="0"
+                     to="1"
+                     dur="3s"
+            ></animate>
+        </path>
     </g>
 </svg>
