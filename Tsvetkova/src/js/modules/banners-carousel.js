@@ -1,6 +1,7 @@
 import Flickity from 'flickity';
 import imagesLoaded from 'imagesLoaded';
-
+// https://github.com/metafizzy/flickity
+// https://flickity.metafizzy.co/events.html
 const bannersCarousel = {
     data: {
         el: {

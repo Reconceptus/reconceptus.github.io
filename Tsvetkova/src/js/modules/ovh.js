@@ -1,24 +1,27 @@
 const ovh = {
+    init() {
+        window.fn.ovh.enable = () => this.add();
+        window.fn.ovh.disable = () => this.remove();
+    },
     add() {
-        const scroll_top = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         setTimeout(() => {
-            $('html').addClass('ovh');
-
-            functions.sticky_sidebar.translate('add');
-
-            $('body')
-                .css('margin-top', `${-1 * scroll_top}px`)
-                .attr('data-scroll', scroll_top);
-        }, 50);
+            document.documentElement.classList.add('ovh');
+            document.body.style.marginTop = `${-1 * scrollTop}px`;
+            document.body.dataset.scroll = scrollTop;
+            document.getElementById('header').style.marginTop = `${scrollTop}px`;
+        }, 10);
     },
     remove() {
-        const scroll_top = $('body').attr('data-scroll');
-        functions.sticky_sidebar.translate('remove');
+        const scrollTop = document.body.dataset.scroll;
 
-        $('html').removeClass('ovh');
-        $('body').attr({ style: '', 'data-scroll': '' });
-        $(window).scrollTop(scroll_top);
+        document.documentElement.classList.remove('ovh');
+        document.body.style.marginTop = '';
+        document.body.dataset.scroll = '';
+        document.getElementById('header').style.marginTop = '';
+
+        window.scrollTo({top: scrollTop});
     },
 };
 

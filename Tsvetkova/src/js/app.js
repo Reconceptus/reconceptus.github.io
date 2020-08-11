@@ -15,9 +15,14 @@ window.fn = {
     validation: require('./modules/validation'),
     sidebar: require('./modules/sidebar'),
     lightbox: require('./modules/lightbox'),
+    ovh: require('./modules/ovh'),
 };
 
 const modules = [
+    {
+        selector: 'body',
+        name: 'ovh',
+    },
     {
         selector: '.header',
         name: 'headerEvents',
