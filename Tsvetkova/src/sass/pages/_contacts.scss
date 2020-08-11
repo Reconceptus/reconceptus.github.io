@@ -1,4 +1,19 @@
 .contact-page {
+  &_success {
+    min-height: 5vw;
+    @include mq($from: mobile_xl) {
+      font-size: $font-lg;
+    }
+    @include mq($until: mobile_xl) {
+      font-size: $font-md;
+    }
+    @include mq($from: tablet_sm) {
+      margin-bottom: 114px;
+    }
+    @include mq($until: tablet_sm) {
+      margin-bottom: 80px;
+    }
+  }
   &_map {
     background-color: $link;
     background-repeat: no-repeat;
@@ -55,12 +70,11 @@
       overflow: hidden;
       position: relative;
       box-shadow: 0 40px 40px 0 #4C6536;
+      padding-bottom: 100%;
       @include mq($from: tablet_sm) {
-        padding-bottom: 100%;
         border-bottom-left-radius: 90px;
       }
       @include mq($until: tablet_sm) {
-        padding-bottom: 50%;
         border-bottom-left-radius: 10vw;
       }
       img {
@@ -76,13 +90,13 @@
       overflow: hidden;
       position: relative;
       box-shadow: 0 40px 40px 0 #4C6536;
+      padding-bottom: 100%;
       @include mq($from: tablet_sm) {
         margin-top: 20%;
         border-top-right-radius: 90px;
-        padding-bottom: 100%;
       }
       @include mq($until: tablet_sm) {
-        padding-bottom: 50%;
+
         border-top-right-radius: 10vw;
         margin-bottom: 40px;
       }

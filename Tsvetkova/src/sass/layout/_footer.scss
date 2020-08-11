@@ -1,4 +1,10 @@
 .footer {
+  @include mq($from: desktop_sm) {
+    margin-bottom: 48px;
+  }
+  @include mq(mobile_xl, desktop_sm) {
+    margin-bottom: 24px;
+  }
   @include mq($until: mobile_xl){
     overflow: hidden;
   }

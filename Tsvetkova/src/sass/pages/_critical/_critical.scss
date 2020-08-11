@@ -79,7 +79,7 @@
     color: inherit;
     @include hover(){
       .projects-listing_figure {
-        box-shadow: 0 8px 16px 0 rgba($text,0.3);
+        box-shadow: 0 8px 16px 0 rgba($text,0.15);
         transform: translateY(-4px);
       }
     }
@@ -286,7 +286,7 @@
     display: flex;
     transition: all 0.2s;
     @include hover(){
-      box-shadow: 0 8px 16px 0 rgba($text,0.3);
+      box-shadow: 0 8px 16px 0 rgba($text,0.15);
       transform: translateY(-4px);
     }
     @include mq($until: tablet_xl) {

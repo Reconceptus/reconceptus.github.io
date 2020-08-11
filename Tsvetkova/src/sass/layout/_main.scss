@@ -27,8 +27,8 @@ a {
     }
   }
 }
-.wrapper {
-
+picture {
+  @include imagePlaceholder;
 }
 
 .container {
