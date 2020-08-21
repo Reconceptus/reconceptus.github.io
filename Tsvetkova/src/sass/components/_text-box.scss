@@ -345,6 +345,7 @@ Styleguide styleguide.typography.text-box
   .text-box-gallery {
     overflow: hidden;
     position: relative;
+
     @include mq($from: tablet_xl) {
       margin: 80px 0 80px -40%;
       border-bottom-left-radius: 180px;
@@ -366,7 +367,7 @@ Styleguide styleguide.typography.text-box
         display: none;
       }
     }
-    &:after {
+    /*&:after {
       content: "";
       position: absolute;
       border-radius: 50%;
@@ -398,7 +399,7 @@ Styleguide styleguide.typography.text-box
       &:after {
         background-color: rgba($text,1);
       }
-    }
+    }*/
   }
   .gallery-tile {
 
