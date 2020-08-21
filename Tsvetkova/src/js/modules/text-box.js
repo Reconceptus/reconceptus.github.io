@@ -15,6 +15,7 @@ const textBox = {
         const images = box.getElementsByTagName('img');
         if (images) {
             for (let i = 0; i < images.length; i++) {
+                this.removeExcess(images[i], box);
                 this.replaceImage(images[i], box);
             }
         }
@@ -24,6 +25,15 @@ const textBox = {
             for (let i = 0; i < iframes.length; i++) {
                 this.replaceIframe(iframes[i], box);
             }
+        }
+    },
+    removeExcess(box, parent) {
+        box.style.margin = '';
+
+        let boxParent = box.parentNode;
+        if (boxParent.tagName === 'P') {
+            parent.insertBefore(box, boxParent);
+            boxParent.remove();
         }
     },
     replaceImage(img, parent) {

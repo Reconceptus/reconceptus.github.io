@@ -247,6 +247,7 @@ Styleguide styleguide.typography.text-box
       width: 100%;
       position: relative;
       z-index: 1;
+      clear: both;
       @include mq(mobile_xl, tablet_sm) {
         margin-left: 11vw;
       }
@@ -285,6 +286,7 @@ Styleguide styleguide.typography.text-box
       width: 100%;
       position: relative;
       z-index: 1;
+      clear: both;
       @include mq(tablet_sm, tablet_xl) {
         margin-left: -25%;
       }
