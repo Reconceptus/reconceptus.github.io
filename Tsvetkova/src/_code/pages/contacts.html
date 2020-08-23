@@ -23,42 +23,44 @@
                                     <p>Наши страницы: <a href="#" class="link">instagram</a></p>
                                 </div>
                                 <h2 class="title--lg">Напишите нам</h2>
-                                <div class="custom-form">
-                                    <form action="contacts-success.html">
-                                        <fieldset class="fieldset">
-                                            <div class="input-text">
-                                                <input type="text" name="name" placeholder="*Представьтесь">
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="fieldset">
-                                            <div class="input-text">
-                                                <input type="tel" name="tel" placeholder="*Телефон">
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="fieldset">
-                                            <div class="input-text">
-                                                <input type="email" name="mail" placeholder="*Емейл">
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="fieldset">
-                                            <div class="textarea">
-                                                <textarea rows="4" name="message" placeholder="Ваше сообщение"></textarea>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="fieldset">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" name="agreement">
-                                                    <span class="text">Даю согласие на обработку <a
-                                                            href="#" class="link">персональных данных</a> и соглашаюсь с <a
-                                                            href="#" class="link">политикой конфиденциальности</a></span>
-                                                </label>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="fieldset">
-                                            <button class="btn btn--light btn--bordered btn--md">Отправить</button>
-                                        </fieldset>
-                                    </form>
+                                <div id="form">
+                                    <div class="custom-form">
+                                        <form >
+                                            <fieldset class="fieldset">
+                                                <div class="input-text">
+                                                    <input type="text" name="name" placeholder="*Представьтесь">
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="fieldset">
+                                                <div class="input-text">
+                                                    <input type="tel" name="tel" placeholder="*Телефон">
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="fieldset">
+                                                <div class="input-text">
+                                                    <input type="email" name="mail" placeholder="*Емейл">
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="fieldset">
+                                                <div class="textarea">
+                                                    <textarea rows="4" name="message" placeholder="Ваше сообщение"></textarea>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="fieldset">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="agreement">
+                                                        <span class="text">Даю согласие на обработку <a
+                                                                href="#" class="link">персональных данных</a> и соглашаюсь с <a
+                                                                href="#" class="link">политикой конфиденциальности</a></span>
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset class="fieldset">
+                                                <button class="btn btn--light btn--bordered btn--md">Отправить</button>
+                                            </fieldset>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <div class="content-col col-5 col-lg-4 mobile-hidden">
@@ -132,6 +134,20 @@
         // second parameter - rules for mandatory inputs [names] (https://validatejs.org/ - other rules)
         // third parameter - action if validation is ok (form.submit if nothing)
 
+        var getSuccessMessage = function(){
+            var form = document.getElementById('form');
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                if(request.readyState === 4 && request.status === 200) {
+                    form.innerHTML = request.responseText;
+                }
+            };
+            request.open('Get', 'contacts-success-message.html');
+            request.send();
+
+            window.scrollTo(0, 0.7*form.offsetTop);
+        };
+
         fn.validate(".custom-form form",{
             name: {
                 presence: true
@@ -152,7 +168,7 @@
                     within: [true]
                 }
             }
-        })
+        }, getSuccessMessage)
     })
 </script>
 

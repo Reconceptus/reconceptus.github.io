@@ -25,7 +25,7 @@ const validation = {
         const errors = validate(form, params);
         if (!errors) {
             if (callback) {
-                return callback;
+                return callback();
             }
             form.submit();
         }
