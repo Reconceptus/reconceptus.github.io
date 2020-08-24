@@ -1,0 +1,195 @@
+.appearing-svg {
+
+}
+
+.svg01 {
+  &_part {
+    &--filament {
+      transition: all 3s ease-in;
+      stroke-dasharray: 3466.8549;
+      stroke-dashoffset: 3466.8549;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--hand {
+      transition: all 3s linear;
+      stroke-dasharray: 4412.5087;
+      stroke-dashoffset: 4412.5087;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--needle {
+      transition: all 2s linear;
+      stroke-dasharray: 438.6514;
+      stroke-dashoffset: 438.6514;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--ear {
+      transition: all 0.5s linear 0.5s;
+      opacity: 0;
+      .active-svg & {
+        opacity: 1;
+      }
+    }
+  }
+}
+.svg02 {
+  &_part {
+    &--filament1 {
+      transition: all 2s ease-in;
+      stroke-dasharray: 2135.6391;
+      stroke-dashoffset: 2135.6391;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--filament2 {
+      transition: all 2s ease-in;
+      stroke-dasharray: 565.6296;
+      stroke-dashoffset: -565.6296;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--circle {
+      transition: all 2s ease-in;
+      opacity: 0;
+      .active-svg & {
+        opacity: 1;
+      }
+    }
+  }
+}
+.svg03 {
+  &_part {
+    &--filament {
+      transition: all 3s ease-in;
+      stroke-dasharray: 2626.5097;
+      stroke-dashoffset: -2626.5097;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--circle {
+      transition: all 2s ease-in;
+      opacity: 0;
+      .active-svg & {
+        opacity: 1;
+      }
+    }
+    &--hand {
+      transition: all 2s linear 1s;
+      stroke-dasharray: 2613.8493;
+      stroke-dashoffset: 2613.8493;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--bird1 {
+      transition: all 2s linear 1s;
+      stroke-dasharray: 1646.6577;
+      stroke-dashoffset: 1646.6577;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--bird2 {
+      transition: all 2s linear 1s;
+      stroke-dasharray: 492.1282;
+      stroke-dashoffset: 492.1282;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+.svg04 {
+  &_part {
+    &--hand {
+      transition: all 3s ease-in;
+      stroke-dasharray: 3932.3889;
+      stroke-dashoffset: 3932.3889;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--flower {
+      transition: all 2s ease-in;
+      stroke-dasharray: 2663.5788;
+      stroke-dashoffset: 2663.5788;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--star {
+      transition: all 2s linear 1s;
+      stroke-dasharray: 489.8599;
+      stroke-dashoffset: 489.8599;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+.svg05 {
+  &_part {
+    &--hand1 {
+      transition: all 2s ease-in;
+      stroke-dasharray: 2901.9997;
+      stroke-dashoffset: 2901.9997;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--hand2 {
+      transition: all 0.5s ease-in 1s;
+      stroke-dasharray: 55.1840;
+      stroke-dashoffset: 55.1840;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--hand3 {
+      transition: all 2s ease-in;
+      stroke-dasharray: 2078.5205;
+      stroke-dashoffset: 2078.5205;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--cord {
+      transition: all 1.5s ease-in 1s;
+      stroke-dasharray: 1038.7932;
+      stroke-dashoffset: 1038.7932;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--needle {
+      transition: all 1s ease-in 2s;
+      stroke-dasharray: 482.0898;
+      stroke-dashoffset: 482.0898;
+      .active-svg & {
+        stroke-dashoffset: 0;
+      }
+    }
+    &--flower {
+      transition: all 0.5s ease-in 1.5s;
+      opacity: 0;
+      .active-svg & {
+        opacity: 1;
+      }
+    }
+    &--circle {
+      transition: all 3s ease-in;
+      opacity: 0;
+      .active-svg & {
+        opacity: 1;
+      }
+    }
+  }
+}

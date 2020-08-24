@@ -10,6 +10,7 @@ window.fn = {
     sidebar: require('./modules/sidebar'),
     lightbox: require('./modules/lightbox'),
     ovh: require('./modules/ovh'),
+    appearingSVG: require('./modules/appearing-svg'),
 };
 
 const modules = [
@@ -56,6 +57,10 @@ const modules = [
     {
         selector: '[data-fslightbox]',
         name: 'lightbox',
+    },
+    {
+        selector: '.appearing-svg',
+        name: 'appearingSVG',
     },
 ];
 

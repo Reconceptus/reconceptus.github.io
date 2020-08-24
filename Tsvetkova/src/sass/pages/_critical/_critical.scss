@@ -457,6 +457,15 @@
     @include mq($until: tablet_sm) {
       display: none;
     }
+    .appearing-svg {
+      @include fullBlock;
+      position: relative;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
     img {
       display: block;
       width: 100%;
