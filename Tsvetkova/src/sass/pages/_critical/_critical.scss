@@ -290,6 +290,10 @@
     &-bg {
       margin-top: -3vw;
       margin-bottom: -9vw;
+      @include mq($until: tablet_sm){
+        margin-left: -36vw;
+        margin-right: -6vw;
+      }
       img {
         display: block;
         width: 100%;
@@ -428,6 +432,7 @@
 
 .user-page {
   padding-bottom: 60px;
+  position: relative;
 }
 
 .contact-page {
@@ -471,12 +476,14 @@
     @include mq($from: desktop_sm) {
       width: 80%;
     }
-    @include mq($until: desktop_sm) {
+    @include mq(tablet_xl, desktop_sm) {
       width: 100%;
     }
-    @include mq($until: tablet_sm) {
-      display: none;
+    @include mq($until: tablet_xl) {
+      position: relative;
+      height: 170px;
     }
+
     .appearing-svg {
       @include fullBlock;
       position: relative;
@@ -485,11 +492,30 @@
         top: 0;
         left: 0;
       }
+      @include mq(mobile_xl, tablet_xl) {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        width: 300px;
+        height: 310px;
+      }
+      @include mq($until: mobile_xl) {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        width: 230px;
+        height: 240px;
+      }
     }
     img {
       display: block;
       width: 100%;
       height: auto;
+    }
+    &-wrap {
+      @include mq($until: tablet_xl) {
+        order: -1;
+      }
     }
   }
 

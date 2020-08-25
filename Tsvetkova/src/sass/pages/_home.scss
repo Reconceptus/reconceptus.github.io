@@ -44,18 +44,28 @@
   }
   @include mq(mobile_xl, tablet_xl){
     margin-bottom: 100px;
+    margin-top: 250px;
   }
   @include mq($until: mobile_xl){
     margin-bottom: 100px;
+    margin-top: 200px;
   }
   position: relative;
   .bg {
     position: absolute;
-    left: 0;
     right: 0;
-    top: 100px;
-    @include mq($until: tablet_xl){
-      display: none;
+    @include mq($from: tablet_xl){
+      top: 100px;
+      left: 0;
+    }
+    @include mq(mobile_xl, tablet_xl){
+      top: -200px;
+      left: -50%;
+    }
+    @include mq($until: mobile_xl){
+      top: -175px;
+      left: auto;
+      width: 740px;
     }
     img {
       display: block;
