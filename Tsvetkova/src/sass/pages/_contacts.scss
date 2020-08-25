@@ -29,11 +29,11 @@
       margin-bottom: 48px;
     }
     @include mq(mobile_xl, tablet_sm) {
-      padding: 60px 0;
+      padding: 100px 0 100px;
       margin-bottom: 24px;
     }
     @include mq($until: mobile_xl) {
-      padding: 60px 0;
+      padding: 100px 0 100px;
     }
     &-title {
       color: $white;

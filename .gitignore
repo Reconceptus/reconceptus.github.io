@@ -2,6 +2,7 @@
 node_modules/
 dev/
 app-lnt.js
+test.html
 
 yarn.lock
 package-lock.json
