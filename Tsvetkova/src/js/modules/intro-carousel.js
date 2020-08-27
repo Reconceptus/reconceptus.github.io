@@ -11,7 +11,7 @@ const introCarousel = {
             setGallerySize: false,
             wrapAround: true,
             pageDots: true,
-            draggable: false,
+            draggable: true,
             percentPosition: true,
             prevNextButtons: false,
             pauseAutoPlayOnHover: false,

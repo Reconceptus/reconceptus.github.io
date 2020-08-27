@@ -285,7 +285,13 @@ $logo-prop: 256/84;
 }
 .footer-inner {
   &_text {
-    font-size: $font-lg;
+    line-height: (32/20);
+    @include mq($from: mobile_xl) {
+      font-size: $font-lg;
+    }
+    @include mq($until: mobile_xl) {
+      font-size: $font-md;
+    }
   }
 }
 .footer-logo {

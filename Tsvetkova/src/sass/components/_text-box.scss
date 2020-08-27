@@ -273,11 +273,15 @@ Styleguide styleguide.typography.text-box
           margin-left: 24px;
           border-bottom-right-radius: 80px;
         }
-        @include mq($until: tablet_sm) {
+        @include mq(mobile_xl, tablet_sm) {
           width: 33vw;
           margin-left: 24px;
           margin-bottom: 24px;
           border-bottom-right-radius: 15vw;
+        }
+        @include mq($until: mobile_xl) {
+          width: 100%;
+          margin-bottom: 24px;
         }
 
       }
@@ -314,11 +318,17 @@ Styleguide styleguide.typography.text-box
           margin-right: 24px;
           margin-bottom: 24px;
         }
-        @include mq($until: tablet_sm) {
+        @include mq(mobile_xl, tablet_sm) {
           width: 33vw;
           margin-right: 24px;
           margin-bottom: 24px;
         }
+        @include mq($until: mobile_xl) {
+          width: 100%;
+          margin-bottom: 24px;
+          border-radius: 0;
+        }
+
       }
     }
   }
@@ -340,6 +350,9 @@ Styleguide styleguide.typography.text-box
       margin: 60px 0;
       width: 100%;
       border-bottom-left-radius: 15vw;
+    }
+    @include mq($until: mobile_xl) {
+      border-radius: 0;
     }
   }
   .text-box-gallery {

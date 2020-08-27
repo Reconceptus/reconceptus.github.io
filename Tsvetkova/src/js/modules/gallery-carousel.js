@@ -11,7 +11,7 @@ const galleryCarousel = {
             accessibility: false,
             setGallerySize: false,
             wrapAround: true,
-            draggable: false,
+            draggable: true,
             percentPosition: true,
             prevNextButtons: true,
             pauseAutoPlayOnHover: false,

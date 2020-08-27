@@ -160,7 +160,9 @@
 
 .intro-carousel {
   .flickity-viewport {
-    pointer-events: none;
+    .desktop & {
+      pointer-events: none;
+    }
   }
   .flickity-page-dots {
     bottom: 10%;
@@ -338,11 +340,13 @@
   height: 0;
   padding-bottom: 74%;
   .flickity-viewport {
-    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    .desktop & {
+      pointer-events: none;
+    }
   }
   .flickity-button {
     background-color: $text;
