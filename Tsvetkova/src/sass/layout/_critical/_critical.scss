@@ -156,9 +156,11 @@ $logo-prop: 256/84;
     }
     @include mq(mobile_sm, tablet_xl){
       margin-left: $padding-md;
+      display: flex;
     }
     @include mq($until: mobile_sm){
       margin-left: $gutter-x2;
+      display: flex;
     }
   }
 
@@ -167,8 +169,8 @@ $logo-prop: 256/84;
       display: none;
     }
     display: inline-flex;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     @include resetBtn;
 
     position: relative;
@@ -180,7 +182,7 @@ $logo-prop: 256/84;
     }
     span {
       position: absolute;
-      height: 4px;
+      height: 3px;
       left: 0;
       right: 0;
       top: 0;
@@ -199,10 +201,10 @@ $logo-prop: 256/84;
         background-color: currentColor;
       }
       &:before {
-        top: -10px;
+        top: -8px;
       }
       &:after {
-        bottom: -10px;
+        bottom: -8px;
       }
     }
   }
