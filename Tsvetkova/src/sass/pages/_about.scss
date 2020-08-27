@@ -39,7 +39,7 @@
       margin-bottom: 60px;
     }
     @include mq($until: mobile_xl) {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
     &-listing {
 
@@ -111,7 +111,7 @@
           top: -40px;
           left: 0;
           border-bottom-right-radius: 20px;
-          box-shadow: 0 16px 16px 0 rgba($text, 0.5);
+          box-shadow: 0 16px 16px 0 rgba($text, 0.15);
         }
         img {
           position: absolute;
@@ -124,7 +124,6 @@
         background-color: $white;
         color: $text;
         position: relative;
-        font-size: 20px;
         box-shadow: 0 24px 24px 0 $black;
         border-bottom-right-radius: 90px;
         @include mq($from: desktop_sm) {
@@ -207,13 +206,18 @@
         }
       }
       &-text {
+        line-height: (32/20);
+        @include mq($from: mobile_xl) {
+          font-size: $font-lg;
+        }
+        @include mq($until: mobile_xl) {
+          font-size: $font-md;
+        }
         @include mq(mobile_xl, tablet_sm) {
           padding: 0 $gutter-x2;
-          font-size: $font-md;
         }
         @include mq($until: mobile_xl) {
           padding: 0 16px;
-          font-size: $font-md;
         }
       }
     }

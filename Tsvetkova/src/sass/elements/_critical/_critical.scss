@@ -60,7 +60,7 @@
     }
     @include mq($until: mobile_xl) {
       .text-section & {
-        padding: 0 16px 40px 16px;
+        padding: 8px 16px 80px 16px;
         background-color: $white;
       }
       .blog-page & {
