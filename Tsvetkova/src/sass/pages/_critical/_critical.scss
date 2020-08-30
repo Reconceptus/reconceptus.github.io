@@ -123,10 +123,16 @@
     padding: 78px 30% 12px 10%;
   }
   @include mq(mobile_xl, tablet_sm) {
-    padding: 60px 10% 12px 10%;
+    padding: 40px 10% 12px 10%;
+    &:first-child {
+      padding-top: 80px;
+    }
   }
   @include mq($until: mobile_xl) {
-    padding: 60px 16px 12px 16px;
+    padding: 40px 16px 12px 16px;
+    &:first-child {
+      padding-top: 80px;
+    }
   }
   @include mq($from: tablet_sm){
     &:after {
