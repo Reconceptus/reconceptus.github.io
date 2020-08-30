@@ -17,6 +17,7 @@ window.fn = {
     lightbox: require('./modules/lightbox'),
     ovh: require('./modules/ovh'),
     appearingSVG: require('./modules/appearing-svg'),
+    contactPageScroll: require('./modules/contact-page-scroll'),
 };
 
 const modules = [
@@ -67,6 +68,10 @@ const modules = [
     {
         selector: '.appearing-svg',
         name: 'appearingSVG',
+    },
+    {
+        selector: '.contact-page_address',
+        name: 'contactPageScroll',
     },
 ];
 
