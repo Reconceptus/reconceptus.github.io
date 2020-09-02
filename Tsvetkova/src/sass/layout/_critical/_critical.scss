@@ -145,11 +145,25 @@ $logo-prop: 256/84;
 
   }
   &_item {
+    &.logo-item {
+      font-size: 0;
+      @include mq($until: tablet_xl){
+        display: none;
+      }
+      .icon {
+        margin: 0;
+        color: $link;
+      }
+      .text {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    }
     @include mq($from: tablet_xl){
       margin-right: $padding-md;
     }
     @include mq($until: tablet_xl){
-
       .text {
         display: none;
       }
