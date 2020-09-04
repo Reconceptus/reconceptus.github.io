@@ -112,7 +112,7 @@ Styleguide styleguide.typography.text-box
     }
   }
   p {
-    min-height: 24px;
+    //min-height: 24px;
     &:not(:last-child){
       @include mq($from: mobile_sm) {
         margin-bottom: $gutter-x2;
@@ -211,12 +211,20 @@ Styleguide styleguide.typography.text-box
     @include mq($from: tablet_xl) {
       margin: 80px 0;
     }
-    @include mq($until: tablet_xl) {
+    @include mq(tablet_sm, tablet_xl) {
       margin: 80px 0;
+      .about-page & {
+        margin: 80px -20% 80px 17.5%;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px 0;
       padding-left: 40px;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        margin: 60px -20% 60px 0;
+      }
     }
     &:before {
       content: "";
@@ -250,6 +258,9 @@ Styleguide styleguide.typography.text-box
       clear: both;
       @include mq(mobile_xl, tablet_sm) {
         margin-left: 11vw;
+        .about-page & {
+          margin-left: 25vw;
+        }
       }
       img {
         height: auto;
@@ -267,11 +278,18 @@ Styleguide styleguide.typography.text-box
           width: calc(50% - 40px);
           margin-left: 40px;
           border-bottom-right-radius: 80px;
+          .about-page & {
+            width: calc(40% - 24px);
+            margin-left: 24px;
+          }
         }
         @include mq(tablet_sm, tablet_xl) {
           width: calc(50% - 24px);
           margin-left: 24px;
           border-bottom-right-radius: 80px;
+          .about-page & {
+            width: calc(40% - 24px);
+          }
         }
         @include mq(mobile_xl, tablet_sm) {
           width: 33vw;
@@ -293,9 +311,15 @@ Styleguide styleguide.typography.text-box
       clear: both;
       @include mq(tablet_sm, tablet_xl) {
         margin-left: -25%;
+        .about-page & {
+          margin-left: -12.5%;
+        }
       }
       @include mq(mobile_xl, tablet_sm) {
         margin-left: -11vw;
+        .about-page & {
+          margin-left: -8vw;
+        }
       }
       img {
         height: auto;
@@ -308,20 +332,34 @@ Styleguide styleguide.typography.text-box
         @include mq($from: desktop_sm) {
           width: calc(60% - 70px);
           margin-right: 70px;
+          .about-page & {
+            width: calc(40% - 48px);
+            margin-right: 48px;
+          }
         }
         @include mq(tablet_xl, desktop_sm) {
           width: calc(50% - 40px);
           margin-right: 40px;
+          .about-page & {
+            width: calc(30% - 24px);
+            margin-right: 24px;
+          }
         }
         @include mq(tablet_sm, tablet_xl) {
           width: 50%;
           margin-right: 24px;
           margin-bottom: 24px;
+          .about-page & {
+            width: 35%;
+          }
         }
         @include mq(mobile_xl, tablet_sm) {
           width: 33vw;
           margin-right: 24px;
           margin-bottom: 24px;
+          .about-page & {
+            width: 27.5vw;
+          }
         }
         @include mq($until: mobile_xl) {
           width: 100%;
@@ -340,19 +378,37 @@ Styleguide styleguide.typography.text-box
       margin: 80px 0 80px -40%;
       width: 140%;
       border-bottom-left-radius: 180px;
+      .about-page & {
+        margin: 80px -20% 80px -20%;
+      }
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px 0;
       width: 150%;
       border-bottom-left-radius: 180px;
+      .about-page & {
+        width: 130%;
+        margin: 80px -20% 80px -10%;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px 0;
       width: 100%;
       border-bottom-left-radius: 15vw;
     }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        width: 120%;
+        margin: 60px -20% 60px 0;
+      }
+    }
     @include mq($until: mobile_xl) {
       border-radius: 0;
+    }
+  }
+  div, p {
+    & + br {
+      display: none;
     }
   }
   .text-box-gallery {
@@ -362,14 +418,25 @@ Styleguide styleguide.typography.text-box
     @include mq($from: tablet_xl) {
       margin: 80px 0 80px -40%;
       border-bottom-left-radius: 180px;
+      .about-page & {
+        margin: 80px -20% 80px -20%;
+      }
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px -25%;
       border-bottom-left-radius: 180px;
+      .about-page & {
+        margin: 80px -20% 80px -10%;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px 0;
       border-bottom-left-radius: 15vw;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        margin: 60px -20% 60px 0;
+      }
     }
     a,
     img {
@@ -418,18 +485,33 @@ Styleguide styleguide.typography.text-box
 
     @include mq($from: desktop_sm) {
       margin: 80px -80% 80px -60%;
+      .about-page & {
+        margin: 80px -103.92% 80px -40%;
+      }
     }
     @include mq(tablet_xl, desktop_sm) {
       margin: 80px -50%;
+      .about-page & {
+        margin: 80px -44% 80px -29%;
+      }
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px -30%;
+      .about-page & {
+        margin: 80px -40% 80px -13%;
+      }
     }
     @include mq(mobile_xl, tablet_sm) {
       margin: 60px -11vw;
+      .about-page & {
+        margin: 60px -40% 60px -13%;
+      }
     }
     @include mq($until: mobile_xl) {
       margin: 60px 0;
+      .about-page & {
+        margin: 60px 0 60px -4vw;
+      }
     }
   }
   .gallery-slider {
@@ -442,26 +524,53 @@ Styleguide styleguide.typography.text-box
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px -20%;
+      .about-page & {
+        margin: 80px -25% 80px 0;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px 0;
       width: 100%;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        width: 120%;
+        margin: 60px -20% 60px 0;
+      }
     }
   }
   .gallery-static {
 
     @include mq($from: desktop_sm) {
       margin: 80px -80% 80px -40%;
+      .about-page & {
+        margin: 80px -100% 80px -40%;
+      }
     }
     @include mq(tablet_xl, desktop_sm) {
       margin: 80px -50% 80px -40%;
+      .about-page & {
+        margin: 80px -40% 80px -25%;
+      }
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px -30%;
+      .about-page & {
+        margin: 80px -40% 80px -13%;
+      }
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        margin: 60px -40% 60px -13%;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px -11vw;
+      .about-page & {
+        margin: 60px -5vw 60px -9vw;
+      }
     }
+
   }
   .video {
     position: relative;
@@ -471,14 +580,25 @@ Styleguide styleguide.typography.text-box
     @include mq($from: tablet_xl) {
       margin: 80px 0 80px -40%;
       padding-bottom: 94%;
+      .about-page & {
+        margin: 80px -20% 80px -20%;
+      }
     }
     @include mq(tablet_sm, tablet_xl) {
       margin: 80px -50% 80px -25%;
       padding-bottom: 116%;
+      .about-page & {
+        margin: 80px -20% 80px -10%;
+      }
     }
     @include mq($until: tablet_sm) {
       margin: 60px 0;
       padding-bottom: 67%;
+    }
+    @include mq(mobile_xl, tablet_sm) {
+      .about-page & {
+        margin: 60px -20% 60px 0;
+      }
     }
     iframe {
       position: absolute;

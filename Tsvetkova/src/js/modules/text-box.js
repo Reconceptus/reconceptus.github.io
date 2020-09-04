@@ -26,6 +26,13 @@ const textBox = {
                 this.replaceIframe(iframes[i], box);
             }
         }
+
+        const pasteSpans = box.getElementsByClassName('redactor-invisible-space');
+        if (pasteSpans) {
+            for (let i = 0; i < pasteSpans.length; i++) {
+                this.unwrap(pasteSpans[i]);
+            }
+        }
     },
     removeExcess(box, parent) {
         box.style.margin = '';
@@ -52,6 +59,19 @@ const textBox = {
         parent.insertBefore(video, img);
         video.appendChild(img);
         video.classList.add('video');
+    },
+    unwrap(wrapper) {
+        let docFragment = document.createDocumentFragment();
+        if (wrapper.firstChild) {
+            if (wrapper.firstChild.nodeName == 'BR') {
+                wrapper.remove();
+            } else {
+                let child = wrapper.removeChild(wrapper.firstChild);
+                docFragment.appendChild(child);
+
+                wrapper.parentNode.replaceChild(docFragment, wrapper);
+            }
+        }
     },
 };
 
