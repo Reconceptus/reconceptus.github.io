@@ -38,8 +38,10 @@ const validation = {
         this.resetFormGroup(formGroup);
         if (errors) {
             formGroup.classList.add('has-error');
-        } else if (params.presence) {
-            formGroup.classList.add('has-success');
+        } else if (params) {
+            if (params.presence) {
+                formGroup.classList.add('has-success');
+            }
         }
     },
     resetFormGroup(formGroup) {
