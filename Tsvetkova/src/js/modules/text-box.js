@@ -28,9 +28,9 @@ const textBox = {
                 for (let i = 0; i < pasteSpans.length; i++) {
                     this.emptySpan(pasteSpans[i]);
                 }
-                for (let i = 0; i < pasteSpans.length; i++) {
-                    this.unwrap(pasteSpans[i]);
-                }
+                // for (let i = 0; i < pasteSpans.length; i++) {
+                //     this.unwrap(pasteSpans[i]);
+                // }
             }
             // console.log('result:', pasteSpans)
         }
@@ -59,7 +59,9 @@ const textBox = {
             box.removeAttribute('style');
         }
 
-        let boxParent = box.parentNode;
+        // let boxParent = box.parentNode;
+        // TODO - boxParent needs for polyfill for IE (https://stackoverflow.com/questions/18663941/finding-closest-element-without-jquery)
+        let boxParent = box.closest('p');
         if (boxParent.tagName === 'P') {
             parent.insertBefore(box, boxParent);
             boxParent.remove();
@@ -85,7 +87,7 @@ const textBox = {
     unwrap(wrapper) {
         let docFragment = document.createDocumentFragment();
         if (wrapper.firstChild) {
-            let child = wrapper.removeChild(wrapper.firstChild);
+            let child = wrapper.removeChild(wrapper.firstChild); // !! WRONG (because it can be > 1 childs)
             docFragment.appendChild(child);
 
             wrapper.parentNode.replaceChild(docFragment, wrapper);
