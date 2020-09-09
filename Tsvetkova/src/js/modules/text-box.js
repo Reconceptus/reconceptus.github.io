@@ -12,6 +12,29 @@ const textBox = {
         }
     },
     parseTextBox(box) {
+        const pasteSpans = box.getElementsByClassName('redactor-invisible-space');
+        // console.log('begin:', pasteSpans)
+        if (pasteSpans) {
+            for (let i = 0; i < pasteSpans.length; i++) {
+                let brs = pasteSpans[i].getElementsByTagName('br');
+                while (brs.length) {
+                    brs[0].parentNode.removeChild(brs[0]);
+                }
+
+                pasteSpans[i].innerHTML = pasteSpans[i].innerHTML.trim();
+            }
+
+            for (let n = 0; n < 10; n++) {
+                for (let i = 0; i < pasteSpans.length; i++) {
+                    this.emptySpan(pasteSpans[i]);
+                }
+                for (let i = 0; i < pasteSpans.length; i++) {
+                    this.unwrap(pasteSpans[i]);
+                }
+            }
+            // console.log('result:', pasteSpans)
+        }
+
         const images = box.getElementsByTagName('img');
         if (images) {
             for (let i = 0; i < images.length; i++) {
@@ -24,13 +47,6 @@ const textBox = {
         if (iframes) {
             for (let i = 0; i < iframes.length; i++) {
                 this.replaceIframe(iframes[i], box);
-            }
-        }
-
-        const pasteSpans = box.getElementsByClassName('redactor-invisible-space');
-        if (pasteSpans) {
-            for (let i = 0; i < pasteSpans.length; i++) {
-                this.unwrap(pasteSpans[i]);
             }
         }
     },
@@ -63,14 +79,15 @@ const textBox = {
     unwrap(wrapper) {
         let docFragment = document.createDocumentFragment();
         if (wrapper.firstChild) {
-            if (wrapper.firstChild.nodeName == 'BR') {
-                wrapper.remove();
-            } else {
-                let child = wrapper.removeChild(wrapper.firstChild);
-                docFragment.appendChild(child);
+            let child = wrapper.removeChild(wrapper.firstChild);
+            docFragment.appendChild(child);
 
-                wrapper.parentNode.replaceChild(docFragment, wrapper);
-            }
+            wrapper.parentNode.replaceChild(docFragment, wrapper);
+        }
+    },
+    emptySpan(wrapper) {
+        if (wrapper.firstChild == null) {
+            wrapper.remove();
         }
     },
 };
