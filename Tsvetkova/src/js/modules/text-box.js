@@ -38,7 +38,7 @@ const textBox = {
         const images = box.getElementsByTagName('img');
         if (images) {
             for (let i = 0; i < images.length; i++) {
-                this.removeExcess(images[i], box);
+                this.removeExcess(images[i], box, 'img');
                 this.replaceImage(images[i], box);
             }
         }
@@ -46,12 +46,18 @@ const textBox = {
         const iframes = box.getElementsByTagName('iframe');
         if (iframes) {
             for (let i = 0; i < iframes.length; i++) {
+                this.removeExcess(iframes[i], box, 'iframe');
                 this.replaceIframe(iframes[i], box);
             }
         }
     },
-    removeExcess(box, parent) {
-        box.style.margin = '';
+    removeExcess(box, parent, tag) {
+        if (tag == 'img') {
+            box.style.margin = '';
+        }
+        if (tag == 'iframe') {
+            box.removeAttribute('style');
+        }
 
         let boxParent = box.parentNode;
         if (boxParent.tagName === 'P') {
