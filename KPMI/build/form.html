@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KPMI - Анкета</title>
+    <meta name="author" content="enenkoff@gmail.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="form" class="wrapper">
+
+    <div class="container">
+
+        <main id="main" class="main">
+
+            <div class="loading" v-show="isLoading">
+                <div class="content content--lg">
+                    <div class="row">
+                        <div class="offset-sm-2 offset-md-4 col-12 col-sm-8 col-md-4">
+                            <div class="text-h5 title">минуту терпения, загружаем результат</div>
+                            <q-linear-progress indeterminate />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="inquirer">
+                <div class="inquirer-header">
+                    <a href="/" class="flex flex-center justify-center logo">kpmi.ru</a>
+                </div>
+                <div class="inquirer-inner">
+                    <div class="content content--lg">
+                        <div class="row inquirer-inner--row">
+                            <template v-if="['prlg'].includes(curQ.type_name)">
+                                <div class="offset-sm-1 offset-md-2 offset-lg-3 col-12 col-sm-10 col-md-8 col-lg-6">
+                                    <div v-html="curQ.text"></div>
+                                </div>
+                            </template>
+
+                            <template v-else>
+                                <div class="offset-sm-1 offset-md-2 offset-lg-3 col-12 col-sm-10 col-md-8 col-lg-6">
+                                    <div class="inquirer-question">
+                                        <div class="logo">
+                                            <img class="cover" src="assets/svg/sprite/icon-logo-mini.svg" alt="">
+                                        </div>
+                                        <div v-html="curQ.text"></div>
+                                    </div>
+                                    <div class="inquirer-prompt">
+                                        {{curQ.type_descr}}
+                                    </div>
+                                </div>
+
+                                <template v-if="['soft', 'hard'].includes(curQ.type_name)">
+                                    <div class="offset-sm-1 offset-md-2 offset-lg-3 col-12 col-sm-10 col-md-8 col-lg-6">
+                                        <div class="inquirer-answers columns" :class="{'pair': curQ.answers.length === 2}">
+                                            <q-option-group
+                                                    class="checkbox-group"
+                                                    :options="curQ.answers"
+                                                    :type="['hard'].includes(curQ.type_name) ? 'radio' : 'checkbox'"
+                                                    v-model="userAnswer"
+                                            />
+                                        </div>
+                                    </div>
+                                </template>
+
+                                <template v-if="['open'].includes(curQ.type_name)">
+                                    <div class="offset-sm-2 offset-md-3 col-12 col-sm-8 col-md-6">
+                                        <div class="inquirer-answers input">
+                                            <q-input outlined square
+                                                     color="accent"
+                                                     placeholder="Ваш ответ"
+                                                     bg-color="info"
+                                                     v-model.trim="userAnswer"
+                                                     :rules="[val => !!val || 'Поле обязательно для заполнения']"
+                                                     class="input-text"
+                                                     :class="{'valid': userAnswer}"
+                                            >
+                                            </q-input>
+                                        </div>
+                                    </div>
+                                </template>
+
+                                <template v-if="['nps'].includes(curQ.type_name)">
+                                    <div class="gt-sm offset-sm-2 col-12 col-sm-8">
+                                        <div class="inquirer-answers justify-center flex-center row">
+                                            {{curQ.min_text}}
+                                            <q-option-group
+                                                    inline
+                                                    :options="curQ.answers"
+                                                    type="radio"
+                                                    v-model="userAnswer"
+                                            ></q-option-group>
+                                            {{curQ.max_text}}
+                                        </div>
+                                    </div>
+                                    <div class="lt-md offset-sm-1 col-12 col-sm-10">
+                                        <div class="inquirer-answers range">
+                                            <q-slider
+                                                    name="speed"
+                                                    v-model="userAnswer"
+                                                    label-always
+                                                    :min="curQ.min"
+                                                    :max="curQ.max"
+                                                    :step="curQ.step"
+                                            ></q-slider>
+                                        </div>
+                                        <div class="row justify-between flex-center">
+                                            <div>{{curQ.min}}</div>
+                                            <div>{{curQ.max}}</div>
+                                        </div>
+                                    </div>
+                                </template>
+
+                            </template>
+
+                            <div class="offset-sm-1 offset-md-2 offset-lg-3 col-12 col-sm-10 col-md-8 col-lg-6 inquirer-inner--btns">
+                                <div class="inquirer-btns">
+                                    <q-btn class="q-px-xl q-py-md prev" @click="previousQuestion"
+                                           size="16px" rounded no-caps v-if="curQ.position > 1"
+                                           flat color="primary">
+                                        <i class="icon icon-arrow-prev icon--md"></i>
+                                        <span class="gt-xs">Назад</span>
+                                    </q-btn>
+                                    <q-btn @click="nextQuestion"
+                                           class="q-px-xl q-py-md q-btn--primary next"
+                                           size="16px" no-caps
+                                           outline rounded color="primary">
+                                        <template v-if="questions.length == curQ.position">
+                                            Результат
+                                        </template>
+                                        <template v-else>
+                                            Вперед
+                                            <i class="icon icon-arrow-next icon--md"></i>
+                                        </template>
+                                    </q-btn>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inquirer-footer" :class="{'empty': curQ.position === 1}">
+                    <div class="inquirer-footer__inner">
+                        <div class="content content--lg">
+                            <div class="row items-end">
+                                <div class="col-2 col-md-1">
+                                    <a class="label" href="/">
+                                        <img class="cover" src="assets/svg/partials/logo-vertical.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-10 col-md-11">
+                                    <div class="progress" v-if="curQ.position > 1">
+                                        <span class="progress-counter">{{ curQ.position - 1 }} / {{ questions.length - 1 }}</span>
+                                        <span class="progress-scale" :style="'width: ' + progressScale + '%'"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Библиотеки. -->
+<script src="assets/js/vue.min.js"></script>
+<script src="assets/js/quasar.min.js"></script>
+
+
+<!-- Рыбная анкета. -->
+<script type="text/javascript" src="assets/json/fish_form_upd.json"></script>
+<!-- Скрипт страницы. -->
+<script src="assets/js/pages/form.js"></script>
+
+</body>
+</html>

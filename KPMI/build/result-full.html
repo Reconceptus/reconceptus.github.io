@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KPMI - Результаты (платные)</title>
+    <meta name="author" content="enenkoff@gmail.com">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
+    <link href="assets/css/styles.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!--SVG-sprite: BEGIN-->
+<div class="hide">
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-next" viewBox="0 0 24 24"><path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="matrix(0-1 1 0 0 24)"/></symbol><symbol id="icon-close" viewBox="0 0 24 24"><path d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/></symbol><symbol id="icon-link" viewBox="0 0 24 24"><path d="M17,7H13V9h4a3,3,0,0,1,0,6H13v2h4A5,5,0,0,0,17,7Zm-6,8H7A3,3,0,0,1,7,9h4V7H7A5,5,0,0,0,7,17h4ZM8,11h8v2H8Z"/></symbol><symbol id="icon-lock" viewBox="0 0 24 24">
+<path d="M13.333,5.667h-.667V4.333A3.333,3.333,0,1,0,6,4.333V5.667H5.333A1.337,1.337,0,0,0,4,7v6.667A1.337,1.337,0,0,0,5.333,15h8a1.337,1.337,0,0,0,1.333-1.333V7A1.337,1.337,0,0,0,13.333,5.667Zm-4,6a1.333,1.333,0,1,1,1.333-1.333A1.337,1.337,0,0,1,9.333,11.667Zm2.067-6H7.267V4.333a2.067,2.067,0,1,1,4.133,0Z" transform="translate(2.667 2.667)"/>
+</symbol><symbol id="icon-logo-mini-lt" viewBox="0 0 72 72"><g fill="#fff"><g fill-rule="evenodd"><path d="M300.371,353.606a9.554,9.554,0,0,0,1.286-11.475,15.917,15.917,0,0,1-8.229-4.38,8.88,8.88,0,0,0-5.825,2.708,9.344,9.344,0,0,0-2.407,4.5,9.547,9.547,0,0,0-.225,2.078,9.425,9.425,0,0,0,2.642,6.583,9.152,9.152,0,0,0,.693.645,8.834,8.834,0,0,0,12.066-.655Z" transform="translate(-244.58-288.39)"/><path d="M337.344 109.962a15.733 15.733 0 0 1 15.4 -4.345 8.239 8.239 0 0 0 -16.36 1.638 8.725 8.725 0 0 0 .571 3.118C337.08 110.23 337.2 110.1 337.34 109.96" transform="translate(-288.7-84.31)" opacity=".6"/><path d="M207,389.263l-4.429,3.876a8.11,8.11,0,0,0,5.907-2.564,13.473,13.473,0,0,1-5.3-10.789,13.785,13.785,0,0,1,.478-3.6,8.137,8.137,0,0,0-1.089-.073,8.519,8.519,0,0,0,0,17.029Z" transform="translate(-166.77-321.14)" opacity=".6"/><path d="M1.335,211.634a15.827,15.827,0,0,1,11.385-4.867,15.637,15.637,0,0,1,3.275.345,8.276,8.276,0,0,0-7.75-5.572A8.39,8.39,0,0,0-.01,210.057a8.718,8.718,0,0,0,.4,2.627c.3-.362.608-.715.943-1.049Z" transform="translate(.001-172.08)" opacity=".6"/><path d="M213.285,2.932A16.842,16.842,0,0,1,218,14.683a17.015,17.015,0,0,1-1.379,6.735,10.588,10.588,0,0,0,9.635-10.689A10.561,10.561,0,0,0,215.867.01a10.114,10.114,0,0,0-4.647,1.128,17.012,17.012,0,0,1,2.065,1.793Z" transform="translate(-181.28-.001)" opacity=".6"/></g><ellipse cx="11.974" cy="12.348" rx="11.974" ry="12.348" transform="translate(8.931 2.736)"/><path d="M11.974 0A12.165 12.165 0 0 1 23.947 12.348 12.165 12.165 0 0 1 11.974 24.7 12.165 12.165 0 0 1 0 12.348 12.165 12.165 0 0 1 11.974 0" transform="translate(48.05 25.06)"/><ellipse cx="11.974" cy="12.348" rx="11.974" ry="12.348" transform="translate(.757 38.955)"/></g></symbol><symbol id="icon-logo-mini" viewBox="0 0 40 40"><g fill="#5159be"><g><path d="M293.526,346.559a5.308,5.308,0,0,0,.714-6.375,8.843,8.843,0,0,1-4.572-2.434,4.934,4.934,0,0,0-3.236,1.5,5.191,5.191,0,0,0-1.337,2.5,5.3,5.3,0,0,0-.125,1.155,5.236,5.236,0,0,0,1.468,3.657,5.09,5.09,0,0,0,.385.358,4.908,4.908,0,0,0,6.7-.364Z" transform="translate(-262.53-310.33)"/><path d="M336.915 104.974a8.741 8.741 0 0 1 8.554 -2.414 4.577 4.577 0 0 0 -9.089 .91 4.847 4.847 0 0 0 .317 1.732C336.77 105.13 336.84 105.05 336.92 104.97" transform="translate(-309.89-90.72)" opacity=".6"/><path d="M201.357,383.417l-2.461,2.153a4.506,4.506,0,0,0,3.282-1.424,7.485,7.485,0,0,1-2.943-5.994,7.657,7.657,0,0,1,.265-2,4.509,4.509,0,0,0-.6-.041,4.733,4.733,0,0,0,0,9.461Z" transform="translate(-179.01-345.57)" opacity=".6"/><path d="M.737,207.148a8.793,8.793,0,0,1,6.325-2.7,8.689,8.689,0,0,1,1.82.192,4.6,4.6,0,0,0-4.306-3.1A4.661,4.661,0,0,0-.01,206.271a4.843,4.843,0,0,0,.224,1.459c.165-.2.338-.4.524-.583Z" transform="translate(.001-185.18)" opacity=".6"/><path d="M212.367,1.633a9.356,9.356,0,0,1,2.622,6.528,9.453,9.453,0,0,1-.766,3.742,5.882,5.882,0,0,0,5.353-5.938A5.867,5.867,0,0,0,213.8.01a5.619,5.619,0,0,0-2.582.627,9.449,9.449,0,0,1,1.147,1Z" transform="translate(-194.59-.001)" opacity=".6"/></g><ellipse cx="6.652" cy="6.86" rx="6.652" ry="6.86" transform="translate(4.961 1.52)"/></g><path d="M6.652 0A6.758 6.758 0 0 1 13.3 6.86a6.758 6.758 0 0 1 -6.652 6.86A6.758 6.758 0 0 1 0 6.86 6.758 6.758 0 0 1 6.652 0" transform="translate(26.696 13.921)" fill="#fc5b61"/><ellipse cx="6.652" cy="6.86" rx="6.652" ry="6.86" transform="translate(.42 21.641)" fill="#5159be"/></symbol><symbol id="icon-logo-text" viewBox="0 0 2633 337"><path d="m226 331h89l-145-183 137-147h-85l-147 155v-155h-76v331h76v-84l44-46 106 130zm361-331h-143v331h77v-91h67c88 0 144-46 144-120 0-74-55-120-144-120zm-4 177h-62v-115h62c47 0 70 21 70 58 0 36-24 57-70 57m670 154l-1-331h-63l-122 206-124-206h-63v331h72v-194l97 159h35l97-164v199h72m173 0h77v-331h-77v331m272 4c26 0 46-19 46-46 0-27-20-45-46-45-26 0-46 18-46 45 0 27 20 46 46 46m489-4l-74-106c43-18 68-55 68-104 0-74-55-120-144-120h-143v331h77v-92h67 4l64 92h82zm-84-211c0 36-24 58-70 58h-62v-115h62c47 0 70 21 70 58zm380 217c94 0 150-54 150-151v-185h-76v182c0 63-27 89-74 89-46 0-74-26-74-89v-182h-77v185c0 97 56 151 150 151z"/></symbol><symbol id="icon-result-business" viewBox="0 0 24 24"><path d="M10,16V15H3.01L3,19a1.993,1.993,0,0,0,2,2H19a1.993,1.993,0,0,0,2-2V15H14v1ZM20,7H15.99V5l-2-2h-4l-2,2V7H4A2.006,2.006,0,0,0,2,9v3a1.993,1.993,0,0,0,2,2h6V12h4v2h6a2.006,2.006,0,0,0,2-2V9A2.006,2.006,0,0,0,20,7ZM14,7H10V5h4Z"/></symbol><symbol id="icon-result-child" viewBox="0 0 24 24"><path d="M13,2v8h8A8,8,0,0,0,13,2Zm6.32,13.89A7.948,7.948,0,0,0,21,11H6.44L5.49,9H2v2H4.22s1.89,4.07,2.12,4.42A3.5,3.5,0,1,0,11.46,19h2.08a3.5,3.5,0,1,0,5.78-3.11ZM8,20a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,8,20Zm9,0a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,17,20Z"/></symbol><symbol id="icon-result-favorite" viewBox="0 0 24 24"><path d="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5A5.447,5.447,0,0,1,7.5,3,5.988,5.988,0,0,1,12,5.09,5.988,5.988,0,0,1,16.5,3,5.447,5.447,0,0,1,22,8.5c0,3.78-3.4,6.86-8.55,11.54Z"/></symbol><symbol id="icon-result-flag" viewBox="0 0 24 24"><path d="M14.4,6,14,4H5V21H7V14h5.6l.4,2h7V6Z"/></symbol><symbol id="icon-result-key" viewBox="0 0 24 24"><path d="M12.65 10a6 6 0 1 0 0 4H17v4h4V14h2V10M7 14a2 2 0 1 1 2 -2A2.006 2.006 0 0 1 7 14"/></symbol><symbol id="icon-result-people" viewBox="0 0 24 24"><path d="M16 11a3 3 0 1 0 -3 -3A2.987 2.987 0 0 0 16 11M8 11A3 3 0 1 0 5 8 2.987 2.987 0 0 0 8 11m0 2c-2.33 0-7 1.17-7 3.5V19H15V16.5C15 14.17 10.33 13 8 13m8 0c-.29 0-.62.02-.97.05A4.22 4.22 0 0 1 17 16.5V19h6V16.5C23 14.17 18.33 13 16 13"/></symbol><symbol id="icon-result-psycho" viewBox="0 0 24 24"><path d="M13 8.57A1.43 1.43 0 1 0 14.43 10 1.43 1.43 0 0 0 13 8.57"/><path d="M13,3A6.981,6.981,0,0,0,6.02,9.64L4.1,12.2a.5.5,0,0,0,.4.8H6v3a2.006,2.006,0,0,0,2,2H9v3h7V16.32A7,7,0,0,0,13,3Zm3,7c0,.13-.01.26-.02.39l.83.66a.187.187,0,0,1,.05.25l-.8,1.39a.2.2,0,0,1-.24.09l-.99-.4a3,3,0,0,1-.67.39L14,13.83a.2.2,0,0,1-.2.17H12.2a.2.2,0,0,1-.2-.17l-.15-1.06a2.86,2.86,0,0,1-.68-.39l-.99.4a.21.21,0,0,1-.25-.09l-.8-1.39a.189.189,0,0,1,.05-.25l.84-.66c-.01-.13-.02-.26-.02-.39a2.453,2.453,0,0,1,.04-.39l-.85-.66a.2.2,0,0,1-.05-.26l.8-1.38a.2.2,0,0,1,.24-.09l1,.4a3.175,3.175,0,0,1,.67-.39L12,6.17A.2.2,0,0,1,12.2,6h1.6a.2.2,0,0,1,.2.17l.15,1.06a3,3,0,0,1,.67.39l1-.4a.193.193,0,0,1,.24.09l.8,1.38a.2.2,0,0,1-.05.26l-.85.66A1.611,1.611,0,0,1,16,10Z"/></symbol><symbol id="icon-result-user" viewBox="0 0 24 24"><path d="M12 12A4 4 0 1 0 8 8 4 4 0 0 0 12 12m0 2c-2.67 0-8 1.34-8 4v2H20V18C20 15.34 14.67 14 12 14"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z"/></symbol><symbol id="icon-social-facebook" viewBox="0 0 17.474 32.87"><path d="M4.7.331C4.7.148,3.644,0,2.348,0S0,.148,0,.331C0,.5.858.633,1.981.657V.426h-.6v-.1h.6V.258c0-.083.351-.129.887-.129.257,0,.526.006.526.006V.217H3.1c-.292,0-.383.025-.383.052V.331h.651l-.1.1H2.715V.657C3.837.633,4.7.5,4.7.331Z" transform="translate(6.388 15.985)"/><path d="M4210.327,2795.352l.9-5.905h-5.663v-3.831c0-1.615.79-3.191,3.329-3.191h2.577V2777.4a31.4,31.4,0,0,0-4.573-.4c-4.663,0-7.713,2.826-7.713,7.947v4.5H4194v5.905h5.187v14.27a20.472,20.472,0,0,0,3.191.247,20.868,20.868,0,0,0,3.19-.247v-14.27Z" transform="translate(-4194-2777)"/></symbol><symbol id="icon-social-pinterest" viewBox="0 0 25.531 31.275"><path d="m75.13 62.04c-5.454.585-10.886 4.781-11.11 10.787-.144 3.666 1.391 6.415 5.057 7.188a19.568 19.568 0 0 0 .5 -2.672 7.147 7.147 0 0 1 -1.783 -2.528c-1.347-7.905 9.573-13.3 15.3-7.784 3.953 3.831 1.347 15.612-5.03 14.386-6.117-1.17 2.992-10.544-1.888-12.388-3.964-1.5-6.073 4.582-4.2 7.6-1.1 5.189-3.478 10.08-2.517 16.584 3.125-2.153 4.174-6.282 5.03-10.588 1.568.905 2.407 1.855 4.405 2 7.375.541 11.494-7.01 10.489-13.989-.896-6.189-7.366-9.339-14.256-8.596" transform="translate(-64.02-61.937)"/></symbol><symbol id="icon-social-twitter" viewBox="0 0 35.912 29.185"><path d="M268.027,146.776a14.711,14.711,0,0,1-4.231,1.16,7.388,7.388,0,0,0,3.239-4.076,14.72,14.72,0,0,1-4.679,1.788,7.37,7.37,0,0,0-12.743,5.041,7.45,7.45,0,0,0,.19,1.679,20.918,20.918,0,0,1-15.184-7.7,7.374,7.374,0,0,0,2.28,9.835,7.334,7.334,0,0,1-3.337-.921v.093a7.37,7.37,0,0,0,5.909,7.223,7.327,7.327,0,0,1-1.941.258,7.477,7.477,0,0,1-1.387-.13,7.376,7.376,0,0,0,6.881,5.116,14.834,14.834,0,0,1-10.907,3.05,20.849,20.849,0,0,0,11.293,3.311c13.55,0,20.961-11.226,20.961-20.961q0-.479-.022-.953A15.011,15.011,0,0,0,268.027,146.776Z" transform="translate(-232.12-143.32)"/></symbol><symbol id="icon-social-vk" viewBox="0 0 35.912 20.489"><path d="M35.721,136.252a2.468,2.468,0,0,0-.122-.234,18.611,18.611,0,0,0-3.571-4.132l-.037-.037-.019-.018-.019-.019h-.019q-1.2-1.141-1.514-1.533a1.44,1.44,0,0,1-.262-1.515,14.118,14.118,0,0,1,1.683-2.449q.767-.991,1.215-1.589,3.235-4.3,2.8-5.5l-.111-.186a1.094,1.094,0,0,0-.579-.309,2.944,2.944,0,0,0-1.2-.047l-5.385.037a.7.7,0,0,0-.374.009l-.243.056-.094.047-.074.056a.831.831,0,0,0-.206.2,1.283,1.283,0,0,0-.187.327,30.531,30.531,0,0,1-2,4.207q-.692,1.159-1.272,2.01a9.673,9.673,0,0,1-.972,1.253,6.786,6.786,0,0,1-.711.645q-.318.243-.486.206c-.112-.025-.218-.05-.318-.075a1.243,1.243,0,0,1-.42-.458,2.051,2.051,0,0,1-.215-.729q-.056-.44-.065-.757t.009-.9q.019-.58.019-.785,0-.711.028-1.543t.047-1.318q.019-.486.019-1.029a4.32,4.32,0,0,0-.065-.851,2.91,2.91,0,0,0-.2-.6,1.007,1.007,0,0,0-.383-.449,2.161,2.161,0,0,0-.626-.253,12.443,12.443,0,0,0-2.524-.243,12.265,12.265,0,0,0-4.469.449,2.518,2.518,0,0,0-.71.561q-.337.411-.094.449a2.292,2.292,0,0,1,1.589.8l.112.225a3.576,3.576,0,0,1,.262.86,8.678,8.678,0,0,1,.168,1.365,14.554,14.554,0,0,1,0,2.337q-.094.972-.178,1.515a3.032,3.032,0,0,1-.252.879,3.71,3.71,0,0,1-.224.411.322.322,0,0,1-.093.093,1.4,1.4,0,0,1-.5.094,1.185,1.185,0,0,1-.636-.262,4.486,4.486,0,0,1-.776-.72,9.627,9.627,0,0,1-.907-1.281q-.5-.823-1.047-1.944l-.3-.542q-.28-.523-.766-1.524t-.86-1.935a1.233,1.233,0,0,0-.449-.6l-.094-.056a1.278,1.278,0,0,0-.3-.159,1.984,1.984,0,0,0-.43-.121l-5.123.037a1.3,1.3,0,0,0-1.066.355l-.075.112a.6.6,0,0,0-.056.3,1.489,1.489,0,0,0,.112.5q1.122,2.637,2.44,5.086t2.29,3.945q.972,1.5,1.982,2.823t1.337,1.7q.327.374.514.561l.468.449a11.1,11.1,0,0,0,1.318,1.075,22.485,22.485,0,0,0,1.926,1.234,10.447,10.447,0,0,0,2.459.991,8.5,8.5,0,0,0,2.73.309h2.15a1.489,1.489,0,0,0,.991-.411l.074-.094a1.24,1.24,0,0,0,.14-.346,1.9,1.9,0,0,0,.065-.514,6.161,6.161,0,0,1,.121-1.449,3.81,3.81,0,0,1,.318-.972,2.39,2.39,0,0,1,.4-.551,1.625,1.625,0,0,1,.318-.271,1.222,1.222,0,0,1,.149-.065,1.187,1.187,0,0,1,1.057.29,6.206,6.206,0,0,1,1.141,1.084q.533.645,1.281,1.449a8.8,8.8,0,0,0,1.309,1.2l.374.224a4.552,4.552,0,0,0,.973.411,2.1,2.1,0,0,0,1.047.093l4.786-.075a2.169,2.169,0,0,0,1.1-.234.927.927,0,0,0,.468-.514,1.448,1.448,0,0,0,.01-.636A2.347,2.347,0,0,0,35.721,136.252Z" transform="translate(0-117.75)"/></symbol><symbol id="icon-thumb" viewBox="0 0 48 48"><path d="M41,15H28.38l1.9-9.14.06-.64a3.011,3.011,0,0,0-.88-2.12L27.34,1,14.18,14.18A3.911,3.911,0,0,0,13,17V37a4.012,4.012,0,0,0,4,4H35a3.973,3.973,0,0,0,3.68-2.44l6.04-14.1A3.951,3.951,0,0,0,45,23V19A4.012,4.012,0,0,0,41,15Zm0,8L35,37H17V17l8.68-8.68L23.46,19H41ZM1,17H9V41H1Z" transform="translate(1 1)"/></symbol></svg>
+
+</div>
+<!--SVG-sprite: END-->
+
+<div id="result" class="wrapper">
+
+    <div class="container">
+
+        <!--header: BEGIN-->
+        <page-header inline-template>
+            <header id="header" class="header static"
+                    :class="{
+                        'visible-search': visibleSearch,
+                        'visible-nav': visibleNav,
+                        'fixed-header': !pageOnTheTop
+                    }"
+            >
+                <div class="js-search content content--lg">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <form action="">
+                                <fieldset class="header-search">
+                                    <div class="header-search__input" >
+                                        <q-input rounded outlined v-model="text" placeholder="Placeholder"
+                                                 bg-color="info"
+                                                 ref="search" class="header-search__input-field"
+                                                 @blur="visibleSearch = false"
+                                        >
+                                            <template v-slot:append>
+                                                <q-btn @click="text = ''" flat round
+                                                       color="secondary"
+                                                       class="header-search__clear"
+                                                >
+                                                    <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
+                                                </q-btn>
+                                                <q-btn type="submit" unelevated  rounded color="accent"
+                                                       class="header-search__btn">
+                                                    <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
+                                                </q-btn>
+                                            </template>
+                                        </q-input>
+                                    </div>
+                                    <q-btn flat rounded color="primary"
+                                           @click="showSearch()"
+                                           class="header-search__btn toggler">
+                                        <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
+                                    </q-btn>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <nav id="nav" class="nav">
+                    <div class="nav-wrap">
+                        <div class="nav-top">
+                            <q-btn @click="visibleNav = !visibleNav" flat
+                                   color="primary"
+                                   class="burger-btn"
+                            >
+                                <i class="icon icon--md"><span></span></i>
+                            </q-btn>
+                            <a href="/" class="logo">
+                                <i class="icon icon-logo"><svg><use xlink:href="#icon-logo-mini"/></svg></i>
+                                <i class="icon icon-text"><svg><use xlink:href="#icon-logo-text"/></svg></i>
+                            </a>
+                        </div>
+                        <div class="nav-menu">
+                            <div>
+                                <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
+                                       unelevated color="accent" size="16px" no-caps
+                                       label="пройти тест бесплатно"></q-btn>
+                            </div>
+                            <ul class="nav-menu__list">
+                                <li><a href="#">16 типов личности по KPMI</a></li>
+                                <li><a href="#">О методике KPMI</a></li>
+                                <li><a href="#">Предикция профессии</a></li>
+                                <li><a href="#">Оценка валидности и надежности</a></li>
+                                <li><a href="#">Документы</a></li>
+                            </ul>
+                            <div class="nav-menu__contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </page-header>
+        <!--header: END-->
+
+
+        <main id="main" class="main">
+
+            <section class="result-type">
+                <div class="result-type--intro">
+                    <div class="content content--lg">
+                        <div class="row items-center">
+                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
+                                <div class="q-pt-lg result-step">1</div>
+                                <div class="result-step--head numbered result-type--info">
+                                    <span class="text-subtitle1 text-weight-medium text-white bg-negative q-px-md">
+                                        твой полный результат
+                                    </span>
+                                    <h1 class="text-h3 title">KPMI: ты <br>классический предприниматель </h1>
+                                    <dl>
+                                        <div class="item">
+                                            <dt>Тип</dt>
+                                            <dd>Напористый спорщик</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Код</dt>
+                                            <dd>ENTP-A</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Роль</dt>
+                                            <dd>Аналитик</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Стратегия</dt>
+                                            <dd>Мастерство людей</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6">
+                                <div class="relative-position">
+                                    <div class="shape shape1 shape-color--green"></div>
+                                    <div class="shape shape2 shape-color--yellow"></div>
+                                    <div class="shape shape3 shape-color--blue"></div>
+                                    <div class="result-type--img">
+                                        <img src="assets/svg/partials/sample-bg.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-type--graph">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="part">
+                                    <div class="title">Диаграмма KPMI</div>
+                                    <img class="figure" src="assets/images/graph-example.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="part">
+                                    <div class="title">Шкалы личности</div>
+                                    <div class="scales">
+                                        <div v-for="item of personalityScale" class="scale-item">
+                                            <h4 class="scale-head">{{item.title}}</h4>
+                                            <div class="scale-line">
+                                                <div class="scale-line--left">
+                                                    <div class="scale-line--left-label">{{item.left.label}}</div>
+                                                    <div class="scale-line--left-value"
+                                                         :data-value="item.left.value"
+                                                         :style="`width: ${item.left.value*100/item.left.max}%`"
+                                                    ></div>
+                                                </div>
+                                                <div class="scale-line--right">
+                                                    <div class="scale-line--right-label">{{item.right.label}}</div>
+                                                    <div class="scale-line--right-value"
+                                                         :data-value="item.right.value"
+                                                         :style="`width: ${item.right.value*100/item.right.max}%`"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-type--analysis">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-md-7 col-lg-5">
+                                <h4 class="text-h5 title">Анализ диаграммы</h4>
+                                <div>На вашей диаграмме KPMI объём фигуры смещен в сторону... . Общий  объем фигуры — ... Полемист — величайший адвокат дьявола, который успешно разрушает все аргументы и мнения на мелкие составляющие, пуская их по ветру, чтобы все видели. В отличие от более целеустремленных личностей Полемисты делают это все не потому, что пытаются достичь какой-то
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-type--descr">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-md-8">
+                                <q-tree :nodes="typeDescriptionFull"
+                                        node-key="label"
+                                        :expanded.sync="expanded"
+                                        class="accordion"
+                                >
+                                    <template v-slot:default-header="prop">
+                                        <div class="flex full-width items-center justify-between">
+                                            <i class="icon icon--md q-mr-sm"><svg><use :xlink:href="prop.node.icon"/></svg></i>
+                                            <div class="text-h5">{{ prop.node.label }}</div>
+                                            <div class="disabled-text" v-if="prop.node.disabled">доступно в полном отчете</div>
+                                        </div>
+                                    </template>
+                                    <template v-slot:body-story="prop">
+                                        <div v-if="prop.node.story" class="text-box" v-html="prop.node.story"></div>
+                                        <div v-else class="text-box" >
+                                            <p>Architects are self-confident in the skills and ideas they focus on. Using their insights and logic, they push innovation through by sheer willpower. It may seem that Architects constantly deconstruct and rebuild every idea and system they encounter. They typically apply a sense of perfectionism and even morality to all their work. Anyone who can’t keep up with Architects’ processes or doesn’t see the point of them is likely to lose their respect. </p>
+                                            <h3>Standing on Logic and Principles</h3>
+                                            <p>Architect personality types dislike rules, restrictions, and traditions. For them, everything should be subject to questions and reviews. When they can, Architects often act alone, and their approaches are usually innovative and unique. They may not wait for others to catch up to them. Because of this, they’re sometimes not as sensitive as they could be to the thoughts, desires, and plans of others.</p>
+                                        </div>
+                                    </template>
+                                </q-tree>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="result-sample">
+                <div class="result-sample--head">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
+                                <div class="result-step">2</div>
+                                <div class="q-pt-lg result-step--head numbered">
+                                    <h2 class="text-h3 title">Твоя предрасположенность к профессиям </h2>
+                                </div>
+                            </div>
+                            <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6">
+                                <div class="relative-position">
+                                    <div class="shape shape1 shape-color--green"></div>
+                                    <div class="shape shape2 shape-color--yellow"></div>
+                                    <div class="result-sample--img">
+                                        <img src="assets/svg/partials/sample-bg.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-sample--list">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
+                                <div class="item">
+                                    <div class="item-title">Топ-10 профессий</div>
+                                    <div class="item-table">
+                                        <table>
+                                            <tr><td></td><td>точность*</td></tr>
+                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
+                                            <tr><td>Хирург</td><td>99%</td></tr>
+                                            <tr><td>Космонавт</td><td>77%</td></tr>
+                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
+                                            <tr><td>Режиссер</td><td>56%</td></tr>
+                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
+                                <div class="item">
+                                    <div class="item-title">Более</div>
+                                    <div class="item-table">
+                                        <table>
+                                            <tr><td></td><td>точность*</td></tr>
+                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
+                                            <tr><td>Хирург</td><td>99%</td></tr>
+                                            <tr><td>Космонавт</td><td>77%</td></tr>
+                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
+                                            <tr><td>Режиссер</td><td>56%</td></tr>
+                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
+                                <div class="item">
+                                    <div class="item-title">Менее</div>
+                                    <div class="item-table">
+                                        <table>
+                                            <tr><td></td><td>точность*</td></tr>
+                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
+                                            <tr><td>Хирург</td><td>99%</td></tr>
+                                            <tr><td>Космонавт</td><td>77%</td></tr>
+                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
+                                            <tr><td>Режиссер</td><td>56%</td></tr>
+                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
+                                <div class="item">
+                                    <div class="item-title">Не подходят</div>
+                                    <div class="item-table">
+                                        <table>
+                                            <tr><td></td><td>точность*</td></tr>
+                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
+                                            <tr><td>Хирург</td><td>99%</td></tr>
+                                            <tr><td>Космонавт</td><td>77%</td></tr>
+                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
+                                            <tr><td>Режиссер</td><td>56%</td></tr>
+                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-sample--list-note">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-1 offset-lg-2 col-12 col-sm-6 col-md-5 col-lg-4">
+                                <div class="text">*Точность каждой модели ансамбля вычисляется с помощью контрольной выборки после окончания ее (модели) обучения и представляет собой отношение количества правильно предсказанных результатов к общему размеру контрольной выборки. Это же, только понятнее.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="result-advices">
+                <div class="result-advices--head">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
+                                <div class="result-step">3</div>
+                                <div class="q-pt-lg result-step--head numbered">
+                                    <h3 class="text-h3 title">Рекомендации по развитию личности</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-advices--list">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-sm-6 col-md-4">
+                                <div class="text-h5 title">Вклад в организацию</div>
+                                <ul>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                </ul>
+                                <div class="text-h5 title">Источники стресса</div>
+                                <ul>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                </ul>
+                            </div>
+                            <div class="offset-md-1 col-12 col-sm-6 col-md-4">
+                                <div class="text-h5 title">Продуктивные места и занятия</div>
+                                <ul>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                </ul>
+                                <div class="text-h5 title">Предложения по борьбе со стрессом</div>
+                                <ul>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="result-comparison">
+                <div class="content content--lg">
+                    <div class="row">
+                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
+                            <div class="result-comparison--text">
+                                <h4 class="text-h5 title">Сравнение результатов анкет</h4>
+                                <div>Отслеживайте прогресс в развитии вашей личности. Для этого достаточно периодически проходить тестирования и сохранять номера анкет. Сервис сравнивает «новую» и «предыдущую» анкету и показывает вам какие черты вашей личности вы смогли развить.</div>
+                            </div>
+                            <div class="result-comparison--fieldset">
+                                <form action="#">
+                                    <fieldset class="flex">
+                                        <span class="label">Текущую анкету №</span>
+                                        <div class="input">
+                                            <q-input outlined square
+                                                     color="accent"
+                                                     placeholder="0000"
+                                                     bg-color="white"
+                                                     v-model="comparedIDs[0]"
+                                                     :rules="[val => !!val || 'Поле обязательно для заполнения']"
+                                                     class="input-text"
+                                            >
+                                            </q-input>
+                                        </div>
+                                        <span class="label">сравнить с анкетой №</span>
+                                        <div class="input">
+                                            <q-input outlined square
+                                                     color="accent"
+                                                     placeholder="0000"
+                                                     bg-color="white"
+                                                     v-model="comparedIDs[1]"
+                                                     :rules="[val => !!val || 'Поле обязательно для заполнения']"
+                                                     class="input-text"
+                                            >
+                                            </q-input>
+                                        </div>
+                                        <q-btn class="no-border-radius q-btn--primary"
+                                               size="16px" no-caps
+                                               outline color="primary"
+                                               label="сравнить анкеты">
+                                        </q-btn>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <div class="sharing">
+                <div class="content content--lg">
+                    <div class="row">
+                        <div class="offset-md-1 col-12 col-md-10">
+                            <div class="sharing-inner flex flex-center justify-center">
+                                Расскажи друзьям 7.2 К
+                                <ul class="flex flex-center">
+                                    <li>
+                                        <a href="#" class="flex flex-center justify-center">
+                                            <i class="icon icon--fb">
+                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex flex-center justify-center">
+                                            <i class="icon icon--vk">
+                                                <svg><use xlink:href="#icon-social-vk"/></svg>
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex flex-center justify-center">
+                                            <i class="icon icon--tw">
+                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="flex flex-center justify-center">
+                                            <i class="icon icon--pt">
+                                                <svg><use xlink:href="#icon-social-pinterest"/></svg>
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--home page: END-->
+
+        </main>
+
+        <!--footer: BEGIN-->
+        <footer class="footer" id="footer">
+            <div class="content content--lg">
+                <div class="row">
+                    <div class="offset-md-1 col-12 col-md-1">
+                        <div class="logo">
+                            <a href="/" class="icon">
+                                <svg><use xlink:href="#icon-logo-mini-lt"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-7 col-md-5 q-mt-lg">
+                        <p>29 887 анкет заполнено</p>
+                        <p>KPMI.RU —  диагностическая методика, предназначенная для оценки психологического потенциала личности, её сильных и слабых сторон, а также зон оптимального развития. Основана на методологии MBTI.</p>
+                    </div>
+                    <div class="offset-md-1 col-12 col-sm-5 col-md-3 q-mt-lg">
+                        <ul>
+                            <li><a href="#">16 типов личности по KPMI</a></li>
+                            <li><a href="#">О методике KPMI</a></li>
+                            <li><a href="#">О предикции профессии</a></li>
+                            <li><a href="#">Политика в отношении персональных данных, оплата, возвраты т т.д.</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="q-mt-xl">
+                    <div class="row">
+                        <div class="offset-md-2 col-6 col-md-6">
+                            ©Психология и Бизнес 1998-2020
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="design text-right">Дизайн <a href="http://reconcept.ru" target="_blank">ReConcept</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer: END-->
+
+
+    </div>
+
+</div>
+
+<!-- Библиотеки. -->
+<script src="assets/js/vue.min.js"></script>
+<script src="assets/js/quasar.min.js"></script>
+
+
+<!-- Скрипт страницы. -->
+<script src="assets/js/pages/result.js"></script>
+
+</body>
+</html>

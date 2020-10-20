@@ -1,0 +1,759 @@
+fish_form = `{
+  "data": {
+    "status": 0,
+    "data": {
+      "additional_questions": [
+          {
+            "text": "Уважаемый коллега!<br><br>Перед вами дополнительная анкета-рыба.<br>",
+            "type_name": "prlg",
+            "secret": false,
+            "position": 1,
+            "mandatory": true,
+            "answers": null,
+            "show_time": null,
+            "answer_time": null,
+            "min": null,
+            "max": null,
+            "hint": null,
+            "sqi": 1,
+            "opts": {
+                "answer_type": null,
+                "group": 0
+            },
+            "type_descr": "Пролог",
+            "user_answer": null
+        },
+        {
+            "text": "Укажите ваш пол:",
+            "type_name": "hard",
+            "secret": false,
+            "position": 2,
+            "mandatory": true,
+            "answers": [
+                {
+                    "label": "мужской",
+                    "keys": null,
+                    "value": 1,
+                    "position": 1,
+                    "specs": {},
+                    "lid": 1
+                },
+                {
+                    "label": "женский",
+                    "keys": null,
+                    "value": 2,
+                    "position": 2,
+                    "specs": {},
+                    "lid": 2
+                }
+            ],
+            "show_time": null,
+            "answer_time": null,
+            "min": null,
+            "max": null,
+            "hint": "",
+            "sqi": 147,
+            "opts": {
+                "answer_type": "hard",
+                "group": 0,
+                "type_view": "vertical"
+            },
+            "type_descr": "Одиночный выбор",
+            "user_answer": null
+        },
+        {
+            "text": "Достигли ли вы совершеннолетия?",
+            "type_name": "hard",
+            "secret": false,
+            "position": 3,
+            "mandatory": true,
+            "answers": [
+                {
+                    "label": "да",
+                    "keys": null,
+                    "value": 1,
+                    "position": 1,
+                    "specs": {},
+                    "lid": 1
+                },
+                {
+                    "label": "нет",
+                    "keys": null,
+                    "value": 2,
+                    "position": 2,
+                    "specs": {},
+                    "lid": 2
+                }
+            ],
+            "show_time": null,
+            "answer_time": null,
+            "min": null,
+            "max": null,
+            "hint": null,
+            "sqi": 75,
+            "opts": {
+                "answer_type": "hard",
+                "group": 0,
+                "type_view": "vertical"
+            },
+            "type_descr": "Одиночный выбор",
+            "user_answer": null
+        },
+        {
+            "text": "Вы пишите тесты к своему коду?",
+            "type_name": "hard",
+            "secret": false,
+            "position": 4,
+            "mandatory": true,
+            "answers": [
+                {
+                    "label": "конечно, все работает, как швейцарские часы",
+                    "keys": null,
+                    "value": 1,
+                    "position": 1,
+                    "specs": {},
+                    "lid": 1
+                },
+                {
+                    "label": "нужно срочно этим заняться!",
+                    "keys": null,
+                    "value": 2,
+                    "position": 2,
+                    "specs": {},
+                    "lid": 2
+                }
+            ],
+            "show_time": null,
+            "answer_time": null,
+            "min": null,
+            "max": null,
+            "hint": null,
+            "sqi": 149,
+            "opts": {
+                "answer_type": "hard",
+                "group": 0,
+                "type_view": "vertical"
+            },
+            "type_descr": "Одиночный выбор",
+            "user_answer": null
+        }
+      ],
+      "questions": [
+          {
+              "text": "Уважаемый коллега!<br><br>Ответы на предлагаемые вопросы помогут увидеть, как Вы предпочитаете смотреть на вещи, и что Вы делаете, когда нужно принять решение. Лучше понять Ваши сильные стороны и выяснить, какая деятельность в наибольшей степени Вам подходит.<br><br>Опросник содержит вопросы двух типов. В одних случаях Вам предстоит выбрать, какой из вариантов ответа больше совпадает с тем, что Вы обычно чувствуете или делаете. В других случаях Вам предстоит определить, какое из слов в паре Вам больше нравится по своему значению (но не по звучанию или написанию). <br><br>Отвечайте на вопросы следующим образом: после прочтения текста вопроса с помощью мыши или курсора выберите один из предложенных вариантов ответов.<br>",
+              "type_name": "prlg",
+              "secret": false,
+              "position": 1,
+              "mandatory": true,
+              "answers": null,
+              "show_time": null,
+              "answer_time": null,
+              "min": null,
+              "max": null,
+              "hint": null,
+              "sqi": 1,
+              "opts": {
+                  "answer_type": null,
+                  "group": 0
+              },
+              "type_descr": "Пролог",
+              "user_answer": null
+          },
+          {
+              "text": "Обычно Вы:",
+              "type_name": "hard",
+              "secret": false,
+              "position": 2,
+              "mandatory": true,
+              "answers": [
+                  {
+                      "label": "общительны",
+                      "keys": null,
+                      "value": 1,
+                      "position": 1,
+                      "specs": {
+                          "factors": {
+                              "1": 2,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 1
+                  },
+                  {
+                      "label": "довольно сдержанны и спокойны",
+                      "keys": null,
+                      "value": 2,
+                      "position": 2,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 2,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 2
+                  }
+              ],
+              "show_time": null,
+              "answer_time": null,
+              "min": null,
+              "max": null,
+              "hint": "",
+              "sqi": 147,
+              "opts": {
+                  "answer_type": "hard",
+                  "group": 0,
+                  "type_view": "vertical"
+              },
+              "type_descr": "Одиночный выбор",
+              "user_answer": null
+          },
+          {
+              "text": "Если бы вы были школьным учителем, то с большим удовольствием бы вели:",
+              "type_name": "hard",
+              "secret": false,
+              "position": 3,
+              "mandatory": true,
+              "answers": [
+                  {
+                      "label": "физику",
+                      "keys": null,
+                      "value": 1,
+                      "position": 1,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 2,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 1
+                  },
+                  {
+                      "label": "математику",
+                      "keys": null,
+                      "value": 2,
+                      "position": 2,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 2
+                  },
+                  {
+                      "label": "русский язык",
+                      "keys": null,
+                      "value": 3,
+                      "position": 3,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 3
+                  },
+                  {
+                      "label": "литературу",
+                      "keys": null,
+                      "value": 4,
+                      "position": 4,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 4
+                  },
+                  {
+                      "label": "историю",
+                      "keys": null,
+                      "value": 5,
+                      "position": 5,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 5
+                  },
+                  {
+                      "label": "обществознание",
+                      "keys": null,
+                      "value": 6,
+                      "position": 6,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 6
+                  },
+                  {
+                      "label": "английский язык",
+                      "keys": null,
+                      "value": 7,
+                      "position": 7,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 7
+                  },
+                  {
+                      "label": "естествознание",
+                      "keys": null,
+                      "value": 8,
+                      "position": 8,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 8
+                  }
+              ],
+              "show_time": null,
+              "answer_time": null,
+              "min": null,
+              "max": null,
+              "hint": null,
+              "sqi": 75,
+              "opts": {
+                  "answer_type": "hard",
+                  "group": 0,
+                  "type_view": "vertical"
+              },
+              "type_descr": "Одиночный выбор",
+              "user_answer": null
+          },
+          {
+              "text": "Из овощей вы отдаете предпочтение:",
+              "type_name": "soft",
+              "secret": false,
+              "position": 4,
+              "mandatory": true,
+              "answers": [
+                  {
+                      "label": "огурцам",
+                      "keys": null,
+                      "value": 1,
+                      "position": 1,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 1,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 1
+                  },
+                  {
+                      "label": "помидорам",
+                      "keys": null,
+                      "value": 2,
+                      "position": 2,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 1,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 2
+                  },
+                  {
+                      "label": "баклажанам",
+                      "keys": null,
+                      "value": 3,
+                      "position": 3,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 3
+                  },
+                  {
+                      "label": "кабачкам",
+                      "keys": null,
+                      "value": 4,
+                      "position": 4,
+                      "specs": {
+                          "factors": {
+                              "1": 0,
+                              "2": 0,
+                              "3": 0,
+                              "4": 0,
+                              "5": 0,
+                              "6": 0,
+                              "7": 0,
+                              "8": 0,
+                              "default": 0
+                          }
+                      },
+                      "lid": 4
+                  }
+              ],
+              "show_time": null,
+              "answer_time": null,
+              "min": null,
+              "max": null,
+              "hint": null,
+              "sqi": 149,
+              "opts": {
+                  "answer_type": "soft",
+                  "group": 0,
+                  "type_view": "vertical"
+              },
+              "type_descr": "Мягкая альтернатива",
+              "user_answer": []
+          },
+          {
+              "text": "Как ваше настроение?",
+              "type_name": "open",
+              "secret": false,
+              "position": 5,
+              "mandatory": true,
+              "answers": [],
+              "show_time": null,
+              "answer_time": null,
+              "min": null,
+              "max": null,
+              "hint": null,
+              "sqi": 149,
+              "opts": {
+                  "answer_type": "open",
+                  "group": 0,
+                  "type_view": "vertical"
+              },
+              "type_descr": "Открытый вопрос",
+              "user_answer": null
+          },
+          {
+            "text": "Как ваше настроение?",
+            "type_name": "nps",
+            "secret": false,
+            "position": 6,
+            "mandatory": true,
+            "answers": [
+              {
+                "label": "1",
+                "keys": null,
+                "value": 1,
+                "position": 1,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 1
+              },
+              {
+                "label": "2",
+                "keys": null,
+                "value": 2,
+                "position": 2,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 2
+              },
+              {
+                "label": "3",
+                "keys": null,
+                "value": 3,
+                "position": 3,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 3
+              },
+              {
+                "label": "4",
+                "keys": null,
+                "value": 4,
+                "position": 4,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 4
+              },
+              {
+                "label": "5",
+                "keys": null,
+                "value": 5,
+                "position": 5,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 5
+              },
+              {
+                "label": "6",
+                "keys": null,
+                "value": 6,
+                "position": 6,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 6
+              },
+              {
+                "label": "7",
+                "keys": null,
+                "value": 7,
+                "position": 7,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 7
+              },
+              {
+                "label": "8",
+                "keys": null,
+                "value": 8,
+                "position": 8,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 8
+              },
+              {
+                "label": "9",
+                "keys": null,
+                "value": 9,
+                "position": 9,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 9
+              },
+              {
+                "label": "10",
+                "keys": null,
+                "value": 10,
+                "position": 10,
+                "specs": {
+                    "factors": {
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 0,
+                        "5": 0,
+                        "6": 0,
+                        "7": 0,
+                        "8": 0,
+                        "default": 0
+                    }
+                },
+                "lid": 10
+              }
+            ],
+            "show_time": null,
+            "answer_time": null,
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "min_text": "Совсем не нравится",
+            "max_text": "Очень нравится",
+            "hint": null,
+            "sqi": 149,
+            "opts": {
+                "answer_type": "nps",
+                "group": 0,
+                "type_view": "vertical"
+            },
+            "type_descr": "Индекс лояльности потребителей",
+            "user_answer": null
+        }
+      ],
+      "progress_status": "main_in_progress",
+      "payment_status": "free"
+    }
+  }
+}`;
