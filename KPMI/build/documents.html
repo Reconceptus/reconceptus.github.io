@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KPMI - Результаты (бесплатные)</title>
+    <title>KPMI - Документы сервиса kpmi.ru</title>
     <meta name="author" content="enenkoff@gmail.com">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
@@ -21,7 +21,7 @@
 </div>
 <!--SVG-sprite: END-->
 
-<div id="result" class="wrapper">
+<div id="index" class="wrapper">
 
     <div class="container">
 
@@ -108,96 +108,36 @@
 
         <main id="main" class="main">
 
-            <div class="relative-position">
-                <div class="custom-notify">
-                    <div class="content content--lg">
-                        <div class="row justify-end">
-                            <div class="offset-sm-1 offset-md-0 col-sm-11 col-md-6 col-lg-4">
-                                <div class="custom-notify--wrapper">
-                                    <div class="shape shape1 blur-xl shape-color--yellow"></div>
-                                    <div class="custom-notify--inner">
-                                        <div class="title"><span>Оплатить полный результат за 250₽ вместо 500₽</span></div>
-                                        <div><a href="result-full.html">пример</a></div>
-                                        <div class="subtitle">Скидка 50% за ответы на 8 вопросов второй анкеты</div>
-                                        <div class="btn-set">
-                                            <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary"
-                                                   size="16px" no-caps
-                                                   outline color="primary"
-                                                   label="да, я хочу скидку"
-                                            >
-                                            </q-btn>
-                                            <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary"
-                                                   size="16px" no-caps
-                                                   outline color="primary"
-                                                   label="оплатить 500₽"
-                                            >
-                                            </q-btn>
-                                        </div>
-                                    </div>
+            <section class="text-page">
+                <div class="content content--lg">
+                    <div class="row justify-end">
+                        <div class="col-12 col-md-10">
+                            <div class="relative-position">
+                                <div class="shape shape13 shape-color--purple"></div>
+                                <div class="shape shape14 shape-color--blue"></div>
+                                <div class="shape shape15 shape-color--purple"></div>
+                                <div class="shape shape16 shape-color--yellow"></div>
+                            </div>
+                            <div class="text-page--inner">
+                                <div class="text-page--inner-main text-box">
+                                    <h1>Документы сервиса kpmi.ru</h1>
+                                    <p></p>
+                                    <blockquote>Наш сервис анонимен, а его работа абсолютно прозрачна.</blockquote>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <section class="result-type">
-                <div class="result-type--intro">
-                    <div class="content content--lg">
-                        <div class="row items-center">
-                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
-                                <div class="q-pt-lg result-step">1</div>
-                                <div class="result-step--head numbered result-type--info">
-                                    <span class="text-subtitle1 text-weight-medium text-primary bg-warning q-px-md">
-                                        бесплатный лайт-результат
-                                    </span>
-                                    <h1 class="text-h3 title">KPMI: ты <br>классический предприниматель </h1>
-                                    <dl>
-                                        <div class="item">
-                                            <dt>Тип</dt>
-                                            <dd>Напористый спорщик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Код</dt>
-                                            <dd>ENTP-A</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Роль</dt>
-                                            <dd>Аналитик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Стратегия</dt>
-                                            <dd>Мастерство людей</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6">
-                                <div class="relative-position">
-                                    <div class="shape shape1 shape-color--green"></div>
-                                    <div class="shape shape2 shape-color--yellow"></div>
-                                    <div class="shape shape3 shape-color--blue"></div>
-                                    <div class="result-type--img">
-<!--                                        <img src="assets/svg/partials/sample-bg.svg" alt="">-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-type--descr">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="offset-md-2 col-12 col-md-8">
-                                <q-tree :nodes="typeDescriptionFree"
+                    <div class="row">
+                        <div class="offset-md-2 col-12 col-md-8">
+                            <div class="text-page--drop">
+                                <q-tree :nodes="documents"
                                         node-key="label"
-                                        class="accordion"
+                                        class="accordion no-icons"
                                 >
                                     <template v-slot:default-header="prop">
                                         <div class="flex full-width items-center justify-between">
-                                            <i class="icon icon--md q-mr-sm"><svg><use :xlink:href="prop.node.icon"/></svg></i>
                                             <div class="text-h5">{{ prop.node.label }}</div>
-                                            <div class="disabled-text text-weight-medium text-primary q-px-md" v-if="prop.node.disabled">доступно в полном отчете</div>
+                                            <div class="disabled-text" v-if="prop.node.disabled">доступно в полном отчете</div>
                                         </div>
                                     </template>
                                     <template v-slot:body-story="prop">
@@ -214,180 +154,6 @@
                     </div>
                 </div>
             </section>
-
-            <section class="result-sample">
-                <div class="result-sample--head">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
-                                <div class="result-step">2</div>
-                                <div class="q-pt-lg result-step--head numbered">
-                                    <h2 class="text-h3 title">Твоя предрасположенность к профессиям </h2>
-                                </div>
-                            </div>
-                            <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6">
-                                <div class="relative-position">
-                                    <div class="shape shape1 shape-color--green"></div>
-                                    <div class="shape shape2 shape-color--yellow"></div>
-                                    <div class="result-sample--img">
-                                        <img src="assets/svg/partials/sample-bg.svg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-sample--list demo-list">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item is-disabled">
-                                    <div class="item-title">Топ-10 профессий</div>
-                                    <div class="item-table">
-                                        <div class="disabled-text text-weight-medium text-primary q-px-sm flex items-center">
-                                            <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-lock"/></svg></i>
-                                            доступно в полном отчете
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item">
-                                    <div class="item-title">Более</div>
-                                    <div class="item-table">
-                                        <table>
-                                            <tr><td></td><td>точность*</td></tr>
-                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
-                                            <tr><td>Хирург</td><td>99%</td></tr>
-                                            <tr><td>Космонавт</td><td>77%</td></tr>
-                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
-                                            <tr><td>Режиссер</td><td>56%</td></tr>
-                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
-                                            <tr><td>Дизайнер</td><td>4%</td></tr>
-                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
-                                            <tr><td>Кондитер</td><td>67%</td></tr>
-                                            <tr><td>Генетик</td><td>55%</td></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item">
-                                    <div class="item-title">Менее</div>
-                                    <div class="item-table">
-                                        <table>
-                                            <tr><td></td><td>точность*</td></tr>
-                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
-                                            <tr><td>Хирург</td><td>99%</td></tr>
-                                            <tr><td>Космонавт</td><td>77%</td></tr>
-                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
-                                            <tr><td>Режиссер</td><td>56%</td></tr>
-                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
-                                            <tr><td>Дизайнер</td><td>4%</td></tr>
-                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
-                                            <tr><td>Кондитер</td><td>67%</td></tr>
-                                            <tr><td>Генетик</td><td>55%</td></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item is-disabled">
-                                    <div class="item-title">Не подходят</div>
-                                    <div class="item-table">
-                                        <div class="disabled-text text-weight-medium text-primary q-px-sm flex items-center">
-                                            <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-lock"/></svg></i>
-                                            доступно в полном отчете
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-sample--list-note">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="offset-md-1 offset-lg-2 col-12 col-sm-6 col-md-5 col-lg-4">
-                                <div class="text">*Точность каждой модели ансамбля вычисляется с помощью контрольной выборки после окончания ее (модели) обучения и представляет собой отношение количества правильно предсказанных результатов к общему размеру контрольной выборки. Это же, только понятнее.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="discount">
-                <div class="content content--lg">
-                    <div class="row">
-                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
-                            <div class="discount-wrapper">
-                                <img class="img" src="assets/svg/partials/discount-bg.svg" alt="">
-                                <div class="discount-inner">
-                                    <div class="shape shape1 shape-color--yellow"></div>
-                                    <div class="shape shape2 shape-color--green"></div>
-                                    <div class="text">
-                                        <h4 class="text-h5 title"><span>Скидка! Ответь на дополнительные вопросы и получи
-                                            полные результаты бесплатно!</span></h4>
-                                        <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary"
-                                               size="16px" no-caps
-                                               outline color="primary"
-                                               label="окей, давай"
-                                        >
-                                        </q-btn>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <div class="sharing">
-                <div class="content content--lg">
-                    <div class="row">
-                        <div class="offset-md-1 col-12 col-md-10">
-                            <div class="sharing-inner flex flex-center justify-center">
-                                Расскажи друзьям 7.2 К
-                                <ul class="flex flex-center">
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--fb">
-                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--vk">
-                                                <svg><use xlink:href="#icon-social-vk"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--tw">
-                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--pt">
-                                                <svg><use xlink:href="#icon-social-pinterest"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--home page: END-->
 
         </main>
 
@@ -440,7 +206,7 @@
 
 
 <!-- Скрипт страницы. -->
-<script src="assets/js/pages/result.js"></script>
+<script src="assets/js/pages/page.js"></script>
 
 </body>
 </html>

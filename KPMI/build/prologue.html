@@ -12,7 +12,7 @@
 <body>
 
 <!--SVG-sprite: BEGIN-->
-<div class="hide">
+<div class="hidden">
 
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-next" viewBox="0 0 24 24"><path d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="matrix(0-1 1 0 0 24)"/></symbol><symbol id="icon-close" viewBox="0 0 24 24"><path d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/></symbol><symbol id="icon-link" viewBox="0 0 24 24"><path d="M17,7H13V9h4a3,3,0,0,1,0,6H13v2h4A5,5,0,0,0,17,7Zm-6,8H7A3,3,0,0,1,7,9h4V7H7A5,5,0,0,0,7,17h4ZM8,11h8v2H8Z"/></symbol><symbol id="icon-lock" viewBox="0 0 24 24">
 <path d="M13.333,5.667h-.667V4.333A3.333,3.333,0,1,0,6,4.333V5.667H5.333A1.337,1.337,0,0,0,4,7v6.667A1.337,1.337,0,0,0,5.333,15h8a1.337,1.337,0,0,0,1.333-1.333V7A1.337,1.337,0,0,0,13.333,5.667Zm-4,6a1.333,1.333,0,1,1,1.333-1.333A1.337,1.337,0,0,1,9.333,11.667Zm2.067-6H7.267V4.333a2.067,2.067,0,1,1,4.133,0Z" transform="translate(2.667 2.667)"/>
@@ -49,6 +49,7 @@
                                                 <q-btn @click="text = ''" flat round
                                                        color="secondary"
                                                        class="header-search__clear"
+                                                       :class="{'transparent': text == ''}"
                                                 >
                                                     <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
                                                 </q-btn>
@@ -86,15 +87,15 @@
                         <div class="nav-menu">
                             <div>
                                 <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                       unelevated color="accent" size="16px" no-caps
+                                       unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
                                        label="пройти тест бесплатно"></q-btn>
                             </div>
                             <ul class="nav-menu__list">
-                                <li><a href="#">16 типов личности по KPMI</a></li>
-                                <li><a href="#">О методике KPMI</a></li>
-                                <li><a href="#">Предикция профессии</a></li>
-                                <li><a href="#">Оценка валидности и надежности</a></li>
-                                <li><a href="#">Документы</a></li>
+                                <li><a href="persons.html">16 типов личности по KPMI</a></li>
+                                <li><a href="about.html">О методике KPMI</a></li>
+                                <li><a href="predication.html">Предикция профессии</a></li>
+                                <li><a href="evaluation.html">Оценка валидности и надежности</a></li>
+                                <li><a href="documents.html">Документы</a></li>
                             </ul>
                             <div class="nav-menu__contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
                         </div>
@@ -132,7 +133,7 @@
                                 </ul>
                                 <div class="btn-set">
                                     <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                           unelevated color="accent" size="16px" no-caps
+                                           unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
                                            label="начать тестирование" />
                                 </div>
                             </div>
