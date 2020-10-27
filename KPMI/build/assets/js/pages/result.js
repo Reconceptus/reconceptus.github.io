@@ -6,10 +6,21 @@ Vue.component('PageHeader', {
       text: '',
       visibleSearch: false,
       visibleNav: false,
-      pageOnTheTop: Boolean
+      pageOnTheTop: Boolean,
+      showTooltip: false
     }
   },
   methods: {
+    copyNumber(){
+      this.showTooltip = true;
+      let input = document.getElementById('copyNumber');
+      input.select();
+      document.execCommand('copy');
+    },
+    navMenuToggle(){
+      this.visibleNav = !this.visibleNav;
+      document.documentElement.classList.toggle('ovh')
+    },
     showSearch(){
       this.visibleSearch = true;
       this.$refs.search.focus();
