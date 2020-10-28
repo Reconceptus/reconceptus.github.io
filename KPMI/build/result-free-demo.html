@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KPMI - Ошибка</title>
+    <title>KPMI - Результаты (бесплатные) - демо</title>
     <meta name="author" content="enenkoff@gmail.com">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
@@ -21,13 +21,13 @@
 </div>
 <!--SVG-sprite: END-->
 
-<div id="index" class="wrapper">
+<div id="result" class="wrapper">
 
-    <div class="container" >
+    <div class="container">
 
         <!--header: BEGIN-->
         <page-header inline-template>
-            <header id="header" class="header static"
+            <header id="header" class="header static nav-static demo"
                     :class="{
                         'visible-search': visibleSearch,
                         'visible-nav': visibleNav,
@@ -185,37 +185,98 @@
 
 
         <main id="main" class="main">
-
-            <section class="error-page">
-                <div class="content content--lg">
-                    <div class="row items-center error-page--box">
-                        <div class="offset-lg-1 col-12 col-md-5 col-lg-4">
-                            <div class="error-page--head">
-                                <h1 class="text-h3 title">Ошибка 500</h1>
-                                <div>Мчишь на полных парусах! В мире несколько тысяч профессий и у каждой своя специфика. Как выбрать дело жизни и не разочароваться через 5-10 лет?</div>
-                                <div class="btn-set">
-                                    <q-btn class="q-px-xl q-py-md no-border-radius q-btn--primary"
-                                           size="16px" no-caps type="a" href="index.html"
-                                           outline color="primary"
-                                           label="на главную"
-                                    >
-                                    </q-btn>
+            <section class="result-type no-pointer-events">
+                <div class="result-type--intro">
+                    <div class="content content--lg">
+                        <div class="row items-center">
+                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
+                                <div class="q-pt-lg result-step">1</div>
+                                <div class="result-step--head numbered result-type--info">
+                                    <span class="text-subtitle1 text-weight-medium text-primary bg-warning q-px-md">
+                                        бесплатный лайт-результат
+                                    </span>
+                                    <h1 class="text-h3 title">KPMI: ты <br>классический предприниматель </h1>
+                                    <dl>
+                                        <div class="item">
+                                            <dt>Тип</dt>
+                                            <dd>Напористый спорщик</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Код</dt>
+                                            <dd>ENTP-A</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Роль</dt>
+                                            <dd>Аналитик</dd>
+                                        </div>
+                                        <div class="item">
+                                            <dt>Стратегия</dt>
+                                            <dd>Мастерство людей</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6 result-type--img-cover">
+                                <div class="relative-position">
+                                    <div class="shape shape1 shape-color--green"></div>
+                                    <div class="shape shape2 shape-color--yellow"></div>
+                                    <div class="shape shape3 shape-color--blue"></div>
+                                    <div class="result-type--img">
+                                        <img src="assets/svg/partials/sample-bg.svg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="offset-md-1 col-12 col-md-5">
-                            <div class="relative-position">
-                                <div class="shape shape1 blur-md shape-color--green"></div>
-                                <div class="shape shape2 blur-md shape-color--blue"></div>
-                                <div class="shape shape3 blur-md shape-color--yellow"></div>
-                                <figure class="error-page--img">
-                                    <img src="assets/svg/partials/sample-bg.svg" alt="">
-                                </figure>
+                    </div>
+                </div>
+
+                <div class="result-type--descr">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-md-8">
+                                <q-tree :nodes="typeDescriptionFree"
+                                        node-key="label"
+                                        class="accordion"
+                                >
+                                    <template v-slot:default-header="prop">
+                                        <div class="flex full-width items-center justify-between">
+                                            <i class="icon icon--md q-mr-sm"><svg><use :xlink:href="prop.node.icon"/></svg></i>
+                                            <div class="text-h5">{{ prop.node.label }}</div>
+                                            <a href="#" class="link text-weight-medium q-px-md" v-if="prop.node.disabled">оплатить</a>
+                                        </div>
+                                    </template>
+                                    <template v-slot:body-story="prop">
+                                        <div v-if="prop.node.story" class="text-box" v-html="prop.node.story"></div>
+                                        <div v-else class="text-box" >
+                                            <p>Architects are self-confident in the skills and ideas they focus on. Using their insights and logic, they push innovation through by sheer willpower. It may seem that Architects constantly deconstruct and rebuild every idea and system they encounter. They typically apply a sense of perfectionism and even morality to all their work. Anyone who can’t keep up with Architects’ processes or doesn’t see the point of them is likely to lose their respect. </p>
+                                            <h3>Standing on Logic and Principles</h3>
+                                            <p>Architect personality types dislike rules, restrictions, and traditions. For them, everything should be subject to questions and reviews. When they can, Architects often act alone, and their approaches are usually innovative and unique. They may not wait for others to catch up to them. Because of this, they’re sometimes not as sensitive as they could be to the thoughts, desires, and plans of others.</p>
+                                        </div>
+                                    </template>
+                                </q-tree>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <div class="result-demo-btns">
+                <div class="content content--lg">
+                    <div class="row">
+                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
+                            <div class="btn-set">
+                                <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
+                                       unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                       label="начать тестирование"></q-btn>
+                                <q-btn class="q-px-xl q-py-md no-border-radius" type="a" href="index.html"
+                                       size="16px" no-caps label="на главную"
+                                       flat color="primary"></q-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </main>
 
@@ -229,7 +290,7 @@
 
 
 <!-- Скрипт страницы. -->
-<script src="assets/js/pages/page.js"></script>
+<script src="assets/js/pages/result-demo-free.js"></script>
 
 </body>
 </html>

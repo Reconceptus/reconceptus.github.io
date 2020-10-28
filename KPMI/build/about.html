@@ -31,10 +31,11 @@
                     :class="{
                         'visible-search': visibleSearch,
                         'visible-nav': visibleNav,
-                        'fixed-header': !pageOnTheTop
+                        'fixed-header': !pageOnTheTop,
+                        'visible-test': testIsVisible
                     }"
             >
-                <div class="js-search content content--lg">
+                <div class="js-search content content--lg" v-if="fullLayout">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
                             <form action="">
@@ -70,10 +71,10 @@
                         </div>
                     </div>
                 </div>
-                <nav id="nav" class="nav">
+                <nav id="nav" class="nav" v-if="fullLayout">
                     <div class="nav-wrap">
                         <div class="nav-top">
-                            <q-btn @click="visibleNav = !visibleNav" flat
+                            <q-btn @click="navMenuToggle" flat
                                    color="primary"
                                    class="burger-btn"
                             >
@@ -101,6 +102,83 @@
                         </div>
                     </div>
                 </nav>
+                <div class="header-test-btn" v-if="fullLayout">
+                    <div class="content content--lg">
+                        <div class="row justify-end">
+                            <div>
+                                <q-btn class="no-border-radius q-btn--accent"
+                                       unelevated color="accent" no-caps type="a" href="prologue.html"
+                                       label="тест" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-header" v-if="extendedMenu">
+                    <div class="content content--lg">
+                        <div class="row justify-between">
+                            <div class="result-header--info" v-if="fullMode">
+                                <template v-if="fullLayout">
+                                    <q-btn class="q-px-lg q-py-sm q-btn--accent"
+                                           unelevated color="accent" no-caps
+                                           v-if="freeResults"
+                                    >
+                                        <div class="label">оплатить полный счет</div>
+                                        <i class="icon icon--md"><svg><use xlink:href="#icon-download"/></svg></i>
+                                    </q-btn>
+                                    <span class="label q-mr-sm">ваша анкета</span>
+                                    <a href="#" class="flex inline items-center" @click.prevent="copyNumber">
+                                        67688f
+                                        <i class="icon icon--md q-ml-sm"><svg><use xlink:href="#icon-link"/></svg></i>
+                                        <input type="text" id="copyNumber" value="67688f">
+                                        <template v-if="showTooltip">
+                                            <q-tooltip v-model="showTooltip" anchor="center right" :offset="[20, 0]"
+                                                       self="center left" content-style="font-size: 16px"
+                                                       content-class="copy-tooltip bg-positive no-border-radius">
+                                                ссылка скопирована
+                                            </q-tooltip>
+                                        </template>
+                                    </a>
+                                </template>
+                                <template v-else>
+                                    <span class="label q-mr-sm" v-if="freeResults">демо-режим бесплатного результата</span>
+                                    <span class="label q-mr-sm" v-else>демо-режим результата за 250 руб </span>
+                                </template>
+
+                            </div>
+                            <ul class="result-header--menu">
+                                <li>
+                                    <a href="#" class="flex inline items-center">
+                                        <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-mail"/></svg></i>
+                                        <span class="label">на емейл</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex inline items-center">
+                                        <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-download"/></svg></i>
+                                        <span class="label">скачать pdf</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex inline items-center">
+                                        <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-share"/></svg></i>
+                                        <span class="label">поделиться</span>
+                                    </a>
+                                </li>
+                                <li v-if="fullMode">
+                                    <a href="comparison.html" class="flex inline items-center">
+                                        <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-graph"/></svg></i>
+                                        <span class="label">сравнить анкеты</span>
+                                    </a>
+                                </li>
+                                <li v-if="!fullLayout">
+                                    <q-btn class="test-btn no-border-radius q-btn--accent"
+                                           unelevated color="accent" no-caps type="a" href="prologue.html"
+                                           label="тест" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </header>
         </page-header>
         <!--header: END-->
@@ -168,7 +246,7 @@
                             ©Психология и Бизнес 1998-2020
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="design text-right">Дизайн <a href="http://reconcept.ru" target="_blank">ReConcept</a></div>
+                            <div class="design text-right">Frontend <a href="http://reconcept.ru" target="_blank">ReConcept</a></div>
                         </div>
                     </div>
                 </div>

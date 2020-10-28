@@ -11,7 +11,7 @@ Vue.component('PageHeader', {
       testIsVisible: false,
       extendedMenu: true,
       fullMode: true,
-      fullLayout: true,
+      fullLayout: false,
       freeResults: false
     }
   },

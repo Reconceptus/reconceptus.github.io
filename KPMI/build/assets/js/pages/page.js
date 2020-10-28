@@ -6,26 +6,34 @@ Vue.component('PageHeader', {
       text: '',
       visibleSearch: false,
       visibleNav: false,
-      pageOnTheTop: Boolean
+      pageOnTheTop: Boolean,
+      fullLayout: true,
+      extendedMenu: false,
+      testIsVisible: false
     }
   },
   methods: {
+    navMenuToggle(){
+      this.visibleNav = !this.visibleNav;
+    },
     showSearch(){
       this.visibleSearch = true;
       this.$refs.search.focus();
     },
-    scrollEndHandling(){
-      this.pageOnTheTop = window.pageYOffset === 0;
-
-      let isScrolling;
-      window.addEventListener('scroll', (event) => {
-        window.clearTimeout(isScrolling);
-        isScrolling = setTimeout(() => {
+      scrollEndHandling(){
           this.pageOnTheTop = window.pageYOffset === 0;
-          this.visibleSearch = false;
-        }, 20);
-      }, false);
-    }
+          this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+
+          let isScrolling;
+          window.addEventListener('scroll', (event) => {
+              window.clearTimeout(isScrolling);
+              isScrolling = setTimeout(() => {
+                  this.pageOnTheTop = window.pageYOffset === 0;
+                  this.visibleSearch = false;
+                  this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+              }, 5);
+          }, false);
+      }
   },
   mounted() {
     this.scrollEndHandling();

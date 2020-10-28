@@ -12,7 +12,7 @@ Vue.component('PageHeader', {
       extendedMenu: true,
       fullMode: true,
       fullLayout: true,
-      freeResults: false
+      freeResults: true
     }
   },
   methods: {

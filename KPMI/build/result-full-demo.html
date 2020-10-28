@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KPMI - Результаты (платные)</title>
+    <title>KPMI - Результаты (платные) - демо</title>
     <meta name="author" content="enenkoff@gmail.com">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
@@ -27,7 +27,7 @@
 
         <!--header: BEGIN-->
         <page-header inline-template>
-            <header id="header" class="header static nav-static"
+            <header id="header" class="header static nav-static demo"
                     :class="{
                         'visible-search': visibleSearch,
                         'visible-nav': visibleNav,
@@ -186,7 +186,7 @@
 
         <main id="main" class="main">
             <section class="result-type">
-                <div class="result-type--intro">
+                <div class="result-type--intro no-pointer-events">
                     <div class="content content--lg">
                         <div class="row items-center">
                             <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
@@ -229,7 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="result-type--graph">
+                <div class="result-type--graph no-pointer-events">
                     <div class="content content--lg">
                         <div class="row">
                             <div class="col-12 col-md-6">
@@ -267,7 +267,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="result-type--analysis">
+                <div class="result-type--analysis no-pointer-events">
                     <div class="content content--lg">
                         <div class="row">
                             <div class="offset-md-2 col-12 col-md-7 col-lg-5">
@@ -309,7 +309,7 @@
                 </div>
             </section>
 
-            <section class="result-sample">
+            <section class="result-sample no-pointer-events">
                 <div class="result-sample--head">
                     <div class="content content--lg">
                         <div class="row">
@@ -429,7 +429,7 @@
                 </div>
             </section>
 
-            <section class="result-advices">
+            <section class="result-advices no-pointer-events">
                 <div class="result-advices--head">
                     <div class="content content--lg">
                         <div class="row">
@@ -487,7 +487,7 @@
                 </div>
             </section>
 
-            <section class="result-comparison">
+            <section class="result-comparison no-pointer-events">
                 <div class="content content--lg">
                     <div class="row">
                         <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
@@ -530,97 +530,31 @@
                                     </fieldset>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </section>
 
-
-
-            <div class="sharing">
+            <div class="result-demo-btns">
                 <div class="content content--lg">
                     <div class="row">
-                        <div class="offset-md-1 col-12 col-md-10">
-                            <div class="sharing-inner flex flex-center justify-center">
-                                Расскажи друзьям 7.2 К
-                                <ul class="flex flex-center">
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--fb">
-                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--vk">
-                                                <svg><use xlink:href="#icon-social-vk"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--tw">
-                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--pt">
-                                                <svg><use xlink:href="#icon-social-pinterest"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                </ul>
+                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
+                            <div class="btn-set">
+                                <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
+                                       unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                       label="начать тестирование"></q-btn>
+                                <q-btn class="q-px-xl q-py-md no-border-radius" type="a" href="index.html"
+                                       size="16px" no-caps label="на главную"
+                                       flat color="primary"></q-btn>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!--home page: END-->
 
         </main>
-
-        <!--footer: BEGIN-->
-        <footer class="footer" id="footer">
-            <div class="content content--lg">
-                <div class="row">
-                    <div class="offset-md-1 col-12 col-md-1">
-                        <div class="logo">
-                            <a href="index.html" class="icon">
-                                <svg><use xlink:href="#icon-logo-mini-lt"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-7 col-md-5 q-mt-lg">
-                        <p>29 887 анкет заполнено</p>
-                        <p>KPMI.RU —  диагностическая методика, предназначенная для оценки психологического потенциала личности, её сильных и слабых сторон, а также зон оптимального развития. Основана на методологии MBTI.</p>
-                    </div>
-                    <div class="offset-md-1 col-12 col-sm-5 col-md-3 q-mt-lg">
-                        <ul>
-                            <li><a href="persons.html">16 типов личности по KPMI</a></li>
-                            <li><a href="about.html">О методике KPMI</a></li>
-                            <li><a href="predication.html">О предикции профессии</a></li>
-                            <li><a href="documents.html">Политика в отношении персональных данных, оплата, возвраты т т.д.</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="q-mt-xl">
-                    <div class="row">
-                        <div class="offset-md-2 col-6 col-md-6">
-                            ©Психология и Бизнес 1998-2020
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="design text-right">Frontend <a href="http://reconcept.ru" target="_blank">ReConcept</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--footer: END-->
-
 
     </div>
 
@@ -632,7 +566,7 @@
 
 
 <!-- Скрипт страницы. -->
-<script src="assets/js/pages/result.js"></script>
+<script src="assets/js/pages/result-demo.js"></script>
 
 </body>
 </html>

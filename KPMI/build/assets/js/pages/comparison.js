@@ -10,9 +10,8 @@ Vue.component('PageHeader', {
       showTooltip: false,
       testIsVisible: false,
       extendedMenu: true,
-      fullMode: true,
       fullLayout: true,
-      freeResults: false
+      fullMode: false
     }
   },
   methods: {
