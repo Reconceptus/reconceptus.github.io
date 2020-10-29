@@ -92,6 +92,8 @@ new Vue({
   data: function() {
     return {
       howItWorks: false,
+      paymentNotify: false,
+      paymentAgree: false,
       formId: null,
       comparedIDs: ['', ''],
       personalityScale: [
