@@ -6,6 +6,7 @@ Vue.component('PageHeader', {
       text: '',
       visibleSearch: false,
       visibleNav: false,
+      visibleMailBox: false,
       pageOnTheTop: Boolean,
       fullLayout: true,
       extendedMenu: false,
@@ -20,9 +21,18 @@ Vue.component('PageHeader', {
       this.visibleSearch = true;
       this.$refs.search.focus();
     },
+    showProcessSection(){
+      let section = document.getElementById('processSection'),
+          sectionOffsetTop = section.getBoundingClientRect().top;
+
+      if(sectionOffsetTop < 0.5*window.innerHeight){
+        section.classList.add('is-active');
+      }
+    },
     scrollEndHandling(){
       this.pageOnTheTop = window.pageYOffset === 0;
       this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+      this.showProcessSection();
 
       let isScrolling;
       window.addEventListener('scroll', (event) => {
@@ -31,6 +41,8 @@ Vue.component('PageHeader', {
           this.pageOnTheTop = window.pageYOffset === 0;
           this.visibleSearch = false;
           this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+
+          this.showProcessSection();
         }, 5);
       }, false);
     }

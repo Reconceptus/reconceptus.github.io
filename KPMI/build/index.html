@@ -41,22 +41,22 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             <form action="">
                                 <fieldset class="header-search">
-                                    <div class="header-search__input" >
+                                    <div class="header-search--input" >
                                         <q-input rounded outlined v-model="text" placeholder="Placeholder"
                                                  bg-color="info"
-                                                 ref="search" class="header-search__input-field"
+                                                 ref="search" class="header-search--input-field"
                                                  @blur="visibleSearch = false"
                                         >
                                             <template v-slot:append>
                                                 <q-btn @click="text = ''" flat round
                                                        color="secondary"
-                                                       class="header-search__clear"
+                                                       class="header-search--clear"
                                                        :class="{'transparent': text == ''}"
                                                 >
                                                     <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
                                                 </q-btn>
                                                 <q-btn type="submit" unelevated  rounded color="accent"
-                                                       class="header-search__btn">
+                                                       class="header-search--btn">
                                                     <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
                                                 </q-btn>
                                             </template>
@@ -64,7 +64,7 @@
                                     </div>
                                     <q-btn flat rounded color="primary"
                                            @click="showSearch()"
-                                           class="header-search__btn toggler">
+                                           class="header-search--btn toggler">
                                         <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
                                     </q-btn>
                                 </fieldset>
@@ -81,25 +81,39 @@
                             >
                                 <i class="icon icon--md"><span></span></i>
                             </q-btn>
+                            <div class="nav-top--lang">
+                                <div class="nav-top--lang-selected">RU</div>
+                                <ul>
+                                    <li><a href="#">EN</a></li>
+                                    <li><a class="current" href="#">RU</a></li>
+                                </ul>
+                            </div>
                             <a href="index.html" class="logo">
                                 <i class="icon icon-logo"><svg><use xlink:href="#icon-logo-mini"/></svg></i>
                                 <i class="icon icon-text"><svg><use xlink:href="#icon-logo-text"/></svg></i>
                             </a>
+
                         </div>
                         <div class="nav-menu">
+                            <div class="nav-menu--lang">
+                                <ul>
+                                    <li><a href="#">ENGLISH</a></li>
+                                    <li><a class="current" href="#">РУССКИЙ</a></li>
+                                </ul>
+                            </div>
                             <div>
                                 <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
                                        unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
                                        label="пройти тест бесплатно"></q-btn>
                             </div>
-                            <ul class="nav-menu__list">
+                            <ul class="nav-menu--list">
                                 <li><a href="persons.html">16 типов личности по KPMI</a></li>
                                 <li><a href="about.html">О методике KPMI</a></li>
                                 <li><a href="predication.html">Предикция профессии</a></li>
                                 <li><a href="evaluation.html">Оценка валидности и надежности</a></li>
                                 <li><a href="documents.html">Документы</a></li>
                             </ul>
-                            <div class="nav-menu__contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
+                            <div class="nav-menu--contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
                         </div>
                     </div>
                 </nav>
@@ -189,7 +203,7 @@
                         <q-btn flat round
                                @click.prevent="closeMailBox"
                                color="secondary"
-                               class="mail-header__close"
+                               class="mail-header--close"
                                :class="{'transparent': text == ''}"
                         >
                             <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
@@ -239,11 +253,11 @@
         <main id="main" class="main">
 
             <section class="home-intro">
-                <div class="home-intro__about">
+                <div class="home-intro--about">
                     <div class="content content--lg">
-                        <div class="row items-center home-intro__about-box">
+                        <div class="row items-center home-intro--about-box">
                             <div class="offset-md-1 offset-lg-2 col-12 col-md-6 col-lg-5">
-                                <div class="home-intro__about-head">
+                                <div class="home-intro--about-head">
                                     <h1 class="text-weight-medium text-h3 title">Я расскажу тебе о тебе, и о профессиях, в которых ты будешь счастлив </h1>
                                     <ul>
                                         <li>В одном тесте: подбор профессии и твой тип личности по KPMI без емейл и смс. 38 897 человек уже прошли тест kpmi.ru</li>
@@ -255,7 +269,7 @@
                                 </div>
                             </div>
                             <div class=" col-12 col-md-5 full-height flex column no-wrap justify-center ">
-                                <div class="home-intro__about-img">
+                                <div class="home-intro--about-img">
                                     <div class="shape shape1 shape-grad--diag"></div>
                                     <div class="shape shape2 shape-color--yellow"></div>
                                     <figure>
@@ -270,7 +284,7 @@
 
             <div class="home-content">
                 <section class="home-reports">
-                    <div class="home-reports__types">
+                    <div class="home-reports--types">
                         <div class="shape shape1 shape-color--yellow"></div>
                         <div class="shape shape2 shape-color--green"></div>
                         <div class="relative-position">
@@ -312,11 +326,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__example">
+                    <div class="home-reports--example">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 col-12 col-md-10">
-                                    <div class="home-reports__example-preview">
+                                    <div class="home-reports--example-preview">
                                         <img class="mouse" src="assets/svg/partials/mouse-scroll.svg" alt="">
                                         <figure>
                                             <img class="cover" src="assets/svg/partials/laptop-cover.svg" alt="">
@@ -330,7 +344,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__advantages">
+                    <div class="home-reports--advantages">
                         <div class="shape shape1 shape-grad--hor-inverted"></div>
                         <div class="shape shape2 shape-color--blue blur-xl"></div>
                         <div class="shape shape3 shape-color--purple"></div>
@@ -344,7 +358,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <article class="home-reports__advantages-item">
+                            <article class="home-reports--advantages-item">
                                 <div class="content content--lg">
                                     <div class="row">
                                         <div class="col-12 relative-position lt-md">
@@ -368,7 +382,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="home-reports__advantages-item item-x2">
+                            <article class="home-reports--advantages-item item-x2">
                                 <div class="content content--lg">
                                     <div class="row">
                                         <div class="offset-md-2 col-12 col-md-5">
@@ -391,7 +405,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="home-reports__advantages-item">
+                            <article class="home-reports--advantages-item">
                                 <div class="content content--lg">
                                     <div class="row">
                                         <div class="offset-md-2 col-12 col-md-5">
@@ -414,7 +428,7 @@
                         </div>
 
                     </div>
-                    <div class="home-reports__process">
+                    <div class="home-reports--process" id="processSection">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 offset-lg-2 col-12 col-md-11 col-lg-10">
@@ -438,19 +452,25 @@
                                         <div class="offset-md-1 col-12 col-md-2 full-height flex">
                                             <div class="point point-2 self-start">
                                                 <div class="text-h5 point-title">Бесплатный результат</div>
-                                                <p>Узнай свой тип личности. Не надо ждать. Результат сразу, можно скачать PDF или отправить ссылку на емейл.</p>
+                                                <div class="text">
+                                                    <p>Узнай свой тип личности. Не надо ждать. Результат сразу, можно скачать PDF или отправить ссылку на емейл.</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="offset-md-1 col-12 col-md-2 full-height flex">
                                             <div class="point point-3 self-start">
                                                 <div class="text-h5 point-title">Оплати полный отчет</div>
-                                                <p>Узнай предрасположенность к профессиям. Оплата полной версии после прохождения теста. </p>
+                                                <div class="text">
+                                                    <p>Узнай предрасположенность к профессиям. Оплата полной версии после прохождения теста. </p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class=" col-12 col-md-2 full-height flex">
                                             <div class="point point-4 self-start">
                                                 <div class="text-h5 point-title">Отслеживайте динамику</div>
-                                                <p>Работай над собой и проходи тест повторно. Наш сервис покажет динамику ваших успехов.</p>
+                                                <div class="text">
+                                                    <p>Работай над собой и проходи тест повторно. Наш сервис покажет динамику ваших успехов.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -458,7 +478,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__objects">
+                    <div class="home-reports--objects">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 offset-lg-2 col-12 col-md-11 col-lg-10">
@@ -469,7 +489,7 @@
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 offset-lg-2 col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="home-reports__objects-item">
+                                    <div class="home-reports--objects-item">
                                         <figure class="object-1">
                                             <div class="img">
                                                 <img src="assets/svg/partials/person-young.svg" alt="">
@@ -482,7 +502,7 @@
                                     </div>
                                 </div>
                                 <div class="offset-md-1 col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="home-reports__objects-item">
+                                    <div class="home-reports--objects-item">
                                         <img src="assets/svg/figures/rhomb.svg" class="fig fig-1" alt="">
                                         <img src="assets/svg/figures/arch.svg" class="fig fig-2" alt="">
                                         <figure class="object-2">
@@ -499,7 +519,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__free">
+                    <div class="home-reports--free">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 offset-lg-2 col-12 col-md-11 col-lg-10">
@@ -521,7 +541,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__persons">
+                    <div class="home-reports--persons">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 col-12 col-md-11">
@@ -640,7 +660,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="home-reports__partners">
+                    <div class="home-reports--partners">
                         <div class="content content--lg">
                             <div class="row">
                                 <div class="offset-md-1 offset-lg-2 col-12 col-md-11 col-lg-10">

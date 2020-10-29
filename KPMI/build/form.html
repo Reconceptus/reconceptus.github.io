@@ -42,22 +42,22 @@
                             <div class="col-12 col-md-6 col-lg-4">
                                 <form action="">
                                     <fieldset class="header-search">
-                                        <div class="header-search__input" >
+                                        <div class="header-search--input" >
                                             <q-input rounded outlined v-model="text" placeholder="Placeholder"
                                                      bg-color="info"
-                                                     ref="search" class="header-search__input-field"
+                                                     ref="search" class="header-search--input-field"
                                                      @blur="visibleSearch = false"
                                             >
                                                 <template v-slot:append>
                                                     <q-btn @click="text = ''" flat round
                                                            color="secondary"
-                                                           class="header-search__clear"
+                                                           class="header-search--clear"
                                                            :class="{'transparent': text == ''}"
                                                     >
                                                         <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
                                                     </q-btn>
                                                     <q-btn type="submit" unelevated  rounded color="accent"
-                                                           class="header-search__btn">
+                                                           class="header-search--btn">
                                                         <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
                                                     </q-btn>
                                                 </template>
@@ -65,7 +65,7 @@
                                         </div>
                                         <q-btn flat rounded color="primary"
                                                @click="showSearch()"
-                                               class="header-search__btn toggler">
+                                               class="header-search--btn toggler">
                                             <i class="icon icon--md"><svg><use xlink:href="#icon-search"/></svg></i>
                                         </q-btn>
                                     </fieldset>
@@ -82,25 +82,39 @@
                                 >
                                     <i class="icon icon--md"><span></span></i>
                                 </q-btn>
+                                <div class="nav-top--lang">
+                                    <div class="nav-top--lang-selected">RU</div>
+                                    <ul>
+                                        <li><a href="#">EN</a></li>
+                                        <li><a class="current" href="#">RU</a></li>
+                                    </ul>
+                                </div>
                                 <a href="index.html" class="logo">
                                     <i class="icon icon-logo"><svg><use xlink:href="#icon-logo-mini"/></svg></i>
                                     <i class="icon icon-text"><svg><use xlink:href="#icon-logo-text"/></svg></i>
                                 </a>
+
                             </div>
                             <div class="nav-menu">
+                                <div class="nav-menu--lang">
+                                    <ul>
+                                        <li><a href="#">ENGLISH</a></li>
+                                        <li><a class="current" href="#">РУССКИЙ</a></li>
+                                    </ul>
+                                </div>
                                 <div>
                                     <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
                                            unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
                                            label="пройти тест бесплатно"></q-btn>
                                 </div>
-                                <ul class="nav-menu__list">
+                                <ul class="nav-menu--list">
                                     <li><a href="persons.html">16 типов личности по KPMI</a></li>
                                     <li><a href="about.html">О методике KPMI</a></li>
                                     <li><a href="predication.html">Предикция профессии</a></li>
                                     <li><a href="evaluation.html">Оценка валидности и надежности</a></li>
                                     <li><a href="documents.html">Документы</a></li>
                                 </ul>
-                                <div class="nav-menu__contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
+                                <div class="nav-menu--contact">Пишите на <a href="mailto:hello@pkmi.ru">hello@pkmi.ru</a></div>
                             </div>
                         </div>
                     </nav>
@@ -190,7 +204,7 @@
                             <q-btn flat round
                                    @click.prevent="closeMailBox"
                                    color="secondary"
-                                   class="mail-header__close"
+                                   class="mail-header--close"
                                    :class="{'transparent': text == ''}"
                             >
                                 <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
@@ -369,6 +383,7 @@
                                                     :min="curQ.min"
                                                     :max="curQ.max"
                                                     :step="curQ.step"
+                                                    markers
                                             ></q-slider>
                                         </div>
                                         <div class="row justify-between flex-center">
@@ -407,7 +422,7 @@
                     </div>
                 </div>
                 <div class="inquirer-footer" :class="{'empty': curQ.position === 1}">
-                    <div class="inquirer-footer__inner">
+                    <div class="inquirer-footer--inner">
                         <div class="content content--lg">
                             <div class="row items-end">
                                 <div class="col-2 col-md-1">

@@ -6,6 +6,7 @@ Vue.component('PageHeader', {
       text: '',
       visibleSearch: false,
       visibleNav: false,
+      visibleMailBox: false,
       pageOnTheTop: Boolean,
       fullLayout: true,
       extendedMenu: false,

@@ -5,6 +5,7 @@ Vue.component('PageHeader', {
     return {
       text: '',
       visibleSearch: false,
+      visibleMailBox: false,
       visibleNav: false,
       pageOnTheTop: Boolean,
       fullLayout: true,
@@ -153,7 +154,7 @@ new Vue({
         // Валидация наличия ответа на обязательные вопросы.
         if(this.curQ.mandatory && (!this.userAnswer || (Array.isArray(this.userAnswer) && !this.userAnswer.length))){
             this.$q.notify({
-                color: 'red',
+                classes: 'error-message',
                 message: 'Ответьте на вопрос, прежде чем перейти к следующему.',
                 position: 'top',
                 textColor: 'white'
@@ -213,8 +214,8 @@ new Vue({
     })
     .catch(ans => {
       this.$q.notify({
-        color: 'red',
         message: ans.data.error,
+        classes: 'error-message',
         position: 'top',
         textColor: 'white'
       });
