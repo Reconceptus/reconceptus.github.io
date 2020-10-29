@@ -32,7 +32,8 @@
                         'visible-search': visibleSearch,
                         'visible-nav': visibleNav,
                         'fixed-header': !pageOnTheTop,
-                        'visible-test': testIsVisible
+                        'visible-test': testIsVisible,
+                        'visible-mailbox': visibleMailBox
                     }"
             >
                 <div class="js-search content content--lg" v-if="fullLayout">
@@ -147,7 +148,8 @@
                             </div>
                             <ul class="result-header--menu">
                                 <li>
-                                    <a href="#" class="flex inline items-center">
+                                    <a href="#" class="flex inline items-center"
+                                       @click.prevent="showMailBox">
                                         <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-mail"/></svg></i>
                                         <span class="label">на емейл</span>
                                     </a>
@@ -159,13 +161,15 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="flex inline items-center">
+                                    <a href="#sharing" class="flex inline items-center"
+                                       @click.prevent="scrollToElement('sharing')">
                                         <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-share"/></svg></i>
                                         <span class="label">поделиться</span>
                                     </a>
                                 </li>
                                 <li v-if="fullMode">
-                                    <a href="comparison.html" class="flex inline items-center">
+                                    <a href="#comparison" class="flex inline items-center"
+                                       @click.prevent="scrollToElement('comparison')">
                                         <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-graph"/></svg></i>
                                         <span class="label">сравнить анкеты</span>
                                     </a>
@@ -178,6 +182,54 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                <div class="mail-header" v-if="extendedMenu" :class="{'submitted': emailSubmitted}">
+
+                    <div class="content content--lg relative-position">
+                        <q-btn flat round
+                               @click.prevent="closeMailBox"
+                               color="secondary"
+                               class="mail-header__close"
+                               :class="{'transparent': text == ''}"
+                        >
+                            <i class="icon icon--md"><svg><use xlink:href="#icon-close"/></svg></i>
+                        </q-btn>
+                        <div class="row justify-center">
+                            <div class="col-12 col-sm-10 col-md-6 col-lg-4 relative-position">
+                                <div class="mail-header-fieldset">
+                                    <form @submit.prevent.stop="onSubmitEmail" class="full-width">
+                                        <div class="label">Отправить результат на емейл</div>
+                                        <fieldset class="flex">
+                                            <div class="input">
+                                                <q-input outlined square
+                                                         color="accent"
+                                                         placeholder="Введите емейл"
+                                                         bg-color="white"
+                                                         :input-style="{ fontSize: '16px' }"
+                                                         :rules="[val => val && val.length > 0 || 'Поле обязательно для заполнения']"
+                                                         class="input-text has-icon"
+                                                         v-model.trim="mail"
+                                                         ref="mail"
+                                                         :class="{'valid': mail}"
+                                                >
+                                                    <i class="icon icon--md input-icon text-secondary"><svg><use xlink:href="#icon-mail"/></svg></i>
+                                                </q-input>
+                                            </div>
+                                            <q-btn class="no-border-radius q-btn--primary"
+                                                   size="16px" no-caps type="submit"
+                                                   outline color="primary"
+                                                   label="отправить">
+                                            </q-btn>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div class="mail-header-success flex justify-center items-center" v-if="emailSubmitted">
+                                    <div class="label">Сообщение успешно отправлено!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </header>
         </page-header>
@@ -621,7 +673,7 @@
             </div>
 
 
-            <div class="sharing">
+            <div class="sharing" id="sharing">
                 <div class="content content--lg">
                     <div class="row">
                         <div class="offset-md-1 col-12 col-md-10">

@@ -4,6 +4,9 @@ Vue.component('PageHeader', {
   data() {
     return {
       text: '',
+      mail: '',
+      emailSubmitted: false,
+      visibleMailBox: false,
       visibleSearch: false,
       visibleNav: false,
       pageOnTheTop: Boolean,
@@ -15,6 +18,25 @@ Vue.component('PageHeader', {
     }
   },
   methods: {
+    showMailBox(){
+      this.emailSubmitted = false;
+      this.visibleMailBox = true;
+    },
+    closeMailBox(){
+      this.mail = '';
+      setTimeout(()=>{
+        this.$refs.mail.resetValidation();
+      },0)
+      this.visibleMailBox = false;
+    },
+    onSubmitEmail(){
+      this.$refs.mail.validate();
+      if (this.$refs.mail.hasError) {
+        return
+      } else {
+        this.emailSubmitted = true
+      }
+    },
     copyNumber(){
       this.showTooltip = true;
       let input = document.getElementById('copyNumber');
@@ -40,6 +62,23 @@ Vue.component('PageHeader', {
           this.visibleSearch = false;
         }, 5);
       }, false);
+    },
+    scrollToElement(id, duration = 500){
+      let startingY = window.pageYOffset,
+          element = document.getElementById(id),
+          elementOffsetTop = element.getBoundingClientRect().top,
+          start;
+      window.requestAnimationFrame(function step(timestamp) {
+        if (!start) start = timestamp;
+        let time = timestamp - start;
+        let percent = Math.min(time / duration, 1);
+
+        window.scrollTo(0, startingY - 100 + elementOffsetTop * percent);
+
+        if (time < duration) {
+          window.requestAnimationFrame(step);
+        }
+      })
     }
   },
   mounted() {
