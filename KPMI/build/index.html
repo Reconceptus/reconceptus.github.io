@@ -26,7 +26,7 @@
     <div class="container" :class="{'hidden-intro': hiddenIntro}">
 
         <!--header: BEGIN-->
-        <page-header inline-template>
+        <page-header inline-template ref="header">
             <header id="header" class="header "
                     :class="{
                         'visible-search': visibleSearch,
@@ -42,7 +42,7 @@
                             <form action="">
                                 <fieldset class="header-search">
                                     <div class="header-search--input" >
-                                        <q-input rounded outlined v-model="text" placeholder="Placeholder"
+                                        <q-input rounded outlined v-model="text" placeholder="Поиск анкеты по номеру или по ссылке"
                                                  bg-color="info"
                                                  ref="search" class="header-search--input-field"
                                                  @blur="visibleSearch = false"
@@ -103,7 +103,7 @@
                             </div>
                             <div>
                                 <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                       unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                       unelevated color="accent" size="16px" no-caps type="a" href="form.html"
                                        label="пройти тест бесплатно"></q-btn>
                             </div>
                             <ul class="nav-menu--list">
@@ -122,7 +122,7 @@
                         <div class="row justify-end">
                             <div>
                                 <q-btn class="no-border-radius q-btn--accent"
-                                       unelevated color="accent" no-caps type="a" href="prologue.html"
+                                       unelevated color="accent" no-caps type="a" href="form.html"
                                        label="тест" />
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                                 </li>
                                 <li v-if="!fullLayout">
                                     <q-btn class="test-btn no-border-radius q-btn--accent"
-                                           unelevated color="accent" no-caps type="a" href="prologue.html"
+                                           unelevated color="accent" no-caps type="a" href="form.html"
                                            label="тест" />
                                 </li>
                             </ul>
@@ -263,7 +263,7 @@
                                         <li>В одном тесте: подбор профессии и твой тип личности по KPMI без емейл и смс. 38 897 человек уже прошли тест kpmi.ru</li>
                                     </ul>
                                     <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                           unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                           unelevated color="accent" size="16px" no-caps type="a" href="form.html"
                                            label="пройти тест бесплатно" />
 
                                 </div>
@@ -531,7 +531,7 @@
                                     <p>В бесплатной версии мы расскажем твой тип личности.Мчишь на полных парусах! В мире несколько тысяч профессий и у каждой своя специфика. Как выбрать дело жизни и не разочароваться через 5-10 лет?</p>
                                     <div class="btn-set">
                                         <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                               unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                               unelevated color="accent" size="16px" no-caps type="a" href="form.html"
                                                label="пройти тест бесплатно"></q-btn>
                                         <q-btn class="q-px-xl q-py-md no-border-radius" type="a" href="persons.html"
                                                size="16px" no-caps label="все типы личности"
@@ -543,7 +543,15 @@
                     </div>
                     <div class="home-reports--persons">
                         <div class="content content--lg">
-                            <div class="row">
+                            <div class="row relative-position">
+                                <div class="arrows">
+                                    <q-btn
+                                            padding="xl"
+                                            color="white"
+                                            round
+                                            @click="nexSlide"
+                                    />
+                                </div>
                                 <div class="offset-md-1 col-12 col-md-11">
                                     <div class="person-carousel js-person-carousel">
                                         <div class="person js-person">

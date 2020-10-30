@@ -21,20 +21,20 @@ Vue.component('PageHeader', {
       this.visibleSearch = true;
       this.$refs.search.focus();
     },
-      scrollEndHandling(){
-          this.pageOnTheTop = window.pageYOffset === 0;
-          this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+    scrollEndHandling(){
+        this.pageOnTheTop = window.pageYOffset === 0;
+        this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
 
-          let isScrolling;
-          window.addEventListener('scroll', (event) => {
-              window.clearTimeout(isScrolling);
-              isScrolling = setTimeout(() => {
-                  this.pageOnTheTop = window.pageYOffset === 0;
-                  this.visibleSearch = false;
-                  this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
-              }, 5);
-          }, false);
-      }
+        let isScrolling;
+        window.addEventListener('scroll', (event) => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                this.pageOnTheTop = window.pageYOffset === 0;
+                this.visibleSearch = false;
+                this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
+            }, 5);
+        }, false);
+    }
   },
   mounted() {
     this.scrollEndHandling();
@@ -83,6 +83,12 @@ new Vue({
     }
   },
   methods: {
+    showSearch(){
+      window.scrollTo(0, 0);
+      setTimeout(()=>{
+        this.$refs.header.showSearch();
+      },100)
+    },
     goToForm: function() {
       window.location = '/form/'+this.formId;
     },

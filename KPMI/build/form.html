@@ -27,7 +27,7 @@
 
         <template v-if="['prlg'].includes(curQ.type_name)">
             <!--header: BEGIN-->
-            <page-header inline-template>
+            <page-header inline-template ref="header">
                 <header id="header" class="header static"
                         :class="{
                             'visible-search': visibleSearch,
@@ -43,7 +43,7 @@
                                 <form action="">
                                     <fieldset class="header-search">
                                         <div class="header-search--input" >
-                                            <q-input rounded outlined v-model="text" placeholder="Placeholder"
+                                            <q-input rounded outlined v-model="text" placeholder="Поиск анкеты по номеру или по ссылке"
                                                      bg-color="info"
                                                      ref="search" class="header-search--input-field"
                                                      @blur="visibleSearch = false"
@@ -104,7 +104,7 @@
                                 </div>
                                 <div>
                                     <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
-                                           unelevated color="accent" size="16px" no-caps type="a" href="prologue.html"
+                                           unelevated color="accent" size="16px" no-caps type="a" href="form.html"
                                            label="пройти тест бесплатно"></q-btn>
                                 </div>
                                 <ul class="nav-menu--list">
@@ -123,7 +123,7 @@
                             <div class="row justify-end">
                                 <div>
                                     <q-btn class="no-border-radius q-btn--accent"
-                                           unelevated color="accent" no-caps type="a" href="prologue.html"
+                                           unelevated color="accent" no-caps type="a" href="form.html"
                                            label="тест" />
                                 </div>
                             </div>
@@ -191,7 +191,7 @@
                                     </li>
                                     <li v-if="!fullLayout">
                                         <q-btn class="test-btn no-border-radius q-btn--accent"
-                                               unelevated color="accent" no-caps type="a" href="prologue.html"
+                                               unelevated color="accent" no-caps type="a" href="form.html"
                                                label="тест" />
                                     </li>
                                 </ul>
@@ -267,7 +267,7 @@
 
             <section class="prologue" v-if="['prlg'].includes(curQ.type_name)">
                 <div class="content content--lg">
-                    <div class="row">
+                    <div class="row prologue-box">
                         <div class="offset-md-1 offset-lg-2 col-12 col-md-5 col-lg-5">
                             <div class="prologue-list">
                                 <ul class="text-h5">
@@ -288,7 +288,7 @@
                                         Оплата полного результата после теста по карте
                                     </li>
                                 </ul>
-                                <div class="btn-set">
+                                <div class="btn-set" :class="{'is-visible': prologueBtnIsVisible}">
                                     <q-btn class="q-px-xl q-py-md no-border-radius q-btn--accent"
                                            unelevated color="accent" size="16px" no-caps @click="nextQuestion"
                                            label="начать тестирование" />
@@ -349,6 +349,7 @@
                                         <div class="inquirer-answers input">
                                             <q-input outlined square
                                                      color="accent"
+                                                     autogrow
                                                      placeholder="Ваш ответ"
                                                      bg-color="info"
                                                      v-model.trim="userAnswer"

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KPMI - Сравнение анкет</title>
+    <title>KPMI - Ничего не найдено</title>
     <meta name="author" content="enenkoff@gmail.com">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" type="text/css" href="assets/css/quasar.min.css">
@@ -21,13 +21,13 @@
 </div>
 <!--SVG-sprite: END-->
 
-<div id="result" class="wrapper">
+<div id="index" class="wrapper">
 
-    <div class="container">
+    <div class="container" >
 
         <!--header: BEGIN-->
         <page-header inline-template ref="header">
-            <header id="header" class="header static nav-static"
+            <header id="header" class="header static"
                     :class="{
                         'visible-search': visibleSearch,
                         'visible-nav': visibleNav,
@@ -252,229 +252,38 @@
 
         <main id="main" class="main">
 
-            <section class="comparison">
-                <div class="comparison--intro">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="offset-md-2 col-12 col-sm-6 col-md-4">
-                                <div class="result-step--head result-type--info">
-                                    <span class="view">
-                                        Анкета: 534422
-                                        <figure class="figure">
-                                            <img src="assets/svg/figures/comparison-example1.svg" alt="">
-                                        </figure>
-                                    </span>
-                                    <h1 class="text-h3 title">Классический предприниматель </h1>
-                                    <dl>
-                                        <div class="item">
-                                            <dt>Тип</dt>
-                                            <dd>Напористый спорщик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Код</dt>
-                                            <dd>ENTP-A</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Роль</dt>
-                                            <dd>Аналитик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Стратегия</dt>
-                                            <dd>Мастерство людей</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div class="offset-md-2 col-12 col-sm-6 col-md-4">
-                                <div class="result-step--head result-type--info">
-                                    <span class="view">
-                                        Анкета: 534422
-                                        <figure class="figure">
-                                            <img src="assets/svg/figures/comparison-example2.svg" alt="">
-                                        </figure>
-                                    </span>
-                                    <h1 class="text-h3 title">Аналитик</h1>
-                                    <dl>
-                                        <div class="item">
-                                            <dt>Тип</dt>
-                                            <dd>Напористый спорщик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Код</dt>
-                                            <dd>ENTP-A</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Роль</dt>
-                                            <dd>Аналитик</dd>
-                                        </div>
-                                        <div class="item">
-                                            <dt>Стратегия</dt>
-                                            <dd>Мастерство людей</dd>
-                                        </div>
-                                    </dl>
+            <section class="error-page">
+                <div class="content content--lg">
+                    <div class="row items-center error-page--box">
+                        <div class="offset-lg-1 col-12 col-md-5 col-lg-4">
+                            <div class="error-page--head">
+                                <h1 class="text-h3 title">Ничего не найдено</h1>
+                                <div class="btn-set">
+                                    <q-btn class="q-px-xl q-py-md no-border-radius q-btn--primary"
+                                           size="16px" no-caps
+                                           outline color="primary"
+                                           label="Искать заново"
+                                           @click.prevent="showSearch"
+                                    >
+                                    </q-btn>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="result-type--graph comparison--graph">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="part part-graph">
-                                    <img class="figure" src="assets/images/graph-example.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-type--analysis">
-                    <div class="content content--lg">
-                        <div class="row">
-                            <div class="offset-md-2 col-12 col-md-7 col-lg-5">
-                                <h4 class="text-h5 title">Анализ диаграммы</h4>
-                                <div>Что здесь будет??? KPMI объём фигуры смещен в сторону... . Общий  объем фигуры — ... Полемист — величайший адвокат дьявола, который успешно разрушает все аргументы и мнения на мелкие составляющие, пуская их по ветру, чтобы все видели. В отличие от более целеустремленных личностей Полемисты делают это все не потому, что пытаются достичь какой-то
-                                </div>
+                        <div class="offset-md-1 col-12 col-md-5">
+                            <div class="relative-position">
+                                <div class="shape shape1 blur-md shape-color--green"></div>
+                                <div class="shape shape2 blur-md shape-color--blue"></div>
+                                <div class="shape shape3 blur-md shape-color--yellow"></div>
+                                <figure class="error-page--img">
+                                    <img src="assets/svg/partials/sample-bg.svg" alt="">
+                                </figure>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <section class="result-comparison">
-                <div class="content content--lg">
-                    <div class="row">
-                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
-                            <div class="result-comparison--text">
-                                <h4 class="text-h5 title">Сравнение результатов анкет</h4>
-                                <div>Отслеживайте прогресс в развитии вашей личности. Для этого достаточно периодически проходить тестирования и сохранять номера анкет. Сервис сравнивает «новую» и «предыдущую» анкету и показывает вам какие черты вашей личности вы смогли развить.</div>
-                            </div>
-                            <div class="result-comparison--fieldset">
-                                <form action="#">
-                                    <fieldset class="flex">
-                                        <span class="label">Текущую анкету №</span>
-                                        <div class="input">
-                                            <q-input outlined square
-                                                     color="accent"
-                                                     placeholder="0000"
-                                                     bg-color="white"
-                                                     v-model="comparedIDs[0]"
-                                                     :rules="[val => !!val || 'Поле обязательно для заполнения']"
-                                                     class="input-text"
-                                            >
-                                            </q-input>
-                                        </div>
-                                        <span class="label">сравнить с анкетой №</span>
-                                        <div class="input">
-                                            <q-input outlined square
-                                                     color="accent"
-                                                     placeholder="0000"
-                                                     bg-color="white"
-                                                     v-model="comparedIDs[1]"
-                                                     :rules="[val => !!val || 'Поле обязательно для заполнения']"
-                                                     class="input-text"
-                                            >
-                                            </q-input>
-                                        </div>
-                                        <q-btn class="no-border-radius q-btn--primary"
-                                               size="16px" no-caps type="a" href="comparison.html"
-                                               outline color="primary"
-                                               label="сравнить анкеты">
-                                        </q-btn>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
-            <div class="sharing" id="sharing">
-                <div class="content content--lg">
-                    <div class="row">
-                        <div class="offset-md-1 col-12 col-md-10">
-                            <div class="sharing-inner flex flex-center justify-center">
-                                Расскажи друзьям 7.2 К
-                                <ul class="flex flex-center">
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--fb">
-                                                <svg><use xlink:href="#icon-social-facebook"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--vk">
-                                                <svg><use xlink:href="#icon-social-vk"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--tw">
-                                                <svg><use xlink:href="#icon-social-twitter"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex flex-center justify-center">
-                                            <i class="icon icon--pt">
-                                                <svg><use xlink:href="#icon-social-pinterest"/></svg>
-                                            </i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--home page: END-->
 
         </main>
-
-        <!--footer: BEGIN-->
-        <footer class="footer" id="footer">
-            <div class="content content--lg">
-                <div class="row">
-                    <div class="offset-md-1 col-12 col-md-1">
-                        <div class="logo">
-                            <a href="index.html" class="icon">
-                                <svg><use xlink:href="#icon-logo-mini-lt"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-7 col-md-5 q-mt-lg">
-                        <p>29 887 анкет заполнено</p>
-                        <p>KPMI.RU —  диагностическая методика, предназначенная для оценки психологического потенциала личности, её сильных и слабых сторон, а также зон оптимального развития. Основана на методологии MBTI.</p>
-                    </div>
-                    <div class="offset-md-1 col-12 col-sm-5 col-md-3 q-mt-lg">
-                        <ul>
-                            <li><a href="persons.html">16 типов личности по KPMI</a></li>
-                            <li><a href="about.html">О методике KPMI</a></li>
-                            <li><a href="predication.html">О предикции профессии</a></li>
-                            <li><a href="documents.html">Политика в отношении персональных данных, оплата, возвраты т т.д.</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="q-mt-xl">
-                    <div class="row">
-                        <div class="offset-md-2 col-6 col-md-6">
-                            ©Психология и Бизнес 1998-2020
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <div class="design text-right">Frontend <a href="http://reconcept.ru" target="_blank">ReConcept</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--footer: END-->
-
 
     </div>
 
@@ -486,7 +295,7 @@
 
 
 <!-- Скрипт страницы. -->
-<script src="assets/js/pages/comparison.js"></script>
+<script src="assets/js/pages/page.js"></script>
 
 </body>
 </html>

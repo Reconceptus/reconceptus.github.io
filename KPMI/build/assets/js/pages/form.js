@@ -51,6 +51,7 @@ new Vue({
       userAnswer: null,
       session: null,
       isLoading: false,
+      prologueBtnIsVisible: false,
       questionsPassed: 0,
       questionsBeforePause: 2,  // через сколько вопросов выскочит попап про отдых
       restPopup: [
@@ -101,6 +102,23 @@ new Vue({
     },
   },
   methods: {
+    scrollEndHandling(){
+      if(window.pageYOffset > 0){
+        if(window.pageYOffset + window.innerHeight > document.body.offsetHeight - 20){
+          this.prologueBtnIsVisible = true;
+        }
+      }
+
+      let isScrolling;
+      window.addEventListener('scroll', (event) => {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          if(window.pageYOffset + window.innerHeight > document.body.offsetHeight - 20){
+            this.prologueBtnIsVisible = true;
+          }
+        }, 50);
+      }, false);
+    },
     async generateForm(error = false) {
       return await new Promise((resolve, reject) => {
         if(error === true) reject({
@@ -201,6 +219,7 @@ new Vue({
     },
   },
   mounted: function() {
+    this.scrollEndHandling();
     // Создание рыбы анкеты.
     this.generateForm()
     .then(ans => {

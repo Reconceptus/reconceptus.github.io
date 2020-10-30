@@ -749,7 +749,7 @@ fish_form = `{
                 "type_view": "vertical"
             },
             "type_descr": "Индекс лояльности потребителей",
-            "user_answer": null
+            "user_answer": 0
         }
       ],
       "progress_status": "main_in_progress",

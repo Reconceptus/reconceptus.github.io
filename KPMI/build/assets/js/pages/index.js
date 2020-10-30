@@ -58,7 +58,8 @@ new Vue({
     return {
       howItWorks: false,
       formId: null,
-      hiddenIntro: false
+      hiddenIntro: false,
+      flkty: Object
     }
   },
   methods: {
@@ -83,7 +84,7 @@ new Vue({
       if(carouselCells.length < 2) {
         return
       }
-      var flkty = new Flickity( carousel, {
+      this.flkty = new Flickity( carousel, {
         accessibility: false,
         contain: true,
         cellAlign: 'left',
@@ -92,6 +93,9 @@ new Vue({
         prevNextButtons: false,
         pageDots: false,
       });
+    },
+    nexSlide(){
+      this.flkty.next()
     }
   },
   mounted() {
