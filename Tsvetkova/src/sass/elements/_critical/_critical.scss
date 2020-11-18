@@ -54,7 +54,8 @@
     }
     @include mq(mobile_xl, tablet_sm) {
       padding: $gutter-x2 0;
-      .blog-page & {
+      .blog-page &,
+      .project-section & {
         margin-top: 40px;
       }
     }
@@ -63,7 +64,8 @@
         padding: 8px 16px 80px 16px;
         background-color: $white;
       }
-      .blog-page & {
+      .blog-page &,
+      .project-section & {
         margin-top: 40px;
       }
     }

@@ -1,3 +1,12 @@
 .sharing {
 
 }
+
+#sharingOffsetBox {
+  @include mq($from: tablet_xl) {
+    display: none;
+  }
+  @include mq($until: tablet_sm) {
+    display: none;
+  }
+}
