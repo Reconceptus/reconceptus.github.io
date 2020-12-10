@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="63.37" viewBox="0 0 80.949 63.375">
+    <g transform="translate(0 .02)">
+        <circle cx="26" cy="26" r="26" transform="translate(.785.007)" fill="#fff"/>
+        <g>
+            <rect width="44.07" height="27.601" rx="4.383"
+                  transform="matrix(.838-.546.546.838 27.44 38.712)" fill="none" stroke="#a7abde" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-miterlimit="22.926" stroke-width="2.191"/>
+            <path transform="matrix(.83792-.54579.54579.83792 36.436 52.52)" fill="#a7abde"
+                  d="m0 0h44.07v5.261h-44.07z"/>
+            <g>
+                <ellipse cx="3.672" cy="3.672" rx="3.672" ry="3.672" transform="matrix(.838-.546.546.838 37.37 37.487)"
+                         fill="#5159be"/>
+                <ellipse cx="3.672" cy="3.672" rx="3.672" ry="3.672" transform="matrix(.838-.546.546.838 33.23 40.18)"
+                         fill="#86e5c7"/>
+            </g>
+        </g>
+        <circle cx="6" cy="6" r="6" transform="translate(0 40.02)" fill="#5159be"/>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="60.02" viewBox="0 0 80 60.019"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle cx="26" cy="26" r="26" transform="translate(.785.027)" fill="#fff"/>
+    <g fill="none" stroke="#a7abde" stroke-linejoin="round" stroke-linecap="round" stroke-width="2"
+       stroke-miterlimit="22.926">
+        <path d="M34.585,33.255a18.389,18.389,0,0,1-2.553-8.536c0-5.372,5.02-9.732,11.207-9.732,5.6,0,8.4,2.433,11.207,7.3,2.8-4.866,5.6-7.3,11.206-7.3,6.187,0,11.207,4.36,11.207,9.732,0,9.732-11.207,19.464-22.413,29.2-2.054-1.784-3.651-3.16-5.635-4.943"/>
+        <path d="M45.752,52.42l5.687-6.41,1.842-2.076a2.42,2.42,0,0,0-.2-3.407l-.18-.16a2.422,2.422,0,0,0-3.408.2l2.964-3.34a2.422,2.422,0,0,0-.2-3.408l-.181-.16a2.42,2.42,0,0,0-3.407.2L49.782,32.6a2.42,2.42,0,0,0-.2-3.407l-.181-.161a2.422,2.422,0,0,0-3.408.2L44.869,30.5a2.419,2.419,0,0,0-.2-3.407l-.18-.16a2.422,2.422,0,0,0-3.408.2l-4.805,5.417-6.558,7.392.647-4.73.025-.178a2.422,2.422,0,0,0-2.064-2.719l-.24-.033a2.42,2.42,0,0,0-2.718,2.064l-1.177,8.6a10.961,10.961,0,0,0,2.729,12.6l.817.725a10.951,10.951,0,0,0,15.415-.922l2.6-2.936Z"
+              fill-rule="evenodd"/>
+    </g>
+    <path transform="translate(37.698 30.502)" fill="none" stroke="#a7abde" stroke-linecap="round"
+          stroke-linejoin="round" stroke-miterlimit="22.926" stroke-width="2" d="m7.171 0h.912" id="0"/>
+    <use transform="translate(3.792 3.364)" xlink:href="#0"/>
+    <path transform="translate(43.963 39.17)" fill="none" stroke="#a7abde" stroke-linecap="round"
+          stroke-linejoin="round" stroke-miterlimit="22.926" stroke-width="2" d="m6.765 0h.86"/>
+    <circle cx="6" cy="6" r="6" transform="translate(0 40.03)" fill="#5159be"/>
+</svg>
