@@ -59,7 +59,8 @@ new Vue({
       howItWorks: false,
       formId: null,
       hiddenIntro: false,
-      flkty: Object
+      flkty: Object,
+      changeSkinsTime: 4000,
     }
   },
   methods: {
@@ -96,10 +97,29 @@ new Vue({
     },
     nexSlide(){
       this.flkty.next()
+    },
+    changeSkins(){
+      const skinsBox = document.querySelector('.js-skins-change');
+      if (!skinsBox) return;
+
+      let skins = skinsBox.getElementsByTagName('img'),
+          i = 0,
+          activeItem = skins[i];
+
+      activeItem.classList.add('active');
+
+      if(skins.length === 1) return;
+      setInterval(() => {
+        activeItem.classList.remove('active');
+        i = (i + 1) === skins.length ? 0 : (i + 1);
+        activeItem = skins[i];
+        activeItem.classList.add('active');
+      }, this.changeSkinsTime)
     }
   },
   mounted() {
     this.scrollHandling();
     this.initCarousel();
+    this.changeSkins();
   }
 });
