@@ -60,6 +60,7 @@ Vue.component('PageHeader', {
       } while (targetEl);
 
       this.visibleNav = false;
+      document.documentElement.classList.remove('ovh');
     },
     showSearch(){
       this.visibleSearch = true;

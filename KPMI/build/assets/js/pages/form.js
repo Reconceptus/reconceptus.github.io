@@ -46,6 +46,7 @@ Vue.component('PageHeader', {
     },
     navMenuToggle(){
       this.visibleNav = !this.visibleNav;
+      document.documentElement.classList.toggle('ovh')
     },
     clickOutsideNavMenu(e){
       let nav = document.getElementById('nav'),
@@ -59,6 +60,7 @@ Vue.component('PageHeader', {
       } while (targetEl);
 
       this.visibleNav = false;
+      document.documentElement.classList.remove('ovh');
     },
     showSearch(){
       this.visibleSearch = true;
@@ -66,7 +68,6 @@ Vue.component('PageHeader', {
     },
     scrollEndHandling(){
       this.pageOnTheTop = window.pageYOffset === 0;
-      this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
 
       let isScrolling;
       window.addEventListener('scroll', (event) => {
@@ -74,7 +75,6 @@ Vue.component('PageHeader', {
         isScrolling = setTimeout(() => {
           this.pageOnTheTop = window.pageYOffset === 0;
           this.visibleSearch = false;
-          this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
         }, 5);
       }, false);
     },
@@ -119,7 +119,7 @@ new Vue({
       isLoading: false,
       prologueBtnIsVisible: false,
       questionsPassed: 0,
-      questionsBeforePause: 2,  // через сколько вопросов выскочит попап про отдых
+      questionsBeforePause: 20,  // через сколько вопросов выскочит попап про отдых
       restPopupTimeout: 5000,
       restPopup: [
           {
