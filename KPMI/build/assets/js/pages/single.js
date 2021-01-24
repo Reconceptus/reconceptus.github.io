@@ -17,6 +17,19 @@ Vue.component('PageHeader', {
     navMenuToggle(){
       this.visibleNav = !this.visibleNav;
     },
+    clickOutsideNavMenu(e){
+      let nav = document.getElementById('nav'),
+          targetEl = e.target;
+
+      do {
+        if (targetEl === nav) {
+          return;
+        }
+        targetEl = targetEl.parentNode;
+      } while (targetEl);
+
+      this.visibleNav = false;
+    },
     showSearch(){
       this.visibleSearch = true;
       this.$refs.search.focus();
@@ -34,10 +47,14 @@ Vue.component('PageHeader', {
           this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
         }, 5);
       }, false);
-    }
+    },
+    onSubmit (evt) {
+      // evt.target.submit();
+    },
   },
   mounted() {
     this.scrollEndHandling();
+    document.addEventListener('click', (e) => this.clickOutsideNavMenu(e))
   }
 });
 

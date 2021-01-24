@@ -48,6 +48,19 @@ Vue.component('PageHeader', {
       this.visibleNav = !this.visibleNav;
       document.documentElement.classList.toggle('ovh')
     },
+    clickOutsideNavMenu(e){
+      let nav = document.getElementById('nav'),
+          targetEl = e.target;
+
+      do {
+        if (targetEl === nav) {
+          return;
+        }
+        targetEl = targetEl.parentNode;
+      } while (targetEl);
+
+      this.visibleNav = false;
+    },
     showSearch(){
       this.visibleSearch = true;
       this.$refs.search.focus();
@@ -84,6 +97,7 @@ Vue.component('PageHeader', {
   },
   mounted() {
     this.scrollEndHandling();
+    document.addEventListener('click', (e) => this.clickOutsideNavMenu(e))
   }
 });
 

@@ -4,18 +4,61 @@ Vue.component('PageHeader', {
   data() {
     return {
       text: '',
-      visibleSearch: false,
+      mail: '',
+      emailSubmitted: false,
       visibleMailBox: false,
+      visibleSearch: false,
       visibleNav: false,
       pageOnTheTop: Boolean,
+      showTooltip: false,
+      testIsVisible: false,
+      extendedMenu: true,
+      fullMode: true,
       fullLayout: true,
-      extendedMenu: false,
-      testIsVisible: false
+      freeResults: false
     }
   },
   methods: {
+    showMailBox(){
+      this.emailSubmitted = false;
+      this.visibleMailBox = true;
+    },
+    closeMailBox(){
+      this.mail = '';
+      setTimeout(()=>{
+        this.$refs.mail.resetValidation();
+      },0)
+      this.visibleMailBox = false;
+    },
+    onSubmitEmail(){
+      this.$refs.mail.validate();
+      if (this.$refs.mail.hasError) {
+        return
+      } else {
+        this.emailSubmitted = true
+      }
+    },
+    copyNumber(){
+      this.showTooltip = true;
+      let input = document.getElementById('copyNumber');
+      input.select();
+      document.execCommand('copy');
+    },
     navMenuToggle(){
       this.visibleNav = !this.visibleNav;
+    },
+    clickOutsideNavMenu(e){
+      let nav = document.getElementById('nav'),
+          targetEl = e.target;
+
+      do {
+        if (targetEl === nav) {
+          return;
+        }
+        targetEl = targetEl.parentNode;
+      } while (targetEl);
+
+      this.visibleNav = false;
     },
     showSearch(){
       this.visibleSearch = true;
@@ -34,10 +77,33 @@ Vue.component('PageHeader', {
           this.testIsVisible = window.pageYOffset > window.innerHeight - 100;
         }, 5);
       }, false);
-    }
+    },
+    scrollToElement(id, duration = 500){
+      let startingY = window.pageYOffset,
+          element = document.getElementById(id),
+          elementOffsetTop = element.getBoundingClientRect().top,
+          start;
+
+      elementOffsetTop -= 100;
+      window.requestAnimationFrame(function step(timestamp) {
+        if (!start) start = timestamp;
+        let time = timestamp - start;
+        let percent = Math.min(time / duration, 1);
+
+        window.scrollTo(0, startingY + elementOffsetTop * percent);
+
+        if (time < duration) {
+          window.requestAnimationFrame(step);
+        }
+      })
+    },
+    onSubmit (evt) {
+      // evt.target.submit();
+    },
   },
   mounted() {
     this.scrollEndHandling();
+    document.addEventListener('click', (e) => this.clickOutsideNavMenu(e))
   }
 });
 
@@ -54,6 +120,7 @@ new Vue({
       prologueBtnIsVisible: false,
       questionsPassed: 0,
       questionsBeforePause: 2,  // через сколько вопросов выскочит попап про отдых
+      restPopupTimeout: 5000,
       restPopup: [
           {
             message: 'Можешь сделать двухминутный перерыв!',
@@ -94,7 +161,7 @@ new Vue({
             actions: [
               { label: 'Продолжить', color: 'white', handler: () => { /* ... */ } },
             ],
-            timeout: 4000000
+            timeout: this.restPopupTimeout
           });
         }
         this.questionsPassed += 1;
