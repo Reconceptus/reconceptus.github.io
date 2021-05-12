@@ -39,7 +39,7 @@
                 <div class="js-search content content--lg" v-if="fullLayout">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
-                            <form action="">
+                            <form action="result-free.html" @submit="onSubmit">
                                 <fieldset class="header-search">
                                     <div class="header-search--input" >
                                         <q-input rounded outlined v-model="text" placeholder="Поиск анкеты по номеру или по ссылке"
@@ -293,7 +293,7 @@
                                         <div><a href="result-full.html">пример</a></div>
                                         <div class="subtitle">Скидка 50% за ответы на 8 вопросов второй анкеты</div>
                                         <div class="btn-set">
-                                            <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary"
+                                            <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary" @click="startForm"
                                                    size="16px" no-caps
                                                    type="a" href="form.html"
                                                    outline color="primary"
@@ -320,8 +320,7 @@
                 <div class="result-type--intro">
                     <div class="content content--lg">
                         <div class="row items-center">
-                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
-                                <div class="q-pt-lg result-step">1</div>
+                            <div class="flex no-wrap offset-sm-2 col-12 col-sm-7 col-md-4">
                                 <div class="result-step--head numbered result-type--info">
                                     <span class="text-subtitle1 text-weight-medium text-primary bg-warning q-px-md">
                                         бесплатный лайт-результат
@@ -372,7 +371,6 @@
                                         <div class="flex full-width items-center justify-between">
                                             <i class="icon icon--md q-mr-sm"><svg><use :xlink:href="prop.node.icon"/></svg></i>
                                             <div class="text-h5">{{ prop.node.label }}</div>
-                                            <a href="#" class="link text-weight-medium q-px-md" v-if="prop.node.disabled">оплатить</a>
                                         </div>
                                     </template>
                                     <template v-slot:body-story="prop">
@@ -384,6 +382,8 @@
                                         </div>
                                     </template>
                                 </q-tree>
+
+                                <div class="payment-info">Полное описание психотипа доступно после оплаты</div>
                             </div>
                         </div>
                     </div>
@@ -402,12 +402,14 @@
                                     <div class="text">
                                         <h4 class="text-h5 title"><span>Скидка! Ответь на дополнительные вопросы и получи
                                             полные результаты бесплатно!</span></h4>
-                                        <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary" @click="startAdditionalForm"
-                                               size="16px" no-caps
-                                               outline color="primary"
-                                               label="окей, давай"
-                                        >
-                                        </q-btn>
+                                        <div class="btn-set">
+                                            <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary" @click="startForm"
+                                                   size="16px" no-caps
+                                                   outline color="primary"
+                                                   label="окей, давай"
+                                            >
+                                            </q-btn>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -420,15 +422,14 @@
                 <div class="result-sample--head">
                     <div class="content content--lg">
                         <div class="row">
-                            <div class="flex no-wrap offset-sm-1 col-12 col-sm-8 col-md-5">
-                                <div class="result-step">2</div>
+                            <div class="flex no-wrap offset-sm-2 col-12 col-sm-7 col-md-4">
                                 <div class="q-pt-lg result-step--head numbered">
                                     <h2 class="text-h3 title">Твоя предрасположенность к профессиям </h2>
                                 </div>
                             </div>
                             <div class="offset-sm-1 offset-md-0 col-12 col-sm-10 col-md-6">
                                 <div class="relative-position">
-                                    <div class="shape shape1 shape-color--green"></div>
+                                    <div class="shape shape1 shape-color--purple"></div>
                                     <div class="shape shape2 shape-color--yellow"></div>
                                     <div class="result-sample--img">
                                         <img src="assets/svg/partials/sample-bg.svg" alt="">
@@ -441,14 +442,36 @@
                 <div class="result-sample--list demo-list">
                     <div class="content content--lg">
                         <div class="row">
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item is-disabled">
+                            <div class="offset-md-2 col-12 col-sm-6 col-md-3 item-wrap">
+                                <div class="item">
                                     <div class="item-title">Топ-10 профессий</div>
                                     <div class="item-table">
-                                        <div class="disabled-text text-weight-medium text-primary q-px-sm flex items-center">
-                                            <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-lock"/></svg></i>
-                                            доступно в полном отчете
-                                        </div>
+                                        <table>
+                                            <tr><td colspan="2" style="height: 32px;"></td></tr>
+                                            <tr><td><strong>Топ профессий:</strong></td><td></td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>67%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>99%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>77%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td class="text-negative">5%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>56%</td></tr>
+                                            <tr><td><strong>Могут подойти:</strong></td><td></td></tr>
+                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                            <tr><td>Дизайнер</td><td>4%</td></tr>
+                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
+                                            <tr><td>Кондитер</td><td>67%</td></tr>
+                                            <tr><td>Генетик</td><td>55%</td></tr>
+                                            <tr><td><strong>Надо избегать:</strong></td><td></td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>89%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>4%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td class="text-negative">4%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>67%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>55%</td></tr>
+                                            <tr><td class="blured">Доступно после оплаты</td><td>4%</td></tr>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -462,105 +485,139 @@
                                             <tr><td>Хирург</td><td>99%</td></tr>
                                             <tr><td>Космонавт</td><td>77%</td></tr>
                                             <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
-                                            <tr><td>Режиссер</td><td>56%</td></tr>
-                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
-                                            <tr><td>Дизайнер</td><td>4%</td></tr>
-                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
-                                            <tr><td>Кондитер</td><td>67%</td></tr>
-                                            <tr><td>Генетик</td><td>55%</td></tr>
                                         </table>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item">
-                                    <div class="item-title">Менее</div>
-                                    <div class="item-table">
-                                        <table>
-                                            <tr><td></td><td>точность*</td></tr>
-                                            <tr><td>Резчик по камню</td><td>67%</td></tr>
-                                            <tr><td>Хирург</td><td>99%</td></tr>
-                                            <tr><td>Космонавт</td><td>77%</td></tr>
-                                            <tr><td>Врач-кибернетик</td><td class="text-negative">5%</td></tr>
-                                            <tr><td>Режиссер</td><td>56%</td></tr>
-                                            <tr><td>Графический дизайнер</td><td>89%</td></tr>
-                                            <tr><td>Дизайнер</td><td>4%</td></tr>
-                                            <tr><td>Архитектор-проектировщик</td><td class="text-negative">4%</td></tr>
-                                            <tr><td>Кондитер</td><td>67%</td></tr>
-                                            <tr><td>Генетик</td><td>55%</td></tr>
-                                        </table>
-                                    </div>
+                                <div class="item-note">
+                                    *Точность каждой модели ансамбля вычисляется с помощью контрольной выборки после окончания ее (модели) обучения и представляет собой отношение количества правильно предсказанных результатов к общему размеру контрольной выборки. Это же, только понятнее.
                                 </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-3 item-wrap">
-                                <div class="item is-disabled">
-                                    <div class="item-title">Не подходят</div>
-                                    <div class="item-table">
-                                        <div class="disabled-text text-weight-medium text-primary q-px-sm flex items-center">
-                                            <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-lock"/></svg></i>
-                                            доступно в полном отчете
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="result-sample--list-note">
-                        <div class="content content--lg">
-                            <div class="text">
-                                <div class="row">
-                                    <div class="offset-md-1 offset-lg-2 col-12 col-sm-6 col-md-5 col-lg-4">
-                                        *Точность каждой модели ансамбля вычисляется с помощью контрольной выборки после окончания ее (модели) обучения и представляет собой отношение количества правильно предсказанных результатов к общему размеру контрольной выборки. Это же, только понятнее.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="offset-md-1 offset-lg-2 col-12 col-sm-6 col-md-3 item-wrap">
-                                    <div class="item">
-                                        <div class="item-title">Твой тип работы</div>
-                                        <div class="item-table">
-                                            <table>
-                                                <tr><td></td><td>точность*</td></tr>
-                                                <tr><td>С техникой</td><td>67%</td></tr>
-                                                <tr><td>С людьми</td><td>99%</td></tr>
-                                                <tr><td>С цифрами</td><td>77%</td></tr>
-                                                <tr><td>С образами</td><td class="text-negative">5%</td></tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="item-payment-note">Топ профессий будет доступен после оплаты</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="discount">
+            <section class="result-advices">
+                <div class="result-advices--head">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="flex no-wrap offset-sm-2 col-12 col-sm-7 col-md-4">
+                                <div class="q-pt-lg result-step--head numbered">
+                                    <h3 class="text-h3 title">Рекомендации по развитию личности</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-advices--list">
+                    <div class="content content--lg">
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-sm-6 col-md-4">
+                                <div class="text-h5 title">Вклад в организацию</div>
+                                <ul>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                </ul>
+                            </div>
+                            <div class="offset-md-1 col-12 col-sm-6 col-md-4">
+                                <div class="text-h5 title">Продуктивные места и занятия</div>
+                                <ul>
+                                    <li>Окружение со стратегическим фокусом на большой картинке.</li>
+                                    <li>Где есть свобода действовать и изменять в соответствии с задуманным.</li>
+                                    <li>Подвижные, ориентированные на перемены, небюрократизированные области.</li>
+                                    <li>Где поощряются риск и автономия.</li>
+                                    <li>С независимыми, компетентными сотрудниками, сосредоточенными на решении проблем.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-2 col-12 col-sm-6 col-md-4">
+                                <div class="note">Еще 4 блока рекомендаций будут доступны после оплаты</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="know-more">
                 <div class="content content--lg">
                     <div class="row">
-                        <div class="offset-md-1 offset-lg-2 col-12 col-md-10 col-lg-8">
-                            <div class="discount-wrapper">
-                                <img class="img" src="assets/svg/partials/discount-bg.svg" alt="">
-                                <div class="discount-inner">
-                                    <div class="shape shape1 shape-color--yellow"></div>
-                                    <div class="shape shape2 shape-color--green"></div>
-                                    <div class="text">
-                                        <h4 class="text-h5 title"><span>Скидка! Ответь на дополнительные вопросы и получи
-                                            полные результаты бесплатно!</span></h4>
-                                        <q-btn class="q-px-lg q-py-sm no-border-radius q-btn--primary"
-                                               size="16px" no-caps
-                                               outline color="primary"
-                                               label="окей, давай"
-                                        >
-                                        </q-btn>
-                                    </div>
+                        <div class="offset-md-1 col-12 col-md-10">
+                            <div class="know-more--title">
+                                <h3 class="text-h3 title">Прямо сейчас узнай о себе еще больше за 100₽!</h3>
+                            </div>
+                            <div class="know-more--box">
+                                <div class="know-more--img">
+                                    <img src="assets/svg/partials/hourglass.svg" alt="">
                                 </div>
+                                <form>
+                                    <div class="know-more--main">
+                                        <div class="relative-position">
+                                            <div class="shape shape2 shape-color--yellow"></div>
+                                            <div class="shape shape1 shape-color--green"></div>
+                                        </div>
+                                        <div class="know-more--list">
+                                            <div class="part">
+                                                <ul class="check-list">
+                                                    <li>Профессии которые тебе подходят и которые надо избегать</li>
+                                                    <li>Сильные стороны твоей личности</li>
+                                                    <li>Взаимоотношения с людьми</li>
+                                                    <li>Романтические отношения и семья</li>
+                                                    <li>Карьера</li>
+                                                    <li>Источники стресса</li>
+                                                    <li>Предложения по борьбе со стрессом</li>
+                                                </ul>
+                                            </div>
+                                            <div class="part">
+                                                <ul class="check-list">
+                                                    <li>Продуктивные места и занятия</li>
+                                                    <li>Показатели подавленного состояния</li>
+                                                    <li>Показатели подавленного состояния</li>
+                                                    <li>Что тебя мотивирует</li>
+                                                    <li>Твой вклад в организацию</li>
+                                                    <li>Статистика: насколько ты уникален</li>
+                                                </ul>
+                                                <q-btn class="q-px-xl q-py-md no-border-radius q-btn--primary"
+                                                       size="16px" no-caps type="a" href="result-full.html"
+                                                       outline color="primary">
+                                                    <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-link"/></svg></i>
+                                                    пример
+                                                </q-btn>
+                                            </div>
+                                        </div>
+                                        <div class="know-more--payment" v-if="showPaymentForm">
+                                            <div class="text-h5 title">Мы можем отправить результат на твой емейл</div>
+                                            <div class="input">
+                                                <q-input outlined square
+                                                         color="accent"
+                                                         placeholder="Введите емейл"
+                                                         bg-color="white"
+                                                         v-model="mail"
+                                                         :rules="[val => !!val || 'Поле обязательно для заполнения']"
+                                                         class="input-text"
+                                                >
+                                                    <template v-slot:prepend>
+                                                        <i class="icon icon--md q-mr-sm"><svg><use xlink:href="#icon-mail"/></svg></i>
+                                                    </template>
+                                                </q-input>
+                                            </div>
+                                            <p>После оплаты данная страница обновится и ты увидишь полный результат.</p>
+                                            <div>Оплата подтверждает твое согласие с <a href="#">условиями пользования сервисом</a>.</div>
+                                        </div>
+                                    </div>
+                                    <q-btn class="full-width q-px-xl q-py-md no-border-radius q-btn--accent"
+                                           unelevated color="accent" size="24px" no-caps @click.prevent="payment"
+                                           label="заплатить 100 р" />
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
 
 
             <div class="sharing" id="sharing">

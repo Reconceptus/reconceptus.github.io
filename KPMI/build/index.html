@@ -39,7 +39,7 @@
                 <div class="js-search content content--lg" v-if="fullLayout">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-4">
-                            <form action="">
+                            <form action="result-free.html" @submit="onSubmit">
                                 <fieldset class="header-search">
                                     <div class="header-search--input" >
                                         <q-input rounded outlined v-model="text" placeholder="Поиск анкеты по номеру или по ссылке"
@@ -352,7 +352,7 @@
                             <div class="row">
                                 <div class="offset-md-1 col-12 col-md-10">
                                     <div class="home-reports--example-preview">
-                                        <h3 class="text-h5 text-weight-medium text-secondary title">Пример результата в бесплатной версии</h3>
+                                        <h3 class="text-h4 text-weight-medium text-white title">Пример результата в бесплатной версии</h3>
                                         <img class="mouse" src="assets/svg/partials/mouse-scroll.svg" alt="">
                                         <figure>
                                             <img class="cover" src="assets/svg/partials/laptop-cover.svg" alt="">

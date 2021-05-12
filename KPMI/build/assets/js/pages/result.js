@@ -112,7 +112,11 @@ new Vue({
   data: function() {
     return {
       howItWorks: false,
+      alert: false,
       formId: null,
+      satisfied: null,
+      briefNoAnswer: null,
+      message: null,
       comparedIDs: ['', ''],
       personalityScale: [
         {
@@ -364,6 +368,14 @@ new Vue({
       .then(ans => {
         window.location = '/form/'+ans.data.data;
       })
+    },
+    briefSubmit: function (e) {
+      if(this.satisfied == null){
+        this.briefNoAnswer = true;
+      } else {
+        this.briefNoAnswer = false;
+        e.target.submit();
+      }
     }
   },
   mounted() {

@@ -112,6 +112,8 @@ new Vue({
       howItWorks: false,
       paymentNotify: false,
       paymentAgree: false,
+      mail: '',
+      showPaymentForm: false,
       formId: null,
       comparedIDs: ['', ''],
       personalityScale: [
@@ -243,43 +245,7 @@ new Vue({
           label: 'Сильные и слабые стороны',
           icon: '#icon-result-psycho',
           children: [{body: 'story'}]
-        },
-        {
-          label: 'Романтические отношения',
-          icon: '#icon-result-favorite',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Дружба',
-          icon: '#icon-result-people',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Родительство',
-          icon: '#icon-result-child',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Карьера',
-          icon: '#icon-result-business',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Привычки на рабочем месте',
-          icon: '#icon-result-key',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Выводы',
-          icon: '#icon-result-flag',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
+        }
       ],
       typeDescriptionEnabled: [
         {
@@ -314,44 +280,6 @@ new Vue({
             },
           ]
         },
-      ],
-      typeDescriptionDisabled: [
-        {
-          label: 'Романтические отношения',
-          icon: '#icon-result-favorite',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Дружба',
-          icon: '#icon-result-people',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Родительство',
-          icon: '#icon-result-child',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Карьера',
-          icon: '#icon-result-business',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Привычки на рабочем месте',
-          icon: '#icon-result-key',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
-        {
-          label: 'Выводы',
-          icon: '#icon-result-flag',
-          disabled: true,
-          children: [{body: 'story'}]
-        },
       ]
     }
   },
@@ -364,6 +292,13 @@ new Vue({
       .then(ans => {
         window.location = '/form/'+ans.data.data;
       })
+    },
+    payment: function () {
+      if(this.showPaymentForm){
+        // form handler
+      } else {
+        this.showPaymentForm = true;
+      }
     }
   },
   mounted() {

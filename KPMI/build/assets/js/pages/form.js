@@ -119,8 +119,8 @@ new Vue({
       isLoading: false,
       prologueBtnIsVisible: false,
       questionsPassed: 0,
-      questionsBeforePause: 2,  // через сколько вопросов выскочит попап про отдых
-      restPopupTimeout: 5000000,
+      questionsBeforePause: 20,  // через сколько вопросов выскочит попап про отдых
+      restPopupTimeout: 5000,
       restPopup: [
           {
             message: 'Можешь сделать двухминутный перерыв!',
